@@ -1,15 +1,12 @@
-import Home from "./pages/Home";
-
-import "./App.css";
-
-function App() {
-
-
+import Navbar from "./components/Navbar";
+import MainRoutes from "./MainRoutes";
+export default function App() {
   return (
-    <>
-      <Home />
-    </>
+    <div className="bg-black min-h-screen text-white font-sans">
+      <Navbar />
+      <main className="pt-20 px-6">
+        <MainRoutes />
+      </main>
+    </div>
   );
 }
-
-export default App;
