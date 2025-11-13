@@ -39,7 +39,7 @@ export default function Navbar() {
             to="/" 
             className="relative z-10 group flex items-center gap-3"
           >
-            {/* Hexágono decorativo */}
+            {/* Hexágono */}
             <div className="relative w-10 h-10 flex items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-blue-600 opacity-20 blur-md group-hover:opacity-40 transition-opacity duration-300"></div>
               <svg className="w-10 h-10 text-cyan-400 group-hover:text-cyan-300 transition-colors" viewBox="0 0 100 100">
@@ -54,7 +54,7 @@ export default function Navbar() {
               </svg>
             </div>
             
-            {/* Texto del logo */}
+            
             <div className="flex flex-col leading-none">
               <span className="text-2xl font-bold tracking-tight text-white">
                 QUANDUM
@@ -83,7 +83,7 @@ export default function Navbar() {
                     {link.name}
                   </span>
                   
-                  {/* Indicador inferior */}
+                  
                   <span className={`absolute -bottom-1 left-0 h-[2px] bg-cyan-400 transition-all duration-300 ${
                     isActive ? "w-full" : "w-0 group-hover:w-full"
                   }`}></span>
@@ -91,7 +91,7 @@ export default function Navbar() {
               );
             })}
             
-            {/* CONTACT BUTTON */}
+            
             <Link
               to="/contact"
               className="ml-4 px-6 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white text-sm font-semibold rounded transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105"
@@ -127,7 +127,7 @@ export default function Navbar() {
           open ? "visible" : "invisible"
         }`}
       >
-        {/* Backdrop */}
+        
         <div 
           className={`absolute inset-0 bg-black/95 backdrop-blur-2xl transition-opacity duration-500 ${
             open ? "opacity-100" : "opacity-0"
@@ -135,7 +135,7 @@ export default function Navbar() {
           onClick={() => setOpen(false)}
         ></div>
         
-        {/* Menu content */}
+        
         <div 
           className={`relative h-full flex flex-col items-center justify-center transition-all duration-500 delay-100 ${
             open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"
