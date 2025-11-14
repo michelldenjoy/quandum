@@ -8,6 +8,7 @@ import Careers from "./pages/Careers";
 import Sustainability from "./pages/Sustainability";
 import News from "./pages/News";
 import Contact from "./pages/Contact";
+import Services from "./pages/Services";
 
 export default function MainRoutes() {
   return (
@@ -15,6 +16,7 @@ export default function MainRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/products" element={<Products />} />
+      <Route path="/services" element={<Services />} />
       <Route path="/certifications" element={<Certifications />} />
       <Route path="/careers" element={<Careers />} />
       <Route path="/sustainability" element={<Sustainability />} />
