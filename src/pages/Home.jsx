@@ -1,12 +1,10 @@
-import React from 'react'
+import EarthGlobe from "../components/3d/EarthGlobe";
 
 export default function Home() {
   return (
-    <div>
-          <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <section className="relative w-full h-screen bg-black">
+      <EarthGlobe size={350} />
 
-    </div>
-  )
+    </section>
+  );
 }

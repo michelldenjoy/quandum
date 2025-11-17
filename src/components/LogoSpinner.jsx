@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../assets/lienzo.png'
-import '../LogoSpinner.css'
+import '../styles/LogoSpinner.css'
 
 export default function LogoSpinner() {
   return (
