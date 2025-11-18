@@ -65,7 +65,7 @@ export default function Certifications() {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row lg:grid lg:grid-cols-4 py-5 gap-8 overflow-x-auto pb-6">
+        <div className="flex flex-col lg:flex-row lg:grid lg:grid-cols-4 py-5 px-4 gap-8 overflow-x-auto pb-6">
           <div className="hidden lg:block absolute inset-x-0 mx-auto h-0.5 mt-[260px] bg-cyan-500/30"></div>
 
           {certData.map((cert, idx) => (
@@ -77,7 +77,7 @@ export default function Certifications() {
                 y: -5,
                 boxShadow: "0 0 25px rgba(0, 191, 255, 0.3)",
               }}
-              transition={{ duration: 0.7, delay: idx * 0.15 }}
+              transition={{ duration: 0.1 }}
               viewport={{ once: true, amount: 0.5 }}
               className="group bg-neutral-900/70 border border-neutral-800 rounded-2xl p-6 transition-all duration-300 relative flex-shrink-0 w-full lg:w-auto"
             >
