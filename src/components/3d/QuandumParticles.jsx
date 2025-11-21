@@ -10,15 +10,15 @@ const BREAKPOINTS = {
   xl: 1280,
 };
 
-// Hook para detectar tamaño de pantalla y aspect ratio
+
 const useResponsiveConfig = () => {
-  // MOVIMOS getConfig aquí arriba y lo convertimos en useCallback
+  
   const getConfig = useCallback(() => {
     const w = typeof window !== "undefined" ? window.innerWidth : 1024;
     const h = typeof window !== "undefined" ? window.innerHeight : 768;
     const aspectRatio = w / h;
 
-    // Detectar dispositivos "cuadrados" (tablets en landscape, iPads, etc.)
+    // responsive dispositivos cuadrados
     const isSquarish = aspectRatio > 0.7 && aspectRatio < 1.5;
     const squareCorrection = isSquarish ? 0.65 : 1;
 
@@ -41,9 +41,9 @@ const useResponsiveConfig = () => {
       aspectRatio,
       isSquarish,
     };
-  }, []); // ← dependencias vacías: solo lee window (no reactivo)
+  }, []); 
 
-  // Ahora sí podemos usarla sin problemas
+  
   const [config, setConfig] = useState(getConfig);
 
   useEffect(() => {
@@ -57,7 +57,7 @@ const useResponsiveConfig = () => {
       window.removeEventListener("resize", handleResize);
       clearTimeout(timeout);
     };
-  }, [getConfig]); // ← ahora es estable gracias a useCallback
+  }, [getConfig]); 
 
   return config;
 };
@@ -75,7 +75,7 @@ export default function QuandumParticles({
   const cameraRef = useRef(null);
   const { particleCount, particleSize, scaleMultiplier } = useResponsiveConfig();
 
-  // Parallax scroll listener
+  // Parallax 
   useEffect(() => {
     if (!enableParallax) return;
 
@@ -169,7 +169,7 @@ export default function QuandumParticles({
       });
 
     const createParticles = (targetPoints) => {
-      // ... (el resto del código sigue exactamente igual)
+      
       const targets = targetPoints.slice();
       while (targets.length < particleCount) {
         targets.push(targetPoints[targets.length % targetPoints.length].clone());

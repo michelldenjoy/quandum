@@ -1,9 +1,30 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+// Componente de flecha para indicar submenú en mobile
+const Chevron = ({ isOpen }) => (
+  <svg
+    className={`w-5 h-5 ml-3 transition-transform duration-300 ${
+      isOpen ? "rotate-180 text-brand-pink" : "text-gray-400 group-hover:text-white"
+    }`}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M19 9l-7 7-7-7"
+    ></path>
+  </svg>
+);
+
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false); // Estado para el menú móvil principal
   const [scrolled, setScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null); // Qué dropdown está abierto en móvil
   const location = useLocation();
 
   useEffect(() => {
@@ -12,7 +33,20 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // 🔹 Definimos los links y dropdowns
+ 
+  useEffect(() => {
+    if (open) { 
+      setOpen(false);
+    }
+    setOpenDropdown(null); 
+  }, [location.pathname]);
+
+  
+  const toggleDropdown = (linkName) => {
+    setOpenDropdown(openDropdown === linkName ? null : linkName);
+  };
+
+  
   const links = [
     {
       name: "Empresa",
@@ -56,55 +90,168 @@ export default function Navbar() {
     <>
       {/* NAVBAR */}
       <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-black/30 backdrop-blur-xl py-3 shadow-2xl shadow-cyan-500/5"
-            : "bg-black/10 backdrop-blur-sm py-5"
-        }`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 
+          ${
+            scrolled
+              ? "bg-black py-3 shadow-2xl shadow-brand-blue/20 border-b border-brand-blue/30"
+              : "bg-black py-5 border-b border-transparent" // Fondo negro sólido
+          }`}
       >
         <div className="max-w-[1400px] mx-auto px-8 flex items-center justify-between">
           {/* LOGO */}
-          <Link to="/" className="relative z-10 group flex items-center">
-            <div className="relative w-10 h-10 flex items-center justify-center">
+          <Link to="/" className="relative z-10 flex items-center group">
+            <div className="relative w-10 h-10 flex items-center justify-center mr-2">
               <img
                 src="/logo.png"
-                alt="Logo"
-                className="w-12 h-12 object-contain drop-shadow"
+                alt="Logo Quandum"
+                className="w-12 h-12 object-contain drop-shadow-lg"
               />
             </div>
             <div className="flex flex-col leading-none">
-              <span className="text-2xl font-bold tracking-tight text-brand-blue">
+              <span className="text-3xl font-extrabold tracking-tight text-white transition-colors duration-300 group-hover:text-brand-blue">
                 QUANDUM
               </span>
-              <span className="text-[11px] uppercase tracking-[0.2em] text-brand-pink font-light">
+              <span className="text-[12px] uppercase tracking-[0.25em] text-brand-pink font-light transition-colors duration-300 group-hover:text-white">
                 Aerospace
               </span>
             </div>
           </Link>
 
           {/* DESKTOP MENU */}
-          <div className="hidden lg:flex items-center gap-8 relative">
-            {links.map((link) => {
-              const isActive = location.pathname.startsWith(link.path);
+          <div className="hidden lg:flex items-center gap-10 relative">
+            {links.map((link, idx) => {
+              const isActive = link.path ? location.pathname === link.path : link.dropdown?.some(item => location.pathname.startsWith(item.path));
 
               if (link.dropdown) {
                 return (
                   <div key={link.name} className="relative group">
                     <span
-                      className={`cursor-pointer text-sm font-medium transition-colors duration-300 ${
-                        isActive ? "text-brand-pink" : "text-gray-400 group-hover:text-white"
-                      }`}
+                      className={`cursor-pointer text-base font-semibold transition-colors duration-300 flex items-center py-2 relative
+                        ${isActive ? "text-brand-pink" : "text-gray-300 hover:text-white"}`}
                     >
                       {link.name}
+                      <Chevron isOpen={false} /> {/* Indicador de dropdown */}
+                      <span className={`absolute -bottom-0.5 left-0 h-[2px] bg-brand-blue transition-all duration-300 ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}></span>
                     </span>
 
-                    {/* Dropdown */}
-                    <div className="absolute left-0 mt-2 w-56 bg-black/90 backdrop-blur-lg rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                      {link.dropdown.map((item) => (
+                    {/* Dropdown Desktop - Fondo negro sólido y borde de marca */}
+                    <div className="absolute left-1/2 -translate-x-1/2 mt-4 w-72 bg-black border border-brand-blue/30 rounded-xl shadow-2xl shadow-brand-blue/30 p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform group-hover:translate-y-0 translate-y-3">
+                      {link.dropdown.map((item, dropIdx) => (
                         <Link
                           key={item.name}
                           to={item.path}
-                          className="block px-6 py-3 text-gray-200 hover:bg-cyan-500 hover:text-white rounded-xl transition-all"
+                          className="block px-4 py-3 text-gray-100 hover:bg-brand-blue/20 hover:text-brand-pink rounded-lg transition-all text-sm font-medium relative overflow-hidden group/item"
+                        >
+                          {item.name}
+                          {/* subrayado */}
+                          <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-brand-pink transition-all duration-300 group-hover/item:w-full"></span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+
+              return (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`relative group text-base font-semibold transition-colors duration-300 py-2
+                    ${isActive ? "text-brand-pink" : "text-gray-300 hover:text-white"}`}
+                >
+                  {link.name}
+                  <span className={`absolute -bottom-0.5 left-0 h-[2px] bg-brand-blue transition-all duration-300 ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}></span>
+                </Link>
+              );
+            })}
+
+            
+            <Link
+              to="/contacto"
+              className="ml-6 px-8 py-3 bg-brand-blue hover:bg-gradient-to-r hover:from-brand-pink hover:to-brand-blue rounded-full text-white text-base font-bold transition-all duration-500 shadow-xl hover:shadow-brand-blue/50 relative overflow-hidden
+                before:content-[''] before:absolute before:inset-0 before:bg-white before:opacity-0 before:animate-pulse-light hover:before:opacity-100 before:transition-opacity before:duration-500"
+            >
+              Contacto
+            </Link>
+          </div>
+
+          {/* Movil */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="lg:hidden relative z-50 w-8 h-8 flex items-center justify-center focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <div className="w-7 flex flex-col gap-1.5">
+              {/* Líneas */}
+              <span
+                className={`h-0.5 rounded-full transition-all duration-300 origin-center bg-brand-blue
+                  ${open ? "rotate-45 translate-y-[7px]" : ""}`}
+              ></span>
+              
+              
+              <span
+                className={`h-0.5 bg-brand-blue rounded-full transition-all duration-300 
+                  ${open ? "opacity-0 scale-x-0" : ""}`}
+              ></span>
+              
+              
+              <span
+                className={`h-0.5 rounded-full transition-all duration-300 origin-center bg-brand-pink
+                  ${open ? "-rotate-45 -translate-y-[7px]" : ""}`}
+              ></span>
+            </div>
+          </button>
+        </div>
+      </nav>
+
+      {/* Movil overlay  */}
+      <div
+        className={`lg:hidden fixed inset-0 z-40 transition-all duration-700 ease-in-out 
+          ${open ? "visible opacity-100" : "invisible opacity-0"}`}
+      >
+        <div
+          className={`absolute inset-0 bg-black transition-opacity duration-500 
+            ${open ? "opacity-100" : "opacity-0"}`} 
+          onClick={() => setOpen(false)}
+        ></div>
+
+        <div
+          className={`relative h-full flex flex-col pt-24 pb-12 px-8 overflow-y-auto transition-transform duration-700 ease-in-out bg-black 
+            ${open ? "translate-x-0" : "translate-x-full"}`}
+        >
+          <div className="flex flex-col space-y-4 text-center w-full">
+            {links.map((link, idx) => {
+              const isOpen = openDropdown === link.name;
+              const isPathActive = link.path ? location.pathname === link.path : link.dropdown?.some(item => location.pathname.startsWith(item.path));
+
+              if (link.dropdown) {
+                return (
+                  <div key={link.name} className="flex flex-col text-left w-full group">
+                    
+                    <button
+                      onClick={() => toggleDropdown(link.name)}
+                      className={`flex items-center justify-between w-full px-6 py-4 text-3xl font-extrabold transition-all rounded-xl focus:outline-none
+                        ${isOpen || isPathActive ? "text-brand-pink bg-white/5 shadow-inner shadow-brand-pink/10" : "text-gray-200 hover:text-white hover:bg-white/5"}`}
+                      style={{ transitionDelay: open ? `${idx * 70}ms` : "0ms" }}
+                    >
+                      {link.name}
+                      <Chevron isOpen={isOpen} />
+                    </button>
+
+                    
+                    <div
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                        isOpen ? "max-h-screen opacity-100 mt-2 px-4 py-2 bg-black border-l-4 border-brand-blue/50 rounded-lg shadow-inner shadow-brand-blue/20" : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      {link.dropdown.map((item, dropIdx) => (
+                        <Link
+                          key={item.name}
+                          to={item.path}
+                          onClick={() => setOpen(false)}
+                          className={`block w-full text-center py-3 text-xl font-medium rounded-lg transition-all
+                            ${location.pathname === item.path ? "text-brand-blue bg-white/10" : "text-gray-300 hover:text-brand-blue hover:bg-white/5"}`}
+                          style={{ transitionDelay: open && isOpen ? `${(idx * 70) + (dropIdx * 30)}ms` : "0ms" }}
                         >
                           {item.name}
                         </Link>
@@ -118,113 +265,23 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`relative group text-sm font-medium transition-colors duration-300 ${
-                    isActive ? "text-brand-pink" : "text-gray-400 hover:text-white"
-                  }`}
-                >
-                  {link.name}
-                  <span
-                    className={`absolute -bottom-1 left-0 h-[2px] bg-brand-blue transition-all duration-300 ${
-                      isActive ? "w-full" : "w-0 group-hover:w-full"
-                    }`}
-                  ></span>
-                </Link>
-              );
-            })}
-
-            <Link
-              to="/contacto"
-              className="ml-4 px-6 py-2.5  bg-gradient-to-l from-brand-blue to-slate-700 hover:from-slate-700 hover:to-slate-900 rounded-lg text-white text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow-md"
-            >
-              Contacto
-            </Link>
-          </div>
-
-          {/* MOBILE MENU BUTTON */}
-          <button
-            onClick={() => setOpen(!open)}
-            className="lg:hidden relative z-10 w-10 h-10 flex items-center justify-center"
-            aria-label="Toggle menu"
-          >
-            <div className="w-6 flex flex-col gap-1.5">
-              <span
-                className={`h-0.5 bg-brand-blue rounded-full transition-all duration-300 ${
-                  open ? "rotate-45 translate-y-2" : ""
-                }`}
-              ></span>
-              <span
-                className={`h-0.5 bg-brand-blue rounded-full transition-all duration-300 ${
-                  open ? "opacity-0" : ""
-                }`}
-              ></span>
-              <span
-                className={`h-0.5 bg-brand-pink rounded-full transition-all duration-300 ${
-                  open ? "-rotate-45 -translate-y-2" : ""
-                }`}
-              ></span>
-            </div>
-          </button>
-        </div>
-      </nav>
-
-      {/* MOBILE MENU OVERLAY */}
-      <div
-        className={`lg:hidden fixed inset-0 z-40 transition-all duration-500 ${
-          open ? "visible" : "invisible"
-        }`}
-      >
-        <div
-          className={`absolute inset-0 bg-black/95 backdrop-blur-2xl transition-opacity duration-500 ${
-            open ? "opacity-100" : "opacity-0"
-          }`}
-          onClick={() => setOpen(false)}
-        ></div>
-
-        <div
-          className={`relative h-full flex flex-col items-center justify-center transition-all duration-500 delay-100 ${
-            open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"
-          }`}
-        >
-          <div className="space-y-8 text-center">
-            {links.map((link, idx) => {
-              if (link.dropdown) {
-                return (
-                  <div key={link.name} className="space-y-2">
-                    <span className="block text-2xl font-semibold text-gray-400">
-                      {link.name}
-                    </span>
-                    {link.dropdown.map((item) => (
-                      <Link
-                        key={item.name}
-                        to={item.path}
-                        onClick={() => setOpen(false)}
-                        className="block ml-4 text-xl text-gray-300 hover:text-white transition-all py-2"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                );
-              }
-
-              return (
-                <Link
-                  key={link.name}
-                  to={link.path}
                   onClick={() => setOpen(false)}
-                  className="block text-2xl font-semibold text-gray-400 hover:text-white transition-all py-2"
-                  style={{ transitionDelay: open ? `${idx * 50}ms` : "0ms" }}
+                  className={`block w-full text-center px-6 py-4 text-3xl font-extrabold rounded-xl transition-all
+                    ${isPathActive ? "text-brand-pink bg-white/5 shadow-inner shadow-brand-pink/10" : "text-gray-200 hover:text-white hover:bg-white/5"}`}
+                  style={{ transitionDelay: open ? `${idx * 70}ms` : "0ms" }}
                 >
                   {link.name}
                 </Link>
               );
             })}
 
-            <div className="pt-8">
+            
+            <div className="pt-12">
               <Link
                 to="/contacto"
                 onClick={() => setOpen(false)}
-                className="inline-block px-10 py-4 bg-gradient-to-r from-brand-blue to-slate-700 text-white text-lg font-bold rounded-lg hover:from-brand-pink hover:to-slate-700 transition-all duration-300 shadow-2xl shadow-cyan-500/30"
+                className="inline-block px-12 py-5 bg-brand-blue hover:bg-gradient-to-r hover:from-brand-pink hover:to-brand-blue text-white text-xl font-bold rounded-full transition-all duration-500 shadow-2xl shadow-brand-pink/40 relative overflow-hidden
+                  before:content-[''] before:absolute before:inset-0 before:bg-white before:opacity-0 before:animate-pulse-light hover:before:opacity-100 before:transition-opacity before:duration-500"
               >
                 Contacto
               </Link>

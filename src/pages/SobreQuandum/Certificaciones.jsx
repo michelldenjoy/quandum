@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ExternalLink, Activity } from "lucide-react";
 
 
+
 const certData = [
   {
     title: "AS9100D",
