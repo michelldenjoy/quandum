@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Activity } from "lucide-react";
-import StarfieldNebula from "../components/3d/StarfieldNebula";
+
 
 const certData = [
   {
@@ -46,7 +46,7 @@ export default function Certifications() {
     <section className="w-full text-white py-28 overflow-hidden relative">
       {/* FONDO 3D */}
       <div>
-        <StarfieldNebula />
+      
       </div>
 
       {/* CONTENIDO */}

@@ -12,17 +12,49 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // 🔹 Definimos los links y dropdowns
   const links = [
-    { name: "About", path: "/about" },
-    { name: "Products & Services", path: "/products" },
-    { name: "Certifications", path: "/certifications" },
-    { name: "Careers", path: "/careers" },
-    { name: "Sustainability", path: "/sustainability" },
-    { name: "News", path: "/news" },
+    {
+      name: "Empresa",
+      dropdown: [
+        { name: "Quienes Somos", path: "/empresa/about" },
+        { name: "Infraestructuras", path: "/empresa/infraestructuras" },
+        { name: "Historia", path: "/empresa/historia" },
+      ],
+    },
+    {
+      name: "Servicios",
+      dropdown: [
+        { name: "Hardware", path: "/servicios/hardware" },
+        { name: "Software", path: "/servicios/software" },
+        { name: "Mecanica", path: "/servicios/mecanica" },
+      ],
+    },
+    {
+      name: "Proyectos",
+      dropdown: [
+        { name: "Proyectos Destacados", path: "/proyectos/destacados" },
+      ],
+    },
+    {
+      name: "Sobre Quandum",
+      dropdown: [
+        { name: "Calidad", path: "/sobre-quandum/calidad" },
+        { name: "Certificaciones", path: "/sobre-quandum/certificaciones" },
+        { name: "Código Ético", path: "/sobre-quandum/codigo-etico" },
+        { name: "Entorno Responsable", path: "/sobre-quandum/entorno-responsable" },
+        { name: "Oasis", path: "/sobre-quandum/oasis" },
+        { name: "Ncage", path: "/sobre-quandum/ncage" },
+        { name: "Reach", path: "/sobre-quandum/reach" },
+      ],
+    },
+    { name: "Prensa", path: "/prensa" },
+    { name: "Trabaja Con Nosotros", path: "/trabaja-con-nosotros" },
   ];
 
   return (
     <>
+      {/* NAVBAR */}
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
           scrolled
@@ -53,50 +85,44 @@ export default function Navbar() {
           {/* DESKTOP MENU */}
           <div className="hidden lg:flex items-center gap-8 relative">
             {links.map((link) => {
-              const isActive = location.pathname === link.path;
+              const isActive = location.pathname.startsWith(link.path);
 
-              if (link.name === "Products & Services") {
+              if (link.dropdown) {
                 return (
-                  <div key={link.path} className="relative group">
+                  <div key={link.name} className="relative group">
                     <span
                       className={`cursor-pointer text-sm font-medium transition-colors duration-300 ${
-                        isActive
-                          ? "text-brand-pink"
-                          : "text-gray-400 group-hover:text-white"
+                        isActive ? "text-brand-pink" : "text-gray-400 group-hover:text-white"
                       }`}
                     >
                       {link.name}
                     </span>
+
                     {/* Dropdown */}
-                    <div className="absolute left-0 mt-2 w-48 bg-black/90 backdrop-blur-lg rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                      <Link
-                        to="/products"
-                        className="block px-6 py-3 text-gray-200 hover:bg-cyan-500 hover:text-white rounded-xl transition-all"
-                      >
-                        Productos
-                      </Link>
-                      <Link
-                        to="/services"
-                        className="block px-6 py-3 text-gray-200 hover:bg-cyan-500 hover:text-white rounded-xl transition-all"
-                      >
-                        Servicios
-                      </Link>
+                    <div className="absolute left-0 mt-2 w-56 bg-black/90 backdrop-blur-lg rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                      {link.dropdown.map((item) => (
+                        <Link
+                          key={item.name}
+                          to={item.path}
+                          className="block px-6 py-3 text-gray-200 hover:bg-cyan-500 hover:text-white rounded-xl transition-all"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 );
               }
 
               return (
-                <Link key={link.path} to={link.path} className="relative group">
-                  <span
-                    className={`text-sm font-medium transition-colors duration-300 ${
-                      isActive
-                        ? "text-brand-pink"
-                        : "text-gray-400 group-hover:text-white"
-                    }`}
-                  >
-                    {link.name}
-                  </span>
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`relative group text-sm font-medium transition-colors duration-300 ${
+                    isActive ? "text-brand-pink" : "text-gray-400 hover:text-white"
+                  }`}
+                >
+                  {link.name}
                   <span
                     className={`absolute -bottom-1 left-0 h-[2px] bg-brand-blue transition-all duration-300 ${
                       isActive ? "w-full" : "w-0 group-hover:w-full"
@@ -107,10 +133,10 @@ export default function Navbar() {
             })}
 
             <Link
-              to="/contact"
+              to="/contacto"
               className="ml-4 px-6 py-2.5  bg-gradient-to-l from-brand-blue to-slate-700 hover:from-slate-700 hover:to-slate-900 rounded-lg text-white text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow-md"
             >
-              Contact
+              Contacto
             </Link>
           </div>
 
@@ -161,45 +187,33 @@ export default function Navbar() {
         >
           <div className="space-y-8 text-center">
             {links.map((link, idx) => {
-              const isActive = location.pathname === link.path;
-
-              if (link.name === "Products & Services") {
+              if (link.dropdown) {
                 return (
-                  <div key={link.path} className="space-y-2">
+                  <div key={link.name} className="space-y-2">
                     <span className="block text-2xl font-semibold text-gray-400">
                       {link.name}
                     </span>
-                    <Link
-                      to="/products"
-                      onClick={() => setOpen(false)}
-                      className="block ml-4 text-xl text-gray-300 hover:text-white transition-all py-2"
-                    >
-                      Productos
-                    </Link>
-                    <Link
-                      to="/services"
-                      onClick={() => setOpen(false)}
-                      className="block ml-4 text-xl text-gray-300 hover:text-white transition-all py-2"
-                    >
-                      Servicios
-                    </Link>
+                    {link.dropdown.map((item) => (
+                      <Link
+                        key={item.name}
+                        to={item.path}
+                        onClick={() => setOpen(false)}
+                        className="block ml-4 text-xl text-gray-300 hover:text-white transition-all py-2"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
                   </div>
                 );
               }
 
               return (
                 <Link
-                  key={link.path}
+                  key={link.name}
                   to={link.path}
                   onClick={() => setOpen(false)}
-                  className={`block text-2xl font-semibold transition-all duration-300 ${
-                    isActive
-                      ? "text-cyan-400 scale-110"
-                      : "text-gray-400 hover:text-white hover:scale-105"
-                  }`}
-                  style={{
-                    transitionDelay: open ? `${idx * 50}ms` : "0ms",
-                  }}
+                  className="block text-2xl font-semibold text-gray-400 hover:text-white transition-all py-2"
+                  style={{ transitionDelay: open ? `${idx * 50}ms` : "0ms" }}
                 >
                   {link.name}
                 </Link>
@@ -208,11 +222,11 @@ export default function Navbar() {
 
             <div className="pt-8">
               <Link
-                to="/contact"
+                to="/contacto"
                 onClick={() => setOpen(false)}
                 className="inline-block px-10 py-4 bg-gradient-to-r from-brand-blue to-slate-700 text-white text-lg font-bold rounded-lg hover:from-brand-pink hover:to-slate-700 transition-all duration-300 shadow-2xl shadow-cyan-500/30"
               >
-                Contact Us
+                Contacto
               </Link>
             </div>
           </div>

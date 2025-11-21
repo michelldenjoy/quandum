@@ -1,24 +1,39 @@
-// src/MainRoutes.jsx
 import React, { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import LogoSpinner from "./components/LogoSpinner"; // Asegúrate de que la ruta sea correcta
+import LogoSpinner from "./components/LogoSpinner";
 
-// 🔴 1. Define las rutas usando la carga perezosa (lazy)
-// Esto divide el código de cada página en un 'chunk' separado.
+// 🔴 Carga perezosa (lazy) para cada página
 const Home = lazy(() => import("./pages/Home"));
-const About = lazy(() => import("./pages/About"));
-const Products = lazy(() => import("./pages/Products"));
-const Services = lazy(() => import("./pages/Services"));
-const Certifications = lazy(() => import("./pages/Certifications"));
-const Careers = lazy(() => import("./pages/Careers"));
-const Sustainability = lazy(() => import("./pages/Sustainability"));
-const News = lazy(() => import("./pages/News"));
-const Contact = lazy(() => import("./pages/Contact"));
+
+// Empresa
+const About = lazy(() => import("./pages/Empresa/About"));
+const Infraestructuras = lazy(() => import("./pages/Empresa/Infraestructuras"));
+const Historia = lazy(() => import("./pages/Empresa/Historia"));
+
+// Servicios
+const Hardware = lazy(() => import("./pages/Servicios/Hardware"));
+const Software = lazy(() => import("./pages/Servicios/Software"));
+const Mecanica = lazy(() => import("./pages/Servicios/Mecanica"));
+
+// Proyectos
+const ProyectosDestacados = lazy(() => import("./pages/Proyectos/ProyectosDestacados"));
+
+// Sobre Quandum
+const Calidad = lazy(() => import("./pages/SobreQuandum/Calidad"));
+const Certificaciones = lazy(() => import("./pages/SobreQuandum/Certificaciones"));
+const CodigoEtico = lazy(() => import("./pages/SobreQuandum/CodigoEtico"));
+const EntornoResponsable = lazy(() => import("./pages/SobreQuandum/EntornoResponsable"));
+const Oasis = lazy(() => import("./pages/SobreQuandum/Oasis"));
+const Ncage = lazy(() => import("./pages/SobreQuandum/Ncage"));
+const Reach = lazy(() => import("./pages/SobreQuandum/Reach"));
+
+// Otras
+const Prensa = lazy(() => import("./pages/Prensa"));
+const TrabajaConNosotros = lazy(() => import("./pages/TrabajaConNosotros"));
+const Contacto = lazy(() => import("./pages/Contacto"));
 
 export default function MainRoutes() {
   return (
-    // 🔴 2. Envuelve las rutas con Suspense
-    // 'fallback' define lo que se muestra mientras se carga el componente perezoso.
     <Suspense
       fallback={
         <div className="flex justify-center items-center min-h-[50vh]">
@@ -28,14 +43,33 @@ export default function MainRoutes() {
     >
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/certifications" element={<Certifications />} />
-        <Route path="/careers" element={<Careers />} />
-        <Route path="/sustainability" element={<Sustainability />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/contact" element={<Contact />} />
+
+        {/* Empresa */}
+        <Route path="/empresa/about" element={<About />} />
+        <Route path="/empresa/infraestructuras" element={<Infraestructuras />} />
+        <Route path="/empresa/historia" element={<Historia />} />
+
+        {/* Servicios */}
+        <Route path="/servicios/hardware" element={<Hardware />} />
+        <Route path="/servicios/software" element={<Software />} />
+        <Route path="/servicios/mecanica" element={<Mecanica />} />
+
+        {/* Proyectos */}
+        <Route path="/proyectos/destacados" element={<ProyectosDestacados />} />
+
+        {/* Sobre Quandum */}
+        <Route path="/sobre-quandum/calidad" element={<Calidad />} />
+        <Route path="/sobre-quandum/certificaciones" element={<Certificaciones />} />
+        <Route path="/sobre-quandum/codigo-etico" element={<CodigoEtico />} />
+        <Route path="/sobre-quandum/entorno-responsable" element={<EntornoResponsable />} />
+        <Route path="/sobre-quandum/oasis" element={<Oasis />} />
+        <Route path="/sobre-quandum/ncage" element={<Ncage />} />
+        <Route path="/sobre-quandum/reach" element={<Reach />} />
+
+        {/* Otras */}
+        <Route path="/prensa" element={<Prensa />} />
+        <Route path="/trabaja-con-nosotros" element={<TrabajaConNosotros />} />
+        <Route path="/contacto" element={<Contacto />} />
       </Routes>
     </Suspense>
   );

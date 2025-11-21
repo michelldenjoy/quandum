@@ -10,7 +10,7 @@ export default function StarfieldNebula() {
 
     // ESCENA
     const scene = new THREE.Scene();
-    scene.fog = new THREE.Fog(0x000000, 400, 2000);
+    scene.fog = new THREE.Fog(0x000000, 200, 1900);
 
     // CÁMARA
     const camera = new THREE.PerspectiveCamera(

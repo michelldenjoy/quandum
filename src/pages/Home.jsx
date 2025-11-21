@@ -1,10 +1,11 @@
-
+import QuandumParticles from "../components/3d/QuandumParticles";
+import Certificaciones from "../pages/SobreQuandum/Certificaciones";
 
 export default function Home() {
   return (
-    <section className="relative w-full h-screen bg-black">
-    
-
+    <section>
+      <QuandumParticles />
+      <Certificaciones />
     </section>
   );
 }
