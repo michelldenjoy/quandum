@@ -14,7 +14,8 @@ export default function Certificaciones() {
       code: "01 117 125 200",
       entity: "TÜV Rheinland",
       year: "Rev. 2024",
-      description: "Sistema de gestión de calidad específico para la industria aeroespacial, espacio y defensa",
+      description:
+        "Sistema de gestión de calidad específico para la industria aeroespacial, espacio y defensa",
       pdfUrl: "/certificados/EN9100_2024.pdf",
       imageUrl: "/certificados/EN9100_cert.jpg",
     },
@@ -47,43 +48,42 @@ export default function Certificaciones() {
         />
       </div>
 
-      {/* Contenido principal */}
-      <div className="relative z-50 min-h-screen w-full">
-        {/* Header fijo */}
-
-        {/* Espacio para que no tape el header */}
-        <div className="pt-20 sm:pt-24 md:pt-28" />
-
-        {/* HERO FULL SCREEN */}
-        <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8 -mt-20 sm:-mt-32 md:-mt-40">
+      {/* lo espacios que dieron por saco --> sm:-mt-4 md:-mt-8 lg:-mt-9 xl:-mt-12 */}
+      <div>
+        <section className="min-h-screen flex items-center justify-center px-4 sm:-mt-3 md:-mt-5 lg:-mt-7 xl:-mt-10">
           <motion.div
             initial={{ opacity: 0, y: 140 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 2.4, 
+            transition={{
+              duration: 2.4,
               delay: 1.6,
-              ease: [0.22, 1, 0.36, 1]
+              ease: [0.22, 1, 0.36, 1],
             }}
             className="text-center max-w-5xl w-full"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tighter text-white leading-none px-2">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter text-white leading-none px-2">
               CERTIFICADOS
               <br />
-              <span className="text-zinc-400 text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl">AEROESPACIAL</span>
+              <span className="text-zinc-400 text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+                AEROESPACIAL
+              </span>
             </h1>
+
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 1.8, delay: 3.4 }}
-              className="h-px w-48 sm:w-72 md:w-96 bg-gradient-to-r from-transparent via-zinc-600 to-transparent mx-auto my-8 sm:my-12 origin-left"
+              className="h-px w-48 sm:w-72 md:w-80 lg:w-96 bg-gradient-to-r from-transparent via-zinc-600 to-transparent mx-auto my-12 sm:my-16 md:my-20 lg:my-28 xl:my-36 origin-left"
             />
+
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 3.8, duration: 2 }}
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-400 font-light leading-relaxed px-4 sm:px-6"
+              className="text-base sm:text-xl md:text-2xl lg:text-3xl text-zinc-400 font-light leading-relaxed px-4 sm:px-6"
             >
-              Certificados bajo los estándares más exigentes de la industria aeroespacial, defensa y espacio
+              Certificados bajo los estándares más exigentes de la industria
+              aeroespacial, defensa y espacio
             </motion.p>
           </motion.div>
         </section>
@@ -126,15 +126,117 @@ export default function Certificaciones() {
                       <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-zinc-900/80 border border-zinc-700 rounded-full text-zinc-300">
                         {cert.entity}
                       </span>
-                      <span className="text-zinc-400">Válida hasta {cert.year}</span>
+                      <span className="text-zinc-400">
+                        Válida hasta {cert.year}
+                      </span>
                     </div>
                     <div className="mt-8 sm:mt-10 flex items-center gap-3 sm:gap-4 text-zinc-400 group-hover:text-white transition-all">
-                      <span className="text-xs sm:text-sm tracking-wider font-medium">VER CERTIFICADO</span>
+                      <span className="text-xs sm:text-sm tracking-wider font-medium">
+                        VER CERTIFICADO
+                      </span>
                       <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
                   </div>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* INFORMACIÓN CORPORATIVA Y REGISTROS INTERNACIONALES */}
+        <section className="py-20 sm:py-24 md:py-32 px-6 sm:px-10 md:px-16 bg-black/40 backdrop-blur-xl border-y border-zinc-800/50">
+          <div className="max-w-6xl mx-auto">
+            <motion.h2
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white text-center mb-14"
+            >
+              COMPROMISO Y GARANTÍAS INTERNACIONALES
+            </motion.h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {/* OASIS / IAQG */}
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-black/60 border border-zinc-800 rounded-2xl p-8 backdrop-blur-xl"
+              >
+                <h3 className="text-2xl sm:text-3xl font-black text-white mb-4">
+                  Miembro oficial OASIS – IAQG
+                </h3>
+                <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
+                  Quandum forma parte del sistema{" "}
+                  <strong>
+                    OASIS (Online Aerospace Supplier Information System)
+                  </strong>
+                  , gestionado por la organización internacional{" "}
+                  <strong>IAQG</strong>, que reúne a los principales fabricantes
+                  y proveedores aeroespaciales del mundo.
+                  <br />
+                  <br />
+                  IAQG establece los requisitos comunes para garantizar la
+                  calidad y seguridad en toda la cadena de suministro
+                  aeroespacial. La presencia de Quandum en este sistema
+                  demuestra cumplimiento, transparencia y validación
+                  internacional.
+                </p>
+
+                <div className="mt-6 text-zinc-300 font-mono text-sm sm:text-base">
+                  <span className="font-bold">Código OASIS:</span> 6130438025
+                </div>
+              </motion.div>
+
+              {/* NATO / NCAGE */}
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-black/60 border border-zinc-800 rounded-2xl p-8 backdrop-blur-xl"
+              >
+                <h3 className="text-2xl sm:text-3xl font-black text-white mb-4">
+                  Suministrador oficial de la OTAN
+                </h3>
+                <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
+                  Quandum está registrado como proveedor autorizado de la OTAN,
+                  cumpliendo con los estrictos requisitos de calidad,
+                  trazabilidad, seguridad y control necesarios para la industria
+                  militar y aeronáutica.
+                  <br />
+                  <br />
+                  Este registro aprueba formalmente a Quandum como suministrador
+                  cualificado para organismos y empresas vinculadas a defensa.
+                </p>
+
+                <div className="mt-6 text-zinc-300 font-mono text-sm sm:text-base">
+                  <span className="font-bold">Código NCAGE:</span> 9359B
+                </div>
+              </motion.div>
+
+              {/* REACH */}
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="md:col-span-2 bg-black/60 border border-zinc-800 rounded-2xl p-8 backdrop-blur-xl"
+              >
+                <h3 className="text-2xl sm:text-3xl font-black text-white mb-4">
+                  Compromiso ambiental – Normativa REACH
+                </h3>
+                <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
+                  En el marco de la sostenibilidad y la responsabilidad
+                  ambiental, Quandum garantiza que todos los materiales
+                  utilizados en sus procesos cumplen con la normativa{" "}
+                  <strong>REACH</strong> de la Unión Europea.
+                  <br />
+                  <br />
+                  REACH regula sustancias químicas potencialmente peligrosas,
+                  asegurando que los componentes empleados en aplicaciones
+                  aeroespaciales sean seguros, trazables y respetuosos con el
+                  entorno.
+                </p>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -169,8 +271,8 @@ export default function Certificaciones() {
             className="relative max-w-4xl w-full my-8"
             onClick={(e) => e.stopPropagation()}
           >
-            <button 
-              onClick={() => setSelectedCert(null)} 
+            <button
+              onClick={() => setSelectedCert(null)}
               className="absolute -top-10 sm:-top-12 right-0 text-white hover:text-zinc-400 transition-colors z-10"
             >
               <X className="w-8 h-8 sm:w-10 sm:h-10" />
@@ -185,16 +287,16 @@ export default function Certificaciones() {
                 </p>
               </div>
               <div className="p-4 sm:p-6 md:p-8 bg-black">
-                <img 
-                  src={currentCert.imageUrl} 
-                  alt={currentCert.name} 
-                  className="w-full h-auto rounded-lg sm:rounded-xl shadow-2xl border border-zinc-800" 
+                <img
+                  src={currentCert.imageUrl}
+                  alt={currentCert.name}
+                  className="w-full h-auto rounded-lg sm:rounded-xl shadow-2xl border border-zinc-800"
                 />
               </div>
               <div className="p-6 sm:p-8 bg-gradient-to-t from-black to-zinc-950 flex justify-center">
-                <a 
-                  href={currentCert.pdfUrl} 
-                  download 
+                <a
+                  href={currentCert.pdfUrl}
+                  download
                   className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-5 bg-white text-black rounded-full font-bold text-base sm:text-lg hover:scale-105 transition"
                 >
                   <Download className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -206,22 +308,24 @@ export default function Certificaciones() {
         </motion.div>
       )}
 
-<header className="w-full px-4 sm:px-6 py-4 sm:py-6 md:py-8 bg-black/30 backdrop-blur-md border-y border-zinc-800/50 mt-20">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4"
-          >
-            <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tighter text-white text-center sm:text-left">
-              QUANDUM
-              <span className="text-zinc-500 text-sm sm:text-base md:text-lg ml-2 tracking-widest">AEROSPACE</span>
-            </div>
-            <div className="block text-zinc-500 text-[10px] sm:text-xs md:text-sm tracking-widest text-center">
-              ENGINEERED FOR MISSION CRITICAL
-            </div>
-          </motion.div>
-        </header>
+      <header className="w-full px-4 sm:px-6 py-4 sm:py-6 md:py-8 bg-black/30 backdrop-blur-md border-y border-zinc-800/50 mt-20">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4"
+        >
+          <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tighter text-white text-center sm:text-left">
+            QUANDUM
+            <span className="text-zinc-500 text-sm sm:text-base md:text-lg ml-2 tracking-widest">
+              AEROSPACE
+            </span>
+          </div>
+          <div className="block text-zinc-500 text-[10px] sm:text-xs md:text-sm tracking-widest text-center">
+            ENGINEERED FOR MISSION CRITICAL
+          </div>
+        </motion.div>
+      </header>
     </div>
   );
 }
