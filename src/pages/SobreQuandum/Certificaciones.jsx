@@ -1,6 +1,6 @@
-// Certificaciones.jsx → VERSIÓN FINAL CORREGIDA Y PERFECTA
+// Certificaciones.jsx - Sin scroll horizontal
 import React, { useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "motion/react";
 import { Download, X, ExternalLink } from "lucide-react";
 import QuandumParticles from "../../components/3d/QuandumParticles";
 
@@ -12,8 +12,6 @@ export default function Certificaciones() {
       id: "en9100",
       name: "EN 9100:2018",
       code: "01 117 125 200",
-      entity: "TÜV Rheinland",
-      year: "Rev. 2024",
       description:
         "Sistema de gestión de calidad específico para la industria aeroespacial, espacio y defensa",
       pdfUrl: "/certificados/EN9100_2024.pdf",
@@ -23,8 +21,6 @@ export default function Certificaciones() {
       id: "iso9001",
       name: "ISO 9001:2015",
       code: "01 100 125200",
-      entity: "TÜV Rheinland",
-      year: "Rev. 2024",
       description: "Norma internacional de gestión de la calidad",
       pdfUrl: "/certificados/ISO9001_2024.pdf",
       imageUrl: "/certificados/ISO9001_cert.jpg",
@@ -37,7 +33,7 @@ export default function Certificaciones() {
 
   return (
     <div className="w-full overflow-x-hidden">
-      {/* Partículas de fondo */}
+      {/* Partículas */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
         <QuandumParticles
           imgUrl="/quandumletras.png"
@@ -48,23 +44,23 @@ export default function Certificaciones() {
         />
       </div>
 
-      {/* lo espacios que dieron por saco --> sm:-mt-4 md:-mt-8 lg:-mt-9 xl:-mt-12 */}
-      <div>
-        <section className="min-h-screen flex items-center justify-center px-4 sm:-mt-3 md:-mt-5 lg:-mt-7 xl:-mt-10">
+      {/* hero principal */}
+      <div className="w-full max-w-[100vw] overflow-hidden">
+        <section className="flex flex-col items-center justify-center min-h-[500px] relative z-10 px-4">
           <motion.div
             initial={{ opacity: 0, y: 140 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               duration: 2.4,
-              delay: 1.6,
+              delay: 1.0,
               ease: [0.22, 1, 0.36, 1],
             }}
             className="text-center max-w-5xl w-full"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter text-white leading-none px-2">
+            <h1 className="text-4xl md:text-6xl lg:text-6xl xl:text-7xl md:py-6 font-black tracking-tighter text-white leading-none">
               CERTIFICADOS
               <br />
-              <span className="text-zinc-400 text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+              <span className="text-zinc-400 text-3xl md:text-5xl lg:text-5xl xl:text-6xl">
                 AEROESPACIAL
               </span>
             </h1>
@@ -73,14 +69,14 @@ export default function Certificaciones() {
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 1.8, delay: 3.4 }}
-              className="h-px w-48 sm:w-72 md:w-80 lg:w-96 bg-gradient-to-r from-transparent via-zinc-600 to-transparent mx-auto my-12 sm:my-16 md:my-20 lg:my-28 xl:my-36 origin-left"
+              className="h-px w-48 sm:w-72 md:w-80 lg:w-96 max-w-full bg-gradient-to-r from-transparent via-zinc-600 to-transparent mx-auto origin-left"
             />
 
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 3.8, duration: 2 }}
-              className="text-base sm:text-xl md:text-2xl lg:text-3xl text-zinc-400 font-light leading-relaxed px-4 sm:px-6"
+              transition={{ delay: 3.0, duration: 2 }}
+              className="text-base px-4 sm:text-xl md:text-4xl lg:text-3xl text-zinc-400 font-light leading-relaxed"
             >
               Certificados bajo los estándares más exigentes de la industria
               aeroespacial, defensa y espacio
@@ -89,13 +85,13 @@ export default function Certificaciones() {
         </section>
 
         {/* CERTIFICACIONES */}
-        <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8">
+        <section className="py-12 sm:py-10 md:py-28 px-4 sm:px-6 md:px-8">
           <div className="max-w-7xl mx-auto w-full">
             <motion.h2
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-center text-white mb-12 sm:mb-16 md:mb-20 px-2"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-center text-white mb-12 sm:mb-16 md:mb-20 px-2"
             >
               CERTIFICACIONES OFICIALES
             </motion.h2>
@@ -116,20 +112,13 @@ export default function Certificaciones() {
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-3 sm:mb-4 break-words">
                       {cert.name}
                     </h3>
-                    <p className="text-zinc-400 font-mono text-sm sm:text-base md:text-lg mb-4 sm:mb-6 break-all">
+                    <p className="text-zinc-400 font-mono text-sm sm:text-base md:text-lg mb-4 sm:mb-6 break-words">
                       Código: {cert.code}
                     </p>
                     <p className="text-zinc-300 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
                       {cert.description}
                     </p>
-                    <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm">
-                      <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-zinc-900/80 border border-zinc-700 rounded-full text-zinc-300">
-                        {cert.entity}
-                      </span>
-                      <span className="text-zinc-400">
-                        Válida hasta {cert.year}
-                      </span>
-                    </div>
+
                     <div className="mt-8 sm:mt-10 flex items-center gap-3 sm:gap-4 text-zinc-400 group-hover:text-white transition-all">
                       <span className="text-xs sm:text-sm tracking-wider font-medium">
                         VER CERTIFICADO
@@ -242,7 +231,7 @@ export default function Certificaciones() {
         </section>
 
         {/* Footer */}
-        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8">
+        <section className="py-16 sm:py-28 md:py-32 px-4 sm:px-6 md:px-8">
           <div className="max-w-6xl mx-auto text-center w-full">
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-white mb-8 sm:mb-12 px-2 leading-tight">
               EXCELENCIA CERTIFICADA
@@ -257,7 +246,7 @@ export default function Certificaciones() {
         </section>
       </div>
 
-      {/* Modal */}
+      {/* Modal de certificados */}
       {currentCert && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -282,7 +271,7 @@ export default function Certificaciones() {
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white break-words">
                   {currentCert.name}
                 </h3>
-                <p className="text-zinc-400 mt-2 text-sm sm:text-base break-all">
+                <p className="text-zinc-400 mt-2 text-sm sm:text-base break-words">
                   Código: {currentCert.code}
                 </p>
               </div>
@@ -308,24 +297,22 @@ export default function Certificaciones() {
         </motion.div>
       )}
 
-      <header className="w-full px-4 sm:px-6 py-4 sm:py-6 md:py-8 bg-black/30 backdrop-blur-md border-y border-zinc-800/50 mt-20">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4"
-        >
-          <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tighter text-white text-center sm:text-left">
-            QUANDUM
-            <span className="text-zinc-500 text-sm sm:text-base md:text-lg ml-2 tracking-widest">
-              AEROSPACE
-            </span>
+      {/* minifooter */}
+      <motion.div
+        initial={{ y: 100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
+        className="fixed bottom-0 left-0 right-0 z-50 px-6 py-5 bg-black/80 backdrop-blur-2xl border-t border-zinc-800/70"
+      >
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-center">
+          <div className="text-2xl md:text-3xl font-black tracking-tighter text-white">
+            QUANDUM<span className="text-zinc-500 ml-2">AEROSPACE</span>
           </div>
-          <div className="block text-zinc-500 text-[10px] sm:text-xs md:text-sm tracking-widest text-center">
-            ENGINEERED FOR MISSION CRITICAL
+          <div className="text-zinc-500 text-xs md:text-sm tracking-widest uppercase">
+            Engineered for mission critical
           </div>
-        </motion.div>
-      </header>
+        </div>
+      </motion.div>
     </div>
   );
 }

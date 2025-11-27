@@ -10,9 +10,7 @@ const BREAKPOINTS = {
   xl: 1280,
 };
 
-
 const useResponsiveConfig = () => {
-  
   const getConfig = useCallback(() => {
     const w = typeof window !== "undefined" ? window.innerWidth : 1024;
     const h = typeof window !== "undefined" ? window.innerHeight : 768;
@@ -24,15 +22,35 @@ const useResponsiveConfig = () => {
 
     let baseConfig;
     if (w < BREAKPOINTS.sm) {
-      baseConfig = { particleCount: 2500, particleSize: 1.8, scaleMultiplier: 0.55 };
+      baseConfig = {
+        particleCount: 2500,
+        particleSize: 1.8,
+        scaleMultiplier: 0.55,
+      };
     } else if (w < BREAKPOINTS.md) {
-      baseConfig = { particleCount: 3500, particleSize: 2.0, scaleMultiplier: 0.60 };
+      baseConfig = {
+        particleCount: 3500,
+        particleSize: 2.0,
+        scaleMultiplier: 0.6,
+      };
     } else if (w < BREAKPOINTS.lg) {
-      baseConfig = { particleCount: 5000, particleSize: 2.0, scaleMultiplier: 0.50 };
+      baseConfig = {
+        particleCount: 5000,
+        particleSize: 2.0,
+        scaleMultiplier: 0.5,
+      };
     } else if (w < BREAKPOINTS.xl) {
-      baseConfig = { particleCount: 6000, particleSize: 2.1, scaleMultiplier: 0.55 };
+      baseConfig = {
+        particleCount: 6000,
+        particleSize: 2.1,
+        scaleMultiplier: 0.55,
+      };
     } else {
-      baseConfig = { particleCount: 7500, particleSize: 2.2, scaleMultiplier: 0.70 };
+      baseConfig = {
+        particleCount: 7500,
+        particleSize: 2.2,
+        scaleMultiplier: 0.7,
+      };
     }
 
     return {
@@ -41,9 +59,8 @@ const useResponsiveConfig = () => {
       aspectRatio,
       isSquarish,
     };
-  }, []); 
+  }, []);
 
-  
   const [config, setConfig] = useState(getConfig);
 
   useEffect(() => {
@@ -57,7 +74,7 @@ const useResponsiveConfig = () => {
       window.removeEventListener("resize", handleResize);
       clearTimeout(timeout);
     };
-  }, [getConfig]); 
+  }, [getConfig]);
 
   return config;
 };
@@ -73,9 +90,10 @@ export default function QuandumParticles({
   const rafRef = useRef(null);
   const scrollYRef = useRef(0);
   const cameraRef = useRef(null);
-  const { particleCount, particleSize, scaleMultiplier } = useResponsiveConfig();
+  const { particleCount, particleSize, scaleMultiplier } =
+    useResponsiveConfig();
 
-  // Parallax 
+  // Parallax
   useEffect(() => {
     if (!enableParallax) return;
 
@@ -135,10 +153,20 @@ export default function QuandumParticles({
           canvas.height = Math.floor(img.height * scale);
           const ctx = canvas.getContext("2d");
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-          const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+          const imgData = ctx.getImageData(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+          ).data;
 
           const points = [];
-          const step = Math.max(1, Math.floor(Math.sqrt((canvas.width * canvas.height) / particleCount)));
+          const step = Math.max(
+            1,
+            Math.floor(
+              Math.sqrt((canvas.width * canvas.height) / particleCount)
+            )
+          );
 
           for (let y = 0; y < canvas.height; y += step) {
             for (let x = 0; x < canvas.width; x += step) {
@@ -151,13 +179,39 @@ export default function QuandumParticles({
 
               if (a > 128 && brightness > 60) {
                 const nx = x - canvas.width / 2;
-                const ny = -(y - canvas.height / 2);
+                let verticalOffset;
+
+                const w = window.innerWidth;
+
+                // Móviles — lo subimos (números negativos = más arriba)
+                if (w < 640) {
+                  // sm
+                  verticalOffset = -60;
+                }
+                // Tablets pequeñas — un poco menos arriba
+                else if (w < 768) {
+                  // md
+                  verticalOffset = -40;
+                }
+                // Laptops — centrado o ligeramente abajo
+                else if (w < 1024) {
+                  // lg
+                  verticalOffset = 50;
+                }
+                // Desktop grande — más abajo, header protagonista
+                else {
+                  verticalOffset = 150;
+                }
+
+                const ny = -(y - canvas.height / 2 + verticalOffset);
                 const scaleToScene =
-                  Math.min(window.innerWidth, window.innerHeight) /
-                  Math.max(canvas.width, canvas.height) *
+                  (Math.min(window.innerWidth, window.innerHeight) /
+                    Math.max(canvas.width, canvas.height)) *
                   scaleMultiplier;
 
-                points.push(new THREE.Vector3(nx * scaleToScene, ny * scaleToScene, 0));
+                points.push(
+                  new THREE.Vector3(nx * scaleToScene, ny * scaleToScene, 0)
+                );
               }
             }
           }
@@ -169,10 +223,11 @@ export default function QuandumParticles({
       });
 
     const createParticles = (targetPoints) => {
-      
       const targets = targetPoints.slice();
       while (targets.length < particleCount) {
-        targets.push(targetPoints[targets.length % targetPoints.length].clone());
+        targets.push(
+          targetPoints[targets.length % targetPoints.length].clone()
+        );
       }
 
       const used = [];
@@ -208,7 +263,10 @@ export default function QuandumParticles({
         targetPositions[i] = used[i];
       }
 
-      particlesGeo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+      particlesGeo.setAttribute(
+        "position",
+        new THREE.BufferAttribute(positions, 3)
+      );
       particlesGeo.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
       particlesMat = new THREE.PointsMaterial({
@@ -245,9 +303,14 @@ export default function QuandumParticles({
 
         for (let i = 0; i < particleCount; i++) {
           const si = i * 3;
-          pos[si] = startPositions[si] + (targetArray[si] - startPositions[si]) * ease;
-          pos[si + 1] = startPositions[si + 1] + (targetArray[si + 1] - startPositions[si + 1]) * ease;
-          pos[si + 2] = startPositions[si + 2] + (targetArray[si + 2] - startPositions[si + 2]) * ease;
+          pos[si] =
+            startPositions[si] + (targetArray[si] - startPositions[si]) * ease;
+          pos[si + 1] =
+            startPositions[si + 1] +
+            (targetArray[si + 1] - startPositions[si + 1]) * ease;
+          pos[si + 2] =
+            startPositions[si + 2] +
+            (targetArray[si + 2] - startPositions[si + 2]) * ease;
         }
         particlesGeo.attributes.position.needsUpdate = true;
 

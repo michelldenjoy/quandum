@@ -79,13 +79,13 @@ export default function Navbar() {
           name: "Entorno Responsable",
           path: "/sobre-quandum/entorno-responsable",
         },
-        { name: "Oasis", path: "/sobre-quandum/oasis" },
-        { name: "Ncage", path: "/sobre-quandum/ncage" },
-        { name: "Reach", path: "/sobre-quandum/reach" },
+        // { name: "Oasis", path: "/sobre-quandum/oasis" },
+        // { name: "Ncage", path: "/sobre-quandum/ncage" },
+        // { name: "Reach", path: "/sobre-quandum/reach" },
       ],
     },
     { name: "Prensa", path: "/prensa" },
-    { name: "Trabaja Con Nosotros", path: "/trabaja-con-nosotros" },
+    { name: "Trabaja Con nosotros", path: "/trabaja-con-nosotros" },
   ];
 
   return (
