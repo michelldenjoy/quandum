@@ -231,7 +231,7 @@ export default function Certificaciones() {
         </section>
 
         {/* Footer */}
-        <section className="py-16 sm:py-28 md:py-32 px-4 sm:px-6 md:px-8">
+        <section className="pb-28 sm:pb-32 md:pb-40 lg:pb-44 xl:pb-48 pt-16 sm:pt-28 md:pt-32 px-4 sm:px-6 md:px-8">
           <div className="max-w-6xl mx-auto text-center w-full">
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-white mb-8 sm:mb-12 px-2 leading-tight">
               EXCELENCIA CERTIFICADA
@@ -302,7 +302,7 @@ export default function Certificaciones() {
         initial={{ y: 100 }}
         animate={{ y: 0 }}
         transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
-        className="fixed bottom-0 left-0 right-0 z-50 px-6 py-5 bg-black/80 backdrop-blur-2xl border-t border-zinc-800/70"
+        className="fixed bottom-0 left-0 right-0 z-50 px-6 py-2 bg-black/80 backdrop-blur-2xl border-t border-zinc-800/70"
       >
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-center">
           <div className="text-2xl md:text-3xl font-black tracking-tighter text-white">
