@@ -85,7 +85,7 @@ export default function Certificaciones() {
         </section> */}
 
         {/* CERTIFICACIONES */}
-        <section className="mt-40 sm:mt-44 md:mt-72 lg:mt-52 xl:mt-60 py-12 sm:py-10 md:py-28 px-4 sm:px-6 md:px-8">
+        <section className="mt-72 sm:mt-44 md:mt-72 lg:mt-62 xl:mt-60 py-12 sm:py-10 md:py-28 px-4 sm:px-6 md:px-8">
           <div className="max-w-7xl mx-auto w-full">
             <motion.h2
               initial={{ opacity: 0, y: 60 }}
