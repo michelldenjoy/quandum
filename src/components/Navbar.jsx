@@ -73,10 +73,10 @@ export default function Navbar() {
               className="w-12 h-12 object-contain drop-shadow-lg mr-3"
             />
             <div className="flex flex-col leading-none">
-              <span className="text-3xl font-bold text-white group-hover:text-blue-400 transition-colors">
+              <span className="text-3xl font-bold text-white group-hover:text-brand-blue transition-colors">
                 QUANDUM
               </span>
-              <span className="text-xs uppercase tracking-widest text-rose-400 group-hover:text-white transition-colors">
+              <span className="text-xs uppercase tracking-widest text-brand-pink group-hover:text-white transition-colors">
                 Aerospace
               </span>
             </div>
@@ -157,7 +157,7 @@ export default function Navbar() {
 
             <Link
               to="/contacto"
-              className="ml-4 xl:ml-8 px-6 xl:px-8 py-3 xl:py-3.5 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 rounded-full text-white font-semibold text-sm xl:text-base transition-all duration-300 shadow-lg hover:shadow-blue-500/30 hover:scale-105"
+              className="ml-4 xl:ml-8 px-6 xl:px-8 py-3 xl:py-3.5  hover:from-blue-500 hover:to-blue-400 rounded-full text-white font-semibold text-sm xl:text-base transition-all duration-300 shadow-lg hover:shadow-blue-500/30 hover:scale-105"
             >
               Contacto
             </Link>
@@ -257,7 +257,7 @@ export default function Navbar() {
               <Link
                 to="/contacto"
                 onClick={() => setOpen(false)}
-                className="block w-full text-center py-5 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full text-white text-lg sm:text-xl font-bold shadow-2xl hover:from-blue-500 hover:to-blue-400 transition-all"
+                className="block w-full text-center py-5  rounded-full text-white text-lg sm:text-xl font-bold shadow-2xl hover:from-blue-500 hover:to-blue-400 transition-all"
               >
                 Contacto
               </Link>
