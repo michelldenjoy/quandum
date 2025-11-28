@@ -168,6 +168,55 @@ export default function QuandumParticles({
             )
           );
 
+          const w = window.innerWidth;
+          const h = window.innerHeight;
+          const aspectRatio = w / h;
+
+          // Determinar ajustes específicos por dispositivo
+          let verticalOffset;
+          let sizeMultiplier = 1;
+
+          // Asus ZenBook Fold específico (853x1280) - Debe verse perfecto
+          if (w >= 850 && w <= 860 && h >= 1270 && h <= 1290) {
+            verticalOffset = -h * 0.3;
+            sizeMultiplier = 1.0; // Tamaño original, no agrandar
+          }
+          // Nest Hub y dispositivos anchos similares (1024x600, 1280x800)
+          else if (w >= 1024 && aspectRatio > 1.6) {
+            verticalOffset = -h * 0.3;
+            sizeMultiplier = 1.4; // Partículas más grandes
+          }
+          // iPad Mini específico (768x1024) - Más abajo y más grande
+          else if (w >= 760 && w <= 775 && h >= 1020 && h <= 1030) {
+            verticalOffset = -h * 0.40;
+            sizeMultiplier = 1.3;
+          }
+          // Tablets verticales en general (no ZenBook Fold ni iPad Mini)
+          else if (w >= 768 && w < 900 && aspectRatio < 1.0) {
+            verticalOffset = -h * 0.15;
+            sizeMultiplier = 1.2;
+          }
+          // Móviles en general - Mucho más arriba
+          else if (w < 640) {
+            verticalOffset = -h * 0.70; // Muy arriba en móviles
+            sizeMultiplier = 1.0;
+          }
+          // Tablets pequeñas
+          else if (w < 768) {
+            verticalOffset = -h * 0.35;
+            sizeMultiplier = 1.0;
+          }
+          // Laptops normales
+          else if (w < 1024) {
+            verticalOffset = -h * 0.3;
+            sizeMultiplier = 1.0;
+          }
+          // Desktop grande
+          else {
+            verticalOffset = -h * 0.28;
+            sizeMultiplier = 1.0;
+          }
+
           for (let y = 0; y < canvas.height; y += step) {
             for (let x = 0; x < canvas.width; x += step) {
               const i = (y * canvas.width + x) * 4;
@@ -179,35 +228,12 @@ export default function QuandumParticles({
 
               if (a > 128 && brightness > 60) {
                 const nx = x - canvas.width / 2;
-                let verticalOffset;
-
-                const w = window.innerWidth;
-
-                // Móviles — lo subimos (números negativos = más arriba)
-                if (w < 640) {
-                  // sm
-                  verticalOffset = -60;
-                }
-                // Tablets pequeñas — un poco menos arriba
-                else if (w < 768) {
-                  // md
-                  verticalOffset = -40;
-                }
-                // Laptops — centrado o ligeramente abajo
-                else if (w < 1024) {
-                  // lg
-                  verticalOffset = 50;
-                }
-                // Desktop grande — más abajo, header protagonista
-                else {
-                  verticalOffset = 150;
-                }
-
                 const ny = -(y - canvas.height / 2 + verticalOffset);
                 const scaleToScene =
                   (Math.min(window.innerWidth, window.innerHeight) /
                     Math.max(canvas.width, canvas.height)) *
-                  scaleMultiplier;
+                  scaleMultiplier *
+                  sizeMultiplier;
 
                 points.push(
                   new THREE.Vector3(nx * scaleToScene, ny * scaleToScene, 0)

@@ -46,7 +46,7 @@ export default function Certificaciones() {
 
       {/* hero principal */}
       <div className="w-full max-w-[100vw] overflow-hidden">
-        <section className="flex flex-col items-center justify-center min-h-[500px] relative z-10 px-4">
+        {/* <section className="flex flex-col items-center justify-start pt-28 md:pt-32 lg:pt-36 relative z-10 px-4">
           <motion.div
             initial={{ opacity: 0, y: 140 }}
             animate={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ export default function Certificaciones() {
               className="h-px w-48 sm:w-72 md:w-80 lg:w-96 max-w-full bg-gradient-to-r from-transparent via-zinc-600 to-transparent mx-auto origin-left"
             />
 
-            <motion.p
+             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 3.0, duration: 2 }}
@@ -80,12 +80,12 @@ export default function Certificaciones() {
             >
               Certificados bajo los estándares más exigentes de la industria
               aeroespacial, defensa y espacio
-            </motion.p>
+            </motion.p> 
           </motion.div>
-        </section>
+        </section> */}
 
         {/* CERTIFICACIONES */}
-        <section className="py-12 sm:py-10 md:py-28 px-4 sm:px-6 md:px-8">
+        <section className="mt-40 sm:mt-44 md:mt-72 lg:mt-52 xl:mt-60 py-12 sm:py-10 md:py-28 px-4 sm:px-6 md:px-8">
           <div className="max-w-7xl mx-auto w-full">
             <motion.h2
               initial={{ opacity: 0, y: 60 }}
