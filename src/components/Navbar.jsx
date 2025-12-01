@@ -195,7 +195,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu - Desliza de derecha a izquierda */}
+      {/* Mobile Menu */}
       <div
         className={`lg:hidden fixed inset-0 z-40 transition-opacity duration-500 ${
           open ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -241,7 +241,7 @@ export default function Navbar() {
                       </span>
                     </button>
 
-                    {/* Dropdown items con animación */}
+                    {/* Dropdown items */}
                     <div
                       className={`space-y-2 overflow-hidden transition-all duration-300 ${
                         isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
@@ -285,7 +285,7 @@ export default function Navbar() {
               <Link
                 to="/contacto"
                 onClick={() => setOpen(false)}
-                className="block w-full text-center py-4  rounded-full bg-gradient-to-r from-black to-slate-800 text-white text-lg sm:text-xl font-bold shadow-2xl hover:from-blue-500 hover:to-blue-400 transition-all"
+                className="block w-full text-center py-4  rounded-full bg-gradient-to-r from-black to-slate-800 text-white text-lg sm:text-xl font-bold shadow-2xl hover:from-brand-blue hover:to-cyan-500 transition-all"
               >
                 Contacto
               </Link>

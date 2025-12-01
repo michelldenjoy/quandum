@@ -103,10 +103,10 @@ export default function Contacto() {
   ];
 
   return (
-    <div>
+    <div className="relative overflow-hidden">
       <StarfieldNebula />
 
-      {/* <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" /> */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
 
       {/* Ambient glow effects */}
       <div
