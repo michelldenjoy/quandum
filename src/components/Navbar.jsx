@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileDropdowns, setMobileDropdowns] = useState({});
   const location = useLocation();
 
   useEffect(() => {
@@ -14,7 +15,15 @@ export default function Navbar() {
 
   useEffect(() => {
     setOpen(false);
+    setMobileDropdowns({});
   }, [location.pathname]);
+
+  const toggleMobileDropdown = (linkName) => {
+    setMobileDropdowns((prev) => ({
+      ...prev,
+      [linkName]: !prev[linkName],
+    }));
+  };
 
   const links = [
     {
@@ -110,7 +119,7 @@ export default function Navbar() {
                       />
                     </span>
 
-                    {/* Dropdown Arreglado */}
+                    {/* Dropdown */}
                     <div className="absolute top-full left-0 pt-4 pointer-events-none opacity-0 invisible group-hover:pointer-events-auto group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out">
                       <div className="bg-neutral-900/98 backdrop-blur-xl border border-neutral-800/60 rounded-2xl shadow-2xl py-6 px-6 min-w-[280px] whitespace-nowrap">
                         <h3 className="text-base font-bold text-white mb-4 tracking-wide border-b border-neutral-800 pb-3">
@@ -157,7 +166,7 @@ export default function Navbar() {
 
             <Link
               to="/contacto"
-              className="ml-4 xl:ml-8 px-6 xl:px-8 py-3 xl:py-3.5  hover:from-blue-500 hover:to-blue-400 rounded-full text-white font-semibold text-sm xl:text-base transition-all duration-300 shadow-lg hover:shadow-blue-500/30 hover:scale-105"
+              className="ml-4 xl:ml-8 px-6 xl:px-8 py-3 xl:py-3.5 bg-gradient-to-r from-black to-slate-800  rounded-full text-white font-semibold text-sm xl:text-base transition-all duration-300 shadow-lg hover:shadow-blue-300/30 hover:scale-105"
             >
               Contacto
             </Link>
@@ -186,7 +195,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Desliza de derecha a izquierda */}
       <div
         className={`lg:hidden fixed inset-0 z-40 transition-opacity duration-500 ${
           open ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -197,11 +206,11 @@ export default function Navbar() {
           onClick={() => setOpen(false)}
         />
         <div
-          className={`absolute inset-x-0 top-0 pt-24 pb-12 px-6 sm:px-8 bg-neutral-900/98 backdrop-blur-2xl h-screen overflow-y-auto transition-transform duration-700 ${
-            open ? "translate-y-0" : "-translate-y-full"
+          className={`absolute right-0 top-0 h-screen w-full sm:w-96 bg-neutral-900/98 backdrop-blur-2xl overflow-y-auto transition-transform duration-500 ease-out ${
+            open ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="space-y-6">
+          <div className="pt-24 pb-12 px-6 sm:px-8 space-y-6">
             {links.map((link) => {
               const isActive = link.path
                 ? location.pathname === link.path
@@ -210,15 +219,34 @@ export default function Navbar() {
                   );
 
               if (link.dropdown) {
+                const isOpen = mobileDropdowns[link.name];
+
                 return (
                   <div
                     key={link.name}
                     className="border-b border-neutral-800 pb-6"
                   >
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
-                      {link.name}
-                    </h3>
-                    <div className="space-y-2">
+                    {/* Título con botón + */}
+                    <button
+                      onClick={() => toggleMobileDropdown(link.name)}
+                      className="w-full flex items-center justify-between text-xl sm:text-2xl font-bold text-white mb-4 hover:text-blue-400 transition-colors"
+                    >
+                      <span>{link.name}</span>
+                      <span
+                        className={`text-2xl transition-transform duration-300 ${
+                          isOpen ? "rotate-45" : ""
+                        }`}
+                      >
+                        +
+                      </span>
+                    </button>
+
+                    {/* Dropdown items con animación */}
+                    <div
+                      className={`space-y-2 overflow-hidden transition-all duration-300 ${
+                        isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                      }`}
+                    >
                       {link.dropdown.map((item) => (
                         <Link
                           key={item.name}
@@ -243,7 +271,7 @@ export default function Navbar() {
                   key={link.name}
                   to={link.path}
                   onClick={() => setOpen(false)}
-                  className={`block py-4 px-4 rounded-lg text-xl sm:text-2xl font-bold transition-all ${
+                  className={`block py-2 px-4 rounded-lg text-xl sm:text-2xl font-bold transition-all border-b border-neutral-800 pb-6 ${
                     isActive
                       ? "text-rose-400 bg-neutral-800/40"
                       : "text-gray-300 hover:text-white hover:bg-neutral-800/20"
@@ -257,7 +285,7 @@ export default function Navbar() {
               <Link
                 to="/contacto"
                 onClick={() => setOpen(false)}
-                className="block w-full text-center py-5  rounded-full text-white text-lg sm:text-xl font-bold shadow-2xl hover:from-blue-500 hover:to-blue-400 transition-all"
+                className="block w-full text-center py-4  rounded-full bg-gradient-to-r from-black to-slate-800 text-white text-lg sm:text-xl font-bold shadow-2xl hover:from-blue-500 hover:to-blue-400 transition-all"
               >
                 Contacto
               </Link>

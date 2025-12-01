@@ -178,39 +178,51 @@ export default function QuandumParticles({
 
           // Asus ZenBook Fold específico (853x1280) - Debe verse perfecto
           if (w >= 850 && w <= 860 && h >= 1270 && h <= 1290) {
-            verticalOffset = -h * 0.3;
-            sizeMultiplier = 1.0; // Tamaño original, no agrandar
+            verticalOffset = -h * 0.30;
+            sizeMultiplier = 1.0; // Tamaño particulas
           }
-          // Nest Hub y dispositivos anchos similares (1024x600, 1280x800)
-          else if (w >= 1024 && aspectRatio > 1.6) {
-            verticalOffset = -h * 0.3;
-            sizeMultiplier = 1.4; // Partículas más grandes
+          // dispositivos Nest Hub 1024 x 600
+          if (w >= 1024 && w <= 1034 && h >= 600 && h <= 620) {
+            verticalOffset = -h * 0.30;
+            sizeMultiplier = 1.6; // Tamaño particulas
           }
-          // iPad Mini específico (768x1024) - Más abajo y más grande
+
+          // Nest Hub max y dispositivos anchos similares (1280x600, 1280x800)
+          else if (w >= 1280 && w <= 1290 && h >= 800 && h <= 810) {
+            verticalOffset = -h * 0.20;
+            sizeMultiplier = 1.2; // Partículas más grandes
+          }
+
+           if (w >= 820 && w <= 830 && h >= 1170 && h <= 1190) {
+             verticalOffset = -h * 0.30;
+             sizeMultiplier = 1.0; // Dispositivos mas grandes
+           }
+
+          // iPad Mini específico (768x1024) - Más arriba y más grande
           else if (w >= 760 && w <= 775 && h >= 1020 && h <= 1030) {
-            verticalOffset = -h * 0.40;
+            verticalOffset = -h * 0.45; // Cambiado de 0.15 a 0.35 para subirlo
             sizeMultiplier = 1.3;
           }
           // Tablets verticales en general (no ZenBook Fold ni iPad Mini)
-          else if (w >= 768 && w < 900 && aspectRatio < 1.0) {
+          else if (w >= 768 && w < 912 && aspectRatio < 1.0) {
             verticalOffset = -h * 0.15;
-            sizeMultiplier = 1.2;
+            sizeMultiplier = 1.0;
           }
           // Móviles en general - Mucho más arriba
           else if (w < 640) {
-            verticalOffset = -h * 0.70; // Muy arriba en móviles
+            verticalOffset = -h * 0.68; // Muy arriba en móviles
             sizeMultiplier = 1.0;
           }
-          // Tablets pequeñas
-          else if (w < 768) {
-            verticalOffset = -h * 0.35;
-            sizeMultiplier = 1.0;
-          }
+          // // Tablets pequeñas
+          // else if (w < 768) {
+          //   verticalOffset = -h * 0.35;
+          //   sizeMultiplier = 1.0;
+          // }
           // Laptops normales
-          else if (w < 1024) {
-            verticalOffset = -h * 0.3;
-            sizeMultiplier = 1.0;
-          }
+          // else if (w < 1024) {
+          //   verticalOffset = -h * 0.30;
+          //   sizeMultiplier = 1.0;
+          // }
           // Desktop grande
           else {
             verticalOffset = -h * 0.28;

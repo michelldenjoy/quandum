@@ -212,7 +212,7 @@ export default function ContactPage() {
                 </motion.div>
               )}
 
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid-cols-1 lg:grid-cols-2 gap-6">
                 <Input
                   label="Nombre completo *"
                   name="name"
