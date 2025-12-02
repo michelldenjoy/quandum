@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
 export default function Satelite({
-  satelliteCount = 14,
+  satelliteCount = 10,
   orbitRadiusMin = 400,
   orbitRadiusMax = 1200,
 }) {
