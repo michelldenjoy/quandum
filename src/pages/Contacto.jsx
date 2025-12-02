@@ -9,7 +9,7 @@ import {
   Globe,
   Clock,
 } from "lucide-react";
-import StarfieldNebula from "../components/3d/StarfieldNebula";
+import Satelite from "../components/3d/Satelite";
 
 export default function Contacto() {
   const [form, setForm] = useState({
@@ -104,7 +104,7 @@ export default function Contacto() {
 
   return (
     <div className="relative overflow-hidden">
-      <StarfieldNebula />
+      <Satelite />
 
 
 
@@ -353,7 +353,7 @@ export default function Contacto() {
                   <span className="relative">
                     {isSubmitting
                       ? "Enviando mensaje seguro..."
-                      : "Enviar comunicación"}
+                      : "Enviar "}
                   </span>
                 </button>
 
