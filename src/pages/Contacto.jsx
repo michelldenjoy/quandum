@@ -103,7 +103,7 @@ export default function Contacto() {
   ];
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden">
       <StarfieldNebula />
 
       {/* HERO */}
