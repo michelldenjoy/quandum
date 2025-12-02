@@ -103,7 +103,7 @@ export default function Contacto() {
   ];
 
   return (
-    <div className="fixed inset-0 -z-10">
+    <div className="relative min-h-screen ">
       <StarfieldNebula />
 
       {/* HERO */}
