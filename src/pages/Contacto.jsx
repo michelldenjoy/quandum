@@ -9,7 +9,7 @@ import {
   Globe,
   Clock,
 } from "lucide-react";
-import Satelite from "../components/3d/Satelite";
+import StarfieldNebula from "../components/3d/StarfieldNebula";
 
 export default function Contacto() {
   const [form, setForm] = useState({
@@ -104,7 +104,7 @@ export default function Contacto() {
 
   return (
     <div className="relative overflow-hidden">
-      <Satelite />
+      <StarfieldNebula />
 
       {/* HERO */}
       <section className="relative border-b border-slate-800/50">
@@ -154,7 +154,7 @@ export default function Contacto() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* LEFT: Información corporativa */}
-            <div className="space-y-16">
+            <div className="space-y-16 order-2 lg:order-1">
               <div className="animate-slideInLeft">
                 <h2 className="text-4xl font-extralight text-white mb-12 flex items-center gap-3">
                   <div className="w-1 h-8 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full" />
@@ -174,7 +174,7 @@ export default function Contacto() {
                 style={{ animationDelay: "0.2s" }}
               >
                 {/* Glow effect on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
+                <div className="absolute bg-gradient-to-t from-blue-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
 
                 <iframe
                   title="Quandum Aerospace - Málaga"
@@ -187,13 +187,13 @@ export default function Contacto() {
                   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAtxit6HPeuCWgxo0TLb6HnJlxQVVIS9eU&q=Calle+Severo+Ochoa+39%2C+Parque+Tecnol%C3%B3gico+de+Andaluc%C3%ADa%2C+29590+M%C3%A1laga%2C+Espa%C3%B1a&zoom=17&maptype=roadmap&language=es&region=ES"
                 />
 
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent p-8 pointer-events-none z-10">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand-blue via-slate-950/60 to-transparent p-4 pointer-events-none z-10">
                   <div className="flex items-center gap-4">
                     <div className="p-2 bg-blue-500/20 rounded-lg backdrop-blur-sm border border-blue-500/30">
                       <MapPin className="w-5 h-5 text-blue-400 drop-shadow-lg" />
                     </div>
                     <div>
-                      <p className="text-lg font-semibold text-white drop-shadow-lg">
+                      <p className="text-lg  font-semibold text-white drop-shadow-lg">
                         Quandum Aerospace
                       </p>
                       <p className="text-sm text-slate-300 drop-shadow">
@@ -206,10 +206,10 @@ export default function Contacto() {
             </div>
 
             {/* RIGHT: Form */}
-            <div className="relative animate-slideInRight">
-              {/* Glow effect behind form */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-blue-500/20 via-cyan-500/20 to-blue-500/20 rounded-3xl blur-2xl opacity-30" />
 
+            <div className="relative animate-slideInRight order-1 lg:order-2">
+              {/* Glow effect behind form */}
+              <div className="absolute h-[88%] sm:h-[92%] md:h-[95%] lg:h-5/6 inset-1 -top-2 bottom-0 bg-gradient-to-l from-blue-400/80 via-cyan-500/20 to-blue-400/80 rounded-3xl blur-2xl opacity-30" />
               <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-10 space-y-8 shadow-2xl">
                 {submitted && (
                   <div className="p-5 bg-emerald-500/10 border border-emerald-500/30 rounded-xl flex items-center gap-3 text-emerald-300 backdrop-blur-sm animate-scaleIn">
@@ -222,7 +222,10 @@ export default function Contacto() {
                     </p>
                   </div>
                 )}
-
+                <h2 className="text-4xl font-extralight text-white mb-8 flex items-center gap-3">
+                  <div className="w-1 h-8 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full" />
+                  Formulario de Contacto
+                </h2>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   <Input
                     label="Nombre completo *"
@@ -420,7 +423,6 @@ export default function Contacto() {
   );
 }
 
-// Contact Card Component
 // Contact Card Component
 function ContactCard({ item }) {
   return (
