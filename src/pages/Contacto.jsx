@@ -106,8 +106,6 @@ export default function Contacto() {
     <div className="relative overflow-hidden">
       <Satelite />
 
-
-
       {/* HERO */}
       <section className="relative border-b border-slate-800/50">
         <div className="max-w-7xl mx-auto px-6 py-32 relative z-10">
@@ -127,7 +125,7 @@ export default function Contacto() {
                 Conecte con
               </span>
               <span
-                className="block bg-gradient-to-r from-brand-blue via-slate-500 to-sky-700 bg-clip-text text-transparent animate-slideUp"
+                className="block font-medium bg-gradient-to-r from-blue-900 via-slate-300 to-blue-400 bg-clip-text text-transparent animate-slideUp"
                 style={{ animationDelay: "0.5s" }}
               >
                 Quandum{" "}
@@ -351,9 +349,7 @@ export default function Contacto() {
                     }`}
                   />
                   <span className="relative">
-                    {isSubmitting
-                      ? "Enviando mensaje seguro..."
-                      : "Enviar "}
+                    {isSubmitting ? "Enviando mensaje seguro..." : "Enviar "}
                   </span>
                 </button>
 
@@ -425,6 +421,7 @@ export default function Contacto() {
 }
 
 // Contact Card Component
+// Contact Card Component
 function ContactCard({ item }) {
   return (
     <div
@@ -436,17 +433,17 @@ function ContactCard({ item }) {
     >
       <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-      <div className="relative flex gap-5 p-6 bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-2xl hover:border-blue-500/30 transition-all duration-300 group-hover:translate-x-2">
+      <div className="relative flex gap-3 sm:gap-5 p-4 sm:p-6 bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-2xl hover:border-blue-500/30 transition-all duration-300 group-hover:translate-x-2">
         <div className="flex-shrink-0">
-          <div className="p-3 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl border border-blue-500/30 group-hover:border-blue-400/50 transition-colors duration-300">
-            <item.icon className="w-6 h-6 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" />
+          <div className="p-2 sm:p-3 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl border border-blue-500/30 group-hover:border-blue-400/50 transition-colors duration-300">
+            <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" />
           </div>
         </div>
-        <div className="flex-1 min-w-0">
-          <p className="font-medium text-slate-200 mb-2 group-hover:text-white transition-colors duration-300">
+        <div className="flex-1 min-w-0 overflow-hidden">
+          <p className="font-medium text-slate-200 mb-2 text-sm sm:text-base group-hover:text-white transition-colors duration-300">
             {item.title}
           </p>
-          <div className="text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
+          <div className="text-slate-400 leading-relaxed text-xs sm:text-sm group-hover:text-slate-300 transition-colors duration-300 break-words">
             {item.content}
           </div>
         </div>

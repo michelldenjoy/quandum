@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
 export default function Satelite({
-  satelliteCount = 8,
+  satelliteCount = 14,
   orbitRadiusMin = 400,
   orbitRadiusMax = 1200,
 }) {
@@ -40,32 +40,39 @@ export default function Satelite({
 
     // STARS background (lightweight)
     const starsGeo = new THREE.BufferGeometry();
-    const starsCount = 1200;
+    const starsCount = 3000;
     const starVerts = new Float32Array(starsCount * 3);
     for (let i = 0; i < starsCount * 3; i++) {
       starVerts[i] = (Math.random() - 0.5) * 5000;
     }
     starsGeo.setAttribute("position", new THREE.BufferAttribute(starVerts, 3));
-    const starsMat = new THREE.PointsMaterial({ color: 0xffffff, size: 1, opacity: 0.9, transparent: true });
+    const starsMat = new THREE.PointsMaterial({
+      color: 0xffffff,
+      size: 1,
+      opacity: 0.9,
+      transparent: true,
+    });
     const stars = new THREE.Points(starsGeo, starsMat);
     scene.add(stars);
 
-    // Shared geometries & materials for satellites
-    const bodyGeo = new THREE.BoxGeometry(18, 10, 10);
-    const panelGeo = new THREE.PlaneGeometry(40, 12);
+    // cambia el tamaño de los satelites cuerpo y paneles
+    const bodyGeo = new THREE.BoxGeometry(40, 22, 22);
+    const panelGeo = new THREE.PlaneGeometry(90, 26);
 
     const bodyMat = new THREE.MeshStandardMaterial({
-      color: 0xd0d6df,
-      metalness: 0.9,
-      roughness: 0.25,
+      color: 0xe7ecf3, // color gris del cuerpo del satelite
+      metalness: 0.85,
+      roughness: 0.18,
+      emissive: 0x2b3139, // brillo muy suave
+      emissiveIntensity: 0.25,
     });
 
     const panelMat = new THREE.MeshStandardMaterial({
-      color: 0x0f4e78,
-      metalness: 0.2,
-      roughness: 0.4,
-      emissive: 0x083246,
-      emissiveIntensity: 0.08,
+      color: 0x1785c8, // color azul de los paneles
+      metalness: 0.35,
+      roughness: 0.35,
+      emissive: 0x0b5a8c,
+      emissiveIntensity: 0.22,
       side: THREE.DoubleSide,
     });
 
@@ -74,6 +81,10 @@ export default function Satelite({
 
     for (let i = 0; i < satelliteCount; i++) {
       const satGroup = new THREE.Group();
+
+      // ⭐ ESCALA VARIADA DE LOS SATELITES ⭐
+      const scale = THREE.MathUtils.lerp(1, 1.8, Math.random());
+      satGroup.scale.set(scale, scale, scale);
 
       // body
       const body = new THREE.Mesh(bodyGeo, bodyMat);
@@ -97,12 +108,27 @@ export default function Satelite({
       satGroup.add(beacon);
 
       // orbital parameters
-      const radius = THREE.MathUtils.lerp(orbitRadiusMin, orbitRadiusMax, Math.random());
-      const speed = THREE.MathUtils.lerp(0.0004, 0.0016, Math.random()) * (Math.random() > 0.5 ? 1 : -1);
-      const inclination = THREE.MathUtils.degToRad(THREE.MathUtils.randFloatSpread(50)); // tilt
+      const radius = THREE.MathUtils.lerp(
+        orbitRadiusMin,
+        orbitRadiusMax,
+        Math.random()
+      );
+      const speed =
+        THREE.MathUtils.lerp(0.0004, 0.0016, Math.random()) *
+        (Math.random() > 0.5 ? 1 : -1);
+      const inclination = THREE.MathUtils.degToRad(
+        THREE.MathUtils.randFloatSpread(50)
+      ); // tilt
       const phase = Math.random() * Math.PI * 2;
 
-      satGroup.userData = { radius, speed, inclination, phase, angle: phase, tilt: (Math.random() - 0.5) * 0.6 };
+      satGroup.userData = {
+        radius,
+        speed,
+        inclination,
+        phase,
+        angle: phase,
+        tilt: (Math.random() - 0.5) * 0.6,
+      };
 
       // initial position
       satGroup.position.set(
@@ -138,6 +164,7 @@ export default function Satelite({
         // make satellite slowly rotate on its axis
         s.rotation.x = Math.sin(time * 0.0008 + i) * 0.2;
         s.rotation.z = s.userData.tilt;
+
       }
 
       // small camera bob for life
@@ -168,7 +195,8 @@ export default function Satelite({
         s.traverse((o) => {
           if (o.geometry) o.geometry.dispose();
           if (o.material) {
-            if (Array.isArray(o.material)) o.material.forEach((m) => m.dispose());
+            if (Array.isArray(o.material))
+              o.material.forEach((m) => m.dispose());
             else o.material.dispose();
           }
         });
