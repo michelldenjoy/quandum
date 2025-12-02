@@ -106,28 +106,18 @@ export default function Contacto() {
     <div className="relative overflow-hidden">
       <StarfieldNebula />
 
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
 
-      {/* Ambient glow effects */}
-      <div
-        className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px] animate-pulse"
-        style={{ animationDuration: "8s" }}
-      />
-      <div
-        className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[120px] animate-pulse"
-        style={{ animationDuration: "10s", animationDelay: "2s" }}
-      />
 
       {/* HERO */}
       <section className="relative border-b border-slate-800/50">
         <div className="max-w-7xl mx-auto px-6 py-32 relative z-10">
           <div className="text-center max-w-4xl mx-auto animate-fadeIn">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full mb-8 animate-scaleIn">
+            {/* <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full mb-8 animate-scaleIn">
               <Globe className="w-4 h-4 text-blue-400" />
               <span className="text-sm text-blue-300 font-medium">
                 Contacto Institucional
               </span>
-            </div>
+            </div> */}
 
             <h1 className="text-6xl md:text-7xl font-extralight text-white tracking-tight mb-8">
               <span
@@ -348,7 +338,7 @@ export default function Contacto() {
                 <button
                   onClick={handleSubmit}
                   disabled={isSubmitting}
-                  className="relative w-full py-5 bg-gradient-to-r from-brand-blue via-slate-500 to-sky-700 hover:from-brand-blue hover:to-cyan-500 text-white font-semibold text-lg rounded-xl transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/20 overflow-hidden group active:scale-[0.98]"
+                  className="relative w-full py-5 bg-gradient-to-r from-brand-blue via-slate-500 to-brand-blue hover:from-slate-900 hover:via-slate-500 hover:to-slate-900 hover:shadow-blue-300/30 hover:scale-105 text-white font-semibold text-lg rounded-tl-3xl transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/20 overflow-hidden group active:scale-[0.98]"
                 >
                   {/* Shimmer effect */}
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
