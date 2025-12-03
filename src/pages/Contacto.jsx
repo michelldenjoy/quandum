@@ -209,7 +209,7 @@ export default function Contacto() {
 
             <div className="relative animate-slideInRight order-1 lg:order-2">
               {/* Glow effect behind form */}
-              <div className="absolute h-[88%] sm:h-[92%] md:h-[95%] lg:h-5/6 inset-1 -top-2 bottom-0 bg-gradient-to-l from-blue-400/80 via-cyan-500/20 to-blue-400/80 rounded-3xl blur-2xl opacity-30" />
+              <div className="absolute h-[88%] sm:h-[92%] md:h-[95%] lg:h-[75%] inset-1 -top-2 bottom-0 bg-gradient-to-l from-blue-400/80 via-cyan-500/20 to-blue-400/80 rounded-3xl blur-2xl opacity-30" />
               <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-10 space-y-8 shadow-2xl">
                 {submitted && (
                   <div className="p-5 bg-emerald-500/10 border border-emerald-500/30 rounded-xl flex items-center gap-3 text-emerald-300 backdrop-blur-sm animate-scaleIn">
@@ -356,13 +356,13 @@ export default function Contacto() {
                   </span>
                 </button>
 
-                <div className="pt-6 border-t border-slate-800/50">
+                {/* <div className="pt-6 border-t border-slate-800/50">
                   <p className="text-xs text-slate-500 text-center flex items-center justify-center gap-2">
                     <Shield className="w-4 h-4 text-blue-400" />
                     Comunicación cifrada y protegida según RGPD y protocolos
                     corporativos de seguridad
                   </p>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
