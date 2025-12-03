@@ -21,72 +21,9 @@ import {
   TrendingUp,
   UserCheck,
 } from "lucide-react";
+import Collage from "../components/Careers.jsx/Collage";
+import Valores from "../components/Careers.jsx/Valores";
 
-const values = [
-  {
-    icon: Target,
-    title: "Precisión",
-    desc: "Diseñamos sistemas críticos con tolerancia cero a errores. DO-254 y DO-178C son nuestro estándar diario.",
-  },
-  {
-    icon: Users,
-    title: "Equipo",
-    desc: "Colaboramos con ingenieros, certificadores y pilotos para innovar en aviación sostenible.",
-  },
-  {
-    icon: Zap,
-    title: "Velocidad",
-    desc: "Lanzamos proyectos en meses, no años, manteniendo la máxima seguridad aeronáutica.",
-  },
-  {
-    icon: UserCheck,
-    title: "Responsabilidad",
-    desc: "Esta compañía es tuya. Asume la propiedad extrema de cada proyecto aeronáutico.",
-  },
-];
-
-const hermeusBenefits = [
-  {
-    icon: Heart,
-    title: "100% Seguro Médico Pagado",
-    desc: "Salud, dental y visión sin costo. Cobertura completa para ti y tu familia.",
-  },
-  {
-    icon: Calendar,
-    title: "Tres Meses de Permiso Parental",
-    desc: "La familia es primero. Tiempo remunerado completo.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Opciones sobre Acciones",
-    desc: "Garantizadas con todas las ofertas a tiempo completo. Potencial adicional por desempeño.",
-  },
-  {
-    icon: Shield,
-    title: "401k & Planes de Retiro",
-    desc: "Asegura tu futuro financiero con nuestro plan de pensiones.",
-  },
-  {
-    icon: DollarSign,
-    title: "Salario Competitivo",
-    desc: "Basado en la media nacional y ajustado anualmente por inflación.",
-  },
-  {
-    icon: Plane,
-    title: "PTO Ilimitado",
-    desc: "PTO flexible (exentos) y generoso acumulado (no exentos), más 12 días festivos.",
-  },
-  {
-    icon: Award,
-    title: "Bonos de Fin de Año",
-    desc: "Los empleados elegibles son recompensados anualmente.",
-  },
-  {
-    icon: Coffee,
-    title: "Almuerzos Pagados Semanalmente",
-    desc: "Elige entre una variedad de favoritos locales cada semana.",
-  },
-];
 
 const andurilBenefits = [
   {
@@ -285,14 +222,13 @@ export default function TrabajaConNosotros() {
         .animate-fadeInUp { animation: fadeInUp 0.8s ease-out; }
       `}</style>
 
-      <section className="relative w-screen py-32 px-6 overflow-hidden bg-black text-white left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+      <section className="relative w-screen py-44 px-6 overflow-hidden bg-black text-white left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
           style={{ backgroundImage: `url('/careerbg.jpg')` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black" />
 
-        
         <div className="relative mx-auto text-center z-10">
           <div className="inline-block mb-6 px-6 py-2 border border-white/20 rounded-full text-sm tracking-wider animate-fadeIn">
             ÚNETE AL EQUIPO
@@ -312,70 +248,16 @@ export default function TrabajaConNosotros() {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-sm font-bold text-blue-600 tracking-wider uppercase mb-4">
-              Nuestros Valores
-            </h2>
-            <p className="text-4xl font-bold text-gray-900">
-              Así es como ganamos
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((val, i) => {
-              const Icon = val.icon;
-              return (
-                <div
-                  key={i}
-                  className="text-center p-8 hover:scale-105 transition-transform duration-300"
-                >
-                  <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-gray-900 uppercase tracking-wide">
-                    {val.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {val.desc}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <div>
+        <Collage />
+      </div>
 
-      <section className="relative w-screen py-24 px-6 bg-black text-white left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold tracking-tight">
-              BENEFICIOS
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {hermeusBenefits.map((ben, i) => {
-              const Icon = ben.icon;
-              return (
-                <div
-                  key={i}
-                  className="text-center p-6 border-t-4 border-blue-600 hover:border-pink-500 transition-colors duration-300"
-                >
-                  <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Icon className="w-8 h-8 text-blue-600" />
-                  </div>
-                  <h3 className="text-lg font-bold mb-3 uppercase tracking-wide">
-                    {ben.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">
-                    {ben.desc}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <div>
+        <Valores />
+      </div>
+
+
+
 
       <section className="py-24 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
@@ -443,48 +325,13 @@ export default function TrabajaConNosotros() {
         </div>
       </section>
 
-      <section className="relative w-full py-24 px-6 bg-zinc-900 text-white left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">
-            Oportunidades Abiertas
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {positions.map((job, i) => {
-              const Icon = job.icon;
-              return (
-                <div
-                  key={i}
-                  className="group bg-black border border-gray-800 rounded-xl p-8 hover:border-blue-600 transition-all duration-300 cursor-pointer"
-                >
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-                      <Icon className="w-6 h-6 text-brand-pink group-hover:text-white transition-colors" />
-                    </div>
-                    <ArrowRight className="w-5 h-5 text-gray-600 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-600 transition-colors">
-                    {job.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm uppercase tracking-wider mb-3">
-                    {job.dept}
-                  </p>
-                  <p className="text-gray-600 text-xs flex items-center gap-1">
-                    <Clock className="w-3 h-3" />
-                    {job.location}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
-      <section className="py-32 px-6 bg-gray-50">
+      <section className="py-32 px-6 bg-gradient-to-r from-black/90 via-slate-800 to-black/90">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-5xl font-bold text-center mb-4 text-gray-900">
+          <h2 className="text-5xl font-bold text-center mb-4 text-gray-100">
             Envía tu Candidatura
           </h2>
-          <p className="text-center text-gray-600 mb-16">
+          <p className="text-center text-gray-200 mb-16">
             Únete a los mejores ingenieros aeronáuticos de Europa
           </p>
           <div className="bg-white border border-gray-300 rounded-2xl p-10 md:p-14 shadow-xl space-y-8">
@@ -582,11 +429,11 @@ export default function TrabajaConNosotros() {
               {isSubmitting ? "Enviando..." : "Enviar Candidatura"}
               <ArrowRight className="w-5 h-5" />
             </button>
-            <p className="text-center text-xs text-gray-500 mt-6">
+            {/* <p className="text-center text-xs text-gray-500 mt-6">
               <Shield className="w-3 h-3 inline mr-1" />
               Tus datos están protegidos según RGPD. Confidencialidad total
               garantizada.
-            </p>
+            </p> */}
           </div>
         </div>
       </section>
