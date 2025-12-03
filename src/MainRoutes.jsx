@@ -34,6 +34,7 @@ const Contacto = lazy(() => import("./pages/Contacto"));
 
 export default function MainRoutes() {
   return (
+    
     <Suspense
       fallback={
         <div className="flex justify-center items-center min-h-[50vh]">
