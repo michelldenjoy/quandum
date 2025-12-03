@@ -92,7 +92,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-8 xl:gap-12">
+          <div className="hidden lg:flex items-center gap-8 md:px-8 xl:gap-12">
             {links.map((link) => {
               const isActive = link.path
                 ? location.pathname === link.path
@@ -121,8 +121,8 @@ export default function Navbar() {
 
                     {/* Dropdown */}
                     <div className="absolute top-full left-0 pt-4 pointer-events-none opacity-0 invisible group-hover:pointer-events-auto group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out">
-                      <div className="bg-neutral-900/98 backdrop-blur-xl border border-neutral-800/60 rounded-2xl shadow-2xl py-6 px-6 min-w-[280px] whitespace-nowrap">
-                        <h3 className="text-base font-bold text-white mb-4 tracking-wide border-b border-neutral-800 pb-3">
+                    <div className="bg-neutral-900/100 backdrop-blur-sm border border-neutral-800 rounded-2xl shadow-2xl py-6 px-6 min-w-[280px] whitespace-nowrap">
+                    <h3 className="text-base font-bold text-white mb-4 tracking-wide border-b border-neutral-800 pb-3">
                           {link.name}
                         </h3>
                         <ul className="space-y-3">
@@ -166,7 +166,7 @@ export default function Navbar() {
 
             <Link
               to="/contacto"
-              className="ml-4 xl:ml-8 px-6 xl:px-8 py-3 xl:py-3.5 rounded-tl-3xl  bg-gradient-to-r from-brand-blue via-slate-500 to-brand-blue hover:from-slate-900 hover:via-slate-500 hover:to-slate-900 text-white font-semibold text-sm xl:text-base transition-all duration-300 shadow-lg hover:shadow-blue-300/30 hover:scale-105"
+              className="ml-4 xl:ml-8 px-6 xl:px-8 py-3 xl:py-3.5 rounded hover:bg-gradient-to-r from-brand-blue via-slate-500 to-brand-blue hover:from-slate-900 hover:via-slate-500 hover:to-slate-900 text-white font-semibold text-sm xl:text-base transition-all duration-300 shadow-lg hover:shadow-blue-300/30 hover:scale-105"
             >
               Contacto
             </Link>
@@ -210,7 +210,8 @@ export default function Navbar() {
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="pt-24 pb-24 px-6 sm:px-8 space-y-6">
+          {/* espacio entre links en menu movil */}
+          <div className="py-32 pb-24 px-6 sm:px-8 space-y-6"> 
             {links.map((link) => {
               const isActive = link.path
                 ? location.pathname === link.path
@@ -285,7 +286,7 @@ export default function Navbar() {
               <Link
                 to="/contacto"
                 onClick={() => setOpen(false)}
-                className="block w-full text-center py-4 rounded-tl-2xl bg-gradient-to-r from-brand-blue via-slate-500 to-brand-blue hover:from-slate-900 hover:via-slate-500 hover:to-slate-900 hover:shadow-blue-300/30 hover:scale-105 text-white transition-all"
+                className="block w-full text-center py-4 rounded bg-gradient-to-r from-brand-blue via-slate-500 to-brand-blue hover:from-slate-900 hover:via-slate-500 hover:to-slate-900 hover:shadow-blue-300/30 hover:scale-105 text-white transition-all"
               >
                 Contacto
               </Link>

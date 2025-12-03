@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
-import { Award, Users, Target } from "lucide-react";
+import { Award, Users, Check } from "lucide-react";
 
 export default function About() {
   // Motion 11 parallax
@@ -46,7 +46,7 @@ export default function About() {
   ];
 
   return (
-    <main className="text-white">
+    <main className="text-white ">
       {/* ---------------- HERO ---------------- */}
       <header className="relative overflow-hidden min-h-[600px] sm:min-h-[700px] lg:min-h-[800px] flex items-center">
         <div className="absolute inset-0">
@@ -72,20 +72,12 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <motion.span 
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6 }}
-                className="inline-block px-3 py-1 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-cyan-500 to-blue-500 text-black mb-4 sm:mb-6"
-              >
-                QUIÉNES SOMOS
-              </motion.span>
 
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 sm:mb-6"
+                className="pt-9 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 sm:mb-6"
               >
                 QUANDUM AEROSPACE: ingeniería que impulsa el futuro
               </motion.h1>
@@ -111,7 +103,7 @@ export default function About() {
               >
                 <a
                   href="#ingenieria"
-                  className="px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-semibold rounded-lg text-center transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/50"
+                  className="px-6 py-3 bg-gradient-to-r from-brand-blue via-slate-500 to-brand-blue hover:from-slate-900 hover:via-slate-500 hover:to-slate-900 hover:shadow-blue-300/30 hover:scale-105 text-white font-semibold rounded-lg text-center transition-all duration-300 "
                 >
                   Nuestro enfoque
                 </a>
@@ -155,7 +147,7 @@ export default function About() {
                 className="p-4 sm:p-6 bg-zinc-900/60 backdrop-blur-sm rounded-2xl border border-zinc-800 hover:border-blue-500/50 transition-colors duration-300"
               >
                 <div className="flex items-center gap-3 sm:gap-4 mb-3">
-                  <Target className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
+                  <Check className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
                   <div>
                     <div className="text-2xl sm:text-3xl font-bold">20+</div>
                     <div className="text-xs sm:text-sm text-slate-300">
@@ -341,7 +333,7 @@ export default function About() {
       </section>
 
       {/* ---------------- CTA ---------------- */}
-      <section className="py-12 sm:py-16">
+      {/* <section className="py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -365,7 +357,7 @@ export default function About() {
             </motion.a>
           </motion.div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
