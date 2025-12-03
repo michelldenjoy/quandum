@@ -21,8 +21,8 @@ import {
   TrendingUp,
   UserCheck,
 } from "lucide-react";
-import Collage from "../components/Careers.jsx/Collage";
-import Valores from "../components/Careers.jsx/Valores";
+import Collage from "../components/Careers/Collage";
+import Valores from "../components/Careers/Valores";
 
 
 const andurilBenefits = [
