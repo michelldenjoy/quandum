@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Button from "./Button";
+
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -93,7 +93,7 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Menu */}
+          {/* Menu escritorio*/}
           <div className="hidden lg:flex items-center gap-8 md:px-8 xl:gap-12">
             {links.map((link) => {
               const isActive = link.path
@@ -101,12 +101,12 @@ export default function Navbar() {
                 : link.dropdown?.some((item) =>
                     location.pathname.startsWith(item.path.split("?")[0])
                   );
-
+// links Empresa Servicios Proyectos Sobre Quandum escritorio
               if (link.dropdown) {
                 return (
                   <div key={link.name} className="relative group">
                     {/* Trigger */}
-                    <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 bg-gradient-to-br from-blue-100 to-white blur-2xl" />
+                    <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 bg-gradient-to-br from-blue-100 to-white blur-xl" />
                     <span
                       className={` relative z-10 text-sm xl:text-base font-medium tracking-wide whitespace-nowrap transition-all duration-300 cursor-pointer flex items-center  ${
                         isActive ? "text-brand-pink" : "text-gray-300"
@@ -147,11 +147,11 @@ export default function Navbar() {
                 );
               }
 
-              //Links "Prensa, Trabaja con nosotros y Contacto"
+              //Links "Prensa, Trabaja con nosotros y Contacto escritorio"
               return (
                 <div key={link.name} className="relative group">
                   {/* Background glow */}
-                  <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 bg-gradient-to-br from-blue-100 to-white blur-2xl " />
+                  <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 bg-gradient-to-br from-blue-100 to-white blur-xl " />
 
                   {/* Link */}
                   <Link
@@ -169,7 +169,7 @@ export default function Navbar() {
                 </div>
               );
             })}
-            {/* <Button to="contacto" > Contacto </Button> */}
+            
           </div>
 
           {/* Mobile Menu Button */}

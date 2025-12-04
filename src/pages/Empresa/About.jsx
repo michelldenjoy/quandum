@@ -103,7 +103,7 @@ export default function About() {
               >
                 <a
                   href="#ingenieria"
-                  className="px-6 py-3 bg-gradient-to-r from-brand-blue via-slate-500 to-brand-blue hover:from-slate-900 hover:via-slate-500 hover:to-slate-900 hover:shadow-blue-300/30 hover:scale-105 text-white font-semibold rounded-lg text-center transition-all duration-300 "
+                  className="px-6 py-3 bg-gradient-to-r from-brand-blue via-slate-500 to-brand-blue hover:from-slate-900 hover:via-slate-500 hover:to-slate-900 hover:shadow-blue-300/30 hover:scale-105 text-white font-semibold text-lg rounded transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/20 overflow-hidden group active:scale-[0.98] "
                 >
                   Nuestro enfoque
                 </a>
@@ -129,7 +129,7 @@ export default function About() {
                 className="p-4 sm:p-6 bg-zinc-900/60 backdrop-blur-sm rounded-2xl border border-zinc-800 hover:border-cyan-500/50 transition-colors duration-300"
               >
                 <div className="flex items-center gap-3 sm:gap-4 mb-3">
-                  <Users className="w-6 h-6 sm:w-8 sm:h-8 text-cyan-400" />
+                  <Users className="w-6 h-6 sm:w-8 sm:h-8 text-cyan-600" />
                   <div>
                     <div className="text-2xl sm:text-3xl font-bold">30</div>
                     <div className="text-xs sm:text-sm text-slate-300">Empleados</div>
@@ -147,7 +147,7 @@ export default function About() {
                 className="p-4 sm:p-6 bg-zinc-900/60 backdrop-blur-sm rounded-2xl border border-zinc-800 hover:border-blue-500/50 transition-colors duration-300"
               >
                 <div className="flex items-center gap-3 sm:gap-4 mb-3">
-                  <Check className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
+                  <Check className="w-6 h-6 sm:w-8 sm:h-8 text-brand-blue" />
                   <div>
                     <div className="text-2xl sm:text-3xl font-bold">20+</div>
                     <div className="text-xs sm:text-sm text-slate-300">
@@ -165,7 +165,7 @@ export default function About() {
       </header>
 
       {/* ---------------- GALLERIA ---------------- */}
-      <section className="py-16 sm:py-20 lg:py-32 bg-gradient-to-b from-black via-zinc-950 to-black">
+      <section className="py-16 sm:py-20 lg:py-32 bg-gradient-to-b from-black/5 via-sky-950 to-black/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -283,7 +283,7 @@ export default function About() {
                   initial={{ opacity: 0, y: 100 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, delay: i * 0.2 }}
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center ${
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-8  sm:gap-12 lg:gap-16 items-center ${
                     i % 2 === 1 ? "lg:grid-flow-col-dense" : ""
                   }`}
                 >
@@ -300,7 +300,7 @@ export default function About() {
                   </motion.div>
 
                   <div className={`${i % 2 === 1 ? "lg:order-1" : ""} space-y-4 sm:space-y-6`}>
-                    <div className="flex items-center gap-3 text-cyan-400">
+                    <div className="flex items-center gap-3 text-cyan-600">
                       <Award className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                       <span className="text-xs sm:text-sm font-semibold tracking-wider uppercase">
                         {c.subtitle}
@@ -319,7 +319,7 @@ export default function About() {
                           transition={{ delay: 0.4 + idx * 0.1 }}
                           className="flex items-start gap-3"
                         >
-                          <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
+                          <div className="w-1.5 h-1.5 bg-cyan-600 rounded-full mt-2 flex-shrink-0" />
                           <span className="text-sm sm:text-base">{item}</span>
                         </motion.li>
                       ))}
