@@ -51,7 +51,7 @@ export default function Collage() {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: 0.7, duration: 1 }}
-              className="space-y-5 text-lg text-slate-300 leading-relaxed"
+              className="space-y-5 text-lg lg:text-2xl text-slate-300 leading-relaxed"
             >
               <p>
                 En Quandum Aerospace diseñamos y certificamos sistemas que operan en los entornos más exigentes del planeta: reabastecimiento en vuelo, visión nocturna, electrónica de potencia embarcada y software DO-178C DAL-A.

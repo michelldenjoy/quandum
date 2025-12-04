@@ -8,28 +8,28 @@ export default function Valores() {
       icon: Target,
       title: "Precisión",
       desc: "Diseñamos sistemas críticos con tolerancia cero a errores. DO-254 y DO-178C son nuestro estándar diario.",
-      gradient: "from-blue-600 to-brand-blue",
+      gradient: "from-slate-800 to-brand-blue",
       delay: 0.1,
     },
     {
       icon: Users,
       title: "Equipo",
       desc: "Colaboramos con ingenieros, certificadores y pilotos para innovar en aviación sostenible.",
-      gradient: "from-blue-600 to-brand-blue",
+      gradient: "from-slate-800 to-brand-blue",
       delay: 0.2,
     },
     {
       icon: Zap,
       title: "Velocidad",
       desc: "Lanzamos proyectos en meses, no años, manteniendo la máxima seguridad aeronáutica.",
-      gradient: "from-brand-pink to-red-700",
+      gradient: "from-slate-800 to-brand-blue",
       delay: 0.3,
     },
     {
       icon: UserCheck,
       title: "Responsabilidad",
       desc: "Esta compañía es tuya. Asume la propiedad extrema de cada proyecto aeronáutico.",
-      gradient: "from-brand-pink to-red-700",
+      gradient: "from-slate-800 to-brand-blue",
       delay: 0.4,
     },
   ];
@@ -47,7 +47,7 @@ export default function Valores() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-zinc-900 text-cyan-400 border border-cyan-500/20 rounded-full mb-6">
+          <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-zinc-900 text-cyan-600 border border-cyan-500/20 rounded-full mb-6">
             Nuestros Valores
           </span>
           <h2 className="text-5xl md:text-6xl font-bold text-white tracking-tight">
@@ -73,7 +73,7 @@ export default function Valores() {
                 className="group relative"
               >
                 {/* Card principal */}
-                <div className="relative h-full p-8 bg-gradient-to-br from-zinc-900/80 via-zinc-950 to-black border border-zinc-800 rounded-2xl backdrop-blur-xl transition-all duration-500 group-hover:border-cyan-500/40 group-hover:shadow-2xl group-hover:shadow-cyan-500/10">
+                <div className="relative h-full p-8 bg-gradient-to-br from-zinc-900/80 via-zinc-950 to-black border border-zinc-800 rounded-2xl backdrop-blur-xl transition-all duration-500 group-hover:border-brand-blue group-hover:shadow-2xl group-hover:shadow-cyan-500/10">
                   {/* Fondo con gradiente sutil que se activa en hover */}
                   <div
                     className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-700 bg-gradient-to-br ${val.gradient} blur-3xl scale-10`}
@@ -81,7 +81,7 @@ export default function Valores() {
 
                   {/* Icono con anillo luminoso */}
                   <div className="relative z-10 mb-8">
-                    <div className="w-20 h-20 mx-auto rounded-full bg-black/50 backdrop-blur-sm border-2 border-zinc-700 flex items-center justify-center group-hover:border-cyan-500/60 transition-all duration-500">
+                    <div className="w-20 h-20 mx-auto rounded-full bg-black/50 backdrop-blur-sm border-2 border-zinc-700 flex items-center justify-center group-hover:border-brand-blue transition-all duration-500">
                       <div className="relative">
                         <Icon className="w-10 h-10 text-white transition-all duration-500 group-hover:scale-110" />
                         <div className="absolute inset-0 rounded-full bg-cyan-500/20 blur-xl scale-0 group-hover:scale-100 transition-transform duration-700" />

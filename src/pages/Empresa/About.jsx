@@ -256,7 +256,7 @@ export default function About() {
       </section>
 
       {/* ---------------- INGENIERÍA & PROCESO ---------------- */}
-      <section id="ingenieria" className="py-16 sm:py-24 lg:py-32 bg-zinc-950/50">
+      <section id="ingenieria" className="py-16 sm:py-24 lg:py-32 bg-militar ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -310,7 +310,7 @@ export default function About() {
                     <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">{c.title}</h3>
                     <p className="text-base sm:text-lg text-slate-300 leading-relaxed">{c.text}</p>
 
-                    <ul className="space-y-3 text-slate-400">
+                    <ul className="space-y-3 text-white">
                       {checklistItems.map((item, idx) => (
                         <motion.li
                           key={idx}

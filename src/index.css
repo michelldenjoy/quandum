@@ -8,3 +8,26 @@
       @apply bg-gray-950;
     }
   }
+
+  .bg-militar {
+    position: relative;
+    background-image: url('/bgmilitar.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* 👈 Parallax */
+  }
+  
+  .bg-militar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7); /* opacidad 50% */
+    z-index: 1;
+  }
+  
+  .bg-militar > * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  
