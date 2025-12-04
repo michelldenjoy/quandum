@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Button from "./Button";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -62,6 +63,7 @@ export default function Navbar() {
     },
     { name: "Prensa", path: "/prensa" },
     { name: "Trabaja Con nosotros", path: "/trabaja-con-nosotros" },
+    { name: "Contacto", path: "/contacto" },
   ];
 
   return (
@@ -104,25 +106,26 @@ export default function Navbar() {
                 return (
                   <div key={link.name} className="relative group">
                     {/* Trigger */}
+                    <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 bg-gradient-to-br from-blue-100 to-white blur-2xl" />
                     <span
-                      className={`text-sm xl:text-base font-medium tracking-wide transition-all duration-300 cursor-pointer flex items-center relative ${
-                        isActive
-                          ? "text-rose-400"
-                          : "text-gray-400 hover:text-white"
-                      }`}
+                      className={` relative z-10 text-sm xl:text-base font-medium tracking-wide whitespace-nowrap transition-all duration-300 cursor-pointer flex items-center  ${
+                        isActive ? "text-brand-pink" : "text-gray-300"
+                      } group-hover:text-red-400 `}
                     >
                       {link.name}
-                      <span
+
+                      
+                      {/* <span  SUBRAYADO
                         className={`absolute -bottom-1 left-0 h-0.5 bg-blue-400 transition-all duration-300 ${
                           isActive ? "w-full" : "w-0 group-hover:w-full"
                         }`}
-                      />
+                      /> */}
                     </span>
 
                     {/* Dropdown */}
                     <div className="absolute top-full left-0 pt-4 pointer-events-none opacity-0 invisible group-hover:pointer-events-auto group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out">
-                    <div className="bg-neutral-900/100 backdrop-blur-sm border border-neutral-800 rounded-2xl shadow-2xl py-6 px-6 min-w-[280px] whitespace-nowrap">
-                    <h3 className="text-base font-bold text-white mb-4 tracking-wide border-b border-neutral-800 pb-3">
+                      <div className="bg-neutral-900/100 backdrop-blur-sm border border-neutral-800 rounded-2xl shadow-2xl py-6 px-6 min-w-[280px] whitespace-nowrap">
+                        <h3 className="text-base font-bold text-white mb-4 tracking-wide border-b border-neutral-800 pb-3">
                           {link.name}
                         </h3>
                         <ul className="space-y-3">
@@ -144,32 +147,29 @@ export default function Navbar() {
                 );
               }
 
+              //Links "Prensa, Trabaja con nosotros y Contacto"
               return (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className={`text-sm xl:text-base font-medium tracking-wide transition-all duration-300 relative ${
-                    isActive
-                      ? "text-rose-400"
-                      : "text-gray-400 hover:text-white"
-                  }`}
-                >
-                  {link.name}
-                  <span
-                    className={`absolute -bottom-1 left-0 h-0.5 bg-blue-400 transition-all duration-300 ${
-                      isActive ? "w-full" : "w-0 hover:w-full"
-                    }`}
-                  />
-                </Link>
+                <div key={link.name} className="relative group">
+                  {/* Background glow */}
+                  <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 bg-gradient-to-br from-blue-100 to-white blur-2xl " />
+
+                  {/* Link */}
+                  <Link
+                    to={link.path}
+                    className={`relative z-10 text-sm xl:text-base font-medium tracking-wide whitespace-nowrap transition-all duration-300 ${
+                      isActive ? "text-brand-pink" : "text-gray-300"
+                    } group-hover:text-red-400`}
+                  >
+                    {link.name}
+
+                    {/* subrayado */}
+                    {/* <span className={` absolute -bottom-1 left-0 h-0.5 bg-blue-400 transition-all duration-300 ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
+                    /> */}
+                  </Link>
+                </div>
               );
             })}
-
-            <Link
-              to="/contacto"
-              className="ml-4 xl:ml-8 px-6 xl:px-8 py-3 xl:py-3.5 rounded hover:bg-gradient-to-r from-brand-blue via-slate-500 to-brand-blue hover:from-slate-900 hover:via-slate-500 hover:to-slate-900 text-white font-semibold text-sm xl:text-base transition-all duration-300 shadow-lg hover:shadow-blue-300/30 hover:scale-105"
-            >
-              Contacto
-            </Link>
+            {/* <Button to="contacto" > Contacto </Button> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -211,7 +211,7 @@ export default function Navbar() {
           }`}
         >
           {/* espacio entre links en menu movil */}
-          <div className="py-32 pb-24 px-6 sm:px-8 space-y-6"> 
+          <div className="py-32 pb-24 px-6 sm:px-8 space-y-6">
             {links.map((link) => {
               const isActive = link.path
                 ? location.pathname === link.path
@@ -282,15 +282,7 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            <div className="pt-8">
-              <Link
-                to="/contacto"
-                onClick={() => setOpen(false)}
-                className="block w-full text-center py-4 rounded bg-gradient-to-r from-brand-blue via-slate-500 to-brand-blue hover:from-slate-900 hover:via-slate-500 hover:to-slate-900 hover:shadow-blue-300/30 hover:scale-105 text-white transition-all"
-              >
-                Contacto
-              </Link>
-            </div>
+            <div className="pt-8"></div>
           </div>
         </div>
       </div>
