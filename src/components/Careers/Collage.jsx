@@ -8,7 +8,7 @@ export default function Collage() {
   return (
     <section
       ref={ref}
-      className="relative w-full bg-black py-20 overflow-hidden"
+      className="relative w-full bg-black py-10 overflow-hidden"
     >
       {/* Fondo sutil con textura metálica */}
       <div className="absolute inset-0 bg-gradient-to-br from-zinc-950 via-black to-zinc-950" />
@@ -42,8 +42,8 @@ export default function Collage() {
                 className="text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight"
               >
                 Construyendo el futuro
-                <br />
-                <span className="text-cyan-400">de la aviación crítica</span>
+                
+                <span className="bg-gradient-to-r from-brand-blue via-slate-300 to-brand-blue bg-clip-text text-transparent font-bold"> de la aviación</span>
               </motion.h2>
             </div>
 

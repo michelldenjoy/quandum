@@ -164,8 +164,8 @@ export default function About() {
         </motion.div>
       </header>
 
-      {/* ---------------- GALLERIA ---------------- */}
-      <section className="py-16 sm:py-20 lg:py-32 bg-gradient-to-b from-black/5 via-sky-950 to-black/5">
+      {/* ---------------- GALLERIA ----------------  */}
+      <section className=" sm:py-20 lg:py-32 bg-gradient-to-b from-black/5 via-slate-800 to-black/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -174,9 +174,9 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12 sm:mb-16"
           >
-            <span className="text-cyan-400 text-xs sm:text-sm font-semibold tracking-wider uppercase">
+            {/* <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-zinc-900 text-slate-200 border border-cyan-500/20 rounded-full mb-6">
               Instalaciones & Proyectos
-            </span>
+            </span> */}
             <h2 className="text-3xl sm:text-4xl font-bold mt-4">Laboratorio de alta precisión</h2>
             <p className="text-slate-400 mt-4 max-w-2xl mx-auto text-sm sm:text-base px-4">
               Espacios diseñados para el desarrollo de sistemas críticos: salas limpias, bancos de pruebas EMI/EMC y estaciones de integración HW/SW.
@@ -300,7 +300,7 @@ export default function About() {
                   </motion.div>
 
                   <div className={`${i % 2 === 1 ? "lg:order-1" : ""} space-y-4 sm:space-y-6`}>
-                    <div className="flex items-center gap-3 text-cyan-600">
+                    <div className="flex items-center gap-3 text-cyan-500">
                       <Award className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                       <span className="text-xs sm:text-sm font-semibold tracking-wider uppercase">
                         {c.subtitle}

@@ -117,7 +117,7 @@ export default function Contacto() {
               </span>
             </div> */}
 
-            <h1 className="text-6xl md:text-7xl font-extralight text-white tracking-tight mb-8">
+            <h1 className="text-6xl md:text-7xl font-extralight mb-8">
               <span
                 className="block animate-slideUp"
                 style={{ animationDelay: "0.3s" }}
@@ -125,13 +125,16 @@ export default function Contacto() {
                 Conecte con
               </span>
               <span
-                className="block font-medium bg-gradient-to-r from-blue-900 via-slate-300 to-blue-400 bg-clip-text text-transparent animate-slideUp"
+                className="bg-gradient-to-r from-brand-blue via-slate-300 to-brand-blue bg-clip-text text-transparent font-bold animate-slideUp"
                 style={{ animationDelay: "0.5s" }}
               >
                 Quandum{" "}
-                <span className="bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text">
-                  Aerospace{" "}
-                </span>
+              </span>
+              <span
+                className="bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text text-transparent font-bold animate-slideUp"
+                style={{ animationDelay: "0.5s" }}
+              >
+                Aerospace
               </span>
             </h1>
 
@@ -339,7 +342,7 @@ export default function Contacto() {
                 <button
                   onClick={handleSubmit}
                   disabled={isSubmitting}
-                  className="relative w-full py-5 bg-gradient-to-r from-brand-blue via-slate-500 to-brand-blue hover:from-slate-900 hover:via-slate-500 hover:to-slate-900 hover:shadow-blue-300/30 hover:scale-105 text-white font-semibold text-lg rounded transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/20 overflow-hidden group active:scale-[0.98]"
+                  className="relative w-full py-4 bg-gradient-to-r from-brand-blue via-slate-500 to-brand-blue hover:from-slate-900 hover:via-slate-500 hover:to-slate-900 hover:shadow-blue-300/30 hover:scale-105 text-white font-semibold text-lg rounded transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/20 overflow-hidden group active:scale-[0.98]"
                 >
                   {/* Shimmer effect */}
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent" />

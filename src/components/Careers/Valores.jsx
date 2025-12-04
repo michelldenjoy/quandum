@@ -8,28 +8,28 @@ export default function Valores() {
       icon: Target,
       title: "Precisión",
       desc: "Diseñamos sistemas críticos con tolerancia cero a errores. DO-254 y DO-178C son nuestro estándar diario.",
-      gradient: "from-cyan-500 to-blue-600",
+      gradient: "from-blue-600 to-brand-blue",
       delay: 0.1,
     },
     {
       icon: Users,
       title: "Equipo",
       desc: "Colaboramos con ingenieros, certificadores y pilotos para innovar en aviación sostenible.",
-      gradient: "from-blue-600 to-indigo-600",
+      gradient: "from-blue-600 to-brand-blue",
       delay: 0.2,
     },
     {
       icon: Zap,
       title: "Velocidad",
       desc: "Lanzamos proyectos en meses, no años, manteniendo la máxima seguridad aeronáutica.",
-      gradient: "from-purple-600 to-pink-600",
+      gradient: "from-brand-pink to-red-700",
       delay: 0.3,
     },
     {
       icon: UserCheck,
       title: "Responsabilidad",
       desc: "Esta compañía es tuya. Asume la propiedad extrema de cada proyecto aeronáutico.",
-      gradient: "from-emerald-500 to-teal-600",
+      gradient: "from-brand-pink to-red-700",
       delay: 0.4,
     },
   ];
@@ -38,7 +38,7 @@ export default function Valores() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-32 bg-black overflow-hidden">
+    <section ref={ref} className="py-32 bg-gradient-to-b from-black via-slate-800 to-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Título con entrada elegante */}
         <motion.div
