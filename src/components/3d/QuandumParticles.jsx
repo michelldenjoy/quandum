@@ -230,7 +230,6 @@ export default function QuandumParticles({
             sizeMultiplier = 1.0;
           }
 
-
           // Pantallas anchas grandes con altura max de 800 
           else if (w > 1224 && h >= 800) {
             verticalOffset = -h * 0.20;

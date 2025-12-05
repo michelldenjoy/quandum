@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useMemo } from "react";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
 import { Award, Users, Check } from "lucide-react";
 
@@ -9,16 +9,16 @@ export default function QuienesSomos() {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
   const scale = useTransform(scrollY, [0, 300], [1, 0.95]);
 
-  // imágenes oficiales
-  const gallery = [
+  // Memoizar arrays estáticos
+  const gallery = useMemo(() => [
     "/images/about-1.jpg",
     "/images/about-2.jpg",
     "/images/about-3.jpg",
     "/images/about-4.jpg",
     "/images/about-6.jpg",
-  ];
+  ], []);
 
-  const caseStudies = [
+  const caseStudies = useMemo(() => [
     {
       title: "Diseño e integración de sistemas optoelectrónicos",
       subtitle: "Iluminación IR & BEVS",
@@ -37,21 +37,32 @@ export default function QuienesSomos() {
       text: "Desarrollo de software en tiempo real con prácticas robustas de verificación, trazabilidad y preparación de entregables para certificación aeronáutica.",
       image: "/images/case-3.jpg",
     },
-  ];
+  ], []);
 
-  const checklistItems = [
+  const checklistItems = useMemo(() => [
     "Integración HW–SW–Mecánica completa",
     "Ensayos ambientales MIL-STD / RTCA DO-160",
     "Control de configuración y trazabilidad total",
     "Documentación para certificación EASA/FAA",
-  ];
+  ], []);
+
+  // Variantes de animación reutilizables
+  const fadeInUp = useMemo(() => ({
+    initial: { opacity: 0, y: 40 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8 }
+  }), []);
+
+  const scaleOnHover = useMemo(() => ({
+    whileHover: { scale: 1.05, y: -5 },
+    transition: { duration: 0.3 }
+  }), []);
 
   return (
-    <main className="text-white ">
+    <main className="text-white">
       {/* ---------------- HERO ---------------- */}
       <header className="relative overflow-hidden min-h-[600px] sm:min-h-[700px] lg:min-h-[800px] flex items-center">
         <div className="absolute inset-0">
-          {/* img de fondo */}
           <motion.div
             style={{
               y: y2,
@@ -59,8 +70,7 @@ export default function QuienesSomos() {
             }}
             className="absolute inset-0 bg-cover bg-center opacity-50"
           />
-          {/* capa oscura */}
-          <div className="absolute inset-0 bg-gradient-to-l from-black/5 via-black/5 to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-l from-black/0.5 via-black/5 to-black/5" />
         </div>
 
         <motion.div
@@ -68,11 +78,7 @@ export default function QuienesSomos() {
           className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 md:py-32 lg:py-40 z-10"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
+            <motion.div {...fadeInUp} transition={{ duration: 0.8, delay: 0.2 }}>
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -103,7 +109,7 @@ export default function QuienesSomos() {
               >
                 <a
                   href="#ingenieria"
-                  className="px-6 py-3 bg-gradient-to-r from-brand-blue via-slate-500 to-brand-blue hover:from-slate-900 hover:via-slate-500 hover:to-slate-900 hover:shadow-blue-300/30 hover:scale-105 text-white font-semibold text-lg rounded transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/20 overflow-hidden group active:scale-[0.98] "
+                  className="px-6 py-3 bg-gradient-to-r from-brand-blue via-slate-500 to-brand-blue hover:from-slate-900 hover:via-slate-500 hover:to-slate-900 hover:shadow-blue-300/30 hover:scale-105 text-white font-semibold text-lg rounded transition-all duration-300 flex items-center justify-center gap-3 shadow-lg shadow-blue-500/20 overflow-hidden group active:scale-[0.98]"
                 >
                   Nuestro enfoque
                 </a>
@@ -116,7 +122,6 @@ export default function QuienesSomos() {
               </motion.div>
             </motion.div>
 
-            {/* bloque space-betwen de hero */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
@@ -124,16 +129,15 @@ export default function QuienesSomos() {
               className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 lg:mt-0"
             >
               <motion.div
-                whileHover={{ scale: 1.05, y: -5 }}
-                transition={{ duration: 0.3 }}
+                {...scaleOnHover}
                 className="p-4 sm:p-6 bg-zinc-900/60 backdrop-blur-sm rounded-2xl border border-zinc-800 hover:border-cyan-500/50 transition-colors duration-300"
               >
                 <div className="flex items-center gap-3 sm:gap-4 mb-3">
                   <Users className="w-6 h-6 sm:w-8 sm:h-8 text-cyan-600" />
                   <div>
-                    <div className="text-2xl sm:text-3xl font-bold">30</div>
+                    <div className="text-2xl sm:text-3xl font-bold">Profesionales</div>
                     <div className="text-xs sm:text-sm text-slate-300">
-                      Empleados
+                      Expertos
                     </div>
                   </div>
                 </div>
@@ -143,8 +147,7 @@ export default function QuienesSomos() {
               </motion.div>
 
               <motion.div
-                whileHover={{ scale: 1.05, y: -5 }}
-                transition={{ duration: 0.3 }}
+                {...scaleOnHover}
                 className="p-4 sm:p-6 bg-zinc-900/60 backdrop-blur-sm rounded-2xl border border-zinc-800 hover:border-blue-500/50 transition-colors duration-300"
               >
                 <div className="flex items-center gap-3 sm:gap-4 mb-3">
@@ -165,19 +168,16 @@ export default function QuienesSomos() {
         </motion.div>
       </header>
 
-      {/* ---------------- GALLERIA ----------------  */}
-      <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-b from-black via-slate-500 to-black">
+      {/* ---------------- GALLERIA ---------------- */}
+      <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-b from-black/5 via-slate-600 to-black/5">
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-8 sm:mb-10"
           >
-            {/* <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-zinc-900 text-slate-200 border border-cyan-500/20 rounded-full mb-6">
-              Instalaciones & Proyectos
-            </span> */}
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-4">
               Laboratorio de alta precisión
             </h2>
@@ -188,183 +188,168 @@ export default function QuienesSomos() {
             </p>
           </motion.div>
 
-          {/* Grid de img soldadura*/}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 auto-rows-[150px] sm:auto-rows-[250px] md:auto-rows-[350px] lg:auto-rows-[420px]">
-            {/* Imagen soldadura */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              whileHover={{ scale: 1.03 }}
-              className="col-span-2 row-span-2 rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 group relative"
-            >
-              <img
-                src={gallery[0]}
-                alt="Laboratorio principal"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4 sm:p-6">
-                <p className="text-white font-medium text-sm sm:text-base">
-                  Sala de integración de sistemas
-                </p>
-              </div>
-            </motion.div>
+            {/* Imagen principal */}
+            <GalleryImage
+              src={gallery[0]}
+              alt="Laboratorio principal"
+              className="col-span-2 row-span-2"
+              label="Sala de integración de sistemas"
+              delay={0}
+            />
 
-            {/* Imagen mediana Jhon*/}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              whileHover={{ scale: 1.05 }}
-              className="rounded-xl sm:rounded-2xl overflow-hidden shadow-xl ring-1 ring-cyan-500/20 group relative"
-            >
-              <img
-                src={gallery[1]}
-                alt="Equipo"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-            </motion.div>
+            <GalleryImage
+              src={gallery[1]}
+              alt="Equipo"
+              delay={0.1}
+            />
 
-            {/* Imagen vertical Isa y Merche*/}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              whileHover={{ scale: 1.05 }}
-              className="row-span-1 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl ring-1 ring-white/10 group relative"
-            >
-              <img
-                src={gallery[2]}
-                alt="Pruebas"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-            </motion.div>
+            <GalleryImage
+              src={gallery[2]}
+              alt="Pruebas"
+              className="row-span-1"
+              delay={0.2}
+            />
 
-            {/* Imagen extra*/}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              whileHover={{ scale: 1.05 }}
-              className="row-span-1 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl ring-1 ring-white/10 group relative"
-            >
-              <img
-                src={gallery[4]}
-                alt="Pruebas"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-            </motion.div>
+            <GalleryImage
+              src={gallery[4]}
+              alt="Pruebas"
+              className="row-span-1"
+              delay={0.2}
+            />
 
-            {/* Imagen mediana 2 Impresora3D*/}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              whileHover={{ scale: 1.05 }}
-              className="rounded-xl sm:rounded-2xl overflow-hidden shadow-xl ring-1 ring-white/10 group relative"
-            >
-              <img
-                src={gallery[3]}
-                alt="Proyecto"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-            </motion.div>
+            <GalleryImage
+              src={gallery[3]}
+              alt="Proyecto"
+              delay={0.3}
+            />
           </div>
         </div>
       </section>
 
       {/* ---------------- INGENIERÍA & PROCESO ---------------- */}
-      <section id="ingenieria" className="py-16 sm:py-24 lg:py-32 bg-militar ">
+      <section id="ingenieria" className="py-16 sm:py-24 lg:py-32 bg-militar">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-16 sm:mb-20"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               Ingeniería & Proceso
             </h2>
-            <p className="text-lg sm:text-xl text-slate-400 max-w-4xl mx-auto px-4">
+            <p className="text-lg sm:text-xl text-slate-100 max-w-4xl mx-auto px-4">
               Flujo disciplinado end-to-end con trazabilidad completa y
               cumplimiento aeronáutico.
             </p>
           </motion.div>
 
           <div className="space-y-20 sm:space-y-24 lg:space-y-32">
-            {caseStudies.map((c, i) => {
-              const ref = useRef(null);
-              const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-              return (
-                <motion.div
-                  key={i}
-                  ref={ref}
-                  initial={{ opacity: 0, y: 100 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.8, delay: i * 0.2 }}
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-8  sm:gap-12 lg:gap-16 items-center ${
-                    i % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-                  }`}
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.14 }}
-                    transition={{ duration: 0.6 }}
-                    className={`${i % 2 === 1 ? "lg:order-2" : ""}`}
-                  >
-                    <img
-                      src={c.image}
-                      alt={c.title}
-                      className="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-xl sm:rounded-2xl shadow-2xl ring-1 ring-white/10"
-                    />
-                  </motion.div>
-
-                  <div
-                    className={`${
-                      i % 2 === 1 ? "lg:order-1" : ""
-                    } space-y-4 sm:space-y-6`}
-                  >
-                    <div className="flex items-center gap-3 text-cyan-500">
-                      <Award className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm font-semibold tracking-wider uppercase">
-                        {c.subtitle}
-                      </span>
-                    </div>
-
-                    <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
-                      {c.title}
-                    </h3>
-                    <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                      {c.text}
-                    </p>
-
-                    <ul className="space-y-3 text-white">
-                      {checklistItems.map((item, idx) => (
-                        <motion.li
-                          key={idx}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={isInView ? { opacity: 1, x: 0 } : {}}
-                          transition={{ delay: 0.4 + idx * 0.1 }}
-                          className="flex items-start gap-3"
-                        >
-                          <div className="w-1.5 h-1.5 bg-cyan-600 rounded-full mt-2 flex-shrink-0" />
-                          <span className="text-sm sm:text-base">{item}</span>
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </div>
-                </motion.div>
-              );
-            })}
+            {caseStudies.map((c, i) => (
+              <CaseStudyItem
+                key={i}
+                caseStudy={c}
+                index={i}
+                checklistItems={checklistItems}
+              />
+            ))}
           </div>
         </div>
       </section>
     </main>
   );
 }
+
+// Componente optimizado para imágenes de galería
+const GalleryImage = React.memo(({ src, alt, className = "", label, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.9 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.6, delay }}
+    whileHover={{ scale: 1.03 }}
+    className={`rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 group relative ${className}`}
+  >
+    <img
+      src={src}
+      alt={alt}
+      loading="lazy"
+      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+    />
+    {label && (
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4 sm:p-6">
+        <p className="text-white font-medium text-sm sm:text-base">
+          {label}
+        </p>
+      </div>
+    )}
+  </motion.div>
+));
+
+// Componente optimizado para casos de estudio
+const CaseStudyItem = React.memo(({ caseStudy, index, checklistItems }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 100 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, delay: index * 0.2 }}
+      className={`grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center ${
+        index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+      }`}
+    >
+      <motion.div
+        whileHover={{ scale: 1.14 }}
+        transition={{ duration: 0.6 }}
+        className={`${index % 2 === 1 ? "lg:order-2" : ""}`}
+      >
+        <img
+          src={caseStudy.image}
+          alt={caseStudy.title}
+          loading="lazy"
+          className="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-xl sm:rounded-2xl shadow-2xl ring-1 ring-white/10"
+        />
+      </motion.div>
+
+      <div
+        className={`${
+          index % 2 === 1 ? "lg:order-1" : ""
+        } space-y-4 sm:space-y-6`}
+      >
+        {/* <div className="flex items-center gap-3 text-cyan-500">
+          <Award className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+          <span className="text-xs sm:text-sm font-semibold tracking-wider uppercase">
+            {caseStudy.subtitle}
+          </span>
+        </div> */}
+
+        <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
+          {caseStudy.title}
+        </h3>
+        <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+          {caseStudy.text}
+        </p>
+
+        <ul className="space-y-3 text-white">
+          {checklistItems.map((item, idx) => (
+            <motion.li
+              key={idx}
+              initial={{ opacity: 0, x: -20 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ delay: 0.4 + idx * 0.1 }}
+              className="flex items-start gap-3"
+            >
+              <div className="w-1.5 h-1.5 bg-brand-blue rounded-full mt-2 flex-shrink-0" />
+              <span className="text-sm sm:text-base">{item}</span>
+            </motion.li>
+          ))}
+        </ul>
+      </div>
+    </motion.div>
+  );
+});

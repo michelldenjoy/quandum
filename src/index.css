@@ -11,7 +11,7 @@
 
   .bg-militar {
     position: relative;
-    background-image: url('/bgmilitar.jpg');
+    background-image: url('/bgmilitar1.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* 👈 Parallax */
@@ -21,7 +21,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.7); /* opacidad 50% */
+    background: rgba(0, 0, 0, 0.75); /* opacidad 50% */
     z-index: 1;
   }
   
