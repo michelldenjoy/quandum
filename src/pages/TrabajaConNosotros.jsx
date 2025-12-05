@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import {
   Rocket,
   Users,
@@ -120,7 +120,7 @@ import Formulario from "../components/Careers/Formulario";
 
 
 export default function TrabajaConNosotros() {
-  const [openBenefit, setOpenBenefit] = useState(null);
+  // const [openBenefit, setOpenBenefit] = useState(null);
 
   return (
     <div className="min-h-screen bg-white">
@@ -153,7 +153,7 @@ export default function TrabajaConNosotros() {
             <span className="bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text text-transparent font-extrabold">
               Aerospace
             </span>{" "}
-            diseñamos componentes eléctricos certificados. Si tienes pasión por
+            diseñamos componentes eléctronicos certificados. Si tienes pasión por
             la ingeniería de precisión y la innovación sostenible, este es tu
             lugar.
           </p>

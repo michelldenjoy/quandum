@@ -166,7 +166,7 @@ export default function QuienesSomos() {
       </header>
 
       {/* ---------------- GALLERIA ----------------  */}
-      <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-l from-stone-800 via-stone-500 to-black/10">
+      <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-b from-black via-slate-500 to-black">
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
