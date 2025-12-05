@@ -149,7 +149,7 @@ export default function Formulario() {
      Render
   ------------------------------------------------ */
   return (
-    <section className="py-32 px-6 bg-gradient-to-r from-black/90 via-slate-800 to-black/90">
+    <section className="py-32 px-6 bg-mili">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-5xl font-bold text-center mb-4 text-gray-100">
           Envía tu Candidatura
