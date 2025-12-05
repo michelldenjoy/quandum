@@ -299,7 +299,7 @@ const CaseStudyItem = React.memo(({ caseStudy, index, checklistItems }) => {
       initial={{ opacity: 0, y: 100 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: index * 0.2 }}
-      className={`grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center ${
+      className={`grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 bg-black/40 px-6 py-6 rounded-2xl lg:gap-16 items-center ${
         index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
       }`}
     >
@@ -331,11 +331,11 @@ const CaseStudyItem = React.memo(({ caseStudy, index, checklistItems }) => {
         <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
           {caseStudy.title}
         </h3>
-        <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+        <p className="text-base sm:text-lg  text-slate-300 leading-relaxed">
           {caseStudy.text}
         </p>
 
-        <ul className="space-y-3 text-white">
+        <ul className="space-y-3  px-4 text-white">
           {checklistItems.map((item, idx) => (
             <motion.li
               key={idx}
