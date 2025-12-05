@@ -248,54 +248,63 @@ export default function Certificaciones() {
 
       {/* Modal de certificados */}
       {currentCert && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="fixed inset-0 z-[999] bg-black/98 backdrop-blur-2xl flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
-          onClick={() => setSelectedCert(null)}
-        >
-          <motion.div
-            initial={{ scale: 0.9 }}
-            animate={{ scale: 1 }}
-            className="relative max-w-4xl w-full my-8"
-            onClick={(e) => e.stopPropagation()}
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    className="fixed inset-0 z-[999] bg-black/95 backdrop-blur-xl overflow-y-auto p-4 sm:p-6"
+    onClick={() => setSelectedCert(null)}
+  >
+    <motion.div
+      initial={{ scale: 0.95 }}
+      animate={{ scale: 1 }}
+      className="relative max-w-2xl w-full mx-auto mt-10 mb-16"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* BOTÓN DE CERRAR - SIEMPRE VISIBLE */}
+      <button
+        onClick={() => setSelectedCert(null)}
+        className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[1001] bg-white/10 backdrop-blur-xl p-3 rounded-full border border-white/20 hover:bg-white/20 transition"
+      >
+        <X className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+      </button>
+
+      {/* CONTENIDO DEL MODAL */}
+      <div className="bg-zinc-950/95 border border-zinc-800 rounded-2xl overflow-hidden">
+        {/* Header */}
+        <div className="bg-gradient-to-b from-zinc-900 to-black p-6 sm:p-8 text-center">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white break-words">
+            {currentCert.name}
+          </h3>
+          <p className="text-zinc-400 mt-2 text-sm sm:text-base break-words">
+            Código: {currentCert.code}
+          </p>
+        </div>
+
+        {/* Imagen */}
+        <div className="p-4 sm:p-6 bg-black">
+          <img
+            src={currentCert.imageUrl}
+            alt={currentCert.name}
+            className="w-full h-auto rounded-lg sm:rounded-xl shadow-2xl border border-zinc-800"
+          />
+        </div>
+
+        {/* Botón descargar */}
+        <div className="p-6 sm:p-8 bg-gradient-to-t from-black to-zinc-950 flex justify-center">
+          <a
+            href={currentCert.pdfUrl}
+            download
+            className="inline-flex items-center gap-3 px-8 py-4 sm:px-10 sm:py-5 bg-white text-black rounded-full font-bold text-base sm:text-lg hover:scale-105 transition"
           >
-            <button
-              onClick={() => setSelectedCert(null)}
-              className="absolute -top-10 sm:-top-12 right-0 text-white hover:text-zinc-400 transition-colors z-10"
-            >
-              <X className="w-8 h-8 sm:w-10 sm:h-10" />
-            </button>
-            <div className="bg-zinc-950/95 border-2 border-zinc-800 rounded-2xl sm:rounded-3xl overflow-hidden">
-              <div className="bg-gradient-to-b from-zinc-900 to-black p-6 sm:p-8 text-center">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white break-words">
-                  {currentCert.name}
-                </h3>
-                <p className="text-zinc-400 mt-2 text-sm sm:text-base break-words">
-                  Código: {currentCert.code}
-                </p>
-              </div>
-              <div className="p-4 sm:p-6 md:p-8 bg-black">
-                <img
-                  src={currentCert.imageUrl}
-                  alt={currentCert.name}
-                  className="w-full h-auto rounded-lg sm:rounded-xl shadow-2xl border border-zinc-800"
-                />
-              </div>
-              <div className="p-6 sm:p-8 bg-gradient-to-t from-black to-zinc-950 flex justify-center">
-                <a
-                  href={currentCert.pdfUrl}
-                  download
-                  className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-5 bg-white text-black rounded-full font-bold text-base sm:text-lg hover:scale-105 transition"
-                >
-                  <Download className="w-5 h-5 sm:w-6 sm:h-6" />
-                  Descargar PDF
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
-      )}
+            <Download className="w-5 h-5 sm:w-6 sm:h-6" />
+            Descargar PDF
+          </a>
+        </div>
+      </div>
+    </motion.div>
+  </motion.div>
+)}
+
 
       {/* minifooter */}
       <motion.div
