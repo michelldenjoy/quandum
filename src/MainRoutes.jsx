@@ -6,7 +6,7 @@ import LogoSpinner from "./components/LogoSpinner";
 const Home = lazy(() => import("./pages/Home"));
 
 // Empresa
-const About = lazy(() => import("./pages/Empresa/About"));
+const QuienesSomos = lazy(() => import("./pages/Empresa/QuienesSomos"));
 const Infraestructuras = lazy(() => import("./pages/Empresa/Infraestructuras"));
 const Historia = lazy(() => import("./pages/Empresa/Historia"));
 
@@ -46,7 +46,7 @@ export default function MainRoutes() {
         <Route path="/" element={<Home />} />
 
         {/* Empresa */}
-        <Route path="/empresa/about" element={<About />} />
+        <Route path="/empresa/about" element={<QuienesSomos />} />
         <Route path="/empresa/infraestructuras" element={<Infraestructuras />} />
         <Route path="/empresa/historia" element={<Historia />} />
 

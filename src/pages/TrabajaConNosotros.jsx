@@ -25,98 +25,98 @@ import Collage from "../components/Careers/Collage";
 import Valores from "../components/Careers/Valores";
 import Formulario from "../components/Careers/Formulario";
 
-const andurilBenefits = [
-  {
-    title: "Salud y Bienestar",
-    icon: Heart,
-    items: [
-      {
-        name: "Seguro Médico Premium",
-        desc: "Cobertura médica, dental y de visión 100% pagada por la empresa para empleados y dependientes.",
-      },
-      {
-        name: "Apoyo en Salud Mental",
-        desc: "Acceso a terapia, asesoramiento y programas de bienestar mental sin costo adicional.",
-      },
-      {
-        name: "Gimnasio y Fitness",
-        desc: "Membresía de gimnasio pagada y clases de yoga/pilates en las instalaciones.",
-      },
-    ],
-  },
-  {
-    title: "Compensación y Equidad",
-    icon: DollarSign,
-    items: [
-      {
-        name: "Salarios Competitivos",
-        desc: "Compensación ajustada al mercado aeroespacial con revisiones anuales garantizadas.",
-      },
-      {
-        name: "Participación Accionaria",
-        desc: "Opciones sobre acciones para todos los empleados de tiempo completo desde el día 1.",
-      },
-      {
-        name: "Bonos de Rendimiento",
-        desc: "Bonificaciones trimestrales y anuales basadas en objetivos individuales y de equipo.",
-      },
-    ],
-  },
-  {
-    title: "Desarrollo Profesional",
-    icon: GraduationCap,
-    items: [
-      {
-        name: "Formación Continua",
-        desc: "Cursos de certificación EASA/FAA, conferencias técnicas y mentorías con expertos de la industria.",
-      },
-      {
-        name: "Presupuesto de Aprendizaje",
-        desc: "€5,000 anuales para cursos, certificaciones y conferencias relacionadas con tu rol.",
-      },
-      {
-        name: "Carrera Interna",
-        desc: "Programa estructurado de promoción con planes de desarrollo personalizados.",
-      },
-    ],
-  },
-  {
-    title: "Equilibrio Vida-Trabajo",
-    icon: Clock,
-    items: [
-      {
-        name: "Trabajo Híbrido Flexible",
-        desc: "Libertad para trabajar desde casa o desde nuestras instalaciones en Málaga según tu preferencia.",
-      },
-      {
-        name: "Vacaciones Extendidas",
-        desc: "30 días de vacaciones pagadas + permisos sabáticos después de 5 años.",
-      },
-      {
-        name: "Permisos Parentales",
-        desc: "16 semanas de permiso parental remunerado para todos los padres, independientemente del género.",
-      },
-    ],
-  },
-  {
-    title: "Oficina y Cultura",
-    icon: Home,
-    items: [
-      {
-        name: "Instalaciones de Élite",
-        desc: "Oficinas en el Parque Tecnológico de Málaga con laboratorios, simuladores de vuelo y hangares.",
-      },
-      {
-        name: "Comidas y Snacks",
-        desc: "Desayuno y almuerzo diario gratuito, snacks ilimitados y café de especialidad.",
-      },
-      {
-        name: "Eventos de Equipo",
-        desc: "Retiros trimestrales, vuelos de demostración y eventos sociales regulares.",
-      },
-    ],
-  },
-];
+// const andurilBenefits = [
+//   {
+//     title: "Salud y Bienestar",
+//     icon: Heart,
+//     items: [
+//       {
+//         name: "Seguro Médico Premium",
+//         desc: "Cobertura médica, dental y de visión 100% pagada por la empresa para empleados y dependientes.",
+//       },
+//       {
+//         name: "Apoyo en Salud Mental",
+//         desc: "Acceso a terapia, asesoramiento y programas de bienestar mental sin costo adicional.",
+//       },
+//       {
+//         name: "Gimnasio y Fitness",
+//         desc: "Membresía de gimnasio pagada y clases de yoga/pilates en las instalaciones.",
+//       },
+//     ],
+//   },
+//   {
+//     title: "Compensación y Equidad",
+//     icon: DollarSign,
+//     items: [
+//       {
+//         name: "Salarios Competitivos",
+//         desc: "Compensación ajustada al mercado aeroespacial con revisiones anuales garantizadas.",
+//       },
+//       {
+//         name: "Participación Accionaria",
+//         desc: "Opciones sobre acciones para todos los empleados de tiempo completo desde el día 1.",
+//       },
+//       {
+//         name: "Bonos de Rendimiento",
+//         desc: "Bonificaciones trimestrales y anuales basadas en objetivos individuales y de equipo.",
+//       },
+//     ],
+//   },
+//   {
+//     title: "Desarrollo Profesional",
+//     icon: GraduationCap,
+//     items: [
+//       {
+//         name: "Formación Continua",
+//         desc: "Cursos de certificación EASA/FAA, conferencias técnicas y mentorías con expertos de la industria.",
+//       },
+//       {
+//         name: "Presupuesto de Aprendizaje",
+//         desc: "€5,000 anuales para cursos, certificaciones y conferencias relacionadas con tu rol.",
+//       },
+//       {
+//         name: "Carrera Interna",
+//         desc: "Programa estructurado de promoción con planes de desarrollo personalizados.",
+//       },
+//     ],
+//   },
+//   {
+//     title: "Equilibrio Vida-Trabajo",
+//     icon: Clock,
+//     items: [
+//       {
+//         name: "Trabajo Híbrido Flexible",
+//         desc: "Libertad para trabajar desde casa o desde nuestras instalaciones en Málaga según tu preferencia.",
+//       },
+//       {
+//         name: "Vacaciones Extendidas",
+//         desc: "30 días de vacaciones pagadas + permisos sabáticos después de 5 años.",
+//       },
+//       {
+//         name: "Permisos Parentales",
+//         desc: "16 semanas de permiso parental remunerado para todos los padres, independientemente del género.",
+//       },
+//     ],
+//   },
+//   {
+//     title: "Oficina y Cultura",
+//     icon: Home,
+//     items: [
+//       {
+//         name: "Instalaciones de Élite",
+//         desc: "Oficinas en el Parque Tecnológico de Málaga con laboratorios, simuladores de vuelo y hangares.",
+//       },
+//       {
+//         name: "Comidas y Snacks",
+//         desc: "Desayuno y almuerzo diario gratuito, snacks ilimitados y café de especialidad.",
+//       },
+//       {
+//         name: "Eventos de Equipo",
+//         desc: "Retiros trimestrales, vuelos de demostración y eventos sociales regulares.",
+//       },
+//     ],
+//   },
+// ];
 
 
 export default function TrabajaConNosotros() {
@@ -168,7 +168,7 @@ export default function TrabajaConNosotros() {
         <Valores />
       </div>
 
-      <section className="py-24 px-6 bg-white">
+      {/* <section className="py-24 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-sm font-bold text-blue-600 tracking-wider uppercase mb-4">
@@ -232,7 +232,7 @@ export default function TrabajaConNosotros() {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 <div>
   <Formulario />
 </div>

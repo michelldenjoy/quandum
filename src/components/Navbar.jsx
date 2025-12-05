@@ -30,7 +30,7 @@ export default function Navbar() {
     {
       name: "Empresa",
       dropdown: [
-        { name: "About", path: "/empresa/about" },
+        { name: "Quienes somos", path: "/empresa/about" },
         { name: "Infraestructuras", path: "/empresa/infraestructuras" },
         { name: "Historia", path: "/empresa/historia" },
       ],
@@ -62,7 +62,7 @@ export default function Navbar() {
       ],
     },
     { name: "Prensa", path: "/prensa" },
-    { name: "Trabaja Con nosotros", path: "/trabaja-con-nosotros" },
+    { name: "Trabaja con nosotros", path: "/trabaja-con-nosotros" },
     { name: "Contacto", path: "/contacto" },
   ];
 
