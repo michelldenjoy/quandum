@@ -36,7 +36,7 @@ export default function HowWeWork() {
   const [activeSection, setActiveSection] = useState(sections[0]);
 
   return (
-    <div className="min-h-screen bg-stone-300 text-black py-20 px-6">
+    <div className="min-h-screen  bg-stone-300 text-black py-20 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -45,13 +45,13 @@ export default function HowWeWork() {
           transition={{ duration: 0.6 }}
           className="mb-8 md:mb-16"
         >
-          <h2 className="text-4xl md:text-7xl text-black font-bold mb-4">Como Trabajamos</h2>
-          <p className="text-gray-600 text-base md:text-xl max-w-2xl">
+          <h2 className="text-4xl md:text-7xl text-center text-black font-bold mb-4">Como Trabajamos</h2>
+          <p className="text-gray-700 text-base mx-auto text-center md:text-xl max-w-2xl">
             Cuatro principios fundamentales que impulsan nuestra innovación aeroespacial
           </p>
         </motion.div>
 
-        {/* Mobile Navigation - Horizontal Scroll */}
+        {/* Scroll Horizontal de MOVIL */}
         <div className="md:hidden mb-8 -mx-6 px-6 overflow-x-auto">
           <div className="flex gap-3 pb-4 min-w-max">
             {sections.map((section, index) => (
@@ -77,7 +77,7 @@ export default function HowWeWork() {
           </div>
         </div>
 
-        {/* Mobile Content */}
+        {/* Contenido MOVIL */}
         <div className="md:hidden">
           <AnimatePresence mode="wait">
             <motion.div
@@ -88,17 +88,17 @@ export default function HowWeWork() {
               transition={{ duration: 0.5 }}
               className="space-y-6"
             >
-              {/* Number indicator */}
+              {/* indicador de numero */}
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-slate-800"
+                className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-slate-800"
               >
                 {activeSection.number}
               </motion.div>
 
-              {/* Image */}
+              {/* Imagen */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -113,7 +113,7 @@ export default function HowWeWork() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </motion.div>
 
-              {/* Description */}
+              {/* Descripcion */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -130,9 +130,9 @@ export default function HowWeWork() {
           </AnimatePresence>
         </div>
 
-        {/* Desktop Layout - Side by Side */}
-        <div className="hidden md:grid md:grid-cols-2 gap-12 items-start">
-          {/* Left side - Menu */}
+        {/* Layout ESCRITORIO */}
+        <div className="hidden md:grid md:grid-cols-2  gap-12 items-start">
+          {/* Lado izquierdo */}
           <div className="space-y-2">
             {sections.map((section, index) => (
               <motion.button
@@ -141,7 +141,7 @@ export default function HowWeWork() {
                 className={`w-full text-left p-6 rounded-lg transition-all duration-300 ${
                   activeSection.id === section.id
                     ? 'bg-white text-black shadow-lg'
-                    : 'bg-zinc-900 text-white hover:bg-zinc-800'
+                    : 'bg-zinc-800 text-white hover:bg-zinc-900'
                 }`}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -181,7 +181,7 @@ export default function HowWeWork() {
             ))}
           </div>
 
-          {/* Right side - Content */}
+          {/* Lado Derecho */}
           <div className="sticky top-20">
             <AnimatePresence mode="wait">
               <motion.div
@@ -192,17 +192,17 @@ export default function HowWeWork() {
                 transition={{ duration: 0.5 }}
                 className="space-y-6"
               >
-                {/* Number indicator */}
+                {/* Indicador de numero */}
                 <motion.div
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ delay: 0.2 }}
-                  className="text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-slate-800"
+                  className="text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-black"
                 >
                   {activeSection.number}
                 </motion.div>
 
-                {/* Image */}
+                {/* Imagen */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -214,10 +214,10 @@ export default function HowWeWork() {
                     alt={activeSection.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute inset-0" />
                 </motion.div>
 
-                {/* Description */}
+                {/* Descripcion */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}

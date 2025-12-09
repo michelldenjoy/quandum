@@ -10,53 +10,68 @@ export default function QuienesSomos() {
   const scale = useTransform(scrollY, [0, 300], [1, 0.95]);
 
   // Memoizar arrays estáticos
-  const gallery = useMemo(() => [
-    "/images/about-1.jpg",
-    "/images/about-2.jpg",
-    "/images/about-3.jpg",
-    "/images/about-4.jpg",
-    "/images/about-6.jpg",
-  ], []);
+  const gallery = useMemo(
+    () => [
+      "/images/about-1.jpg",
+      "/images/about-2.jpg",
+      "/images/about-3.jpg",
+      "/images/about-4.jpg",
+      "/images/about-6.jpg",
+    ],
+    []
+  );
 
-  const caseStudies = useMemo(() => [
-    {
-      title: "Diseño e integración de sistemas optoelectrónicos",
-      subtitle: "Iluminación IR & BEVS",
-      text: "Desarrollo de subsistemas optoelectrónicos integrados para visión mejorada en reabastecimiento aéreo. Diseño de hardware, firmware y ensayos ambientales para entornos críticos.",
-      image: "/images/case-1.jpg",
-    },
-    {
-      title: "Electrónica de potencia y control",
-      subtitle: "Sistemas aeronáuticos de alimentación",
-      text: "Diseño de electrónica de potencia con alta fiabilidad, placas multicapa y mitigación EMI/EMC. Integración con unidades embarcadas y verificación completa.",
-      image: "/images/case-2.jpg",
-    },
-    {
-      title: "Software embebido y certificación",
-      subtitle: "RTOS & SW crítico",
-      text: "Desarrollo de software en tiempo real con prácticas robustas de verificación, trazabilidad y preparación de entregables para certificación aeronáutica.",
-      image: "/images/case-3.jpg",
-    },
-  ], []);
+  const caseStudies = useMemo(
+    () => [
+      {
+        title: "Diseño e integración de sistemas optoelectrónicos",
+        subtitle: "Iluminación IR & BEVS",
+        text: "Desarrollo de subsistemas optoelectrónicos integrados para visión mejorada en reabastecimiento aéreo. Diseño de hardware, firmware y ensayos ambientales para entornos críticos.",
+        image: "/images/case-1.jpg",
+      },
+      {
+        title: "Electrónica de potencia y control",
+        subtitle: "Sistemas aeronáuticos de alimentación",
+        text: "Diseño de electrónica de potencia con alta fiabilidad, placas multicapa y mitigación EMI/EMC. Integración con unidades embarcadas y verificación completa.",
+        image: "/images/case-2.jpg",
+      },
+      {
+        title: "Software embebido y certificación",
+        subtitle: "RTOS & SW crítico",
+        text: "Desarrollo de software en tiempo real con prácticas robustas de verificación, trazabilidad y preparación de entregables para certificación aeronáutica.",
+        image: "/images/case-3.jpg",
+      },
+    ],
+    []
+  );
 
-  const checklistItems = useMemo(() => [
-    "Integración HW–SW–Mecánica completa",
-    "Ensayos ambientales MIL-STD / RTCA DO-160",
-    "Control de configuración y trazabilidad total",
-    "Documentación para certificación EASA/FAA",
-  ], []);
+  const checklistItems = useMemo(
+    () => [
+      "Integración HW–SW–Mecánica completa",
+      "Ensayos ambientales MIL-STD / RTCA DO-160",
+      "Control de configuración y trazabilidad total",
+      "Documentación para certificación EASA/FAA",
+    ],
+    []
+  );
 
   // Variantes de animación reutilizables
-  const fadeInUp = useMemo(() => ({
-    initial: { opacity: 0, y: 40 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.8 }
-  }), []);
+  const fadeInUp = useMemo(
+    () => ({
+      initial: { opacity: 0, y: 40 },
+      animate: { opacity: 1, y: 0 },
+      transition: { duration: 0.8 },
+    }),
+    []
+  );
 
-  const scaleOnHover = useMemo(() => ({
-    whileHover: { scale: 1.05, y: -5 },
-    transition: { duration: 0.3 }
-  }), []);
+  const scaleOnHover = useMemo(
+    () => ({
+      whileHover: { scale: 1.05, y: -5 },
+      transition: { duration: 0.3 },
+    }),
+    []
+  );
 
   return (
     <main className="text-white">
@@ -78,7 +93,10 @@ export default function QuienesSomos() {
           className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 md:py-32 lg:py-40 z-10"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center">
-            <motion.div {...fadeInUp} transition={{ duration: 0.8, delay: 0.2 }}>
+            <motion.div
+              {...fadeInUp}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -135,7 +153,9 @@ export default function QuienesSomos() {
                 <div className="flex items-center gap-3 sm:gap-4 mb-3">
                   <Users className="w-6 h-6 sm:w-8 sm:h-8 text-cyan-600" />
                   <div>
-                    <div className="text-2xl sm:text-3xl font-bold">Profesionales</div>
+                    <div className="text-2xl sm:text-3xl font-bold">
+                      Profesionales
+                    </div>
                     <div className="text-xs sm:text-sm text-slate-300">
                       Expertos
                     </div>
@@ -169,7 +189,7 @@ export default function QuienesSomos() {
       </header>
 
       {/* ---------------- GALLERIA ---------------- */}
-      <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-b from-black/5 via-slate-600 to-black/5">
+      <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-b from-stone-300 to-black/10 ">
         <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -178,10 +198,13 @@ export default function QuienesSomos() {
             transition={{ duration: 0.8 }}
             className="text-center mb-8 sm:mb-10"
           >
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-4">
+            {/* ************************ TITULOSSSSSS ************************* */}
+            <h2 className="text-4xl md:text-7xl text-center text-black font-bold mb-4">
               Laboratorio de alta precisión
             </h2>
-            <p className="text-slate-200 mt-4 max-w-2xl font-extrabold mx-auto text-sm sm:text-base px-4">
+
+            {/* ************************ SUBTITULOSSSSSS************************* */}
+            <p className="text-gray-700 text-base mx-auto text-center md:text-xl max-w-2xl">
               Espacios diseñados para el desarrollo de sistemas críticos: salas
               limpias, bancos de pruebas EMI/EMC y estaciones de integración
               HW/SW.
@@ -198,11 +221,7 @@ export default function QuienesSomos() {
               delay={0}
             />
 
-            <GalleryImage
-              src={gallery[1]}
-              alt="Equipo"
-              delay={0.1}
-            />
+            <GalleryImage src={gallery[1]} alt="Equipo" delay={0.1} />
 
             <GalleryImage
               src={gallery[2]}
@@ -218,11 +237,7 @@ export default function QuienesSomos() {
               delay={0.2}
             />
 
-            <GalleryImage
-              src={gallery[3]}
-              alt="Proyecto"
-              delay={0.3}
-            />
+            <GalleryImage src={gallery[3]} alt="Proyecto" delay={0.3} />
           </div>
         </div>
       </section>
@@ -237,10 +252,10 @@ export default function QuienesSomos() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16 sm:mb-20"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-7xl text-center text-white font-bold mb-4">
               Ingeniería & Proceso
             </h2>
-            <p className="text-lg sm:text-xl text-slate-100 max-w-4xl mx-auto px-4">
+            <p className="text-gray-200 text-base mx-auto text-center md:text-xl max-w-2xl">
               Flujo disciplinado end-to-end con trazabilidad completa y
               cumplimiento aeronáutico.
             </p>
@@ -263,30 +278,30 @@ export default function QuienesSomos() {
 }
 
 // Componente optimizado para imágenes de galería
-const GalleryImage = React.memo(({ src, alt, className = "", label, delay = 0 }) => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.9 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true, amount: 0.2 }}
-    transition={{ duration: 0.6, delay }}
-    whileHover={{ scale: 1.03 }}
-    className={`rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 group relative ${className}`}
-  >
-    <img
-      src={src}
-      alt={alt}
-      loading="lazy"
-      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-    />
-    {label && (
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4 sm:p-6">
-        <p className="text-white font-medium text-sm sm:text-base">
-          {label}
-        </p>
-      </div>
-    )}
-  </motion.div>
-));
+const GalleryImage = React.memo(
+  ({ src, alt, className = "", label, delay = 0 }) => (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, delay }}
+      whileHover={{ scale: 1.03 }}
+      className={`rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 group relative ${className}`}
+    >
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+      />
+      {label && (
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4 sm:p-6">
+          <p className="text-white font-medium text-sm sm:text-base">{label}</p>
+        </div>
+      )}
+    </motion.div>
+  )
+);
 
 // Componente optimizado para casos de estudio
 const CaseStudyItem = React.memo(({ caseStudy, index, checklistItems }) => {
