@@ -36,7 +36,7 @@ export default function HowWeWork() {
   const [activeSection, setActiveSection] = useState(sections[0]);
 
   return (
-    <div className="min-h-screen  bg-stone-300 text-black py-20 px-6">
+    <div className="min-h bg-stone-300 text-black py-20 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
