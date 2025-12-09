@@ -53,3 +53,26 @@
     position: relative;
     z-index: 2;
   }
+
+  /*bg3*/
+
+  .bg-values {
+    position: relative;
+    background-image: url('/images/about-5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* 👈 Parallax */
+  }
+  
+  .bg-values::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7); /* opacidad 50% */
+    z-index: 1;
+  }
+  
+  .bg-values > * {
+    position: relative;
+    z-index: 2;
+  }

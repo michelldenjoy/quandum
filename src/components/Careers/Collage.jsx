@@ -57,7 +57,7 @@ export default function Collage() {
                 En Quandum Aerospace diseñamos y certificamos sistemas que operan en los entornos más exigentes del planeta: reabastecimiento en vuelo, visión nocturna, electrónica de potencia embarcada y software DO-178C DAL-A.
               </p>
               <p>
-                Aquí no hay burocracia innecesaria. Cada ingeniero tiene impacto directo desde el día uno, en proyectos reales que vuelan mañana.
+              Priorizamos la acción sobre el proceso. Cada trabajador tiene impacto directo desde el día uno, en proyectos reales que vuelan mañana.
               </p>
             </motion.div>
 
@@ -123,7 +123,7 @@ export default function Collage() {
             >
               <img src="/images/collage4.jpg" alt="Sistema en vuelo" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4 sm:p-6 lg:p-8">
-                <p className="text-white font-medium text-sm sm:text-base lg:text-lg">Sistema BEVS en pruebas de vuelo reales</p>
+                {/* <p className="text-white font-medium text-sm sm:text-base lg:text-lg">Sistema BEVS en pruebas de vuelo reales</p> */}
               </div>
             </motion.div>
 

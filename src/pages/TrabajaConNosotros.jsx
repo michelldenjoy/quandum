@@ -24,6 +24,7 @@ import {
 import Collage from "../components/Careers/Collage";
 import Valores from "../components/Careers/Valores";
 import Formulario from "../components/Careers/Formulario";
+import HowWeWork from "../components/Careers/HowWeWork";
 
 // const andurilBenefits = [
 //   {
@@ -133,10 +134,10 @@ export default function TrabajaConNosotros() {
 
       <section className="relative w-screen py-44 px-6 overflow-hidden bg-black text-white left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90"
           style={{ backgroundImage: `url('/careerbg.jpg')` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/10" />
 
         <div className="relative mx-auto text-center z-10">
           <div className="inline-block mb-6 px-6 py-2 border border-white/20 rounded-full text-sm tracking-wider animate-fadeIn">
@@ -162,6 +163,10 @@ export default function TrabajaConNosotros() {
 
       <div>
         <Collage />
+      </div>
+
+      <div>
+        <HowWeWork />
       </div>
 
       <div>
