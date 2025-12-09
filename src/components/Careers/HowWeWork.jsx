@@ -93,7 +93,7 @@ export default function HowWeWork() {
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-slate-800"
+                className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-blue  to-black"
               >
                 {activeSection.number}
               </motion.div>
@@ -192,15 +192,15 @@ export default function HowWeWork() {
                 transition={{ duration: 0.5 }}
                 className="space-y-6"
               >
-                {/* Indicador de numero */}
-                <motion.div
+                {/* INDICADOR DE NUMERO */}
+                {/* <motion.div
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ delay: 0.2 }}
                   className="text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-black"
                 >
                   {activeSection.number}
-                </motion.div>
+                </motion.div> */}
 
                 {/* Imagen */}
                 <motion.div
