@@ -4,9 +4,9 @@ import { motion, AnimatePresence } from 'motion/react';
 const sections = [
   {
     id: 'autonomy',
-    title: 'Autonomia',
+    title: 'Automatización',
     number: '01',
-    description: 'Desarrollamos sistemas autónomos avanzados que permiten a nuestras aeronaves operar de manera inteligente y adaptativa. Nuestra tecnología de IA integrada toma decisiones críticas en tiempo real, optimizando rutas de vuelo, gestionando recursos y respondiendo a condiciones cambiantes sin intervención humana constante.',
+    description: 'Desarrollamos sistemas autónomos avanzados que permiten a nuestras aeronaves operar de manera inteligente y adaptativa. Nuestra tecnología de IA integrada toma decisiones críticas en tiempo real, optimizando errores con alta precisión y reduciendo la necesidad de múltiples operarios.',
     image: '/bgmilitar.jpg'
   },
   {
@@ -20,7 +20,7 @@ const sections = [
     id: 'scale',
     title: 'Escala',
     number: '03',
-    description: 'Construimos para escalar globalmente. Nuestra infraestructura de manufactura avanzada y cadenas de suministro resilientes nos permiten producir en gran serie sistemas electrónicos aeronáuticos críticos sin comprometer la calidad ni la certificación. Cada sistema está diseñado para replicarse eficientemente, desde prototipos únicos hasta despliegues de cientos de unidades.',
+    description: 'Construimos pensando en el crecimiento global. Nuestra infraestructura avanzada de manufactura y nuestras cadenas de suministro robustas nos permiten producir en gran escala sistemas electrónicos aeronáuticos esenciales sin comprometer la calidad ni las certificaciones. Cada unidad está diseñada para replicarse de forma eficiente, desde un prototipo único hasta flotas de cientos o miles de plataformas operando en todo el mundo.',
     image: 'images/scale.jpg'
   },
   {
@@ -36,7 +36,7 @@ export default function HowWeWork() {
   const [activeSection, setActiveSection] = useState(sections[0]);
 
   return (
-    <div className="min-h bg-stone-300 text-black py-20 px-6">
+    <div className="min-h bg-gradient-to-b from-stone-300 via-brand-blue/45 to-brand-blue text-black py-20 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -226,7 +226,7 @@ export default function HowWeWork() {
                   <h3 className="text-3xl font-bold mb-4">
                     {activeSection.title}
                   </h3>
-                  <p className="text-gray-700 text-lg leading-relaxed">
+                  <p className="text-gray-900 font-semibold text-lg leading-relaxed">
                     {activeSection.description}
                   </p>
                 </motion.div>

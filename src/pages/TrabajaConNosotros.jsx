@@ -119,7 +119,6 @@ import HowWeWork from "../components/Careers/HowWeWork";
 //   },
 // ];
 
-
 export default function TrabajaConNosotros() {
   // const [openBenefit, setOpenBenefit] = useState(null);
 
@@ -140,9 +139,17 @@ export default function TrabajaConNosotros() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/10" />
 
         <div className="relative mx-auto text-center z-10">
-          <div className="inline-block mb-6 px-6 py-2 border border-white/20 rounded-full text-sm tracking-wider animate-fadeIn">
+          <button
+            onClick={() => {
+              document.getElementById("formulario")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
+            className="inline-block mb-6 px-6 py-2 border border-white/20 hover:border-white hover:scale-105 transition-all hover:font-bold duration-300 rounded-full text-sm tracking-wider animate-fadeIn cursor-pointer"
+          >
             ÚNETE AL EQUIPO
-          </div>
+          </button>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-20 animate-fadeInUp">
             Tu Carrera Despega Aquí
           </h1>
@@ -154,9 +161,9 @@ export default function TrabajaConNosotros() {
             <span className="bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text text-transparent font-extrabold">
               Aerospace
             </span>{" "}
-            diseñamos componentes eléctronicos certificados. Si tienes pasión por
-            la ingeniería de precisión y la innovación sostenible, este es tu
-            lugar.
+            diseñamos componentes eléctronicos certificados. Si tienes pasión
+            por la ingeniería de precisión y la innovación sostenible, este es
+            tu lugar.
           </p>
         </div>
       </section>
@@ -238,10 +245,9 @@ export default function TrabajaConNosotros() {
           </div>
         </div>
       </section> */}
-<div>
-  <Formulario />
-</div>
-
+      <div id="formulario">
+        <Formulario />
+      </div>
     </div>
   );
 }

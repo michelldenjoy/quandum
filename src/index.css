@@ -6,6 +6,7 @@
 @layer base {
     body {
       @apply bg-gray-950;
+      font-family: "Exo 2", sans-serif;
     }
   }
 
@@ -76,3 +77,5 @@
     position: relative;
     z-index: 2;
   }
+
+

@@ -10,11 +10,11 @@ export default {
           blue: "#516288",
           pink: "#F65772",
         }
+      },
+      fontFamily: {
+        sans: ["Play", 'sans-serif'],
       }
     },
-    
   },
   plugins: [],
-  
 }
-
