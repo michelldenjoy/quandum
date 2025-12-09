@@ -27,7 +27,7 @@ const sections = [
     id: 'impact',
     title: 'Impacto',
     number: '04',
-    description: 'Nuestro trabajo transforma industrias y salva vidas. Desde misiones de búsqueda y rescate hasta logística de emergencia y monitoreo ambiental, cada aeronave que construimos tiene un propósito crítico. Medimos nuestro éxito por el impacto real que generamos en operaciones que importan.',
+    description: 'Nuestro trabajo transforma industrias y salva vidas. Desde misiones de búsqueda y rescate hasta logística de emergencia y monitoreo ambiental, cada componente que construimos tiene un propósito crítico. Medimos nuestro éxito por el impacto real que generamos en operaciones que importan.',
     image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&h=600&fit=crop'
   }
 ];
