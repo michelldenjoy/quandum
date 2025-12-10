@@ -11,7 +11,7 @@ export default function Collage() {
       className="relative w-full bg-black py-10 overflow-hidden"
     >
       {/* Fondo sutil con textura metálica */}
-      <div className="absolute inset-0 bg-gradient-to-br from-zinc-950 via-black to-zinc-950" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-slate-800 to-black" />
       <div className="absolute inset-0 opacity-30">
         <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/5 via-transparent to-transparent" />
       </div>
@@ -26,14 +26,14 @@ export default function Collage() {
             className="space-y-8"
           >
             <div>
-              <motion.span
+              {/* <motion.span
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.3, duration: 0.7 }}
                 className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full mb-6"
               >
                 El futuro se construye aquí
-              </motion.span>
+              </motion.span> */}
 
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}

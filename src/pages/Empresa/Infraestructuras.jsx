@@ -6,7 +6,7 @@ const facilities = [
     subtitle: "4,000 m² dedicados a ingeniería y fabricación",
     description: "Amplias áreas de producción y laboratorios para cubrir todas las fases del desarrollo aeroespacial, con altos estándares de seguridad y control.",
     image: "/images/facilities-general.jpg",
-    bg: "bg-stone-300",
+    bg: "bg-gray-200",
     textColor: "text-black",
   },
   {
@@ -14,7 +14,7 @@ const facilities = [
     subtitle: "100 m² para ensamblaje de componentes ópticos sensibles",
     description: "Control de partículas y temperatura para garantizar la máxima precisión en los sistemas más críticos.",
     image: "/images/clean-room.jpg",
-    bg: "bg-zinc-900",
+    bg: "bg-gradient-to-b from-black via-slate-800 to-black",
     textColor: "text-white",
   },
   {
@@ -22,7 +22,7 @@ const facilities = [
     subtitle: "300 m² de precisión",
     description: "Zona especializada en integración final de sistemas complejos, con equipos de última generación.",
     image: "/images/final-assembly.jpg",
-    bg: "bg-stone-300",
+    bg: "bg-gray-200",
     textColor: "text-black",
   },
   {
@@ -30,7 +30,7 @@ const facilities = [
     subtitle: "600 m² dedicados a innovación tecnológica",
     description: "Investigación y desarrollo de nuevos sistemas, prototipado rápido y certificaciones técnicas.",
     image: "/images/rnd-lab.jpg",
-    bg: "bg-zinc-900",
+    bg: "bg-gradient-to-b from-black via-slate-800 to-black",
     textColor: "text-white",
   },
 ];
@@ -63,7 +63,7 @@ export default function Infraestructuras() {
             </motion.div>
 
             <motion.div
-              className="w-full md:w-1/2 flex justify-center"
+              className="w-full md:w-1/2  flex justify-center"
               initial={{ opacity: 0, x: i % 2 === 0 ? 50 : -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -80,7 +80,7 @@ export default function Infraestructuras() {
       ))}
 
       {/* Capacidades y Tecnologías */}
-      <section className="bg-stone-300  py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+      <section className="bg-gray-200  py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="max-w-7xl mx-auto">
           <motion.h2
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black text-center mb-8 md:mb-12 lg:mb-16"

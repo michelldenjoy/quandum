@@ -36,7 +36,7 @@ export default function HowWeWork() {
   const [activeSection, setActiveSection] = useState(sections[0]);
 
   return (
-    <div className="min-h bg-stone-300 text-black py-12 sm:py-16 md:py-20 lg:py-24">
+    <div className="min-h bg-gray-200 text-black py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -137,99 +137,111 @@ export default function HowWeWork() {
         </div>
 
         {/* Layout ESCRITORIO */}
-{/* Layout ESCRITORIO */}
-<div className="hidden lg:grid lg:grid-cols-12 gap-8 xl:gap-12">
-  {/* Lado izquierdo - dropdowns */}
-  <div className="col-span-3 space-y-3 xl:space-y-4">
-    {sections.map((section, index) => (
-      <motion.button
-        key={section.id}
-        onClick={() => setActiveSection(section)}
-        className={`w-full text-left p-5 xl:p-6 rounded-xl transition-all duration-300 ${
-          activeSection.id === section.id
-            ? 'bg-white text-black shadow-xl'
-            : 'bg-zinc-900 text-white hover:bg-zinc-800'
-        }`}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: index * 0.1 }}
-      >
-        <div className="flex items-center justify-between">
-          <div>
-            <span className="text-xs xl:text-sm opacity-60 block mb-1 xl:mb-2 font-semibold">
-              {section.number}
-            </span>
-            <h3 className="text-xl xl:text-2xl font-bold">{section.title}</h3>
+        <div className="hidden lg:grid lg:grid-cols-5 gap-8 xl:gap-12">
+          {/* Lado izquierdo - 2 columnas */}
+          <div className="col-span-2 space-y-3 xl:space-y-4">
+            {sections.map((section, index) => (
+              <motion.button
+                key={section.id}
+                onClick={() => setActiveSection(section)}
+                className={`w-full text-left p-5 xl:p-6 rounded-xl transition-all duration-300 ${
+                  activeSection.id === section.id
+                    ? 'bg-white text-black shadow-xl'
+                    : 'bg-zinc-900 text-white hover:bg-zinc-800'
+                }`}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="text-xs xl:text-sm opacity-60 block mb-1 xl:mb-2 font-semibold">
+                      {section.number}
+                    </span>
+                    <h3 className="text-xl xl:text-2xl font-bold">{section.title}</h3>
+                  </div>
+                  <motion.div
+                    animate={{
+                      rotate: activeSection.id === section.id ? 90 : 0
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <svg
+                      className="w-5 h-5 xl:w-6 xl:h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </motion.div>
+                </div>
+              </motion.button>
+            ))}
           </div>
-          <motion.div
-            animate={{ rotate: activeSection.id === section.id ? 90 : 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <svg
-              className="w-5 h-5 xl:w-6 xl:h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </motion.div>
+
+          {/* Lado Derecho - 3 columnas */}
+          <div className="col-span-3">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeSection.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                className="space-y-6 xl:space-y-8"
+              >
+                {/* Título con número integrado */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="flex items-baseline gap-4"
+                >
+                  <span className="text-5xl xl:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-black leading-none">
+                    {activeSection.number}
+                  </span>
+                  <h3 className="text-3xl xl:text-4xl font-bold leading-tight">
+                    {activeSection.title}
+                  </h3>
+                </motion.div>
+
+                {/* Imagen */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                  className="relative h-80 xl:h-96 rounded-2xl overflow-hidden shadow-2xl"
+                >
+                  <img
+                    src={activeSection.image}
+                    alt={activeSection.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                </motion.div>
+
+                {/* Descripción */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <p className="text-gray-800 text-base xl:text-lg leading-relaxed font-medium">
+                    {activeSection.description}
+                  </p>
+                </motion.div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
-      </motion.button>
-    ))}
-  </div>
-
-{/* Centro - Imagen + título + número en la misma línea */}
-<div className="col-span-5 flex flex-col items-center space-y-6">
-  <motion.div
-    key={activeSection.id + '-title'}
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -20 }}
-    transition={{ duration: 0.5 }}
-    className="flex flex-col items-center gap-6 w-full"
-  >
-    {/* Número y título en la misma línea */}
-    <div className="flex items-center justify-center gap-6">
-      <span className="text-5xl xl:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-black">
-        {activeSection.number}
-      </span>
-      <h3 className="text-3xl xl:text-4xl font-bold">{activeSection.title}</h3>
-    </div>
-
-    {/* Imagen */}
-    <div className="relative h-80 xl:h-96 w-full rounded-2xl overflow-hidden shadow-2xl">
-      <img
-        src={activeSection.image}
-        alt={activeSection.title}
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-    </div>
-  </motion.div>
-</div>
-
-
-  {/* Lado derecho - descripción */}
-  <div className="col-span-4 flex flex-col justify-center">
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={activeSection.id + '-desc'}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.5 }}
-      >
-        <p className="text-gray-800 text-base xl:text-lg leading-relaxed font-medium">
-          {activeSection.description}
-        </p>
-      </motion.div>
-    </AnimatePresence>
-  </div>
-</div>
-
       </div>
     </div>
   );

@@ -47,9 +47,7 @@ export default function Valores() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-zinc-900 text-cyan-600 border border-cyan-500/20 rounded-full mb-6">
-            Nuestros Valores
-          </span>
+
           <h2 className="text-5xl md:text-6xl font-bold text-white tracking-tight">
             Así volamos más alto
           </h2>
@@ -118,7 +116,7 @@ export default function Valores() {
             Si compartes estos valores,{" "}
             <a
               // href="/careers"
-              className="inline-flex items-center gap-2 text-cyan-400 font-medium hover:text-cyan-300 transition-colors duration-300"
+              className="inline-flex items-center gap-2 text-white font-medium transition-colors duration-300"
             >
               queremos conocerte
               {/* <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
