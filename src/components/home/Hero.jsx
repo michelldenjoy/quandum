@@ -12,12 +12,12 @@ export default function Hero() {
         loop
         playsInline
         muted={muted}
-        className="w-full h-full object-cover"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover"
       />
 
       <button
         onClick={() => setMuted(!muted)}
-        className="absolute bottom-6 right-6 bg-black/50 text-white px-4 py-2 rounded-full"
+        className="absolute bottom-6 right-6 bg-black/20 text-gray-200 px-2 py-2 rounded-full"
       >
         {muted ? "Activar sonido" : "Silenciar"}
       </button>
