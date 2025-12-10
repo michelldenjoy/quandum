@@ -99,7 +99,7 @@ export default function Collage() {
                 className="aspect-[4/5] rounded-lg overflow-hidden shadow-2xl ring-1 ring-white/10 group cursor-pointer"
               >
                 <img 
-                  src="/images/collage1.jpg" 
+                  src="/images/about-1.jpg" 
                   alt="Laboratorio aeronáutico" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 />

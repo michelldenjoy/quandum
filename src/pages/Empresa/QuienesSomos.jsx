@@ -9,11 +9,10 @@ export default function QuienesSomos() {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
   const scale = useTransform(scrollY, [0, 300], [1, 0.95]);
 
-  // Memoizar arrays estáticos
+  // arrays
   const gallery = useMemo(
     () => [
       "/images/about-1.jpg",
-      "/images/about-2.jpg",
       "/images/about-3.jpg",
       "/images/about-4.jpg",
       "/images/about-6.jpg",
@@ -221,17 +220,16 @@ export default function QuienesSomos() {
               delay={0}
             />
 
-            <GalleryImage src={gallery[1]} alt="Equipo" delay={0.1} />
 
             <GalleryImage
-              src={gallery[2]}
+              src={gallery[1]}
               alt="Pruebas"
               className="row-span-1"
               delay={0.2}
             />
 
             <GalleryImage
-              src={gallery[4]}
+              src={gallery[2]}
               alt="Pruebas"
               className="row-span-1"
               delay={0.2}

@@ -41,42 +41,38 @@ const facilities = [
 ];
 
 export default function Infraestructuras() {
-  const [muted, setMuted] = useState(true);
 
   return (
     <div className="w-full overflow-x-hidden pt-20 md:pt-24 lg:pt-28">
-      <section className="relative w-full h-screen overflow-hidden">
-        <video
-          src="/infrastructure.mp4"
-          autoPlay
-          loop
-          muted={muted}
-          playsInline
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover"
+{/* Hero */}
+<section className="relative w-full h-[70vh] md:h-[80vh] lg:h-screen overflow-hidden">
+        {/* Imagen de fondo */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/collage1.jpg')" }}
         />
+        
+        {/* Overlay oscuro para mejorar legibilidad */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/60" />
 
-        <div className="absolute inset-0 bg-black/30"></div>
-
-        <button
-          onClick={() => setMuted(!muted)}
-          className="absolute bottom-6 right-6 bg-black/20 text-gray-200 px-3 py-2 rounded-full text-sm hover:bg-black/40 transition-colors z-10"
-        >
-          {muted ? "🔇" : "🔊"}
-        </button>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9 }}
-          className="absolute bottom-12 left-8 md:left-16 text-white max-w-md"
-        >
-          <h1 className="text-3xl md:text-4xl font-light tracking-tight mb-3">
-            Donde la Ingeniería Toma Forma
-          </h1>
-          <p className="text-sm md:text-base text-white/80 leading-relaxed">
-            Nuestras instalaciones combinan ingeniería, precisión y tecnología avanzada para impulsar el desarrollo y la fabricación de sistemas críticos.
-          </p>
-        </motion.div>
+        {/* Contenido de texto */}
+        <div className="relative h-full flex items-end pb-12 md:pb-10 lg:pb-12 px-6 md:px-12 lg:px-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9 }}
+            className="max-w-2xl"
+          >
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-light tracking-tight mb-4 md:mb-6 backdrop-blur-[1px] bg-black/20 rounded-lg text-white drop-shadow-2xl">
+              Donde la Ingeniería Toma Forma
+            </h1>
+            <p className="text-base md:text-lg lg:text-xl text-white leading-relaxed drop-shadow-lg backdrop-blur-[1px] bg-black/20 p-4 rounded-lg">
+              Nuestras instalaciones combinan ingeniería, precisión y tecnología
+              avanzada para impulsar el desarrollo y la fabricación de sistemas
+              críticos.
+            </p>
+          </motion.div>
+        </div>
       </section>
 
       {facilities.map((f, i) => (
@@ -85,8 +81,11 @@ export default function Infraestructuras() {
           className={`${f.bg} py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8`}
         >
           <div className="max-w-7xl mx-auto">
-            <div className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-6 md:gap-8 lg:gap-12`}>
-              
+            <div
+              className={`flex flex-col ${
+                i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              } gap-6 md:gap-8 lg:gap-12`}
+            >
               {/* IMAGEN */}
               <motion.div
                 className="w-full md:w-3/5 lg:w-2/3"
