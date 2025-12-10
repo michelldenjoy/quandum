@@ -10,7 +10,7 @@ const facilities = [
     textColor: "text-black",
   },
   {
-    title: "Sala Limpia",
+    title: "Entorno ISO para Sistemas Críticos",
     subtitle: "100 m² para ensamblaje de componentes ópticos sensibles",
     description: "Control de partículas y temperatura para garantizar la máxima precisión en los sistemas más críticos.",
     image: "/images/clean-room.jpg",
