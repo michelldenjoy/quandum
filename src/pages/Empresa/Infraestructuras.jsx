@@ -87,7 +87,7 @@ export default function Infraestructuras() {
           <div className="max-w-7xl mx-auto">
             <div className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-6 md:gap-8 lg:gap-12`}>
               
-              {/* IMAGEN - Ahora más grande y prominente */}
+              {/* IMAGEN */}
               <motion.div
                 className="w-full md:w-3/5 lg:w-2/3"
                 initial={{ opacity: 0, scale: 0.95 }}
