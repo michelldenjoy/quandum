@@ -81,56 +81,89 @@ export default function Collage() {
 
         
           {/* COLLAGE*/}
-          <div className="relative h-[500px] sm:h-[600px] lg:h-[700px] w-full">
-            {/* Imagen 1 – superior izquierda */}
-            <motion.div
-              initial={{ opacity: 0, x: -80, y: 60, rotate: -8 }}
-              animate={isInView ? { opacity: 1, x: 0, y: 0, rotate: -4 } : {}}
-              transition={{ duration: 1, delay: 0.4 }}
-              className="absolute top-0 left-0 w-[45%] sm:w-52 lg:w-64 h-48 sm:h-64 lg:h-80 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 z-10"
-            >
-              <img src="/images/collage1.jpg" alt="Laboratorio" className="w-full h-full object-cover" />
-            </motion.div>
+          <div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative w-full"
+          >
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 max-w-2xl mx-auto">
+              
+              {/* Imagen 1 - Superior Izquierda */}
+              <motion.div
+                initial={{ opacity: 0, x: -40, y: -40 }}
+                animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
+                transition={{ duration: 0.7, delay: 0.5 }}
+                whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
+                className="aspect-[4/5] rounded-lg overflow-hidden shadow-2xl ring-1 ring-white/10 group cursor-pointer"
+              >
+                <img 
+                  src="/images/collage1.jpg" 
+                  alt="Laboratorio aeronáutico" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </motion.div>
 
-            {/* Imagen 2 – superior derecha */}
-            <motion.div
-              initial={{ opacity: 0, y: -80, rotate: 6 }}
-              animate={isInView ? { opacity: 1, y: 0, rotate: 3 } : {}}
-              transition={{ duration: 1, delay: 0.6 }}
-              className="absolute top-0 right-0 w-[45%] sm:w-56 lg:w-72 h-56 sm:h-72 lg:h-96 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-cyan-500/20 z-20"
-            >
-              <img src="/images/collage2.jpg" alt="Equipo" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-            </motion.div>
+              {/* Imagen 2 - Superior Derecha */}
+              <motion.div
+                initial={{ opacity: 0, x: 40, y: -40 }}
+                animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
+                transition={{ duration: 0.7, delay: 0.6 }}
+                whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
+                className="aspect-[4/5] rounded-lg overflow-hidden shadow-2xl ring-1 ring-cyan-500/20 group cursor-pointer"
+              >
+                <img 
+                  src="/images/collage2.jpg" 
+                  alt="Equipo de ingeniería" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </motion.div>
 
-            {/* Imagen 3 – inferior izquierda */}
-            <motion.div
-              initial={{ opacity: 0, x: -80, y: 40, rotate: -8 }}
-              animate={isInView ? { opacity: 1, x: 0, y: 0, rotate: -4 } : {}}
-              transition={{ duration: 1, delay: 0.8 }}
-              className="absolute bottom-0 left-0 w-[45%] sm:w-52 lg:w-64 h-48 sm:h-64 lg:h-80 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 z-10"
-            >
-              <img src="/images/collage3.jpg" alt="Pruebas" className="w-full h-full object-cover" />
-            </motion.div>
+              {/* Imagen 3 - Inferior Izquierda */}
+              <motion.div
+                initial={{ opacity: 0, x: -40, y: 40 }}
+                animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
+                transition={{ duration: 0.7, delay: 0.7 }}
+                whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
+                className="aspect-[4/5] rounded-lg overflow-hidden shadow-2xl ring-1 ring-cyan-500/20 group cursor-pointer"
+              >
+                <img 
+                  src="/images/collage3.jpg" 
+                  alt="Sistemas de prueba" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </motion.div>
 
-            {/* Imagen 4 – inferior derecha (la más prominente) */}
-            <motion.div
-              initial={{ opacity: 0, y: 100, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-              transition={{ duration: 1.1, delay: 1 }}
-              whileHover={{ scale: 1.02 }}
-              className="absolute bottom-0 right-0 w-[50%] sm:w-64 lg:w-80 h-56 sm:h-72 lg:h-96 rounded-2xl overflow-hidden shadow-2xl ring-2 ring-cyan-500/30 z-30 cursor-pointer group"
-            >
-              <img src="/images/collage4.jpg" alt="Sistema en vuelo" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4 sm:p-6 lg:p-8">
-                {/* <p className="text-white font-medium text-sm sm:text-base lg:text-lg">Sistema BEVS en pruebas de vuelo reales</p> */}
-              </div>
-            </motion.div>
-
-            {/* Glow */}
-            <div className="absolute inset-0 -z-10">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-cyan-500/10 blur-3xl rounded-full" />
+              {/* Imagen 4 - Inferior Derecha */}
+              <motion.div
+                initial={{ opacity: 0, x: 40, y: 40 }}
+                animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
+                transition={{ duration: 0.7, delay: 0.8 }}
+                whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
+                className="aspect-[4/5] rounded-lg overflow-hidden shadow-2xl ring-1 ring-white/10 group cursor-pointer"
+              >
+                <img 
+                  src="/images/collage4.jpg" 
+                  alt="Sistema en vuelo" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </motion.div>
             </div>
+
+            {/* Glow sutil de fondo */}
+            <div className="absolute inset-0 -z-10 pointer-events-none">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-cyan-500/5 blur-3xl rounded-full" />
+            </div>
+          </motion.div>
+            {/* Glow */}
+            {/* <div className="absolute inset-0 -z-10">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-cyan-500/10 blur-3xl rounded-full" />
+            </div> */}
           </div>
         </div>
       </div>

@@ -147,7 +147,7 @@ export default function HowWeWork() {
                 className={`w-full text-left p-5 xl:p-6 rounded-xl transition-all duration-300 ${
                   activeSection.id === section.id
                     ? 'bg-white text-black shadow-xl'
-                    : 'bg-zinc-900 text-white hover:bg-zinc-800'
+                    : 'bg-zinc-800 text-white hover:bg-black'
                 }`}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
