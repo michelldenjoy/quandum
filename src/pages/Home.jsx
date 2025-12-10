@@ -1,10 +1,11 @@
-import QuandumParticles from "../components/3d/QuandumParticles";
+import Hero from "../components/home/Hero";
 
 
 export default function Home() {
   return (
     <section>
-      <QuandumParticles />
+       <Hero  />
+
       
     </section>
   );
