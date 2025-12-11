@@ -1,6 +1,9 @@
 import React, { useRef, useMemo } from "react";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
 import { Award, Users, Check } from "lucide-react";
+import FilosofiaTrayectoria from "../../components/about/FilosofiaTrayectoria";
+import AboutFeatures from "../../components/about/AboutFeatures";
+
 
 export default function QuienesSomos() {
   // Motion 11 parallax
@@ -9,16 +12,6 @@ export default function QuienesSomos() {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
   const scale = useTransform(scrollY, [0, 300], [1, 0.95]);
 
-  // arrays
-  const gallery = useMemo(
-    () => [
-      "/images/about-1.jpg",
-      "/images/about-3.jpg",
-      "/images/about-4.jpg",
-      "/images/about-6.jpg",
-    ],
-    []
-  );
 
   const caseStudies = useMemo(
     () => [
@@ -187,60 +180,20 @@ export default function QuienesSomos() {
         </motion.div>
       </header>
 
-      {/* ---------------- GALLERIA ---------------- */}
-      <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-b from-gray-200 to-black ">
-        <div className="max-w-[1800px] mx-auto px-2 sm:px-4 lg:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-8 sm:mb-10"
-          >
-            {/* ************************ TITULOSSSSSS ************************* */}
-            <h2 className="text-4xl md:text-7xl text-center text-black font-bold mb-4">
-              Laboratorio de alta precisión
-            </h2>
-
-            {/* ************************ SUBTITULOSSSSSS************************* */}
-            <p className="text-gray-700 text-base mx-auto text-center md:text-xl max-w-2xl">
-              Espacios diseñados para el desarrollo de sistemas críticos: salas
-              limpias, bancos de pruebas EMI/EMC y estaciones de integración
-              HW/SW.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 auto-rows-[150px] sm:auto-rows-[250px] md:auto-rows-[350px] lg:auto-rows-[420px]">
-            {/* Imagen principal */}
-            <GalleryImage
-              src={gallery[0]}
-              alt="Laboratorio principal"
-              className="col-span-2 row-span-2"
-              label="Sala de integración de sistemas"
-              delay={0}
-            />
 
 
-            <GalleryImage
-              src={gallery[1]}
-              alt="Pruebas"
-              className="row-span-1"
-              delay={0.2}
-            />
+      <AboutFeatures />
 
-            <GalleryImage
-              src={gallery[2]}
-              alt="Pruebas"
-              className="row-span-1"
-              delay={0.2}
-            />
 
-            <GalleryImage src={gallery[3]} alt="Proyecto" delay={0.3} />
-          </div>
-        </div>
-      </section>
 
-      {/* ---------------- INGENIERÍA & PROCESO ---------------- */}
+      <FilosofiaTrayectoria />
+
+
+
+
+
+
+      {/* ******************************* INGENIERÍA & PROCESO ******************************* */}
       <section id="ingenieria" className="py-16 sm:py-24 lg:py-32 bg-militar">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -275,7 +228,7 @@ export default function QuienesSomos() {
   );
 }
 
-// Componente optimizado para imágenes de galería
+// GALERIA
 const GalleryImage = React.memo(
   ({ src, alt, className = "", label, delay = 0 }) => (
     <motion.div
@@ -348,7 +301,7 @@ const CaseStudyItem = React.memo(({ caseStudy, index, checklistItems }) => {
           {caseStudy.text}
         </p>
 
-        <ul className="space-y-3  px-4 text-white">
+        {/* <ul className="space-y-3  px-4 text-white">
           {checklistItems.map((item, idx) => (
             <motion.li
               key={idx}
@@ -361,7 +314,7 @@ const CaseStudyItem = React.memo(({ caseStudy, index, checklistItems }) => {
               <span className="text-sm sm:text-base">{item}</span>
             </motion.li>
           ))}
-        </ul>
+        </ul> */}
       </div>
     </motion.div>
   );

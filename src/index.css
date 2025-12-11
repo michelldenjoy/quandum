@@ -6,7 +6,7 @@
 @layer base {
     body {
       @apply bg-gray-950;
-      font-family: "Exo 2", sans-serif;
+      /* font-family: "Sekuya", system-ui; */
     }
   }
 

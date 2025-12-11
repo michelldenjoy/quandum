@@ -36,7 +36,7 @@ export default function HowWeWork() {
   const [activeSection, setActiveSection] = useState(sections[0]);
 
   return (
-    <div className="min-h bg-gray-200 text-black py-12 sm:py-16 md:py-20 lg:py-24">
+    <div className="min-h bg-gradient-to-b from-slate-200 via-slate-300 to-slate-200 text-black py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
