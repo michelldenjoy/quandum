@@ -55,7 +55,7 @@ export default function Calidad() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 backdrop-blur-lg shadow-2xl border border-slate-400 rounded-3xl p-10 md:p-16"
+          className="bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 shadow-2xl border border-slate-400 rounded-3xl p-10 md:p-16"
         >
           <p className="text-lg md:text-xl text-slate-200 leading-relaxed mb-6">
             La Dirección de{" "}
@@ -104,7 +104,7 @@ export default function Calidad() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-b from-black via-slate-800 to-black text-white rounded-2xl p-10 shadow-xl">
+          <div className="bg-gradient-to-b from-black via-transparent to-slate-800 text-white rounded-2xl p-10 shadow-xl">
             <h2 className="text-3xl font-bold mb-8">Valores Fundamentales</h2>
             <ul className="space-y-4 text-lg">
               <li className="flex items-start gap-3">

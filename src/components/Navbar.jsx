@@ -125,9 +125,9 @@ export default function Navbar() {
                     {/* Dropdown */}
                     <div className="absolute top-full left-0 pt-4 pointer-events-none opacity-0 invisible group-hover:pointer-events-auto group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out">
                       <div className="bg-neutral-900/100 backdrop-blur-sm border border-neutral-800 rounded-2xl shadow-2xl py-6 px-6 min-w-[280px] whitespace-nowrap">
-                        <h3 className="text-base font-bold text-white mb-4 tracking-wide border-b border-neutral-800 pb-3">
+                        {/* <h3 className="text-base font-bold text-white mb-4 tracking-wide border-b border-neutral-800 pb-3">
                           {link.name}
-                        </h3>
+                        </h3> */}
                         <ul className="space-y-3">
                           {link.dropdown.map((item) => (
                             <li key={item.name}>
