@@ -6,7 +6,7 @@ const sections = [
     id: 'autonomy',
     title: 'Automatización',
     number: '01',
-    description: 'Desarrollamos sistemas autónomos avanzados que permiten a nuestras aeronaves operar de manera inteligente y adaptativa. Nuestra tecnología de IA integrada toma decisiones críticas en tiempo real, optimizando errores con alta precisión y reduciendo la necesidad de múltiples operarios.',
+    description: 'Desarrollamos sistemas autónomos avanzados que permiten a las aeronaves operar de manera inteligente y adaptativa. Nuestra tecnología de IA integrada toma decisiones críticas en tiempo real, optimizando errores con alta precisión y reduciendo la necesidad de múltiples operarios.',
     image: '/bgmilitar.jpg'
   },
   {
@@ -36,7 +36,7 @@ export default function HowWeWork() {
   const [activeSection, setActiveSection] = useState(sections[0]);
 
   return (
-    <div className="min-h bg-gradient-to-b from-slate-200 via-slate-300 to-slate-200 text-black py-12 sm:py-16 md:py-20 lg:py-24">
+    <div className="min-h bg-gradient-to-b from-gray-200 via-gray-300 to-gray-200 text-black py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div

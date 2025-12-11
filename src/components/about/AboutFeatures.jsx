@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 export default function AboutFeatures() {
   return (
     <div>
-      <section className="w-full overflow-hidden bg-gradient-to-b from-slate-200 via-slate-300 to-slate-200 pt-28 pb-32">
+      <section className="w-full overflow-hidden bg-gradient-to-b from-gray-200 via-gray-300 to-gray-200 pt-28 pb-32">
         {/* ------------ CONTAINER ------------ */}
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           {/* ------------ FEATURE BLOCK ------------ */}

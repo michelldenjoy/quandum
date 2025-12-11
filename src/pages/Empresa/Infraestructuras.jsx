@@ -8,7 +8,7 @@ const facilities = [
     description:
       "Amplias áreas de producción y laboratorios para cubrir todas las fases del desarrollo aeroespacial, con altos estándares de seguridad y control.",
     image: "/images/instalaciones.jpg",
-    bg: "bg-gray-200",
+    bg: "bg-gradient-to-b from-gray-200 via-gray-300 to-gray-200",
     textColor: "text-black",
   },
   {
@@ -26,7 +26,7 @@ const facilities = [
     description:
       "Zona especializada en integración final de sistemas complejos. Equipado con herramientas de metrología y calibración de última generación, garantizamos una alineación y funcionalidad precisas antes de la entrega. Es la zona crítica donde la precisión de los componentes se traduce en el rendimiento óptimo del sistema terminado.",
     image: "/images/about-5.jpg",
-    bg: "bg-gray-200",
+    bg: "bg-gradient-to-b from-gray-200 via-gray-300 to-gray-200",
     textColor: "text-black",
   },
   {
@@ -125,7 +125,7 @@ export default function Infraestructuras() {
       ))}
 
       {/* Capacidades y Tecnologías */}
-      <section className="bg-gray-200 py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8">
+      <section className="bg-gradient-to-b from-gray-200 via-gray-300 to-gray-200 py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.h2
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black text-center mb-8 md:mb-12 lg:mb-16"
