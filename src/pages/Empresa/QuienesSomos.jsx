@@ -9,8 +9,8 @@ export default function QuienesSomos() {
   // Motion 11 parallax
   const { scrollY } = useScroll();
   const y2 = useTransform(scrollY, [0, 800], [0, -60]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
-  const scale = useTransform(scrollY, [0, 300], [1, 0.95]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0.3]);
+  const scale = useTransform(scrollY, [0, 300], [1, 0.97]);
 
 
   const caseStudies = useMemo(
