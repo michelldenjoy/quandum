@@ -13,7 +13,7 @@ const facilities = [
   },
   {
     title: "Entorno ISO para Sistemas Críticos o Área de Montaje Especializado",
-    subtitle: "100 m² para ensamblaje de componentes ópticos sensibles",
+    subtitle: "para ensamblaje de componentes ópticos sensibles",
     description:
       "Espacio técnico de 100 m² habilitado para el ensamblaje de óptica delicada. Cuenta con sistemas de filtrado de aire y regulación de temperatura constantes, proporcionando las condiciones estables necesarias para operar con equipos de alta sensibilidad.",
     image: "/images/montaje.jpg",
