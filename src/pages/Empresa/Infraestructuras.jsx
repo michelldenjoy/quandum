@@ -115,7 +115,7 @@ export default function Infraestructuras() {
                 <h3 className="text-base sm:text-lg md:text-xl font-medium opacity-90">
                   {f.subtitle}
                 </h3>
-                <p className="text-sm sm:text-base leading-relaxed opacity-80">
+                <p className="text-sm sm:text-base md:text-md lg:text-xl leading-relaxed opacity-80">
                   {f.description}
                 </p>
               </motion.div>

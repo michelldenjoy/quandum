@@ -153,7 +153,7 @@ export default function QuienesSomos() {
                     </div>
                   </div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                <p className="text-xs sm:text-sm md:text-lg text-slate-300 leading-relaxed">
                   El 95% del equipo está formado por ingenieros especializados.
                 </p>
               </motion.div>
@@ -171,8 +171,8 @@ export default function QuienesSomos() {
                     </div>
                   </div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                  Amplia trayectoria en aeroespacial, defensa e industria.
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  Amplia trayectoria en el sector aeroespacial, defensa e industria.
                 </p>
               </motion.div>
             </motion.div>
