@@ -13,7 +13,7 @@ export default function Calidad() {
     <section className="relative min-h-screen overflow-hidden ">
       <StarfieldNebula />
 
-      {/* Jet desktop (horizontal grande) */}
+      {/* Jet escritorio (horizontal grande) */}
       <motion.div
         style={{ x, y }}
         className="fixed top-24 -left-20 z-10 pointer-events-none hidden lg:block"
@@ -21,7 +21,7 @@ export default function Calidad() {
         <img src="/jet.svg" className="w-80 opacity-65 drop-shadow-2xl" />
       </motion.div>
 
-      {/* Jet móvil con parallax suave */}
+      {/* Jet móvil parallax */}
       <motion.div
         style={{ y: yMobile, rotate: rotateMobile }}
         initial={{ opacity: 0 }}
@@ -32,7 +32,6 @@ export default function Calidad() {
         <img src="/jet.svg" className="w-36 drop-shadow-2xl" />
       </motion.div>
 
-      {/* Contenido principal */}
       <div className="relative z-20 max-w-6xl mx-auto px-6 py-24 space-y-32">
         {/* HEADER */}
         <motion.div
@@ -50,7 +49,7 @@ export default function Calidad() {
           </p>
         </motion.div>
 
-        {/* BLOQUE PRINCIPAL - Tarjeta flotante */}
+        {/* BLOQUE PRINCIPAL */}
         <motion.article
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +68,7 @@ export default function Calidad() {
             <span className="font-bold">EN 9100:2018</span> e{" "}
             <span className="font-bold">ISO 9001:2015</span>.
           </p>
-          {/* ... resto de párrafos iguales ... */}
+
           <p className="text-lg md:text-xl text-slate-200 leading-relaxed">
             Quandum asume el compromiso de identificar y satisfacer los
             requisitos del cliente y los normativos y legales asociados,
@@ -77,7 +76,7 @@ export default function Calidad() {
           </p>
         </motion.article>
 
-        {/* OBJETIVOS - estilo cockpit */}
+        {/* OBJETIVOS*/}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -127,7 +126,7 @@ export default function Calidad() {
           </div>
         </motion.div>
 
-        {/* Sello final animado */}
+        {/* Sello */}
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
@@ -139,13 +138,11 @@ export default function Calidad() {
             {/* Sombra suave */}
             <div className="absolute inset-0 blur-3xl scale-110 bg-sky-500/20" />
 
-            {/* Sello principal */}
             <div
               className="relative w-64 h-64 rounded-full bg-gradient-to-br from-slate-800 via-slate-900 to-black 
                     shadow-2xl border border-slate-700/50 flex flex-col items-center justify-center
                     overflow-hidden"
             >
-              {/* Textura sutil de metal cepillado (con pseudo-elemento) */}
               <div className="absolute inset-0 opacity-20 bg-gradient-to-tr from-transparent via-slate-600 to-transparent" />
 
               <div className="text-center">
@@ -160,7 +157,7 @@ export default function Calidad() {
               </div>
             </div>
 
-            {/* Pequeño detalle de "estampado" */}
+            {/* estampa */}
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
@@ -170,10 +167,6 @@ export default function Calidad() {
               QUANDUM
             </motion.div>
           </div>
-
-          {/* <p className="mt-16 text-xl font-light text-slate-400">
-    Cero no conformidades críticas · Auditorías anuales superadas con éxito
-  </p> */}
         </motion.div>
       </div>
     </section>
