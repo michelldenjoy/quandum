@@ -1,9 +1,10 @@
 import React from 'react'
+import AboutTimeline from '../../components/about/AboutTimeline'
 
 export default function Historia() {
   return (
-    <div className="bg-black h-max py-11 mt-20 w-full">
-      Historia page
+    <div >
+      <AboutTimeline />
     </div>
   )
 }

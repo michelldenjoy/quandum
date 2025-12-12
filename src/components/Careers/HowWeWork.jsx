@@ -14,7 +14,7 @@ const sections = [
     title: 'Rapidez',
     number: '02',
     description: 'La velocidad define nuestra ingeniería. Desde el diseño conceptual hasta el despliegue operacional, aceleramos cada fase del desarrollo aeroespacial. Nuestros ciclos iterativos rápidos y metodologías ágiles nos permiten llevar innovaciones del laboratorio al cielo en tiempo récord, manteniendo los más altos estándares de seguridad.',
-    image: 'images/rapidez.jpg'
+    image: '/bgmili.jpg'
   },
   {
     id: 'scale',
@@ -36,7 +36,7 @@ export default function HowWeWork() {
   const [activeSection, setActiveSection] = useState(sections[0]);
 
   return (
-    <div className="min-h bg-gradient-to-b from-gray-200 via-gray-300 to-gray-200 text-black py-12 sm:py-16 md:py-20 lg:py-24">
+    <div className="min-h bg-white text-black py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div

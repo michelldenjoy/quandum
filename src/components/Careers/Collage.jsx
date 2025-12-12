@@ -43,7 +43,7 @@ export default function Collage() {
               >
                 Construyendo el futuro
                 
-                <span className="bg-gradient-to-r from-brand-blue via-slate-300 to-brand-blue bg-clip-text text-transparent font-bold"> de la aviación</span>
+                <span className="bg-gradient-to-r from-brand-pink via-red-300 to-red-700  bg-clip-text text-transparent font-bold"> de la aviación</span>
               </motion.h2>
             </div>
 

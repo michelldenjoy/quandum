@@ -19,17 +19,14 @@ const Mecanica = lazy(() => import("./pages/Servicios/Mecanica"));
 const ProyectosDestacados = lazy(() => import("./pages/Proyectos/ProyectosDestacados"));
 
 // Sobre Quandum
-const Calidad = lazy(() => import("./pages/SobreQuandum/Calidad"));
-const Certificaciones = lazy(() => import("./pages/SobreQuandum/Certificaciones"));
-const CodigoEtico = lazy(() => import("./pages/SobreQuandum/CodigoEtico"));
-const EntornoResponsable = lazy(() => import("./pages/SobreQuandum/EntornoResponsable"));
-const Oasis = lazy(() => import("./pages/SobreQuandum/Oasis"));
-const Ncage = lazy(() => import("./pages/SobreQuandum/Ncage"));
-const Reach = lazy(() => import("./pages/SobreQuandum/Reach"));
+const Calidad = lazy(() => import("./pages/Empresa/Calidad"));
+const Certificaciones = lazy(() => import("./pages/Empresa/Certificaciones"));
+const CodigoEtico = lazy(() => import("./pages/Empresa/CodigoEtico"));
+const EntornoResponsable = lazy(() => import("./pages/Empresa/EntornoResponsable"));
 
 // Otras
 const Prensa = lazy(() => import("./pages/Prensa"));
-const TrabajaConNosotros = lazy(() => import("./pages/TrabajaConNosotros"));
+const TrabajaConNosotros = lazy(() => import("./pages/Empresa/TrabajaConNosotros"));
 const Contacto = lazy(() => import("./pages/Contacto"));
 
 export default function MainRoutes() {
@@ -63,9 +60,6 @@ export default function MainRoutes() {
         <Route path="/sobre-quandum/certificaciones" element={<Certificaciones />} />
         <Route path="/sobre-quandum/codigo-etico" element={<CodigoEtico />} />
         <Route path="/sobre-quandum/entorno-responsable" element={<EntornoResponsable />} />
-        <Route path="/sobre-quandum/oasis" element={<Oasis />} />
-        <Route path="/sobre-quandum/ncage" element={<Ncage />} />
-        <Route path="/sobre-quandum/reach" element={<Reach />} />
 
         {/* Otras */}
         <Route path="/prensa" element={<Prensa />} />

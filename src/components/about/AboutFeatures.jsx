@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 export default function AboutFeatures() {
   return (
     <div>
-      <section className="w-full overflow-hidden bg-gradient-to-b from-gray-200 via-gray-300 to-gray-200 pt-28 pb-32">
+      <section className="w-full overflow-hidden bg-white pt-28 pb-32">
         {/* ------------ CONTAINER ------------ */}
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           {/* ------------ FEATURE BLOCK ------------ */}
@@ -22,7 +22,7 @@ export default function AboutFeatures() {
               </h4>
 
               <p className="text-slate-900 text-lg leading-relaxed mb-6">
-                Contamos con casi dos décadas de experiencia colectiva
+                Contamos con dos décadas de experiencia colectiva
                 en ingeniería aeronáutica, electrónica avanzada y diseño de
                 sistemas críticos. Trabajamos bajo una premisa central: la
                 innovación no es un objetivo, es un estándar diario.

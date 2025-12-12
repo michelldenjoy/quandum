@@ -1,7 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -33,6 +32,16 @@ export default function Navbar() {
         { name: "Quienes somos", path: "/empresa/about" },
         { name: "Infraestructuras", path: "/empresa/infraestructuras" },
         { name: "Historia", path: "/empresa/historia" },
+
+        // 🔽 Enlaces integrados desde "Sobre Quandum"
+        { name: "Calidad", path: "/sobre-quandum/calidad" },
+        { name: "Certificaciones", path: "/sobre-quandum/certificaciones" },
+        { name: "Código Ético", path: "/sobre-quandum/codigo-etico" },
+        {
+          name: "Entorno Responsable",
+          path: "/sobre-quandum/entorno-responsable",
+        },
+        { name: "Trabaja con nosotros", path: "/trabaja-con-nosotros" },
       ],
     },
     {
@@ -49,20 +58,8 @@ export default function Navbar() {
         { name: "Proyectos Destacados", path: "/proyectos/destacados" },
       ],
     },
-    {
-      name: "Sobre Quandum",
-      dropdown: [
-        { name: "Calidad", path: "/sobre-quandum/calidad" },
-        { name: "Certificaciones", path: "/sobre-quandum/certificaciones" },
-        { name: "Código Ético", path: "/sobre-quandum/codigo-etico" },
-        {
-          name: "Entorno Responsable",
-          path: "/sobre-quandum/entorno-responsable",
-        },
-      ],
-    },
+
     { name: "Prensa", path: "/prensa" },
-    { name: "Trabaja con nosotros", path: "/trabaja-con-nosotros" },
     { name: "Contacto", path: "/contacto" },
   ];
 
@@ -101,7 +98,7 @@ export default function Navbar() {
                 : link.dropdown?.some((item) =>
                     location.pathname.startsWith(item.path.split("?")[0])
                   );
-// links Empresa Servicios Proyectos Sobre Quandum escritorio
+              // links Empresa Servicios Proyectos Sobre Quandum escritorio
               if (link.dropdown) {
                 return (
                   <div key={link.name} className="relative group">
@@ -113,13 +110,6 @@ export default function Navbar() {
                       } group-hover:text-red-400 `}
                     >
                       {link.name}
-
-                      
-                      {/* <span  SUBRAYADO
-                        className={`absolute -bottom-1 left-0 h-0.5 bg-blue-400 transition-all duration-300 ${
-                          isActive ? "w-full" : "w-0 group-hover:w-full"
-                        }`}
-                      /> */}
                     </span>
 
                     {/* Dropdown */}
@@ -161,15 +151,10 @@ export default function Navbar() {
                     } group-hover:text-red-400`}
                   >
                     {link.name}
-
-                    {/* subrayado */}
-                    {/* <span className={` absolute -bottom-1 left-0 h-0.5 bg-blue-400 transition-all duration-300 ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
-                    /> */}
                   </Link>
                 </div>
               );
             })}
-            
           </div>
 
           {/* Mobile Menu Button */}
@@ -245,7 +230,9 @@ export default function Navbar() {
                     {/* Dropdown items */}
                     <div
                       className={`space-y-2 overflow-hidden transition-all duration-300 ${
-                        isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                        isOpen
+                          ? "max-h-screen opacity-100"
+                          : "max-h-0 opacity-0"
                       }`}
                     >
                       {link.dropdown.map((item) => (
