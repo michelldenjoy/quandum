@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 
-
 const facilities = [
   {
     title: "Instalaciones Generales",
@@ -12,12 +11,12 @@ const facilities = [
     textColor: "text-black",
   },
   {
-    title: "Entorno ISO para Sistemas Críticos o Área de Montaje Especializado",
+    title: "Área de Montaje Especializado",
     subtitle: "para ensamblaje de componentes ópticos sensibles",
     description:
       "Espacio técnico de 100 m² habilitado para el ensamblaje de óptica delicada. Cuenta con sistemas de filtrado de aire y regulación de temperatura constantes, proporcionando las condiciones estables necesarias para operar con equipos de alta sensibilidad.",
     image: "/images/montaje.jpg",
-    bg: "bg-gradient-to-b from-black via-slate-800 to-black",
+    bg: "dark",
     textColor: "text-white",
   },
   {
@@ -35,27 +34,42 @@ const facilities = [
     description:
       "Nuestro Laboratorio de I+D de 600 m² es el motor de la próxima generación de sistemas. Enfocados en la investigación aplicada y la exploración de nuevas fronteras tecnológicas, ofrecemos una plataforma completa que abarca desde la validación conceptual y el prototipado rápido hasta la ejecución de rigurosas certificaciones técnicas. Este espacio acelera la transición de la idea al producto validado, garantizando la introducción de soluciones disruptivas al mercado.",
     image: "/images/about-2.jpg",
-    bg: "bg-gradient-to-b from-black via-slate-800 to-black",
+    bg: "dark",
     textColor: "text-white",
   },
 ];
 
-export default function Infraestructuras() {
+// Fondo gradient oscuro
+const DarkBackground = () => (
+  <>
+    {/* Fondo técnico aeroespacial */}
+    <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,.4)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,.4)_1px,transparent_1px)] bg-[size:100px_100px]" />
+    </div>
+    
+    <div className="absolute inset-0 opacity-20">
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600 rounded-full blur-[120px]"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-600 rounded-full blur-[120px]"></div>
+    </div>
+   
+    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
+  </>
+);
 
+export default function Infraestructuras() {
   return (
     <div className="w-full overflow-x-hidden pt-20 md:pt-24 lg:pt-28">
-{/* Hero */}
-<section className="relative w-full h-[70vh] md:h-[80vh] lg:h-screen overflow-hidden">
+      <section className="relative w-full h-[70vh] md:h-[80vh] lg:h-screen overflow-hidden">
         {/* Imagen de fondo */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/collage1.jpg')" }}
         />
         
-        {/* Overlay oscuro para mejorar legibilidad */}
+        {/* Overlay oscuro */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/60" />
 
-        {/* Contenido de texto */}
+        {/* Contenido*/}
         <div className="relative h-full flex items-end pb-12 md:pb-10 lg:pb-12 px-6 md:px-12 lg:px-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -78,9 +92,16 @@ export default function Infraestructuras() {
       {facilities.map((f, i) => (
         <section
           key={i}
-          className={`${f.bg} py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8`}
+          className={`${
+            f.bg === "dark" 
+              ? "relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden" 
+              : f.bg
+          } py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8`}
         >
-          <div className="max-w-7xl mx-auto">
+          {/* Fondo para secciones oscuras */}
+          {f.bg === "dark" && <DarkBackground />}
+
+          <div className={`${f.bg === "dark" ? "relative" : ""} max-w-7xl mx-auto`}>
             <div
               className={`flex flex-col ${
                 i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
@@ -101,7 +122,7 @@ export default function Infraestructuras() {
                 />
               </motion.div>
 
-              {/* TEXTO - Más compacto */}
+              {/* TEXTO  */}
               <motion.div
                 className={`w-full md:w-2/5 lg:w-1/3 flex flex-col justify-center space-y-3 md:space-y-4 ${f.textColor}`}
                 initial={{ opacity: 0, y: 30 }}

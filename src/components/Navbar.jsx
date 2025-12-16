@@ -37,10 +37,10 @@ export default function Navbar() {
         { name: "Calidad", path: "/sobre-quandum/calidad" },
         { name: "Certificaciones", path: "/sobre-quandum/certificaciones" },
         { name: "Código Ético", path: "/sobre-quandum/codigo-etico" },
-        {
-          name: "Entorno Responsable",
-          path: "/sobre-quandum/entorno-responsable",
-        },
+        // {
+        //   name: "Entorno Responsable",
+        //   path: "/sobre-quandum/entorno-responsable",
+        // },
         { name: "Trabaja con nosotros", path: "/trabaja-con-nosotros" },
       ],
     },

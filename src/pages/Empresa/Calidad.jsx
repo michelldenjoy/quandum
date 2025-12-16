@@ -14,12 +14,12 @@ export default function Calidad() {
       <StarfieldNebula />
 
       {/* Jet escritorio (horizontal grande) */}
-      <motion.div
+      {/* <motion.div
         style={{ x, y }}
         className="fixed top-24 -left-20 z-10 pointer-events-none hidden lg:block"
       >
         <img src="/jet.svg" className="w-80 opacity-65 drop-shadow-2xl" />
-      </motion.div>
+      </motion.div> */}
 
       {/* Jet móvil parallax */}
       <motion.div
