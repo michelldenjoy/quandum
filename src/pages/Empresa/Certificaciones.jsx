@@ -306,7 +306,7 @@ export default function Certificaciones() {
 )}
 
 
-      {/* minifooter */}
+      {/* minifooter
       <motion.div
         initial={{ y: 100 }}
         animate={{ y: 0 }}
@@ -321,7 +321,8 @@ export default function Certificaciones() {
             Engineered for mission critical
           </div>
         </div>
-      </motion.div>
+      </motion.div> */}
+      
     </div>
   );
 }

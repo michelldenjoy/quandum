@@ -1,6 +1,8 @@
 import React, { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import LogoSpinner from "./components/LogoSpinner";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import AvisoLegal from "./pages/AvisoLegal";
 
 // 🔴 Carga perezosa (lazy) para cada página
 const Home = lazy(() => import("./pages/Home"));
@@ -65,6 +67,8 @@ export default function MainRoutes() {
         <Route path="/prensa" element={<Prensa />} />
         <Route path="/trabaja-con-nosotros" element={<TrabajaConNosotros />} />
         <Route path="/contacto" element={<Contacto />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/legal-notice" element={<AvisoLegal />} />
       </Routes>
     </Suspense>
   );
