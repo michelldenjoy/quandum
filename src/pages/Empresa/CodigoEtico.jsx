@@ -29,14 +29,14 @@ export default function CodigoEtico() {
       </div>
       
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600 rounded-full blur-[120px]"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full blur-[120px]"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-600 rounded-full blur-[120px]"></div>
       </div>
       
     
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-16">
+      <div className="relative max-w-7xl mx-auto px-6 pt-36 pb-16">
         {/* Header */}
         <motion.div 
           className="text-center mb-16"
@@ -53,7 +53,7 @@ export default function CodigoEtico() {
 
           <p className="text-base md:text-lg text-slate-300 mt-6 max-w-3xl mx-auto leading-relaxed font-light">
             En{" "}
-            <span className="bg-gradient-to-r from-brand-blue via-slate-300 to-brand-blue bg-clip-text font-semibold text-transparent">
+            <span className="text-white bg-clip-text font-extrabold text-transparent">
               Quandum{" "}
             </span>{" "}
             <span className="bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text font-semibold text-transparent">
@@ -65,13 +65,13 @@ export default function CodigoEtico() {
           </p>
         </motion.div>
 
-        {/* Línea decorativa */}
+        {/* Línea decorativa  /*/}    
         <motion.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.4, ease: "easeInOut" }}
-          className="h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent mb-16 max-w-3xl mx-auto"
+          className="h-1 bg-gradient-to-r from-transparent via-brand-blue to-transparent my-20 max-w-3xl mx-auto"
         />
 
         {/* Tarjetas de políticas */}
@@ -89,7 +89,7 @@ export default function CodigoEtico() {
                 {/* Icono */}
                 <div className="relative mb-6">
                   <div className="w-16 h-16 mx-auto bg-gradient-to-br from-blue-600/20 to-cyan-500/20 rounded-xl flex items-center justify-center border border-blue-500/30 group-hover:border-cyan-400/50 transition-colors">
-                    <FileBadge className="w-8 h-8 text-cyan-400 group-hover:scale-110 transition-transform" />
+                    <FileBadge className="w-8 h-8 text-slate-100 group-hover:scale-110 transition-transform" />
                   </div>
                 </div>
 
@@ -111,7 +111,7 @@ export default function CodigoEtico() {
                     href={policy.file}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative w-full py-2.5 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-medium text-sm rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20 overflow-hidden group/btn active:scale-[0.98]"
+                    className="relative w-full py-2 bg-gradient-to-r from-brand-blue via-slate-500 to-brand-blue hover:from-slate-900 hover:via-slate-500 hover:to-slate-900 hover:shadow-blue-300/30 hover:scale-105 text-white font-semibold text-lg rounded transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/20 overflow-hidden group active:scale-[0.98]"
                   >
                     <Download className="w-4 h-4" />
                     <span>Ver Documento</span>
@@ -136,8 +136,8 @@ export default function CodigoEtico() {
           transition={{ duration: 1.6, delay: 0.3, ease: "easeInOut" }}
           className="mt-16 relative"
         >
-          <div className="h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent max-w-4xl mx-auto" />
-          <div className="absolute inset-0 h-[1px] bg-gradient-to-r from-transparent via-blue-400/30 to-transparent max-w-4xl mx-auto blur-sm" />
+          <div className="h-1 bg-gradient-to-r from-transparent via-brand-blue to-transparent my-20 max-w-3xl mx-auto" />
+          
         </motion.div>
       </div>
     </div>
