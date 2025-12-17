@@ -29,7 +29,7 @@ export default function CodigoEtico() {
       </div>
       
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full blur-[120px]"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-[120px]"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-600 rounded-full blur-[120px]"></div>
       </div>
       
@@ -45,10 +45,7 @@ export default function CodigoEtico() {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6 tracking-tight">
-            <span className="text-white">Código Ético y </span>
-            <span className="bg-gradient-to-r from-brand-blue via-blue-200 to-slate-500 bg-clip-text text-transparent">
-              Cumplimiento
-            </span>
+            <span className="text-white">Código Ético y Cumplimiento </span>
           </h1>
 
           <p className="text-base md:text-lg text-slate-300 mt-6 max-w-3xl mx-auto leading-relaxed font-light">

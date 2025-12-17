@@ -77,7 +77,7 @@ export default function Infraestructuras() {
             transition={{ duration: 0.9 }}
             className="max-w-2xl"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-light tracking-tight mb-4 md:mb-6 backdrop-blur-[1px] bg-black/20 rounded-lg text-white drop-shadow-2xl">
+            <h1 className="text-center text-2xl md:text-5xl lg:text-5xl font-light tracking-tight mb-4 md:mb-6 backdrop-blur-[1px] bg-black/20 rounded-lg text-white drop-shadow-2xl">
               Donde la Ingeniería Toma Forma
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-white leading-relaxed drop-shadow-lg backdrop-blur-[1px] bg-black/20 p-4 rounded-lg">
@@ -146,19 +146,23 @@ export default function Infraestructuras() {
       ))}
 
       {/* Capacidades y Tecnologías */}
-      <section className="bg-white py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black text-center mb-8 md:mb-12 lg:mb-16"
+{/* Capacidades y Tecnologías */}
+<section className="bg-white py-16 sm:py-20 md:py-24 lg:py-28 px-4 sm:px-6 md:px-8">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            className="text-center mb-12 md:mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            Capacidades & Tecnologías
-          </motion.h2>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-black mb-4">
+              Capacidades & Tecnologías
+            </h2>
+            <div className="w-24 h-1 bg-black mx-auto" />
+          </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          <div className="space-y-3 md:space-y-4">
             {[
               "Diseño y desarrollo electrónico",
               "Diseño mecánico y fabricación",
@@ -169,15 +173,18 @@ export default function Infraestructuras() {
             ].map((item, idx) => (
               <motion.div
                 key={idx}
-                className="bg-gradient-to-b from-gray-200 via-gray-300 to-gray-200 rounded-lg md:rounded-xl p-5 md:p-6 lg:p-7 shadow-xl text-black hover:shadow-xl transition-shadow duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: idx * 0.1 }}
+                className="group relative"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
                 viewport={{ once: true }}
               >
-                <p className="font-medium text-sm sm:text-base md:text-lg">
-                  {item}
-                </p>
+                <div className="flex items-center space-x-4 md:space-x-6 py-5 md:py-6 px-4 md:px-6 border-l-4 border-black hover:border-blue-600 transition-colors duration-300">
+                  <div className="flex-shrink-0 w-2 h-2 bg-black rounded-full group-hover:bg-blue-600 transition-colors duration-300" />
+                  <p className="text-lg md:text-xl lg:text-2xl font-medium text-black group-hover:text-blue-600 transition-colors duration-300">
+                    {item}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>

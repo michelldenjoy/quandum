@@ -2,61 +2,127 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* =========================
+   BASE
+========================= */
 @layer base {
-    body {
-      @apply bg-black;
-      /* font-family: "Sekuya", system-ui; */
-    }
+  body {
+    @apply bg-black text-white;
+    /* font-family: "Sekuya", system-ui; */
   }
+}
+
+/* =========================
+   UTILITIES – FONDOS CORPORATIVOS
+========================= */
+@layer utilities {
+
+  /* =====================================================
+     FONDO AEROESPACIAL PRINCIPAL (Código Ético, Collage…)
+  ===================================================== */
+  .bg-aerospace {
+    @apply relative overflow-hidden;
+    background: linear-gradient(
+      to bottom,
+      rgb(2 6 23),
+      rgb(15 23 42),
+      rgb(2 6 23)
+    );
+  }
+
+  /* Grid técnico sutil */
+  .bg-aerospace::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(59,130,246,0.15) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59,130,246,0.15) 1px, transparent 1px);
+    background-size: 100px 100px;
+    opacity: 0.035;
+    pointer-events: none;
+  }
+
+  /* Glow tecnológico */
+  .bg-aerospace::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 25% 0%, rgba(56,189,248,0.25), transparent 45%),
+      radial-gradient(circle at 75% 100%, rgba(34,211,238,0.25), transparent 45%);
+    pointer-events: none;
+  }
+
+  /* Asegura contenido por encima */
+  .bg-aerospace > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* =====================================================
+     VARIANTES
+  ===================================================== */
+
+  /* Sin grid (hero limpio) */
+  .bg-aerospace-soft::before {
+    display: none;
+  }
+
+  /* Solo grid (sin glow) */
+  .bg-aerospace-grid-only::after {
+    display: none;
+  }
+
+  /* Más contraste (secciones finales) */
+  .bg-aerospace-strong::after {
+    background:
+      radial-gradient(circle at 30% 0%, rgba(56,189,248,0.35), transparent 40%),
+      radial-gradient(circle at 70% 100%, rgba(14,165,233,0.35), transparent 40%);
+  }
+
+  /* =====================================================
+     FONDOS MILITARES 
+  ===================================================== */
 
   .bg-militar {
-    position: relative;
-    background-image: url('/bgmilitar1.jpg');
+    @apply relative overflow-hidden;
+    background-image: url("/bgmilitar1.jpg");
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* 👈 Parallax */
+    background-attachment: fixed;
   }
-  
+
   .bg-militar::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.75); /* opacidad 50% */
-    z-index: 1;
+    background: rgba(0, 0, 0, 0.75);
   }
-  
+
   .bg-militar > * {
     position: relative;
-    z-index: 2;
+    z-index: 1;
   }
-  
 
-  /*formbg*/
-
+  /* Variante más ligera (formularios, bloques internos) */
   .bg-mili {
-    position: relative;
-    background-image: url('/bgmili6.jpg');
+    @apply relative overflow-hidden;
+    background-image: url("/bgmili6.jpg");
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* 👈 Parallax */
+    background-attachment: fixed;
   }
-  
+
   .bg-mili::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5); /* opacidad 50% */
-    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
   }
-  
+
   .bg-mili > * {
     position: relative;
-    z-index: 2;
+    z-index: 1;
   }
-
-  /*bg3*/
-
-
-
-
+}

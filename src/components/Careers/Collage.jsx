@@ -8,12 +8,16 @@ export default function Collage() {
   return (
     <section
       ref={ref}
-      className="relative w-full bg-black py-10 overflow-hidden"
+      className="relative py-20 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden"
     >
       {/* Fondo sutil con textura metálica */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-slate-800 to-black" />
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/5 via-transparent to-transparent" />
+      <div className="absolute inset-0 opacity-[0.03]">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,.4)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,.4)_1px,transparent_1px)] bg-[size:100px_100px]" />
+      </div>
+      
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-slate-500 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-600 rounded-full blur-[120px]"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6">
@@ -61,22 +65,6 @@ export default function Collage() {
               </p>
             </motion.div>
 
-            {/* Micro-CTA */}
-            {/* <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 1, duration: 0.8 }}
-            >
-              <a
-                href="/careers"
-                className="group inline-flex items-center gap-3 text-cyan-400 font-medium hover:text-cyan-300 transition-colors duration-300"
-              >
-                Descubre las posiciones abiertas
-                <svg className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </motion.div> */}
           </motion.div>
 
         

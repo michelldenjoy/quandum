@@ -9,7 +9,7 @@ export default function Intro() {
       </div>
       
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600 rounded-full blur-[120px]"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-[120px]"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-600 rounded-full blur-[120px]"></div>
       </div>
       
@@ -135,7 +135,7 @@ export default function Intro() {
               { value: "2006", label: "Año de fundación" },
               { value: "20+", label: "Años de experiencia" },
               { value: "100%", label: "Sistemas críticos" },
-              { value: "DO-178 / DO-254", label: "Normativas aeronáuticas" }
+              { value: "100%", label: "Proyectos a medida" }
             ].map((stat, i) => (
               <div key={i} className="text-center lg:text-left">
                 <div className="text-3xl md:text-4xl font-light text-blue-400 mb-2 tracking-tight">

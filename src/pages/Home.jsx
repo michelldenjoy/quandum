@@ -1,12 +1,13 @@
 import Hero from "../components/home/Hero";
-import Ingenieria from "../components/home/Ingenieria";
+import HomeOverview from "../components/home/HomeOverview";
 
 
 export default function Home() {
   return (
     <section>
        <Hero  />
-       <Ingenieria />
+       
+       <HomeOverview />
 
       
     </section>
