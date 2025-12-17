@@ -22,7 +22,7 @@ export default function Calidad() {
       </motion.div> */}
 
       {/* Jet móvil parallax */}
-      <motion.div
+      {/* <motion.div
         style={{ y: yMobile, rotate: rotateMobile }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.5 }}
@@ -30,7 +30,7 @@ export default function Calidad() {
         className="fixed bottom-20 right-4 z-30 pointer-events-none block lg:hidden"
       >
         <img src="/jet.svg" className="w-36 drop-shadow-2xl" />
-      </motion.div>
+      </motion.div> */}
 
       <div className="relative z-20 max-w-6xl mx-auto px-6 py-24 space-y-32">
         {/* HEADER */}
@@ -59,7 +59,7 @@ export default function Calidad() {
         >
           <p className="text-lg md:text-xl text-slate-200 leading-relaxed mb-6">
             La Dirección de{" "}
-            <span className="font-bold text-sky-400">Quandum</span> busca
+            <span className="font-bold ">Quandum</span> busca
             obtener la excelencia en todas sus actividades y consolidarse como
             empresa del sector aeronáutico, militar e industrial. Para ello, y
             siendo consciente de la importancia de la calidad y la satisfacción
@@ -83,7 +83,8 @@ export default function Calidad() {
           viewport={{ once: true }}
           className="grid md:grid-cols-2 gap-8"
         >
-          <div className="bg-gradient-to-b from-brand-blue/50 via-slate-800 to-brand-blue/50 text-white rounded-2xl p-10 shadow-xl">
+          <div className="bg-gradient-to-b from-brand-blue/20 via-transparent to-brand-blue/50 text-white rounded-2xl p-10 shadow-xl">
+          
             <h2 className="text-3xl font-bold mb-8">Objetivos Estratégicos</h2>
             <ul className="space-y-4 text-lg">
               <li className="flex items-start gap-3">
@@ -162,9 +163,9 @@ export default function Calidad() {
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-sky-500 text-white text-xs font-bold px-6 py-2 rounded-full shadow-lg"
+              className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-sky-500 text-white text-center text-xs font-bold px-6 py-2 rounded-full shadow-lg"
             >
-              QUANDUM
+              QUANDUM AEROSPACE
             </motion.div>
           </div>
         </motion.div>

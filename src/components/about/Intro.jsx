@@ -48,11 +48,11 @@ export default function Intro() {
           className="mb-24 lg:mb-32"
         >
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-center leading-[1.1]">
-            <span className="block mb-2">
-              <span className="text-white font-extralight">Quandum</span>
+            <span className="block">
+              <span className="font-extralight text-white bg-clip-text text-transparent">Quandum</span>
             </span>
             <span className="block">
-              <span className="bg-gradient-to-r from-blue-400 via-blue-300 to-cyan-400 bg-clip-text text-transparent font-normal">
+              <span className="bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text text-transparent font-normal">
                 Aerospace
               </span>
             </span>
@@ -64,7 +64,7 @@ export default function Intro() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="text-center text-slate-400 text-sm md:text-base mt-6 tracking-wide font-light"
+            className="text-center text-slate-400 text-sm md:text-base mt-6 tracking-wide -mb-6 font-light"
           >
             Sistemas críticos · Ingeniería de precisión · Desde 2006
           </motion.p>
@@ -155,7 +155,7 @@ export default function Intro() {
           whileInView={{ scaleX: 1, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.6, delay: 0.3, ease: "easeInOut" }}
-          className="mt-24 lg:mt-32 relative"
+          className="mt-14 lg:mt-22 relative"
         >
           <div className="h-1 bg-gradient-to-r from-transparent via-brand-blue to-transparent max-w-2xl mx-auto shadow-lg shadow-brand-blue/30" />
           <div className="absolute inset-0 h-[1px] bg-gradient-to-r from-transparent via-blue-400/30 to-transparent max-w-4xl mx-auto blur-sm" />
