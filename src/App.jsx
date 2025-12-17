@@ -6,12 +6,11 @@ export default function App({ children }) {
   return (
     <div className="relative min-h-screen text-white font-sans">
       <Navbar />
-      <main className="px-6">
+      <main >
         <MainRoutes />
         {children}
-        <Footer />
       </main>
-
+      <Footer />
     </div>
   );
 }

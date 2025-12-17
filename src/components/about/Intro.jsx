@@ -35,7 +35,7 @@ export default function Intro() {
           className="text-center my-4"
         >
           <span className="text-sm tracking-[0.3em] text-blue-400/80 font-light uppercase">
-            Advanced Engineering Systems
+          Sistemas de ingeniería avanzada
           </span>
         </motion.div>
 
