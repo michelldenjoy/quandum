@@ -16,7 +16,7 @@ const facilities = [
     description:
       "Espacio técnico de 100 m² habilitado para el ensamblaje de óptica delicada. Cuenta con sistemas de filtrado de aire y regulación de temperatura constantes, proporcionando las condiciones estables necesarias para operar con equipos de alta sensibilidad.",
     image: "/images/montaje.jpg",
-    bg: "dark",
+    bg: "bg-aerospace",
     textColor: "text-white",
   },
   {
@@ -34,27 +34,11 @@ const facilities = [
     description:
       "Nuestro Laboratorio de I+D de 600 m² es el motor de la próxima generación de sistemas. Enfocados en la investigación aplicada y la exploración de nuevas fronteras tecnológicas, ofrecemos una plataforma completa que abarca desde la validación conceptual y el prototipado rápido hasta la ejecución de rigurosas certificaciones técnicas. Este espacio acelera la transición de la idea al producto validado, garantizando la introducción de soluciones disruptivas al mercado.",
     image: "/images/about-2.jpg",
-    bg: "dark",
+    bg: "bg-aerospace",
     textColor: "text-white",
   },
 ];
 
-// Fondo gradient oscuro
-const DarkBackground = () => (
-  <>
-    {/* Fondo técnico aeroespacial */}
-    <div className="absolute inset-0 opacity-[0.03]">
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,.4)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,.4)_1px,transparent_1px)] bg-[size:100px_100px]" />
-    </div>
-    
-    <div className="absolute inset-0 opacity-20">
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-600 rounded-full blur-[120px]"></div>
-    </div>
-   
-    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
-  </>
-);
 
 export default function Infraestructuras() {
   return (
@@ -92,16 +76,17 @@ export default function Infraestructuras() {
       {facilities.map((f, i) => (
         <section
           key={i}
-          className={`${
-            f.bg === "dark" 
-              ? "relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden" 
-              : f.bg
-          } py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8`}
+          className={`
+            ${f.bg}
+            relative overflow-hidden
+            py-8 sm:py-12 md:py-16 lg:py-20
+            px-4 sm:px-6 md:px-8
+          `}
         >
           {/* Fondo para secciones oscuras */}
-          {f.bg === "dark" && <DarkBackground />}
+  
 
-          <div className={`${f.bg === "dark" ? "relative" : ""} max-w-7xl mx-auto`}>
+          <div className="max-w-7xl mx-auto">
             <div
               className={`flex flex-col ${
                 i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
