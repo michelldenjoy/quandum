@@ -1,11 +1,12 @@
 import { motion } from "motion/react";
 import { ShieldCheck, Cpu, Target, Layers } from "lucide-react";
+import SectorsSection from "./SectorSection";
+import SectorVertical from "./SectorVertical";
 
 export default function HomeOverview() {
   return (
     <section className="w-full bg-white">
       <div className="max-w-7xl mx-auto px-6 py-28 space-y-32">
-
         {/* ---------------- INTRO ---------------- */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -46,32 +47,18 @@ export default function HomeOverview() {
           <ValueCard
             icon={ShieldCheck}
             title="Fiabilidad certificada"
-            text="Nuestros desarrollos cumplen estándares aeronáuticos y militares para garantizar seguridad y rendimiento." 
+            text="Nuestros desarrollos cumplen estándares aeronáuticos y militares para garantizar seguridad y rendimiento."
           />
           <ValueCard
             icon={Layers}
             title="Precisión sin compromiso"
-            text="Cuidamos cada detalle del proceso para asegurar resultados robustos en entornos extremos y críticos." 
+            text="Cuidamos cada detalle del proceso para asegurar resultados robustos en entornos extremos y críticos."
           />
         </motion.div>
 
-        {/* ---------------- SECTORS ---------------- */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-          className="space-y-10"
-        >
-          <h3 className="text-4xl font-bold text-black text-center">
-            Sectores en los que operamos
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <SectorCard title="Aeroespacial" text="Sistemas electrónicos y optoelectrónicos para aeronaves y plataformas aéreas." />
-            <SectorCard title="Defensa" text="Soluciones críticas certificables para entornos operativos de alta exigencia." />
-            <SectorCard title="Industrial" text="Ingeniería avanzada aplicada a automatización, control e instrumentación." />
-          </div>
-        </motion.div>
+        <SectorsSection />
+
+        <SectorVertical />
 
         {/* ---------------- WAY OF WORKING ---------------- */}
         <motion.div
@@ -86,9 +73,10 @@ export default function HomeOverview() {
               Nuestra forma de trabajar
             </h3>
             <p className="text-lg text-slate-700 leading-relaxed">
-              Abordamos cada proyecto como un sistema único. Analizamos la misión,
-              definimos requisitos, evaluamos riesgos y desarrollamos soluciones
-              optimizadas desde la fase conceptual hasta la validación final.
+              Abordamos cada proyecto como un sistema único. Analizamos la
+              misión, definimos requisitos, evaluamos riesgos y desarrollamos
+              soluciones optimizadas desde la fase conceptual hasta la
+              validación final.
             </p>
             <p className="text-lg text-slate-700 leading-relaxed">
               Nuestro enfoque está orientado a la fiabilidad a largo plazo,
@@ -122,35 +110,30 @@ export default function HomeOverview() {
         </motion.div>
       </div>
 
-
-
       <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.7 }}
-            className="grid grid-cols-2 bg-aerospace place-items-center lg:grid-cols-4 gap-8 lg:gap-12 pt-16 border-t border-slate-800/50"
-          >
-            {[
-              { value: "2006", label: "Año de fundación" },
-              { value: "20+", label: "Años de experiencia" },
-              { value: "100%", label: "Sistemas críticos" },
-              { value: "100%", label: "Proyectos a medida" }
-            ].map((stat, i) => (
-              <div key={i} className="text-center mb-8 lg:text-left">
-                <div className="text-3xl max-w md:text-4xl font-light text-blue-400 mb-2 tracking-tight">
-                  {stat.value}
-                </div>
-                <div className="text-xs md:text-sm text-slate-500 tracking-wide uppercase font-light">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </motion.div>
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.9, delay: 0.7 }}
+        className="grid grid-cols-2 bg-aerospace place-items-center lg:grid-cols-4 gap-8 lg:gap-12 pt-16 border-t border-slate-800/50"
+      >
+        {[
+          { value: "2006", label: "Año de fundación" },
+          { value: "20+", label: "Años de experiencia" },
+          { value: "100%", label: "Sistemas críticos" },
+          { value: "100%", label: "Proyectos a medida" },
+        ].map((stat, i) => (
+          <div key={i} className="text-center mb-8 lg:text-left">
+            <div className="text-3xl max-w md:text-4xl font-light text-blue-400 mb-2 tracking-tight">
+              {stat.value}
+            </div>
+            <div className="text-xs md:text-sm text-slate-500 tracking-wide uppercase font-light">
+              {stat.label}
+            </div>
+          </div>
+        ))}
+      </motion.div>
     </section>
-
-
-
   );
 }
 
