@@ -72,7 +72,7 @@ export default function PrivacyPolicy() {
   ];
 
   return (
-    <div className="min-h-screen py-16 bg-black text-white">
+    <div className="min-h-screen py-16 bg-white text-slate-800">
 
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto space-y-12">
@@ -89,7 +89,7 @@ export default function PrivacyPolicy() {
               >
                 <div className="flex items-start gap-4 mb-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-zinc-700 transition-colors">
-                    <Icon className="w-6 h-6 text-zinc-400" strokeWidth={1.5} />
+                    <Icon className="w-6 h-6 text-zinc-100" strokeWidth={1.5} />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold tracking-tight mt-2">
                     {section.title}
@@ -100,7 +100,7 @@ export default function PrivacyPolicy() {
                   {section.content.map((paragraph, pIndex) => (
                     <p
                       key={pIndex}
-                      className="text-zinc-400 leading-relaxed"
+                      className="text-zinc-800 leading-relaxed"
                     >
                       {paragraph}
                     </p>
@@ -118,13 +118,13 @@ export default function PrivacyPolicy() {
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="py-16 px-6 border-t border-zinc-800/50 bg-zinc-950/50"
+        className="py-16 px-6 border-t text-white border-zinc-900 bg-zinc-900"
       >
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl text-justify mx-auto">
           <h2 className="text-3xl font-bold mb-6 tracking-tight">
             Tus derechos
           </h2>
-          <div className="space-y-4 text-zinc-400">
+          <div className="space-y-4 text-zinc-200">
             <p className="leading-relaxed">
               Tienes derecho a saber si conservamos datos personales sobre ti y, 
               en caso de que lo hagamos, a acceder a esos datos personales y pedir 
@@ -149,19 +149,19 @@ export default function PrivacyPolicy() {
         transition={{ duration: 0.8 }}
         className="py-16 px-6"
       >
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-zinc-900/50 border border-zinc-800 rounded-lg p-8">
-            <h3 className="text-2xl font-bold mb-4 tracking-tight">
+        <div className="max-w-4xl text-justify mx-auto">
+          <div className="bg-zinc-900 border border-zinc-900 rounded-lg p-8">
+            <h3 className="text-2xl text-white font-bold mb-4 tracking-tight">
               Seguridad de los datos
             </h3>
-            <p className="text-zinc-400 leading-relaxed mb-4">
+            <p className="text-zinc-200 leading-relaxed mb-4">
               Adoptamos las medidas oportunas para garantizar la seguridad de los 
               datos personales recopilados a través del sitio web de Quandum. Debes 
               comprender que, dada la naturaleza abierta de Internet, tu información 
               y datos personales pueden circular sin medidas de seguridad por redes 
               conectadas a tu ordenador o a nuestros sistemas.
             </p>
-            <p className="text-zinc-400 leading-relaxed">
+            <p className="text-zinc-200 leading-relaxed">
               En ocasiones, nuestro sitio web puede incluir enlaces dirigidos a sitios 
               web de nuestros asociados, anunciantes y filiales. Si sigues alguno de 
               esos enlaces, recuerda que esos sitios web tienen sus propias políticas 

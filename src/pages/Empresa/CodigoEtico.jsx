@@ -1,4 +1,4 @@
-import { FileBadge, Download, ExternalLink } from "lucide-react";
+import { FileCheckCorner, Download, ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
 
 export default function CodigoEtico() {
@@ -22,19 +22,7 @@ export default function CodigoEtico() {
   ];
 
   return (
-    <div className="min-h-screen relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
-      {/* Fondo general oscuro */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,.4)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,.4)_1px,transparent_1px)] bg-[size:100px_100px]" />
-      </div>
-      
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-600 rounded-full blur-[120px]"></div>
-      </div>
-      
-    
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
+    <div className="min-h-screen relative bg-aerospace overflow-hidden">
 
       <div className="relative max-w-7xl mx-auto px-6 pt-36 pb-16">
         {/* Header */}
@@ -44,7 +32,7 @@ export default function CodigoEtico() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-slate-100 tracking-tight">
             <span className="text-white">Código Ético y Cumplimiento </span>
           </h1>
 
@@ -79,14 +67,14 @@ export default function CodigoEtico() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20 hover:-translate-y-1"
+              className="group relative bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 shadow-2xl border border-slate-700 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20 hover:-translate-y-1"
             >
 
               <div className="p-6 flex flex-col h-full">
                 {/* Icono */}
                 <div className="relative mb-6">
                   <div className="w-16 h-16 mx-auto bg-gradient-to-br from-blue-600/20 to-cyan-500/20 rounded-xl flex items-center justify-center border border-blue-500/30 group-hover:border-cyan-400/50 transition-colors">
-                    <FileBadge className="w-8 h-8 text-slate-100 group-hover:scale-110 transition-transform" />
+                    <FileCheckCorner className="w-7 h-7 text-slate-100 group-hover:scale-110 transition-transform" />
                   </div>
                 </div>
 
@@ -108,7 +96,7 @@ export default function CodigoEtico() {
                     href={policy.file}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative w-full py-2 bg-gradient-to-r from-brand-blue via-slate-500 to-brand-blue hover:from-slate-900 hover:via-slate-500 hover:to-slate-900 hover:shadow-blue-300/30 hover:scale-105 text-white font-semibold text-lg rounded transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/20 overflow-hidden group active:scale-[0.98]"
+                    className="  w-full py-2.5  bg-slate-800  hover:bg-slate-700  border border-slate-600  hover:border-cyan-400/50  text-slate-100  font-medium  rounded-lg  transition-all  flex items-center justify-center gap-3"
                   >
                     <Download className="w-4 h-4" />
                     <span>Ver Documento</span>
@@ -117,7 +105,7 @@ export default function CodigoEtico() {
                 )}
               </div>
 
-              {/* Efecto de resplandor en hover */}
+              {/* Efecto de hover */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
                 <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/10 to-transparent"></div>
               </div>

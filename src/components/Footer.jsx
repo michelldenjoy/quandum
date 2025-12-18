@@ -33,10 +33,13 @@ export default function Footer() {
         aria-label="Legal"
         className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:justify-end text-sm"
       >
-        <a className="text-zinc-400 hover:text-white transition-colors uppercase tracking-wide">
+        <a 
+        href="privacy-policy"
+        className="text-zinc-400 hover:text-white transition-colors uppercase tracking-wide">
           Política de Privacidad
         </a>
-        <a className="text-zinc-400 hover:text-white transition-colors uppercase tracking-wide">
+        <a href="legal-notice"
+        className="text-zinc-400 hover:text-white transition-colors uppercase tracking-wide">
           Aviso Legal
         </a>
       </nav>

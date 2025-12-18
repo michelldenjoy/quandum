@@ -9,7 +9,7 @@ export default function FilosofiaTrayectoria() {
       {/* Wrapper general */}
       <div className="relative max-w-7xl mx-auto px-6 py-32 lg:py-40 space-y-32">
 
-        {/* ---------------------- FILOSOFÍA ---------------------- */}
+        {/* ---------------------- VISION ---------------------- */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -25,24 +25,13 @@ export default function FilosofiaTrayectoria() {
             </div>
 
             <h2 className="text-4xl md:text-5xl font-light text-white leading-tight tracking-tight">
-              Nuestra <span className="bg-gradient-to-r from-blue-100 via-blue-300 to-cyan-200 bg-clip-text text-transparent">Filosofía</span>
+              Nuestra <span className="bg-gradient-to-r from-blue-100 via-blue-300 to-cyan-200 bg-clip-text text-transparent">Vision</span>
             </h2>
 
-            <p className="text-lg text-slate-300 leading-relaxed font-light">
-              Nos mueve una idea simple:
-              <span className="font-normal text-white">
-                {" "}
-                la ingeniería de calidad construye el futuro.
-              </span>
-            </p>
 
             <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light">
-              Cada proyecto lo abordamos con una combinación única de rigor
-              técnico, innovación constante y pensamiento crítico. Nuestros
-              desarrollos se guían por estándares internacionales —DO-178C,
-              DO-254, DO-160, MIL-STD…— que aseguran que cada sistema que
-              diseñamos cumple con los niveles más exigentes de seguridad y
-              rendimiento.
+            Nuestra visión es ser un referente internacional en ingeniería avanzada para sistemas críticos, aportando soluciones tecnológicas que impulsen el progreso en los sectores aeroespacial, defensa e industrial.
+            Aspiramos a desarrollar tecnología fiable, precisa y sostenible, diseñada para operar en los entornos más exigentes, donde la seguridad, el rendimiento y la calidad no admiten concesiones. Creemos en una ingeniería que no solo resuelve desafíos técnicos, sino que construye confianza a largo plazo.
             </p>
           </div>
 
@@ -82,7 +71,7 @@ export default function FilosofiaTrayectoria() {
           </motion.div>
         </motion.div>
 
-        {/* ---------------------- TRAYECTORIA ---------------------- */}
+        {/* ---------------------- MISION ---------------------- */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -126,37 +115,12 @@ export default function FilosofiaTrayectoria() {
             </div>
 
             <h2 className="text-4xl md:text-5xl font-light text-white leading-tight tracking-tight">
-              Nuestra <span className="bg-gradient-to-r from-blue-100 via-blue-200 to-cyan-200 bg-clip-text text-transparent">Trayectoria</span>
+              Nuestra <span className="bg-gradient-to-r from-blue-100 via-blue-200 to-cyan-200 bg-clip-text text-transparent">Mision</span>
             </h2>
 
             <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light">
-              A lo largo de casi dos décadas hemos participado en programas
-              estratégicos para defensa, aeronáutica y sectores industriales de
-              alta exigencia, siempre manteniendo una cultura de:
-            </p>
-
-            <ul className="space-y-3 text-base md:text-lg text-slate-300 font-light">
-              <li className="flex items-start gap-3">
-                <span className="text-cyan-400 mt-1">•</span>
-                <span>Excelencia técnica</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-cyan-400 mt-1">•</span>
-                <span>Mejora continua</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-cyan-400 mt-1">•</span>
-                <span>Innovación sostenible</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-cyan-400 mt-1">•</span>
-                <span>Compromiso absoluto con la fiabilidad</span>
-              </li>
-            </ul>
-
-            <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light">
-              No solo construimos soluciones avanzadas:
-              <span className="font-normal text-white"> construimos confianza.</span>
+            Nuestra misión es diseñar, desarrollar y validar soluciones tecnológicas a medida, acompañando a nuestros clientes en todo el ciclo de vida del proyecto, desde la fase conceptual hasta la entrega final.
+            Trabajamos bajo estrictos estándares internacionales, aplicando rigor técnico, innovación constante y una cultura de excelencia para garantizar que cada sistema cumpla su misión de forma robusta, segura y eficiente. En Quandum, entendemos cada proyecto como único y asumimos la responsabilidad de convertir requisitos complejos en soluciones fiables y certificables.
             </p>
           </div>
         </motion.div>

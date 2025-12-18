@@ -1,5 +1,5 @@
 import React from "react";
-import FilosofiaTrayectoria from "../../components/about/FilosofiaTrayectoria";
+import MisionVision from "../../components/about/VisionMision";
 import AboutFeatures from "../../components/about/AboutFeatures";
 import HeroText from "../../components/about/HeroText";
 import HeroVideo from "../../components/about/HeroVideo";
@@ -19,7 +19,7 @@ export default function QuienesSomos() {
 
       <AboutFeatures />
 
-      <FilosofiaTrayectoria />
+      <MisionVision />
     </div>
   );
 }

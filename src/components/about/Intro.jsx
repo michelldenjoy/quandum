@@ -2,19 +2,7 @@ import { motion } from "motion/react";
 
 export default function Intro() {
   return (
-    <section className="relative py-20 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
-      {/* Fondo técnico aeroespacial */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,.4)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,.4)_1px,transparent_1px)] bg-[size:100px_100px]" />
-      </div>
-      
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-600 rounded-full blur-[120px]"></div>
-      </div>
-      
-      {/* Viñeta sutil para profundidad */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
+    <section className="relative py-20 bg-aerospace overflow-hidden">
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
         {/* Línea decorativa */}
@@ -87,7 +75,7 @@ export default function Intro() {
                 <span className="text-xs tracking-wider text-blue-400/60 font-light">01</span>
               </div>
               
-              <p className="text-base md:text-lg lg:text-xl text-slate-300 leading-relaxed font-light">
+              <p className="text-base text-justify md:text-lg lg:text-xl text-slate-300 leading-relaxed font-light">
                 Desde 2006, Quandum Aerospace impulsa la <span className="text-slate-100">ingeniería avanzada</span> en los
                 sectores aeroespacial, defensa e industrial, diseñando y
                 desarrollando dispositivos electrónicos, optoelectrónicos y
@@ -111,7 +99,7 @@ export default function Intro() {
                 <span className="text-xs tracking-wider text-blue-400/60 font-light">02</span>
               </div>
               
-              <p className="text-base md:text-lg lg:text-xl text-slate-300 leading-relaxed font-light">
+              <p className="text-base text-justify md:text-lg lg:text-xl text-slate-300 leading-relaxed font-light">
                 Con un <span className="text-slate-100">equipo multidisciplinar altamente especializado</span>, acompañamos
                 al cliente desde las primeras fases conceptuales hasta la entrega
                 final, aportando asesoramiento técnico, análisis funcional y
@@ -123,30 +111,6 @@ export default function Intro() {
             </motion.div>
           </div>
 
-          {/* Features */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.7 }}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 pt-16 border-t border-slate-800/50"
-          >
-            {[
-              { value: "2006", label: "Año de fundación" },
-              { value: "20+", label: "Años de experiencia" },
-              { value: "100%", label: "Sistemas críticos" },
-              { value: "100%", label: "Proyectos a medida" }
-            ].map((stat, i) => (
-              <div key={i} className="text-center lg:text-left">
-                <div className="text-3xl md:text-4xl font-light text-blue-400 mb-2 tracking-tight">
-                  {stat.value}
-                </div>
-                <div className="text-xs md:text-sm text-slate-500 tracking-wide uppercase font-light">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </motion.div>
         </div>
 
         {/* Línea de cierre*/}

@@ -126,3 +126,72 @@
     z-index: 1;
   }
 }
+
+
+
+
+
+/* .bg-aerospace {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    #020617, 
+    #0f172a, 
+    #020617
+  );
+}
+
+
+.bg-aerospace::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(59,130,246,0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,0.4) 1px, transparent 1px);
+  background-size: 100px 100px;
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+
+.bg-aerospace::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle 200px at 25% 0%,
+      rgba(59,130,246,0.9),
+      transparent 70%
+    ),
+    radial-gradient(
+      circle 200px at 75% 100%,
+      rgba(8,145,178,0.9),
+      transparent 70%
+    );
+  filter: blur(120px);
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+
+.bg-aerospace .vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(0,0,0,0.4) 100%
+  );
+  pointer-events: none;
+}
+
+
+.bg-aerospace > * {
+  position: relative;
+  z-index: 1;
+} */
+
