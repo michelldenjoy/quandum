@@ -14,7 +14,7 @@ export default function Hero() {
         muted={muted}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover"
       />
-
+ <div className="absolute inset-0 bg-black/30" />
       <button
         onClick={() => setMuted(!muted)}
         className="absolute bottom-6 right-6 bg-black/20 text-gray-200 px-2 py-2 rounded-full"

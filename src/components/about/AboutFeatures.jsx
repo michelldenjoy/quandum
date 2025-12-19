@@ -68,7 +68,7 @@ export default function AboutFeatures() {
               className="relative"
             >
               <img
-                src="/images/about-4.jpg"
+                src="/images/dimming.jpg"
                 alt="Aerospace Design"
                 className="w-full h-[420px] object-cover rounded-xl shadow-2xl"
               />
