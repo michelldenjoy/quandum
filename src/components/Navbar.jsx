@@ -59,7 +59,7 @@ export default function Navbar() {
       ],
     },
 
-    { name: "Prensa", path: "/prensa" },
+    // { name: "Prensa", path: "/prensa" },
     { name: "Contacto", path: "/contacto" },
   ];
 

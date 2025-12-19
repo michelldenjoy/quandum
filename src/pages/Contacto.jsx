@@ -91,7 +91,7 @@ export default function Contacto() {
       title: "Horario de atención",
       content: (
         <>
-          Lunes a jueves: 08:00 – 17:30 CET
+          Lunes a jueves: 08:00 – 17:30
           <br />
           Viernes: 08:00 – 14:00
           <br />
@@ -122,7 +122,7 @@ export default function Contacto() {
                 className="block animate-slideUp"
                 style={{ animationDelay: "0.3s" }}
               >
-                Conecte con
+                Contacte con
               </span>
               <span
                 className="bg-gradient-to-r from-brand-blue via-slate-300 to-brand-blue bg-clip-text text-transparent font-bold animate-slideUp"

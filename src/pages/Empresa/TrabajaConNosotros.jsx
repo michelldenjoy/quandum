@@ -24,7 +24,7 @@ import {
 import Collage from '../../components/Careers/Collage' 
 import Valores from "../../components/Careers/Valores";
 import Formulario from "../../components/Careers/Formulario";
-import HowWeWork from "../../components/Careers/HowWeWork";
+import WorkHorizontal from "../../components/Careers/WorkHorizontal";
 
 // const andurilBenefits = [
 //   {
@@ -171,9 +171,8 @@ export default function TrabajaConNosotros() {
       <div>
         <Collage />
       </div>
-
       <div>
-        <HowWeWork />
+        <WorkHorizontal />
       </div>
 
       <div>
