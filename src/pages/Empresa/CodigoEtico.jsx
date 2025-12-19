@@ -1,5 +1,6 @@
 import { FileCheckCorner, Download, ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
+import ODSSection from "../../components/etico/ODSSection";
 
 export default function CodigoEtico() {
   const policies = [
@@ -24,7 +25,11 @@ export default function CodigoEtico() {
   return (
     <div className="min-h-screen relative bg-aerospace overflow-hidden">
 
+      <ODSSection />
+
       <div className="relative max-w-7xl mx-auto px-6 pt-36 pb-16">
+
+        
         {/* Header */}
         <motion.div 
           className="text-center mb-16"
