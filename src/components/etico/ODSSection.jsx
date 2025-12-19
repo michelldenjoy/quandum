@@ -67,8 +67,9 @@ export default function ODSSection() {
             Objetivos de Desarrollo Sostenible
           </h2>
           <p className="text-slate-700 my-14  text-lg">
-            Nuestra actividad se alinea con la Agenda 2030 de Naciones Unidas,
-            contribuyendo activamente en áreas clave para un futuro sostenible.
+            En Quandum Aerospace alineamos nuestra actividad con la Agenda 2030
+            de Naciones Unidas y contribuimos activamente en áreas clave para un
+            futuro sostenible.
           </p>
         </div>
 
