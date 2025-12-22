@@ -88,64 +88,182 @@ export default function Certificaciones() {
         <section className="mt-72 sm:mt-44 md:mt-76 lg:mt-62 xl:mt-60 py-12 sm:py-10 md:py-28 px-4 sm:px-6 md:px-8">
           <div className="max-w-7xl mx-auto w-full">
             <motion.h2
-              initial={{ opacity: 0, y: 60 }}
+              initial={{ opacity: 0, y: 180 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-center text-white mb-12 sm:mb-16 md:mb-20 px-2"
             >
               CERTIFICACIONES OFICIALES
             </motion.h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-16 w-full">
-              {certifications.map((cert, i) => (
-                <motion.div
-                  key={cert.id}
-                  initial={{ opacity: 0, y: 80 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.2 }}
-                  className="group relative bg-black/70 backdrop-blur-xl border border-zinc-800 rounded-2xl sm:rounded-3xl overflow-hidden hover:border-zinc-600 transition-all duration-700 cursor-pointer w-full"
-                  onClick={() => setSelectedCert(cert.id)}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60" />
-                  <div className="p-6 sm:p-8 md:p-10 lg:p-12 relative z-10">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-3 sm:mb-4 break-words">
-                      {cert.name}
-                    </h3>
-                    <p className="text-zinc-400 font-mono text-sm sm:text-base md:text-lg mb-4 sm:mb-6 break-words">
-                      Código: {cert.code}
-                    </p>
-                    <p className="text-zinc-300 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
-                      {cert.description}
-                    </p>
+            <div className="flex flex-col gap-8 sm:gap-10 md:gap-12 w-full">
+              {/* EN 9100 - DESTACADO PRINCIPAL */}
+              <motion.div
+                initial={{ opacity: 0, y: 80 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="group relative bg-gradient-to-br from-zinc-900/90 via-black/80 to-black/90 backdrop-blur-xl border-2 border-zinc-700 rounded-3xl overflow-hidden hover:border-zinc-500 transition-all duration-700 cursor-pointer w-full"
+                onClick={() => setSelectedCert("en9100")}
+              >
+                {/* Efecto de brillo */}
+                <div className="absolute inset-0 bg-gradient-to-b from-zinc-800/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                
+                <div className="absolute top-6 right-6 flex flex-col gap-2 items-end z-20">
+                  <span className="text-xs tracking-widest px-4 py-2 bg-zinc-800 border border-zinc-600 rounded-full text-white font-bold shadow-lg">
+                    ✦ PREMIUM CERTIFICATION
+                  </span>
+                  <span className="text-xs tracking-widest px-3 py-1 border border-zinc-600 rounded-full text-zinc-300">
+                    ✔ TÜV VERIFIED
+                  </span>
+                </div>
 
-                    {/* Vista previa del certificado */}
-                    <div className="relative mb-6 overflow-hidden rounded-xl border border-zinc-800">
-                      <img
-                        src={cert.imageUrl}
-                        alt={cert.name}
-                        className="w-full h-48 object-cover scale-100 group-hover:scale-105 transition duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                    </div>
-
-                    <div className="mt-8 sm:mt-10 flex items-center gap-3 sm:gap-4 text-zinc-400 group-hover:text-white transition-all">
-                      <span className="text-xs sm:text-sm tracking-wider font-medium">
-                        VER CERTIFICADO
+                <div className="grid lg:grid-cols-2 gap-8 p-8 sm:p-10 md:p-12 lg:p-14 relative z-10">
+                  {/* Contenido*/}
+                  <div className="flex flex-col justify-center">
+                    <div className="inline-block mb-4">
+                      <span className="text-xs tracking-[0.3em] text-zinc-500 font-bold uppercase">
+                        Certificación Aeroespacial
                       </span>
-                      <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
-                    <span className="absolute top-6 right-6 text-xs tracking-widest px-3 py-1 border border-zinc-600 rounded-full text-zinc-300">
-                      ✔ TÜV VERIFIED
-                    </span>
+                    
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 sm:mb-6 break-words leading-tight">
+                      EN 9100:2018
+                    </h3>
+                    
+                    <p className="text-zinc-400 font-mono text-base sm:text-lg md:text-xl mb-6 sm:mb-8 break-words">
+                      Código: 01 117 125 200
+                    </p>
+                    
+                    <div className="space-y-4 mb-8">
+                      <p className="text-zinc-200 leading-relaxed text-base sm:text-lg font-medium">
+                        El estándar más exigente de la industria aeroespacial, espacio y defensa.
+                      </p>
+                      <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
+                        Esta certificación garantiza que nuestros sistemas de gestión de calidad cumplen con los requisitos más estrictos establecidos por las principales organizaciones aeroespaciales internacionales.
+                      </p>
+                      <ul className="space-y-2 text-zinc-400 text-sm sm:text-base">
+                        <li className="flex items-start gap-2">
+                          <span className="text-zinc-500 mt-1">▸</span>
+                          <span>Control total de procesos críticos</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-zinc-500 mt-1">▸</span>
+                          <span>Trazabilidad completa de componentes</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-zinc-500 mt-1">▸</span>
+                          <span>Gestión de riesgos aeroespaciales</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="mt-auto flex items-center gap-4 text-zinc-300 group-hover:text-white transition-all">
+                      <span className="text-sm sm:text-base tracking-wider font-bold">
+                        VER CERTIFICADO COMPLETO
+                      </span>
+                      <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6" />
+                    </div>
                   </div>
-                </motion.div>
-              ))}
+
+                  {/* Vista previa certificado */}
+                  <div className="relative overflow-hidden rounded-2xl border-2 border-zinc-800 shadow-2xl">
+                    <img
+                      src="/certificados/EN9100_cert.jpg"
+                      alt="EN 9100:2018"
+                      className="w-full h-full object-cover scale-100 group-hover:scale-105 transition duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* ISO 9001 - DESTACADO */}
+              <motion.div
+                initial={{ opacity: 0, y: 80 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="group relative bg-gradient-to-br from-zinc-900/90 via-black/80 to-black/90 backdrop-blur-xl border-2 border-zinc-700 rounded-3xl overflow-hidden hover:border-zinc-500 transition-all duration-700 cursor-pointer w-full"
+                onClick={() => setSelectedCert("iso9001")}
+              >
+                {/* Efecto de brillo */}
+                <div className="absolute inset-0 bg-gradient-to-b from-zinc-800/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                
+                <div className="absolute top-6 right-6 flex flex-col gap-2 items-end z-20">
+                  <span className="text-xs tracking-widest px-4 py-2 bg-zinc-800 border border-zinc-600 rounded-full text-white font-bold shadow-lg">
+                    ✦ INTERNATIONAL STANDARD
+                  </span>
+                  <span className="text-xs tracking-widest px-3 py-1 border border-zinc-600 rounded-full text-zinc-300">
+                    ✔ TÜV VERIFIED
+                  </span>
+                </div>
+
+                <div className="grid lg:grid-cols-2 gap-8 p-8 sm:p-10 md:p-12 lg:p-14 relative z-10">
+                  {/* Contenido */}
+                  <div className="flex flex-col justify-center">
+                    <div className="inline-block mb-4">
+                      <span className="text-xs tracking-[0.3em] text-zinc-500 font-bold uppercase">
+                        Certificación de Calidad Internacional
+                      </span>
+                    </div>
+                    
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 sm:mb-6 break-words leading-tight">
+                      ISO 9001:2015
+                    </h3>
+                    
+                    <p className="text-zinc-400 font-mono text-base sm:text-lg md:text-xl mb-6 sm:mb-8 break-words">
+                      Código: 01 100 125200
+                    </p>
+                    
+                    <div className="space-y-4 mb-8">
+                      <p className="text-zinc-200 leading-relaxed text-base sm:text-lg font-medium">
+                        Norma internacional de gestión de la calidad reconocida mundialmente.
+                      </p>
+                      <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
+                        La certificación ISO 9001:2015 demuestra nuestro compromiso con la excelencia operativa, la mejora continua y la satisfacción del cliente en todos nuestros procesos y servicios.
+                      </p>
+                      <ul className="space-y-2 text-zinc-400 text-sm sm:text-base">
+                        <li className="flex items-start gap-2">
+                          <span className="text-zinc-500 mt-1">▸</span>
+                          <span>Enfoque basado en procesos</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-zinc-500 mt-1">▸</span>
+                          <span>Mejora continua sistemática</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-zinc-500 mt-1">▸</span>
+                          <span>Satisfacción del cliente garantizada</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="mt-auto flex items-center gap-4 text-zinc-300 group-hover:text-white transition-all">
+                      <span className="text-sm sm:text-base tracking-wider font-bold">
+                        VER CERTIFICADO COMPLETO
+                      </span>
+                      <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6" />
+                    </div>
+                  </div>
+
+                  {/* Vista previa certificado */}
+                  <div className="relative overflow-hidden rounded-2xl border-2 border-zinc-800 shadow-2xl">
+                    <img
+                      src="/certificados/ISO9001_cert.jpg"
+                      alt="ISO 9001:2015"
+                      className="w-full h-full object-cover scale-100 group-hover:scale-105 transition duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* INFORMACIÓN CORPORATIVA Y REGISTROS INTERNACIONALES */}
+        {/* INFORMACIÓN CORPORATIVA */}
         <section className="py-20 sm:py-24 md:py-32 px-6 sm:px-10 md:px-16 bg-black/40 backdrop-blur-xl border-y border-zinc-800/50">
           <div className="max-w-6xl mx-auto">
             <motion.h2
@@ -259,7 +377,7 @@ export default function Certificaciones() {
         </section>
       </div>
 
-      {/* Modal de certificados */}
+      {/* Modal */}
       {currentCert && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -273,7 +391,7 @@ export default function Certificaciones() {
             className="relative max-w-2xl w-full mx-auto mt-10 mb-16"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* BOTÓN DE CERRAR - SIEMPRE VISIBLE */}
+            {/* BOTÓN DE CERRAR */}
             <button
               onClick={() => setSelectedCert(null)}
               className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[1001] bg-white/10 backdrop-blur-xl p-3 rounded-full border border-white/20 hover:bg-white/20 transition"
