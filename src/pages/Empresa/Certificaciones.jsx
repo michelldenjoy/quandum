@@ -286,108 +286,93 @@ export default function Certificaciones() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {/* OASIS / IAQG */}
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="bg-black/60 border border-zinc-800 rounded-2xl p-8 backdrop-blur-xl"
-              >
-                <h3 className="text-2xl sm:text-3xl font-black text-white mb-4">
-                  Miembro oficial OASIS – IAQG
-                </h3>
-                <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
-                  <span className="text-white font-semibold">Quandum</span> forma parte del sistema{" "}
-                  <strong>
-                    OASIS (Online Aerospace Supplier Information System)
-                  </strong>
-                  , gestionado por la organización internacional{" "}
-                  <strong>IAQG</strong>, que reúne a los principales fabricantes
-                  y proveedores aeroespaciales del mundo.
-                  <br />
-                  <br />
-                  IAQG establece los requisitos comunes para garantizar la
-                  calidad y seguridad en toda la cadena de suministro
-                  aeroespacial. La presencia de <span className="text-white font-semibold">Quandum</span> en este sistema
-                  demuestra cumplimiento, transparencia y validación
-                  internacional.
-                </p>
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  className="relative bg-zinc-950 border border-zinc-800 rounded-2xl p-8"
+>
+  <span className="absolute top-6 right-6 text-xs tracking-widest text-zinc-500 border border-zinc-700 px-3 py-1 rounded-full">
+    IAQG
+  </span>
 
-                <div className="mt-6 text-zinc-300 font-mono text-sm sm:text-base">
-                  <span className="font-bold">Código OASIS:</span> 6130438025
-                </div>
-              </motion.div>
+  <h3 className="text-2xl font-black text-white mb-4">
+    OASIS – IAQG
+  </h3>
+
+  <p className="text-zinc-400 text-sm sm:text-base leading-relaxed mb-6">
+    Registro oficial en el sistema <strong>OASIS</strong> de la
+    International Aerospace Quality Group, utilizado por los principales
+    OEMs y proveedores aeroespaciales para la validación de suministradores.
+  </p>
+
+  <ul className="space-y-2 text-zinc-400 text-sm">
+    <li>▸ Auditorías EN 9100 registradas</li>
+    <li>▸ Transparencia y trazabilidad internacional</li>
+    <li>▸ Validación de sistema de calidad</li>
+  </ul>
+
+  <div className="mt-6 font-mono text-sm text-zinc-300">
+    Código OASIS: <span className="font-bold">6130438025</span>
+  </div>
+</motion.div>
+
 
               {/* NATO / NCAGE */}
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="bg-black/60 border border-zinc-800 rounded-2xl p-8 backdrop-blur-xl"
-              >
-                <h3 className="text-2xl sm:text-3xl font-black text-white mb-4">
-                  Suministrador oficial de la OTAN
-                </h3>
-                <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
-                <span className="text-white font-semibold">Quandum</span> está registrado como proveedor autorizado de la OTAN,
-                  cumpliendo con los estrictos requisitos de calidad,
-                  trazabilidad, seguridad y control necesarios para la industria
-                  militar y aeronáutica.
-                  <br />
-                  <br />
-                  Este registro aprueba formalmente a <span className="text-white font-semibold">Quandum</span> como suministrador
-                  cualificado para organismos y empresas vinculadas a defensa.
-                </p>
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  className="relative bg-zinc-950 border border-zinc-800 rounded-2xl p-8"
+>
+  <span className="absolute top-6 right-6 text-xs tracking-widest text-zinc-500 border border-zinc-700 px-3 py-1 rounded-full">
+    NATO
+  </span>
 
-                <div className="mt-6 text-zinc-300 font-mono text-sm sm:text-base">
-                  <span className="font-bold">Código NCAGE:</span> 9359B
-                </div>
-              </motion.div>
+  <h3 className="text-2xl font-black text-white mb-4">
+    Registro OTAN – NCAGE
+  </h3>
+
+  <p className="text-zinc-400 text-sm sm:text-base leading-relaxed mb-6">
+    Proveedor registrado oficialmente en el sistema de codificación
+    <strong> NCAGE</strong>, habilitado para operar dentro del entorno
+    OTAN y la cadena de suministro de defensa.
+  </p>
+
+  <ul className="space-y-2 text-zinc-400 text-sm">
+    <li>▸ Aprobación para suministro militar</li>
+    <li>▸ Requisitos de seguridad y trazabilidad</li>
+    <li>▸ Identificación logística estandarizada</li>
+  </ul>
+
+  <div className="mt-6 font-mono text-sm text-zinc-300">
+    NCAGE Code: <span className="font-bold">9359B</span>
+  </div>
+</motion.div>
+
 
               {/* REACH */}
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="md:col-span-2 bg-black/60 border border-zinc-800 rounded-2xl p-8 backdrop-blur-xl"
-              >
-                <h3 className="text-2xl sm:text-3xl font-black text-white mb-4">
-                  Compromiso ambiental – Normativa REACH
-                </h3>
-                <p className="text-zinc-400 text-justify leading-relaxed text-sm sm:text-base">
-                  En <span className="text-white font-semibold">Quandum</span>{" "}
-                  <span className="bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text font-semibold text-transparent">
-                    Aerospace
-                  </span>{" "}
-                  desarrollamos nuestra actividad en el sector aeronáutico con
-                  un firme compromiso con la calidad, la seguridad y el
-                  cumplimiento normativo. Nuestra forma de trabajar se basa en
-                  la excelencia técnica, la mejora continua y el respeto por los
-                  más altos estándares exigidos por la industria. Cumplimos
-                  plenamente con la normativa REACH y la directiva RoHS,
-                  garantizando que nuestros procesos, materiales y productos se
-                  ajustan a los requisitos europeos en materia de sustancias
-                  químicas y restricción de materiales peligrosos. Este
-                  cumplimiento no solo responde a una obligación legal, sino que
-                  forma parte de nuestra responsabilidad con el medioambiente,
-                  nuestros clientes y la sostenibilidad del sector aeronáutico.
-                  <br />
-                  <br />
-                  Nuestro equipo está compuesto por profesionales altamente
-                  cualificados, con amplia experiencia y un profundo
-                  conocimiento técnico, lo que nos permite ofrecer soluciones
-                  fiables, seguras y alineadas con las necesidades de nuestros
-                  clientes. Trabajamos con rigor, transparencia y trazabilidad
-                  en cada proyecto, asegurando resultados consistentes y de alta
-                  calidad. En{" "}
-                  <span className="text-white font-semibold">Quandum</span>{" "}
-                  <span className="bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text font-semibold text-transparent">
-                    Aerospace
-                  </span>{" "}
-                  , entendemos la confianza como un valor fundamental. Por ello,
-                  cada decisión y cada proceso reflejan nuestro compromiso con
-                  la profesionalidad, la normativa vigente y la excelencia
-                  operativa.
-                </p>
-              </motion.div>
+              <div className="lg:col-span-2 bg-zinc-950 border border-zinc-800 rounded-2xl p-10">
+  <h3 className="text-2xl sm:text-3xl font-black text-white mb-6">
+    Conformidad regulatoria – REACH & RoHS
+  </h3>
+
+  <div className="grid md:grid-cols-2 gap-8">
+    <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
+      En <strong className="text-white">Quandum Aerospace</strong> cumplimos
+      plenamente con la normativa europea <strong>REACH</strong> y la directiva
+      <strong> RoHS</strong>, garantizando el control de sustancias químicas y la
+      restricción de materiales peligrosos en todos nuestros procesos.
+    </p>
+
+    <ul className="space-y-3 text-zinc-400 text-sm sm:text-base">
+      <li>▸ Control de sustancias SVHC</li>
+      <li>▸ Cumplimiento ambiental europeo</li>
+      <li>▸ Responsabilidad en la cadena de suministro</li>
+      <li>▸ Alineación con estándares OEM</li>
+    </ul>
+  </div>
+</div>
+
             </div>
           </div>
         </section>
@@ -467,8 +452,8 @@ export default function Certificaciones() {
         </motion.div>
       )}
 
-      {/* minifooter
-      <motion.div
+      {/* minifooter*/}
+      {/* <motion.div
         initial={{ y: 100 }}
         animate={{ y: 0 }}
         transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
@@ -482,7 +467,7 @@ export default function Certificaciones() {
             Engineered for mission critical
           </div>
         </div>
-      </motion.div> */}
+      </motion.div>  */}
     </div>
   );
 }
