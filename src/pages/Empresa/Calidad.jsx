@@ -80,7 +80,7 @@ export default function Calidad() {
             <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent my-8" />
 
             <p className="text-lg md:text-xl leading-relaxed">
-              <span className="font-bold text-cyan-400">Quandum Aerospace</span>{" "}
+              <span className="font-bold text-white">Quandum Aerospace</span>{" "}
               asume el compromiso de identificar y satisfacer los requisitos del
               cliente y los normativos y legales asociados, impulsando la mejora
               continua a todos los niveles de la organización.

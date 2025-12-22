@@ -1,9 +1,10 @@
 import React from 'react'
+import Illuminator from '../../components/products/Illuminator'
 
 export default function ProyectosDestacados() {
   return (
-    <div className="bg-black h-max py-11 mt-20 w-full">
-       proyectos destacados 
+    <div >
+       <Illuminator /> 
     </div>
   )
 }
