@@ -61,7 +61,7 @@ export default function SectorsSection() {
                 }
                 className={`text-left p-8 rounded-2xl border transition-all
                   ${active === sector.id
-                    ? "border-blue-600 shadow-xl"
+                    ? "border-brand-blue shadow-xl"
                     : "border-slate-200 hover:shadow-lg"
                   }`}
               >

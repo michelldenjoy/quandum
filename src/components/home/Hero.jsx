@@ -31,11 +31,11 @@ export default function Hero() {
           text-white max-w-md
         "
       >
-        {/* <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
+        <h1 className="text-3xl md:text-7xl font-bold tracking-tight mb-3">
           Ingeniería que impulsa el futuro del vuelo
         </h1>
 
-        <p className="text-sm md:text-base  text-white/80 leading-relaxed">
+        {/* <p className="text-sm md:text-base  text-white/80 leading-relaxed">
           Sistemas aeronáuticos de alta precisión, desarrollados para redefinir
           la eficiencia y la sostenibilidad en la aviación moderna.
         </p> */}
