@@ -34,7 +34,7 @@ export default function Navbar() {
         { name: "Historia", path: "/empresa/historia" },
 
         // 🔽 Enlaces integrados desde "Sobre Quandum"
-        { name: "Calidad", path: "/sobre-quandum/calidad" },
+        { name: "Politica de Calidad", path: "/sobre-quandum/calidad" },
         { name: "Certificaciones", path: "/sobre-quandum/certificaciones" },
         { name: "Compromiso Ético y Sostenible", path: "/sobre-quandum/codigo-etico" },
         // {

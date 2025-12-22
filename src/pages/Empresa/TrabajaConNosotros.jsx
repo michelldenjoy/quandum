@@ -155,13 +155,13 @@ export default function TrabajaConNosotros() {
           </h1>
           <p className="mt-12 text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed animate-fadeInUp">
             En{" "}
-            <span className="bg-gradient-to-r from-brand-blue to-slate-100 bg-clip-text text-transparent font-extrabold">
+            <span className="text-white font-extrabold">
               Quandum
             </span>{" "}
             <span className="bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text text-transparent font-extrabold">
               Aerospace
             </span>{" "}
-            diseñamos componentes eléctronicos certificados. Si tienes pasión
+            diseñamos dispositivos eléctronicos certificados. Si tienes pasión
             por la ingeniería de precisión y la innovación sostenible, este es
             tu lugar.
           </p>

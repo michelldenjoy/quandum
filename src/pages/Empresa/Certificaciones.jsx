@@ -109,13 +109,13 @@ export default function Certificaciones() {
               >
                 {/* Efecto de brillo */}
                 <div className="absolute inset-0 bg-gradient-to-b from-zinc-800/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                
+
                 <div className="absolute top-6 right-6 flex flex-col gap-2 items-end z-20">
-                  <span className="text-xs tracking-widest px-4 py-2 bg-zinc-800 border border-zinc-600 rounded-full text-white font-bold shadow-lg">
+                  {/* <span className="text-xs tracking-widest px-4 py-2 bg-zinc-800 border border-zinc-600 rounded-full text-white font-bold shadow-lg">
                     ✦ PREMIUM CERTIFICATION
-                  </span>
+                  </span> */}
                   <span className="text-xs tracking-widest px-3 py-1 border border-zinc-600 rounded-full text-zinc-300">
-                    ✔ TÜV VERIFIED
+                    ✔ EQA VERIFIED
                   </span>
                 </div>
 
@@ -127,21 +127,25 @@ export default function Certificaciones() {
                         Certificación Aeroespacial
                       </span>
                     </div>
-                    
+
                     <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 sm:mb-6 break-words leading-tight">
                       EN 9100:2018
                     </h3>
-                    
+
                     <p className="text-zinc-400 font-mono text-base sm:text-lg md:text-xl mb-6 sm:mb-8 break-words">
                       Código: 01 117 125 200
                     </p>
-                    
+
                     <div className="space-y-4 mb-8">
                       <p className="text-zinc-200 leading-relaxed text-base sm:text-lg font-medium">
-                        El estándar más exigente de la industria aeroespacial, espacio y defensa.
+                        El estándar más exigente de la industria aeroespacial,
+                        espacio y defensa.
                       </p>
                       <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
-                        Esta certificación garantiza que nuestros sistemas de gestión de calidad cumplen con los requisitos más estrictos establecidos por las principales organizaciones aeroespaciales internacionales.
+                        Esta certificación garantiza que nuestros sistemas de
+                        gestión de calidad cumplen con los requisitos más
+                        estrictos establecidos por las principales
+                        organizaciones aeroespaciales internacionales.
                       </p>
                       <ul className="space-y-2 text-zinc-400 text-sm sm:text-base">
                         <li className="flex items-start gap-2">
@@ -190,13 +194,13 @@ export default function Certificaciones() {
               >
                 {/* Efecto de brillo */}
                 <div className="absolute inset-0 bg-gradient-to-b from-zinc-800/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                
+
                 <div className="absolute top-6 right-6 flex flex-col gap-2 items-end z-20">
-                  <span className="text-xs tracking-widest px-4 py-2 bg-zinc-800 border border-zinc-600 rounded-full text-white font-bold shadow-lg">
+                  {/* <span className="text-xs tracking-widest px-4 py-2 bg-zinc-800 border border-zinc-600 rounded-full text-white font-bold shadow-lg">
                     ✦ INTERNATIONAL STANDARD
-                  </span>
+                  </span> */}
                   <span className="text-xs tracking-widest px-3 py-1 border border-zinc-600 rounded-full text-zinc-300">
-                    ✔ TÜV VERIFIED
+                    ✔ EQA VERIFIED
                   </span>
                 </div>
 
@@ -208,21 +212,25 @@ export default function Certificaciones() {
                         Certificación de Calidad Internacional
                       </span>
                     </div>
-                    
+
                     <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 sm:mb-6 break-words leading-tight">
                       ISO 9001:2015
                     </h3>
-                    
+
                     <p className="text-zinc-400 font-mono text-base sm:text-lg md:text-xl mb-6 sm:mb-8 break-words">
                       Código: 01 100 125200
                     </p>
-                    
+
                     <div className="space-y-4 mb-8">
                       <p className="text-zinc-200 leading-relaxed text-base sm:text-lg font-medium">
-                        Norma internacional de gestión de la calidad reconocida mundialmente.
+                        Norma internacional de gestión de la calidad reconocida
+                        mundialmente.
                       </p>
                       <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
-                        La certificación ISO 9001:2015 demuestra nuestro compromiso con la excelencia operativa, la mejora continua y la satisfacción del cliente en todos nuestros procesos y servicios.
+                        La certificación ISO 9001:2015 demuestra nuestro
+                        compromiso con la excelencia operativa, la mejora
+                        continua y la satisfacción del cliente en todos nuestros
+                        procesos y servicios.
                       </p>
                       <ul className="space-y-2 text-zinc-400 text-sm sm:text-base">
                         <li className="flex items-start gap-2">
@@ -287,7 +295,7 @@ export default function Certificaciones() {
                   Miembro oficial OASIS – IAQG
                 </h3>
                 <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
-                  Quandum forma parte del sistema{" "}
+                  <span className="text-white font-semibold">Quandum</span> forma parte del sistema{" "}
                   <strong>
                     OASIS (Online Aerospace Supplier Information System)
                   </strong>
@@ -298,7 +306,7 @@ export default function Certificaciones() {
                   <br />
                   IAQG establece los requisitos comunes para garantizar la
                   calidad y seguridad en toda la cadena de suministro
-                  aeroespacial. La presencia de Quandum en este sistema
+                  aeroespacial. La presencia de <span className="text-white font-semibold">Quandum</span> en este sistema
                   demuestra cumplimiento, transparencia y validación
                   internacional.
                 </p>
@@ -319,13 +327,13 @@ export default function Certificaciones() {
                   Suministrador oficial de la OTAN
                 </h3>
                 <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
-                  Quandum está registrado como proveedor autorizado de la OTAN,
+                <span className="text-white font-semibold">Quandum</span> está registrado como proveedor autorizado de la OTAN,
                   cumpliendo con los estrictos requisitos de calidad,
                   trazabilidad, seguridad y control necesarios para la industria
                   militar y aeronáutica.
                   <br />
                   <br />
-                  Este registro aprueba formalmente a Quandum como suministrador
+                  Este registro aprueba formalmente a <span className="text-white font-semibold">Quandum</span> como suministrador
                   cualificado para organismos y empresas vinculadas a defensa.
                 </p>
 
@@ -344,17 +352,40 @@ export default function Certificaciones() {
                 <h3 className="text-2xl sm:text-3xl font-black text-white mb-4">
                   Compromiso ambiental – Normativa REACH
                 </h3>
-                <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
-                  En el marco de la sostenibilidad y la responsabilidad
-                  ambiental, Quandum garantiza que todos los materiales
-                  utilizados en sus procesos cumplen con la normativa{" "}
-                  <strong>REACH</strong> de la Unión Europea.
+                <p className="text-zinc-400 text-justify leading-relaxed text-sm sm:text-base">
+                  En <span className="text-white font-semibold">Quandum</span>{" "}
+                  <span className="bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text font-semibold text-transparent">
+                    Aerospace
+                  </span>{" "}
+                  desarrollamos nuestra actividad en el sector aeronáutico con
+                  un firme compromiso con la calidad, la seguridad y el
+                  cumplimiento normativo. Nuestra forma de trabajar se basa en
+                  la excelencia técnica, la mejora continua y el respeto por los
+                  más altos estándares exigidos por la industria. Cumplimos
+                  plenamente con la normativa REACH y la directiva RoHS,
+                  garantizando que nuestros procesos, materiales y productos se
+                  ajustan a los requisitos europeos en materia de sustancias
+                  químicas y restricción de materiales peligrosos. Este
+                  cumplimiento no solo responde a una obligación legal, sino que
+                  forma parte de nuestra responsabilidad con el medioambiente,
+                  nuestros clientes y la sostenibilidad del sector aeronáutico.
                   <br />
                   <br />
-                  REACH regula sustancias químicas potencialmente peligrosas,
-                  asegurando que los componentes empleados en aplicaciones
-                  aeroespaciales sean seguros, trazables y respetuosos con el
-                  entorno.
+                  Nuestro equipo está compuesto por profesionales altamente
+                  cualificados, con amplia experiencia y un profundo
+                  conocimiento técnico, lo que nos permite ofrecer soluciones
+                  fiables, seguras y alineadas con las necesidades de nuestros
+                  clientes. Trabajamos con rigor, transparencia y trazabilidad
+                  en cada proyecto, asegurando resultados consistentes y de alta
+                  calidad. En{" "}
+                  <span className="text-white font-semibold">Quandum</span>{" "}
+                  <span className="bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text font-semibold text-transparent">
+                    Aerospace
+                  </span>{" "}
+                  , entendemos la confianza como un valor fundamental. Por ello,
+                  cada decisión y cada proceso reflejan nuestro compromiso con
+                  la profesionalidad, la normativa vigente y la excelencia
+                  operativa.
                 </p>
               </motion.div>
             </div>
@@ -371,7 +402,7 @@ export default function Certificaciones() {
               Calidad sin compromisos para misiones que no admiten fallos
             </p>
             <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-black text-zinc-300 tracking-widest px-4 break-words">
-              EN 9100 • NATO APPROVED • TÜV CERTIFIED
+              EN 9100 • NATO APPROVED • EQA CERTIFIED
             </div>
           </div>
         </section>

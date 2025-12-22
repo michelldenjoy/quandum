@@ -1,6 +1,8 @@
 import React from "react";
-import { motion } from "motion/react";
-import { Rocket, Beaker, TestTube, Users } from "lucide-react"; // Íconos futuristas (instala lucide-react)
+import { motion, useInView } from "motion/react";
+import { Rocket, Beaker, TestTube, Users } from "lucide-react";
+import CountUp from "react-countup";
+import { useRef } from "react";
 
 const steps = [
   {
@@ -109,9 +111,7 @@ export default function OurWorkingWay() {
           </p>
         </motion.div>
 
-
-
-{/* FEATURES */}
+        {/* FEATURES */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -120,36 +120,49 @@ export default function OurWorkingWay() {
           className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10 pt-20 border-t border-slate-800/60"
         >
           {[
-            { value: "2006", label: "Año de fundación" },
-            { value: "20+", label: "Años de experiencia" },
-            { value: "100%", label: "Sistemas críticos" },
-            { value: "100%", label: "Proyectos a medida" },
-          ].map((stat, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.3 }}
-              className="relative w-full rounded-xl bg-gradient-to-b from-slate-900/80 to-slate-950/90 
-                 border border-slate-800/60 px-6 py-8 text-center lg:text-left
-                 shadow-lg shadow-black/20"
-            >
-              {/* Línea decorativa */}
-              <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
+            { value: 2006, suffix: "", label: "Año de fundación" },
+            { value: 20, suffix: "+", label: "Años de experiencia" },
+            { value: 100, suffix: "%", label: "Sistemas críticos" },
+            { value: 100, suffix: "%", label: "Proyectos a medida" },
+          ].map((stat, i) => {
+            const ref = useRef(null);
+            const isInView = useInView(ref, { once: true });
 
-              {/* Valor */}
-              <div className="text-3xl md:text-4xl font-light tracking-tight text-blue-400 mb-3">
-                {stat.value}
-              </div>
+            return (
+              <motion.div
+                ref={ref}
+                key={i}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3 }}
+                className="relative w-full rounded-xl bg-gradient-to-b from-slate-900/80 to-slate-950/90 
+                   border border-slate-800/60 px-6 py-8 text-center lg:text-left
+                   shadow-lg shadow-black/20"
+              >
+                {/* Línea decorativa */}
+                <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
 
-              {/* Separador */}
-              <div className="w-10 h-px bg-blue-500/40 mb-4 mx-auto lg:mx-0" />
+                {/* Valor animado */}
+                <div className="text-3xl md:text-4xl font-light tracking-tight text-blue-400 mb-3">
+                  {isInView && (
+                    <CountUp
+                      end={stat.value}
+                      duration={2.4}
+                      separator=""
+                      suffix={stat.suffix}
+                    />
+                  )}
+                </div>
 
-              {/* Label */}
-              <div className="text-xs md:text-sm text-slate-400 uppercase tracking-widest font-light">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
+                {/* Separador */}
+                <div className="w-10 h-px bg-blue-500/40 mb-4 mx-auto lg:mx-0" />
+
+                {/* Label */}
+                <div className="text-xs md:text-sm text-slate-400 uppercase tracking-widest font-light">
+                  {stat.label}
+                </div>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

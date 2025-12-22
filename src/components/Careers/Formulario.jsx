@@ -15,40 +15,28 @@ import {
 ------------------------------------------------ */
 const positions = [
   {
-    title: "Ingeniero/a Aeronáutico Senior",
-    dept: "Estructuras & Aerodinámica",
-    location: "Málaga, España",
-    icon: Rocket,
+    title: "Técnico de Mecanizado",
   },
   {
-    title: "Ingeniero/a Software Embebido",
-    dept: "Aviónica DO-178C",
-    location: "Málaga, España",
-    icon: Zap,
+    title: "Programador CAM - CATIA",
   },
   {
-    title: "Ingeniero/a Electrónica de Potencia",
-    dept: "Sistemas Eléctricos",
-    location: "Málaga, España",
-    icon: Zap,
+    title: "Ingeniería Mecánica",
   },
   {
-    title: "Técnico/a Superior de Producción",
-    dept: "Montaje & Integración",
-    location: "Málaga, España",
-    icon: Users,
+    title: "Ingeniería de Diseño",
   },
   {
-    title: "Ingeniero/a de Certificación",
-    dept: "EASA / FAA Part 21",
-    location: "Málaga, España",
-    icon: Shield,
+    title: "Ingeniería Electrónica",
   },
   {
-    title: "Diseñador/a Mecánico CAD",
-    dept: "Diseño 3D & Simulación",
-    location: "Málaga, España",
-    icon: Award,
+    title: "Técnico de Calidad",
+  },
+  {
+    title: "Técnico de Mantenimiento",
+  },
+  {
+    title: "Técnico de Electrónica",
   },
 ];
 

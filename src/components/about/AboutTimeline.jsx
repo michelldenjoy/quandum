@@ -8,7 +8,13 @@ const timelineData = [
     detail: "Inicio de actividad y primeros contratos con Airbus Military.",
   },
   {
-    year: "2009–2012",
+    year: "2009",
+    title: "Certificaciones",
+    detail: "Implantación y certificación según estándares del sector (EN9100 / ISO 9001).",
+    highlight: true,
+  },
+  {
+    year: "2012",
     title: "Consolidación",
     detail: "Desarrollo de líneas de producto en electrónica y optoelectrónica para plataformas aéreas.",
   },
@@ -17,12 +23,7 @@ const timelineData = [
     title: "Expansión tecnológica",
     detail: "Incorporación de sistemas de prototipado rápido y procesos de fabricación de precisión.",
   },
-  {
-    year: "2018",
-    title: "Certificaciones",
-    detail: "Implantación y certificación según estándares del sector (EN9100 / ISO 9001).",
-    highlight: true,
-  },
+
   {
     year: "2022",
     title: "Proyectos estratégicos",
