@@ -38,7 +38,7 @@ export default function WorkHorizontal() {
   const activeSection = sections.find(s => s.id === active);
 
   return (
-    <section className="w-full bg-white">
+    <section className="max-w-screen-2xl bg-white">
       <div className="max-w-7xl mx-auto px-6 my-28">
 
         <h3 className="text-4xl font-bold mb-16 text-black text-center">

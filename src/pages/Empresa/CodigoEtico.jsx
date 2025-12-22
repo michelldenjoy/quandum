@@ -65,7 +65,8 @@ export default function CodigoEtico() {
         />
 
         {/* Tarjetas de políticas */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 ">
+          
           {policies.map((policy, index) => (
             <motion.div
               key={policy.ref}

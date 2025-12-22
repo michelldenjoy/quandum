@@ -5,7 +5,7 @@ import OurWorkingWay from "./OurWorkingWay";
 
 export default function HomeOverview() {
   return (
-    <section className="w-full bg-white">
+    <section className="">
       <div className="max-w-7xl mx-auto px-6 py-28 space-y-32">
         {/* ---------------- INTRO ---------------- */}
         <motion.div
@@ -76,29 +76,7 @@ export default function HomeOverview() {
         </motion.div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.9, delay: 0.7 }}
-        className="grid grid-cols-2 bg-aerospace place-items-center lg:grid-cols-4 gap-8 lg:gap-12 pt-16 border-t border-slate-800/50"
-      >
-        {[
-          { value: "2006", label: "Año de fundación" },
-          { value: "20+", label: "Años de experiencia" },
-          { value: "100%", label: "Sistemas críticos" },
-          { value: "100%", label: "Proyectos a medida" },
-        ].map((stat, i) => (
-          <div key={i} className="text-center mb-8 lg:text-left">
-            <div className="text-3xl max-w md:text-4xl font-light text-blue-400 mb-2 tracking-tight">
-              {stat.value}
-            </div>
-            <div className="text-xs md:text-sm text-slate-500 tracking-wide uppercase font-light">
-              {stat.label}
-            </div>
-          </div>
-        ))}
-      </motion.div>
+
     </section>
   );
 }
