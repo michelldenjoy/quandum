@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 export default function FilosofiaTrayectoria() {
   return (
-    <section className="w-full relative bg-aerospace overflow-hidden">
+    <section className="w-full relative bg-aerospacee overflow-hidden">
       {/* Fondo técnico aeroespacial */}
 
 
@@ -15,7 +15,7 @@ export default function FilosofiaTrayectoria() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 bg-zinc-900/40 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 gap-16 items-center"
         >
           {/* Texto */}
           <div className="space-y-6">
@@ -88,7 +88,7 @@ export default function FilosofiaTrayectoria() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 bg-zinc-900/40 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 gap-16 items-center"
         >
           {/* Bloque gráfico */}
           <motion.div

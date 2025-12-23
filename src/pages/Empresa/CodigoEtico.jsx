@@ -23,7 +23,7 @@ export default function CodigoEtico() {
   ];
 
   return (
-    <div className="min-h-screen relative bg-aerospace overflow-hidden">
+    <div className="min-h-screen relative bg-aerospacee overflow-hidden">
 
       <ODSSection />
 
@@ -56,13 +56,13 @@ export default function CodigoEtico() {
         </motion.div>
 
         {/* Línea decorativa  /*/}    
-        <motion.div
+        {/* <motion.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.4, ease: "easeInOut" }}
           className="h-1 bg-gradient-to-r from-transparent via-brand-blue to-transparent my-20 max-w-3xl mx-auto"
-        />
+        /> */}
 
         {/* Tarjetas de políticas */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 ">

@@ -6,7 +6,7 @@ export default function Calidad() {
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.6, 0.3]);
 
   return (
-    <section className="relative bg-aerospace min-h-screen overflow-hidden">
+    <section className="relative bg-aerospacee min-h-screen overflow-hidden">
       {/* linea decorativa vertical */}
       <motion.div
         style={{ y, opacity }}

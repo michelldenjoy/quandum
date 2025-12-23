@@ -16,7 +16,7 @@ const facilities = [
     description:
       "Espacio técnico de 100 m² habilitado para el ensamblaje de óptica delicada. Cuenta con sistemas de filtrado de aire y regulación de temperatura constantes, proporcionando las condiciones estables necesarias para operar con equipos de alta sensibilidad.",
     image: "/images/montaje.jpg",
-    bg: "bg-aerospace",
+    bg: "bg-aerospacee",
     textColor: "text-white",
   },
   {
@@ -34,7 +34,7 @@ const facilities = [
     description:
       "Nuestro Laboratorio de I+D de 600 m² es el motor de la próxima generación de sistemas. Enfocados en la investigación aplicada y la exploración de nuevas fronteras tecnológicas, ofrecemos una plataforma completa que abarca desde la validación conceptual y el prototipado rápido hasta la ejecución de rigurosas certificaciones técnicas. Este espacio acelera la transición de la idea al producto validado, garantizando la introducción de soluciones disruptivas al mercado.",
     image: "/images/about-2.jpg",
-    bg: "bg-aerospace",
+    bg: "bg-aerospacee",
     textColor: "text-white",
   },
 ];
@@ -64,62 +64,62 @@ const wordAnimation = {
   },
 };
 
-
-
 export default function Infraestructuras() {
   return (
     <div className="w-full overflow-x-hidden pt-20 md:pt-24 lg:pt-28">
       <section className="relative w-full h-[70vh] overflow-hidden">
-            {/* Imagen de fondo */}
-            <img
-              src="/images/collage1.jpg"
-              alt="Military Aircraft"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-      
-            {/* Overlay oscuro elegante */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-      
-            {/* Contenido */}
-            <div className="absolute bottom-12 w-full px-6 md:px-16">
-              <motion.div
-                variants={container}
-                initial="hidden"
-                animate="visible"
-                className="max-w-5xl"
-              >
+        {/* Imagen fondo */}
+        <img
+          src="/images/collage1.jpg"
+          alt="Military Aircraft"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+
+        {/* capa oscura  */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+
+        {/* Contenido */}
+        <div className="absolute bottom-12 w-full px-6 md:px-16">
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            className="max-w-5xl"
+          >
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="inline-block mb-4 text-sm uppercase tracking-[0.3em] text-slate-300"
+            >
+              Aerospace · Defense · Engineering
+            </motion.span>
+            <h1 className="flex flex-wrap text-white text-3xl md:text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight">
+              {title.split(" ").map((word, index) => (
                 <motion.span
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="inline-block mb-4 text-sm uppercase tracking-[0.3em] text-slate-300"
+                  key={index}
+                  variants={wordAnimation}
+                  className="mr-3"
                 >
-                  Aerospace · Defense · Engineering
+                  {word}
                 </motion.span>
-                <h1 className="flex flex-wrap text-white text-3xl md:text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight">
-                  {title.split(" ").map((word, index) => (
-                    <motion.span
-                      key={index}
-                      variants={wordAnimation}
-                      className="mr-3"
-                    >
-                      {word}
-                    </motion.span>
-                  ))}
-                </h1>
-      
-                {/* Subtítulo opcional (muy discreto) */}
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.2, duration: 0.8 }}
-                  className="mt-6 text-sm md:text-lg text-slate-300 max-w-3xl"
-                >
- Desarrollamos entornos seguros y laboratorios de vanguardia donde la electrónica de defensa alcanza su máximo rendimiento y fiabilidad.
-                </motion.p>
-              </motion.div>
-            </div>
-          </section>
+              ))}
+            </h1>
+
+            {/* Subtítulo */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.8 }}
+              className="mt-6 text-sm md:text-lg text-slate-300 max-w-3xl"
+            >
+              Desarrollamos entornos seguros y laboratorios de vanguardia donde
+              la electrónica de defensa alcanza su máximo rendimiento y
+              fiabilidad.
+            </motion.p>
+          </motion.div>
+        </div>
+      </section>
 
       {facilities.map((f, i) => (
         <section
@@ -132,7 +132,6 @@ export default function Infraestructuras() {
           `}
         >
           {/* Fondo para secciones oscuras */}
-  
 
           <div className="max-w-7xl mx-auto">
             <div
@@ -169,7 +168,7 @@ export default function Infraestructuras() {
                 <h3 className="text-base sm:text-lg md:text-xl font-medium opacity-90">
                   {f.subtitle}
                 </h3>
-                <p className="text-sm sm:text-base md:text-md lg:text-xl leading-relaxed opacity-80">
+                <p className="text-sm sm:text-base md:text-md lg:text-xl  leading-relaxed opacity-80">
                   {f.description}
                 </p>
               </motion.div>
@@ -178,9 +177,9 @@ export default function Infraestructuras() {
         </section>
       ))}
 
+      
       {/* Capacidades y Tecnologías */}
-{/* Capacidades y Tecnologías */}
-<section className="bg-white py-16 sm:py-20 md:py-24 lg:py-28 px-4 sm:px-6 md:px-8">
+      <section className="bg-white py-16 sm:py-20 md:py-24 lg:py-28 px-4 sm:px-6 md:px-8">
         <div className="max-w-6xl mx-auto">
           <motion.div
             className="text-center mb-12 md:mb-16"

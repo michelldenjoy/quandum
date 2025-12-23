@@ -28,15 +28,15 @@ const wordAnimation = {
 
 export default function HeroVideo() {
   return (
-    <section className="relative w-full h-[70vh] overflow-hidden">
-      {/* Imagen de fondo */}
+    <section className="relative w-full h-[80vh] overflow-hidden">
+      {/* Imagen fondo */}
       <img
-        src="/bgmili5.jpg"
+        src="/images/about-hero.jpg"
         alt="Military Aircraft"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* Overlay oscuro elegante */}
+      {/* capa oscura */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
       {/* Contenido */}
@@ -67,7 +67,7 @@ export default function HeroVideo() {
             ))}
           </h1>
 
-          {/* Subtítulo opcional (muy discreto) */}
+          
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

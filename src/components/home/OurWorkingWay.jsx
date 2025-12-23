@@ -29,7 +29,7 @@ const steps = [
 
 export default function OurWorkingWay() {
   return (
-    <section className="py-20 bg-gradient-to-b from-black to-slate-900 text-white overflow-hidden">
+    <section className="py-20 bg-aerospacee text-white overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

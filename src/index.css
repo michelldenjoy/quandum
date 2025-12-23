@@ -16,45 +16,63 @@
    UTILITIES – FONDOS CORPORATIVOS
 ========================= */
 @layer utilities {
-
   /* =====================================================
      FONDO AEROESPACIAL PRINCIPAL (Código Ético, Collage…)
   ===================================================== */
   .bg-aerospace {
     @apply relative overflow-hidden;
-    background: linear-gradient(
-      to bottom,
-      rgb(2 6 23),
-      rgb(15 23 42),
-      rgb(2 6 23)
+    background: radial-gradient(
+      ellipse at bottom,
+      rgb(2 6 23) 0%,
+      rgb(2 6 23) 55%,
+      #000 100%
     );
   }
 
-  /* Grid técnico sutil */
+  /* Superficie de datos */
   .bg-aerospace::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image:
-      linear-gradient(rgba(59,130,246,0.15) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(59,130,246,0.15) 1px, transparent 1px);
-    background-size: 100px 100px;
-    opacity: 0.035;
+    background-image: url("/wave-surface.svg");
+    background-size: cover;
+    background-position: center;
+    animation: waveFloat 18s ease-in-out infinite;
     pointer-events: none;
   }
 
-  /* Glow tecnológico */
+  /* Glow ambiental */
   .bg-aerospace::after {
     content: "";
     position: absolute;
     inset: 0;
-    background:
-      radial-gradient(circle at 25% 0%, rgba(56,189,248,0.25), transparent 45%),
-      radial-gradient(circle at 75% 100%, rgba(34,211,238,0.25), transparent 45%);
+    background: radial-gradient(
+        circle at 70% 30%,
+        rgba(56, 189, 248, 0.25),
+        transparent 45%
+      ),
+      radial-gradient(
+        circle at 20% 80%,
+        rgba(34, 211, 238, 0.15),
+        transparent 50%
+      );
     pointer-events: none;
   }
 
-  /* Asegura contenido por encima */
+  /* Animación sutil */
+  @keyframes waveFloat {
+    0% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-20px) scale(1.02);
+    }
+    100% {
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Contenido encima */
   .bg-aerospace > * {
     position: relative;
     z-index: 1;
@@ -64,21 +82,47 @@
      VARIANTES
   ===================================================== */
 
-  /* Sin grid (hero limpio) */
-  .bg-aerospace-soft::before {
-    display: none;
-  }
-
-  /* Solo grid (sin glow) */
-  .bg-aerospace-grid-only::after {
-    display: none;
-  }
-
-  /* Más contraste (secciones finales) */
-  .bg-aerospace-strong::after {
-    background:
-      radial-gradient(circle at 30% 0%, rgba(56,189,248,0.35), transparent 40%),
-      radial-gradient(circle at 70% 100%, rgba(14,165,233,0.35), transparent 40%);
+  .bg-aerospacee {
+    @apply relative overflow-hidden;
+    background: linear-gradient(
+      to bottom,
+      rgb(2 6 23),
+      rgb(15 23 42),
+      rgb(2 6 23)
+    );
+  } /* Grid técnico sutil */
+  .bg-aerospacee::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+        rgba(59, 130, 246, 0.15) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
+    background-size: 100px 100px;
+    opacity: 0.035;
+    pointer-events: none;
+  } /* Glow tecnológico */
+  .bg-aerospacee::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at 25% 0%,
+        rgba(56, 189, 248, 0.25),
+        transparent 45%
+      ),
+      radial-gradient(
+        circle at 75% 100%,
+        rgba(34, 211, 238, 0.25),
+        transparent 45%
+      );
+    pointer-events: none;
+  } /* Asegura contenido por encima */
+  .bg-aerospacee > * {
+    position: relative;
+    z-index: 1;
   }
 
   /* =====================================================
@@ -126,10 +170,6 @@
     z-index: 1;
   }
 }
-
-
-
-
 
 /* .bg-aerospace {
   position: relative;
@@ -194,4 +234,3 @@
   position: relative;
   z-index: 1;
 } */
-

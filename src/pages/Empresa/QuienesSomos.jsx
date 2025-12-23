@@ -1,5 +1,5 @@
 import React from "react";
-import MisionVision from "../../components/about/VisionMision";
+import VisionMision from "../../components/about/VisionMision"; 
 import AboutFeatures from "../../components/about/AboutFeatures";
 import HeroText from "../../components/about/HeroText";
 import HeroVideo from "../../components/about/HeroVideo";
@@ -19,7 +19,7 @@ export default function QuienesSomos() {
 
       <AboutFeatures />
 
-      <MisionVision />
+      <VisionMision />
     </div>
   );
 }
