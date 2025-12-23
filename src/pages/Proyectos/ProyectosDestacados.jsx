@@ -1,10 +1,10 @@
 import React from 'react'
-import Illuminator from '../../components/products/Illuminator'
+import Products from '../../components/products/Products'
 
 export default function ProyectosDestacados() {
   return (
     <div >
-       <Illuminator /> 
+       <Products /> 
     </div>
   )
 }

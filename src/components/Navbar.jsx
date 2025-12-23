@@ -37,6 +37,7 @@ export default function Navbar() {
         { name: "Politica de Calidad", path: "/sobre-quandum/calidad" },
         { name: "Certificaciones", path: "/sobre-quandum/certificaciones" },
         { name: "Compromiso Ético y Sostenible", path: "/sobre-quandum/codigo-etico" },
+        { name: "Proyectos Destacados", path: "/proyectos/destacados" },
         // {
         //   name: "Entorno Responsable",
         //   path: "/sobre-quandum/entorno-responsable",
@@ -52,15 +53,12 @@ export default function Navbar() {
         { name: "Mecanica", path: "/servicios/mecanica" },
       ],
     },
-    {
-      name: "Proyectos",
-      dropdown: [
-        { name: "Proyectos Destacados", path: "/proyectos/destacados" },
-      ],
-    },
+
 
     // { name: "Prensa", path: "/prensa" },
+    { name: "Proyectos", path: "/proyectos/destacados" },
     { name: "Contacto", path: "/contacto" },
+    
   ];
 
   return (

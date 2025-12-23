@@ -28,16 +28,16 @@ const wordAnimation = {
 
 export default function HeroVideo() {
   return (
-    <section className="relative w-full h-[80vh] overflow-hidden">
+    <section className="relative w-full h-[80vh] object-top overflow-hidden">
       {/* Imagen fondo */}
       <img
         src="/images/about-hero.jpg"
         alt="Military Aircraft"
-        className="absolute inset-0 w-full h-full object-cover"
+        
       />
 
       {/* capa oscura */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
 
       {/* Contenido */}
       <div className="absolute bottom-12 w-full px-6 md:px-16">

@@ -7,6 +7,12 @@ export default function Calidad() {
 
   return (
     <section className="relative bg-aerospacee min-h-screen overflow-hidden">
+
+<img
+        src="/images/about-hero.jpg"
+        alt="Military Aircraft"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
       {/* linea decorativa vertical */}
       <motion.div
         style={{ y, opacity }}

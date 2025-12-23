@@ -152,7 +152,7 @@
   /* Variante más ligera (formularios, bloques internos) */
   .bg-mili {
     @apply relative overflow-hidden;
-    background-image: url("/bgmili6.jpg");
+    background-image: url("/render.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
