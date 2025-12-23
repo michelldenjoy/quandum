@@ -38,40 +38,88 @@ const facilities = [
     textColor: "text-white",
   },
 ];
+const title = "Donde la ingeniería toma forma";
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const wordAnimation = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
 
 
 export default function Infraestructuras() {
   return (
     <div className="w-full overflow-x-hidden pt-20 md:pt-24 lg:pt-28">
-      <section className="relative w-full h-[70vh] md:h-[80vh] lg:h-screen overflow-hidden">
-        {/* Imagen de fondo */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/collage1.jpg')" }}
-        />
-        
-        {/* Overlay oscuro */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/60" />
-
-        {/* Contenido*/}
-        <div className="relative h-full flex items-end pb-12 md:pb-10 lg:pb-12 px-6 md:px-12 lg:px-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-            className="max-w-2xl"
-          >
-            <h1 className="text-center text-2xl md:text-5xl lg:text-5xl font-light tracking-tight mb-4 md:mb-6 backdrop-blur-[1px] bg-black/20 rounded-lg text-white drop-shadow-2xl">
-              Donde la Ingeniería Toma Forma
-            </h1>
-            <p className="text-base md:text-lg lg:text-xl text-white leading-relaxed drop-shadow-lg backdrop-blur-[1px] bg-black/20 p-4 rounded-lg">
-              Nuestras instalaciones combinan ingeniería, precisión y tecnología
-              avanzada para impulsar el desarrollo y la fabricación de sistemas
-              críticos.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <section className="relative w-full h-[70vh] overflow-hidden">
+            {/* Imagen de fondo */}
+            <img
+              src="/images/collage1.jpg"
+              alt="Military Aircraft"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+      
+            {/* Overlay oscuro elegante */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+      
+            {/* Contenido */}
+            <div className="absolute bottom-12 w-full px-6 md:px-16">
+              <motion.div
+                variants={container}
+                initial="hidden"
+                animate="visible"
+                className="max-w-5xl"
+              >
+                <motion.span
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="inline-block mb-4 text-sm uppercase tracking-[0.3em] text-slate-300"
+                >
+                  Aerospace · Defense · Engineering
+                </motion.span>
+                <h1 className="flex flex-wrap text-white text-3xl md:text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight">
+                  {title.split(" ").map((word, index) => (
+                    <motion.span
+                      key={index}
+                      variants={wordAnimation}
+                      className="mr-3"
+                    >
+                      {word}
+                    </motion.span>
+                  ))}
+                </h1>
+      
+                {/* Subtítulo opcional (muy discreto) */}
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.2, duration: 0.8 }}
+                  className="mt-6 text-sm md:text-lg text-slate-300 max-w-3xl"
+                >
+ Desarrollamos entornos seguros y laboratorios de vanguardia donde la electrónica de defensa alcanza su máximo rendimiento y fiabilidad.
+                </motion.p>
+              </motion.div>
+            </div>
+          </section>
 
       {facilities.map((f, i) => (
         <section
