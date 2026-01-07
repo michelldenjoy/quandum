@@ -452,7 +452,7 @@ export default function QuandumParticles({
   return (
     <div
       ref={mountRef}
-      className="fixed inset-0 w-screen h-screen pointer-events-none -z-10"
+      className="absolute inset-0 w-full h-full pointer-events-none"
       style={{
         opacity,
         backgroundColor: "black",

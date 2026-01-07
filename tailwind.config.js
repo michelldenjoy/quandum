@@ -12,7 +12,7 @@ export default {
         }
       },
       fontFamily: {
-        sans: ["Play", 'sans-serif'],
+        sans: ["Kameron", 'serif'],
       }
     },
   },

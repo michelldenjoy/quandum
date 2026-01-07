@@ -1,11 +1,12 @@
+import { Star } from "lucide-react";
 import { motion } from "motion/react";
+import StarfieldNebula from "../3d/StarfieldNebula.jsx";
 
 export default function FilosofiaTrayectoria() {
   return (
-    <section className="w-full relative bg-aerospacee overflow-hidden">
+    <section className="w-full relative  overflow-hidden">
+      <StarfieldNebula />
       {/* Fondo técnico aeroespacial */}
-
-
       {/* Wrapper general */}
       <div className="relative max-w-7xl mx-auto px-6 py-32 lg:py-40 space-y-32">
 

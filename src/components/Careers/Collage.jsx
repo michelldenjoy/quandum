@@ -8,7 +8,7 @@ export default function Collage() {
   return (
     <section
       ref={ref}
-      className="relative py-20 bg-aerospacee overflow-hidden"
+      className="relative py-20 bg-gray-900 overflow-hidden"
     >
 
 

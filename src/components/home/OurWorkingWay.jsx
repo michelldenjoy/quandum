@@ -2,6 +2,7 @@ import React from "react";
 import { motion, useInView } from "motion/react";
 import { Rocket, Beaker, TestTube, Users } from "lucide-react";
 import CountUp from "react-countup";
+import StarfieldNebula from "../3d/StarfieldNebula";
 import { useRef } from "react";
 
 const steps = [
@@ -29,7 +30,8 @@ const steps = [
 
 export default function OurWorkingWay() {
   return (
-    <section className="py-20 bg-mili text-white overflow-hidden">
+    <section className="py-20 text-white overflow-hidden">
+      <StarfieldNebula />
       <div className="container mx-auto px-6 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

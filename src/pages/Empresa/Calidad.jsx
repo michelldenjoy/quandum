@@ -5,14 +5,104 @@ export default function Calidad() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.6, 0.3]);
 
+  const container = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.08,
+      },
+    },
+  };
+
+  const wordAnimation = {
+    hidden: { opacity: 0, y: 24 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const title = "Calidad y compromiso en cada proyecto";
+
   return (
     <section className="relative bg-aerospacee min-h-screen overflow-hidden">
+      <div className="w-full overflow-x-hidden pt-20 md:pt-24 lg:pt-28">
+        <section className="relative h-[80vh] min-h-[520px] w-full overflow-hidden">
+          {/* Imagen de fondo */}
+          <img
+            src="/images/about-1.jpg"
+            alt="Historia y trayectoria de la compañía aeronáutica"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
 
-<img
-        src="/images/about-hero.jpg"
-        alt="Military Aircraft"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+          {/* Overlay oscuro + degradado */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-slate-900/60 to-slate-950/90" />
+
+          {/* Grid técnico sutil */}
+          <div
+            className="absolute inset-0 opacity-[0.04] pointer-events-none 
+                           bg-[linear-gradient(rgba(59,130,246,0.4)_1px,transparent_1px),
+                                linear-gradient(90deg,rgba(59,130,246,0.4)_1px,transparent_1px)]
+                           bg-[size:120px_120px]"
+          />
+
+          {/* Contenido */}
+          <div className="relative z-10 h-full flex items-center">
+            <div className="max-w-7xl mx-auto px-6">
+              <motion.div
+                variants={container}
+                initial="hidden"
+                animate="visible"
+                className="max-w-4xl"
+              >
+                {/* Eyebrow */}
+                <motion.p
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2, duration: 0.6 }}
+                  className="text-cyan-400 text-sm tracking-[0.3em] uppercase mb-6"
+                >
+                  Nuestra Politica de Calidad
+                </motion.p>
+
+                {/* Título animado */}
+                <h1 className="flex flex-wrap text-white text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
+                  {title.split(" ").map((word, index) => (
+                    <motion.span
+                      key={index}
+                      variants={wordAnimation}
+                      className="mr-3"
+                    >
+                      {word}
+                    </motion.span>
+                  ))}
+                </h1>
+
+                {/* Descripción */}
+                <motion.p
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.9, duration: 0.8, ease: "easeOut" }}
+                  className="mt-6 text-lg md:text-xl text-slate-200 leading-relaxed max-w-3xl"
+                >
+                  Excelencia aeroespacial respaldada por estándares
+                  internacionales
+                </motion.p>
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Línea inferior decorativa */}
+          <div
+            className="absolute bottom-0 left-0 right-0 h-px 
+                              bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent"
+          />
+        </section>
+      </div>
       {/* linea decorativa vertical */}
       <motion.div
         style={{ y, opacity }}
@@ -24,38 +114,8 @@ export default function Calidad() {
       </motion.div>
 
       <div className="relative z-20 max-w-7xl mx-auto px-6 py-20 md:py-32">
-        {/* HEADER */}
-        <motion.header
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center space-y-8 mb-24"
-        >
-          <div className="inline-block">
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: "100%" }}
-              transition={{ delay: 0.5, duration: 1 }}
-              className="h-1 bg-gradient-to-r from-transparent via-brand-blue/60 to-transparent mb-6"
-            />
-            <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight">
-              Política de Calidad
-            </h1>
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: "100%" }}
-              transition={{ delay: 0.5, duration: 1 }}
-              className="h-1 bg-gradient-to-r from-transparent via-brand-blue/60 to-transparent mt-6"
-            />
-          </div>
 
-          <p className="text-xl md:text-2xl text-slate-100 max-w-3xl mx-auto font-light tracking-wide">
-            Excelencia aeroespacial respaldada por estándares internacionales
-          </p>
-        </motion.header>
 
-       
         <motion.article
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -70,10 +130,11 @@ export default function Calidad() {
             <p className="text-lg md:text-xl leading-relaxed">
               La Dirección de{" "}
               <span className="text-white bg-clip-text font-extrabold text-transparent">
-              Quandum{" "}
-            </span>{" "}
-              
-              <span className="bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text font-semibold text-transparent">Aerospace</span>{" "}
+                Quandum{" "}
+              </span>{" "}
+              <span className="bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text font-semibold text-transparent">
+                Aerospace
+              </span>{" "}
               busca obtener la excelencia en todas sus actividades y
               consolidarse como empresa líder del sector aeronáutico, militar e
               industrial. Para ello, siendo consciente de la importancia de la
@@ -122,7 +183,11 @@ export default function Calidad() {
                   <span className="text-2xl">🎯</span>
                 </div> */}
                 <h2 className="text-3xl md:text-4xl font-bold text-cyan-400">
-                <span className="text-white">Objetivos</span><span className="bg-gradient-to-r from-blue-100 via-blue-200 to-cyan-200 bg-clip-text text-transparent"> Estrategicos</span>
+                  <span className="text-white">Objetivos</span>
+                  <span className="bg-gradient-to-r from-blue-100 via-blue-200 to-cyan-200 bg-clip-text text-transparent">
+                    {" "}
+                    Estrategicos
+                  </span>
                 </h2>
               </div>
 
@@ -172,9 +237,12 @@ export default function Calidad() {
                           hover:border-sky-400/50 transition-all duration-500"
             >
               <div className="flex items-center gap-3 mb-8">
-
                 <h2 className="text-3xl md:text-4xl font-bold text-sky-400">
-                <span className="text-white">Valores</span><span className="bg-gradient-to-r from-blue-100 via-blue-200 to-cyan-200 bg-clip-text text-transparent"> Fundamentales</span>
+                  <span className="text-white">Valores</span>
+                  <span className="bg-gradient-to-r from-blue-100 via-blue-200 to-cyan-200 bg-clip-text text-transparent">
+                    {" "}
+                    Fundamentales
+                  </span>
                 </h2>
               </div>
 
@@ -237,8 +305,13 @@ export default function Calidad() {
 
               {/* Sello principal */}
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                whileHover={{ scale: 1.035 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 90,
+                  damping: 22,
+                  mass: 1,
+                }}
                 className="relative w-72 h-72 rounded-full 
                          bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900
                          shadow-2xl border-2 border-cyan-500/40
@@ -257,9 +330,13 @@ export default function Calidad() {
                 {/* Contenido */}
                 <div className="relative text-center z-10">
                   <motion.div
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ delay: 0.5, type: "spring" }}
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    transition={{
+                      delay: 0.4,
+                      duration: 1,
+                      ease: "easeOut",
+                    }}
                   >
                     <p className="text-6xl font-bold bg-gradient-to-br from-cyan-400 to-sky-500 bg-clip-text text-transparent tracking-wider">
                       EN 9100
@@ -283,9 +360,15 @@ export default function Calidad() {
 
                 {/* Badges en los bordes */}
                 <motion.div
-                  initial={{ scale: 0, rotate: -90 }}
-                  whileInView={{ scale: 1, rotate: 0 }}
-                  transition={{ delay: 1, type: "spring" }}
+                  initial={{ scale: 0.85, rotate: -45, opacity: 0 }}
+                  whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
+                  transition={{
+                    delay: 0.8,
+                    type: "spring",
+                    stiffness: 80,
+                    damping: 24,
+                    mass: 1,
+                  }}
                   className="absolute -top-3 left-1/2 -translate-x-1/2 
                            bg-gradient-to-r from-cyan-500 to-sky-500 
                            text-white text-xs font-bold px-6 py-2 rounded-full 
@@ -295,9 +378,15 @@ export default function Calidad() {
                 </motion.div>
 
                 <motion.div
-                  initial={{ scale: 0, rotate: 90 }}
-                  whileInView={{ scale: 1, rotate: 0 }}
-                  transition={{ delay: 1.2, type: "spring" }}
+                  initial={{ scale: 0.85, rotate: 45, opacity: 0 }}
+                  whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
+                  transition={{
+                    delay: 1,
+                    type: "spring",
+                    stiffness: 80,
+                    damping: 24,
+                    mass: 1,
+                  }}
                   className="absolute -bottom-3 left-1/2 -translate-x-1/2 
                            bg-gradient-to-r from-sky-600 to-cyan-600 
                            text-white text-xs font-bold px-6 py-2 rounded-full 

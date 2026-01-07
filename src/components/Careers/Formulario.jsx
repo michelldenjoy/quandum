@@ -9,6 +9,9 @@ import {
   ArrowRight,
   Award,
 } from "lucide-react";
+import StarfieldNebula from "../3d/StarfieldNebula";
+import { div } from "motion/react-client";
+import QuandumParticles from "../3d/QuandumParticles";
 
 /* -----------------------------------------------
    Listado estático de posiciones (fuera del componente)
@@ -137,8 +140,10 @@ export default function Formulario() {
      Render
   ------------------------------------------------ */
   return (
-    <section className="py-32 px-6 bg-gray bg-mili">
-      <div className="max-w-3xl mx-auto">
+    <section className="relative py-32 px-6 bg-aerospacee overflow-hidden ">
+
+
+      <div className="relative z-10 max-w-3xl mx-auto">
         <h2 className="text-5xl font-bold text-center mb-4 text-gray-100">
           Envía tu Candidatura
         </h2>
@@ -146,7 +151,7 @@ export default function Formulario() {
           Únete a los mejores ingenieros aeronáuticos de Europa
         </p>
 
-        <div className="bg-white border border-gray-300 rounded-2xl p-10 md:p-14 shadow-xl space-y-8">
+        <div className="bg-white/95 backdrop-blur-sm border border-gray-300 rounded-2xl p-10 md:p-14 shadow-xl space-y-8">
           {/* Mensaje éxito */}
           {status === "success" && (
             <div className="p-6 bg-green-50 border border-green-200 rounded-xl flex items-center gap-4">
@@ -165,7 +170,8 @@ export default function Formulario() {
           {/* Error */}
           {status === "error" && (
             <p className="text-red-600 text-center font-medium">
-              Completa los campos obligatorios y adjunta un CV válido (PDF, máx. 10MB).
+              Completa los campos obligatorios y adjunta un CV válido (PDF, máx.
+              10MB).
             </p>
           )}
 
@@ -259,4 +265,3 @@ export default function Formulario() {
     </section>
   );
 }
-
