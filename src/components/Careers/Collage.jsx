@@ -6,7 +6,7 @@ export default function Collage() {
   const isInView = useInView(ref, { once: true, margin: "-150px" });
 
   return (
-    <section ref={ref} className="relative py-16  bg-white overflow-hidden">
+    <section ref={ref} className="relative pt-16  bg-white overflow-hidden">
       {/* Sistema de fondo minimalista */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         {/* Glow azul sutil corporativo */}
@@ -226,7 +226,7 @@ export default function Collage() {
               >
                 {/* Glow azul corporativo muy sutil */}
                 <div
-                  className="absolute -top-20 -right-20 w-40 h-40 bg-brand-blue/8 rounded-full blur-3xl animate-pulse"
+                  className="absolute  w-40 h-40 bg-brand-blue/8 rounded-full blur-3xl animate-pulse"
                   style={{ animationDuration: "6s" }}
                 />
               </motion.div>

@@ -8,28 +8,7 @@ export default function Calidad() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.6, 0.3]);
 
-  const container = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.08,
-      },
-    },
-  };
 
-  const wordAnimation = {
-    hidden: { opacity: 0, y: 24 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.7,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const title = "Calidad y compromiso en cada proyecto";
 
   return (
 
@@ -45,14 +24,14 @@ export default function Calidad() {
     <section >
       
       {/* linea decorativa vertical */}
-      {/* <motion.div
+       <motion.div
         style={{ y, opacity }}
         className="absolute inset-0 pointer-events-none"
       >
         <div className="absolute top-20 right-10 w-96 h-96 border border-cyan-500/10 rounded-full" />
         <div className="absolute bottom-40 left-20 w-72 h-72 border border-sky-400/10 rounded-full" />
         <div className="absolute top-1/2 left-1/4 w-1 h-64 bg-gradient-to-b from-transparent via-brand-blue/60 to-transparent" />
-      </motion.div> */}
+      </motion.div> 
 
       <div className="relative z-20 max-w-7xl mx-auto px-6 py-20 md:py-32">
 

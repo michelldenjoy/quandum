@@ -151,6 +151,8 @@ export default function Formulario() {
         Únete a un equipo multidisciplinar donde tu talento impulsa misiones críticas y al desarrollo tecnológico.
         </p>
 
+        
+
         <div className="bg-white/95 backdrop-blur-sm border border-gray-300 rounded-2xl p-10 md:p-14 shadow-xl space-y-8">
           {/* Mensaje éxito */}
           {status === "success" && (
