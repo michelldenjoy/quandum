@@ -32,11 +32,11 @@ export default function VisionMision() {
               </span>
             </h2>
 
-            <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light">
+            <p className="text-base md:text-lg text-justify text-slate-300 leading-relaxed font-light">
               Nuestra visión es ser un referente internacional en ingeniería
               avanzada para sistemas críticos, aportando soluciones tecnológicas
               que impulsen el progreso en los sectores aeroespacial, defensa e
-              industrial. Aspiramos a desarrollar tecnología fiable, precisa y
+              industrial. Desarrollamos tecnología fiable, precisa y
               sostenible, diseñada para operar en los entornos más exigentes,
               donde la seguridad, el rendimiento y la calidad no admiten
               concesiones. Creemos en una ingeniería que no solo resuelve
@@ -99,7 +99,7 @@ export default function VisionMision() {
               </span>
             </h2>
 
-            <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light">
+            <p className="text-base md:text-lg text-justify text-slate-300 leading-relaxed font-light">
               Nuestra misión es diseñar, desarrollar y validar soluciones
               tecnológicas a medida, acompañando a nuestros clientes en todo el
               ciclo de vida del proyecto, desde la fase conceptual hasta la

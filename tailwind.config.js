@@ -12,7 +12,7 @@ export default {
         }
       },
       fontFamily: {
-        sans: ["Kameron", 'serif'],
+        sans: ["Roboto", 'sans-serif'],
       }
     },
   },

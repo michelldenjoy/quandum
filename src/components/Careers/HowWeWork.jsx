@@ -37,20 +37,24 @@ export default function HowWeWork() {
   const [activeSection, setActiveSection] = useState(sections[0]);
 
   return (
-    <div className="min-h bg-white text-black py-12 sm:py-16 md:py-20 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-12 text-center"
+          className="mb-12 text-center relative z-10"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3">
             Cómo Trabajamos
           </h2>
-          <p className="text-gray-700 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Cuatro principios fundamentales que impulsan nuestra innovación aeroespacial
+          <p className="text-gray-700 text-base sm:text-lg md:text-xl  max-w-3xl mx-auto leading-relaxed">
+            Nuestros proyectos se desarrollan bajo metodologías estructuradas y
+            procesos documentados, garantizando trazabilidad y cumplimiento
+            normativo en todas las fases. Fomentamos un entorno colaborativo
+            donde el conocimiento se comparte, las decisiones se analizan con
+            criterio técnico y cada ingeniero entiende el impacto de su trabajo
+            dentro del sistema completo.
           </p>
         </motion.div>
 

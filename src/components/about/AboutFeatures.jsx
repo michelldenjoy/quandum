@@ -21,14 +21,14 @@ export default function AboutFeatures() {
                 Excelencia técnica.
               </h4>
 
-              <p className="text-slate-900 text-lg leading-relaxed mb-6">
+              <p className="text-slate-900 text-lg text-justify leading-relaxed mb-6">
                 Contamos con dos décadas de experiencia colectiva
                 en ingeniería aeronáutica, electrónica avanzada y diseño de
                 sistemas críticos. Trabajamos bajo una premisa central: la
                 innovación no es un objetivo, es un estándar diario.
               </p>
 
-              <p className="text-slate-900 text-lg leading-relaxed">
+              <p className="text-slate-900 text-lg text-justify leading-relaxed">
                 El 95% de nuestro equipo está formado por ingenieros y
                 especialistas altamente cualificados que desarrollan soluciones
                 para aviación, defensa, espacio e industria. La cultura interna
@@ -49,7 +49,7 @@ export default function AboutFeatures() {
               <img
                 src="/images/about-3.jpg"
                 alt="Engineering Team"
-                className="w-full h-[420px] object-cover rounded-xl shadow-2xl"
+                className="w-full h-[420px] rounded-xl shadow-2xl"
               />
 
               {/* overlay decorativo */}
@@ -83,17 +83,17 @@ export default function AboutFeatures() {
               transition={{ duration: 0.7 }}
             >
               <h4 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-black">
-                Compromiso con la precisión y la fiabilidad.
+                Compromiso y Fiabilidad.
               </h4>
 
-              <p className="text-slate-900 text-lg leading-relaxed mb-6">
+              <p className="text-slate-900 text-justify text-lg leading-relaxed mb-6">
                 Cada proyecto se desarrolla con una disciplina estricta:
                 procesos auditables, diseño seguro, ingeniería certificable y
                 soluciones robustas adaptadas a entornos operacionales
                 exigentes.
               </p>
 
-              <p className="text-slate-900 text-lg leading-relaxed">
+              <p className="text-slate-900 text-justify text-lg leading-relaxed">
                 Nuestro enfoque multidisciplinar nos permite trabajar con
                 sistemas complejos, integrar tecnologías avanzadas y entregar
                 resultados que cumplen los requisitos más estrictos de los

@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 
-const title = "Trayectoria, innovación y excelencia aeronáutica";
+const title = "Ingeniería que evoluciona";
 
 const container = {
   hidden: {},
@@ -84,9 +84,7 @@ export default function HeroHistory() {
                 transition={{ delay: 0.9, duration: 0.8, ease: "easeOut" }}
                 className="mt-6 text-lg md:text-xl text-slate-200 leading-relaxed max-w-3xl"
               >
-                Desde nuestros inicios, hemos desarrollado soluciones
-                aeronáuticas de alto valor tecnológico, consolidando una cultura
-                basada en la calidad, la precisión y la mejora continua.
+               Una trayectoria marcada por la calidad, el rigor técnico y el avance constante.
               </motion.p>
             </motion.div>
           </div>

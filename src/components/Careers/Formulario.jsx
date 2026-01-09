@@ -148,7 +148,7 @@ export default function Formulario() {
           Envía tu Candidatura
         </h2>
         <p className="text-center text-gray-200 mb-16">
-          Únete a los mejores ingenieros aeronáuticos de Europa
+        Únete a un equipo multidisciplinar donde tu talento impulsa misiones críticas y al desarrollo tecnológico.
         </p>
 
         <div className="bg-white/95 backdrop-blur-sm border border-gray-300 rounded-2xl p-10 md:p-14 shadow-xl space-y-8">

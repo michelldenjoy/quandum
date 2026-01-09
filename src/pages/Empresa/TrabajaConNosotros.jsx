@@ -21,12 +21,12 @@ import {
   TrendingUp,
   UserCheck,
 } from "lucide-react";
-import Collage from '../../components/Careers/Collage' 
+import Collage from "../../components/Careers/Collage";
 import Valores from "../../components/Careers/Valores";
 import Formulario from "../../components/Careers/Formulario";
 import WorkHorizontal from "../../components/Careers/WorkHorizontal";
 import { motion } from "motion/react";
-
+import HeroVideo from "../../components/about/HeroVideo";
 
 // const andurilBenefits = [
 //   {
@@ -121,156 +121,49 @@ import { motion } from "motion/react";
 //   },
 // ];
 
-
-
-
-const title = "Tu carrera despega aquí";
-
-const container = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.08,
-    },
-  },
-};
-
-const wordAnimation = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: "easeOut",
-    },
-  },
-};
 export default function TrabajaConNosotros() {
   // const [openBenefit, setOpenBenefit] = useState(null);
 
   return (
     <div className="min-h-screen">
-      <style>{`
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-fadeIn { animation: fadeIn 0.6s ease-out; }
-        .animate-fadeInUp { animation: fadeInUp 0.8s ease-out; }
-      `}</style>
-
-<div className="w-full overflow-x-hidden pt-20 md:pt-24 lg:pt-28">
-      <section className="relative h-[80vh] min-h-[520px] w-full overflow-hidden">
-        {/* Imagen de fondo */}
-        <img
-          src="/careerbg.jpg"
-          alt="Carreras profesionales en Quandum Aerospace"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-
-        {/* Overlay oscuro + degradado */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-slate-900/60 to-slate-950/90" />
-
-        {/* Grid técnico sutil */}
-        <div
-          className="absolute inset-0 opacity-[0.04] pointer-events-none 
-                     bg-[linear-gradient(rgba(59,130,246,0.4)_1px,transparent_1px),
-                          linear-gradient(90deg,rgba(59,130,246,0.4)_1px,transparent_1px)]
-                     bg-[size:120px_120px]"
-        />
-
-        {/* Contenido */}
-        <div className="relative z-10 h-full flex items-center">
-          <div className="max-w-7xl mx-auto px-6">
-            <motion.div
-              variants={container}
-              initial="hidden"
-              animate="visible"
-              className="max-w-4xl mx-auto text-center"
-            >
-              {/* Eyebrow */}
-              <motion.p
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-                className="text-cyan-400 text-sm tracking-[0.3em] uppercase mb-6"
-              >
-                Careers · Engineering · Innovation
-              </motion.p>
-
-              {/* Título animado */}
-              <h1 className="flex flex-wrap justify-center text-white text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
-                {title.split(" ").map((word, index) => (
-                  <motion.span
-                    key={index}
-                    variants={wordAnimation}
-                    className="mr-3"
-                  >
-                    {word}
-                  </motion.span>
-                ))}
-              </h1>
-
-              {/* Descripción */}
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9, duration: 0.8, ease: "easeOut" }}
-                className="mt-6 text-lg md:text-xl text-slate-200 leading-relaxed max-w-3xl mx-auto"
-              >
-                En{" "}
-                <span className="text-white font-extrabold">
-                  Quandum
-                </span>{" "}
-                <span className="bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text text-transparent font-extrabold">
-                  Aerospace
-                </span>{" "}
-                diseñamos sistemas electrónicos certificados para el sector
-                aeroespacial. Si te apasiona la ingeniería de precisión, la
-                innovación tecnológica y el impacto real, este es tu lugar.
-              </motion.p>
-
-              {/* CTA */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2, duration: 0.6 }}
-                className="mt-10"
-              >
-                <button
-                  onClick={() =>
-                    document.getElementById("formulario")?.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                    })
-                  }
-                  className="inline-flex items-center gap-3 px-8 py-3 rounded-full
-                             border border-white/20 text-white
-                             hover:border-cyan-400/60 hover:bg-white/5
-                             transition-all duration-300 tracking-wide"
-                >
-                  Únete al equipo
-                </button>
-              </motion.div>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Línea inferior decorativa */}
-        <div className="absolute bottom-0 left-0 right-0 h-px 
-                        bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent" />
-      </section>
-    </div>
+      <HeroVideo
+        eyebrow="Careers · Engineering · Innovation"
+        title="Tu carrera despega aquí"
+        description="Únete a un equipo multidisciplinar donde tu talento impulsa el desarrollo tecnológico."
+        backgroundImage="/careerbg.jpg"
+      >
+        <button
+          onClick={() =>
+            document.getElementById("formulario")?.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            })
+          }
+          className="group inline-flex items-center gap-3 px-8 py-3 rounded-full
+               border border-white/20 text-white
+               hover:border-cyan-400/60 hover:bg-white/5
+               transition-all duration-300 tracking-wide"
+        >
+          Únete al equipo
+          <span className="group-hover:translate-x-1 transition-transform duration-300">
+            →
+          </span>
+        </button>
+      </HeroVideo>
 
       <div>
         <Collage />
       </div>
+
       <div>
         <WorkHorizontal />
       </div>
 
-      <div>
-        {/* <Valores /> */}
+      <div id="formulario">
+        <Formulario />
       </div>
+
+      <div>{/* <Valores /> */}</div>
 
       {/* <section className="py-24 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
@@ -337,9 +230,6 @@ export default function TrabajaConNosotros() {
           </div>
         </div>
       </section> */}
-      <div id="formulario">
-        <Formulario />
-      </div>
     </div>
   );
 }

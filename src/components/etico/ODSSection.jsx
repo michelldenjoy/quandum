@@ -62,15 +62,37 @@ export default function ODSSection() {
     <section className="w-full bg-white py-24">
       <div className="max-w-7xl mx-auto px-6 my-20">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+        <div className="mb-16 lg:mb-20">
+          <motion.h3
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl sm:text-5xl md:text-6xl text-center font-black tracking-tight text-black mb-6"
+          >
             Objetivos de Desarrollo Sostenible
-          </h2>
-          <p className="text-slate-700 my-14  text-lg">
+          </motion.h3>
+          
+          {/* linea decorativa de titulo */}
+          <motion.div
+            initial={{ width: 0, opacity: 0 }}
+            whileInView={{ width: "60%", opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 1 }}
+            className="h-0.5 bg-gradient-to-r from-transparent via-brand-blue to-transparent rounded-full mb-8 mx-auto"
+          />
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="text-gray-600 text-justify text-base mx-auto sm:text-lg md:text-xl max-w-3xl leading-relaxed"
+          >
             En Quandum Aerospace alineamos nuestra actividad con la Agenda 2030
             de Naciones Unidas y contribuimos activamente en áreas clave para un
             futuro sostenible.
-          </p>
+          </motion.p>
         </div>
 
         {/* Grid */}

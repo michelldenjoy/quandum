@@ -1,4 +1,7 @@
 import { motion, useScroll, useTransform } from "motion/react";
+import { div } from "motion/react-client";
+import HeroVideo from "../../components/about/HeroVideo";
+
 
 export default function Calidad() {
   const { scrollYProgress } = useScroll();
@@ -29,89 +32,27 @@ export default function Calidad() {
   const title = "Calidad y compromiso en cada proyecto";
 
   return (
-    <section className="relative bg-aerospacee min-h-screen overflow-hidden">
-      <div className="w-full overflow-x-hidden pt-20 md:pt-24 lg:pt-28">
-        <section className="relative h-[80vh] min-h-[520px] w-full overflow-hidden">
-          {/* Imagen de fondo */}
-          <img
-            src="/images/about-1.jpg"
-            alt="Historia y trayectoria de la compañía aeronáutica"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
 
-          {/* Overlay oscuro + degradado */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-slate-900/60 to-slate-950/90" />
+<div>
 
-          {/* Grid técnico sutil */}
-          <div
-            className="absolute inset-0 opacity-[0.04] pointer-events-none 
-                           bg-[linear-gradient(rgba(59,130,246,0.4)_1px,transparent_1px),
-                                linear-gradient(90deg,rgba(59,130,246,0.4)_1px,transparent_1px)]
-                           bg-[size:120px_120px]"
-          />
+      <HeroVideo
+        eyebrow="Nuestra · Politica de Calidad"
+        title="Compromiso con la calidad"
+        description="Excelencia aeronáutica respaldada por estándares internacionales."
+        backgroundImage="/images/about-1.jpg"
+      />
 
-          {/* Contenido */}
-          <div className="relative z-10 h-full flex items-center">
-            <div className="max-w-7xl mx-auto px-6">
-              <motion.div
-                variants={container}
-                initial="hidden"
-                animate="visible"
-                className="max-w-4xl"
-              >
-                {/* Eyebrow */}
-                <motion.p
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2, duration: 0.6 }}
-                  className="text-cyan-400 text-sm tracking-[0.3em] uppercase mb-6"
-                >
-                  Nuestra Politica de Calidad
-                </motion.p>
-
-                {/* Título animado */}
-                <h1 className="flex flex-wrap text-white text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
-                  {title.split(" ").map((word, index) => (
-                    <motion.span
-                      key={index}
-                      variants={wordAnimation}
-                      className="mr-3"
-                    >
-                      {word}
-                    </motion.span>
-                  ))}
-                </h1>
-
-                {/* Descripción */}
-                <motion.p
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.9, duration: 0.8, ease: "easeOut" }}
-                  className="mt-6 text-lg md:text-xl text-slate-200 leading-relaxed max-w-3xl"
-                >
-                  Excelencia aeroespacial respaldada por estándares
-                  internacionales
-                </motion.p>
-              </motion.div>
-            </div>
-          </div>
-
-          {/* Línea inferior decorativa */}
-          <div
-            className="absolute bottom-0 left-0 right-0 h-px 
-                              bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent"
-          />
-        </section>
-      </div>
+    <section >
+      
       {/* linea decorativa vertical */}
-      <motion.div
+      {/* <motion.div
         style={{ y, opacity }}
         className="absolute inset-0 pointer-events-none"
       >
         <div className="absolute top-20 right-10 w-96 h-96 border border-cyan-500/10 rounded-full" />
         <div className="absolute bottom-40 left-20 w-72 h-72 border border-sky-400/10 rounded-full" />
         <div className="absolute top-1/2 left-1/4 w-1 h-64 bg-gradient-to-b from-transparent via-brand-blue/60 to-transparent" />
-      </motion.div>
+      </motion.div> */}
 
       <div className="relative z-20 max-w-7xl mx-auto px-6 py-20 md:py-32">
 
@@ -468,5 +409,7 @@ export default function Calidad() {
         }
       `}</style>
     </section>
+    
+    </div>
   );
 }

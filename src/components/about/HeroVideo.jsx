@@ -26,6 +26,7 @@ export default function HeroVideo({
   title,
   description,
   backgroundImage,
+  children,
 }) {
   return (
     <div className="w-full overflow-x-hidden bg-black pt-20 md:pt-24 lg:pt-28">
@@ -38,7 +39,7 @@ export default function HeroVideo({
         />
 
         {/* Overlay técnico */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-slate-900/50 to-slate-950/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-slate-900/60 to-slate-950/90" />
 
         {/* Grid técnico */}
         <div
@@ -62,7 +63,7 @@ export default function HeroVideo({
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className="text-cyan-400 text-sm tracking-[0.3em] uppercase mb-6"
+                className="text-cyan-400 text-sm font-medium tracking-[0.3em] uppercase mb-6"
               >
                 {eyebrow}
               </motion.p>
@@ -95,13 +96,26 @@ export default function HeroVideo({
                   {description}
                 </motion.p>
               )}
+              {/* Botón Integrado (Children) */}
+              {children && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.2, duration: 0.8 }} // Aparece después de la descripción
+                  className="mt-10"
+                >
+                  {children}
+                </motion.div>
+              )}
             </motion.div>
           </div>
         </div>
 
         {/* Línea identitaria */}
-        <div className="absolute bottom-0 left-0 right-0 h-px 
-          bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent" />
+        <div
+          className="absolute bottom-0 left-0 right-0 h-px 
+          bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent"
+        />
       </section>
     </div>
   );

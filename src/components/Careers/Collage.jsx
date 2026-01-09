@@ -3,150 +3,252 @@ import { motion, useInView } from "motion/react";
 
 export default function Collage() {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-150px" });
 
   return (
-    <section
-      ref={ref}
-      className="relative py-20 bg-gray-900 overflow-hidden"
-    >
+    <section ref={ref} className="relative py-16  bg-white overflow-hidden">
+      {/* Sistema de fondo minimalista */}
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        {/* Glow azul sutil corporativo */}
+        <div
+          className="absolute top-1/3 left-1/4 w-[900px] h-[900px] bg-brand-blue/5 rounded-full blur-3xl animate-pulse"
+          style={{ animationDuration: "10s" }}
+        />
 
+        {/* Grid técnico muy sutil */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.01)_1px,transparent_1px)] bg-[size:80px_80px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
+      </div>
 
-      <div className="relative max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24 items-center">
-          
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 xl:gap-28 items-center">
+          {/* Texto - Izquierda */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 60 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.9 }}
-            className="space-y-8"
+            transition={{ duration: 1.1, ease: "easeOut" }}
+            className="space-y-8 md:space-y-10 lg:space-y-12 order-2 lg:order-1"
           >
-            <div>
-              {/* <motion.span
-                initial={{ opacity: 0, x: -20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: 0.3, duration: 0.7 }}
-                className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full mb-6"
-              >
-                El futuro se construye aquí
-              </motion.span> */}
+            {/* Badge superior */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="inline-flex"
+            ></motion.div>
 
+            <div className="space-y-6">
               <motion.h2
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.4, duration: 0.9 }}
-                className="text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight"
+                transition={{ delay: 0.3, duration: 1.1 }}
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.05]"
               >
-                Construyendo el futuro
-                
-                <span className="bg-gradient-to-r from-blue-100 via-blue-300 to-cyan-200 bg-clip-text text-transparent"> de la aviación</span>
+                <span className="block text-black">Construyendo</span>
+                <span className="block text-black">el futuro</span>
+                <span className="block mt-2 bg-gradient-to-r from-black via-brand-blue to-black bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                  de la aviación
+                </span>
               </motion.h2>
+
+              {/* Línea decorativa */}
+              <motion.div
+                initial={{ width: 0, opacity: 0 }}
+                animate={isInView ? { width: "100%", opacity: 1 } : {}}
+                transition={{ delay: 0.6, duration: 1.2 }}
+                className="h-0.5 bg-gradient-to-r from-black via-brand-blue to-transparent rounded-full max-w-md"
+              />
             </div>
 
             <motion.div
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
-              transition={{ delay: 0.7, duration: 1 }}
-              className="space-y-5 text-lg lg:text-2xl text-slate-300 leading-relaxed"
+              transition={{ delay: 0.7, duration: 1.1 }}
+              className="space-y-5 md:space-y-6 text-base sm:text-lg text-justify lg:text-xl text-gray-600 leading-relaxed max-w-xl"
             >
-              <p>
-                En Quandum Aerospace diseñamos y certificamos sistemas que operan en los entornos más exigentes del planeta: reabastecimiento en vuelo, visión nocturna, electrónica de potencia embarcada y software DO-178C DAL-A.
+              <p className="text-gray-700">
+                
+              
+                  Creemos que la ingeniería es una disciplina que combina rigor
+                  técnico, responsabilidad y vocación. Cada sistema que
+                  diseñamos tiene un impacto real en entornos donde la
+                  fiabilidad no es opcional. Trabajamos con tecnologías
+                  avanzadas, procesos auditables y normativas internacionales
+                  exigentes. Nuestro compromiso no es solo con la innovación,
+                  sino con la seguridad, la trazabilidad y la calidad a largo
+                  plazo.
+                                
               </p>
-              <p>
-              Priorizamos la acción sobre el proceso. Cada trabajador tiene impacto directo desde el día uno, en proyectos reales que vuelan mañana.
-              </p>
+              {/* <p>
+                Priorizamos la{" "}
+                <span className="font-semibold text-black">
+                  acción sobre el proceso
+                </span>
+                . Cada ingeniero tiene impacto directo desde el primer día en
+                proyectos reales que vuelan mañana.
+              </p> */}
             </motion.div>
-
           </motion.div>
 
-        
-          {/* COLLAGE*/}
-          <div>
+          {/* Collage Premium - Derecha - Con más espacio respiratorio */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative w-full"
+            transition={{ duration: 1.3, delay: 0.2, ease: "easeOut" }}
+            className="relative order-1 lg:order-2"
           >
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 max-w-2xl mx-auto">
-              
-              {/* Imagen 1 - Superior Izquierda */}
+            {/* Contenedor con más espacio - diseño menos apilado */}
+            <div className="relative w-full h-[550px] sm:h-[650px] md:h-[750px] lg:h-[700px] xl:h-[800px]">
+              {/* Imagen principal grande - Derecha superior con más espacio */}
               <motion.div
-                initial={{ opacity: 0, x: -40, y: -40 }}
+                initial={{ opacity: 0, x: 60, y: -30 }}
                 animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
-                transition={{ duration: 0.7, delay: 0.5 }}
-                whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
-                className="aspect-[4/5] rounded-lg overflow-hidden shadow-2xl ring-1 ring-white/10 group cursor-pointer"
+                transition={{
+                  duration: 1,
+                  delay: 0.5,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  y: -8,
+                  zIndex: 50,
+                  transition: { duration: 0.5, ease: "easeOut" },
+                }}
+                className="absolute top-0 right-0 w-[55%] sm:w-[52%] lg:w-[50%] h-[58%] sm:h-[60%] lg:h-[62%] z-30 group cursor-pointer"
               >
-                <img 
-                  src="/images/about-1.jpg" 
-                  alt="Laboratorio aeronáutico" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.12)] ring-1 ring-black/5 transition-shadow duration-500 group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.25)] group-hover:ring-brand-blue/30">
+                  <img
+                    src="/images/collage4.jpg"
+                    alt="Sistema en vuelo real"
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-95"
+                  />
+                  {/* Overlay minimalista */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-brand-blue/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  {/* Badge flotante minimalista */}
+                  <div className="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="backdrop-blur-2xl bg-white/95 rounded-xl px-4 py-2.5 border border-black/10 shadow-xl">
+                      <div className="text-xs font-bold text-black">
+                        Sistema en Operación
+                      </div>
+                      <div className="text-xs text-gray-600 mt-0.5">
+                        Certificación DAL-A
+                      </div>
+                    </div>
+                  </div>
+                  {/* Esquinas técnicas minimalistas */}
+                  <div className="absolute top-3 left-3 w-8 h-8 border-t-2 border-l-2 border-brand-blue/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute top-3 right-3 w-8 h-8 border-t-2 border-r-2 border-brand-blue/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
               </motion.div>
 
-              {/* Imagen 2 - Superior Derecha */}
+              {/* Imagen secundaria - Izquierda superior con más separación */}
               <motion.div
-                initial={{ opacity: 0, x: 40, y: -40 }}
+                initial={{ opacity: 0, x: -60, y: 30 }}
                 animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
-                transition={{ duration: 0.7, delay: 0.6 }}
-                whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
-                className="aspect-[4/5] rounded-lg overflow-hidden shadow-2xl ring-1 ring-cyan-500/20 group cursor-pointer"
+                transition={{
+                  duration: 1,
+                  delay: 0.6,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  y: -8,
+                  zIndex: 50,
+                  transition: { duration: 0.5, ease: "easeOut" },
+                }}
+                className="absolute top-[12%] sm:top-[15%] left-0 w-[48%] sm:w-[46%] lg:w-[44%] h-[50%] sm:h-[52%] lg:h-[54%] z-20 group cursor-pointer"
               >
-                <img 
-                  src="/images/collage2.jpg" 
-                  alt="Equipo de ingeniería" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.12)] ring-1 ring-black/5 transition-shadow duration-500 group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.25)] group-hover:ring-black/20">
+                  <img
+                    src="/images/about-1.jpg"
+                    alt="Laboratorio de pruebas avanzadas"
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-95"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  {/* Badge flotante */}
+                  <div className="absolute bottom-3 left-3 right-3 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-75">
+                    <div className="backdrop-blur-2xl bg-white/95 rounded-xl px-3 py-2 border border-black/10 shadow-xl">
+                      <div className="text-xs font-bold text-black">
+                        Laboratorio Avanzado
+                      </div>
+                    </div>
+                  </div>
+                  {/* Indicador técnico con acento azul */}
+                  <div className="absolute top-3 right-3 w-2 h-2 rounded-full bg-brand-blue shadow-lg shadow-brand-blue/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute inset-0 rounded-full bg-brand-blue animate-ping" />
+                  </div>
+                </div>
               </motion.div>
 
-              {/* Imagen 3 - Inferior Izquierda */}
+              {/* Imagen secundaria - Abajo derecha con mejor separación */}
               <motion.div
-                initial={{ opacity: 0, x: -40, y: 40 }}
+                initial={{ opacity: 0, x: 60, y: 60 }}
                 animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
-                transition={{ duration: 0.7, delay: 0.7 }}
-                whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
-                className="aspect-[4/5] rounded-lg overflow-hidden shadow-2xl ring-1 ring-cyan-500/20 group cursor-pointer"
+                transition={{
+                  duration: 1,
+                  delay: 0.7,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  y: -8,
+                  zIndex: 50,
+                  transition: { duration: 0.5, ease: "easeOut" },
+                }}
+                className="absolute bottom-0 right-[5%] sm:right-[8%] lg:right-[10%] w-[52%] sm:w-[50%] lg:w-[48%] h-[38%] sm:h-[40%] lg:h-[42%] z-10 group cursor-pointer"
               >
-                <img 
-                  src="/images/collage3.jpg" 
-                  alt="Sistemas de prueba" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.12)] ring-1 ring-black/5 transition-shadow duration-500 group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.25)] group-hover:ring-brand-blue/30">
+                  <img
+                    src="/images/collage2.jpg"
+                    alt="Equipo de ingeniería en acción"
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-95"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tl from-black/40 via-transparent to-brand-blue/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  {/* Badge flotante */}
+                  <div className="absolute bottom-3 left-3 right-3 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                    <div className="backdrop-blur-2xl bg-white/95 rounded-xl px-3 py-2 border border-black/10 shadow-xl">
+                      <div className="text-xs font-bold text-black">
+                        Ingeniería en Acción
+                      </div>
+                    </div>
+                  </div>
+                  {/* Esquinas técnicas */}
+                  <div className="absolute bottom-3 left-3 w-6 h-6 border-b-2 border-l-2 border-brand-blue/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 border-brand-blue/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
               </motion.div>
 
-              {/* Imagen 4 - Inferior Derecha */}
+              {/* Elementos decorativos minimalistas - Solo desktop */}
               <motion.div
-                initial={{ opacity: 0, x: 40, y: 40 }}
-                animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
-                transition={{ duration: 0.7, delay: 0.8 }}
-                whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
-                className="aspect-[4/5] rounded-lg overflow-hidden shadow-2xl ring-1 ring-white/10 group cursor-pointer"
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : {}}
+                transition={{ delay: 1.2, duration: 1 }}
+                className="hidden xl:block"
               >
-                <img 
-                  src="/images/collage4.jpg" 
-                  alt="Sistema en vuelo" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                {/* Glow azul corporativo muy sutil */}
+                <div
+                  className="absolute -top-20 -right-20 w-40 h-40 bg-brand-blue/8 rounded-full blur-3xl animate-pulse"
+                  style={{ animationDuration: "6s" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </motion.div>
-            </div>
-
-            {/* Glow sutil de fondo */}
-            <div className="absolute inset-0 -z-10 pointer-events-none">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-cyan-500/5 blur-3xl rounded-full" />
             </div>
           </motion.div>
-            {/* Glow */}
-            {/* <div className="absolute inset-0 -z-10">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-cyan-500/10 blur-3xl rounded-full" />
-            </div> */}
-          </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes gradient {
+          0%,
+          100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+        }
+        .animate-gradient {
+          animation: gradient 8s ease infinite;
+        }
+      `}</style>
     </section>
   );
 }

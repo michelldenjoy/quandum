@@ -31,7 +31,7 @@ export default function Intro() {
           transition={{ duration: 0.8 }}
           className="text-center my-4"
         >
-          <span className="text-sm tracking-[0.3em] text-blue-400/80 font-light uppercase">
+          <span className="text-sm tracking-[0.3em] text-white font-normal uppercase">
             Sistemas de ingeniería avanzada
           </span>
         </motion.div>
@@ -43,18 +43,18 @@ export default function Intro() {
           className="text-center mb-16"
         >
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-center leading-[1.1]">
-            <span className="font-extralight text-white bg-clip-text text-transparent">
+            <span className="font-medium text-white bg-clip-text text-transparent">
               Quandum{" "}
             </span>
-            <span className="bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text text-transparent font-normal">
+            <span className="font-medium bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text text-transparent ">
               Aerospace
             </span>
           </h1>
 
-          <p className="text-slate-300 text-sm md:text-base lg:text-lg max-w-3xl mx-auto mt-4 leading-relaxed">
+          {/* <p className="text-slate-300 text-sm md:text-base lg:text-lg max-w-3xl mx-auto mt-4 leading-relaxed">
             Ingeniería aeronáutica de precisión, sistemas críticos y soluciones
             a medida desde 2006.
-          </p>
+          </p> */}
         </motion.div>
 
         {/* Feature Blocks */}
@@ -66,7 +66,7 @@ export default function Intro() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, delay: idx * 0.2 }}
-              className="bg-zinc-900/40 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300"
+              className="bg-zinc-900/40 backdrop-blur-md rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300"
             >
               <div className="flex items-center gap-4 mb-4">
                 
@@ -75,7 +75,7 @@ export default function Intro() {
               <h3 className="text-2xl font-bold text-white mb-3">
                 {feature.title}
               </h3>
-              <p className="text-slate-300 text-base leading-relaxed">
+              <p className="text-slate-300 text-justify text-base leading-relaxed">
                 {feature.text}
               </p>
             </motion.div>

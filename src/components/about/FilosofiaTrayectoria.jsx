@@ -37,11 +37,11 @@ export default function FilosofiaTrayectoria() {
               </span>
             </p>
 
-            <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light">
+            <p className="text-base md:text-lg text-justify text-slate-300 leading-relaxed font-light">
               Cada proyecto lo abordamos con una combinación única de rigor
               técnico, innovación constante y pensamiento crítico. Nuestros
-              desarrollos se guían por estándares internacionales —DO-178C,
-              DO-254, DO-160, MIL-STD…— que aseguran que cada sistema que
+              desarrollos se guían por estándares internacionales: DO-178C,
+              DO-254, DO-160, MIL-STD, que aseguran que cada sistema que
               diseñamos cumple con los niveles más exigentes de seguridad y
               rendimiento.
             </p>
@@ -130,8 +130,8 @@ export default function FilosofiaTrayectoria() {
               Nuestra <span className="bg-gradient-to-r from-blue-100 via-blue-200 to-cyan-200 bg-clip-text text-transparent">Trayectoria</span>
             </h2>
 
-            <p className="text-base md:text-lg text-slate-300 leading-relaxed font-light">
-              A lo largo de casi dos décadas hemos participado en programas
+            <p className="text-base md:text-lg text-justify text-slate-300 leading-relaxed font-light">
+              A lo largo de dos décadas hemos participado en programas
               estratégicos para defensa, aeronáutica y sectores industriales de
               alta exigencia, siempre manteniendo una cultura de:
             </p>

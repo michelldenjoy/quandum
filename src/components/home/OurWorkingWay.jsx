@@ -45,31 +45,22 @@ export default function OurWorkingWay() {
             <h3 className="text-5xl font-extrabold tracking-tight">
               Nuestra forma de trabajar en aeronáutica
             </h3>
-            <p className="text-xl text-slate-300 leading-relaxed">
+            <p className="text-xl text-slate-300 text-justify leading-relaxed">
               Tratamos cada proyecto como un desafío único en el cielo y el
               espacio. Desde el concepto inicial hasta la certificación final,
               integramos ingeniería avanzada, simulación digital y pruebas
               exhaustivas para entregar soluciones fiables y de vanguardia.
             </p>
-            <p className="text-xl text-slate-300 leading-relaxed">
+            <p className="text-xl text-slate-300 text-justify leading-relaxed">
               Nuestro enfoque se basa en la innovación sostenible, la seguridad
               absoluta y la excelencia técnica, alineado con estándares
               internacionales como FAA, EASA y AS9100.
             </p>
           </div>
 
-          {/* Lado pasos visuales */}
+          {/* Lado derecho */}
           <div className="relative">
-            {/* Fondo sutil con imagen (reemplaza con tu URL real) */}
-            <div
-              className="absolute inset-0 bg-cover bg-center opacity-20 rounded-3xl"
-              style={{
-                backgroundImage:
-                  "url('https://example.com/futuristic-rocket-launch.jpg')",
-              }}
-            ></div>
-
-            <div className="relative bg-slate-800/80 backdrop-blur-md rounded-3xl p-10 shadow-2xl border border-slate-700">
+            <div className="relative bg-gradient-to-tr from-slate-800/10 via-transparent to-slate-800/10 backdrop-blur-md rounded-3xl p-10 shadow-2xl border border-slate-700">
               <h4 className="text-2xl font-bold mb-8 text-center">
                 Nuestro proceso paso a paso
               </h4>
@@ -84,10 +75,10 @@ export default function OurWorkingWay() {
                     className="flex items-start gap-6 group hover:translate-x-4 transition-transform"
                   >
                     <div className="flex-shrink-0 w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-                      <step.icon className="w-8 h-8 text-blue-400" />
+                      <step.icon className="w-8 h-8 text-slate-100" />
                     </div>
                     <div>
-                      <h5 className="text-xl font-semibold text-blue-300">
+                      <h5 className="text-xl font-semibold text-slate-100">
                         {step.title}
                       </h5>
                       <p className="text-slate-400 mt-2">{step.desc}</p>
@@ -113,7 +104,7 @@ export default function OurWorkingWay() {
           </p>
         </motion.div>
 
-        {/* FEATURES */}
+        {/* Cajones */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -136,7 +127,7 @@ export default function OurWorkingWay() {
                 key={i}
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3 }}
-                className="relative w-full rounded-xl bg-gradient-to-b from-slate-900/80 to-slate-950/90 
+                className="relative w-full rounded-xl bg-gradient-to-b from-slate-900/40 to-transparent 
                    border border-slate-800/60 px-6 py-8 text-center lg:text-left
                    shadow-lg shadow-black/20"
               >
