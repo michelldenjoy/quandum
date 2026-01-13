@@ -30,16 +30,16 @@ export default function HeroVideo({
 }) {
   return (
     <div className="w-full overflow-x-hidden bg-black pt-20 md:pt-24 lg:pt-28">
-      <section className="relative h-[80vh] min-h-[520px] w-full overflow-hidden">
+      <section className="relative h-[85vh] w-full overflow-hidden">
         {/* Background */}
         <img
           src={backgroundImage}
           alt={title}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full"
         />
 
         {/* Overlay técnico */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-slate-900/60 to-slate-950/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-slate-900/20 to-slate-950/80" />
 
         {/* Grid técnico */}
         <div

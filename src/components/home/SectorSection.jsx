@@ -72,12 +72,17 @@ export default function SectorsSection() {
           </motion.h3>
 
           {/* linea decorativa de titulo */}
+
           <motion.div
             initial={{ width: 0, opacity: 0 }}
             whileInView={{ width: "60%", opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 1 }}
-            className="h-0.5 bg-gradient-to-r from-transparent via-brand-blue to-transparent rounded-full mx-auto "
+            className="h-0.5 bg-gradient-to-r from-transparent via-brand-steel to-transparent rounded-full mb-8 mx-auto"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, transparent, #A9A9A9, transparent), repeating-linear-gradient(to right, transparent 0%, transparent 10%, #A9A9A9 10%, #A9A9A9 12%)", // Patrón de dashes metálicos
+            }}
           />
         </div>
 

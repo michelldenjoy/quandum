@@ -44,12 +44,12 @@ export default function AboutTimeline() {
     offset: ["start end", "end start"],
   });
 
-  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "110%"]);
 
   return (
-    <section ref={ref} className="relative w-full bg-black text-white py-32 overflow-hidden">
+    <section ref={ref} className="relative w-full text-white py-32  overflow-hidden">
       {/* Fondo con textura metálica muy sutil */}
-      <div className="absolute inset-0 bg-gradient-to-b from-neutral-950 via-black to-neutral-950" />
+      <div className="absolute inset-0 " />
       
       <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
         {/* Título superior */}
@@ -131,14 +131,29 @@ export default function AboutTimeline() {
           ))}
         </div>
 
-        {/* Línea final elegante */}
+
+
+
+
+
         <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.5, delay: 0.8 }}
-          className="mt-20 h-1 bg-gradient-to-r from-transparent via-brand-blue to-transparent max-w-2xl mx-auto shadow-lg shadow-brand-blue/30"
-        />
+          className="text-center"
+        >
+          <h2 className="text-5xl mt-36 md:text-6xl lg:text-7xl font-light tracking-tight">
+            <span className="text-slate-200">Y esto a penas comienza</span>{" "}
+
+          </h2>
+        </motion.div>
+
+
+
+
+
+      
+
       </div>
     </section>
   );

@@ -9,10 +9,12 @@ export default {
         brand: {
           blue: "#516288",
           pink: "#F65772",
+          dark: "001F3F"
         }
       },
       fontFamily: {
-        sans: ["Roboto", 'sans-serif'],
+        body: ["Roboto", 'sans-serif'],
+        title: ["Lilex", 'monospace'],
       }
     },
   },

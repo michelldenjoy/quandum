@@ -68,19 +68,24 @@ export default function ODSSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-4xl sm:text-5xl md:text-6xl text-center font-black tracking-tight text-black mb-6"
+            className="text-2xl sm:text-4xl md:text-4xl font-black tracking-tight text-black mb-6"
           >
-            Objetivos de Desarrollo Sostenible
+            OBJETIVOS DE DESARROLLO SOSTENIBLE
           </motion.h3>
           
-          {/* linea decorativa de titulo */}
-          <motion.div
-            initial={{ width: 0, opacity: 0 }}
-            whileInView={{ width: "60%", opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 1 }}
-            className="h-0.5 bg-gradient-to-r from-transparent via-brand-blue to-transparent rounded-full mb-8 mx-auto"
-          />
+{/* Línea decorativa segmentada */}
+<motion.div
+  initial={{ opacity: 0, x: -20 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0.3, duration: 0.6 }}
+  className="flex gap-2 mb-8"
+>
+  <span className="h-[2px] w-24 bg-brand-blue"></span>
+  <span className="h-[2px] w-10 bg-brand-blue/60"></span>
+  <span className="h-[2px] w-4 bg-brand-blue/30"></span>
+</motion.div>
+
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}

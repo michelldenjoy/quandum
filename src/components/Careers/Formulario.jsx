@@ -76,6 +76,7 @@ export default function Formulario() {
 
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [fileName, setFileName] = useState(null);
 
   /* -----------------------------------------------
      Handle inputs
@@ -88,6 +89,14 @@ export default function Formulario() {
       [name]: name === "cv" ? files[0] : value,
     }));
   };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setFileName(file.name);
+    }
+  };
+  
 
   /* -----------------------------------------------
      Validación CV
@@ -140,18 +149,15 @@ export default function Formulario() {
      Render
   ------------------------------------------------ */
   return (
-    <section className="relative py-32 px-6 bg-aerospacee overflow-hidden ">
-
-
+    <section className="relative py-32 px-6 bg-aerospace overflow-hidden ">
       <div className="relative z-10 max-w-3xl mx-auto">
         <h2 className="text-5xl font-bold text-center mb-4 text-gray-100">
           Envía tu Candidatura
         </h2>
         <p className="text-center text-gray-200 mb-16">
-        Únete a un equipo multidisciplinar donde tu talento impulsa misiones críticas y al desarrollo tecnológico.
+          Únete a un equipo multidisciplinar donde tu talento impulsa misiones
+          críticas y al desarrollo tecnológico.
         </p>
-
-        
 
         <div className="bg-white/95 backdrop-blur-sm border border-gray-300 rounded-2xl p-10 md:p-14 shadow-xl space-y-8">
           {/* Mensaje éxito */}
@@ -240,28 +246,60 @@ export default function Formulario() {
             </div>
 
             <div>
+              {/* LABEL */}
               <label className="block text-sm font-semibold text-gray-700 mb-4">
                 <Upload className="w-4 h-4 inline mr-2" />
                 Adjunta tu CV (PDF, máx. 10MB) *
               </label>
-              <input
-                type="file"
-                name="cv"
-                accept=".pdf"
-                onChange={handleChange}
-                className="block w-full text-sm text-gray-600 file:mr-6 file:py-3 file:px-6 file:rounded-lg file:border-0 file:bg-brand-blue file:text-white file:font-semibold hover:file:bg-slate-800 transition cursor-pointer"
-              />
+
+              {/* BOTÓN FILE */}
+              <label
+                className={`inline-flex items-center justify-center gap-2 px-8 py-3 text-sm uppercase tracking-widest rounded-md border clip-path-diagonal cursor-pointer transition-all duration-300
+      ${
+        fileName
+          ? "bg-transparent text-brand-blue border-brand-blue"
+          : "bg-brand-blue text-gray-200 border-gray-500 hover:bg-transparent hover:text-brand-blue"
+      }`}
+              >
+                <Upload className="w-4 h-4" />
+
+                <span className="truncate max-w-[220px]">
+                  {fileName ? fileName : "Seleccionar archivo"}
+                </span>
+
+                {/* INPUT OCULTO */}
+                <input
+                  type="file"
+                  name="cv"
+                  accept=".pdf"
+                  onChange={handleFileChange}
+                  className="hidden"
+                />
+              </label>
+
+              {/* TEXTO DE APOYO */}
+              {fileName && (
+                <p className="mt-2 text-xs text-gray-500">
+                  Archivo seleccionado
+                </p>
+              )}
             </div>
 
             <button
               type="submit"
               disabled={isSubmitting}
-              className="relative w-full py-4 bg-gradient-to-r from-brand-blue via-slate-500 to-brand-blue hover:from-slate-900 hover:via-slate-500 hover:to-slate-900 hover:shadow-blue-300/30 hover:scale-105 text-white font-semibold text-lg rounded transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/20 overflow-hidden group active:scale-[0.98]"
+              className="px-8 py-3 w-80 rounded-md text-sm uppercase tracking-widest text-gray-900 clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
             >
               {isSubmitting ? "Enviando..." : "Enviar Candidatura"}
-              <ArrowRight className="w-5 h-5" />
             </button>
           </form>
+
+          {/* px-8 py-3 text-sm uppercase tracking-widest
+        text-gray-200 
+        clip-path-diagonal
+        border border-gray-500
+        hover:bg-brand-blue hover:text-black
+        transition-all duration-300 */}
         </div>
       </div>
     </section>

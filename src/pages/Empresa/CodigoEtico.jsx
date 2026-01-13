@@ -28,7 +28,7 @@ export default function CodigoEtico() {
     <div>
       <HeroVideo
         eyebrow="Responsabilidad · Ética · Cumplimiento"
-        title="Progreso consciente"
+        title="PROGRESO CONSCIENTE"
         description="Nuestro compromiso garantiza una ingeniería responsable que protege el entorno y la sociedad."
         backgroundImage="/images/sostenible.jpg"
       ></HeroVideo>

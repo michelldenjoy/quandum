@@ -1,8 +1,11 @@
 import { useState, Fragment } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
+
+
 export default function WorkHorizontal() {
   const [active, setActive] = useState(null);
+ 
 
   const sections = [
     {
@@ -44,7 +47,6 @@ export default function WorkHorizontal() {
 
   return (
     <section className="relative bg-white py-16 lg:py-24 overflow-hidden">
-      {/* Sistema de fondo minimalista técnico */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div
           className="absolute top-1/3 left-1/4 w-[900px] h-[900px] bg-brand-blue/5 rounded-full blur-3xl animate-pulse"
@@ -55,7 +57,7 @@ export default function WorkHorizontal() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-16 lg:mb-20">
+        <div className="mb-16  lg:mb-20">
           <motion.h3
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -65,14 +67,6 @@ export default function WorkHorizontal() {
           >
             Cómo Trabajamos
           </motion.h3>
-          
-          <motion.div
-            initial={{ width: 0, opacity: 0 }}
-            whileInView={{ width: "100%", opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 1 }}
-            className="h-0.5 bg-gradient-to-r from-black via-brand-blue to-transparent rounded-full max-w-md mb-8"
-          />
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -136,7 +130,7 @@ export default function WorkHorizontal() {
                     {section.title}
                   </h4>
 
-                  {/* Preview corto */}
+                  {/* Preview  */}
                   <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-6">
                     {section.description}
                   </p>
@@ -277,7 +271,7 @@ export default function WorkHorizontal() {
                       {activeSection.description}
                     </p>
 
-                    {/* Especificaciones técnicas decorativas */}
+                    {/* Especificaciones técnicas */}
                     <div className="grid grid-cols-3 gap-4 pt-4">
                       <div className="border border-gray-200 rounded-lg p-4 bg-white">
                         <div className="text-xs text-gray-500 mb-1 uppercase tracking-wide">

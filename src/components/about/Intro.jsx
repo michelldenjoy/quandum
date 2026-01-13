@@ -21,7 +21,9 @@ const features = [
 
 export default function Intro() {
   return (
-    <section className="relative py-20 bg-aerospace overflow-hidden">
+    <section className="relative py-20 overflow-hidden">
+            <div className="absolute inset-0 bg-black/10" />
+
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <motion.div

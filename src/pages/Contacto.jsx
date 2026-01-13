@@ -110,12 +110,6 @@ export default function Contacto() {
       <section className="relative border-b border-slate-800/50">
         <div className="max-w-7xl mx-auto px-6 py-32 relative z-10">
           <div className="text-center max-w-4xl mx-auto animate-fadeIn">
-            {/* <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full mb-8 animate-scaleIn">
-              <Globe className="w-4 h-4 text-blue-400" />
-              <span className="text-sm text-blue-300 font-medium">
-                Contacto Institucional
-              </span>
-            </div> */}
 
             <h1 className="text-6xl md:text-7xl font-extralight mb-8">
               <span
@@ -214,17 +208,7 @@ export default function Contacto() {
               {/* Glow effect behind form */}
               <div className="absolute h-[88%] sm:h-[92%] md:h-[95%] lg:h-[75%] inset-1 -top-2 bottom-0 bg-gradient-to-l from-blue-400/80 via-cyan-500/20 to-blue-400/80 rounded-3xl blur-2xl opacity-30" />
               <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-10 space-y-8 shadow-2xl">
-                {submitted && (
-                  <div className="p-5 bg-emerald-500/10 border border-emerald-500/30 rounded-xl flex items-center gap-3 text-emerald-300 backdrop-blur-sm animate-scaleIn">
-                    <div className="p-2 bg-emerald-500/20 rounded-lg">
-                      <Shield className="w-5 h-5 text-emerald-400" />
-                    </div>
-                    <p className="font-medium text-sm">
-                      Mensaje recibido correctamente. Un especialista le
-                      contactará en menos de 24 horas.
-                    </p>
-                  </div>
-                )}
+   
                 <h2 className="text-4xl font-extralight text-white mb-8 flex items-center gap-3">
                   <div className="w-1 h-8 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full" />
                   Formulario de Contacto
@@ -240,7 +224,7 @@ export default function Contacto() {
                     focused={focusedInput === "name"}
                   />
                   <Input
-                    label="Cargo *"
+                    label="Cargo "
                     name="position"
                     value={form.position}
                     onChange={handleChange}
@@ -342,30 +326,47 @@ export default function Contacto() {
                 <button
                   onClick={handleSubmit}
                   disabled={isSubmitting}
-                  className="relative w-full py-4 bg-gradient-to-r from-brand-blue via-slate-500 to-brand-blue hover:from-slate-900 hover:via-slate-500 hover:to-slate-900 hover:shadow-blue-300/30 hover:scale-105 text-white font-semibold text-lg rounded transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/20 overflow-hidden group active:scale-[0.98]"
+                  className={`relative w-full px-10 py-4 text-sm uppercase tracking-[0.25em] font-medium border clip-path-diagonal transition-all duration-500
+                     ${
+                       isSubmitting
+                         ? "bg-slate-800 border-blue-500/40 text-blue-300 cursor-wait"
+                         : "bg-brand-blue border-gray-500 text-gray-200 hover:bg-transparent hover:text-brand-blue"
+                     }
+  `}
                 >
-                  {/* Shimmer effect */}
-                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                  {/* Línea de progreso técnica */}
+                  {submitted && (
+                    <div
+                      className="relative p-6 bg-slate-950/80 border border-blue-500/30 clip-path-diagonal backdrop-blur-md animate-scaleIn"
+                    >
+                      {/* Indicador lateral tipo sistema */}
+                      <div className="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-blue-400 via-cyan-400 to-blue-400" />
 
-                  <Send
-                    className={`w-5 h-5 transition-transform duration-300 ${
-                      isSubmitting
-                        ? "animate-pulse"
-                        : "group-hover:translate-x-1"
-                    }`}
-                  />
-                  <span className="relative">
-                    {isSubmitting ? "Enviando mensaje seguro..." : "Enviar "}
+                      {/* Estado */}
+                      <p className="text-[11px] tracking-[0.3em] uppercase text-blue-400 mb-3">
+                        Transmission status · OK
+                      </p>
+
+                      {/* Mensaje principal */}
+                      <p className="text-sm text-slate-300 leading-relaxed">
+                        Su mensaje ha sido registrado correctamente en el
+                        sistema de comunicación institucional.
+                        <br />
+                        Un ingeniero responsable se pondrá en contacto con usted
+                        en un plazo máximo de
+                        <span className="text-blue-300 font-medium">
+                          {" "}
+                          24 horas laborables
+                        </span>
+                        .
+                      </p>
+                    </div>
+                  )}
+
+                  <span className="relative z-10">
+                    {isSubmitting ? "Enviando mensaje" : "Solicitar Información"}
                   </span>
                 </button>
-
-                {/* <div className="pt-6 border-t border-slate-800/50">
-                  <p className="text-xs text-slate-500 text-center flex items-center justify-center gap-2">
-                    <Shield className="w-4 h-4 text-blue-400" />
-                    Comunicación cifrada y protegida según RGPD y protocolos
-                    corporativos de seguridad
-                  </p>
-                </div> */}
               </div>
             </div>
           </div>
@@ -436,18 +437,16 @@ function ContactCard({ item }) {
         opacity: 0,
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      {/* <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" /> */}
 
       <div className="relative flex gap-3 sm:gap-5 p-4 sm:p-6 bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-2xl hover:border-blue-500/30 transition-all duration-300 group-hover:translate-x-2">
         <div className="flex-shrink-0">
-          <div className="p-2 sm:p-3 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl border border-blue-500/30 group-hover:border-blue-400/50 transition-colors duration-300">
-            <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" />
+          <div className="flex-shrink-0 w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+            <item.icon className="w-8 h-8 text-slate-100" />
           </div>
         </div>
         <div className="flex-1 min-w-0 overflow-hidden">
-          <p className="font-medium text-slate-200 mb-2 text-sm sm:text-base group-hover:text-white transition-colors duration-300">
-            {item.title}
-          </p>
+          <p className="text-xl font-semibold text-white">{item.title}</p>
           <div className="text-slate-400 leading-relaxed text-xs sm:text-sm group-hover:text-slate-300 transition-colors duration-300 break-words">
             {item.content}
           </div>

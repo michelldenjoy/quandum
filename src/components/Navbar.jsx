@@ -46,7 +46,7 @@ export default function Navbar() {
       ],
     },
     {
-      name: "Servicios",
+      name: "Soluciones",
       dropdown: [
         { name: "Hardware", path: "/servicios/hardware" },
         { name: "Software", path: "/servicios/software" },

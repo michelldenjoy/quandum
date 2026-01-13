@@ -99,14 +99,14 @@ export default function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
-              className="mt-8 text-lg md:text-xl text-slate-200 leading-relaxed max-w-3xl"
+              className="mt-8 text-lg md:text-xl text-justify text-slate-200 leading-relaxed max-w-3xl"
             >
               Diseñamos y fabricamos sistemas electrónicos y optoelectrónicos
               críticos para aplicaciones aeroespaciales, cumpliendo los más
               exigentes estándares de fiabilidad, certificación y rendimiento.
             </motion.p>
 
-            {/* CTA */}
+            {/* BOTONES */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -115,24 +115,14 @@ export default function Hero() {
             >
               <a
                 href="/empresa/about"
-                className="inline-flex items-center justify-center
-                           px-8 py-3 rounded-full
-                           bg-cyan-500/10 text-cyan-300
-                           border border-cyan-400/40
-                           hover:bg-cyan-500/20 hover:text-white
-                           transition-all duration-300"
+                className="px-8 py-3 rounded-md text-sm uppercase tracking-widest text-gray-200 bg-brand-blue clip-path-diagonal border border-gray-500 hover:bg-transparent transition-all duration-300"
               >
                 Conócenos
               </a>
 
               <a
                 href="/contacto"
-                className="inline-flex items-center justify-center
-                           px-8 py-3 rounded-full
-                           text-white
-                           border border-white/20
-                           hover:border-cyan-400/40 hover:bg-white/5
-                           transition-all duration-300"
+                className="px-8 py-3 rounded-md text-sm uppercase tracking-widest text-white clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
               >
                 Contacto
               </a>

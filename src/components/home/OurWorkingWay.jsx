@@ -75,7 +75,7 @@ export default function OurWorkingWay() {
                     className="flex items-start gap-6 group hover:translate-x-4 transition-transform"
                   >
                     <div className="flex-shrink-0 w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-                      <step.icon className="w-8 h-8 text-slate-100" />
+                      <step.icon className="w-8 h-8 text-white" />
                     </div>
                     <div>
                       <h5 className="text-xl font-semibold text-slate-100">

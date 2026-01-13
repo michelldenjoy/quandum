@@ -16,9 +16,9 @@ export default function Calidad() {
 
       <HeroVideo
         eyebrow="Nuestra · Politica de Calidad"
-        title="Compromiso con la calidad"
+        title="COMPROMISO Y CALIDAD"
         description="Excelencia aeronáutica respaldada por estándares internacionales."
-        backgroundImage="/images/about-1.jpg"
+        backgroundImage="/images/about-1.jpeg"
       />
 
     <section >

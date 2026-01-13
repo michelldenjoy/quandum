@@ -17,9 +17,10 @@ export default function AboutFeatures() {
               transition={{ duration: 0.7 }}
               className="order-2 lg:order-1"
             >
-              <h4 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-black">
-                Excelencia técnica.
+              <h4 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 text-black">
+                EXCELENCIA TÉCNICA.
               </h4>
+              
 
               <p className="text-slate-900 text-lg text-justify leading-relaxed mb-6">
                 Contamos con dos décadas de experiencia colectiva
@@ -82,8 +83,8 @@ export default function AboutFeatures() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <h4 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-black">
-                Compromiso y Fiabilidad.
+              <h4 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 text-black">
+                COMPROMISO Y FIABILIDAD.
               </h4>
 
               <p className="text-slate-900 text-justify text-lg leading-relaxed mb-6">

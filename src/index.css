@@ -8,9 +8,14 @@
 @layer base {
   body {
     @apply bg-black text-white;
-    /* font-family: "Sekuya", system-ui; */
+    font-family: theme('fontFamily.body');
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: theme('fontFamily.title');
   }
 }
+
 
 /* =========================
    UTILITIES – FONDOS CORPORATIVOS
@@ -170,6 +175,17 @@
     z-index: 1;
   }
 }
+
+.clip-path-diagonal {
+  clip-path: polygon(
+    5% 0,
+    100% 0,
+    95% 100%,
+    0 100%
+  );
+}
+
+
 
 /* .bg-aerospace {
   position: relative;
