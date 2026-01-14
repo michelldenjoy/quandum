@@ -128,7 +128,7 @@ export default function TrabajaConNosotros() {
     <div className="min-h-screen">
       <HeroVideo
         eyebrow="Careers · Engineering · Innovation"
-        title="TU CARRERA DESPEGA AQUI"
+        title="Tu carrera despega aquí"
         description="Únete a un equipo multidisciplinar donde tu talento impulsa el desarrollo tecnológico."
         backgroundImage="/careerbg.jpg"
       >
@@ -139,7 +139,7 @@ export default function TrabajaConNosotros() {
               block: "start",
             })
           }
-          className="px-8 py-3 rounded-md text-sm uppercase tracking-widest text-white clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
+          className="px-8 py-3 rounded-md text-sm uppercase hover:scale-105 tracking-widest text-white clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
         >
           Únete al equipo
           <span className="group-hover:translate-x-1 transition-transform duration-300">

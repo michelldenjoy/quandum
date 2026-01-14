@@ -1,11 +1,11 @@
 import { motion } from "motion/react";
 
-export default function StoryStrip() {
+export default function InfraStrip() {
   return (
     <section className="relative w-full  h-[40vh]  overflow-hidden">
       {/* Imagen de fondo */}
       {/* <img
-        src="/images/"
+        src="/images/" 
         alt="Company history"
         className="absolute inset-0 w-full h-full object-cover"
       /> */}
@@ -23,12 +23,12 @@ export default function StoryStrip() {
       >
         {/* Título */}
         <h2 className="text-white text-3xl md:text-6xl font-semibold tracking-[0.25em] mb-8">
-          NUESTRA HISTORIA
+          NUESTRA INFRAESTRUCTURA
         </h2>
 
         {/* Botón */}
         <a
-          href="/empresa/historia"
+          href="/empresa/infraestructuras"
           className="px-8 py-3 w-80 rounded-md text-sm uppercase tracking-widest text-slate-100 clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
         >
           Ver  

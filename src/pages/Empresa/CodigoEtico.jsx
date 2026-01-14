@@ -2,6 +2,7 @@ import { FileCheckCorner, Download, ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
 import ODSSection from "../../components/etico/ODSSection";
 import HeroVideo from "../../components/about/HeroVideo";
+import StarfieldNebula from "../../components/3d/StarfieldNebula";
 
 export default function CodigoEtico() {
   const policies = [
@@ -28,7 +29,7 @@ export default function CodigoEtico() {
     <div>
       <HeroVideo
         eyebrow="Responsabilidad · Ética · Cumplimiento"
-        title="PROGRESO CONSCIENTE"
+        title="Progreso Consciente"
         description="Nuestro compromiso garantiza una ingeniería responsable que protege el entorno y la sociedad."
         backgroundImage="/images/sostenible.jpg"
       ></HeroVideo>
@@ -43,23 +44,24 @@ export default function CodigoEtico() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-slate-100 tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight">
             <span className="text-white">Código Ético y Cumplimiento </span>
           </h1>
 
-          <p className="text-base md:text-lg text-slate-300 mt-6 max-w-3xl mx-auto leading-relaxed font-light">
-            En{" "}
+          <p className="text-base md:text-lg text-slate-300 mt-6 max-w-4xl mx-auto leading-relaxed font-light">
+            {/* En{" "}
             <span className="text-white bg-clip-text font-extrabold text-transparent">
               Quandum{" "}
             </span>{" "}
             <span className="bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text font-semibold text-transparent">
               Aerospace
-            </span>{" "}
-            nos comprometemos con los más altos estándares éticos y de
+            </span>{" "} */}
+            Nos comprometemos con los más altos estándares éticos y de
             cumplimiento corporativo. Nuestras políticas reflejan nuestra
             dedicación a la integridad, transparencia y excelencia operacional.
           </p>
         </motion.div>
+        <StarfieldNebula />
 
         {/* Línea decorativa  /*/}
         {/* <motion.div
@@ -78,7 +80,7 @@ export default function CodigoEtico() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 shadow-2xl border border-slate-700 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20 hover:-translate-y-1"
+              className="group relative bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 shadow-2xl border border-slate-700 rounded-2xl overflow-hidden hover:border-brand-blue transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20 hover:-translate-y-1"
             >
               <div className="p-6 flex flex-col h-full">
                 {/* Icono */}
@@ -90,7 +92,7 @@ export default function CodigoEtico() {
 
                 {/* Contenido */}
                 <div className="flex-grow">
-                  <h2 className="text-lg font-semibold text-white mb-2 text-center group-hover:text-cyan-300 transition-colors">
+                  <h2 className="text-lg font-semibold text-white mb-2 text-center  transition-colors">
                     {policy.title}
                   </h2>
                   <p className="text-sm text-slate-400 text-center mb-4">
@@ -116,15 +118,13 @@ export default function CodigoEtico() {
               </div>
 
               {/* Efecto de hover */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/10 to-transparent"></div>
-              </div>
+
             </motion.div>
           ))}
         </div>
 
         {/* Línea de cierre */}
-        <motion.div
+        {/* <motion.div
           initial={{ scaleX: 0, opacity: 0 }}
           whileInView={{ scaleX: 1, opacity: 1 }}
           viewport={{ once: true }}
@@ -132,7 +132,7 @@ export default function CodigoEtico() {
           className="mt-16 relative"
         >
           <div className="h-1 bg-gradient-to-r from-transparent via-brand-blue to-transparent my-20 max-w-3xl mx-auto" />
-        </motion.div>
+        </motion.div> */}
       </div>
     </div>
   );

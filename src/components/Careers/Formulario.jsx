@@ -96,7 +96,6 @@ export default function Formulario() {
       setFileName(file.name);
     }
   };
-  
 
   /* -----------------------------------------------
      Validación CV
@@ -159,7 +158,7 @@ export default function Formulario() {
           críticas y al desarrollo tecnológico.
         </p>
 
-        <div className="bg-white/95 backdrop-blur-sm border border-gray-300 rounded-2xl p-10 md:p-14 shadow-xl space-y-8">
+        <div className="bg-white/75 backdrop-blur-sm border border-gray-300 rounded-2xl p-10 md:p-14 shadow-xl space-y-8">
           {/* Mensaje éxito */}
           {status === "success" && (
             <div className="p-6 bg-green-50 border border-green-200 rounded-xl flex items-center gap-4">
@@ -254,11 +253,11 @@ export default function Formulario() {
 
               {/* BOTÓN FILE */}
               <label
-                className={`inline-flex items-center justify-center gap-2 px-8 py-3 text-sm uppercase tracking-widest rounded-md border clip-path-diagonal cursor-pointer transition-all duration-300
+                className={`inline-flex items-center justify-center gap-2 px-8 py-3 text-sm uppercase tracking-widest rounded-md border clip-path-diagonal hover:scale-105 cursor-pointer transition-all duration-300
       ${
         fileName
           ? "bg-transparent text-brand-blue border-brand-blue"
-          : "bg-brand-blue text-gray-200 border-gray-500 hover:bg-transparent hover:text-brand-blue"
+          : "bg-brand-blue text-gray-200 border-gray-500 hover:bg-transparent hover:text-black"
       }`}
               >
                 <Upload className="w-4 h-4" />
@@ -288,7 +287,7 @@ export default function Formulario() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-8 py-3 w-80 rounded-md text-sm uppercase tracking-widest text-gray-900 clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
+              className="px-8 py-3 w-80 hover:scale-105 bg-brand-blue rounded-md text-sm uppercase tracking-widest text-white clip-path-diagonal border border-gray-500 hover:bg-transparent hover:text-black transition-all duration-300"
             >
               {isSubmitting ? "Enviando..." : "Enviar Candidatura"}
             </button>

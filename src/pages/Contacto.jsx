@@ -326,7 +326,7 @@ export default function Contacto() {
                 <button
                   onClick={handleSubmit}
                   disabled={isSubmitting}
-                  className={`relative w-full px-10 py-4 text-sm uppercase tracking-[0.25em] font-medium border clip-path-diagonal transition-all duration-500
+                  className={`relative w-full px-10 py-4 text-sm uppercase hover:scale-105 tracking-[0.25em] font-medium border clip-path-diagonal transition-all duration-500
                      ${
                        isSubmitting
                          ? "bg-slate-800 border-blue-500/40 text-blue-300 cursor-wait"

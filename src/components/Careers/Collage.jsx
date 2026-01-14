@@ -8,12 +8,12 @@ export default function Collage() {
   return (
     <section ref={ref} className="relative py-16 md:py-24 bg-white overflow-hidden">
       
-      {/* Fondo técnico minimalista */}
+      {/* Fondo */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         {/* Grid técnico sutil */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
         
-        {/* Glow azul muy sutil */}
+        {/* Glow*/}
         <div
           className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-brand-blue/5 rounded-full blur-3xl"
         />
@@ -27,7 +27,7 @@ export default function Collage() {
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="space-y-6 md:space-y-8 order-2 lg:order-1"
+            className="space-y-6 md:space-y-8 order-1"
           >
             {/* Título principal */}
             <div className="space-y-4 md:space-y-6">
@@ -37,9 +37,9 @@ export default function Collage() {
                 transition={{ delay: 0.3, duration: 0.7 }}
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.05]"
               >
-                <span className="block text-black">Construimos el futuro</span>
-                <span className="block mt-2 bg-gradient-to-r from-black via-brand-blue to-black bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
-                  de la aviación
+                <span className="block text-black">TALENTO TÉCNICO PARA  </span>
+                <span className="block mt-2 bg-gradient-to-r from-brand-blue to-black bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                  MISIONES REALES
                 </span>
               </motion.h2>
 
@@ -61,7 +61,7 @@ export default function Collage() {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: 0.5, duration: 0.7 }}
-              className="space-y-4 md:space-y-5 text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed"
+              className="space-y-4 md:space-y-5 text-base text-justify sm:text-lg lg:text-xl text-gray-700 leading-relaxed"
             >
               <p>
                 Creemos que la ingeniería es una disciplina que combina rigor
@@ -83,7 +83,7 @@ export default function Collage() {
             initial={{ opacity: 0, x: 40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative order-1 lg:order-2"
+            className="relative order-2 lg:order-2"
           >
             <div className="grid grid-cols-2 gap-3 sm:gap-3 md:gap-2 h-[300px] sm:h-[500px] md:h-[500px] lg:h-[400px]">
               

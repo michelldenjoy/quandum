@@ -30,8 +30,8 @@ export default function Navbar() {
       name: "Empresa",
       dropdown: [
         { name: "Quienes somos", path: "/empresa/about" },
-        { name: "Infraestructuras", path: "/empresa/infraestructuras" },
-        { name: "Historia", path: "/empresa/historia" },
+        // { name: "Infraestructuras", path: "/empresa/infraestructuras" },
+        // { name: "Historia", path: "/empresa/historia" },
 
         // 🔽 Enlaces integrados desde "Sobre Quandum"
         { name: "Politica de Calidad", path: "/sobre-quandum/calidad" },

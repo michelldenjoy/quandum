@@ -16,7 +16,7 @@ export default function Calidad() {
 
       <HeroVideo
         eyebrow="Nuestra · Politica de Calidad"
-        title="COMPROMISO Y CALIDAD"
+        title="Compromiso y Calidad"
         description="Excelencia aeronáutica respaldada por estándares internacionales."
         backgroundImage="/images/about-1.jpeg"
       />
@@ -327,7 +327,7 @@ export default function Calidad() {
           transition={{ duration: 0.8 }}
           className="text-center mt-24 pb-12"
         >
-          <p className="text-slate-400 text-sm tracking-wider italic max-w-2xl mx-auto">
+          <p className="text-slate-400 text-3xl tracking-wider italic max-w-7xl mx-auto">
             "Nuestra misión es entregar soluciones aeroespaciales que superen
             las expectativas, manteniendo los más altos estándares de calidad y
             seguridad en cada proyecto"

@@ -63,36 +63,37 @@ export default function ODSSection() {
       <div className="max-w-7xl mx-auto px-6 ">
         {/* Header */}
         <div className="mb-16 lg:mb-20">
-          <motion.h3
+          {/* <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-2xl sm:text-4xl md:text-4xl font-black tracking-tight text-black mb-6"
+            className="text-2xl sm:text-4xl md:text-4xl text-center font-black tracking-tight text-black mb-6"
           >
-            OBJETIVOS DE DESARROLLO SOSTENIBLE
-          </motion.h3>
-          
-{/* Línea decorativa segmentada */}
-<motion.div
-  initial={{ opacity: 0, x: -20 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  viewport={{ once: true }}
-  transition={{ delay: 0.3, duration: 0.6 }}
-  className="flex gap-2 mb-8"
->
-  <span className="h-[2px] w-24 bg-brand-blue"></span>
-  <span className="h-[2px] w-10 bg-brand-blue/60"></span>
-  <span className="h-[2px] w-4 bg-brand-blue/30"></span>
-</motion.div>
+                       En Quandum Aerospace alineamos nuestra actividad con la Agenda 2030
+            de Naciones Unidas y contribuimos activamente en áreas clave para un
+            futuro sostenible.
+          </motion.p>
 
+          
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="flex gap-2 mb-8"
+          >
+            <span className="h-[2px] w-24 bg-brand-blue"></span>
+            <span className="h-[2px] w-10 bg-brand-blue/60"></span>
+            <span className="h-[2px] w-4 bg-brand-blue/30"></span>
+          </motion.div> */}
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-gray-600 text-justify text-base mx-auto sm:text-lg md:text-xl max-w-3xl leading-relaxed"
+            className="text-gray-600  text-4xl text-center leading-relaxed"
           >
             En Quandum Aerospace alineamos nuestra actividad con la Agenda 2030
             de Naciones Unidas y contribuimos activamente en áreas clave para un

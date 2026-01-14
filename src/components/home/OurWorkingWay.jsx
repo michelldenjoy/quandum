@@ -42,7 +42,7 @@ export default function OurWorkingWay() {
         >
           {/* Lado texto */}
           <div className="space-y-8">
-            <h3 className="text-5xl font-extrabold tracking-tight">
+            <h3 className="text-6xl font-extrabold tracking-tight">
               Nuestra forma de trabajar en aeronáutica
             </h3>
             <p className="text-xl text-slate-300 text-justify leading-relaxed">
@@ -90,16 +90,30 @@ export default function OurWorkingWay() {
           </div>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: "easeOut" }}
           className="text-center my-20 max-w-4xl mx-auto"
         >
-          <p className="text-2xl text-white overflow-hidden leading-relaxed">
+          <p className="text-3xl text-white overflow-hidden leading-relaxed">
             Desarrollamos tecnología que no se reemplaza.
             <br />
+            Se diseña para cumplir su misión.
+          </p>
+        </motion.div> */}
+
+        {/* Footer con compromiso */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mt-24 pb-12"
+        >
+          <p className="text-slate-400 text-3xl tracking-wider italic max-w-3xl mx-auto">
+            Desarrollamos tecnología que no se reemplaza. <br />
             Se diseña para cumplir su misión.
           </p>
         </motion.div>

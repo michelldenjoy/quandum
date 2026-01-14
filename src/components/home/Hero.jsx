@@ -95,16 +95,16 @@ export default function Hero() {
             </h1>
 
             {/* Descripción */}
-            <motion.p
+            {/* <motion.p
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
               className="mt-8 text-lg md:text-xl text-justify text-slate-200 leading-relaxed max-w-3xl"
             >
               Diseñamos y fabricamos sistemas electrónicos y optoelectrónicos
-              críticos para aplicaciones aeroespaciales, cumpliendo los más
+              críticos para el sector aeronáutico, cumpliendo los más
               exigentes estándares de fiabilidad, certificación y rendimiento.
-            </motion.p>
+            </motion.p> */}
 
             {/* BOTONES */}
             <motion.div
@@ -115,14 +115,14 @@ export default function Hero() {
             >
               <a
                 href="/empresa/about"
-                className="px-8 py-3 rounded-md text-sm uppercase tracking-widest text-gray-200 bg-brand-blue clip-path-diagonal border border-gray-500 hover:bg-transparent transition-all duration-300"
+                className="px-8 py-3 hover:scale-105 rounded-md text-sm uppercase tracking-widest text-gray-200 bg-brand-blue clip-path-diagonal border border-gray-500 hover:bg-transparent transition-all duration-300"
               >
                 Conócenos
               </a>
 
               <a
                 href="/contacto"
-                className="px-8 py-3 rounded-md text-sm uppercase tracking-widest text-white clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
+                className="px-8 py-3 hover:scale-105 rounded-md text-sm uppercase tracking-widest text-white clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
               >
                 Contacto
               </a>

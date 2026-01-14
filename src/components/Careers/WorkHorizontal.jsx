@@ -267,7 +267,7 @@ export default function WorkHorizontal() {
 
                     <div className="h-px bg-gradient-to-r from-black via-brand-blue to-transparent" />
 
-                    <p className="text-lg text-gray-700 leading-relaxed">
+                    <p className="text-lg text-gray-700 text-justify leading-relaxed">
                       {activeSection.description}
                     </p>
 

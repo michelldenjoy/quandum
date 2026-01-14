@@ -11,11 +11,7 @@ export default function SectorsSection() {
       number: "01",
       short: "Sistemas electrónicos y optoelectrónicos para aeronaves.",
       image: "/aeroespacial.jpg",
-      description: `
-        Desarrollo de sistemas críticos embarcados, electrónica certificable,
-        optoelectrónica y soluciones diseñadas para operar en entornos extremos
-        bajo estándares aeronáuticos internacionales.
-      `,
+      description: `Desarrollo de sistemas críticos embarcados, electrónica certificable, optoelectrónica y soluciones diseñadas para operar en entornos extremos bajo estándares aeronáuticos internacionales.`,
       specs: ["DO-178C", "DO-254", "ARP4754A"],
     },
     {
@@ -24,10 +20,7 @@ export default function SectorsSection() {
       number: "02",
       short: "Soluciones certificables para entornos de alta exigencia.",
       image: "/defensa.jpg",
-      description: `
-        Ingeniería avanzada aplicada a programas militares, con foco en
-        fiabilidad, robustez y cumplimiento normativo MIL-STD y RTCA.
-      `,
+      description: `Ingeniería avanzada aplicada a programas militares, con foco en fiabilidad, robustez y cumplimiento normativo MIL-STD y RTCA.`,
       specs: ["MIL-STD-810", "MIL-STD-461", "RTCA"],
     },
     {
@@ -36,11 +29,7 @@ export default function SectorsSection() {
       number: "03",
       short: "Automatización, control e instrumentación avanzada.",
       image: "industrial.jpg",
-      description: `
-        Diseño y desarrollo de sistemas industriales especiales, integrando
-        electrónica, software y mecánica para aplicaciones donde la precisión,
-        la continuidad operativa y la fiabilidad son esenciales.
-      `,
+      description: `Diseño y desarrollo de sistemas industriales especiales, integrando electrónica, software y mecánica para aplicaciones donde la precisión, la continuidad operativa y la fiabilidad son esenciales.`,
       specs: ["IEC 61508", "ISO 13849", "IEC 62061"],
     },
   ];
@@ -291,7 +280,7 @@ export default function SectorsSection() {
 
                     <div className="h-px bg-gradient-to-r from-black via-brand-blue to-transparent" />
 
-                    <p className="text-lg text-gray-700 leading-relaxed whitespace-pre-line">
+                    <p className="text-lg text-gray-700 text-justify leading-relaxed whitespace-pre-line">
                       {activeSector.description}
                     </p>
 
