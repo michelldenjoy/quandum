@@ -43,7 +43,7 @@ export default function OurWorkingWay() {
           {/* Lado texto */}
           <div className="space-y-8">
             <h3 className="text-6xl font-extrabold tracking-tight">
-              Nuestra forma de trabajar en aeronáutica
+              Nuestra forma de trabajar
             </h3>
             <p className="text-xl text-slate-300 text-justify leading-relaxed">
               Tratamos cada proyecto como un desafío único en el cielo y el
@@ -59,35 +59,67 @@ export default function OurWorkingWay() {
           </div>
 
           {/* Lado derecho */}
-          <div className="relative">
-            <div className="relative bg-gradient-to-tr from-slate-800/10 via-transparent to-slate-800/10 backdrop-blur-md rounded-3xl p-10 shadow-2xl border border-slate-700">
-              <h4 className="text-2xl font-bold mb-8 text-center">
-                Nuestro proceso paso a paso
-              </h4>
-              <ul className="space-y-8">
-                {steps.map((step, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.2, duration: 0.8 }}
-                    className="flex items-start gap-6 group hover:translate-x-4 transition-transform"
-                  >
-                    <div className="flex-shrink-0 w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-                      <step.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <div>
-                      <h5 className="text-xl font-semibold text-slate-100">
-                        {step.title}
-                      </h5>
-                      <p className="text-slate-400 mt-2">{step.desc}</p>
-                    </div>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
+          {/* Lado derecho – enfoque ingeniería */}
+<div className="relative">
+  <div className="rounded-2xl border border-slate-800 bg-slate-900/40 px-10 py-12">
+    <h4 className="text-sm uppercase tracking-widest text-slate-400 mb-10">
+      Engineering workflow
+    </h4>
+
+    <ol className="space-y-10">
+      {[
+        {
+          step: "01",
+          title: "Mission & System Requirements",
+          desc: "Definición funcional, análisis de riesgos, normativa aplicable y criterios de certificación.",
+        },
+        {
+          step: "02",
+          title: "Preliminary & Detailed Design",
+          desc: "Arquitectura de sistema, diseño mecánico y eléctrico, simulación y análisis estructural.",
+        },
+        {
+          step: "03",
+          title: "Verification & Validation",
+          desc: "Ensayos funcionales, ambientales y de vuelo conforme a estándares aeronáuticos.",
+        },
+        {
+          step: "04",
+          title: "Certification & Lifecycle Support",
+          desc: "Soporte en certificación, documentación técnica y continuidad operativa.",
+        },
+      ].map((item, index) => (
+        <motion.li
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: index * 0.15 }}
+          className="grid grid-cols-[60px_1fr] gap-6"
+        >
+          {/* Número */}
+          <div className="text-3xl font-light text-blue-500 tracking-tight">
+            {item.step}
           </div>
+
+          {/* Contenido */}
+          <div>
+            <h5 className="text-lg font-semibold text-slate-100">
+              {item.title}
+            </h5>
+            <p className="mt-2 text-slate-400 leading-relaxed">
+              {item.desc}
+            </p>
+
+            {/* Línea técnica */}
+            <div className="mt-6 h-px bg-gradient-to-r from-blue-500/40 via-slate-700/40 to-transparent" />
+          </div>
+        </motion.li>
+      ))}
+    </ol>
+  </div>
+</div>
+
         </motion.div>
 
         {/* <motion.div

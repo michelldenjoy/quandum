@@ -22,7 +22,7 @@ export default function InfraStrip() {
         className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6"
       >
         {/* Título */}
-        <h2 className="text-white text-3xl md:text-6xl font-semibold tracking-[0.25em] mb-8">
+        <h2 className="text-white text-2xl md:text-6xl font-semibold tracking-[0.25em] mb-8">
           NUESTRA INFRAESTRUCTURA
         </h2>
 

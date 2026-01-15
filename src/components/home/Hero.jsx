@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 
-const title = "Ingeniería que impulsa el futuro del vuelo";
+const title = "Ingeniería especializada en sistemas de vuelo";
 
 const container = {
   hidden: {},

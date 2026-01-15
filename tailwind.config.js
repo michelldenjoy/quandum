@@ -14,7 +14,7 @@ export default {
       },
       fontFamily: {
         body: ["Roboto", 'sans-serif'],
-        title: ["Lilex", 'monospace'],
+        title: ["Play", 'sans-serif'],
       }
     },
   },

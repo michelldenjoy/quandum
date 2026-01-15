@@ -29,7 +29,7 @@ export default function StarfieldNebula() {
 
     // NEBULA
     const textureLoader = new THREE.TextureLoader();
-    const nebulaTexture = textureLoader.load("/nebula-blue.jpg", () =>
+    const nebulaTexture = textureLoader.load("/nebula-blu.jpg", () =>
       console.log("NEBULA CARGADA OK")
     );
 

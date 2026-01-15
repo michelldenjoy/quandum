@@ -13,7 +13,7 @@ export default function QuienesSomos() {
     <div>
       <HeroVideo
         eyebrow="Quienes · Somos "
-        title="Ingeniería con propósito"
+        title="Experiencia técnica"
         description="Desarrollamos tecnología avanzada para el sector aeronáutico y sistemas críticos."
         // description="diseña, desarrolla y fabrica dispositivos y sistemas electrónicos y optoelectrónicos de forma específica para el mercado Aeroespacial y de forma general para aplicaciones industriales especiales."
         backgroundImage="/images/about-hero.jpeg"

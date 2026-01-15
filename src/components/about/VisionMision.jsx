@@ -100,7 +100,7 @@ export default function VisionMision() {
             </h2>
 
             <p className="text-base md:text-lg text-justify text-slate-300 leading-relaxed font-light">
-              Nuestra misión es diseñar, desarrollar y validar soluciones
+              Diseñar, desarrollar y validar soluciones
               tecnológicas a medida, acompañando a nuestros clientes en todo el
               ciclo de vida del proyecto, desde la fase conceptual hasta la
               entrega final. Trabajamos bajo estrictos estándares

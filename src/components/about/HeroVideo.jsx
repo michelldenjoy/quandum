@@ -27,6 +27,7 @@ export default function HeroVideo({
   description,
   backgroundImage,
   children,
+  imagePosition = "center",
 }) {
   return (
     <div className="w-full overflow-x-hidden bg-black pt-16 sm:pt-20 md:pt-24 lg:pt-28">
@@ -40,6 +41,7 @@ export default function HeroVideo({
             loading="eager"
             decoding="async"
             style={{
+              objectPosition: imagePosition,
               imageRendering: 'high-quality',
               WebkitBackfaceVisibility: 'hidden',
               backfaceVisibility: 'hidden',
