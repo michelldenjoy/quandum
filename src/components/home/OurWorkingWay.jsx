@@ -42,7 +42,7 @@ export default function OurWorkingWay() {
         >
           {/* Lado texto */}
           <div className="space-y-8">
-            <h3 className="text-6xl font-extrabold tracking-tight">
+            <h3 className="text-6xl tracking-tight">
               Nuestra forma de trabajar
             </h3>
             <p className="text-xl text-slate-300 text-justify leading-relaxed">
