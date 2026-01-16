@@ -14,7 +14,7 @@ export default function IntroProducts() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-4xl uppercase sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black tracking-tight text-black mb-6"
+              className="text-4xl uppercase sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black tracking-tight text-black mt-6"
             >
               Soluciones para{" "}
               <span className="bg-gradient-to-r from-brand-blue via-slate-800 to-brand-blue bg-clip-text text-transparent font-bold animate-gradient bg-[length:200%_auto]">
@@ -39,7 +39,7 @@ export default function IntroProducts() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-slate-900 text-base md:text-lg text-justify leading-relaxed"
+            className="text-slate-900 text-base md:text-xl text-justify mt-6 leading-relaxed"
           >
             En Quandum Aerospace llevamos a cabo el diseño, desarrollo e integración de sistemas electrónicos, software y mecánicos para aplicaciones aeronáuticas y de defensa.
             <br />

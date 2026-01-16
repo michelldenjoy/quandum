@@ -1,8 +1,9 @@
 import { motion } from "motion/react";
+import StarfieldNebula from "../3d/StarfieldNebula";
 
 export default function StoryStrip() {
   return (
-    <section className="relative w-full  h-[40vh]  overflow-hidden">
+    <section className="relative w-full  h-[30vh]  overflow-hidden">
       {/* Imagen de fondo */}
       {/* <img
         src="/images/"
@@ -12,6 +13,7 @@ export default function StoryStrip() {
 
       {/* Overlay */}
       <div className="absolute inset-0 " />
+      <StarfieldNebula />
 
       {/* Contenido */}
       <motion.div
@@ -22,14 +24,14 @@ export default function StoryStrip() {
         className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6"
       >
         {/* Título */}
-        <h2 className="text-white text-3xl md:text-6xl font-semibold tracking-[0.25em] mb-8">
+        <h2 className="text-white text-3xl md:text-5xl font-semibold tracking-[0.25em] mb-9">
           NUESTRA HISTORIA
         </h2>
 
         {/* Botón */}
         <a
           href="/empresa/historia"
-          className="px-8 py-3 w-80 rounded-md text-sm uppercase tracking-widest text-slate-100 clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
+          className="px-8 py-4 w-80 mb-10 rounded-md text-sm uppercase tracking-widest text-slate-100 clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
         >
           Ver  
         </a>

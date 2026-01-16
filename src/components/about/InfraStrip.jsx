@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 export default function InfraStrip() {
   return (
-    <section className="relative w-full  h-[40vh]  overflow-hidden">
+    <section className="relative w-full  h-[30vh]  overflow-hidden">
       {/* Imagen de fondo */}
       {/* <img
         src="/images/" 
@@ -22,14 +22,14 @@ export default function InfraStrip() {
         className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6"
       >
         {/* Título */}
-        <h2 className="text-white text-2xl md:text-6xl font-semibold tracking-[0.25em] mb-8">
+        <h2 className="text-white text-2xl md:text-5xl font-semibold tracking-[0.25em] mb-8">
           NUESTRA INFRAESTRUCTURA
         </h2>
 
         {/* Botón */}
         <a
           href="/empresa/infraestructuras"
-          className="px-8 py-3 w-80 rounded-md text-sm uppercase tracking-widest text-slate-100 clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
+          className="px-8 py-4 w-80 rounded-md text-sm uppercase tracking-widest text-slate-100 clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
         >
           Ver  
         </a>

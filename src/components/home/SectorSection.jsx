@@ -55,7 +55,7 @@ export default function SectorsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-black mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl tracking-tight text-black mb-6"
           >
             Sectores en los que operamos
           </motion.h3>

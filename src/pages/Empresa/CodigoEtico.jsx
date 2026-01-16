@@ -1,28 +1,9 @@
-import { FileCheckCorner, Download, ExternalLink } from "lucide-react";
-import { motion } from "motion/react";
 import ODSSection from "../../components/etico/ODSSection";
 import HeroVideo from "../../components/about/HeroVideo";
-import StarfieldNebula from "../../components/3d/StarfieldNebula";
+import Documentos from "../../components/etico/Documentos";
 
 export default function CodigoEtico() {
-  const policies = [
-    { title: "Código Ético", ref: "IDO230060", file: "/docs/codigo-etico.pdf" },
-    {
-      title: "Política de Seguridad",
-      ref: "IDO250070",
-      file: "/docs/politica-seguridad.pdf",
-    },
-    {
-      title: "Política Anti Corrupción",
-      ref: "IDO230061",
-      file: "/docs/politica-anticorrupcion.pdf",
-    },
-    {
-      title: "Política de Obsequios y Trato de Hospitalidad",
-      ref: "IDO230059",
-      file: "/docs/politica-obsequios.pdf",
-    },
-  ];
+
 
 
   return (
@@ -33,107 +14,10 @@ export default function CodigoEtico() {
         description="Nuestro compromiso garantiza una ingeniería responsable que protege el entorno y la sociedad."
         backgroundImage="/images/sostenible.jpg"
       ></HeroVideo>
-
+<Documentos />
       <ODSSection />
 
-      <div className="relative max-w-7xl  mx-auto px-6 pt-36 pb-16">
-        {/* Header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight">
-            <span className="text-white">Código Ético y Cumplimiento </span>
-          </h1>
-
-          <p className="text-base md:text-lg text-slate-300 mt-6 max-w-4xl mx-auto leading-relaxed font-light">
-            {/* En{" "}
-            <span className="text-white bg-clip-text font-extrabold text-transparent">
-              Quandum{" "}
-            </span>{" "}
-            <span className="bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text font-semibold text-transparent">
-              Aerospace
-            </span>{" "} */}
-            Nos comprometemos con los más altos estándares éticos y de
-            cumplimiento corporativo. Nuestras políticas reflejan nuestra
-            dedicación a la integridad, transparencia y excelencia operacional.
-          </p>
-        </motion.div>
-        <StarfieldNebula />
-
-        {/* Línea decorativa  /*/}
-        {/* <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.4, ease: "easeInOut" }}
-          className="h-1 bg-gradient-to-r from-transparent via-brand-blue to-transparent my-20 max-w-3xl mx-auto"
-        /> */}
-
-        {/* Tarjetas de políticas */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 ">
-          {policies.map((policy, index) => (
-            <motion.div
-              key={policy.ref}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 shadow-2xl border border-slate-700 rounded-2xl overflow-hidden hover:border-brand-blue transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20 hover:-translate-y-1"
-            >
-              <div className="p-6 flex flex-col h-full">
-                {/* Icono */}
-                <div className="relative mb-6">
-                  <div className="w-16 h-16 mx-auto bg-gradient-to-br from-blue-600/20 to-cyan-500/20 rounded-xl flex items-center justify-center border border-blue-500/30 group-hover:border-cyan-400/50 transition-colors">
-                    <FileCheckCorner className="w-7 h-7 text-slate-100 group-hover:scale-110 transition-transform" />
-                  </div>
-                </div>
-
-                {/* Contenido */}
-                <div className="flex-grow">
-                  <h2 className="text-lg font-semibold text-white mb-2 text-center  transition-colors">
-                    {policy.title}
-                  </h2>
-                  <p className="text-sm text-slate-400 text-center mb-4">
-                    <span className="inline-block px-3 py-1 bg-slate-800/70 rounded-full text-xs font-mono border border-slate-700">
-                      {policy.ref}
-                    </span>
-                  </p>
-                </div>
-
-                {/* Botón de descarga */}
-                {policy.file && (
-                  <a
-                    href={policy.file}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="  w-full py-2.5  bg-slate-800  hover:bg-slate-700  border border-slate-600  hover:border-cyan-400/50  text-slate-100  font-medium  rounded-lg  transition-all  flex items-center justify-center gap-3"
-                  >
-                    <Download className="w-4 h-4" />
-                    <span>Ver Documento</span>
-                    <ExternalLink className="w-3 h-3 opacity-70" />
-                  </a>
-                )}
-              </div>
-
-              {/* Efecto de hover */}
-
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Línea de cierre */}
-        {/* <motion.div
-          initial={{ scaleX: 0, opacity: 0 }}
-          whileInView={{ scaleX: 1, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.6, delay: 0.3, ease: "easeInOut" }}
-          className="mt-16 relative"
-        >
-          <div className="h-1 bg-gradient-to-r from-transparent via-brand-blue to-transparent my-20 max-w-3xl mx-auto" />
-        </motion.div> */}
-      </div>
+    
     </div>
   );
 }

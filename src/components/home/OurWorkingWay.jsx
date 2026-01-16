@@ -46,80 +46,82 @@ export default function OurWorkingWay() {
               Nuestra forma de trabajar
             </h3>
             <p className="text-xl text-slate-300 text-justify leading-relaxed">
-              Tratamos cada proyecto como un desafío único en el cielo y el
-              espacio. Desde el concepto inicial hasta la certificación final,
-              integramos ingeniería avanzada, simulación digital y pruebas
-              exhaustivas para entregar soluciones fiables y de vanguardia.
+              Cada proyecto se aborda como un desafío único, definido por su
+              misión, su entorno operativo y sus requisitos de certificación.
+              Desde la fase conceptual hasta la entrada en servicio, integramos
+              ingeniería avanzada, simulación digital y validación exhaustiva
+              para garantizar soluciones robustas, seguras y plenamente
+              certificables.
             </p>
             <p className="text-xl text-slate-300 text-justify leading-relaxed">
-              Nuestro enfoque se basa en la innovación sostenible, la seguridad
-              absoluta y la excelencia técnica, alineado con estándares
-              internacionales como FAA, EASA y AS9100.
+              Nuestro método combina innovación sostenible, control técnico
+              absoluto y una cultura de fiabilidad, alineada con los estándares
+              internacionales que rigen la industria aeronáutica y de defensa:
+              FAA, EASA y AS9100.
             </p>
           </div>
 
           {/* Lado derecho */}
-          {/* Lado derecho – enfoque ingeniería */}
-<div className="relative">
-  <div className="rounded-2xl border border-slate-800 bg-slate-900/40 px-10 py-12">
-    <h4 className="text-sm uppercase tracking-widest text-slate-400 mb-10">
-      Engineering workflow
-    </h4>
 
-    <ol className="space-y-10">
-      {[
-        {
-          step: "01",
-          title: "Mission & System Requirements",
-          desc: "Definición funcional, análisis de riesgos, normativa aplicable y criterios de certificación.",
-        },
-        {
-          step: "02",
-          title: "Preliminary & Detailed Design",
-          desc: "Arquitectura de sistema, diseño mecánico y eléctrico, simulación y análisis estructural.",
-        },
-        {
-          step: "03",
-          title: "Verification & Validation",
-          desc: "Ensayos funcionales, ambientales y de vuelo conforme a estándares aeronáuticos.",
-        },
-        {
-          step: "04",
-          title: "Certification & Lifecycle Support",
-          desc: "Soporte en certificación, documentación técnica y continuidad operativa.",
-        },
-      ].map((item, index) => (
-        <motion.li
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: index * 0.15 }}
-          className="grid grid-cols-[60px_1fr] gap-6"
-        >
-          {/* Número */}
-          <div className="text-3xl font-light text-blue-500 tracking-tight">
-            {item.step}
+          <div className="relative">
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/40 px-10 py-12">
+              <h4 className="text-sm uppercase tracking-widest text-slate-400 mb-10">
+                Engineering workflow
+              </h4>
+
+              <ol className="space-y-10">
+                {[
+                  {
+                    step: "01",
+                    title: "Mission & System Requirements",
+                    desc: "Definición funcional, análisis de riesgos, normativa aplicable y criterios de certificación.",
+                  },
+                  {
+                    step: "02",
+                    title: "Preliminary & Detailed Design",
+                    desc: "Arquitectura de sistema, diseño mecánico y eléctrico, simulación y análisis estructural.",
+                  },
+                  {
+                    step: "03",
+                    title: "Verification & Validation",
+                    desc: "Ensayos funcionales, ambientales y de vuelo conforme a estándares aeronáuticos.",
+                  },
+                  {
+                    step: "04",
+                    title: "Certification & Lifecycle Support",
+                    desc: "Soporte en certificación, documentación técnica y continuidad operativa.",
+                  },
+                ].map((item, index) => (
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.15 }}
+                    className="grid grid-cols-[60px_1fr] gap-6"
+                  >
+                    {/* Número */}
+                    <div className="text-3xl font-light text-blue-500 tracking-tight">
+                      {item.step}
+                    </div>
+
+                    {/* Contenido */}
+                    <div>
+                      <h5 className="text-lg font-semibold text-slate-100">
+                        {item.title}
+                      </h5>
+                      <p className="mt-2 text-slate-400 leading-relaxed">
+                        {item.desc}
+                      </p>
+
+                      {/* Línea técnica */}
+                      <div className="mt-6 h-px bg-gradient-to-r from-blue-500/40 via-slate-700/40 to-transparent" />
+                    </div>
+                  </motion.li>
+                ))}
+              </ol>
+            </div>
           </div>
-
-          {/* Contenido */}
-          <div>
-            <h5 className="text-lg font-semibold text-slate-100">
-              {item.title}
-            </h5>
-            <p className="mt-2 text-slate-400 leading-relaxed">
-              {item.desc}
-            </p>
-
-            {/* Línea técnica */}
-            <div className="mt-6 h-px bg-gradient-to-r from-blue-500/40 via-slate-700/40 to-transparent" />
-          </div>
-        </motion.li>
-      ))}
-    </ol>
-  </div>
-</div>
-
         </motion.div>
 
         {/* <motion.div

@@ -37,7 +37,7 @@ export default function Contacto() {
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 5000);
+      setTimeout(() => setSubmitted(false), 9000);
       setForm({
         name: "",
         position: "",
@@ -106,11 +106,10 @@ export default function Contacto() {
     <div className="relative min-h-screen ">
       <StarfieldNebula />
 
-      {/* HERO */}
+      {/* HERO  InputDark */}
       <section className="relative border-b border-slate-800/50">
         <div className="max-w-7xl mx-auto px-6 py-32 relative z-10">
           <div className="text-center max-w-4xl mx-auto animate-fadeIn">
-
             <h1 className="text-6xl md:text-7xl font-extralight mb-8">
               <span
                 className="block animate-slideUp"
@@ -119,7 +118,7 @@ export default function Contacto() {
                 Contacte con
               </span>
               <span
-                className="bg-gradient-to-r from-brand-blue via-slate-300 to-brand-blue bg-clip-text text-transparent font-bold animate-slideUp"
+                className="bg-gradient-to-r from-white to-white bg-clip-text text-transparent font-bold animate-slideUp"
                 style={{ animationDelay: "0.5s" }}
               >
                 Quandum{" "}
@@ -208,7 +207,6 @@ export default function Contacto() {
               {/* Glow effect behind form */}
               <div className="absolute h-[88%] sm:h-[92%] md:h-[95%] lg:h-[75%] inset-1 -top-2 bottom-0 bg-gradient-to-l from-blue-400/80 via-cyan-500/20 to-blue-400/80 rounded-3xl blur-2xl opacity-30" />
               <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-10 space-y-8 shadow-2xl">
-   
                 <h2 className="text-4xl font-extralight text-white mb-8 flex items-center gap-3">
                   <div className="w-1 h-8 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full" />
                   Formulario de Contacto
@@ -336,9 +334,7 @@ export default function Contacto() {
                 >
                   {/* Línea de progreso técnica */}
                   {submitted && (
-                    <div
-                      className="relative p-6 bg-slate-950/80 border border-blue-500/30 clip-path-diagonal backdrop-blur-md animate-scaleIn"
-                    >
+                    <div className="relative p-6 bg-slate-950/80 border border-blue-500/30 clip-path-diagonal backdrop-blur-md animate-scaleIn">
                       {/* Indicador lateral tipo sistema */}
                       <div className="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-blue-400 via-cyan-400 to-blue-400" />
 
@@ -364,7 +360,9 @@ export default function Contacto() {
                   )}
 
                   <span className="relative z-10">
-                    {isSubmitting ? "Enviando mensaje" : "Solicitar Información"}
+                    {isSubmitting
+                      ? "Enviando mensaje"
+                      : "Solicitar Información"}
                   </span>
                 </button>
               </div>

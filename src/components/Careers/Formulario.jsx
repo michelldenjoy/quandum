@@ -148,8 +148,9 @@ export default function Formulario() {
      Render
   ------------------------------------------------ */
   return (
-    <section className="relative py-32 px-6 bg-aerospace overflow-hidden ">
-      <div className="relative z-10 max-w-3xl mx-auto">
+    <section className="relative py-32 px-6  overflow-hidden ">
+      <div className="relative z-1 max-w-3xl mx-auto">
+        <StarfieldNebula />
         <h2 className="text-5xl font-bold text-center mb-4 text-gray-100">
           Envía tu Candidatura
         </h2>

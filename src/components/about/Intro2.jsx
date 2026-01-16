@@ -9,10 +9,8 @@ export default function Intro2() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 relative">
-        
         {/* Contenedor principal con marco técnico */}
         <div className="relative border border-gray-200 bg-white/50 backdrop-blur-sm p-6 sm:p-8 md:p-10 lg:p-16">
-          
           {/* Esquinas técnicas - Superior izquierda */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -159,7 +157,6 @@ export default function Intro2() {
 
           {/* Contenido interior */}
           <div className="relative text-center z-10">
-            
             {/* Badge superior */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -197,8 +194,7 @@ export default function Intro2() {
               <h5 className="text-2xl sm:text-3xl text-center md:text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight leading-[1.1] flex-shrink min-w-0">
                 <span className="font-semibold text-brand-blue whitespace-nowrap">
                   QUANDUM
-                </span>
-                {" "}
+                </span>{" "}
                 <span className="font-semibold bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text text-transparent whitespace-nowrap">
                   AEROSPACE
                 </span>
@@ -227,10 +223,19 @@ export default function Intro2() {
               transition={{ duration: 0.9, delay: 0.7 }}
               className="text-center max-w-4xl mx-auto px-2 sm:px-4"
             >
-              <p className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed font-normal">
-                Somos una empresa de ingeniería especializada en el
-                diseño y desarrollo de sistemas electrónicos y optoelectrónicos de
-                alta fiabilidad para los sectores de aeronáutica y de defensa.
+              <p className="text-gray-700 text-sm sm:text-base text-center md:text-lg lg:text-xl leading-relaxed font-normal">
+                Quandum Aerospace es una empresa de ingeniería especializada en
+                el diseño, desarrollo y fabricación de sistemas electrónicos y
+                optoelectrónicos de alta fiabilidad. Desde 2006, trabajamos en
+                proyectos donde la precisión, la seguridad y la certificación no
+                son opcionales. Nuestro equipo multidisciplinar acompaña al
+                cliente desde las primeras fases conceptuales hasta la entrega
+                final del sistema, aportando análisis funcional, asesoramiento
+                técnico y soluciones de ingeniería optimizadas para cada
+                aplicación. La calidad de nuestros productos se sustenta en el
+                compromiso del equipo humano, la mejora continua y la
+                implantación de un Sistema de Gestión de la Calidad conforme a
+                las normas EN 9100 e ISO 9001.
               </p>
             </motion.div>
 

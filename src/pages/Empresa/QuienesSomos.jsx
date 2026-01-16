@@ -19,26 +19,17 @@ export default function QuienesSomos() {
         backgroundImage="/images/about-hero.jpeg"
       />
 
-
-<Intro2 />
+      <Intro2 />
+      {/* <Intro /> */}
+      <VisionMision />
 
       <StoryStrip />
 
-
-
-      {/* <Intro /> */}
-      
-
       {/* <HeroText /> */}
-
-      
 
       <AboutFeatures />
 
-
       <InfraStrip />
-
-      <VisionMision />
     </div>
   );
 }

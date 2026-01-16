@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 
-const title = "Ingeniería especializada en sistemas de vuelo";
+const title = "Tecnología que impulsa el vuelo"
 
 const container = {
   hidden: {},
@@ -82,7 +82,7 @@ export default function Hero() {
             </motion.p>
 
             {/* Título principal */}
-            <h1 className="flex flex-wrap text-white text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+            <h1 className="flex flex-wrap text-white text-4xl md:text-6xl lg:text-9xl tracking-tight font-light">
               {title.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
