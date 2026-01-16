@@ -68,38 +68,51 @@ export default function Collage() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="relative order-2 lg:order-2"
           >
-            <div className="grid grid-cols-2 gap-3 sm:gap-3 md:gap-2 h-[300px] sm:h-[500px] md:h-[500px] lg:h-[400px]">
-              {/* Imagen 1 - Izquierda */}
+            <div className="flex flex-col gap-4 sm:gap-6">
+              {/* Imagen 1 - Arriba */}
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, x: 40 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="relative order-2 lg:order-2"
+          >
+            <div className="flex flex-col gap-4 sm:gap-5 md:gap-6">
+              {/* Imagen 1 - Arriba */}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.7, delay: 0.4 }}
-                className="relative group h-full"
+                className="relative group"
               >
-                <div className="relative w-full h-full overflow-hidden bg-gray-100 shadow-xl">
+                <div className="relative w-full h-[220px] sm:h-[280px] md:h-[320px] lg:h-[280px] xl:h-[300px] overflow-hidden bg-gray-100 shadow-xl">
                   <img
                     src="/images/collage4.jpg"
                     alt="Sistema aeronáutico en operación"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full rounded  h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
                   {/* Overlay  */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-transparent to-brand-blue/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  <div className="absolute top-2 left-2 w-6 h-6 md:w-8 md:h-8 border-t-2 border-l-2 border-brand-blue opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                  <div className="absolute top-2 right-2 w-6 h-6 md:w-8 md:h-8 border-t-2 border-r-2 border-brand-blue opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                  <div className="absolute bottom-2 left-2 w-6 h-6 md:w-8 md:h-8 border-b-2 border-l-2 border-brand-blue opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                  <div className="absolute bottom-2 right-2 w-6 h-6 md:w-8 md:h-8 border-b-2 border-r-2 border-brand-blue opacity-0 group-hover:opacity-100 transition-all duration-500" />
                 </div>
               </motion.div>
 
-              {/* Imagen 2 - Derecha */}
+              {/* Imagen 2 - Abajo */}
               <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.7, delay: 0.5 }}
-                className="relative group h-full"
+                className="relative group"
               >
-                <div className="relative w-full h-full overflow-hidden bg-gray-100 shadow-xl">
+                <div className="relative w-full h-[220px] sm:h-[280px] md:h-[320px] lg:h-[280px] xl:h-[300px] overflow-hidden bg-gray-100 shadow-xl">
                   <img
                     src="/images/collage2.jpg"
                     alt="Equipo de ingeniería"
-                    className="w-full h-[50vh] object-cover  transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full rounded object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
                   {/* Overlay  */}
@@ -112,6 +125,8 @@ export default function Collage() {
                   <div className="absolute bottom-2 right-2 w-6 h-6 md:w-8 md:h-8 border-b-2 border-r-2 border-brand-blue opacity-0 group-hover:opacity-100 transition-all duration-500" />
                 </div>
               </motion.div>
+            </div>
+          </motion.div>
             </div>
           </motion.div>
         </div>

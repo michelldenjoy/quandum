@@ -10,8 +10,6 @@ import {
   Award,
 } from "lucide-react";
 import StarfieldNebula from "../3d/StarfieldNebula";
-import { div } from "motion/react-client";
-import QuandumParticles from "../3d/QuandumParticles";
 
 /* -----------------------------------------------
    Listado estático de posiciones (fuera del componente)
@@ -46,17 +44,32 @@ const positions = [
 /* -----------------------------------------------
    Input reutilizable
 ------------------------------------------------ */
-function InputLight({ label, type = "text", ...props }) {
+function InputLight({
+  label,
+  type = "text",
+  focused,
+  onFocus,
+  onBlur,
+  ...props
+}) {
   return (
-    <div>
-      <label className="block text-sm font-semibold text-gray-700 mb-3">
+    <div className="relative">
+      <label className="block text-sm font-medium text-slate-300 mb-2">
         {label}
       </label>
-      <input
-        type={type}
-        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none transition"
-        {...props}
-      />
+      <div className="relative">
+        <input
+          type={type}
+          required={label.includes("*")}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          className="w-full px-4 py-3 bg-slate-950/50 border border-slate-700/50 rounded-xl text-slate-200 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 outline-none hover:border-slate-600/50 placeholder-slate-500"
+          {...props}
+        />
+        {focused && (
+          <div className="absolute inset-0 rounded-xl bg-blue-500/10 pointer-events-none animate-fadeIn" />
+        )}
+      </div>
     </div>
   );
 }
@@ -77,6 +90,7 @@ export default function Formulario() {
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [fileName, setFileName] = useState(null);
+  const [focusedInput, setFocusedInput] = useState(null);
 
   /* -----------------------------------------------
      Handle inputs
@@ -94,6 +108,10 @@ export default function Formulario() {
     const file = e.target.files[0];
     if (file) {
       setFileName(file.name);
+      setFormData((prev) => ({
+        ...prev,
+        cv: file,
+      }));
     }
   };
 
@@ -141,6 +159,7 @@ export default function Formulario() {
         message: "",
         cv: null,
       });
+      setFileName(null);
     }, 2000);
   };
 
@@ -148,7 +167,7 @@ export default function Formulario() {
      Render
   ------------------------------------------------ */
   return (
-    <section className="relative py-32 px-6  overflow-hidden ">
+    <section className="relative py-32 px-6 overflow-hidden ">
       <div className="relative z-1 max-w-3xl mx-auto">
         <StarfieldNebula />
         <h2 className="text-5xl font-bold text-center mb-4 text-gray-100">
@@ -159,38 +178,52 @@ export default function Formulario() {
           críticas y al desarrollo tecnológico.
         </p>
 
-        <div className="bg-white/75 backdrop-blur-sm border border-gray-300 rounded-2xl p-10 md:p-14 shadow-xl space-y-8">
+        <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-10 md:p-14 shadow-2xl space-y-8">
+          {/* Glow effect behind form */}
+          <div className="absolute inset-0 -top-2 bg-gradient-to-l from-blue-400/80 via-cyan-500/20 to-blue-400/80 rounded-3xl blur-2xl opacity-30 -z-10" />
+
           {/* Mensaje éxito */}
           {status === "success" && (
-            <div className="p-6 bg-green-50 border border-green-200 rounded-xl flex items-center gap-4">
-              <CheckCircle className="w-10 h-10 text-green-600" />
-              <div>
-                <p className="text-green-800 font-semibold">
-                  ¡Candidatura enviada!
-                </p>
-                <p className="text-green-600 text-sm mt-1">
-                  Te contactaremos en 72h.
-                </p>
-              </div>
+            <div className="relative p-6 bg-slate-950/80 border border-blue-500/30 backdrop-blur-md animate-scaleIn rounded-lg">
+              <div className="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-blue-400 via-cyan-400 to-blue-400" />
+              <p className="text-[11px] tracking-[0.3em] uppercase text-blue-400 mb-3">
+                Transmission status · OK
+              </p>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Tu candidatura ha sido registrada correctamente en el sistema.
+                <br />
+                Te contactaremos en un plazo máximo de
+                <span className="text-blue-300 font-medium">
+                  {" "}
+                  72 horas laborables
+                </span>
+                .
+              </p>
             </div>
           )}
 
           {/* Error */}
           {status === "error" && (
-            <p className="text-red-600 text-center font-medium">
-              Completa los campos obligatorios y adjunta un CV válido (PDF, máx.
-              10MB).
-            </p>
+            <div className="relative p-6 bg-red-950/80 border border-red-500/30 backdrop-blur-md rounded-lg">
+              <div className="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-red-400 via-red-500 to-red-400" />
+              <p className="text-sm text-red-300 leading-relaxed">
+                Completa los campos obligatorios y adjunta un CV válido (PDF,
+                máx. 10MB).
+              </p>
+            </div>
           )}
 
           {/* FORMULARIO */}
-          <form onSubmit={handleSubmit} className="space-y-8">
+          <div className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <InputLight
                 label="Nombre completo *"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
+                onFocus={() => setFocusedInput("name")}
+                onBlur={() => setFocusedInput(null)}
+                focused={focusedInput === "name"}
               />
 
               <InputLight
@@ -199,6 +232,9 @@ export default function Formulario() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                onFocus={() => setFocusedInput("email")}
+                onBlur={() => setFocusedInput(null)}
+                focused={focusedInput === "email"}
               />
             </div>
 
@@ -209,17 +245,22 @@ export default function Formulario() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
+                onFocus={() => setFocusedInput("phone")}
+                onBlur={() => setFocusedInput(null)}
+                focused={focusedInput === "phone"}
               />
 
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-3">
+                <label className="block text-sm font-medium text-slate-300 mb-2">
                   Puesto de interés
                 </label>
                 <select
                   name="position"
                   value={formData.position}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:border-blue-900 focus:ring-2 focus:ring-blue-600/20 focus:outline-none transition"
+                  onFocus={() => setFocusedInput("position")}
+                  onBlur={() => setFocusedInput(null)}
+                  className="w-full px-4 py-3 bg-slate-950/50 border border-slate-700/50 rounded-xl text-slate-200 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 outline-none hover:border-slate-600/50"
                 >
                   <option value="">Seleccionar</option>
                   {positions.map((p) => (
@@ -232,7 +273,7 @@ export default function Formulario() {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-3">
+              <label className="block text-sm font-medium text-slate-300 mb-2">
                 Mensaje (opcional)
               </label>
               <textarea
@@ -240,18 +281,14 @@ export default function Formulario() {
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:border-blue-900 focus:ring-2 focus:ring-blue-600/20 focus:outline-none transition resize-none"
+                onFocus={() => setFocusedInput("message")}
+                onBlur={() => setFocusedInput(null)}
+                className="w-full px-4 py-3 bg-slate-950/50 border border-slate-700/50 rounded-xl text-slate-200 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 resize-none outline-none hover:border-slate-600/50 placeholder-slate-500"
                 placeholder="Certificaciones, disponibilidad, experiencia..."
               />
             </div>
 
-            <div>
-              {/* LABEL */}
-              <label className="block text-sm font-semibold text-gray-700 mb-4">
-                <Upload className="w-4 h-4 inline mr-2" />
-                Adjunta tu CV (PDF, máx. 10MB) *
-              </label>
-
+            <div className="flex flex-col md:flex-row items-center gap-4">
               {/* BOTÓN FILE */}
               <label
                 className={`inline-flex items-center justify-center gap-2 px-8 py-3 text-sm uppercase tracking-widest rounded-md border clip-path-diagonal hover:scale-105 cursor-pointer transition-all duration-300
@@ -262,7 +299,6 @@ export default function Formulario() {
       }`}
               >
                 <Upload className="w-4 h-4" />
-
                 <span className="truncate max-w-[220px]">
                   {fileName ? fileName : "Seleccionar archivo"}
                 </span>
@@ -277,31 +313,45 @@ export default function Formulario() {
                 />
               </label>
 
-              {/* TEXTO DE APOYO */}
-              {fileName && (
-                <p className="mt-2 text-xs text-gray-500">
-                  Archivo seleccionado
-                </p>
-              )}
+              {/* BOTÓN ENVIAR */}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                onClick={handleSubmit}
+                className="px-8 py-3 w-full md:w-auto bg-brand-blue rounded-md text-sm uppercase tracking-widest text-white clip-path-diagonal border border-gray-500 hover:bg-transparent hover:text-black transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? "Enviando..." : "Enviar Candidatura"}
+              </button>
             </div>
 
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="px-8 py-3 w-80 hover:scale-105 bg-brand-blue rounded-md text-sm uppercase tracking-widest text-white clip-path-diagonal border border-gray-500 hover:bg-transparent hover:text-black transition-all duration-300"
-            >
-              {isSubmitting ? "Enviando..." : "Enviar Candidatura"}
-            </button>
-          </form>
-
-          {/* px-8 py-3 text-sm uppercase tracking-widest
-        text-gray-200 
-        clip-path-diagonal
-        border border-gray-500
-        hover:bg-brand-blue hover:text-black
-        transition-all duration-300 */}
+            {/* TEXTO DE APOYO */}
+            {fileName && (
+              <p className="mt-2 text-xs text-slate-400">
+                Archivo seleccionado
+              </p>
+            )}
+          </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes scaleIn {
+          from { opacity: 0; transform: scale(0.9); }
+          to { opacity: 1; transform: scale(1); }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 1s ease-out forwards;
+          opacity: 0;
+        }
+        .animate-scaleIn {
+          animation: scaleIn 0.8s ease-out 0.2s forwards;
+          opacity: 0;
+        }
+      `}</style>
     </section>
   );
 }

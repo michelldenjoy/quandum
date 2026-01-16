@@ -14,14 +14,14 @@ export default function VisionMision() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <h3 className="text-4xl uppercase sm:text-5xl md:text-5xl  tracking-tight text-white">
+            <h3 className="text-4xl uppercase sm:text-3xl md:text-4xl  tracking-tight text-white">
               Nuestra{" "}
               <span className="bg-gradient-to-r from-brand-blue via-slate-200 to-brand-blue bg-clip-text text-transparent  animate-gradient bg-[length:200%_auto]">
                 VISIÓN
               </span>
             </h3>
             
-            <p className="text-slate-100 text-base md:text-lg text-justify leading-relaxed">
+            <p className="text-slate-100 text-base  text-justify leading-relaxed">
               Ser un referente internacional en ingeniería avanzada para sistemas críticos, aportando soluciones tecnológicas que impulsen el progreso en los sectores aeroespacial, defensa e industrial.
               <br />
               <br />
@@ -37,14 +37,14 @@ export default function VisionMision() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6"
           >
-            <h3 className="text-4xl uppercase sm:text-5xl md:text-5xl  tracking-tight text-white">
+            <h3 className="text-4xl uppercase sm:text-3xl md:text-4xl  tracking-tight text-white">
               Nuestra{" "}
               <span className="bg-gradient-to-r from-brand-blue via-slate-200 to-brand-blue bg-clip-text text-transparent  animate-gradient bg-[length:200%_auto]">
                 MISIÓN
               </span>
             </h3>
             
-            <p className="text-slate-100 text-base md:text-lg text-justify leading-relaxed">
+            <p className="text-slate-100 text-base  text-justify leading-relaxed">
               Diseñar, desarrollar y validar soluciones tecnológicas a medida, acompañando a nuestros clientes en todo el ciclo de vida del proyecto, desde la fase conceptual hasta la entrega final.
               <br />
               <br />
