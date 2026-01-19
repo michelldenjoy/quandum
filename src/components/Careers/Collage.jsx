@@ -48,13 +48,12 @@ export default function Collage() {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: 0.5, duration: 0.7 }}
-              className="space-y-4 md:space-y-5 text-base text-justify sm:text-lg lg:text-xl text-gray-700 leading-relaxed"
+              className="space-y-4 md:space-y-5 text-base text-justify sm:text-lg lg:text-xl text-slate-500 leading-relaxed"
             >
               <p>
                 Creemos que la ingeniería es una disciplina que combina rigor
                 técnico, responsabilidad y vocación. Cada sistema que diseñamos
-                tiene un impacto real en entornos donde la fiabilidad no es
-                opcional. Trabajamos con tecnologías avanzadas, procesos
+                tiene un impacto en entornos que demandan fiabilidad. Trabajamos con tecnologías avanzadas, procesos
                 auditables y normativas internacionales exigentes. Nuestro
                 compromiso no es solo con la innovación, sino con la seguridad,
                 la trazabilidad y la calidad a largo plazo.
@@ -131,17 +130,6 @@ export default function Collage() {
           </motion.div>
         </div>
 
-        {/* Línea decorativa */}
-        <motion.div
-          initial={{ width: 0, opacity: 0 }}
-          animate={isInView ? { width: "100%", opacity: 1 } : {}}
-          transition={{ delay: 0.4, duration: 1 }}
-          className="h-0.5 bg-gradient-to-r my-8 from-transparent via-brand-steel to-transparent rounded-full max-w-xs sm:max-w-sm md:max-w-md"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, transparent, #A9A9A9, transparent), repeating-linear-gradient(to right, transparent 0%, transparent 10%, #A9A9A9 10%, #A9A9A9 12%)",
-          }}
-        />
       </div>
 
       <style jsx>{`

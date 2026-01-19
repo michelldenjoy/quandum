@@ -1,8 +1,8 @@
-// Certificaciones.jsx - Sin scroll horizontal
+// Certificaciones.jsx - Rediseño profesional aeroespacial
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { Download, X, ExternalLink } from "lucide-react";
-import QuandumParticles from "../../components/3d/QuandumParticles";
+import HeroVideo from "../../components/about/HeroVideo";
 
 export default function Certificaciones() {
   const [selectedCert, setSelectedCert] = useState(null);
@@ -12,18 +12,31 @@ export default function Certificaciones() {
       id: "en9100",
       name: "EN 9100:2018",
       code: "01 117 125 200",
-      description:
-        "Sistema de gestión de calidad específico para la industria aeroespacial, espacio y defensa",
       pdfUrl: "/certificados/EN9100_2024.pdf",
       imageUrl: "/certificados/EN9100_cert.jpg",
+      scope:
+        "Aplicable a organizaciones que operan en los sectores aeroespacial, defensa y espacio, con control de procesos críticos, trazabilidad completa y gestión de riesgos del producto.",
+      bullets: [
+        "Gestión de configuración y cambios",
+        "Control de producto no conforme",
+        "Gestión de riesgos y seguridad del producto",
+        "Trazabilidad de materiales y procesos especiales",
+      ],
     },
     {
       id: "iso9001",
       name: "ISO 9001:2015",
       code: "01 100 125200",
-      description: "Norma internacional de gestión de la calidad",
       pdfUrl: "/certificados/ISO9001_2024.pdf",
       imageUrl: "/certificados/ISO9001_cert.jpg",
+      scope:
+        "Sistema de gestión de calidad orientado a la estandarización de procesos, mejora continua y control operativo en entornos industriales y tecnológicos.",
+      bullets: [
+        "Enfoque basado en procesos",
+        "Mejora continua sistemática",
+        "Satisfacción del cliente garantizada",
+        "Documentación y trazabilidad estandarizada",
+      ],
     },
   ];
 
@@ -32,368 +45,91 @@ export default function Certificaciones() {
     : null;
 
   return (
-    <div className="w-full overflow-x-hidden">
-      {/* Partículas */}
-      <div className="fixed inset-0 -z-10 overflow-hidden">
-        <QuandumParticles
-          imgUrl="/quandumletras.png"
-          gatherDuration={2800}
-          parallaxIntensity={0.25}
-          enableParallax={true}
-          opacity={1}
+    <div className="w-full overflow-x-hidden relative">
+      {/* Fondo fijo */}
+      <div className="fixed inset-0 -z-10">
+        <HeroVideo
+          eyebrow=""
+          title=""
+          description=""
+          backgroundImage="/images/certifications.jpeg"
         />
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
-      {/* hero principal */}
-      <div className="w-full max-w-[100vw] overflow-hidden">
-        {/* <section className="flex flex-col items-center justify-start pt-28 md:pt-32 lg:pt-36 relative z-10 px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 140 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 2.4,
-              delay: 1.0,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="text-center max-w-5xl w-full"
-          >
-            <h1 className="text-4xl md:text-6xl lg:text-6xl xl:text-7xl md:py-6 font-black tracking-tighter text-white leading-none">
-              CERTIFICADOS
-              <br />
-              <span className="text-zinc-400 text-3xl md:text-5xl lg:text-5xl xl:text-6xl">
-                AEROESPACIAL
-              </span>
-            </h1>
+      <section className="relative py-32 px-6 sm:px-10 md:px-16">
+        <motion.h2
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl sm:text-5xl md:text-6xl font-bold text-white  text-center mb-6 mt-12 md:mt-28 lg:mt-28"
+        >
+          CERTIFICACIONES OFICIALES
+        </motion.h2>
+        <motion.div >
 
+          <p className="max-w-3xl text-center mx-auto text-slate-100 font-medium text-base sm:text-lg md:text-xl  leading-relaxed mb-16">
+          Nuestra empresa cuenta con las certificaciones ISO 9001 e ISO 9100, que acreditan la implementación de un Sistema de Gestión de la Calidad alineado con los más altos estándares internacionales del sector aeronáutico.
+          </p>
+        </motion.div>
+
+        <div className="max-w-6xl mx-auto md:mt-24 lg:mt-36 space-y-16">
+          {certifications.map((cert, i) => (
             <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 1.8, delay: 3.4 }}
-              className="h-px w-48 sm:w-72 md:w-80 lg:w-96 max-w-full bg-gradient-to-r from-transparent via-zinc-600 to-transparent mx-auto origin-left"
-            />
-
-             <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 3.0, duration: 2 }}
-              className="text-base px-4 sm:text-xl md:text-4xl lg:text-3xl text-zinc-400 font-light leading-relaxed"
-            >
-              Certificados bajo los estándares más exigentes de la industria
-              aeroespacial, defensa y espacio
-            </motion.p> 
-          </motion.div>
-        </section> */}
-
-        {/* CERTIFICACIONES */}
-        <section className="mt-72 sm:mt-44 md:mt-76 lg:mt-62 xl:mt-60 py-12 sm:py-10 md:py-28 px-4 sm:px-6 md:px-8">
-          <div className="max-w-7xl mx-auto w-full">
-            <motion.h2
-              initial={{ opacity: 0, y: 180 }}
+              key={cert.id}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-center text-white mb-12 sm:mb-16 md:mb-20 px-2"
+              transition={{ duration: 0.8, delay: i * 0.2 }}
+              className="grid lg:grid-cols-3 gap-8 items-start bg-zinc-900/80 backdrop-blur-xl border border-zinc-700 rounded-2xl p-8 lg:p-10 cursor-pointer hover:border-cyan-500 transition-all duration-500"
+              onClick={() => setSelectedCert(cert.id)}
             >
-              CERTIFICACIONES OFICIALES
-            </motion.h2>
+              {/* Texto */}
+              <div className="lg:col-span-2 flex flex-col justify-start gap-4">
+                <span className="text-xs tracking-[0.3em] text-cyan-400 font-bold uppercase">
+                  Sistema de gestión certificado
+                </span>
+                <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-white">
+                  {cert.name}
+                </h3>
+                <p className="text-zinc-400 font-mono text-sm sm:text-base">
+                  Código: {cert.code}
+                </p>
+                <p className="text-zinc-200 leading-relaxed text-base sm:text-lg font-medium">
+                  {cert.scope}
+                </p>
 
-            <div className="flex flex-col gap-8 sm:gap-10 md:gap-12 w-full">
-              {/* EN 9100 - DESTACADO PRINCIPAL */}
-              <motion.div
-                initial={{ opacity: 0, y: 80 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="group relative bg-gradient-to-br from-zinc-900/90 via-black/80 to-black/90 backdrop-blur-xl border-2 border-zinc-700 rounded-3xl overflow-hidden hover:border-zinc-500 transition-all duration-700 cursor-pointer w-full"
-                onClick={() => setSelectedCert("en9100")}
-              >
-                {/* Efecto de brillo */}
-                <div className="absolute inset-0 bg-gradient-to-b from-zinc-800/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <ul className="space-y-2 text-zinc-400 text-sm sm:text-base">
+                  {cert.bullets.map((b, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="text-cyan-400 mt-1">▸</span>
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
 
-                <div className="absolute top-6 right-6 flex flex-col gap-2 items-end z-20">
-                  {/* <span className="text-xs tracking-widest px-4 py-2 bg-zinc-800 border border-zinc-600 rounded-full text-white font-bold shadow-lg">
-                    ✦ PREMIUM CERTIFICATION
-                  </span> */}
-                  <span className="text-xs tracking-widest px-3 py-1 border border-zinc-600 rounded-full text-zinc-300">
-                    ✔ EQA VERIFIED
-                  </span>
+                <div className="mt-4 flex items-center gap-4 text-cyan-400 font-bold">
+                  <span>VER DOCUMENTO</span>
+                  <ExternalLink className="w-5 h-5" />
                 </div>
+              </div>
 
-                <div className="grid lg:grid-cols-2 gap-8 p-8 sm:p-10 md:p-12 lg:p-14 relative z-10">
-                  {/* Contenido*/}
-                  <div className="flex flex-col justify-center">
-                    <div className="inline-block mb-4">
-                      <span className="text-xs tracking-[0.3em] text-zinc-500 font-bold uppercase">
-                        Certificación Aeroespacial
-                      </span>
-                    </div>
+              {/* Preview  */}
+              <div className="relative max-w-xs h-60 lg:h-72 overflow-hidden rounded-xl border border-zinc-700 shadow-lg">
+                <img
+                  src={cert.imageUrl}
+                  alt={cert.name}
+                  className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent rounded-xl" />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
-                    <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 sm:mb-6 break-words leading-tight">
-                      EN 9100:2018
-                    </h3>
-
-                    <p className="text-zinc-400 font-mono text-base sm:text-lg md:text-xl mb-6 sm:mb-8 break-words">
-                      Código: 01 117 125 200
-                    </p>
-
-                    <div className="space-y-4 mb-8">
-                      <p className="text-zinc-200 leading-relaxed text-base sm:text-lg font-medium">
-                        El estándar más exigente de la industria aeroespacial,
-                        espacio y defensa.
-                      </p>
-                      <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
-                        Esta certificación garantiza que nuestros sistemas de
-                        gestión de calidad cumplen con los requisitos más
-                        estrictos establecidos por las principales
-                        organizaciones aeroespaciales internacionales.
-                      </p>
-                      <ul className="space-y-2 text-zinc-400 text-sm sm:text-base">
-                        <li className="flex items-start gap-2">
-                          <span className="text-zinc-500 mt-1">▸</span>
-                          <span>Control total de procesos críticos</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-zinc-500 mt-1">▸</span>
-                          <span>Trazabilidad completa de componentes</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-zinc-500 mt-1">▸</span>
-                          <span>Gestión de riesgos aeroespaciales</span>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="mt-auto flex items-center gap-4 text-zinc-300 group-hover:text-white transition-all">
-                      <span className="text-sm sm:text-base tracking-wider font-bold">
-                        VER CERTIFICADO COMPLETO
-                      </span>
-                      <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6" />
-                    </div>
-                  </div>
-
-                  {/* Vista previa certificado */}
-                  <div className="relative overflow-hidden rounded-2xl border-2 border-zinc-800 shadow-2xl">
-                    <img
-                      src="/certificados/EN9100_cert.jpg"
-                      alt="EN 9100:2018"
-                      className="w-full h-full object-cover scale-100 group-hover:scale-105 transition duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* ISO 9001 - DESTACADO */}
-              <motion.div
-                initial={{ opacity: 0, y: 80 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="group relative bg-gradient-to-br from-zinc-900/90 via-black/80 to-black/90 backdrop-blur-xl border-2 border-zinc-700 rounded-3xl overflow-hidden hover:border-zinc-500 transition-all duration-700 cursor-pointer w-full"
-                onClick={() => setSelectedCert("iso9001")}
-              >
-                {/* Efecto de brillo */}
-                <div className="absolute inset-0 bg-gradient-to-b from-zinc-800/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
-                <div className="absolute top-6 right-6 flex flex-col gap-2 items-end z-20">
-                  {/* <span className="text-xs tracking-widest px-4 py-2 bg-zinc-800 border border-zinc-600 rounded-full text-white font-bold shadow-lg">
-                    ✦ INTERNATIONAL STANDARD
-                  </span> */}
-                  <span className="text-xs tracking-widest px-3 py-1 border border-zinc-600 rounded-full text-zinc-300">
-                    ✔ EQA VERIFIED
-                  </span>
-                </div>
-
-                <div className="grid lg:grid-cols-2 gap-8 p-8 sm:p-10 md:p-12 lg:p-14 relative z-10">
-                  {/* Contenido */}
-                  <div className="flex flex-col justify-center">
-                    <div className="inline-block mb-4">
-                      <span className="text-xs tracking-[0.3em] text-zinc-500 font-bold uppercase">
-                        Certificación de Calidad Internacional
-                      </span>
-                    </div>
-
-                    <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 sm:mb-6 break-words leading-tight">
-                      ISO 9001:2015
-                    </h3>
-
-                    <p className="text-zinc-400 font-mono text-base sm:text-lg md:text-xl mb-6 sm:mb-8 break-words">
-                      Código: 01 100 125200
-                    </p>
-
-                    <div className="space-y-4 mb-8">
-                      <p className="text-zinc-200 leading-relaxed text-base sm:text-lg font-medium">
-                        Norma internacional de gestión de la calidad reconocida
-                        mundialmente.
-                      </p>
-                      <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
-                        La certificación ISO 9001:2015 demuestra nuestro
-                        compromiso con la excelencia operativa, la mejora
-                        continua y la satisfacción del cliente en todos nuestros
-                        procesos y servicios.
-                      </p>
-                      <ul className="space-y-2 text-zinc-400 text-sm sm:text-base">
-                        <li className="flex items-start gap-2">
-                          <span className="text-zinc-500 mt-1">▸</span>
-                          <span>Enfoque basado en procesos</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-zinc-500 mt-1">▸</span>
-                          <span>Mejora continua sistemática</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-zinc-500 mt-1">▸</span>
-                          <span>Satisfacción del cliente garantizada</span>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="mt-auto flex items-center gap-4 text-zinc-300 group-hover:text-white transition-all">
-                      <span className="text-sm sm:text-base tracking-wider font-bold">
-                        VER CERTIFICADO COMPLETO
-                      </span>
-                      <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6" />
-                    </div>
-                  </div>
-
-                  {/* Vista previa certificado */}
-                  <div className="relative overflow-hidden rounded-2xl border-2 border-zinc-800 shadow-2xl">
-                    <img
-                      src="/certificados/ISO9001_cert.jpg"
-                      alt="ISO 9001:2015"
-                      className="w-full h-full object-cover scale-100 group-hover:scale-105 transition duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* INFORMACIÓN CORPORATIVA */}
-        <section className="py-20 sm:py-24 md:py-32 px-6 sm:px-10 md:px-16 bg-black/40 backdrop-blur-xl border-y border-zinc-800/50">
-          <div className="max-w-6xl mx-auto">
-            <motion.h2
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white text-center mb-14"
-            >
-              COMPROMISO Y GARANTÍAS INTERNACIONALES
-            </motion.h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {/* OASIS / IAQG */}
-              <motion.div
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  className="relative bg-zinc-950 border border-zinc-800 rounded-2xl p-8"
->
-  <span className="absolute top-6 right-6 text-xs tracking-widest text-zinc-500 border border-zinc-700 px-3 py-1 rounded-full">
-    IAQG
-  </span>
-
-  <h3 className="text-2xl font-black text-white mb-4">
-    OASIS – IAQG
-  </h3>
-
-  <p className="text-zinc-400 text-sm sm:text-base leading-relaxed mb-6">
-    Registro oficial en el sistema <strong>OASIS</strong> de la
-    International Aerospace Quality Group, utilizado por los principales
-    OEMs y proveedores aeroespaciales para la validación de suministradores.
-  </p>
-
-  <ul className="space-y-2 text-zinc-400 text-sm">
-    <li>▸ Auditorías EN 9100 registradas</li>
-    <li>▸ Transparencia y trazabilidad internacional</li>
-    <li>▸ Validación de sistema de calidad</li>
-  </ul>
-
-  <div className="mt-6 font-mono text-sm text-zinc-300">
-    Código OASIS: <span className="font-bold">6130438025</span>
-  </div>
-</motion.div>
-
-
-              {/* NATO / NCAGE */}
-<motion.div
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  className="relative bg-zinc-950 border border-zinc-800 rounded-2xl p-8"
->
-  <span className="absolute top-6 right-6 text-xs tracking-widest text-zinc-500 border border-zinc-700 px-3 py-1 rounded-full">
-    NATO
-  </span>
-
-  <h3 className="text-2xl font-black text-white mb-4">
-    Registro OTAN – NCAGE
-  </h3>
-
-  <p className="text-zinc-400 text-sm sm:text-base leading-relaxed mb-6">
-    Proveedor registrado oficialmente en el sistema de codificación
-    <strong> NCAGE</strong>, habilitado para operar dentro del entorno
-    OTAN y la cadena de suministro de defensa.
-  </p>
-
-  <ul className="space-y-2 text-zinc-400 text-sm">
-    <li>▸ Aprobación para suministro militar</li>
-    <li>▸ Requisitos de seguridad y trazabilidad</li>
-    <li>▸ Identificación logística estandarizada</li>
-  </ul>
-
-  <div className="mt-6 font-mono text-sm text-zinc-300">
-    NCAGE Code: <span className="font-bold">9359B</span>
-  </div>
-</motion.div>
-
-
-              {/* REACH */}
-              <div className="lg:col-span-2 bg-zinc-950 border border-zinc-800 rounded-2xl p-10">
-  <h3 className="text-2xl sm:text-3xl font-black text-white mb-6">
-    Conformidad regulatoria – REACH & RoHS
-  </h3>
-
-  <div className="grid md:grid-cols-2 gap-8">
-    <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
-      En <strong className="text-white">Quandum Aerospace</strong> cumplimos
-      plenamente con la normativa europea <strong>REACH</strong> y la directiva
-      <strong> RoHS</strong>, garantizando el control de sustancias químicas y la
-      restricción de materiales peligrosos en todos nuestros procesos.
-    </p>
-
-    <ul className="space-y-3 text-zinc-400 text-sm sm:text-base">
-      <li>▸ Control de sustancias SVHC</li>
-      <li>▸ Cumplimiento ambiental europeo</li>
-      <li>▸ Responsabilidad en la cadena de suministro</li>
-      <li>▸ Alineación con estándares OEM</li>
-    </ul>
-  </div>
-</div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* Footer */}
-        <section className="pb-28 sm:pb-32 md:pb-40 lg:pb-44 xl:pb-48 pt-16 sm:pt-28 md:pt-32 px-4 sm:px-6 md:px-8">
-          <div className="max-w-6xl mx-auto text-center w-full">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-white mb-8 sm:mb-12 px-2 leading-tight">
-              EXCELENCIA CERTIFICADA
-            </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-zinc-400 font-light mb-10 sm:mb-16 px-4">
-              Calidad sin compromisos para misiones que no admiten fallos
-            </p>
-            <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-black text-zinc-300 tracking-widest px-4 break-words">
-              EN 9100 • NATO APPROVED • EQA CERTIFIED
-            </div>
-          </div>
-        </section>
-      </div>
-
-      {/* Modal */}
+      {/* Modal con certificado*/}
       {currentCert && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -407,7 +143,7 @@ export default function Certificaciones() {
             className="relative max-w-2xl w-full mx-auto mt-10 mb-16"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* BOTÓN DE CERRAR */}
+            {/* Cerrar */}
             <button
               onClick={() => setSelectedCert(null)}
               className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[1001] bg-white/10 backdrop-blur-xl p-3 rounded-full border border-white/20 hover:bg-white/20 transition"
@@ -415,19 +151,17 @@ export default function Certificaciones() {
               <X className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
             </button>
 
-            {/* CONTENIDO DEL MODAL */}
+            {/* Contenido modal */}
             <div className="bg-zinc-950/95 border border-zinc-800 rounded-2xl overflow-hidden">
-              {/* Header */}
               <div className="bg-gradient-to-b from-zinc-900 to-black p-6 sm:p-8 text-center">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white break-words">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white">
                   {currentCert.name}
                 </h3>
-                <p className="text-zinc-400 mt-2 text-sm sm:text-base break-words">
+                <p className="text-zinc-400 mt-2 text-sm sm:text-base">
                   Código: {currentCert.code}
                 </p>
               </div>
 
-              {/* Imagen */}
               <div className="p-4 sm:p-6 bg-black">
                 <img
                   src={currentCert.imageUrl}
@@ -436,15 +170,14 @@ export default function Certificaciones() {
                 />
               </div>
 
-              {/* Botón descargar */}
               <div className="p-6 sm:p-8 bg-gradient-to-t from-black to-zinc-950 flex justify-center">
                 <a
                   href={currentCert.pdfUrl}
                   download
-                  className="inline-flex items-center gap-3 px-8 py-4 sm:px-10 sm:py-5 bg-white text-black rounded-full font-bold text-base sm:text-lg hover:scale-105 transition"
+                  className="px-8 flex py-3 hover:scale-105 rounded-md text-sm uppercase tracking-widest text-white clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
                 >
-                  <Download className="w-5 h-5 sm:w-6 sm:h-6" />
-                  Descargar PDF
+                  <Download className="w-4 h-4 sm:w-5 sm:h-5" />
+                  Descargar certificado
                 </a>
               </div>
             </div>
@@ -452,22 +185,124 @@ export default function Certificaciones() {
         </motion.div>
       )}
 
-      {/* minifooter*/}
-      {/* <motion.div
-        initial={{ y: 100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
-        className="fixed bottom-0 left-0 right-0 z-50 px-6 py-2 bg-black/80 backdrop-blur-2xl border-t border-zinc-800/70"
-      >
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-center">
-          <div className="text-2xl md:text-3xl font-black tracking-tighter text-white">
-            QUANDUM<span className="text-zinc-500 ml-2">AEROSPACE</span>
+<section className="py-20 sm:py-24 md:py-32 px-6 sm:px-10 md:px-16 bg-black/30 backdrop-blur-sm border-y border-zinc-800/50">
+          <div className="max-w-6xl mx-auto">
+            <motion.h2
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white text-center mb-14"
+            >
+              COMPROMISO Y GARANTÍAS INTERNACIONALES
+            </motion.h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {/* OASIS / IAQG */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="relative bg-zinc-950 border border-zinc-800 rounded-2xl p-8"
+              >
+                <span className="absolute top-6 right-6 text-xs tracking-widest text-zinc-500 border border-zinc-700 px-3 py-1 rounded-full">
+                  IAQG
+                </span>
+
+                <h3 className="text-2xl font-black text-white mb-4">
+                  OASIS – IAQG
+                </h3>
+
+                <p className="text-zinc-400 text-sm sm:text-base leading-relaxed mb-6">
+                  Registro oficial en el sistema <strong>OASIS</strong> de la
+                  International Aerospace Quality Group, utilizado por los
+                  principales OEMs y proveedores aeroespaciales para la
+                  validación de suministradores.
+                </p>
+
+                <ul className="space-y-2 text-zinc-400 text-sm">
+                  <li>▸ Auditorías EN 9100 registradas</li>
+                  <li>▸ Transparencia y trazabilidad internacional</li>
+                  <li>▸ Validación de sistema de calidad</li>
+                </ul>
+
+                <div className="mt-6 font-mono text-sm text-zinc-300">
+                  Código OASIS: <span className="font-bold">6130438025</span>
+                </div>
+              </motion.div>
+
+              {/* NATO / NCAGE */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="relative bg-zinc-950 border border-zinc-800 rounded-2xl p-8"
+              >
+                <span className="absolute top-6 right-6 text-xs tracking-widest text-zinc-500 border border-zinc-700 px-3 py-1 rounded-full">
+                  NATO
+                </span>
+
+                <h3 className="text-2xl font-black text-white mb-4">
+                  Registro OTAN – NCAGE
+                </h3>
+
+                <p className="text-zinc-400 text-sm sm:text-base leading-relaxed mb-6">
+                  Proveedor registrado oficialmente en el sistema de
+                  codificación
+                  <strong> NCAGE</strong>, habilitado para operar dentro del
+                  entorno OTAN y la cadena de suministro de defensa.
+                </p>
+
+                <ul className="space-y-2 text-zinc-400 text-sm">
+                  <li>▸ Aprobación para suministro militar</li>
+                  <li>▸ Requisitos de seguridad y trazabilidad</li>
+                  <li>▸ Identificación logística estandarizada</li>
+                </ul>
+
+                <div className="mt-6 font-mono text-sm text-zinc-300">
+                  NCAGE Code: <span className="font-bold">9359B</span>
+                </div>
+              </motion.div>
+
+              {/* REACH */}
+              <div className="lg:col-span-2 bg-zinc-950 border border-zinc-800 rounded-2xl p-10">
+                <h3 className="text-2xl sm:text-3xl font-black text-white mb-6">
+                  Conformidad regulatoria – REACH & RoHS
+                </h3>
+
+                <div className="grid md:grid-cols-2 gap-8">
+                  <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
+                    En <strong className="text-white">Quandum Aerospace</strong>{" "}
+                    cumplimos plenamente con la normativa europea{" "}
+                    <strong>REACH</strong> y la directiva
+                    <strong> RoHS</strong>, garantizando el control de
+                    sustancias químicas y la restricción de materiales
+                    peligrosos en todos nuestros procesos.
+                  </p>
+
+                  <ul className="space-y-3 text-zinc-400 text-sm sm:text-base">
+                    <li>▸ Control de sustancias SVHC</li>
+                    <li>▸ Cumplimiento ambiental europeo</li>
+                    <li>▸ Responsabilidad en la cadena de suministro</li>
+                    <li>▸ Alineación con estándares OEM</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="text-zinc-500 text-xs md:text-sm tracking-widest uppercase">
-            Engineered for mission critical
+        </section>
+
+        {/* Footer */}
+        <section className="pb-28 sm:pb-32 md:pb-40 lg:pb-44 xl:pb-48 pt-16 sm:pt-28 md:pt-32 px-4 sm:px-6 md:px-8">
+          <div className="max-w-6xl mx-auto text-center w-full">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-white mb-8 sm:mb-12 px-2 leading-tight">
+              EXCELENCIA CERTIFICADA
+            </h2>
+
+            <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-black text-slate-200 tracking-widest px-4 break-words">
+              EN 9100 • NATO APPROVED • EQA CERTIFIED
+            </div>
           </div>
-        </div>
-      </motion.div>  */}
+        </section>
     </div>
   );
 }

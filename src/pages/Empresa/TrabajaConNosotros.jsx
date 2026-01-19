@@ -127,7 +127,7 @@ export default function TrabajaConNosotros() {
   return (
     <div className="min-h-screen">
       <HeroVideo
-        eyebrow="Careers · Engineering · Innovation"
+        eyebrow="Careers · Ingeniería · Innovación"
         title="Tu carrera despega aquí"
         description="Únete a un equipo multidisciplinar donde tu talento impulsa el desarrollo tecnológico."
         backgroundImage="/careerbg.jpg"

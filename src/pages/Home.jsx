@@ -3,6 +3,7 @@ import HomeOverview from "../components/home/HomeOverview";
 import OurWorkingWay from "../components/home/OurWorkingWay";
 import SectorsSection from "../components/home/SectorSection";
 import { motion } from "motion/react";
+import Solutions from "../components/home/Solutions";
 
 
 export default function Home() {
@@ -12,9 +13,10 @@ export default function Home() {
        
        
        <SectorsSection />
+       <Solutions />
        
 
-       <OurWorkingWay />
+       {/* <OurWorkingWay /> */}
 
 
       

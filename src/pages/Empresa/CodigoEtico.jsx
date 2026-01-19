@@ -3,9 +3,6 @@ import HeroVideo from "../../components/about/HeroVideo";
 import Documentos from "../../components/etico/Documentos";
 
 export default function CodigoEtico() {
-
-
-
   return (
     <div>
       <HeroVideo
@@ -14,10 +11,8 @@ export default function CodigoEtico() {
         description="Nuestro compromiso garantiza una ingeniería responsable que protege el entorno y la sociedad."
         backgroundImage="/images/sostenible.jpg"
       ></HeroVideo>
-<Documentos />
+      <Documentos />
       <ODSSection />
-
-    
     </div>
   );
 }

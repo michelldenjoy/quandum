@@ -45,7 +45,7 @@ export default function HowWeWork() {
           transition={{ duration: 0.6 }}
           className="mb-12 text-center relative z-10"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl  mb-3">
             Cómo Trabajamos
           </h2>
           <p className="text-gray-700 text-base sm:text-lg md:text-xl  max-w-3xl mx-auto leading-relaxed">

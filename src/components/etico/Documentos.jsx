@@ -8,30 +8,38 @@ export default function Documentos() {
       ref: "IDO230060", 
       file: "/docs/codigo-etico.pdf",
       icon: Shield,
-      color: "blue"
+      color: "slate"
     },
     {
       title: "Política de Seguridad",
       ref: "IDO250070",
       file: "/docs/politica-seguridad.pdf",
       icon: CheckCircle2,
-      color: "blue"
+      color: "slate"
     },
     {
       title: "Política Anti Corrupción",
       ref: "IDO230061",
       file: "/docs/politica-anticorrupcion.pdf",
       icon: Scale,
-      color: "blue"
+      color: "slate"
     },
     {
       title: "Política de Obsequios y Trato de Hospitalidad",
       ref: "IDO230059",
       file: "/docs/politica-obsequios.pdf",
       icon: FileText,
-      color: "blue"
+      color: "slate"
     },
   ];
+
+  const qualityPolicy = {
+    title: "Política de Calidad",
+    ref: "PGC-001",
+    href: "/sobre-quandum/calidad",
+    icon: FileText
+  };
+  
 
   return (
     <div className="bg-white min-h-screen relative overflow-hidden">
@@ -46,17 +54,17 @@ export default function Documentos() {
         }} />
       </div>
 
-      {/* Blueprint Lines - Decorative */}
+      {/* slateprint Lines - Decorative */}
       <div className="absolute top-0 left-0 w-full h-[600px] opacity-[0.03]">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="blueprint" width="100" height="100" patternUnits="userSpaceOnUse">
+            <pattern id="slateprint" width="100" height="100" patternUnits="userSpaceOnUse">
               <circle cx="50" cy="50" r="2" fill="#0066cc" />
               <line x1="0" y1="50" x2="100" y2="50" stroke="#0066cc" strokeWidth="0.5" strokeDasharray="5,5" />
               <line x1="50" y1="0" x2="50" y2="100" stroke="#0066cc" strokeWidth="0.5" strokeDasharray="5,5" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#blueprint)" />
+          <rect width="100%" height="100%" fill="url(#slateprint)" />
         </svg>
       </div>
 
@@ -109,45 +117,45 @@ export default function Documentos() {
                   href={policy.file}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block relative bg-white border-2 border-black/5 hover:border-blue-600 rounded-none p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-600/10"
+                  className="block relative bg-white border-2 border-black/5 hover:border-slate-600 rounded-none p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-slate-600/10"
                 >
                   {/* Corner Brackets - Technical Detail */}
-                  <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-black/20 group-hover:border-blue-600 transition-colors" />
-                  <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-black/20 group-hover:border-blue-600 transition-colors" />
-                  <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-black/20 group-hover:border-blue-600 transition-colors" />
-                  <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-black/20 group-hover:border-blue-600 transition-colors" />
+                  <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-black/20 group-hover:border-slate-600 transition-colors" />
+                  <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-black/20 group-hover:border-slate-600 transition-colors" />
+                  <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-black/20 group-hover:border-slate-600 transition-colors" />
+                  <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-black/20 group-hover:border-slate-600 transition-colors" />
 
                   {/* Reference Number - Top Right */}
                   <div className="absolute top-4 right-4">
-                    <span className="text-xs font-mono text-black/30 group-hover:text-blue-600 transition-colors">
+                    <span className="text-xs font-mono text-black/30 group-hover:text-slate-600 transition-colors">
                       {policy.ref}
                     </span>
                   </div>
 
                   {/* Icon */}
                   <div className="mb-6 relative">
-                    <div className="w-16 h-16 border-2 border-black/10 group-hover:border-blue-600 flex items-center justify-center transition-colors relative">
-                      <Icon className="w-8 h-8 text-black/60 group-hover:text-blue-600 transition-colors" />
+                    <div className="w-16 h-16 border-2 border-black/10 group-hover:border-slate-600 flex items-center justify-center transition-colors relative">
+                      <Icon className="w-8 h-8 text-black/60 group-hover:text-slate-600 transition-colors" />
                       
                       {/* Small corner detail */}
-                      <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-slate-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="space-y-4">
-                    <h3 className="text-xl font-medium text-black group-hover:text-blue-600 transition-colors leading-tight">
+                    <h3 className="text-xl font-medium text-black group-hover:text-slate-600 transition-colors leading-tight">
                       {policy.title}
                     </h3>
 
                     {/* Download Button */}
-                    <div className="flex items-center gap-3 pt-4 border-t border-black/5 group-hover:border-blue-600/20 transition-colors">
+                    <div className="flex items-center gap-3 pt-4 border-t border-black/5 group-hover:border-slate-600/20 transition-colors">
                       
-                      <span className="text-sm font-mono text-black/60 group-hover:text-blue-600 transition-colors uppercase tracking-wider">
+                      <span className="text-sm font-mono text-black/60 group-hover:text-slate-600 transition-colors uppercase tracking-wider">
                         Ver Documento
                       </span>
                       <div className="flex-1" />
-                      <div className="w-8 h-[2px] bg-black/10 group-hover:bg-blue-600 group-hover:w-12 transition-all" />
+                      <div className="w-8 h-[2px] bg-black/10 group-hover:bg-slate-600 group-hover:w-12 transition-all" />
                     </div>
                   </div>
                 </a>
@@ -155,6 +163,60 @@ export default function Documentos() {
             );
           })}
         </div>
+
+
+        {/* Política de Calidad - Highlighted */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.4 }}
+  className="mt-16 flex justify-center"
+>
+  <div className="w-full md:w-2/3 lg:w-1/2">
+    <a
+      href={qualityPolicy.href}
+      className="group relative block bg-slate-50 border-2 border-slate-600/30 hover:border-slate-600 p-10 transition-all duration-300 hover:shadow-2xl hover:shadow-slate-600/15"
+    >
+      {/* Corner brackets */}
+      <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-slate-600" />
+      <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-slate-600" />
+      <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-slate-600" />
+      <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-slate-600" />
+
+      {/* Reference */}
+      <div className="absolute top-4 right-4">
+        <span className="text-xs font-mono text-slate-600/60">
+          {qualityPolicy.ref}
+        </span>
+      </div>
+
+      {/* Content */}
+      <div className="flex flex-col items-center text-center space-y-6">
+        <div className="w-16 h-16 border-2 border-slate-600 flex items-center justify-center">
+          <qualityPolicy.icon className="w-8 h-8 text-slate-600" />
+        </div>
+
+        <h3 className="text-2xl font-medium text-slate-600 tracking-tight">
+          {qualityPolicy.title}
+        </h3>
+
+        <p className="text-sm text-black/60 max-w-md">
+          Marco estratégico que define el compromiso de Quandum con la excelencia
+          operacional, la mejora continua y el cumplimiento de los estándares
+          aeronáuticos aplicables.
+        </p>
+
+        <div className="flex items-center gap-4 pt-4">
+          <span className="text-sm font-mono uppercase tracking-wider text-slate-600">
+            Ver Política
+          </span>
+          <div className="w-12 h-[2px] bg-slate-600" />
+        </div>
+      </div>
+    </a>
+  </div>
+</motion.div>
+
 
         {/* Technical Footer */}
         <motion.div

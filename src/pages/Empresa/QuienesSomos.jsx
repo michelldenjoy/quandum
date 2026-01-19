@@ -7,6 +7,7 @@ import Capabilities from "../../components/about/Capabilities";
 import StoryStrip from "../../components/about/StoryStrip";
 import Intro2 from "../../components/about/Intro2";
 import InfraStrip from "../../components/about/InfraStrip";
+import FilosofiaTrayectoria from "../../components/about/FilosofiaTrayectoria";
 
 export default function QuienesSomos() {
   return (
@@ -28,7 +29,7 @@ export default function QuienesSomos() {
       {/* <HeroText /> */}
 
       <AboutFeatures />
-
+<FilosofiaTrayectoria />
       <InfraStrip />
     </div>
   );

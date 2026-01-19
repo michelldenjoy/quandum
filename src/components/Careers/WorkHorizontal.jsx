@@ -46,7 +46,7 @@ export default function WorkHorizontal() {
   const activeSection = sections.find((s) => s.id === active);
 
   return (
-    <section className="relative bg-white py-16 lg:py-24 overflow-hidden">
+    <section className="relative bg-white overflow-hidden">
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div
           className="absolute top-1/3 left-1/4 w-[900px] h-[900px] bg-brand-blue/5 rounded-full blur-3xl animate-pulse"
@@ -58,30 +58,44 @@ export default function WorkHorizontal() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16  lg:mb-20">
-          <motion.h3
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-black mb-6"
-          >
-            Cómo Trabajamos
-          </motion.h3>
+        {/* Intro */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <div className="flex items-start gap-8">
+            {/* Línea vertical decorativa */}
+            <div className="hidden md:flex flex-col items-center gap-2 pt-2">
+              <div className="w-px h-16 bg-gradient-to-b from-transparent via-black to-transparent" />
+              <div className="w-1.5 h-1.5 bg-black rotate-45" />
+            </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-gray-600 text-justify text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed"
-          >
-            Nuestros proyectos se desarrollan bajo metodologías estructuradas y
+            <div className="flex-1">
+              <div className="flex items-center gap-4 mb-3">
+                <span className="text-[10px] tracking-[0.25em] text-gray-400 font-medium uppercase">
+                  Careers
+                </span>
+                <div className="h-px flex-1 max-w-[100px] bg-gradient-to-r from-gray-300 to-transparent" />
+              </div>
+              
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-black mb-4 tracking-tight">
+                 Cómo <span className="font-semibold">trabajamos</span>
+              </h2>
+              
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-2xl">
+              Nuestros proyectos se desarrollan bajo metodologías estructuradas y
             procesos documentados, garantizando trazabilidad y cumplimiento
             normativo en todas las fases. Fomentamos un entorno colaborativo donde
             el conocimiento se comparte, las decisiones se analizan con criterio
             técnico y cada ingeniero entiende el impacto de su trabajo dentro del
             sistema completo.
-          </motion.p>
+              </p>
+            </div>
+          </div>
+        </motion.div>
         </div>
 
         {/* Grid de cards */}

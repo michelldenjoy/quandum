@@ -80,7 +80,7 @@ export default function HeroVideo({
               </motion.p>
 
               {/* Title - Escalado fluido y line-height optimizado */}
-              <h1 className="flex flex-wrap text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl  font-bold tracking-tight leading-[1.1] sm:leading-tight">
+              <h1 className="flex flex-wrap text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl  tracking-tight leading-[1.1] sm:leading-tight">
                 {title.split(" ").map((word, index) => (
                   <motion.span
                     key={index}

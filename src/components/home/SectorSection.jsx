@@ -38,7 +38,7 @@ export default function SectorsSection() {
 
   return (
     <section className="relative w-full bg-white py-16 lg:py-24 overflow-hidden">
-      {/* Sistema de fondo minimalista técnico */}
+     
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div
           className="absolute top-1/3 right-1/4 w-[900px] h-[900px] bg-brand-blue/5 rounded-full blur-3xl animate-pulse"
@@ -49,20 +49,45 @@ export default function SectorsSection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-16 lg:mb-20 text-center">
-          <motion.h3
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl sm:text-5xl md:text-6xl tracking-tight text-black mb-6"
-          >
-            Sectores en los que operamos
-          </motion.h3>
+        <div className="max-w-7xl mx-auto px-6">
+        {/* Intro */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <div className="flex items-start gap-8">
+            {/* Línea vertical decorativa */}
+            <div className="hidden md:flex flex-col items-center gap-2 pt-2">
+              <div className="w-px h-16 bg-gradient-to-b from-transparent via-black to-transparent" />
+              <div className="w-1.5 h-1.5 bg-black rotate-45" />
+            </div>
+
+            <div className="flex-1">
+              <div className="flex items-center gap-4 mb-3">
+                <span className="text-[10px] tracking-[0.25em] text-gray-400 font-medium uppercase">
+                  Sectores
+                </span>
+                <div className="h-px flex-1 max-w-[100px] bg-gradient-to-r from-gray-300 to-transparent" />
+              </div>
+              
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-black mb-4 tracking-tight">
+                 <span className="font-semibold">Sectores</span> en los que operamos
+              </h2>
+              
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-2xl">
+              Hardware, software y mecánica concebidos como un sistema único,
+              desarrollado bajo criterios de fiabilidad, seguridad y certificación.
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
           {/* linea decorativa de titulo */}
 
-          <motion.div
+          {/* <motion.div
             initial={{ width: 0, opacity: 0 }}
             whileInView={{ width: "60%", opacity: 1 }}
             viewport={{ once: true }}
@@ -72,7 +97,7 @@ export default function SectorsSection() {
               backgroundImage:
                 "linear-gradient(to right, transparent, #A9A9A9, transparent), repeating-linear-gradient(to right, transparent 0%, transparent 10%, #A9A9A9 10%, #A9A9A9 12%)", // Patrón de dashes metálicos
             }}
-          />
+          /> */}
         </div>
 
         {/* Grid de cards */}

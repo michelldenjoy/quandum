@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import Title from "../history/Title";
 import Subtitle from "../history/Subtitle";
+import StarfieldNebula from "../3d/StarfieldNebula";
 
 const timelineData = [
   {
@@ -60,7 +61,7 @@ export default function AboutTimeline() {
       className="relative w-full text-white py-32  overflow-hidden"
     >
       {/* Fondo con textura metálica muy sutil */}
-      <div className="absolute inset-0 " />
+      <StarfieldNebula />
 
       <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
         {/* Título superior */}
