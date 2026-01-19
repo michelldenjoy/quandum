@@ -73,7 +73,7 @@ export default function Capabilities() {
         >
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
             <div className="flex-1">
-              {/* Etiqueta superior */}
+              {/*TITULO PRINCIPAL*/}
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-black" />
@@ -85,7 +85,7 @@ export default function Capabilities() {
                 </span>
               </div>
               
-              {/* Título principal */}
+              {/* TITULO PRINCIPAL */}
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-black tracking-tight leading-[1.1]">
                 Capacidades
                 <br />
