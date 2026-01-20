@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { motion } from "motion/react";
 import { Download, X, ExternalLink } from "lucide-react";
 import HeroVideo from "../../components/about/HeroVideo";
+import CertificationsSection from "../../components/certifications/CertificationsSection";
 
 export default function Certificaciones() {
   const [selectedCert, setSelectedCert] = useState(null);
@@ -45,9 +46,9 @@ export default function Certificaciones() {
     : null;
 
   return (
-    <div className="w-full overflow-x-hidden relative">
+    <div className="w-full bg-white overflow-x-hidden relative">
       {/* Fondo fijo */}
-      <div className="fixed inset-0 -z-10">
+      {/* <div className=" inset-0 -z-10">
         <HeroVideo
           eyebrow=""
           title=""
@@ -55,9 +56,11 @@ export default function Certificaciones() {
           backgroundImage="/images/certifications.jpeg"
         />
         <div className="absolute inset-0 bg-black/30" />
-      </div>
+      </div> */}
 
-      <section className="relative py-32 px-6 sm:px-10 md:px-16">
+      <CertificationsSection />
+
+      {/* <section className="relative py-32 px-6 sm:px-10 md:px-16">
         <motion.h2
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +88,7 @@ export default function Certificaciones() {
               className="grid lg:grid-cols-3 gap-8 items-start bg-zinc-900/80 backdrop-blur-xl border border-zinc-700 rounded-2xl p-8 lg:p-10 cursor-pointer hover:border-cyan-500 transition-all duration-500"
               onClick={() => setSelectedCert(cert.id)}
             >
-              {/* Texto */}
+             
               <div className="lg:col-span-2 flex flex-col justify-start gap-4">
                 <span className="text-xs tracking-[0.3em] text-cyan-400 font-bold uppercase">
                   Sistema de gestión certificado
@@ -115,7 +118,7 @@ export default function Certificaciones() {
                 </div>
               </div>
 
-              {/* Preview  */}
+              
               <div className="relative max-w-xs h-60 lg:h-72 overflow-hidden rounded-xl border border-zinc-700 shadow-lg">
                 <img
                   src={cert.imageUrl}
@@ -127,7 +130,7 @@ export default function Certificaciones() {
             </motion.div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Modal con certificado*/}
       {currentCert && (

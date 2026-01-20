@@ -328,7 +328,7 @@ export default function Contacto() {
                      ${
                        isSubmitting
                          ? "bg-slate-800 border-blue-500/40 text-blue-300 cursor-wait"
-                         : "bg-brand-blue border-gray-500 text-gray-200 hover:bg-transparent hover:text-brand-blue"
+                         : "bg-brand-transparent border-gray-500 text-white hover:bg-brand-blue hover:text-white"
                      }
   `}
                 >

@@ -63,7 +63,7 @@ function InputLight({
           required={label.includes("*")}
           onFocus={onFocus}
           onBlur={onBlur}
-          className="w-full px-4 py-3 bg-slate-950/50 border border-slate-700/50 rounded-xl text-slate-200 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 outline-none hover:border-slate-600/50 placeholder-slate-500"
+          className="w-full px-4 py-3 bg-slate-900/80 border border-slate-700/50 rounded-xl text-slate-200 focus:bg-black focus:ring-1 focus:ring-white  transition-all duration-300 outline-none hover:border-slate-600/50 placeholder-slate-500"
           {...props}
         />
         {focused && (
@@ -260,7 +260,7 @@ export default function Formulario() {
                   onChange={handleChange}
                   onFocus={() => setFocusedInput("position")}
                   onBlur={() => setFocusedInput(null)}
-                  className="w-full px-4 py-3 bg-slate-950/50 border border-slate-700/50 rounded-xl text-slate-200 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 outline-none hover:border-slate-600/50"
+                  className="w-full px-4 py-3 bg-slate-950/50 border border-slate-700/50 rounded-xl text-slate-200 focus:ring-1 focus:ring-white focus:border-blue-500/50 transition-all duration-300 outline-none hover:border-slate-600/50"
                 >
                   <option value="">Seleccionar</option>
                   {positions.map((p) => (
@@ -283,7 +283,7 @@ export default function Formulario() {
                 onChange={handleChange}
                 onFocus={() => setFocusedInput("message")}
                 onBlur={() => setFocusedInput(null)}
-                className="w-full px-4 py-3 bg-slate-950/50 border border-slate-700/50 rounded-xl text-slate-200 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 resize-none outline-none hover:border-slate-600/50 placeholder-slate-500"
+                className="w-full px-4 py-3 bg-slate-900/80 border border-slate-700/50 rounded-xl text-slate-200 focus:ring-1 focus:ring-white focus:bg-black transition-all duration-300 resize-none outline-none hover:border-slate-600/50 placeholder-slate-500"
                 placeholder="Certificaciones, disponibilidad, experiencia..."
               />
             </div>
@@ -295,7 +295,7 @@ export default function Formulario() {
       ${
         fileName
           ? "bg-transparent text-brand-blue border-brand-blue"
-          : "bg-brand-blue text-gray-200 border-gray-500 hover:bg-transparent hover:text-black"
+          : "bg-transparent text-gray-200 border-gray-500 hover:bg-brand-blue hover:text-white"
       }`}
               >
                 <Upload className="w-4 h-4" />
@@ -318,7 +318,7 @@ export default function Formulario() {
                 type="submit"
                 disabled={isSubmitting}
                 onClick={handleSubmit}
-                className="px-8 py-3 w-full md:w-auto bg-brand-blue rounded-md text-sm uppercase tracking-widest text-white clip-path-diagonal border border-gray-500 hover:bg-transparent hover:text-black transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-8 py-3 w-full md:w-auto bg-brand-blue hover:scale-105 rounded-md text-sm uppercase tracking-widest text-white clip-path-diagonal border border-gray-500 hover:bg-transparent hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Enviando..." : "Enviar Candidatura"}
               </button>

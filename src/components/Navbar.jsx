@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [mobileDropdowns, setMobileDropdowns] = useState({});
+  const [submenuOpen, setSubmenuOpen] = useState(null); // null o el nombre del link
   const location = useLocation();
 
   useEffect(() => {
@@ -15,33 +15,16 @@ export default function Navbar() {
 
   useEffect(() => {
     setOpen(false);
-    setMobileDropdowns({});
+    setSubmenuOpen(null);
   }, [location.pathname]);
-
-  const toggleMobileDropdown = (linkName) => {
-    setMobileDropdowns((prev) => ({
-      ...prev,
-      [linkName]: !prev[linkName],
-    }));
-  };
 
   const links = [
     {
       name: "Empresa",
       dropdown: [
         { name: "Quienes somos", path: "/empresa/about" },
-        // { name: "Infraestructuras", path: "/empresa/infraestructuras" },
-        // { name: "Historia", path: "/empresa/historia" },
-
-        // 🔽 Enlaces integrados desde "Sobre Quandum"
-        // { name: "Politica de Calidad", path: "/sobre-quandum/calidad" },
         { name: "Certificaciones", path: "/sobre-quandum/certificaciones" },
         { name: "Compromiso Ético y Sostenible", path: "/sobre-quandum/codigo-etico" },
-        
-        // {
-        //   name: "Entorno Responsable",
-        //   path: "/sobre-quandum/entorno-responsable",
-        // },
         { name: "Trabaja con nosotros", path: "/trabaja-con-nosotros" },
       ],
     },
@@ -53,12 +36,8 @@ export default function Navbar() {
         { name: "Mecanica", path: "/servicios/mecanica" },
       ],
     },
-
-
-    // { name: "Prensa", path: "/prensa" },
     { name: "Proyectos", path: "/proyectos/destacados" },
     { name: "Contacto", path: "/contacto" },
-    
   ];
 
   return (
@@ -96,26 +75,21 @@ export default function Navbar() {
                 : link.dropdown?.some((item) =>
                     location.pathname.startsWith(item.path.split("?")[0])
                   );
-              // links Empresa Servicios Proyectos Sobre Quandum escritorio
+
               if (link.dropdown) {
                 return (
                   <div key={link.name} className="relative group">
-                    {/* Trigger */}
                     <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 bg-gradient-to-br from-blue-100 to-white blur-xl" />
                     <span
-                      className={` relative z-10 text-sm xl:text-base font-medium tracking-wide whitespace-nowrap transition-all duration-300 cursor-pointer flex items-center  ${
+                      className={`relative z-10 text-sm xl:text-base font-medium tracking-wide whitespace-nowrap transition-all duration-300 cursor-pointer flex items-center ${
                         isActive ? "text-brand-pink" : "text-gray-300"
-                      } group-hover:text-red-400 `}
+                      } group-hover:text-red-400`}
                     >
                       {link.name}
                     </span>
 
-                    {/* Dropdown */}
                     <div className="absolute top-full left-0 pt-4 pointer-events-none opacity-0 invisible group-hover:pointer-events-auto group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out">
                       <div className="bg-neutral-900/100 backdrop-blur-sm border border-neutral-800 rounded-2xl shadow-2xl py-6 px-6 min-w-[280px] whitespace-nowrap">
-                        {/* <h3 className="text-base font-bold text-white mb-4 tracking-wide border-b border-neutral-800 pb-3">
-                          {link.name}
-                        </h3> */}
                         <ul className="space-y-3">
                           {link.dropdown.map((item) => (
                             <li key={item.name}>
@@ -135,13 +109,9 @@ export default function Navbar() {
                 );
               }
 
-              //Links "Prensa, Trabaja con nosotros y Contacto escritorio"
               return (
                 <div key={link.name} className="relative group">
-                  {/* Background glow */}
-                  <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 bg-gradient-to-br from-blue-100 to-white blur-xl " />
-
-                  {/* Link */}
+                  <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 bg-gradient-to-br from-blue-100 to-white blur-xl" />
                   <Link
                     to={link.path}
                     className={`relative z-10 text-sm xl:text-base font-medium tracking-wide whitespace-nowrap transition-all duration-300 ${
@@ -186,88 +156,131 @@ export default function Navbar() {
       >
         <div
           className="absolute inset-0 bg-black/70 backdrop-blur-md"
-          onClick={() => setOpen(false)}
+          onClick={() => {
+            setOpen(false);
+            setSubmenuOpen(null);
+          }}
         />
+        
+        {/* Contenedor principal del menú con overflow hidden */}
         <div
-          className={`absolute right-0 top-0 h-screen w-full sm:w-96 bg-neutral-900/98 backdrop-blur-2xl overflow-y-auto transition-transform duration-500 ease-out ${
+          className={`absolute right-0 top-0 h-screen w-full sm:w-96 bg-black overflow-hidden transition-transform duration-500 ease-out ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          {/* espacio entre links en menu movil */}
-          <div className="py-32 pb-24 px-6 sm:px-8 space-y-6">
-            {links.map((link) => {
-              const isActive = link.path
-                ? location.pathname === link.path
-                : link.dropdown?.some((item) =>
-                    location.pathname.startsWith(item.path)
-                  );
+          {/* Menú Principal */}
+          <div
+            className={`absolute inset-0 transition-transform duration-500 ease-out ${
+              submenuOpen ? "-translate-x-full" : "translate-x-0"
+            }`}
+          >
+            <div className="h-full overflow-y-auto py-32 pb-24 px-6 sm:px-8 space-y-6">
+              {links.map((link) => {
+                const isActive = link.path
+                  ? location.pathname === link.path
+                  : link.dropdown?.some((item) =>
+                      location.pathname.startsWith(item.path)
+                    );
 
-              if (link.dropdown) {
-                const isOpen = mobileDropdowns[link.name];
-
-                return (
-                  <div
-                    key={link.name}
-                    className="border-b border-neutral-800 pb-6"
-                  >
-                    {/* Título con botón + */}
+                if (link.dropdown) {
+                  return (
                     <button
-                      onClick={() => toggleMobileDropdown(link.name)}
-                      className="w-full flex items-center justify-between text-xl sm:text-2xl font-bold text-white mb-4 hover:text-blue-400 transition-colors"
+                      key={link.name}
+                      onClick={() => setSubmenuOpen(link.name)}
+                      className="w-full flex items-center justify-between text-xl sm:text-2xl font-bold text-white border-b border-neutral-800 pb-6 hover:text-blue-400 transition-colors group"
                     >
                       <span>{link.name}</span>
-                      <span
-                        className={`text-2xl transition-transform duration-300 ${
-                          isOpen ? "rotate-45" : ""
-                        }`}
+                      <svg
+                        className="w-6 h-6 text-gray-400 group-hover:text-blue-400 transition-colors"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
                       >
-                        +
-                      </span>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
                     </button>
+                  );
+                }
 
-                    {/* Dropdown items */}
-                    <div
-                      className={`space-y-2 overflow-hidden transition-all duration-300 ${
-                        isOpen
-                          ? "max-h-screen opacity-100"
-                          : "max-h-0 opacity-0"
+                return (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    onClick={() => setOpen(false)}
+                    className={`block py-2 px-4 rounded-lg text-xl sm:text-2xl font-bold transition-all border-b border-neutral-800 pb-6 ${
+                      isActive
+                        ? "text-rose-400 bg-neutral-800/40"
+                        : "text-gray-300 hover:text-white hover:bg-neutral-800/20"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Submenú Deslizante */}
+          <div
+            className={`absolute inset-0 transition-transform duration-500 ease-out ${
+              submenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
+          >
+            <div className="h-full overflow-y-auto py-32 pb-24 px-6 sm:px-8">
+              {/* Botón Back */}
+              <button
+                onClick={() => setSubmenuOpen(null)}
+                className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors mb-8 group"
+              >
+                <svg
+                  className="w-6 h-6 group-hover:-translate-x-1 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+                <span className="text-lg font-medium">Back</span>
+              </button>
+
+              {/* Título del submenú */}
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 border-b border-neutral-800 pb-4">
+                {submenuOpen}
+              </h2>
+
+              {/* Items del submenú */}
+              <div className="space-y-4">
+                {links
+                  .find((link) => link.name === submenuOpen)
+                  ?.dropdown?.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      onClick={() => {
+                        setOpen(false);
+                        setSubmenuOpen(null);
+                      }}
+                      className={`block py-4 px-4 rounded-lg text-lg sm:text-xl transition-all ${
+                        location.pathname.startsWith(item.path)
+                          ? "text-blue-400 font-semibold bg-neutral-800/40"
+                          : "text-gray-300 hover:text-white hover:bg-neutral-800/20"
                       }`}
                     >
-                      {link.dropdown.map((item) => (
-                        <Link
-                          key={item.name}
-                          to={item.path}
-                          onClick={() => setOpen(false)}
-                          className={`block py-3 px-4 rounded-lg text-base sm:text-lg transition-all ${
-                            location.pathname.startsWith(item.path)
-                              ? "text-blue-400 font-semibold bg-neutral-800/40"
-                              : "text-gray-400 hover:text-white hover:bg-neutral-800/20"
-                          }`}
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                );
-              }
-
-              return (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  onClick={() => setOpen(false)}
-                  className={`block py-2 px-4 rounded-lg text-xl sm:text-2xl font-bold transition-all border-b border-neutral-800 pb-6 ${
-                    isActive
-                      ? "text-rose-400 bg-neutral-800/40"
-                      : "text-gray-300 hover:text-white hover:bg-neutral-800/20"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
-            <div className="pt-8"></div>
+                      {item.name}
+                    </Link>
+                  ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

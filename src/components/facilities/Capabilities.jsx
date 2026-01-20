@@ -6,37 +6,37 @@ const capabilities = [
     title: "Diseño y desarrollo electrónico",
     subtitle: "Circuitos avanzados y sistemas embebidos",
     icon: Cpu,
-    code: "EDV"
+    code: "EDV",
   },
   {
     title: "Diseño mecánico y fabricación",
     subtitle: "Ingeniería de precisión estructural",
     icon: Cog,
-    code: "DMF"
+    code: "DMF",
   },
   {
     title: "Software y control de sistemas",
     subtitle: "Arquitecturas críticas de vuelo",
     icon: Code,
-    code: "SCS"
+    code: "SCS",
   },
   {
     title: "Prototipado rápido",
     subtitle: "CNC & Impresión 3D de alta precisión",
     icon: Printer,
-    code: "PRT"
+    code: "PRT",
   },
   {
     title: "Certificaciones aeroespaciales",
     subtitle: "DO-178C, DO-254, DO-160G",
     icon: Shield,
-    code: "CRT"
+    code: "CRT",
   },
   {
     title: "Manufactura aditiva avanzada",
     subtitle: "FDM, LPBF, Carbon Fiber, Metal Printing",
     icon: Zap,
-    code: "MAA"
+    code: "MAA",
   },
 ];
 
@@ -50,13 +50,16 @@ export default function Capabilities() {
       <div className="absolute inset-0 overflow-hidden">
         {/* Grid sutil */}
         <div className="absolute inset-0 opacity-[0.02]">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.5) 1px, transparent 1px),
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `linear-gradient(rgba(0,0,0,0.5) 1px, transparent 1px),
                              linear-gradient(90deg, rgba(0,0,0,0.5) 1px, transparent 1px)`,
-            backgroundSize: '60px 60px'
-          }} />
+              backgroundSize: "60px 60px",
+            }}
+          />
         </div>
-        
+
         {/* Elementos geométricos decorativos */}
         <div className="absolute top-20 right-[10%] w-64 h-64 border border-gray-100 rotate-45 opacity-30" />
         <div className="absolute bottom-20 left-[5%] w-48 h-48 border border-gray-100 rotate-12 opacity-20" />
@@ -81,10 +84,10 @@ export default function Capabilities() {
                   <div className="w-1 h-1 bg-gray-300" />
                 </div>
                 <span className="text-[11px] tracking-[0.3em] text-gray-400 font-medium uppercase">
-                  Capabilities
+                  Nuestras
                 </span>
               </div>
-              
+
               {/* TITULO PRINCIPAL */}
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-black tracking-tight leading-[1.1]">
                 Capacidades
@@ -125,17 +128,17 @@ export default function Capabilities() {
                 key={idx}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: 0.6, 
+                transition={{
+                  duration: 0.6,
                   delay: idx * 0.12,
-                  ease: [0.22, 1, 0.36, 1]
+                  ease: [0.22, 1, 0.36, 1],
                 }}
                 viewport={{ once: true }}
               >
                 <div className="group relative h-full">
                   {/* Marco superior izquierdo */}
                   <div className="absolute -top-2 -left-2 w-4 h-4 border-l border-t border-gray-300 group-hover:border-black transition-colors duration-500" />
-                  
+
                   {/* Contenedor principal */}
                   <div className="relative bg-white border border-gray-200 group-hover:border-black transition-all duration-500 p-6 md:p-8 h-full">
                     {/* Header del card */}
@@ -148,10 +151,10 @@ export default function Capabilities() {
                           {item.code}
                         </div>
                       </div>
-                      
+
                       {/* Número de índice */}
                       <div className="text-5xl font-extralight text-gray-100 group-hover:text-gray-200 transition-colors duration-500">
-                        {String(idx + 1).padStart(2, '0')}
+                        {String(idx + 1).padStart(2, "0")}
                       </div>
                     </div>
 
@@ -183,17 +186,17 @@ export default function Capabilities() {
                 key={idx}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: 0.6, 
+                transition={{
+                  duration: 0.6,
                   delay: (idx + 0.15) * 0.12,
-                  ease: [0.22, 1, 0.36, 1]
+                  ease: [0.22, 1, 0.36, 1],
                 }}
                 viewport={{ once: true }}
               >
                 <div className="group relative h-full">
                   {/* Marco superior izquierdo */}
                   <div className="absolute -top-2 -left-2 w-4 h-4 border-l border-t border-gray-300 group-hover:border-black transition-colors duration-500" />
-                  
+
                   {/* Contenedor principal */}
                   <div className="relative bg-white border border-gray-200 group-hover:border-black transition-all duration-500 p-6 md:p-8 h-full">
                     {/* Header del card */}
@@ -206,10 +209,10 @@ export default function Capabilities() {
                           {item.code}
                         </div>
                       </div>
-                      
+
                       {/* Número de índice */}
                       <div className="text-5xl font-extralight text-gray-100 group-hover:text-gray-200 transition-colors duration-500">
-                        {String(idx + 4).padStart(2, '0')}
+                        {String(idx + 4).padStart(2, "0")}
                       </div>
                     </div>
 
@@ -256,9 +259,9 @@ export default function Capabilities() {
                   </span>
                 </div>
               </div>
-              
+
               <div className="h-8 w-px bg-gray-300" />
-              
+
               <div className="flex flex-col">
                 <span className="text-xs text-gray-400 tracking-wider uppercase mb-1">
                   Compliance
@@ -273,7 +276,9 @@ export default function Capabilities() {
             </div>
 
             <div className="flex items-center gap-3 text-xs text-gray-400">
-              <span className="tracking-wider">Certificación completa para sistemas críticos</span>
+              <span className="tracking-wider">
+                Certificación completa para sistemas críticos
+              </span>
               <div className="w-16 h-px bg-gradient-to-r from-gray-300 to-transparent" />
             </div>
           </div>

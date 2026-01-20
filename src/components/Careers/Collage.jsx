@@ -48,7 +48,7 @@ export default function Collage() {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: 0.5, duration: 0.7 }}
-              className="space-y-4 md:space-y-5 text-base text-justify sm:text-lg lg:text-xl text-slate-500 leading-relaxed"
+              className="space-y-4 md:space-y-5 text-base text-justify sm:text-lg lg:text-xl text-gray-600 leading-relaxed"
             >
               <p>
                 Creemos que la ingeniería es una disciplina que combina rigor

@@ -16,6 +16,7 @@ export default {
         body: ["Roboto", 'sans-serif'],
         title: ["Play", 'sans-serif'],
       }
+      
     },
   },
   plugins: [],

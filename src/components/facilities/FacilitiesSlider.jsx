@@ -5,13 +5,13 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const images = [
   {
     src: "/images/instalaciones.jpg",
-    label: "Vista general de instalaciones",
-    specs: "Superficie total: 4.000 m²"
+    label: "Area de simulación y pruebas",
+    specs: "Certificación ISO 9001:2015  "
   },
   {
     src: "/images/instalation.jpg",
     label: "Áreas de producción",
-    specs: "Certificación ISO 9001:2015"
+    specs: "Superficie total: 4.000 m²"
   },
   {
     src: "/images/instalations.jpg",
@@ -58,28 +58,36 @@ export default function FacilitiesSlider() {
         >
           <div className="flex items-start gap-8">
             {/* Línea vertical decorativa */}
-            <div className="hidden md:flex flex-col items-center gap-2 pt-2">
+            {/* <div className="hidden md:flex flex-col items-center gap-2 pt-2">
               <div className="w-px h-16 bg-gradient-to-b from-transparent via-black to-transparent" />
               <div className="w-1.5 h-1.5 bg-black rotate-45" />
-            </div>
+            </div> */}
 
             <div className="flex-1">
-              <div className="flex items-center gap-4 mb-3">
-                <span className="text-[10px] tracking-[0.25em] text-gray-400 font-medium uppercase">
-                  Infrastructure
+              {/*TITULO PRINCIPAL*/}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-black" />
+                  <div className="w-1 h-1 bg-gray-400" />
+                  <div className="w-1 h-1 bg-gray-300" />
+                </div>
+                <span className="text-[11px] tracking-[0.3em] text-gray-400 font-medium uppercase">
+                  Nuestro entorno
                 </span>
-                <div className="h-px flex-1 max-w-[100px] bg-gradient-to-r from-gray-300 to-transparent" />
               </div>
               
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-black mb-4 tracking-tight">
-                Instalaciones <span className="font-semibold">Generales</span>
+              {/* TITULO PRINCIPAL */}
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-black tracking-tight leading-[1.1]">
+                Técnico 
+                <br />
+                <span className="font-bold">& Operativo </span>
               </h2>
-              
-              <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-2xl">
+              <p className="text-gray-600 mt-6 text-base md:text-lg leading-relaxed max-w-4xl">
                 4.000 m² de infraestructura especializada para el desarrollo, fabricación 
                 y validación de sistemas aeroespaciales bajo normativas internacionales.
               </p>
             </div>
+            
           </div>
         </motion.div>
 

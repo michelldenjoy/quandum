@@ -82,7 +82,7 @@ export default function Hero() {
             </motion.p>
 
             {/* Título principal */}
-            <h1 className="flex flex-wrap text-white text-4xl md:text-6xl lg:text-9xl tracking-tight font-light">
+            <h1 className="flex flex-wrap text-white text-5xl md:text-8xl lg:text-[10vw] tracking-tight font-light">
               {title.split(" ").map((word, index) => (
                 <motion.span
                   key={index}

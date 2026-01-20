@@ -74,13 +74,13 @@ export default function HeroVideo({
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className="text-cyan-400 text-xs sm:text-sm font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4 sm:mb-6"
+                className="text-cyan-400 text-lg  font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4 sm:mb-6"
               >
                 {eyebrow}
               </motion.p>
 
               {/* Title - Escalado fluido y line-height optimizado */}
-              <h1 className="flex flex-wrap text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl  tracking-tight leading-[1.1] sm:leading-tight">
+              <h1 className="flex flex-wrap text-white text-3xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-9xl  tracking-tight leading-[1.1] sm:leading-tight">
                 {title.split(" ").map((word, index) => (
                   <motion.span
                     key={index}

@@ -1,11 +1,8 @@
 import { useState, Fragment } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
-
-
 export default function WorkHorizontal() {
   const [active, setActive] = useState(null);
- 
 
   const sections = [
     {
@@ -58,44 +55,43 @@ export default function WorkHorizontal() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16  lg:mb-20">
-        {/* Intro */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <div className="flex items-start gap-8">
-            {/* Línea vertical decorativa */}
-            <div className="hidden md:flex flex-col items-center gap-2 pt-2">
-              <div className="w-px h-16 bg-gradient-to-b from-transparent via-black to-transparent" />
-              <div className="w-1.5 h-1.5 bg-black rotate-45" />
-            </div>
-
+          {/* Intro */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16"
+          >
             <div className="flex-1">
-              <div className="flex items-center gap-4 mb-3">
-                <span className="text-[10px] tracking-[0.25em] text-gray-400 font-medium uppercase">
+              {/*TITULO PRINCIPAL*/}
+              <div className="flex mt-8 items-center gap-4 mb-6">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-black" />
+                  <div className="w-1 h-1 bg-gray-400" />
+                  <div className="w-1 h-1 bg-gray-300" />
+                </div>
+                <span className="text-[11px] tracking-[0.3em] text-gray-400 font-medium uppercase">
                   Careers
                 </span>
-                <div className="h-px flex-1 max-w-[100px] bg-gradient-to-r from-gray-300 to-transparent" />
               </div>
-              
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-black mb-4 tracking-tight">
-                 Cómo <span className="font-semibold">trabajamos</span>
+
+              {/* TITULO PRINCIPAL */}
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-black tracking-tight leading-[1.1]">
+                Cómo
+                <br />
+                <span className="font-bold">trabajamos</span>
               </h2>
-              
-              <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-2xl">
-              Nuestros proyectos se desarrollan bajo metodologías estructuradas y
-            procesos documentados, garantizando trazabilidad y cumplimiento
-            normativo en todas las fases. Fomentamos un entorno colaborativo donde
-            el conocimiento se comparte, las decisiones se analizan con criterio
-            técnico y cada ingeniero entiende el impacto de su trabajo dentro del
-            sistema completo.
+              <p className="text-gray-600 text-justify text-base md:text-lg mt-6 leading-relaxed max-w-4xl">
+                Nuestros proyectos se desarrollan bajo metodologías
+                estructuradas y procesos documentados, garantizando trazabilidad
+                y cumplimiento normativo en todas las fases. Fomentamos un
+                entorno colaborativo donde el conocimiento se comparte, las
+                decisiones se analizan con criterio técnico y cada ingeniero
+                entiende el impacto de su trabajo dentro del sistema completo.
               </p>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
         </div>
 
         {/* Grid de cards */}
@@ -121,26 +117,32 @@ export default function WorkHorizontal() {
                 {/* Línea superior decorativa */}
                 <div
                   className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-black via-brand-blue to-black transition-all duration-500 ${
-                    active === section.id ? "opacity-100" : "opacity-0 group-hover:opacity-50"
+                    active === section.id
+                      ? "opacity-100"
+                      : "opacity-0 group-hover:opacity-50"
                   }`}
                 />
 
                 <div className="relative z-10">
                   {/* Número de sección */}
-                  <div className={`text-6xl font-black mb-4 transition-all duration-500 ${
-                    active === section.id 
-                      ? "text-brand-blue" 
-                      : "text-gray-200 group-hover:text-gray-300"
-                  }`}>
+                  <div
+                    className={`text-6xl font-black mb-4 transition-all duration-500 ${
+                      active === section.id
+                        ? "text-brand-blue"
+                        : "text-gray-200 group-hover:text-gray-300"
+                    }`}
+                  >
                     {section.number}
                   </div>
 
                   {/* Título */}
-                  <h4 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
-                    active === section.id 
-                      ? "text-black" 
-                      : "text-gray-900 group-hover:text-black"
-                  }`}>
+                  <h4
+                    className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
+                      active === section.id
+                        ? "text-black"
+                        : "text-gray-900 group-hover:text-black"
+                    }`}
+                  >
                     {section.title}
                   </h4>
 
@@ -151,15 +153,19 @@ export default function WorkHorizontal() {
 
                   {/* Indicador */}
                   <div className="flex items-center text-sm font-medium text-gray-500 group-hover:text-black transition-colors">
-                    <span className={`transition-all duration-300 ${
-                      active === section.id ? "text-brand-blue" : ""
-                    }`}>
-                      {active === section.id ? "Ocultar información" : "Ver información"}
+                    <span
+                      className={`transition-all duration-300 ${
+                        active === section.id ? "text-brand-blue" : ""
+                      }`}
+                    >
+                      {active === section.id
+                        ? "Ocultar información"
+                        : "Ver información"}
                     </span>
                     <svg
                       className={`ml-2 w-4 h-4 transition-all duration-300 ${
-                        active === section.id 
-                          ? "rotate-180 text-brand-blue" 
+                        active === section.id
+                          ? "rotate-180 text-brand-blue"
                           : "group-hover:translate-x-1"
                       }`}
                       fill="none"
@@ -202,7 +208,7 @@ export default function WorkHorizontal() {
                           className="w-full h-[280px] object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                        
+
                         {/* Badge técnico */}
                         <div className="absolute bottom-4 left-4 right-4">
                           <div className="backdrop-blur-xl bg-white/95 rounded-lg px-4 py-2 border border-black/10 shadow-lg">

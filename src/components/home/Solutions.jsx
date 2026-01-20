@@ -61,25 +61,31 @@ export default function Solutions() {
         >
           <div className="flex items-start gap-8">
             {/* Línea vertical decorativa */}
-            <div className="hidden md:flex flex-col items-center gap-2 pt-2">
+            {/* <div className="hidden md:flex flex-col items-center gap-2 pt-2">
               <div className="w-px h-16 bg-gradient-to-b from-transparent via-white to-transparent" />
               <div className="w-1.5 h-1.5 bg-white rotate-45" />
-            </div>
+            </div> */}
 
             <div className="flex-1">
-              <div className="flex items-center gap-4 mb-3">
-                <span className="text-[10px] tracking-[0.25em] text-gray-400 font-medium uppercase">
-                  Sectores
+              {/*TITULO PRINCIPAL*/}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-black" />
+                  <div className="w-1 h-1 bg-gray-400" />
+                  <div className="w-1 h-1 bg-gray-300" />
+                </div>
+                <span className="text-[11px] tracking-[0.3em] text-gray-400 font-medium uppercase">
+                  Soluciones
                 </span>
-                <div className="h-px flex-1 max-w-[100px] bg-gradient-to-r from-gray-300 to-transparent" />
               </div>
 
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4 tracking-tight">
-                <span className="font-semibold">Dominios</span> de ingeniería
-                aeroespacial
+              {/* TITULO PRINCIPAL */}
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-white tracking-tight leading-[1.1]">
+                Capacidades
+                <br />
+                <span className="font-bold">& Tecnologías</span>
               </h2>
-
-              <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-2xl">
+              <p className="text-gray-400 mt-6 text-base md:text-lg leading-relaxed max-w-2xl">
                 Hardware, software y mecánica concebidos como un sistema único,
                 desarrollado bajo criterios de fiabilidad, seguridad y
                 certificación.
@@ -132,7 +138,7 @@ export default function Solutions() {
                     {s.title}
                   </h3>
 
-                  <p className="text-slate-400 mb-8 leading-relaxed">
+                  <p className="text-gray-400 mb-8 leading-relaxed">
                     {s.description}
                   </p>
 
@@ -140,9 +146,9 @@ export default function Solutions() {
                     {s.items.map((item, idx) => (
                       <li
                         key={idx}
-                        className="flex items-start gap-3 text-slate-300"
+                        className="flex items-start gap-3 text-gray-300"
                       >
-                        <span className="text-cyan-400 mt-1">▸</span>
+                        <span className="text-blue-800 mt-1">▸</span>
                         {item}
                       </li>
                     ))}
