@@ -29,7 +29,7 @@ export default function Hero() {
 
   return (
     <section className="relative w-full h-[95vh] min-h-[640px] overflow-hidden">
-      {/* Video */}
+     
       <video
         src="/herovideo.mp4"
         autoPlay
@@ -39,10 +39,10 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* Overlay cinematográfico */}
+      {/* Overlay  */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
 
-      {/* Grid técnico ultra sutil */}
+      {/* Grid */}
       <div
         className="absolute inset-0 opacity-[0.035] pointer-events-none 
                    bg-[linear-gradient(rgba(56,189,248,0.5)_1px,transparent_1px),
@@ -64,7 +64,7 @@ export default function Hero() {
 
       {/* Contenido */}
       <div className="relative z-10 h-full flex items-end">
-        <div className="w-full max-w-7xl mx-auto px-6 pb-20 md:pb-28">
+        <div className="w-full max-w-7xl lg:mx-9 px-6 pb-20 md:pb-28">
           <motion.div
             variants={container}
             initial="hidden"

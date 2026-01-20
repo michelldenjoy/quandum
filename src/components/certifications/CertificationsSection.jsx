@@ -57,7 +57,7 @@ const CertificationsSection = () => {
               <div className="w-1 h-1 bg-gray-300" />
             </div>
             <span className="text-[11px] tracking-[0.3em] text-gray-400 font-medium uppercase">
-              Nuestras
+              Certificados
             </span>
           </div>
 
@@ -96,7 +96,7 @@ const CertificationsSection = () => {
             </a>
           </motion.div>
 
-          {/* Columna Derecha: Certificaciones (Cards Complejas) */}
+          {/* Columna Derecha: Certificaciones */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -110,7 +110,7 @@ const CertificationsSection = () => {
                 variants={itemVariants}
                 className="group relative p-8 border border-gray-200 hover:border-brand-blue transition-all duration-500 rounded-sm flex flex-col bg-white overflow-hidden"
               >
-                {/* Icono de fondo decorativo */}
+                {/* Icono de fondo */}
                 <FileBadge className="absolute -right-6 -bottom-6 text-gray-50 group-hover:text-blue-50/50 transition-colors duration-500" size={140} />
 
                 <div className="relative z-10 flex-grow">
@@ -129,7 +129,7 @@ const CertificationsSection = () => {
                   </p>
                 </div>
 
-                {/* Footer de la card con botones de acción */}
+                {/* Footer del card con botones */}
                 <div className="relative z-10 mt-auto">
                   <div className="pt-6 border-t border-gray-100 mb-6 text-[10px] text-gray-400 uppercase tracking-tighter">
                     {cert.standard}

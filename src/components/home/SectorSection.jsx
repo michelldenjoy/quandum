@@ -11,8 +11,9 @@ export default function SectorsSection() {
       number: "01",
       short: "Sistemas electrónicos y optoelectrónicos para aeronaves.",
       image: "/aeroespacial.jpg",
-      description: `Desarrollo de sistemas críticos embarcados, electrónica certificable, optoelectrónica y soluciones diseñadas para operar en entornos extremos bajo estándares aeronáuticos internacionales.`,
-      specs: ["DO-178C", "DO-254", "ARP4754A"],
+      description: `Desarrollamos soluciones de ingeniería para plataformas aeroespaciales civiles y militares, cubriendo todo el ciclo de vida del sistema. Desde la definición de requisitos y el diseño de arquitectura hasta la verificación, validación y soporte a certificación, trabajamos conforme a los estándares más exigentes del sector.
+Nuestra experiencia abarca sistemas electrónicos, software crítico y diseño mecánico, integrados bajo criterios de seguridad, fiabilidad y cumplimiento normativo (EASA, FAA, EN 9100).`,
+      specs: ["ISO-9001", "AS/EN9100", "DO-178C", "DO-254" ],
     },
     {
       id: "defense",
@@ -20,8 +21,10 @@ export default function SectorsSection() {
       number: "02",
       short: "Soluciones certificables para entornos de alta exigencia.",
       image: "/defensa.jpg",
-      description: `Ingeniería avanzada aplicada a programas militares, con foco en fiabilidad, robustez y cumplimiento normativo MIL-STD y RTCA.`,
-      specs: ["MIL-STD-810", "MIL-STD-461", "RTCA"],
+      description: `Aplicamos ingeniería avanzada en entornos de misión crítica, donde la fiabilidad, la trazabilidad y la gestión del riesgo son determinantes. Participamos en el desarrollo e integración de sistemas para defensa, cumpliendo con requisitos técnicos, normativos y de seguridad propios de programas militares.
+
+Nuestros procesos están alineados con estándares internacionales y permiten operar dentro de cadenas de suministro reguladas, garantizando confidencialidad, control de configuración y continuidad operativa.`,
+      specs: ["MIL-STD-704", "MIL-STD-810", "RTCA", "MIL-HBK-204"],
     },
     {
       id: "industrial",
@@ -29,8 +32,10 @@ export default function SectorsSection() {
       number: "03",
       short: "Automatización, control e instrumentación avanzada.",
       image: "industrial.jpg",
-      description: `Diseño y desarrollo de sistemas industriales especiales, integrando electrónica, software y mecánica para aplicaciones donde la precisión, la continuidad operativa y la fiabilidad son esenciales.`,
-      specs: ["IEC 61508", "ISO 13849", "IEC 62061"],
+      description: `Transferimos el rigor de la ingeniería aeroespacial al ámbito industrial, desarrollando soluciones tecnológicas robustas, escalables y orientadas a entornos exigentes. Diseñamos sistemas electrónicos, mecánicos y de control que requieren alta fiabilidad, precisión y control de procesos.
+
+Nuestra aproximación combina ingeniería de producto, optimización de procesos y validación técnica, aportando valor en sectores donde la calidad, la seguridad y la trazabilidad son críticas.`,
+      specs: ["IEC 61508", "ISO-9001", "IEC 62061"],
     },
   ];
 
@@ -38,7 +43,6 @@ export default function SectorsSection() {
 
   return (
     <section className="relative w-full bg-white py-16 lg:py-24 overflow-hidden">
-     
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div
           className="absolute top-1/3 right-1/4 w-[900px] h-[900px] bg-brand-blue/5 rounded-full blur-3xl animate-pulse"
@@ -50,43 +54,43 @@ export default function SectorsSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-7xl mx-auto px-6">
-        {/* Intro */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <div className="flex items-start gap-8">
-            {/* Línea vertical decorativa */}
-            {/* <div className="hidden md:flex flex-col items-center gap-2 pt-2">
+          {/* Intro */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16"
+          >
+            <div className="flex items-start gap-8">
+              {/* Línea vertical decorativa */}
+              {/* <div className="hidden md:flex flex-col items-center gap-2 pt-2">
               <div className="w-px h-16 bg-gradient-to-b from-transparent via-black to-transparent" />
               <div className="w-1.5 h-1.5 bg-black rotate-45" />
             </div> */}
 
-            <div className="flex-1">
-              {/*TITULO PRINCIPAL*/}
-              <div className="flex items-center gap-4 mb-6">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-black" />
-                  <div className="w-1 h-1 bg-gray-400" />
-                  <div className="w-1 h-1 bg-gray-300" />
+              <div className="flex-1">
+                {/*TITULO PRINCIPAL*/}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-black" />
+                    <div className="w-1 h-1 bg-gray-400" />
+                    <div className="w-1 h-1 bg-gray-300" />
+                  </div>
+                  <span className="text-[13px] tracking-[0.3em] text-gray-400 font-medium uppercase">
+                    Sectores
+                  </span>
                 </div>
-                <span className="text-[13px] tracking-[0.3em] text-gray-400 font-medium uppercase">
-                  Sectores
-                </span>
-              </div>
 
-              {/* TITULO PRINCIPAL */}
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-black tracking-tight leading-[1.1]">
-              Áreas 
-                <br />
-                <span className="font-bold">Tecnológicas</span>
-              </h2>
+                {/* TITULO PRINCIPAL */}
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-black tracking-tight leading-[1.1]">
+                  Áreas
+                  <br />
+                  <span className="font-bold">Tecnológicas</span>
+                </h2>
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
 
           {/* linea decorativa de titulo */}
 
@@ -160,7 +164,7 @@ export default function SectorsSection() {
                     {sector.short}
                   </p>
 
-                  {/* Especificaciones técnicas */}
+                  {/* Especificaciones  */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     {sector.specs.map((spec) => (
                       <span
@@ -221,7 +225,7 @@ export default function SectorsSection() {
                     transition={{ duration: 0.5, ease: "easeOut" }}
                     className="md:hidden col-span-1 overflow-hidden"
                   >
-                    <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                    <div className="bg-gradient-to-br from-gray-50 text-justify to-white rounded-2xl p-6 border border-gray-200 shadow-lg">
                       <div className="relative overflow-hidden rounded-xl mb-6 group">
                         <img
                           src={sector.image}

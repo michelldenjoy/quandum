@@ -28,7 +28,7 @@ const capabilities = [
   },
   {
     title: "Certificaciones aeroespaciales",
-    subtitle: "DO-178C, DO-254, DO-160G",
+    subtitle: "DO-178C, DO-254, DO-160",
     icon: Shield,
     code: "CRT",
   },
@@ -46,9 +46,9 @@ export default function Capabilities() {
 
   return (
     <section className="relative bg-white py-20 md:py-28 px-4 sm:px-6 overflow-hidden">
-      {/* Elementos de fondo técnicos */}
+      {/* Elementos de fondo */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Grid sutil */}
+        {/* Grid */}
         <div className="absolute inset-0 opacity-[0.02]">
           <div
             className="absolute inset-0"
@@ -60,13 +60,13 @@ export default function Capabilities() {
           />
         </div>
 
-        {/* Elementos geométricos decorativos */}
+        {/* Elementos decorativos */}
         <div className="absolute top-20 right-[10%] w-64 h-64 border border-gray-100 rotate-45 opacity-30" />
         <div className="absolute bottom-20 left-[5%] w-48 h-48 border border-gray-100 rotate-12 opacity-20" />
       </div>
 
       <div className="max-w-7xl mx-auto relative">
-        {/* Header premium */}
+       
         <motion.div
           className="mb-20"
           initial={{ opacity: 0, y: 30 }}
@@ -168,7 +168,7 @@ export default function Capabilities() {
                       </p>
                     </div>
 
-                    {/* Línea decorativa inferior */}
+                    {/* Línea  inferior */}
                     <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-black via-gray-300 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
                   </div>
 
@@ -226,7 +226,7 @@ export default function Capabilities() {
                       </p>
                     </div>
 
-                    {/* Línea decorativa inferior */}
+                    {/* Línea  inferior */}
                     <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-black via-gray-300 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
                   </div>
 

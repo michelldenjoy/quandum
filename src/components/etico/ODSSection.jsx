@@ -35,7 +35,7 @@ export default function ODSSection() {
       description:
         "Aplicamos criterios de sostenibilidad, eficiencia y economía circular en nuestros procesos.",
       icon: "/ods/ods12.png",
-      image: "/ods-bg/production.jpg",
+      image: "/images/calidad.jpg",
       color: "#BF8B2E",
     },
     {

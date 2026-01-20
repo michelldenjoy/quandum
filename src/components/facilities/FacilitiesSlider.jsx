@@ -93,7 +93,7 @@ export default function FacilitiesSlider() {
 
         {/* Contenedor principal del slider */}
         <div className="relative">
-          {/* Marco técnico */}
+         
           <div className="absolute -top-3 -left-3 w-6 h-6 border-l-2 border-t-2 border-black" />
           <div className="absolute -top-3 -right-3 w-6 h-6 border-r-2 border-t-2 border-black" />
           <div className="absolute -bottom-3 -left-3 w-6 h-6 border-l-2 border-b-2 border-black" />
@@ -168,7 +168,7 @@ export default function FacilitiesSlider() {
             </div>
           </div>
 
-          {/* Indicadores de progreso minimalistas */}
+          {/* Indicadores*/}
           <div className="mt-8 flex items-center justify-center gap-2">
             {images.map((_, i) => (
               <button
@@ -193,7 +193,7 @@ export default function FacilitiesSlider() {
             ))}
           </div>
 
-          {/* Contador numérico técnico */}
+          {/* Contador numérico */}
           <div className="mt-6 flex justify-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 bg-white/50">
               <div className="w-1.5 h-1.5 bg-black rotate-45" />

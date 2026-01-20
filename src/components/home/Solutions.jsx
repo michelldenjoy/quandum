@@ -7,12 +7,15 @@ const services = [
     tag: "HARDWARE",
     image: "/images/hardware.jpg",
     description:
-      "Diseñamos y desarrollamos sistemas electrónicos aeronáuticos para plataformas y misiones críticas.",
+      "Diseño y desarrollo de hardware crítico y sistemas electrónicos embarcados para aplicaciones aeroespaciales, defensa e industriales de alta fiabilidad, siguiendo procesos orientados a certificación.",
     items: [
-      "Arquitectura de sistemas electrónicos",
-      "Electrónica embebida y de control",
-      "Integración HW/SW",
-      "Ensayos y soporte a certificación",
+      "Arquitectura de sistemas electrónicos y HW complejo",
+      "Diseño de PCBs y electrónica embebida",
+      "Integración HW/SW y computadores embarcados custom",
+      "Diseño y fabricación de arneses y cableado",
+      "Integración de sensores, actuadores y sistemas ópticos",
+      "Ensayos funcionales, ambientales y EMI/EMC (DO-160)",
+      "Soporte a certificación RTCA/DO-254",
     ],
     reverse: false,
   },
@@ -21,26 +24,32 @@ const services = [
     tag: "SOFTWARE",
     image: "/images/software.jpeg",
     description:
-      "Desarrollo de software aeronáutico conforme a procesos de seguridad, trazabilidad y verificación.",
+      "Desarrollo de software crítico y embebido para sistemas de misión, diseñado desde el inicio bajo criterios de seguridad, trazabilidad y verificación aeronáutica.",
     items: [
-      "Software embebido",
-      "Algoritmos y simulación",
-      "Verificación y validación",
-      "Cumplimiento DO-178",
+      "Software embebido para sistemas aeronáuticos",
+      "Arquitecturas de control y gestión de sistemas",
+      "Algoritmos de visión y procesado de imagen",
+      "Sistemas de vídeo y protocolos de comunicación",
+      "Fusión de sensores VIS, NIR, SWIR y térmicos",
+      "Verificación y validación basada en requisitos",
+      "Cumplimiento RTCA/DO-178",
     ],
     reverse: true,
   },
   {
-    title: "Ingeniería Mecánica",
-    tag: "MECHANICAL",
+    title: "Ingeniería Industrial & Manufactura Avanzada",
+    tag: "INDUSTRIAL",
     image: "/images/mecanica.jpeg",
     description:
-      "Diseño mecánico de precisión para sistemas aeronáuticos e integración estructural.",
+      "Ingeniería mecánica, fabricación avanzada y soluciones industriales aplicando metodologías aeroespaciales de precisión, trazabilidad y control del ciclo de vida.",
     items: [
-      "Diseño CAD y arquitectura mecánica",
-      "Análisis estructural FEM",
-      "Integración de sistemas",
-      "Soporte a ensayos",
+      "Diseño mecánico CAD y arquitectura estructural",
+      "Mecanizado CNC de alta precisión",
+      "Fabricación aditiva: polímeros técnicos y metal",
+      "Prototipado rápido y utillaje funcional",
+      "Reverse engineering de sistemas obsoletos",
+      "Retrofit y upgrade de sistemas existentes",
+      "Diseño y fabricación de bancos de prueba",
     ],
     reverse: false,
   },
@@ -48,9 +57,10 @@ const services = [
 
 export default function Solutions() {
   return (
-    <section className=" py-32">
+    <section className="py-32">
       <div className="max-w-7xl mx-auto px-6">
         <StarfieldNebula />
+
         {/* Intro */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -60,14 +70,7 @@ export default function Solutions() {
           className="mb-16"
         >
           <div className="flex items-start gap-8">
-            {/* Línea vertical decorativa */}
-            {/* <div className="hidden md:flex flex-col items-center gap-2 pt-2">
-              <div className="w-px h-16 bg-gradient-to-b from-transparent via-white to-transparent" />
-              <div className="w-1.5 h-1.5 bg-white rotate-45" />
-            </div> */}
-
             <div className="flex-1">
-              {/*TITULO PRINCIPAL*/}
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-black" />
@@ -79,16 +82,16 @@ export default function Solutions() {
                 </span>
               </div>
 
-              {/* TITULO PRINCIPAL */}
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-white tracking-tight leading-[1.1]">
                 Capacidades
                 <br />
                 <span className="font-bold">& Tecnologías</span>
               </h2>
+
               <p className="text-gray-400 mt-6 text-base md:text-lg leading-relaxed max-w-2xl">
-                Hardware, software y mecánica concebidos como un sistema único,
-                desarrollado bajo criterios de fiabilidad, seguridad y
-                certificación.
+                Servicios de ingeniería desarrollados bajo estándares
+                aeroespaciales, integrando hardware, software y manufactura
+                avanzada como un único sistema.
               </p>
             </div>
           </div>
@@ -101,10 +104,7 @@ export default function Solutions() {
             const textFrom = s.reverse ? -60 : 60;
 
             return (
-              <div
-                key={i}
-                className={`grid lg:grid-cols-2 gap-16 items-center`}
-              >
+              <div key={i} className="grid lg:grid-cols-2 gap-16 items-center">
                 {/* IMAGE */}
                 <motion.div
                   initial={{ opacity: 0, x: imageFrom }}

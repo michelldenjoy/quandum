@@ -1,334 +1,161 @@
-import { motion, useScroll, useTransform } from "motion/react";
-import { div } from "motion/react-client";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ShieldCheck, Target, Award, CheckCircle2, Bookmark } from "lucide-react";
 import HeroVideo from "../../components/about/HeroVideo";
 
 export default function Calidad() {
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.6, 0.3]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   return (
-    <div>
+    <div className="bg-white selection:bg-brand-blue selection:text-white">
       <HeroVideo
-        eyebrow="Nuestra · Politica de Calidad"
-        title="Compromiso y Calidad"
-        description="Excelencia aeronáutica respaldada por estándares internacionales."
-        backgroundImage="/images/about-1.jpeg"
+        eyebrow="Excelencia Operativa"
+        title="Política de Calidad"
+        description="El marco normativo que rige cada uno de nuestros procesos de precisión."
+        backgroundImage="/ods-bg/production.jpg"
       />
 
-      <section>
-        {/* linea decorativa vertical */}
-        <motion.div
-          style={{ y, opacity }}
-          className="absolute inset-0 pointer-events-none"
-        >
-          <div className="absolute top-20 right-10 w-96 h-96 border border-cyan-500/10 rounded-full" />
-          <div className="absolute bottom-40 left-20 w-72 h-72 border border-sky-400/10 rounded-full" />
-          <div className="absolute top-1/2 left-1/4 w-1 h-64 bg-gradient-to-b from-transparent via-brand-blue/60 to-transparent" />
-        </motion.div>
+      {/* SECCIÓN MANIFIESTO */}
+      <section className="relative py-24 px-6 overflow-hidden">
+        {/* Fondo  */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+        </div>
 
-        <div className="relative z-20 max-w-7xl mx-auto px-6 py-20 md:py-32">
-          <motion.article
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="border border-cyan-500/20 rounded-2xl p-8 md:p-14 mb-20"
-          >
-            {/* Acento decorativo */}
-            
-
-<div className="space-y-6 text-slate-200">
-  <p className="text-lg md:text-xl leading-relaxed">
-    La Dirección de{" "}
-    <span className="text-white font-semibold">Quandum</span>{" "}
-    <span className="bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text font-semibold text-transparent">
-      Aerospace
-    </span>{" "}
-    establece la presente Política de Calidad como marco de referencia para el
-    desarrollo de todas sus actividades en los sectores aeronáutico, defensa e
-    industrial.
-  </p>
-
-  <p className="text-lg md:text-xl leading-relaxed">
-    Consciente de la importancia de la calidad, la seguridad y la fiabilidad en
-    sistemas de alta exigencia, la organización mantiene un firme compromiso con
-    la satisfacción del cliente, el cumplimiento de los requisitos legales y
-    reglamentarios aplicables, así como con la mejora continua de sus procesos.
-  </p>
-
-  <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent my-8" />
-
-  <p className="text-lg md:text-xl leading-relaxed">
-    Para ello, Quandum Aerospace ha implantado y mantiene un Sistema de Gestión de
-    la Calidad conforme a los requisitos de las normas{" "}
-    <span className="font-bold text-cyan-300">EN 9100:2018</span> e{" "}
-    <span className="font-bold text-cyan-300">ISO 9001:2015</span>, asegurando que
-    todos los proyectos se desarrollen bajo criterios de excelencia técnica,
-    control de riesgos y trazabilidad.
-  </p>
-</div>
-
-
-            {/* Acento decorativo inferior */}
-            {/* <div className="absolute bottom-0 right-8 w-24 h-1 bg-gradient-to-l from-cyan-400 to-transparent" /> */}
-          </motion.article>
-
-          {/* GRID DE OBJETIVOS Y VALORES - MEJORADO */}
-          <div className="grid lg:grid-cols-2 gap-8 mb-24">
-            {/* Objetivos Estratégicos */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative group"
-            >
-              <div
-                className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-sky-600/20 rounded-2xl blur-xl 
-                          group-hover:blur-2xl transition-all duration-500"
-              />
-
-              <div
-                className="relative bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-slate-900/95 
-                          border border-cyan-500/30 rounded-2xl p-8 md:p-10 
-                          hover:border-cyan-400/50 transition-all duration-500"
-              >
-                <div className="flex items-center gap-3 mb-8">
-                  {/* <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center">
-                  <span className="text-2xl">🎯</span>
-                </div> */}
-                  <h2 className="text-3xl md:text-4xl font-bold text-cyan-400">
-                    <span className="text-white">Objetivos</span>
-                    <span className="bg-gradient-to-r from-blue-100 via-blue-200 to-cyan-200 bg-clip-text text-transparent">
-                      {" "}
-                      Estrategicos
-                    </span>
-                  </h2>
-                </div>
-
-                <ul className="space-y-5">
-                  {[
-                    "Concienciar al equipo directivo sobre la calidad",
-                    "Establecer indicadores medibles en procesos clave",
-                    "Fomentar la participación activa del personal",
-                    "Garantizar la formación continua del equipo",
-                  ].map((item, i) => (
-                    <motion.li
-                      key={i}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.1 * i }}
-                      className="flex items-start gap-4 group/item"
-                    >
-                      <span className="text-cyan-400 text-xl mt-1 group-hover/item:scale-110 transition-transform">
-                        ▸
-                      </span>
-                      <span className="text-slate-200 text-lg leading-relaxed group-hover/item:text-cyan-100 transition-colors">
-                        {item}
-                      </span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-
-            {/* Valores Fundamentales */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative group"
-            >
-              <div
-                className="absolute inset-0 bg-gradient-to-br from-sky-500/20 to-cyan-600/20 rounded-2xl blur-xl 
-                          group-hover:blur-2xl transition-all duration-500"
-              />
-
-              <div
-                className="relative bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-slate-900/95 
-                          border border-sky-500/30 rounded-2xl p-8 md:p-10 
-                          hover:border-sky-400/50 transition-all duration-500"
-              >
-                <div className="flex items-center gap-3 mb-8">
-                  <h2 className="text-3xl md:text-4xl font-bold text-sky-400">
-                    <span className="text-white">Valores</span>
-                    <span className="bg-gradient-to-r from-blue-100 via-blue-200 to-cyan-200 bg-clip-text text-transparent">
-                      {" "}
-                      Fundamentales
-                    </span>
-                  </h2>
-                </div>
-
-                <ul className="space-y-5">
-                  {[
-                    "Enfoque absoluto al cliente",
-                    "Gestión integral por procesos",
-                    "Análisis y gestión de riesgos",
-                    "Formación continua y especializada",
-                    "Cultura de mejora continua",
-                  ].map((item, i) => (
-                    <motion.li
-                      key={i}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.1 * i }}
-                      className="flex items-start gap-4 group/item"
-                    >
-                      <span className="text-sky-400 text-xl mt-1 group-hover/item:scale-110 transition-transform">
-                        ▸
-                      </span>
-                      <span className="text-slate-200 text-lg leading-relaxed group-hover/item:text-sky-100 transition-colors">
-                        {item}
-                      </span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* CERTIFICACIONES  */}
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, type: "spring", stiffness: 60 }}
-            className="relative py-20"
-          >
-            {/* Líneas decorativas */}
-            <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
-
-            <div className="flex flex-col items-center">
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-cyan-400 text-sm tracking-[0.3em] uppercase mb-8"
-              >
-                Certificación
-              </motion.p>
-
-              <div className="relative group">
-                {/* Glow externo */}
-                <div
-                  className="absolute inset-0 bg-gradient-to-br from-cyan-500/30 to-sky-500/30 rounded-full blur-3xl 
-                            scale-150 group-hover:scale-[1.7] transition-all duration-700"
-                />
-
-                {/* Sello principal */}
-                <motion.div
-                  whileHover={{ scale: 1.035 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 90,
-                    damping: 22,
-                    mass: 1,
-                  }}
-                  className="relative w-72 h-72 rounded-full 
-                         bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900
-                         shadow-2xl border-2 border-cyan-500/40
-                         flex flex-col items-center justify-center
-                         group-hover:border-cyan-400/60 transition-all duration-500"
-                >
-                  {/* Patrón técnico de fondo */}
-                  <div className="absolute inset-0 opacity-10">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.3),transparent_70%)]" />
-                  </div>
-
-                  {/* Anillos decorativos */}
-                  <div className="absolute inset-8 border border-cyan-500/20 rounded-full" />
-                  <div className="absolute inset-16 border border-cyan-500/10 rounded-full" />
-
-                  {/* Contenido */}
-                  <div className="relative text-center z-10">
-                    <motion.div
-initial={{ opacity: 0, y: 40 }}
-whileInView={{ opacity: 1, y: 0 }}
-transition={{
-  duration: 1.2,
-  ease: "easeOut"
-}}
-
-                    >
-                      <p className="text-6xl font-bold bg-gradient-to-br from-cyan-400 to-sky-500 bg-clip-text text-transparent tracking-wider">
-                        EN 9100
-                      </p>
-                      <p className="text-2xl text-slate-400 mt-3 font-light">
-                        Rev. 2018
-                      </p>
-                    </motion.div>
-
-                    <div className="h-px bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent w-32 mx-auto mt-6 mb-6" />
-
-                    <motion.p
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ delay: 0.8 }}
-                      className="text-xs text-cyan-400/80 tracking-[0.3em] font-semibold"
-                    >
-                      CERTIFIED SYSTEM
-                    </motion.p>
-                  </div>
-
-                  {/* Badges en los bordes */}
-                  <motion.div
-                    initial={{ scale: 0.85, rotate: -45, opacity: 0 }}
-                    whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
-                    transition={{
-                      delay: 0.8,
-                      type: "spring",
-                      stiffness: 80,
-                      damping: 24,
-                      mass: 1,
-                    }}
-                    className="absolute -top-3 left-1/2 -translate-x-1/2 
-                           bg-gradient-to-r from-cyan-500 to-sky-500 
-                           text-white text-xs font-bold px-6 py-2 rounded-full 
-                           shadow-lg shadow-cyan-500/50"
-                  >
-                    ISO 9001:2015
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ scale: 0.85, rotate: 45, opacity: 0 }}
-                    whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
-                    transition={{
-                      delay: 1,
-                      type: "spring",
-                      stiffness: 80,
-                      damping: 24,
-                      mass: 1,
-                    }}
-                    className="absolute -bottom-3 left-1/2 -translate-x-1/2 
-                           bg-gradient-to-r from-sky-600 to-cyan-600 
-                           text-white text-xs font-bold px-6 py-2 rounded-full 
-                           shadow-lg shadow-sky-500/50"
-                  >
-                    QUANDUM AEROSPACE
-                  </motion.div>
-                </motion.div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Footer con compromiso */}
+        <div className="max-w-5xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mt-24 pb-12"
+            className="border-t-4 border-black pt-12"
           >
-            <p className="text-slate-400 text-3xl tracking-wider italic max-w-7xl mx-auto">
-              "Nuestra misión es entregar soluciones aeroespaciales que superen
-              las expectativas, manteniendo los más altos estándares de calidad
-              y seguridad en cada proyecto"
-            </p>
+            <div className="grid md:grid-cols-12 gap-12">
+              <div className="md:col-span-4">
+                <div className="sticky top-24">
+                  <div className="flex items-center gap-2 mb-4 text-brand-blue">
+                    
+                    <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-black">Declaración Oficial</span>
+                  </div>
+                  <h2 className="text-4xl font-bold tracking-tighter text-black leading-none uppercase">
+                    Compromiso <br /> Quandum
+                  </h2>
+                </div>
+              </div>
+
+              <div className="md:col-span-8 space-y-8 text-gray-600">
+                <p className="text-xl md:text-2xl font-light leading-relaxed text-black italic">
+                  "La Dirección de Quandum Aerospace establece la presente Política como marco de referencia para el desarrollo de todas sus actividades en los sectores <span className="text-brand-blue font-semibold">aeronáutico, defensa e industrial</span>."
+                </p>
+                
+                <div className="h-px bg-gray-200 w-24" />
+
+                <div className="grid md:grid-cols-2 gap-8 text-sm leading-relaxed">
+                  <p>
+                    Conscientes de la importancia de la seguridad y la fiabilidad en sistemas de alta exigencia, la organización mantiene un firme compromiso con la satisfacción del cliente y el cumplimiento normativo.
+                  </p>
+                  <p>
+                    Mantenemos un Sistema de Gestión conforme a las normas <span className="font-bold text-black underline decoration-brand-blue underline-offset-4">EN 9100:2018</span> e <span className="font-bold text-black underline decoration-brand-blue underline-offset-4">ISO 9001:2015</span>.
+                  </p>
+                </div>
+              </div>
+            </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* SECCIÓN OBJETIVOS Y VALORES  */}
+      <section className="py-24 bg-gray-50 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-px bg-gray-200 border border-gray-200">
+            
+            {/* Objetivos */}
+            <div className="bg-white p-12 lg:p-16">
+              <div className="flex items-center gap-4 mb-10">
+                <div className="p-3 bg-black text-white">
+                  <Target size={24} />
+                </div>
+                <h3 className="text-2xl font-bold uppercase tracking-tight">Objetivos Estratégicos</h3>
+              </div>
+              <ul className="space-y-6">
+                {[
+                  "Concienciación del equipo directivo en calidad",
+                  "Indicadores medibles en procesos críticos",
+                  "Participación activa del capital humano",
+                  "Formación técnica continua y especializada"
+                ].map((item, i) => (
+                  <li key={i} className="flex gap-4 items-start group">
+                    <span className="text-brand-blue font-mono font-bold">0{i+1}.</span>
+                    <span className="text-gray-600 group-hover:text-black transition-colors uppercase text-xs tracking-widest font-medium">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Valores */}
+            <div className="bg-white p-12 lg:p-16">
+              <div className="flex items-center gap-4 mb-10">
+                <div className="p-3 bg-brand-blue text-white">
+                  <Award size={24} />
+                </div>
+                <h3 className="text-2xl font-bold uppercase tracking-tight">Valores Fundamentales</h3>
+              </div>
+              <div className="grid sm:grid-cols-1 gap-4">
+                {[
+                  "Enfoque absoluto al cliente",
+                  "Gestión integral por procesos",
+                  "Análisis preventivo de riesgos",
+                  "Cultura de mejora continua"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3 p-4 border border-gray-100 group hover:border-black transition-all">
+                    <CheckCircle2 size={16} className="text-brand-blue" />
+                    <span className="text-[11px] font-bold uppercase tracking-tighter text-gray-500 group-hover:text-black">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* SECCIÓN SELLO */}
+      <section className="py-32  px-6">
+        <div className="max-w-4xl  mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            className="relative inline-block"
+          >
+            {/*  Círculo*/}
+            <div className="w-80 h-80 rounded-full border-[1px] border-gray-100 flex items-center justify-center relative">
+               <div className="absolute inset-4 border-[1px] border-gray-200 rounded-full border-dashed animate-[spin_20s_linear_infinite]" />
+               
+               <div className="text-center z-10 bg-white px-10">
+                  <p className="text-[10px] tracking-[0.5em] text-gray-400 uppercase mb-2 italic">Standard</p>
+                  <h4 className="text-5xl font-black text-black tracking-tighter">EN 9100</h4>
+                  <div className="h-1 w-12 bg-brand-blue mx-auto my-4" />
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Revision 2018</p>
+               </div>
+            </div>
+
+            {/* Badges */}
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-black text-white px-6 py-2 text-[10px] font-bold uppercase tracking-[0.2em] rounded-sm">
+              ISO 9001:2015
+            </div>
+            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-blue text-white px-6 py-2 text-[10px] font-bold uppercase tracking-[0.2em] rounded-sm">
+              Certified Systems
+            </div>
+          </motion.div>
+
+          <div className="mt-20">
+            <h5 className="text-3xl md:text-4xl font-extralight text-gray-400 italic leading-relaxed max-w-2xl mx-auto">
+              "Nuestra misión es la <span className="text-black font-semibold">precisión absoluta</span> en cada entrega aeronáutica."
+            </h5>
+          </div>
         </div>
       </section>
     </div>

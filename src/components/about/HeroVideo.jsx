@@ -32,7 +32,7 @@ export default function HeroVideo({
   return (
     <div className="w-full overflow-x-hidden bg-black pt-16 sm:pt-20 md:pt-24 lg:pt-28">
       <section className="relative h-[70vh] sm:h-[75vh] md:h-[80vh] lg:h-[95vh] w-full overflow-hidden">
-        {/* Background Image - Alta calidad con object-fit estratégico */}
+        {/* Background Image */}
         <div className="absolute inset-0">
           <img
             src={backgroundImage}
@@ -49,10 +49,10 @@ export default function HeroVideo({
           />
         </div>
 
-        {/* Overlay técnico - Más oscuro en móvil para mejor legibilidad */}
+        {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-slate-900/40 to-slate-950/90 sm:from-black/70 sm:via-slate-900/20 sm:to-slate-950/80" />
 
-        {/* Grid técnico - Responsive */}
+        {/* Grid*/}
         <div
           className="absolute inset-0 opacity-[0.03] sm:opacity-[0.04] pointer-events-none 
           bg-[linear-gradient(rgba(56,189,248,0.4)_1px,transparent_1px),
@@ -60,7 +60,7 @@ export default function HeroVideo({
           bg-[size:60px_60px] sm:bg-[size:80px_80px] md:bg-[size:100px_100px] lg:bg-[size:120px_120px]"
         />
 
-        {/* Content - Centrado vertical con mejor distribución */}
+        {/* Content - Centrado vertical */}
         <div className="relative z-10 h-full flex items-center">
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -69,7 +69,7 @@ export default function HeroVideo({
               animate="visible"
               className="max-w-full sm:max-w-4xl"
             >
-              {/* Eyebrow - Ajustado para móviles */}
+              {/* Eyebrow  */}
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -79,7 +79,7 @@ export default function HeroVideo({
                 {eyebrow}
               </motion.p>
 
-              {/* Title - Escalado fluido y line-height optimizado */}
+              {/* Title  */}
               <h1 className="flex flex-wrap text-white text-3xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-9xl  tracking-tight leading-[1.1] sm:leading-tight">
                 {title.split(" ").map((word, index) => (
                   <motion.span
@@ -92,7 +92,7 @@ export default function HeroVideo({
                 ))}
               </h1>
 
-              {/* Description - Tamaño y espaciado responsive */}
+              {/* Description  */}
               {description && (
                 <motion.p
                   initial={{ opacity: 0, y: 16 }}
@@ -108,7 +108,7 @@ export default function HeroVideo({
                 </motion.p>
               )}
 
-              {/* Children (Botones) - Espaciado responsive */}
+              {/* Children (Botones)  */}
               {children && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
