@@ -19,25 +19,25 @@ export default function Certificaciones() {
         <div className="flex-1">
               {/*TITULO PRINCIPAL*/}
               <div className="flex items-center gap-4 mb-6">
-                <div className="flex items-center gap-2">
+                {/* <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-black" />
                   <div className="w-1 h-1 bg-gray-400" />
                   <div className="w-1 h-1 bg-gray-300" />
-                </div>
-                <span className="text-[11px] tracking-[0.3em] text-gray-400 font-medium uppercase">
+                </div> */}
+                <span className="text-sm tracking-[0.3em] text-gray-400 font-medium uppercase">
                   Normativa
                 </span>
               </div>
 
               {/* TITULO PRINCIPAL */}
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight mb-8 text-white tracking-tight leading-[1.1]">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight mb-10 text-white tracking-tight leading-[1.1]">
                 Compromiso
                 <br />
-                <span className="font-bold">Global</span>
+                <span className="font-semibold">Global</span>
               </h2>
             </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* OASIS */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -47,22 +47,22 @@ export default function Certificaciones() {
             >
               <div className="flex justify-between items-start mb-12">
                 <Globe className="text-brand-blue" size={32} />
-                <span className="text-[10px] tracking-[0.3em] text-zinc-500 uppercase font-bold">IAQG Member</span>
+                <span className="text-sm tracking-[0.3em] text-zinc-500 uppercase font-bold">IAQG Member</span>
               </div>
               <h3 className="text-2xl font-bold mb-4 tracking-tight">OASIS – IAQG</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed mb-8">
+              <p className="text-zinc-400 leading-relaxed mb-8">
                 Inscritos en el Online Aerospace Supplier Information System. Esta base de datos es el estándar de confianza para los principales OEMs globales.
               </p>
               <ul className="space-y-3 mb-10">
                 {["Auditorías EN 9100", "Trazabilidad Internacional", "Visibilidad OEM"].map((item, i) => (
-                  <li key={i} className="flex items-center text-[11px] uppercase tracking-widest text-zinc-500">
+                  <li key={i} className="flex items-center text-sm uppercase tracking-widest text-zinc-500">
                     <div className="w-1.5 h-1.5 bg-brand-blue mr-3" /> {item}
                   </li>
                 ))}
               </ul>
               <div className="pt-6 border-t border-zinc-800 flex justify-between items-center">
-                <span className="font-mono text-xs text-brand-blue uppercase">OASIS ID: 6130438025</span>
-                <ExternalLink size={14} className="text-zinc-600 group-hover:text-white transition-colors" />
+                <span className="font-mono  text-brand-blue uppercase">OASIS ID: 6130438025</span>
+                {/* <ExternalLink size={14} className="text-zinc-600 group-hover:text-white transition-colors" /> */}
               </div>
             </motion.div>
 
@@ -76,22 +76,22 @@ export default function Certificaciones() {
             >
               <div className="flex justify-between items-start mb-12">
                 <Lock className="text-brand-blue" size={32} />
-                <span className="text-[10px] tracking-[0.3em] text-zinc-500 uppercase font-bold">Defensa y Seguridad</span>
+                <span className="text-sm tracking-[0.3em] text-zinc-500 uppercase font-bold">Defensa y Seguridad</span>
               </div>
               <h3 className="text-2xl font-bold mb-4 tracking-tight">REGISTRO OTAN</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed mb-8">
+              <p className="text-zinc-400 leading-relaxed mb-8">
                 Proveedor homologado bajo el sistema NCAGE. Capacitados para operar en la cadena de suministro de defensa y proyectos gubernamentales.
               </p>
               <ul className="space-y-3 mb-10">
                 {["Aprobación Militar", "Codificación NCAGE", "Logística Estandarizada"].map((item, i) => (
-                  <li key={i} className="flex items-center text-[11px] uppercase tracking-widest text-zinc-500">
+                  <li key={i} className="flex items-center text-sm uppercase tracking-widest text-zinc-500">
                     <div className="w-1.5 h-1.5 bg-brand-blue mr-3" /> {item}
                   </li>
                 ))}
               </ul>
               <div className="pt-6 border-t border-zinc-800 flex justify-between items-center">
-                <span className="font-mono text-xs text-brand-blue uppercase">NCAGE CODE: 9359B</span>
-                <ExternalLink size={14} className="text-zinc-600 group-hover:text-white transition-colors" />
+                <span className="font-mono  text-brand-blue uppercase">NCAGE CODE: 9359B</span>
+                {/* <ExternalLink size={14} className="text-zinc-600 group-hover:text-white transition-colors" /> */}
               </div>
             </motion.div>
           </div>
@@ -108,17 +108,17 @@ export default function Certificaciones() {
             <div>
               <div className="flex items-center gap-2 mb-6 text-brand-blue">
                 <ShieldAlert size={20} />
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-black">Cumplimiento Medioambiental</span>
+                <span className="text-sm tracking-[0.3em] text-gray-500 font-medium uppercase">Cumplimiento Medioambiental</span>
               </div>
               <h3 className="text-3xl font-bold mb-6 text-black tracking-tighter">REACH & RoHS</h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-6">
+              <p className="text-gray-500 leading-relaxed mb-6">
                 Nuestra fabricación garantiza el control absoluto de sustancias químicas (SVHC) y materiales peligrosos, alineándonos con la sostenibilidad exigida por los estándares Tier 1 y OEM.
               </p>
             </div>
             <div className="grid grid-cols-1 gap-4">
               {["Control de sustancias SVHC", "Directiva RoHS Compliant", "Responsabilidad en Suministros", "Cumplimiento ECHA"].map((item, i) => (
                 <div key={i} className="bg-gray-50 p-4 border-l-2 border-brand-blue flex items-center justify-between group hover:bg-black transition-colors">
-                  <span className="text-[11px] uppercase font-bold tracking-widest text-black group-hover:text-white">{item}</span>
+                  <span className="text-md uppercase font-bold tracking-widest text-black group-hover:text-white">{item}</span>
                   <div className="w-2 h-2 rounded-full bg-brand-blue" />
                 </div>
               ))}
@@ -128,7 +128,7 @@ export default function Certificaciones() {
       </section>
 
       {/* 4. Footer */}
-      <section className="py-40 bg-white border-t border-gray-100">
+      <section className="pb-40 bg-white border-t border-gray-100">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}

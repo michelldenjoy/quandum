@@ -9,7 +9,7 @@ const services = [
     description:
       "Diseño y desarrollo de hardware crítico y sistemas electrónicos embarcados para aplicaciones aeroespaciales, defensa e industriales de alta fiabilidad, siguiendo procesos orientados a certificación.",
     items: [
-      "Arquitectura de sistemas electrónicos y HW complejo",
+      "Arquitectura de sistemas electrónicos y hardware complejo",
       "Diseño de PCBs y electrónica embebida",
       "Integración HW/SW y computadores embarcados custom",
       "Diseño y fabricación de arneses y cableado",
@@ -57,71 +57,63 @@ const services = [
 
 export default function Solutions() {
   return (
-    <section className="py-32">
-      <div className="max-w-7xl mx-auto px-6">
-        <StarfieldNebula />
+    <section className="relative py-32 overflow-hidden">
+      {/* Fondo 3D */}
+      <StarfieldNebula />
 
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Intro */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-24 max-w-3xl"
         >
-          <div className="flex items-start gap-8">
-            <div className="flex-1">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-black" />
-                  <div className="w-1 h-1 bg-gray-400" />
-                  <div className="w-1 h-1 bg-gray-300" />
-                </div>
-                <span className="text-[11px] tracking-[0.3em] text-gray-400 font-medium uppercase">
-                  Soluciones
-                </span>
-              </div>
+          <span className="block text-sm tracking-[0.30em] text-gray-400 uppercase mb-6">
+            Soluciones
+          </span>
 
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-white tracking-tight leading-[1.1]">
-                Capacidades
-                <br />
-                <span className="font-bold">& Tecnologías</span>
-              </h2>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight  text-white leading-[1.1]">
+            Capacidades
+            <br />
+            <span className="font-semibold">y Tecnologías</span>
+          </h2>
 
-              <p className="text-gray-400 mt-6 text-base md:text-lg leading-relaxed max-w-2xl">
-                Servicios de ingeniería desarrollados bajo estándares
-                aeroespaciales, integrando hardware, software y manufactura
-                avanzada como un único sistema.
-              </p>
-            </div>
-          </div>
+          <p className="mt-6 text-gray-400 text-base md:text-lg leading-relaxed">
+            Ingeniería desarrollada bajo estándares aeroespaciales, donde
+            hardware, software y manufactura avanzada se integran como un único
+            sistema certificado.
+          </p>
         </motion.div>
 
         {/* Blocks */}
-        <div className="space-y-32">
+        <div className="space-y-40">
           {services.map((s, i) => {
-            const imageFrom = s.reverse ? 60 : -60;
-            const textFrom = s.reverse ? -60 : 60;
+            const imageFrom = s.reverse ? 80 : -80;
+            const textFrom = s.reverse ? -40 : 40;
 
             return (
-              <div key={i} className="grid lg:grid-cols-2 gap-16 items-center">
+              <div
+                key={i}
+                className="grid lg:grid-cols-12 gap-12 items-center"
+              >
                 {/* IMAGE */}
                 <motion.div
                   initial={{ opacity: 0, x: imageFrom }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.9, ease: "easeOut" }}
-                  className={`relative h-[420px] overflow-hidden rounded-2xl ${
+                  transition={{ duration: 1, ease: "easeOut" }}
+                  className={`relative h-[480px] lg:h-[520px] col-span-7 ${
                     s.reverse ? "lg:order-2" : ""
                   }`}
                 >
                   <img
                     src={s.image}
                     alt={s.title}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-sm"
                   />
-                  <div className="absolute inset-0 bg-black/20" />
-                  <span className="absolute top-6 left-6 text-sm tracking-[0.4em] text-white/80">
+                  <span className="absolute top-6 left-6 text-xs tracking-[0.4em] text-white/70 font-mono">
                     {s.tag}
                   </span>
                 </motion.div>
@@ -131,24 +123,27 @@ export default function Solutions() {
                   initial={{ opacity: 0, x: textFrom }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
-                  className={`${s.reverse ? "lg:order-1" : ""}`}
+                  transition={{
+                    duration: 0.9,
+                    ease: "easeOut",
+                    delay: 0.15,
+                  }}
+                  className={`col-span-5 ${
+                    s.reverse ? "lg:order-1" : ""
+                  }`}
                 >
-                  <h3 className="text-3xl md:text-4xl text-white mb-6">
+                  <h3 className="text-2xl md:text-3xl text-white mb-5">
                     {s.title}
                   </h3>
 
-                  <p className="text-gray-400 mb-8 leading-relaxed">
+                  <p className="text-gray-400 mb-8 text-sm md:text-base leading-relaxed">
                     {s.description}
                   </p>
 
-                  <ul className="space-y-4">
+                  <ul className="space-y-3 text-sm md:text-base">
                     {s.items.map((item, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start gap-3 text-gray-300"
-                      >
-                        <span className="text-blue-800 mt-1">▸</span>
+                      <li key={idx} className="flex gap-3 text-gray-300">
+                        <span className="text-gray-500 font-mono">—</span>
                         {item}
                       </li>
                     ))}

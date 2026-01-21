@@ -66,12 +66,12 @@ export default function WorkHorizontal() {
             <div className="flex-1">
               {/*TITULO PRINCIPAL*/}
               <div className="flex mt-8 items-center gap-4 mb-6">
-                <div className="flex items-center gap-2">
+                {/* <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-black" />
                   <div className="w-1 h-1 bg-gray-400" />
                   <div className="w-1 h-1 bg-gray-300" />
-                </div>
-                <span className="text-[11px] tracking-[0.3em] text-gray-400 font-medium uppercase">
+                </div> */}
+                <span className="text-sm tracking-[0.3em] text-gray-500 font-medium uppercase">
                   Careers
                 </span>
               </div>
@@ -95,7 +95,7 @@ export default function WorkHorizontal() {
         </div>
 
         {/* Grid de cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {sections.map((section, index) => (
             <Fragment key={section.id}>
               {/* Card */}

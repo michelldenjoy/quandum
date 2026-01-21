@@ -34,7 +34,7 @@ export default function Calidad() {
                 <div className="sticky top-24">
                   <div className="flex items-center gap-2 mb-4 text-brand-blue">
                     
-                    <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-black">Declaración Oficial</span>
+                    <span className="text-sm tracking-[0.3em] text-gray-500 font-medium uppercase">Declaración Oficial</span>
                   </div>
                   <h2 className="text-4xl font-bold tracking-tighter text-black leading-none uppercase">
                     Compromiso <br /> Quandum
@@ -49,7 +49,7 @@ export default function Calidad() {
                 
                 <div className="h-px bg-gray-200 w-24" />
 
-                <div className="grid md:grid-cols-2 gap-8 text-sm leading-relaxed">
+                <div className="grid md:grid-cols-2 gap-8  leading-relaxed">
                   <p>
                     Conscientes de la importancia de la seguridad y la fiabilidad en sistemas de alta exigencia, la organización mantiene un firme compromiso con la satisfacción del cliente y el cumplimiento normativo.
                   </p>
@@ -64,7 +64,7 @@ export default function Calidad() {
       </section>
 
       {/* SECCIÓN OBJETIVOS Y VALORES  */}
-      <section className="py-24 bg-gray-50 px-6">
+      <section className="py-20 bg-gray-50 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-px bg-gray-200 border border-gray-200">
             
@@ -74,7 +74,7 @@ export default function Calidad() {
                 <div className="p-3 bg-black text-white">
                   <Target size={24} />
                 </div>
-                <h3 className="text-2xl font-bold uppercase tracking-tight">Objetivos Estratégicos</h3>
+                <h3 className="text-2xl font-bold text-slate-800 uppercase tracking-tight">Objetivos Estratégicos</h3>
               </div>
               <ul className="space-y-6">
                 {[
@@ -99,7 +99,7 @@ export default function Calidad() {
                 <div className="p-3 bg-brand-blue text-white">
                   <Award size={24} />
                 </div>
-                <h3 className="text-2xl font-bold uppercase tracking-tight">Valores Fundamentales</h3>
+                <h3 className="text-2xl text-slate-800 font-bold uppercase tracking-tight">Valores Fundamentales</h3>
               </div>
               <div className="grid sm:grid-cols-1 gap-4">
                 {[
@@ -123,41 +123,35 @@ export default function Calidad() {
       </section>
 
       {/* SECCIÓN SELLO */}
-      <section className="py-32  px-6">
-        <div className="max-w-4xl  mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            className="relative inline-block"
-          >
-            {/*  Círculo*/}
-            <div className="w-80 h-80 rounded-full border-[1px] border-gray-100 flex items-center justify-center relative">
-               <div className="absolute inset-4 border-[1px] border-gray-200 rounded-full border-dashed animate-[spin_20s_linear_infinite]" />
-               
-               <div className="text-center z-10 bg-white px-10">
-                  <p className="text-[10px] tracking-[0.5em] text-gray-400 uppercase mb-2 italic">Standard</p>
-                  <h4 className="text-5xl font-black text-black tracking-tighter">EN 9100</h4>
-                  <div className="h-1 w-12 bg-brand-blue mx-auto my-4" />
-                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Revision 2018</p>
-               </div>
+       {/* SECCIÓN DEL SELLO (Mantenida como pediste, con un wrapper más limpio) */}
+       <div className="flex bg-aerospacee  flex-col items-center py-20 relative">
+             <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
+             <p className="text-cyan-400 text-sm tracking-[0.3em] uppercase mb-12 relative z-10 bg-[#020617] px-8">Certificación Oficial</p>
+             
+             {/* --- INICIO SELLO ORIGINAL --- */}
+             <div className="relative group scale-110 md:scale-125">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/30 to-sky-500/30 rounded-full blur-3xl scale-150 group-hover:scale-[1.7] transition-all duration-700" />
+              <motion.div
+                whileHover={{ scale: 1.035 }}
+                className="relative w-72 h-72 rounded-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl border-2 border-cyan-500/40 flex flex-col items-center justify-center group-hover:border-cyan-400/60 transition-all duration-500"
+              >
+                <div className="absolute inset-0 opacity-10">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.3),transparent_70%)]" />
+                </div>
+                <div className="absolute inset-8 border border-cyan-500/20 rounded-full" />
+                <div className="absolute inset-16 border border-cyan-500/10 rounded-full" />
+                <div className="relative text-center z-10">
+                  <p className="text-6xl font-bold bg-gradient-to-br from-cyan-400 to-sky-500 bg-clip-text text-transparent tracking-wider">EN 9100</p>
+                  <p className="text-2xl text-slate-400 mt-3 font-light">Rev. 2018</p>
+                  <div className="h-px bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent w-32 mx-auto mt-6 mb-6" />
+                  <p className="text-xs text-cyan-400/80 tracking-[0.3em] font-semibold">CERTIFIED SYSTEM</p>
+                </div>
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-cyan-500 to-sky-500 text-white text-[10px] font-bold px-6 py-2 rounded-full shadow-lg">ISO 9001:2015</div>
+                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-sky-600 to-cyan-600 text-white text-[10px] font-bold px-6 py-2 rounded-full shadow-lg">QUANDUM AEROSPACE</div>
+              </motion.div>
             </div>
-
-            {/* Badges */}
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-black text-white px-6 py-2 text-[10px] font-bold uppercase tracking-[0.2em] rounded-sm">
-              ISO 9001:2015
-            </div>
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-brand-blue text-white px-6 py-2 text-[10px] font-bold uppercase tracking-[0.2em] rounded-sm">
-              Certified Systems
-            </div>
-          </motion.div>
-
-          <div className="mt-20">
-            <h5 className="text-3xl md:text-4xl font-extralight text-gray-400 italic leading-relaxed max-w-2xl mx-auto">
-              "Nuestra misión es la <span className="text-black font-semibold">precisión absoluta</span> en cada entrega aeronáutica."
-            </h5>
+            {/* --- FIN SELLO ORIGINAL --- */}
           </div>
-        </div>
-      </section>
     </div>
   );
 }

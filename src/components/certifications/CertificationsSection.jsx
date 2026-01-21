@@ -42,21 +42,21 @@ const CertificationsSection = () => {
     <section className="bg-white pb-24">
       <HeroVideo
         eyebrow="Nuestros Certificados"
-        title="Certificaciones Oficiales"
+        title="Certificados"
         description=""
-        backgroundImage="/images/certifications.jpeg"
+        backgroundImage="/images/certifications3.PNG"
       />
 
       <div className="max-w-6xl mt-16 mx-auto px-6">
         {/* TITULOS PRINCIPALES */}
         <div className="mb-16">
           <div className="flex items-center gap-4 mb-6">
-            <div className="flex items-center gap-2">
+            {/* <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-black" />
               <div className="w-1 h-1 bg-gray-400" />
               <div className="w-1 h-1 bg-gray-300" />
-            </div>
-            <span className="text-[11px] tracking-[0.3em] text-gray-400 font-medium uppercase">
+            </div> */}
+            <span className="text-sm tracking-[0.3em] text-gray-500 font-medium uppercase">
               Certificados
             </span>
           </div>
@@ -64,7 +64,7 @@ const CertificationsSection = () => {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-black tracking-tight leading-[1.1]">
             Certificaciones
             <br />
-            <span className="font-bold">& Calidad</span>
+            <span className="font-semibold">& Calidad</span>
           </h2>
         </div>
 
@@ -79,11 +79,11 @@ const CertificationsSection = () => {
             <div>
               <div className="flex items-center mb-8 text-brand-blue">
                 
-                <h4 className="ml-3 font-bold uppercase text-[11px] tracking-widest text-black">
+                <h4 className="ml-3 font-bold uppercase text-sm tracking-widest text-black">
                   Política de Calidad
                 </h4>
               </div>
-              <p className="text-gray-600 text-justify leading-relaxed text-sm italic">
+              <p className="text-gray-600 text-justify leading-relaxed  italic">
                 "En nuestra organización, la calidad se fundamenta en la seguridad
                 operativa y la precisión técnica. Nos comprometemos a superar las
                 expectativas de la industria mediante la gestión rigurosa de
@@ -91,7 +91,7 @@ const CertificationsSection = () => {
               </p>
             </div>
             
-            <a href="/sobre-quandum/calidad" className="mt-12 flex items-center text-[11px] font-bold text-brand-blue uppercase tracking-widest hover:translate-x-2 transition-all group">
+            <a href="/sobre-quandum/calidad" className="mt-12 flex items-center text-sm font-bold text-brand-blue uppercase tracking-widest hover:translate-x-2 transition-all group">
               Visita nuestra Política <ChevronRight size={14} className="ml-2 group-hover:ml-4 transition-all" />
             </a>
           </motion.div>
@@ -118,20 +118,20 @@ const CertificationsSection = () => {
                     <Award size={22} />
                   </div>
                   
-                  <h4 className="text-2xl font-bold text-black mb-1">
+                  <h4 className="text-3xl font-bold text-black mb-1">
                     {cert.title}
                   </h4>
-                  <p className="text-brand-blue text-[10px] font-bold mb-4 uppercase tracking-[0.2em]">
+                  <p className="text-brand-blue text-[11px] font-bold mb-4 uppercase tracking-[0.2em]">
                     {cert.subtitle}
                   </p>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-8">
+                  <p className="text-gray-500 leading-relaxed mb-8">
                     {cert.description}
                   </p>
                 </div>
 
                 {/* Footer del card con botones */}
                 <div className="relative z-10 mt-auto">
-                  <div className="pt-6 border-t border-gray-100 mb-6 text-[10px] text-gray-400 uppercase tracking-tighter">
+                  <div className="pt-6 border-t border-gray-100 mb-6 text-[11px] text-gray-400 uppercase tracking-tighter">
                     {cert.standard}
                   </div>
                   

@@ -72,12 +72,12 @@ Nuestra aproximación combina ingeniería de producto, optimización de procesos
               <div className="flex-1">
                 {/*TITULO PRINCIPAL*/}
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="flex items-center gap-2">
+                  {/* <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-black" />
                     <div className="w-1 h-1 bg-gray-400" />
                     <div className="w-1 h-1 bg-gray-300" />
-                  </div>
-                  <span className="text-[13px] tracking-[0.3em] text-gray-400 font-medium uppercase">
+                  </div> */}
+                  <span className="text-sm tracking-[0.3em] text-gray-500  uppercase">
                     Sectores
                   </span>
                 </div>
@@ -86,7 +86,7 @@ Nuestra aproximación combina ingeniería de producto, optimización de procesos
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-black tracking-tight leading-[1.1]">
                   Áreas
                   <br />
-                  <span className="font-bold">Tecnológicas</span>
+                  <span className="font-semibold">Tecnológicas</span>
                 </h2>
               </div>
             </div>

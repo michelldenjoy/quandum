@@ -187,12 +187,11 @@ export default function FilosofiaTrayectoria() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <h3 className="text-4xl uppercase sm:text-3xl md:text-4xl  tracking-tight text-white">
-              Nuestra{" "}
-              <span className="bg-gradient-to-r from-brand-blue via-slate-200 to-brand-blue bg-clip-text text-transparent  animate-gradient bg-[length:200%_auto]">
-                FILOSOFÍA
-              </span>
-            </h3>
+                <h3 className="text-3xl md:text-5xl lg:text-4xl font-extralight text-white tracking-tight leading-[1.1]">
+                  Nuestra 
+                  <br />
+                  <span className="font-normal text-4xl md:text-5xl lg:text-5xl bg-gradient-to-r from-brand-blue via-slate-200 to-brand-blue bg-clip-text text-transparent  animate-gradient bg-[length:200%_auto]">Filosofía</span>
+                </h3>
             
             <p className="text-slate-100 text-base  text-justify leading-relaxed">
             Cada proyecto lo abordamos con una combinación única de rigor
@@ -212,12 +211,11 @@ export default function FilosofiaTrayectoria() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6"
           >
-            <h3 className="text-4xl uppercase sm:text-3xl md:text-4xl  tracking-tight text-white">
-              Nuestra{" "}
-              <span className="bg-gradient-to-r from-brand-blue via-slate-200 to-brand-blue bg-clip-text text-transparent  animate-gradient bg-[length:200%_auto]">
-                TRAYECTORIA
-              </span>
-            </h3>
+                <h3 className="text-3xl md:text-5xl lg:text-4xl font-extralight text-white tracking-tight leading-[1.1]">
+                  Nuestra 
+                  <br />
+                  <span className="font-normal text-4xl md:text-5xl lg:text-5xl bg-gradient-to-r from-brand-blue via-slate-200 to-brand-blue bg-clip-text text-transparent  animate-gradient bg-[length:200%_auto]">Trayectoria</span>
+                </h3>
             
             <p className="text-slate-100 text-base  text-justify leading-relaxed">
             A lo largo de dos décadas hemos participado en programas

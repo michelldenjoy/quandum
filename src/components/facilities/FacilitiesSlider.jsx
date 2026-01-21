@@ -66,12 +66,12 @@ export default function FacilitiesSlider() {
             <div className="flex-1">
               {/*TITULO PRINCIPAL*/}
               <div className="flex items-center gap-4 mb-6">
-                <div className="flex items-center gap-2">
+                {/* <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-black" />
                   <div className="w-1 h-1 bg-gray-400" />
                   <div className="w-1 h-1 bg-gray-300" />
-                </div>
-                <span className="text-[11px] tracking-[0.3em] text-gray-400 font-medium uppercase">
+                </div> */}
+                <span className="text-sm tracking-[0.3em] text-gray-500 font-medium uppercase">
                   Nuestro entorno
                 </span>
               </div>
@@ -80,7 +80,7 @@ export default function FacilitiesSlider() {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-black tracking-tight leading-[1.1]">
                 Técnico 
                 <br />
-                <span className="font-bold">& Operativo </span>
+                <span className="font-semibold">& Operativo </span>
               </h2>
               <p className="text-gray-600 mt-6 text-base md:text-lg leading-relaxed max-w-4xl">
                 4.000 m² de infraestructura especializada para el desarrollo, fabricación 
@@ -100,7 +100,7 @@ export default function FacilitiesSlider() {
           <div className="absolute -bottom-3 -right-3 w-6 h-6 border-r-2 border-b-2 border-black" />
 
           {/* Slider */}
-          <div className="relative h-[480px] md:h-[560px] bg-gray-100 overflow-hidden">
+          <div className="relative h-[320px] md:h-[500px] lg:h-[740px] bg-gray-100 overflow-hidden">
             {/* Imagen */}
             <AnimatePresence mode="wait">
               <motion.img
@@ -111,7 +111,7 @@ export default function FacilitiesSlider() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.7, ease: [0.43, 0.13, 0.23, 0.96] }}
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full "
               />
             </AnimatePresence>
 

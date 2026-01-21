@@ -211,12 +211,12 @@ export default function ProductsDrop() {
             <div className="flex-1">
               {/*TITULO PRINCIPAL*/}
               <div className="flex items-center gap-4 mb-6">
-                <div className="flex items-center gap-2">
+                {/* <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-black" />
                   <div className="w-1 h-1 bg-gray-400" />
                   <div className="w-1 h-1 bg-gray-300" />
-                </div>
-                <span className="text-[11px] tracking-[0.3em] text-gray-400 font-medium uppercase">
+                </div> */}
+                <span className="text-sm tracking-[0.3em] text-gray-500 font-medium uppercase">
                   Soluciones
                 </span>
               </div>
@@ -225,7 +225,7 @@ export default function ProductsDrop() {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-black tracking-tight leading-[1.1]">
                 Nuestros
                 <br />
-                <span className="font-bold">Proyectos</span>
+                <span className="font-semibold">Proyectos</span>
               </h2>
 
               <p className="text-gray-600 mt-6 text-base md:text-lg leading-relaxed max-w-4xl">

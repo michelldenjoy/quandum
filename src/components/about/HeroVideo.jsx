@@ -31,8 +31,13 @@ export default function HeroVideo({
 }) {
   return (
     <div className="w-full overflow-x-hidden bg-black pt-16 sm:pt-20 md:pt-24 lg:pt-28">
-      <section className="relative h-[70vh] sm:h-[75vh] md:h-[80vh] lg:h-[95vh] w-full overflow-hidden">
-        {/* Background Image */}
+      <section className="relative h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[85vh]  w-full overflow-hidden">
+        {/* Background Image **************   
+  min-h-[70vh]
+  sm:min-h-[75vh]
+  md:min-h-[70vh]
+  lg:min-h-[65vh]
+  xl:min-h-[60vh]*/}
         <div className="absolute inset-0">
           <img
             src={backgroundImage}
@@ -50,7 +55,7 @@ export default function HeroVideo({
         </div>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-slate-900/40 to-slate-950/90 sm:from-black/70 sm:via-slate-900/20 sm:to-slate-950/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-slate-900/20 to-slate-950/80 sm:from-black/70 sm:via-slate-900/20 sm:to-slate-950/80" />
 
         {/* Grid*/}
         <div
@@ -61,7 +66,7 @@ export default function HeroVideo({
         />
 
         {/* Content - Centrado vertical */}
-        <div className="relative z-10 h-full flex items-center">
+        <div className="relative z-10 h-full flex items-center pb-20">
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               variants={container}
@@ -80,7 +85,7 @@ export default function HeroVideo({
               </motion.p>
 
               {/* Title  */}
-              <h1 className="flex flex-wrap text-white text-3xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-9xl  tracking-tight leading-[1.1] sm:leading-tight">
+              <h1 className="flex flex-wrap text-white text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-9xl  tracking-tight leading-[1.1] sm:leading-tight">
                 {title.split(" ").map((word, index) => (
                   <motion.span
                     key={index}

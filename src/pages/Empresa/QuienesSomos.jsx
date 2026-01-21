@@ -8,6 +8,8 @@ import StoryStrip from "../../components/about/StoryStrip";
 import Intro2 from "../../components/about/Intro2";
 import InfraStrip from "../../components/about/InfraStrip";
 import FilosofiaTrayectoria from "../../components/about/FilosofiaTrayectoria";
+import Press from "../../components/about/Press";
+import Divider from "../../components/Divider";
 
 export default function QuienesSomos() {
   return (
@@ -21,15 +23,25 @@ export default function QuienesSomos() {
       />
 
       <Intro2 />
-      {/* <Intro /> */}
-      <VisionMision />
 
+      {/* <Intro /> */}
+
+     
+
+      <VisionMision />
       <StoryStrip />
+
 
       {/* <HeroText /> */}
 
+ <Press />
+
+<Divider  />
+
       <AboutFeatures />
-<FilosofiaTrayectoria />
+
+
+      <FilosofiaTrayectoria />
       <InfraStrip />
     </div>
   );
