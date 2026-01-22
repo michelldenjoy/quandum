@@ -110,7 +110,7 @@ export default function Calidad() {
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 p-4 border border-gray-100 group hover:border-black transition-all">
                     <CheckCircle2 size={16} className="text-brand-blue" />
-                    <span className="text-[11px] font-bold uppercase tracking-tighter text-gray-500 group-hover:text-black">
+                    <span className="text-xs font-bold uppercase tracking-tighter text-gray-500 group-hover:text-black">
                       {item}
                     </span>
                   </div>
@@ -126,7 +126,7 @@ export default function Calidad() {
        {/* SECCIÓN DEL SELLO */}
        <div className="flex bg-aerospacee  flex-col items-center py-20 relative">
              <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
-             <p className="text-cyan-400 text-sm tracking-[0.3em] uppercase mb-12 relative z-10 bg-[#020617] px-8">Certificación Oficial</p>
+             <p className="text-cyan-400 text-sm tracking-[0.3em]  uppercase mb-16 relative z-10 bg-[#020617] px-8">Certificación Oficial</p>
              
              
              <div className="relative group scale-110 md:scale-125">
