@@ -204,9 +204,9 @@ export default function Contacto() {
             {/* RIGHT: Form */}
 
             <div className="relative animate-slideInRight order-1 lg:order-2">
-              {/* Glow effect behind form */}
-              <div className="absolute h-[88%] sm:h-[92%] md:h-[95%] lg:h-[75%] inset-1 -top-2 bottom-0 bg-gradient-to-l from-blue-400/80 via-cyan-500/20 to-blue-400/80 rounded-3xl blur-2xl opacity-30" />
               <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-10 space-y-8 shadow-2xl">
+                {/* Glow effect behind form */}
+                <div className="absolute inset-0 -top-2 bg-gradient-to-l from-blue-400/80 via-cyan-500/20 to-blue-400/80 rounded-3xl blur-2xl opacity-30 -z-10" />
                 <h2 className="text-4xl font-extralight text-white mb-8 flex items-center gap-3">
                   <div className="w-1 h-8 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full" />
                   Formulario de Contacto

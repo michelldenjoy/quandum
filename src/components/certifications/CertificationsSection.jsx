@@ -41,7 +41,7 @@ const CertificationsSection = () => {
   return (
     <section className="bg-white pb-24">
       <HeroVideo
-        eyebrow="Nuestros Certificados"
+        eyebrow="Certificación oficial"
         title="Certificados"
         description=""
         backgroundImage="/images/certifications3.PNG"

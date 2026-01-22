@@ -76,7 +76,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-cyan-400 text-sm tracking-[0.35em] uppercase mb-6"
+              className="text-sm tracking-[0.35em] uppercase mb-6"
             >
               Aerospace · Defense · Engineering
             </motion.p>

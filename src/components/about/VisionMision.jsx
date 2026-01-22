@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 export default function VisionMision() {
   return (
     <section className="relative py-20">
-      <div className="max-w-7xl mt-10 mx-auto px-6 sm:px-10 md:px-16 lg:px-28">
+      <div className="max-w-7xl my-4 mx-auto px-6 sm:px-10 md:px-16 lg:px-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           
           {/* VISIÓN */}

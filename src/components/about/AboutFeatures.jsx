@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 const features = [
   {
     title: "EXCELENCIA TÉCNICA.",
-    tag: "EXPERTISE",
+    tag: "",
     image: "/images/about-3.jpg",
     description:
       "Contamos con dos décadas de experiencia colectiva en ingeniería aeronáutica, electrónica avanzada y diseño de sistemas críticos. Trabajamos bajo una premisa central: la innovación no es un objetivo, es un estándar diario.",
@@ -13,7 +13,7 @@ const features = [
   },
   {
     title: "COMPROMISO Y FIABILIDAD.",
-    tag: "COMMITMENT",
+    tag: "",
     image: "/images/dimming.jpg",
     description:
       "Cada proyecto se desarrolla con una disciplina estricta: procesos auditables, diseño seguro, ingeniería certificable y soluciones robustas adaptadas a entornos operacionales exigentes.",
