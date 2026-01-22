@@ -13,6 +13,7 @@ export default function Calidad() {
         title="Política de Calidad"
         description="El marco normativo que rige cada uno de nuestros procesos de precisión."
         backgroundImage="/ods-bg/production.jpg"
+        
       />
 
       {/* SECCIÓN MANIFIESTO */}
@@ -147,7 +148,7 @@ export default function Calidad() {
                   <p className="text-xs text-cyan-400/80 tracking-[0.3em] font-semibold">CERTIFIED SYSTEM</p>
                 </div>
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-cyan-500 to-sky-500 text-white text-[10px] font-bold px-6 py-2 rounded-full shadow-lg">ISO 9001:2015</div>
-                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-sky-600 to-cyan-600 text-white text-[10px] font-bold px-6 py-2 rounded-full shadow-lg">QUANDUM AEROSPACE</div>
+                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-sky-600 to-cyan-600 text-white text-[10px] font-bold px-6 py-2 rounded-full text-center shadow-lg">QUANDUM AEROSPACE</div>
               </motion.div>
             </div>
             

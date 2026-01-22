@@ -223,19 +223,19 @@ export default function FilosofiaTrayectoria() {
               alta exigencia, siempre manteniendo una cultura de: <br />
               <ul className="space-y-3 text-base md:text-lg text-slate-300 font-light">
               <li className="flex items-start gap-3">
-                <span className="text-cyan-400 ">•</span>
+                <span className="text-slate-100 ">•</span>
                 <span>Excelencia técnica</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-cyan-400 ">•</span>
+                <span className="text-slate-100 ">•</span>
                 <span>Mejora continua</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-cyan-400 ">•</span>
+                <span className="text-slate-100 ">•</span>
                 <span>Innovación sostenible</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-cyan-400 ">•</span>
+                <span className="text-slate-100 ">•</span>
                 <span>Compromiso absoluto con la fiabilidad</span>
               </li>
             </ul>

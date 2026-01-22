@@ -11,7 +11,6 @@ export default function Intro2() {
 
       <div className="max-w-6xl mx-auto px-6 relative">
         <div className="relative border border-gray-100 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.02)] px-8 py-16 md:px-20 md:py-20">
-          
           {/* Esquinas */}
           {["tl", "tr", "bl", "br"].map((pos) => (
             <div
@@ -19,45 +18,50 @@ export default function Intro2() {
               className={`absolute w-4 h-4 border-gray-300 ${
                 pos.includes("t") ? "top-4" : "bottom-4"
               } ${pos.includes("l") ? "left-4" : "right-4"} ${
-                pos === "tl" ? "border-t border-l" : 
-                pos === "tr" ? "border-t border-r" : 
-                pos === "bl" ? "border-b border-l" : "border-b border-r"
+                pos === "tl"
+                  ? "border-t border-l"
+                  : pos === "tr"
+                  ? "border-t border-r"
+                  : pos === "bl"
+                  ? "border-b border-l"
+                  : "border-b border-r"
               }`}
             />
           ))}
 
-
           <div className="relative z-10">
             {/* Logo y Título */}
             <div className="text-center mb-12">
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="inline-flex items-center gap-0 md:gap-2 mb-8"
-              >
-                <img
-                  src="/logo.png"
-                  alt="Quandum Aerospace"
-                  className="h-14 md:h-14  transition-all duration-500"
+              <div className="text-center mb-12">
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="flex flex-row items-center justify-center gap-3 md:gap-2 mb-8"
+                >
+                  <img
+                    src="/logo.png"
+                    alt="Quandum Aerospace"
+                    className="h-10 sm:h-12 md:h-14 transition-all duration-500"
+                  />
+
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight whitespace-nowrap">
+                    <span className="font-semibold text-brand-blue">
+                      Quandum
+                    </span>{" "}
+                    <span className="font-semibold bg-gradient-to-r from-brand-pink via-red-500 to-red-700 bg-clip-text text-transparent">
+                      Aerospace
+                    </span>
+                  </h1>
+                </motion.div>
+
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "100px" }}
+                  viewport={{ once: true }}
+                  className="h-1 bg-brand-blue mx-auto"
                 />
-                
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight">
-                <span className="font-semibold text-brand-blue">
-                  Quandum
-                </span>{" "}
-                <span className="font-semibold bg-gradient-to-r from-brand-pink via-red-500 to-red-700 bg-clip-text text-transparent">
-                  Aerospace
-                </span>
-              </h1>
-              </motion.div>
-              
-              <motion.div 
-                initial={{ width: 0 }}
-                whileInView={{ width: "100px" }}
-                viewport={{ once: true }}
-                className="h-1 bg-brand-blue mx-auto"
-              />
+              </div>
             </div>
 
             {/* Texto Principal */}
@@ -74,8 +78,17 @@ export default function Intro2() {
                 </div> */}
                 <div className="md:col-span-11">
                   <p className="text-gray-800 text-lg md:text-xl leading-relaxed text-justify font-light">
-                    Empresa de ingeniería especializada en el <span className="text-black font-semibold">diseño, desarrollo y fabricación</span> de sistemas electrónicos y optoelectrónicos de alta fiabilidad. 
-                    Desde 2006, nuestra trayectoria se define por la participación en programas críticos de los sectores <span className="text-brand-blue font-semibold uppercase tracking-wider text-sm">Aeroespacial y Defensa</span>.
+                    Empresa de ingeniería especializada en el{" "}
+                    <span className="text-black font-semibold">
+                      diseño, desarrollo y fabricación
+                    </span>{" "}
+                    de sistemas electrónicos y optoelectrónicos de alta
+                    fiabilidad. Desde 2006, nuestra trayectoria se define por la
+                    participación en programas críticos de los sectores{" "}
+                    <span className="text-brand-blue font-semibold uppercase tracking-wider text-sm">
+                      Aeroespacial y Defensa
+                    </span>
+                    .
                   </p>
                 </div>
 
@@ -84,14 +97,29 @@ export default function Intro2() {
                 </div> */}
                 <div className="md:col-span-11">
                   <p className="text-gray-600 text-base md:text-lg leading-relaxed text-justify">
-                    Cubrimos el ciclo de vida completo del sistema: desde la definición funcional hasta la validación final. Operamos bajo estándares de seguridad <span className="text-black font-medium uppercase">DO-178C</span> y <span className="text-black font-medium uppercase">DO-254</span>, garantizando una excelencia técnica respaldada por nuestras certificaciones <span className="border-b border-brand-blue text-black">EN 9100 e ISO 9001</span>.
+                    Cubrimos el ciclo de vida completo del sistema: desde la
+                    definición funcional hasta la validación final. Operamos
+                    bajo estándares de seguridad{" "}
+                    <span className="text-black font-medium uppercase">
+                      DO-178C
+                    </span>{" "}
+                    y{" "}
+                    <span className="text-black font-medium uppercase">
+                      DO-254
+                    </span>
+                    , garantizando una excelencia técnica respaldada por
+                    nuestras certificaciones{" "}
+                    <span className="border-b border-brand-blue text-black">
+                      EN 9100 e ISO 9001
+                    </span>
+                    .
                   </p>
                 </div>
               </motion.div>
             </div>
 
             {/* Especificaciones Técnicas */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -101,11 +129,18 @@ export default function Intro2() {
                 { label: "Founded", value: "2006" },
                 { label: "Standards", value: "DO-178C / DO-254" },
                 { label: "Quality", value: "EN 9100 / ISO 9001" },
-                { label: "Compliance", value: "REACH / RoHS" }
+                { label: "Compliance", value: "REACH / RoHS" },
               ].map((spec, i) => (
-                <div key={i} className="flex flex-col items-center md:items-start">
-                  <span className="text-[9px] font-mono uppercase tracking-[0.2em] text-gray-400">{spec.label}</span>
-                  <span className="text-xs font-bold text-black tracking-widest">{spec.value}</span>
+                <div
+                  key={i}
+                  className="flex flex-col items-center md:items-start"
+                >
+                  <span className="text-[9px] font-mono uppercase tracking-[0.2em] text-gray-400">
+                    {spec.label}
+                  </span>
+                  <span className="text-xs font-bold text-black tracking-widest">
+                    {spec.value}
+                  </span>
                 </div>
               ))}
             </motion.div>

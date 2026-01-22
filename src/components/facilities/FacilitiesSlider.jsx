@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
   {
-    src: "/images/instalaciones.jpg",
+    src: "/images/instalaciones.jpeg",
     label: "Area de simulación y pruebas",
     specs: "Certificación ISO 9001:2015  "
   },

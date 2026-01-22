@@ -58,11 +58,9 @@ const services = [
 export default function Solutions() {
   return (
     <section className="relative py-32 overflow-hidden">
-      
       <StarfieldNebula />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -94,10 +92,7 @@ export default function Solutions() {
             const textFrom = s.reverse ? -40 : 40;
 
             return (
-              <div
-                key={i}
-                className="grid lg:grid-cols-12 gap-12 items-center"
-              >
+              <div key={i} className="grid lg:grid-cols-12 gap-12 items-center">
                 {/* IMAGE */}
                 <motion.div
                   initial={{ opacity: 0, x: imageFrom }}
@@ -113,7 +108,11 @@ export default function Solutions() {
                     alt={s.title}
                     className="w-full h-full object-cover rounded-sm"
                   />
-                  <span className="absolute top-6 left-6 text-xs tracking-[0.4em] text-white/70 font-mono">
+                  <span
+                    className={`absolute top-6 left-6 text-xs tracking-[0.4em] font-mono ${
+                      s.tag === "INDUSTRIAL" ? "text-black" : "text-white/70"
+                    }`}
+                  >
                     {s.tag}
                   </span>
                 </motion.div>
@@ -128,7 +127,7 @@ export default function Solutions() {
                     ease: "easeOut",
                     delay: 0.15,
                   }}
-                  className={`col-span-5 ${
+                  className={`col-span-7 lg:col-span-5  ${
                     s.reverse ? "lg:order-1" : ""
                   }`}
                 >
@@ -136,7 +135,7 @@ export default function Solutions() {
                     {s.title}
                   </h3>
 
-                  <p className="text-gray-400 mb-8 text-sm md:text-base leading-relaxed">
+                  <p className="text-gray-400 text-justify mb-8 text-sm md:text-base leading-relaxed">
                     {s.description}
                   </p>
 
