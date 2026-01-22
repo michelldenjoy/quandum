@@ -25,10 +25,10 @@ const features = [
 
 export default function AboutFeatures() {
   return (
-    <section className="relative bg-white py-32 overflow-hidden">
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        {/* Blocks */}
-        <div className="space-y-40">
+    <section className="relative bg-white py-12 sm:py-20 md:py-28 lg:py-32 overflow-hidden">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       
+        <div className="space-y-16 sm:space-y-24 md:space-y-32 lg:space-y-40">
           {features.map((f, i) => {
             const imageFrom = f.reverse ? 80 : -80;
             const textFrom = f.reverse ? -40 : 40;
@@ -36,7 +36,7 @@ export default function AboutFeatures() {
             return (
               <div
                 key={i}
-                className="grid lg:grid-cols-12 gap-12 items-center"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 md:gap-10 items-center"
               >
                 {/* IMAGE */}
                 <motion.div
@@ -44,20 +44,20 @@ export default function AboutFeatures() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1, ease: "easeOut" }}
-                  className={`relative col-span-7 ${
-                    f.reverse ? "lg:order-2" : ""
-                  }`}
+                  className={`relative w-full col-span-1 lg:col-span-7 ${f.reverse ? "lg:order-2" : ""}`}
                 >
-                  <img
-                    src={f.image}
-                    alt={f.title}
-                    className="w-full h-full object-cover rounded-sm"
-                  />
-                  <span className="absolute top-6 left-6 text-xs tracking-[0.4em] text-white/70 font-mono">
-                    {f.tag}
-                  </span>
-                  {/* Overlay sutil */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-sm pointer-events-none" />
+                  <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-full">
+                    <img
+                      src={f.image}
+                      alt={f.title}
+                      className="w-full h-full  rounded-sm"
+                    />
+                    <span className="absolute top-4 left-4 sm:top-6 sm:left-6 text-[0.625rem] sm:text-xs tracking-[0.3em] sm:tracking-[0.4em] text-white/70 font-mono">
+                      {f.tag}
+                    </span>
+                    {/* Overlay  */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-sm pointer-events-none" />
+                  </div>
                 </motion.div>
 
                 {/* TEXT */}
@@ -70,17 +70,17 @@ export default function AboutFeatures() {
                     ease: "easeOut",
                     delay: 0.15,
                   }}
-                  className={`col-span-5 ${f.reverse ? "lg:order-1" : ""}`}
+                  className={`w-full col-span-1 lg:col-span-5 ${f.reverse ? "lg:order-1" : ""}`}
                 >
-                  <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold text-black mb-6">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-black mb-4 sm:mb-5 md:mb-6 leading-tight">
                     {f.title}
                   </h3>
 
-                  <p className="text-slate-900 text-lg leading-relaxed mb-6">
+                  <p className="text-slate-900 text-justify text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-5 md:mb-6">
                     {f.description}
                   </p>
 
-                  <p className="text-slate-900 text-lg leading-relaxed">
+                  <p className="text-slate-900 text-justify text-sm sm:text-base md:text-lg leading-relaxed">
                     {f.secondParagraph}
                   </p>
                 </motion.div>

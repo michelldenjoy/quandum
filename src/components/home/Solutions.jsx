@@ -58,11 +58,11 @@ const services = [
 export default function Solutions() {
   return (
     <section className="relative py-32 overflow-hidden">
-      {/* Fondo 3D */}
+      
       <StarfieldNebula />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        {/* Intro */}
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

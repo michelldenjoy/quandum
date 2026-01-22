@@ -91,7 +91,7 @@ export default function FacilitiesSlider() {
           </div>
         </motion.div>
 
-        {/* Contenedor principal del slider */}
+        {/* Contenedor principal  */}
         <div className="relative">
          
           <div className="absolute -top-3 -left-3 w-6 h-6 border-l-2 border-t-2 border-black" />
@@ -115,14 +115,14 @@ export default function FacilitiesSlider() {
               />
             </AnimatePresence>
 
-            {/* Overlay con gradiente técnico */}
+            {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             
-            {/* Líneas técnicas decorativas */}
+            {/* Líneas */}
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
 
-            {/* Panel de información inferior */}
+            {/* Panel de info inferior */}
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
                 {/* Info de la imagen */}

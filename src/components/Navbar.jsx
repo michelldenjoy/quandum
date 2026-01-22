@@ -55,7 +55,7 @@ export default function Navbar() {
             <img
               src="/logo.png"
               alt="Logo Quandum"
-              className="w-12 h-12 object-contain drop-shadow-lg mr-3"
+              className="w-12 h-12 object-contain drop-shadow-lg "
             />
             <div className="flex flex-col leading-none">
               <span className="text-3xl font-bold text-white group-hover:text-brand-blue transition-colors">

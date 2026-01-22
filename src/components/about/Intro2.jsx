@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function Intro2() {
   return (
     <section className="relative bg-white py-24 lg:py-32 overflow-hidden">
-      {/* Patrón de fondo: Rejilla técnica de ingeniería */}
+      {/* fondo rejilla */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:64px_64px]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,white_100%)]" />
@@ -12,7 +12,7 @@ export default function Intro2() {
       <div className="max-w-6xl mx-auto px-6 relative">
         <div className="relative border border-gray-100 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.02)] px-8 py-16 md:px-20 md:py-20">
           
-          {/* Marcadores de Calibración (Esquinas Técnicas) */}
+          {/* Esquinas */}
           {["tl", "tr", "bl", "br"].map((pos) => (
             <div
               key={pos}
@@ -28,20 +28,20 @@ export default function Intro2() {
 
 
           <div className="relative z-10">
-            {/* Encabezado: Logo y Título */}
+            {/* Logo y Título */}
             <div className="text-center mb-12">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="inline-flex items-center gap-2 mb-8"
+                className="inline-flex items-center gap-0 md:gap-2 mb-8"
               >
                 <img
                   src="/logo.png"
                   alt="Quandum Aerospace"
-                  className="h-10 md:h-12  transition-all duration-500"
+                  className="h-14 md:h-14  transition-all duration-500"
                 />
-                <div className="w-px h-10 bg-gray-200" />
+                
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight">
                 <span className="font-semibold text-brand-blue">
                   Quandum
@@ -60,7 +60,7 @@ export default function Intro2() {
               />
             </div>
 
-            {/* Texto Principal: Justificado y con ritmo de lectura */}
+            {/* Texto Principal */}
             <div className="max-w-4xl mx-auto">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -69,9 +69,9 @@ export default function Intro2() {
                 transition={{ duration: 1 }}
                 className="grid md:grid-cols-12 gap-10 items-start"
               >
-                <div className="md:col-span-1 text-brand-blue font-mono text-sm hidden md:block">
+                {/* <div className="md:col-span-1 text-brand-blue font-mono text-sm hidden md:block">
                   [01]
-                </div>
+                </div> */}
                 <div className="md:col-span-11">
                   <p className="text-gray-800 text-lg md:text-xl leading-relaxed text-justify font-light">
                     Empresa de ingeniería especializada en el <span className="text-black font-semibold">diseño, desarrollo y fabricación</span> de sistemas electrónicos y optoelectrónicos de alta fiabilidad. 
@@ -79,9 +79,9 @@ export default function Intro2() {
                   </p>
                 </div>
 
-                <div className="md:col-span-1 text-brand-blue font-mono text-sm hidden md:block">
+                {/* <div className="md:col-span-1 text-brand-blue font-mono text-sm hidden md:block">
                   [02]
-                </div>
+                </div> */}
                 <div className="md:col-span-11">
                   <p className="text-gray-600 text-base md:text-lg leading-relaxed text-justify">
                     Cubrimos el ciclo de vida completo del sistema: desde la definición funcional hasta la validación final. Operamos bajo estándares de seguridad <span className="text-black font-medium uppercase">DO-178C</span> y <span className="text-black font-medium uppercase">DO-254</span>, garantizando una excelencia técnica respaldada por nuestras certificaciones <span className="border-b border-brand-blue text-black">EN 9100 e ISO 9001</span>.
@@ -90,7 +90,7 @@ export default function Intro2() {
               </motion.div>
             </div>
 
-            {/* Especificaciones Técnicas (Footer de la sección) */}
+            {/* Especificaciones Técnicas */}
             <motion.div 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}

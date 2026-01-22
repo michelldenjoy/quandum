@@ -122,13 +122,13 @@ export default function Calidad() {
         </div>
       </section>
 
-      {/* SECCIÓN SELLO */}
-       {/* SECCIÓN DEL SELLO (Mantenida como pediste, con un wrapper más limpio) */}
+      
+       {/* SECCIÓN DEL SELLO */}
        <div className="flex bg-aerospacee  flex-col items-center py-20 relative">
              <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
              <p className="text-cyan-400 text-sm tracking-[0.3em] uppercase mb-12 relative z-10 bg-[#020617] px-8">Certificación Oficial</p>
              
-             {/* --- INICIO SELLO ORIGINAL --- */}
+             
              <div className="relative group scale-110 md:scale-125">
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/30 to-sky-500/30 rounded-full blur-3xl scale-150 group-hover:scale-[1.7] transition-all duration-700" />
               <motion.div
@@ -150,7 +150,7 @@ export default function Calidad() {
                 <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-sky-600 to-cyan-600 text-white text-[10px] font-bold px-6 py-2 rounded-full shadow-lg">QUANDUM AEROSPACE</div>
               </motion.div>
             </div>
-            {/* --- FIN SELLO ORIGINAL --- */}
+            
           </div>
     </div>
   );

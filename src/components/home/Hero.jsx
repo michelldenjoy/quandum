@@ -71,7 +71,7 @@ export default function Hero() {
             animate="visible"
             className="max-w-4xl"
           >
-            {/* Eyebrow */}
+           
             <motion.p
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -81,7 +81,7 @@ export default function Hero() {
               Aerospace · Defense · Engineering
             </motion.p>
 
-            {/* Título principal */}
+           
             <h1 className="flex flex-wrap text-white text-5xl md:text-8xl lg:text-9xl tracking-tight font-light">
               {title.split(" ").map((word, index) => (
                 <motion.span
@@ -131,7 +131,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Línea inferior */}
+     
       <div className="absolute bottom-0 left-0 right-0 h-px 
                       bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent" />
     </section>

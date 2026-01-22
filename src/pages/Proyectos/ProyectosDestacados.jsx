@@ -10,7 +10,7 @@ export default function ProyectosDestacados() {
             <HeroVideo
               eyebrow="Nuestro · Trabajo"
               title="Resultados en proyectos"
-              description="Soluciones de ingeniería aplicadas a proyectos reales y complejos."
+              description="Soluciones de ingeniería aplicadas a proyectos reales."
               backgroundImage="/images/heroproducts.jpg"
               imagePosition="top 90%"
               

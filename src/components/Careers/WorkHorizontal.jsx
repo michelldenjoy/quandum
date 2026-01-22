@@ -114,7 +114,7 @@ export default function WorkHorizontal() {
                       : "border-gray-200 bg-white hover:border-gray-300 hover:shadow-lg"
                   }`}
               >
-                {/* Línea superior decorativa */}
+                {/* Línea superior */}
                 <div
                   className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-black via-brand-blue to-black transition-all duration-500 ${
                     active === section.id
@@ -182,7 +182,7 @@ export default function WorkHorizontal() {
                   </div>
                 </div>
 
-                {/* Esquinas técnicas en hover */}
+                {/* Esquinas en hover */}
                 <div className="absolute top-4 left-4 w-8 h-8 border-t border-l border-brand-blue/0 group-hover:border-brand-blue/50 transition-all duration-500" />
                 <div className="absolute top-4 right-4 w-8 h-8 border-t border-r border-brand-blue/0 group-hover:border-brand-blue/50 transition-all duration-500" />
                 <div className="absolute bottom-4 left-4 w-8 h-8 border-b border-l border-brand-blue/0 group-hover:border-brand-blue/50 transition-all duration-500" />
@@ -209,7 +209,7 @@ export default function WorkHorizontal() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
 
-                        {/* Badge técnico */}
+                        {/* Badge */}
                         <div className="absolute bottom-4 left-4 right-4">
                           <div className="backdrop-blur-xl bg-white/95 rounded-lg px-4 py-2 border border-black/10 shadow-lg">
                             <div className="text-xs font-bold text-black">
