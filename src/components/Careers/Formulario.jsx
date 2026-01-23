@@ -167,7 +167,7 @@ export default function Formulario() {
      Render
   ------------------------------------------------ */
   return (
-    <section className="relative py-32 px-6 overflow-hidden ">
+    <section className="relative py-32 bg-gradient-to-t from-black/5 via-brand-blue/20 to-black px-6 overflow-hidden ">
       <div className="relative z-1 max-w-3xl mx-auto">
         <StarfieldNebula />
         <h2 className="text-5xl font-bold text-center mb-4 text-gray-100">
@@ -178,9 +178,9 @@ export default function Formulario() {
           críticas y al desarrollo tecnológico.
         </p>
 
-        <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-10 md:p-14 shadow-2xl space-y-8">
+        <div className="relative bg-slate-900/30 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-10 md:p-14 shadow-2xl space-y-8">
           {/* Glow effect behind form */}
-          <div className="absolute inset-0 -top-2 bg-gradient-to-l from-blue-400/80 via-cyan-500/20 to-blue-400/80 rounded-3xl blur-2xl opacity-30 -z-10" />
+          <div className="absolute inset-0 -top-2 bg-gradient-to-l from-sky-900/80 via-blue-500/20 to-sky-700/80 rounded-3xl blur-2xl opacity-30 -z-10" />
 
           {/* Mensaje éxito */}
           {status === "success" && (

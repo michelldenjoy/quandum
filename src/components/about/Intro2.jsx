@@ -109,9 +109,9 @@ export default function Intro2() {
                     </span>
                     , garantizando una excelencia técnica respaldada por
                     nuestras certificaciones{" "}
-                    <span className="border-b border-brand-blue text-black">
+                    <a href="/sobre-quandum/certificaciones" className="border-b border-brand-blue text-black">
                       EN 9100 e ISO 9001
-                    </span>
+                    </a>
                     .
                   </p>
                 </div>

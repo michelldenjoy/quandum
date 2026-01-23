@@ -1,189 +1,180 @@
-import { motion } from "motion/react";
-import { Shield, Lock, Eye, Globe, Cookie, UserCheck } from "lucide-react";
+import { motion } from "framer-motion";
+import { Shield, Lock, Eye, Globe, Cookie, UserCheck, FileText, ChevronRight } from "lucide-react";
 
 export default function PrivacyPolicy() {
   const sections = [
     {
       icon: Eye,
+      id: "01",
       title: "¿Qué información recopilamos?",
       content: [
-        "Quandum recopila información en sus sitios web de dos formas: (1) directamente (por ejemplo, cuando facilitas tus datos para suscribirte a un boletín o te registras en un sitio web para hacer comentarios en un foro); y (2) indirectamente (por ejemplo, a través de la tecnología de nuestro sitio web).",
-        "Podemos recopilar y procesar la siguiente información:",
-        "• Información que nos facilitas al rellenar formularios en nuestro sitio web",
-        "• Correspondencia si te pones en contacto con nosotros",
-        "• Respuestas a encuestas para nuestros estudios (participación no obligatoria)",
-        "• Mensajes, comentarios y contenidos que publicas en nuestro sitio web",
-        "• Información sobre tu ordenador (dirección IP, sistema operativo, tipo de navegador)",
-        "• Datos de tus visitas y recursos a los que accedes"
-      ]
+        "Quandum recopila información en sus sitios web de dos formas: directamente (formularios, registros, suscripciones) e indirectamente (tecnología de seguimiento propia).",
+        "Información procesada habitualmente:",
+        "• Datos técnicos: Dirección IP, sistema operativo y tipo de navegador.",
+        "• Interacción: Datos de navegación y recursos a los que accedes.",
+        "• Voluntaria: Correspondencia, encuestas y formularios de contacto.",
+      ],
     },
     {
       icon: Lock,
+      id: "02",
       title: "¿Cómo utilizamos la información?",
       content: [
-        "Utilizamos tus datos personales para ofrecerte la información que solicitas, procesar solicitudes y otros fines descritos en el punto de recopilación:",
-        "• Para ofrecerte informes, artículos, boletines y contenidos solicitados",
-        "• Para estudios o cuestionarios de investigación",
-        "• Para personalizar tu visita al sitio web",
-        "• Para contactarte en campañas de marketing (con tu autorización)",
-        "• Para analizar y mejorar la eficacia de nuestro sitio web"
-      ]
+        "Tus datos personales se procesan bajo criterios de estricta necesidad operativa:",
+        "• Suministro de informes técnicos y boletines solicitados.",
+        "• Personalización de la experiencia de usuario en el portal.",
+        "• Análisis de eficacia de nuestros sistemas digitales.",
+        "• Campañas de comunicación (solo bajo consentimiento previo).",
+      ],
     },
     {
       icon: UserCheck,
+      id: "03",
       title: "¿Compartimos tus datos personales?",
       content: [
-        "Nunca vendemos datos personales a terceros. En general, sólo compartimos datos con nuestros asesores y proveedores de servicios contratados.",
-        "Podemos compartir información en casos específicos:",
-        "• Cuando organicemos eventos conjuntos (siempre informándote previamente)",
-        "• En caso de venta o liquidación de alguna parte de nuestra empresa",
-        "• Cuando así lo exija la ley o para proteger derechos y seguridad"
-      ]
-    },
-    {
-      icon: Shield,
-      title: "Datos personales sensibles",
-      content: [
-        "Normalmente no utilizaremos este sitio web para recopilar datos personales sensibles. En los pocos casos en que lo hagamos será siempre en cumplimiento de la legislación local sobre privacidad y protección de datos.",
-        "Los datos personales sensibles incluyen: números de identificación personal, origen racial o étnico, opiniones políticas, creencias religiosas, afiliación a sindicatos, salud física o mental, datos biométricos o genéticos, inclinación sexual o antecedentes penales."
-      ]
+        "Quandum Aerospace no comercializa datos personales con terceros. El intercambio de información se limita a asesores y proveedores de servicios bajo contrato de confidencialidad.",
+        "Excepciones legales: Cumplimiento de normativas de defensa, seguridad nacional o procesos de liquidación corporativa.",
+      ],
     },
     {
       icon: Globe,
-      title: "¿Dónde se procesan tus datos?",
+      id: "04",
+      title: "Procesamiento Global",
       content: [
-        "Somos una organización de carácter global, por lo que los datos personales recopilados se pueden transmitir por la organización de Quandum en todo el mundo.",
-        "Contamos con políticas internas que garantizan un nivel de protección equivalente en toda nuestra organización."
-      ]
+        "Como organización de carácter global, los datos pueden ser transmitidos entre las sedes de Quandum en todo el mundo.",
+        "Garantizamos niveles de protección equivalentes en toda nuestra infraestructura internacional mediante políticas internas de seguridad unificadas.",
+      ],
     },
     {
       icon: Cookie,
-      title: "Cookies",
+      id: "05",
+      title: "Gestión de Cookies",
       content: [
-        "Las cookies son archivos de texto que se descargan a tu dispositivo cuando visitas un sitio web. Realizan distintas funciones como facilitar la navegación, recordar preferencias y mejorar la experiencia del usuario.",
-        "Tipos de cookies que utilizamos:",
-        "• Cookies estrictamente necesarias: Imprescindibles para explorar el sitio",
-        "• Cookies de rendimiento: Recopilan información anónima sobre el uso",
-        "• Cookies de funcionalidad: Recuerdan tus preferencias personalizadas",
-        "• Cookies de target: Hacemos seguimiento de campañas publicitarias propias",
-        "Puedes gestionar o eliminar cookies mediante la configuración de tu navegador."
-      ]
-    }
+        "Utilizamos cookies para optimizar la navegación técnica:",
+        "• Estrictamente necesarias: Operatividad del sitio.",
+        "• De rendimiento: Análisis anónimo de uso.",
+        "• De funcionalidad: Preferencias personalizadas.",
+      ],
+    },
   ];
 
   return (
-    <div className="min-h-screen py-16 bg-white text-slate-800">
+    <div className="min-h-screen bg-white font-sans text-gray-900">
+      {/* HEADER TÉCNICO */}
+      <header className="pt-32 pb-16 px-6 border-b border-gray-100">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-2 h-2 bg-brand-blue" />
+            <span className="text-xs tracking-[0.4em] uppercase text-gray-400">
+              Legal Compliance Documentation
+            </span>
+          </div>
+          
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+            <div>
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tighter uppercase mb-4">
+                Política de <br /> <span className="text-brand-blue font-light">Privacidad</span>
+              </h1>
+              <p className="text-gray-400 text-sm font-mono tracking-widest uppercase">
+                ID: QND-PP-2024-V.1
+              </p>
+            </div>
+            <img src="/logo.png" alt="Quandum" className="h-12 w-auto grayscale hover:grayscale-0 hover:opacity-100 opacity-70" />
+          </div>
+        </div>
+      </header>
 
-      <section className="py-16 px-6">
-        <div className="max-w-4xl mx-auto space-y-12">
-          {sections.map((section, index) => {
-            const Icon = section.icon;
-            return (
-              <motion.article
-                key={index}
-                initial={{ y: 40, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group"
-              >
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:border-zinc-700 transition-colors">
-                    <Icon className="w-6 h-6 text-zinc-100" strokeWidth={1.5} />
+      {/* CUERPO DE LA POLÍTICA */}
+      <main className="py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-12 gap-16">
+            
+            {/* Indice lateral (Sticky) */}
+            <aside className="hidden lg:block lg:col-span-3">
+              <nav className="sticky top-32 space-y-4">
+                <p className="text-[10px] font-bold uppercase tracking-widest text-brand-blue mb-6">Contenidos</p>
+                {sections.map((s) => (
+                  <a key={s.id} href={`#${s.id}`} className="block text-xs text-gray-400 hover:text-black transition-colors uppercase tracking-tighter">
+                    {s.id}. {s.title}
+                  </a>
+                ))}
+              </nav>
+            </aside>
+
+            {/* Secciones de Contenido */}
+            <div className="lg:col-span-9 space-y-24">
+              {sections.map((section, index) => (
+                <motion.section
+                  key={section.id}
+                  id={section.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="border-l border-gray-100 pl-8 md:pl-16 relative"
+                >
+                  <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 bg-white border border-brand-blue" />
+                  
+                  <div className="flex items-center gap-4 mb-8">
+                    <span className="font-mono text-brand-blue text-sm font-bold tracking-tighter">{section.id} //</span>
+                    <h2 className="text-2xl font-bold tracking-tight uppercase">{section.title}</h2>
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold tracking-tight mt-2">
-                    {section.title}
-                  </h2>
-                </div>
-                
-                <div className="ml-16 space-y-4">
-                  {section.content.map((paragraph, pIndex) => (
-                    <p
-                      key={pIndex}
-                      className="text-zinc-800 leading-relaxed"
-                    >
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
-              </motion.article>
-            );
-          })}
-        </div>
-      </section>
 
-      {/* Rights Section */}
-      <motion.section
-        initial={{ y: 40, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="py-16 px-6 border-t text-white border-zinc-900 bg-zinc-900"
-      >
-        <div className="max-w-4xl text-justify mx-auto">
-          <h2 className="text-3xl font-bold mb-6 tracking-tight">
-            Tus derechos
-          </h2>
-          <div className="space-y-4 text-zinc-200">
-            <p className="leading-relaxed">
-              Tienes derecho a saber si conservamos datos personales sobre ti y, 
-              en caso de que lo hagamos, a acceder a esos datos personales y pedir 
-              que los rectifiquemos si son incorrectos. Para ello, puedes utilizar 
-              nuestro formulario de contacto.
-            </p>
-            <p className="leading-relaxed">
-              Puedes ejercer tu derecho a rechazar comunicaciones de marketing marcando 
-              ciertas casillas en los formularios que empleamos para recabar tus datos 
-              personales. También puedes ejercer el derecho a interrumpir las comunicaciones 
-              de marketing cuando lo desees usando nuestro formulario de contacto.
-            </p>
+                  <div className="space-y-6">
+                    {section.content.map((text, i) => (
+                      <p key={i} className="text-gray-600 leading-relaxed text-sm md:text-base">
+                        {text}
+                      </p>
+                    ))}
+                  </div>
+                </motion.section>
+              ))}
+
+              {/* TUS DERECHOS (Destacado) */}
+              <motion.section 
+                className="bg-gray-50 p-8 md:p-12 border border-gray-100"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+              >
+                <div className="flex items-center gap-3 mb-8">
+                  <UserCheck className="text-brand-blue" size={24} />
+                  <h3 className="text-xl font-bold uppercase tracking-tight">Ejercicio de Derechos</h3>
+                </div>
+                <div className="grid md:grid-cols-2 gap-8 text-sm text-gray-500 italic">
+                  <p>
+                    Usted tiene derecho a conocer, rectificar o cancelar el tratamiento de sus datos personales. Para cualquier gestión, Quandum dispone de canales de comunicación directa.
+                  </p>
+                  <p>
+                    Puede interrumpir las comunicaciones de marketing en cualquier momento utilizando nuestro formulario de contacto oficial.
+                  </p>
+                </div>
+              </motion.section>
+            </div>
           </div>
         </div>
-      </motion.section>
+      </main>
 
-      
-      <motion.section
-        initial={{ y: 40, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="py-16 px-6"
-      >
-        <div className="max-w-4xl text-justify mx-auto">
-          <div className="bg-zinc-900 border border-zinc-900 rounded-lg p-8">
-            <h3 className="text-2xl text-white font-bold mb-4 tracking-tight">
-              Seguridad de los datos
-            </h3>
-            <p className="text-zinc-200 leading-relaxed mb-4">
-              Adoptamos las medidas oportunas para garantizar la seguridad de los 
-              datos personales recopilados a través del sitio web de Quandum. Debes 
-              comprender que, dada la naturaleza abierta de Internet, tu información 
-              y datos personales pueden circular sin medidas de seguridad por redes 
-              conectadas a tu ordenador o a nuestros sistemas.
-            </p>
-            <p className="text-zinc-200 leading-relaxed">
-              En ocasiones, nuestro sitio web puede incluir enlaces dirigidos a sitios 
-              web de nuestros asociados, anunciantes y filiales. Si sigues alguno de 
-              esos enlaces, recuerda que esos sitios web tienen sus propias políticas 
-              de privacidad. Examina estas políticas antes de facilitar tus datos 
-              personales en estos sitios web.
-            </p>
+      {/* FOOTER DE SEGURIDAD */}
+      <footer className="bg-black text-white py-20 px-6 mt-20">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-12 items-start">
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-6">
+                <Lock size={18} className="text-brand-blue" />
+                <h4 className="text-sm font-bold uppercase tracking-[0.2em]">Seguridad de los sistemas</h4>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed max-w-xl">
+                Adoptamos medidas de cifrado y seguridad industrial para proteger la integridad de los datos. No obstante, dada la naturaleza de las redes globales, Quandum Aerospace recomienda el uso de conexiones seguras por parte del usuario.
+              </p>
+            </div>
+            <div className="md:border-l md:border-white/10 md:pl-12">
+              <p className="text-[10px] font-mono text-gray-500 uppercase tracking-widest mb-4">Última revisión técnica</p>
+              <p className="text-sm font-bold tracking-widest">
+                {new Date().toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' })}
+              </p>
+            </div>
           </div>
         </div>
-      </motion.section>
-
-      
-      {/* <section className="py-8 px-6 border-t border-zinc-800/50">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-sm text-zinc-500 text-center">
-            Última actualización: {new Date().toLocaleDateString('es-ES', { 
-              year: 'numeric', 
-              month: 'long', 
-              day: 'numeric' 
-            })}
-          </p>
-        </div>
-      </section> */}
+      </footer>
     </div>
   );
 }

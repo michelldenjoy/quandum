@@ -1,26 +1,5 @@
 // import { useState } from "react";
-import {
-  Rocket,
-  Users,
-  Clock,
-  Shield,
-  Zap,
-  Upload,
-  CheckCircle,
-  ArrowRight,
-  Award,
-  Heart,
-  ChevronDown,
-  Home,
-  DollarSign,
-  Plane,
-  GraduationCap,
-  Coffee,
-  Calendar,
-  Target,
-  TrendingUp,
-  UserCheck,
-} from "lucide-react";
+
 import Collage from "../../components/Careers/Collage";
 import Valores from "../../components/Careers/Valores";
 import Formulario from "../../components/Careers/Formulario";
@@ -147,7 +126,9 @@ export default function TrabajaConNosotros() {
           </span>
         </button>
       </HeroVideo>
-
+      <div id="formulario">
+        <Formulario />
+      </div>
       <div>
         <Collage />
       </div>
@@ -156,9 +137,7 @@ export default function TrabajaConNosotros() {
         <WorkHorizontal />
       </div>
 
-      <div id="formulario">
-        <Formulario />
-      </div>
+
 
       <div>{/* <Valores /> */}</div>
 

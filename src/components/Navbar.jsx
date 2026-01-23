@@ -61,7 +61,7 @@ export default function Navbar() {
               <span className="text-2xl font-bold text-white tracking-tighter leading-none">
                 QUANDUM
               </span>
-              <span className="text-[10px] uppercase tracking-[0.4em] text-brand-blue font-bold">
+              <span className="text-[12px] ml-1 uppercase tracking-[0.4em] text-brand-pink font-bold">
                 Aerospace
               </span>
             </div>
@@ -79,7 +79,7 @@ export default function Navbar() {
                   <Link
                     to={link.path || "#"}
                     className={`relative text-[13px] uppercase tracking-[0.2em] font-bold transition-colors duration-300 flex items-center gap-1.5 ${
-                      isActive ? "text-white" : "text-gray-400 group-hover:text-white"
+                      isActive ? "text-white" : "text-gray-300 group-hover:text-white"
                     }`}
                   >
                     {link.name}
