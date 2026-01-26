@@ -233,61 +233,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-
-const products = [
-  {
-    id: 1,
-    title: "IR Illuminator SubSystem",
-    subtitle: "IRILL",
-    hero: "/products/illuminator.jpg",
-    gallery: [
-      "/products/illuminator1.jpg",
-      "/products/illuminator2.jpg",
-    ],
-    description:
-      "Sistema de iluminación por infrarrojos basado en tecnología láser, integrado en el sistema BEVS...",
-      certifications: ["DO-178 DAL B"],
-    
-  },
-  {
-    id: 2,
-    title: "Nozzle",
-    subtitle: "Subtitulo",
-    hero: "/products/nozzle.jpg",
-    gallery: [
-      "/products/illuminator1.jpg",
-      "/products/illuminator2.jpg",
-    ],
-    description: "Descripción profesional en español para el Nozzle.",
-    certifications: ["DO-178 DAL B"],
-
-  },
-  {
-    id: 3,
-    title: "Encoder",
-    subtitle: "Subtitulo",
-    hero: "/products/encoder.jpg",
-    gallery: [
-      "/products/encoder1.jpg",
-      "/products/encoder2.jpg",
-    ],
-    description: "Descripción profesional en español para el Encoder.",
-    certifications: ["DO-178 DAL B"],
-
-  },
-  {
-    id: 4,
-    title: "Radiation",
-    subtitle: "Subtitulo",
-    hero: "/products/radiation.jpg",
-    gallery: [
-      "/products/illuminator1.jpg",
-      "/products/illuminator2.jpg",
-    ],
-    description: "Descripción profesional en español para el Radiation.",
-    certifications: ["DO-178 DAL B"],
-  }
-];
+import { products } from "../products/products"; 
 
 export default function Products() {
   const [hovered, setHovered] = useState(null);

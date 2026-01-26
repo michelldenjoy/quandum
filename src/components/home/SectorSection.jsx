@@ -92,7 +92,7 @@ Nuestra aproximación combina ingeniería de producto, optimización de procesos
             </div>
           </motion.div>
 
-          {/* linea decorativa de titulo */}
+          {/* linea decorativa de titulo ver información */}
 
           {/* <motion.div
             initial={{ width: 0, opacity: 0 }}

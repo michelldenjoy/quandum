@@ -140,14 +140,14 @@ const CertificationsSection = () => {
                       href={cert.imgUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center px-8 py-3 hover:scale-105 rounded-md text-sm uppercase tracking-widest text-brand-pink clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
+                      className="flex items-center justify-center px-8 py-3 hover:scale-105 rounded-md text-xs uppercase tracking-widest text-brand-blue hover:font-semibold  hover:bg-gradient-to-r  from-red-500 via-brand-pink to-red-700 clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
                     >
-                      <Eye size={14} /> Ver
+                      Ver Certificado
                     </a>
                     <a
                       href={cert.pdfUrl}
                       download
-                      className="flex items-center justify-center px-8 py-3 hover:scale-105 rounded-md text-sm uppercase tracking-widest text-gray-200 bg-brand-blue clip-path-diagonal border hover:text-black border-gray-500 hover:bg-transparent transition-all duration-300"
+                      className="flex items-center justify-center px-8 py-3 hover:scale-105 rounded-md text-sm uppercase tracking-widest text-gray-200 bg-brand-blue clip-path-diagonal border border-gray-500 hover:bg-gradient-to-r  from-red-500 via-brand-pink to-red-700 hover:font-semibold hover:text-white transition-all duration-300"
                     >
                       <Download size={14} /> PDF
                     </a>

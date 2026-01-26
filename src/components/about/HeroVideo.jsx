@@ -30,96 +30,95 @@ export default function HeroVideo({
   imagePosition = "center",
 }) {
   return (
-    <div className="w-full overflow-x-hidden bg-black pt-16 sm:pt-20 md:pt-24 lg:pt-28">
-      <section className="relative h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[85vh]  w-full overflow-hidden">
-        {/* Background Image **************   
-  min-h-[70vh]
-  sm:min-h-[75vh]
-  md:min-h-[70vh]
-  lg:min-h-[65vh]
-  xl:min-h-[60vh]*/}
-        <div className="absolute inset-0">
+    // Eliminamos el padding superior excesivo para controlar mejor la altura
+    <div className="w-full overflow-x-hidden bg-black pt-28">
+      {/* Ajuste de Alturas: 
+          - Mobile: 50vh (suficiente para impacto sin scroll excesivo)
+          - Tablet/Desktop: Escalado hasta un máximo de 70vh 
+      */}
+      <section className="relative h-[55vh] sm:h-[60vh] md:h-[65vh] lg:h-[70vh] max-h-[800px] w-full overflow-hidden">
+        
+        {/* Background Image Container */}
+        <div className="absolute inset-0 z-0">
           <img
             src={backgroundImage}
             alt={title}
-            className="w-full h-full object-cover object-center"
+            /* CLAVE: object-cover mantiene la proporción. 
+               Agregamos 'will-change-transform' para que el navegador use la GPU 
+               y evite el pixelado en imágenes de alta resolución al escalar.
+            */
+            className="w-full h-full object-cover will-change-transform"
             loading="eager"
             decoding="async"
             style={{
               objectPosition: imagePosition,
-              imageRendering: 'high-quality',
-              WebkitBackfaceVisibility: 'hidden',
-              backfaceVisibility: 'hidden',
+              imageRendering: 'crisp-edges', // Ayuda con fotos de gran formato
             }}
           />
         </div>
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-slate-900/20 to-slate-950/80 sm:from-black/70 sm:via-slate-900/20 sm:to-slate-950/80" />
+        {/* Overlay Gradiente: Más denso abajo para legibilidad y suavizado */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black via-black/40 to-black/60 md:bg-gradient-to-r md:from-black/60 md:to-black/75" />
 
-        {/* Grid*/}
+        {/* Grid Decorativo: Reducido para no ensuciar la foto */}
         <div
-          className="absolute inset-0 opacity-[0.03] sm:opacity-[0.04] pointer-events-none 
-          bg-[linear-gradient(rgba(56,189,248,0.4)_1px,transparent_1px),
-               linear-gradient(90deg,rgba(56,189,248,0.4)_1px,transparent_1px)]
-          bg-[size:60px_60px] sm:bg-[size:80px_80px] md:bg-[size:100px_100px] lg:bg-[size:120px_120px]"
+          className="absolute inset-0 z-[2] opacity-[0.03] pointer-events-none 
+          bg-[linear-gradient(rgba(56,189,248,0.3)_1px,transparent_1px),
+               linear-gradient(90deg,rgba(56,189,248,0.3)_1px,transparent_1px)]
+          bg-[size:40px_40px] md:bg-[size:80px_80px]"
         />
 
-        {/* Content - Centrado vertical */}
-        <div className="relative z-10 h-full flex items-center pb-20">
-          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Content - Centrado Vertical */}
+        <div className="relative z-10 h-full flex items-center">
+          <div className="w-full max-w-7xl lg:mt-6 mx-auto px-6 sm:px-8 lg:px-12">
             <motion.div
               variants={container}
               initial="hidden"
               animate="visible"
-              className="max-w-full sm:max-w-4xl"
+              className="max-w-4xl"
             >
-              {/* Eyebrow  */}
+              {/* Eyebrow */}
               <motion.p
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className="text-bwhite text-lg  font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4 sm:mb-6"
+                className="text-cyan-400 text-sm sm:text-base font-bold tracking-[0.3em] uppercase mb-4"
               >
                 {eyebrow}
               </motion.p>
 
-              {/* Title  */}
-              <h1 className="flex flex-wrap text-white text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-9xl  tracking-tight leading-[1.1] sm:leading-tight">
+              {/* Title: Ajustado para que en XL no rompa el diseño */}
+              <h1 className="flex flex-wrap text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tight leading-[1.1]">
                 {title.split(" ").map((word, index) => (
                   <motion.span
                     key={index}
                     variants={wordAnimation}
-                    className="mr-2 sm:mr-3"
+                    className="mr-3 sm:mr-4"
                   >
                     {word}
                   </motion.span>
                 ))}
               </h1>
 
-              {/* Description  */}
+              {/* Description */}
               {description && (
                 <motion.p
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 0.9,
-                    duration: 0.8,
-                    ease: "easeOut",
-                  }}
-                  className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-slate-200 leading-relaxed max-w-full sm:max-w-2xl lg:max-w-3xl"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.9, duration: 0.8 }}
+                  className="mt-6 text-slate-300 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl"
                 >
                   {description}
                 </motion.p>
               )}
 
-              {/* Children (Botones)  */}
+              {/* Botones */}
               {children && (
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.2, duration: 0.8 }}
-                  className="mt-6 sm:mt-8 md:mt-10"
+                  transition={{ delay: 1.1 }}
+                  className="mt-8 flex flex-wrap gap-4"
                 >
                   {children}
                 </motion.div>
@@ -131,4 +130,3 @@ export default function HeroVideo({
     </div>
   );
 }
-

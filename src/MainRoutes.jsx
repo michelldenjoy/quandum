@@ -19,6 +19,7 @@ const Mecanica = lazy(() => import("./pages/Servicios/Mecanica"));
 
 // Proyectos
 const ProyectosDestacados = lazy(() => import("./pages/Proyectos/ProyectosDestacados"));
+const ProjectDetail = lazy(() => import("./pages/Proyectos/ProjectDetail"));
 
 // Sobre Quandum
 const Calidad = lazy(() => import("./pages/Empresa/Calidad"));
@@ -56,6 +57,7 @@ export default function MainRoutes() {
 
         {/* Proyectos */}
         <Route path="/proyectos/destacados" element={<ProyectosDestacados />} />
+        <Route path="/proyectos/destacados/:id" element={<ProjectDetail />} />
 
         {/* Sobre Quandum */}
         <Route path="/sobre-quandum/calidad" element={<Calidad />} />

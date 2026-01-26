@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Intro2() {
   return (
-    <section className="relative bg-white py-24 lg:py-32 overflow-hidden">
+    <section className="relative bg-white py-24 lg:py-14 overflow-hidden">
       {/* fondo rejilla */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:64px_64px]" />
@@ -78,7 +78,7 @@ export default function Intro2() {
                 </div> */}
                 <div className="md:col-span-11">
                   <p className="text-gray-800 text-lg md:text-xl leading-relaxed text-justify font-light">
-                    Empresa de ingeniería especializada en el{" "}
+                    Somos una empresa de ingeniería especializada en el{" "}
                     <span className="text-black font-semibold">
                       diseño, desarrollo y fabricación
                     </span>{" "}

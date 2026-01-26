@@ -118,7 +118,7 @@ export default function TrabajaConNosotros() {
               block: "start",
             })
           }
-          className="px-8 py-3 rounded-md text-sm uppercase hover:scale-105 tracking-widest text-white clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
+          className="px-8 py-3 rounded-md text-sm uppercase hover:scale-105 tracking-widest text-white clip-path-diagonal border border-gray-500 hover:font-semibold hover:bg-gradient-to-r  from-red-500 via-brand-pink to-red-700 hover:text-white transition-all duration-300"
         >
           Únete al equipo
           <span className="group-hover:translate-x-1 transition-transform duration-300">
@@ -129,15 +129,9 @@ export default function TrabajaConNosotros() {
       <div id="formulario">
         <Formulario />
       </div>
-      <div>
-        <Collage />
-      </div>
-<Divider />
-      <div>
-        <WorkHorizontal />
-      </div>
-
-
+      <Collage />
+      <Divider />
+      <WorkHorizontal />
 
       <div>{/* <Valores /> */}</div>
 

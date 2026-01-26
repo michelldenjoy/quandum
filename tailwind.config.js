@@ -8,7 +8,7 @@ export default {
       colors: {
         brand: {
           blue: "#516288",
-          pink: "#F65772",
+          pink: "#e64e68",
           dark: "001F3F"
         }
       },

@@ -185,6 +185,10 @@
   );
 }
 
+.bg-card{
+  background-image: url("/products/illuminator1.jpg");
+}
+
 
 
 /* .bg-aerospace {

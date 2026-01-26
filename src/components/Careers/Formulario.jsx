@@ -10,6 +10,7 @@ import {
   Award,
 } from "lucide-react";
 import StarfieldNebula from "../3d/StarfieldNebula";
+import { motion } from "motion/react";
 
 /* -----------------------------------------------
    Listado estático de posiciones (fuera del componente)
@@ -167,16 +168,21 @@ export default function Formulario() {
      Render
   ------------------------------------------------ */
   return (
-    <section className="relative py-32 bg-gradient-to-t from-black/5 via-brand-blue/20 to-black px-6 overflow-hidden ">
+    <section className="relative py-14 lg:py-32 lg:mt-8 bg-gradient-to-t from-black/5 via-brand-blue/20 to-black px-6 overflow-hidden ">
       <div className="relative z-1 max-w-3xl mx-auto">
         <StarfieldNebula />
-        <h2 className="text-5xl font-bold text-center mb-4 text-gray-100">
-          Envía tu Candidatura
-        </h2>
-        <p className="text-center text-gray-200 mb-16">
-          Únete a un equipo multidisciplinar donde tu talento impulsa misiones
-          críticas y al desarrollo tecnológico.
-        </p>
+        <div className="text-center mb-12">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-white text-3xl md:text-5xl font-semibold tracking-[0.25em] mb-9"
+          >
+            ÚNETE AL EQUIPO
+          </motion.h2>
+          <p className="text-slate-400 text-lg font-light tracking-wide max-w-xl mx-auto">
+            Impulsa la ingeniería del futuro.
+          </p>
+        </div>
 
         <div className="relative bg-slate-900/30 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-10 md:p-14 shadow-2xl space-y-8">
           {/* Glow effect behind form */}

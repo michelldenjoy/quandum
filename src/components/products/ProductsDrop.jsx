@@ -1,10 +1,13 @@
 import { useState, Fragment } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 export default function ProductsDrop() {
   const [active, setActive] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState({});
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImageIndex, setLightboxImageIndex] = useState(0);
+  const [lightboxProduct, setLightboxProduct] = useState(null);
 
   const products = [
     {
@@ -30,7 +33,7 @@ export default function ProductsDrop() {
         "/products/nozzle2.jpg",
       ],
       description: "Sistema de tobera de alta precisión diseñado para aplicaciones aeroespaciales críticas. Optimizado para control de flujo y máxima eficiencia operativa. Incorpora tecnología avanzada de materiales resistentes a altas temperaturas y presiones extremas, cumpliendo con normativas internacionales de seguridad y calidad.",
-      certifications: ["DO-178 DAL B", "AS9100"],
+      certifications: ["DO-178 DAL B", "AS/EN9100"],
     },
     {
       id: 3,
@@ -92,7 +95,7 @@ export default function ProductsDrop() {
 
     return (
       <div className="relative overflow-hidden rounded-xl group">
-        {/* Imagen actual */}
+        {/* Imagen actual con click para abrir lightbox */}
         <motion.img
           key={currentIndex}
           initial={{ opacity: 0 }}
@@ -100,9 +103,20 @@ export default function ProductsDrop() {
           transition={{ duration: 0.3 }}
           src={images[currentIndex]}
           alt={`${product.title} - Imagen ${currentIndex + 1}`}
-          className={`w-full ${heightClass} object-cover transition-transform duration-700 group-hover:scale-105`}
+          className={`w-full ${heightClass} object-cover transition-transform duration-700 group-hover:scale-105 cursor-pointer`}
+          onClick={(e) => {
+            e.stopPropagation();
+            setLightboxProduct(product);
+            setLightboxImageIndex(currentIndex);
+            setLightboxOpen(true);
+          }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+
+        {/* Indicador de zoom */}
+        <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1.5 rounded-full text-xs font-medium backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+          🔍 Click para ampliar
+        </div>
 
         {/* Controles de navegación */}
         {images.length > 1 && (
@@ -179,8 +193,139 @@ export default function ProductsDrop() {
     );
   };
 
+  // Componente de Lightbox (Modal de imagen completa)
+  const Lightbox = () => {
+    if (!lightboxProduct) return null;
+    
+    const images = getAllImages(lightboxProduct);
+
+    const navigateLightbox = (direction) => {
+      if (direction === 'next') {
+        setLightboxImageIndex((prev) => (prev + 1) % images.length);
+      } else {
+        setLightboxImageIndex((prev) => prev === 0 ? images.length - 1 : prev - 1);
+      }
+    };
+
+    // Cerrar con tecla Escape
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setLightboxOpen(false);
+      } else if (e.key === 'ArrowRight') {
+        navigateLightbox('next');
+      } else if (e.key === 'ArrowLeft') {
+        navigateLightbox('prev');
+      }
+    };
+
+    return (
+      <AnimatePresence>
+        {lightboxOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
+            onClick={() => setLightboxOpen(false)}
+            onKeyDown={handleKeyDown}
+            tabIndex={0}
+          >
+            {/* Botón cerrar */}
+            <button
+              onClick={() => setLightboxOpen(false)}
+              className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 z-50 group"
+              aria-label="Cerrar vista ampliada"
+            >
+              <X className="w-6 h-6 group-hover:rotate-90 transition-transform duration-300" />
+            </button>
+
+            {/* Info del producto */}
+            <div className="absolute top-4 left-4 bg-white/10 backdrop-blur-md text-white px-4 py-2 rounded-lg z-50">
+              <div className="text-xs font-medium opacity-75">{lightboxProduct.subtitle}</div>
+              <div className="text-sm font-bold">{lightboxProduct.title}</div>
+              <div className="text-xs opacity-75 mt-1">
+                Imagen {lightboxImageIndex + 1} de {images.length}
+              </div>
+            </div>
+
+            {/* Contenedor de imagen */}
+            <div
+              className="relative max-w-7xl max-h-[90vh] w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <motion.img
+                key={lightboxImageIndex}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3 }}
+                src={images[lightboxImageIndex]}
+                alt={`${lightboxProduct.title} - Imagen ${lightboxImageIndex + 1}`}
+                className="w-full h-full object-contain rounded-lg"
+              />
+
+              {/* Botones de navegación */}
+              {images.length > 1 && (
+                <>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigateLightbox('prev');
+                    }}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-4 rounded-full backdrop-blur-sm transition-all duration-300"
+                    aria-label="Imagen anterior"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigateLightbox('next');
+                    }}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-4 rounded-full backdrop-blur-sm transition-all duration-300"
+                    aria-label="Imagen siguiente"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
+
+                  {/* Indicadores de puntos */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                    {images.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setLightboxImageIndex(index);
+                        }}
+                        className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                          lightboxImageIndex === index
+                            ? "bg-white w-8"
+                            : "bg-white/40 hover:bg-white/70"
+                        }`}
+                        aria-label={`Ir a imagen ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+
+            {/* Instrucciones de teclado */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-md text-white px-4 py-2 rounded-lg text-xs">
+              Usa las flechas ← → para navegar • ESC para cerrar
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    );
+  };
+
   return (
     <section className="relative w-full bg-white py-16 lg:py-24 overflow-hidden">
+      {/* Lightbox Modal */}
+      <Lightbox />
+
       {/* Sistema de fondo minimalista técnico */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div
@@ -202,20 +347,9 @@ export default function ProductsDrop() {
           className="mb-16"
         >
           <div className="flex items-start gap-8">
-            {/* Línea vertical decorativa */}
-            {/* <div className="hidden md:flex flex-col items-center gap-2 pt-2">
-              <div className="w-px h-16 bg-gradient-to-b from-transparent via-black to-transparent" />
-              <div className="w-1.5 h-1.5 bg-black rotate-45" />
-            </div> */}
-
             <div className="flex-1">
-              {/*TITULO PRINCIPAL*/}
+              {/* **********************************TITULO PRINCIPAL***************************** */}
               <div className="flex items-center gap-4 mb-6">
-                {/* <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-black" />
-                  <div className="w-1 h-1 bg-gray-400" />
-                  <div className="w-1 h-1 bg-gray-300" />
-                </div> */}
                 <span className="text-sm tracking-[0.3em] text-gray-500 font-medium uppercase">
                   Soluciones
                 </span>
@@ -237,7 +371,7 @@ export default function ProductsDrop() {
         </div>
 
         {/* Grid de cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
           {products.map((product, index) => (
             <Fragment key={product.id}>
               {/* Card del product */}
@@ -263,6 +397,16 @@ export default function ProductsDrop() {
                       : "border-gray-200 bg-white hover:border-gray-300 hover:shadow-lg"
                   }`}
               >
+                {/* Imagen de fondo */}
+                <div className="absolute inset-0 z-0">
+                  <img
+                    src={product.hero}
+                    alt={product.title}
+                    className="w-full h-full object-cover opacity-0 group-hover:opacity-10 transition-opacity duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/95 to-white/80" />
+                </div>
+
                 {/* Línea superior decorativa */}
                 <div
                   className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-black via-brand-blue to-black transition-all duration-500 ${
@@ -361,12 +505,60 @@ export default function ProductsDrop() {
                     transition={{ duration: 0.5, ease: "easeOut" }}
                     className="lg:hidden col-span-1 overflow-hidden"
                   >
-                    <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+                    <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 shadow-lg relative">
+                      {/* Botón de cerrar */}
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setActive(null);
+                        }}
+                        className="absolute top-4 right-4 z-20 bg-black/80 hover:bg-black text-white p-2 rounded-full backdrop-blur-sm transition-all duration-300"
+                        aria-label="Cerrar"
+                      >
+                        <X className="w-5 h-5" />
+                      </button>
+
                       <ImageSlider product={product} isMobile={true} />
 
                       <p className="text-base text-gray-700 leading-relaxed whitespace-pre-line mt-6">
                         {product.description}
                       </p>
+
+                      {/* Botones de navegación móvil */}
+                      <div className="flex items-center justify-center gap-4 mt-6 pt-6 border-t border-gray-200">
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const currentIndex = products.findIndex(p => p.id === product.id);
+                            const prevIndex = currentIndex === 0 ? products.length - 1 : currentIndex - 1;
+                            setActive(products[prevIndex].id);
+                            setCurrentImageIndex(prev => ({
+                              ...prev,
+                              [products[prevIndex].id]: 0
+                            }));
+                          }}
+                          className="flex items-center gap-2 px-4 py-2 bg-gray-900 hover:bg-black text-white rounded-lg transition-all duration-300 text-sm font-medium"
+                        >
+                          <ChevronLeft className="w-4 h-4" />
+                          Anterior
+                        </button>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const currentIndex = products.findIndex(p => p.id === product.id);
+                            const nextIndex = (currentIndex + 1) % products.length;
+                            setActive(products[nextIndex].id);
+                            setCurrentImageIndex(prev => ({
+                              ...prev,
+                              [products[nextIndex].id]: 0
+                            }));
+                          }}
+                          className="flex items-center gap-2 px-4 py-2 bg-gray-900 hover:bg-black text-white rounded-lg transition-all duration-300 text-sm font-medium"
+                        >
+                          Siguiente
+                          <ChevronRight className="w-4 h-4" />
+                        </button>
+                      </div>
                     </div>
                   </motion.div>
                 )}
@@ -384,9 +576,18 @@ export default function ProductsDrop() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="hidden lg:block"
+              className="hidden lg:block relative"
             >
               <div className="bg-gradient-to-br from-gray-50 via-white to-gray-50 rounded-3xl p-10 lg:p-12 border border-gray-200 shadow-[0_8px_30px_rgba(0,0,0,0.12)]">
+                {/* Botón de cerrar */}
+                <button
+                  onClick={() => setActive(null)}
+                  className="absolute top-6 right-6 z-20 bg-black/80 hover:bg-black text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 group"
+                  aria-label="Cerrar"
+                >
+                  <X className="w-6 h-6 group-hover:rotate-90 transition-transform duration-300" />
+                </button>
+
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                   {/* Slider de Imágenes */}
                   <motion.div
@@ -443,6 +644,60 @@ export default function ProductsDrop() {
                       </div>
                     </div>
                   </motion.div>
+                </div>
+
+                {/* Botones de navegación desktop */}
+                <div className="flex items-center justify-center gap-6 mt-10 pt-8 border-t border-gray-200">
+                  <button
+                    onClick={() => {
+                      const currentIndex = products.findIndex(p => p.id === active);
+                      const prevIndex = currentIndex === 0 ? products.length - 1 : currentIndex - 1;
+                      setActive(products[prevIndex].id);
+                      setCurrentImageIndex(prev => ({
+                        ...prev,
+                        [products[prevIndex].id]: 0
+                      }));
+                    }}
+                    className="flex items-center gap-3 px-6 py-3 bg-gray-900 hover:bg-black text-white rounded-xl transition-all duration-300 font-medium shadow-lg hover:shadow-xl hover:scale-105"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                    Proyecto Anterior
+                  </button>
+                  <div className="flex items-center gap-2">
+                    {products.map((p, idx) => (
+                      <button
+                        key={p.id}
+                        onClick={() => {
+                          setActive(p.id);
+                          setCurrentImageIndex(prev => ({
+                            ...prev,
+                            [p.id]: 0
+                          }));
+                        }}
+                        className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                          active === p.id
+                            ? "bg-brand-blue w-8"
+                            : "bg-gray-300 hover:bg-gray-400"
+                        }`}
+                        aria-label={`Ir a ${p.title}`}
+                      />
+                    ))}
+                  </div>
+                  <button
+                    onClick={() => {
+                      const currentIndex = products.findIndex(p => p.id === active);
+                      const nextIndex = (currentIndex + 1) % products.length;
+                      setActive(products[nextIndex].id);
+                      setCurrentImageIndex(prev => ({
+                        ...prev,
+                        [products[nextIndex].id]: 0
+                      }));
+                    }}
+                    className="flex items-center gap-3 px-6 py-3 bg-gray-900 hover:bg-black text-white rounded-xl transition-all duration-300 font-medium shadow-lg hover:shadow-xl hover:scale-105"
+                  >
+                    Proyecto Siguiente
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
                 </div>
               </div>
             </motion.div>

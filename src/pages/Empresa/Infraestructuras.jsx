@@ -74,7 +74,7 @@ export default function Infraestructuras() {
                 <img
                   src={f.image}
                   alt={f.title}
-                  className="w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[550px] rounded-xl md:rounded-2xl shadow-2xl object-cover"
+                  className="w-full h-full object-cover rounded-sm"
                 />
               </motion.div>
 

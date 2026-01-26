@@ -1,9 +1,10 @@
 import React from 'react'
 import HeroVideo from "../../components/about/HeroVideo";
-import Products from '../../components/products/Products';
 import IntroProducts from '../../components/products/IntroProducts';
 import ProductsDrop from '../../components/products/ProductsDrop';
-import Divider from '../../components/Divider';
+import ProjectIMG from '../../components/products/ProjectIMG';
+
+import ProjectGrid from '../../components/products/ProjectGrid';
 export default function ProyectosDestacados() {
   return (
     <div >
@@ -17,10 +18,13 @@ export default function ProyectosDestacados() {
             />
 
       <IntroProducts /> 
-      <Divider />
+      
 
       <ProductsDrop />
-       <Products /> 
+      <ProjectGrid />
+      <ProjectIMG />
+      
+     
     </div>
   )
 }

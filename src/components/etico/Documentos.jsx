@@ -1,5 +1,6 @@
 import { FileText, Download, Shield, Scale, CheckCircle2 } from "lucide-react";
 import { motion } from "motion/react";
+import PolicyStrip from "./PolicyStrip";
 
 export default function Documentos() {
   const policies = [
@@ -164,6 +165,10 @@ export default function Documentos() {
           })}
         </div>
 
+        <div>
+          <PolicyStrip />
+        </div>
+
 
         {/* Política de Calidad - Highlighted */}
 <motion.div
@@ -172,10 +177,10 @@ export default function Documentos() {
   transition={{ delay: 0.4 }}
   className="mt-16 flex justify-center"
 >
-  <div className="w-full md:w-2/3 lg:w-1/2">
+  <div className="w-full bg-black md:w-2/3 lg:w-1/2">
     <a
       href={qualityPolicy.href}
-      className="group relative block bg-slate-50 border-2 border-slate-600/30 hover:border-slate-600 p-10 transition-all duration-300 hover:shadow-2xl hover:shadow-slate-600/15"
+      className="group relative block bg-slate-100 border-2 border-slate-600/30 hover:border-slate-600 p-10 transition-all duration-300 hover:shadow-2xl hover:shadow-slate-600/15"
     >
       {/* Corner brackets */}
       <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-slate-600" />

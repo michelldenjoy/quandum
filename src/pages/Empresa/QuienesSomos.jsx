@@ -15,9 +15,9 @@ export default function QuienesSomos() {
   return (
     <div>
       <HeroVideo
-        eyebrow="Quienes · Somos "
-        title="Experiencia técnica"
-        description="Desarrollamos tecnología avanzada para el sector aeronáutico y sistemas críticos."
+        eyebrow="Desarrollo · Técnología "
+        title="Sobre Quandum"
+        description="Fabricamos ingeniería para el sector aeronáutico desde el 2006"
         // description="diseña, desarrolla y fabrica dispositivos y sistemas electrónicos y optoelectrónicos de forma específica para el mercado Aeroespacial y de forma general para aplicaciones industriales especiales."
         backgroundImage="/images/about-hero.jpeg"
       />
@@ -26,20 +26,16 @@ export default function QuienesSomos() {
 
       {/* <Intro /> */}
 
-     
-
       <VisionMision />
       <StoryStrip />
 
-
       {/* <HeroText /> */}
 
- <Press />
+      <Press />
 
-<Divider  />
+      <Divider />
 
       <AboutFeatures />
-
 
       <FilosofiaTrayectoria />
       <InfraStrip />

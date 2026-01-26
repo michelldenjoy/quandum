@@ -28,7 +28,7 @@ export default function VisionMision() {
                 </div> */}
 
                 {/* TITULO PRINCIPAL */}
-                <h3 className="text-3xl md:text-5xl lg:text-4xl font-extralight text-white tracking-tight leading-[1.1]">
+                <h3 className="text-3xl md:text-5xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-500 mb-4 tracking-tight">
                   Nuestra 
                   <br />
                   <span className="font-normal text-4xl md:text-5xl lg:text-5xl bg-gradient-to-r from-brand-blue via-slate-200 to-brand-blue bg-clip-text text-transparent  animate-gradient bg-[length:200%_auto]">Visión</span>
@@ -51,7 +51,7 @@ export default function VisionMision() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6"
           >
-                <h3 className="text-3xl md:text-5xl lg:text-4xl font-extralight text-white tracking-tight leading-[1.1]">
+                <h3 className="text-3xl md:text-5xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-500 mb-4 tracking-tight">
                   Nuestra 
                   <br />
                   <span className="font-normal text-4xl md:text-5xl lg:text-5xl bg-gradient-to-r from-brand-blue via-slate-200 to-brand-blue bg-clip-text text-transparent  animate-gradient bg-[length:200%_auto]">Misión</span>
