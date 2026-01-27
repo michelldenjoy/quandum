@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "motion/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+
 
 const images = [
   {
@@ -30,10 +31,20 @@ const images = [
   },
 ];
 
+
 export default function Collage() {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 3000); // 3 segundos
+  
+    return () => clearInterval(interval); // cleanup
+  }, []);
+  
 
   const next = () => setIndex((prev) => (prev + 1) % images.length);
   const prev = () => setIndex((prev) => (prev - 1 + images.length) % images.length);
@@ -153,12 +164,12 @@ export default function Collage() {
             </div>
           </motion.div>
 
-          {/* Derecho - Slider */}
+          {/* Derecho - order Slider */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="order-1 lg:order-2 relative"
+            className="order-2 lg:order-2 relative"
           >
             {/* Slider */}
             <div className="relative  w-full aspect-[16/10] overflow-hidden bg-gray-100 shadow-2xl">

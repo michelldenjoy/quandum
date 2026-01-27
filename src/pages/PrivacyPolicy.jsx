@@ -60,26 +60,24 @@ export default function PrivacyPolicy() {
 
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900">
-      {/* HEADER TÉCNICO */}
+      {/* HEADER */}
       <header className="pt-32 pb-16 px-6 border-b border-gray-100">
         <div className="max-w-5xl mx-auto">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-2 h-2 bg-brand-blue" />
-            <span className="text-xs tracking-[0.4em] uppercase text-gray-400">
-              Legal Compliance Documentation
-            </span>
-          </div>
+
           
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div>
               <h1 className="text-4xl md:text-6xl font-bold tracking-tighter uppercase mb-4">
                 Política de <br /> <span className="text-brand-blue font-light">Privacidad</span>
               </h1>
-              <p className="text-gray-400 text-sm font-mono tracking-widest uppercase">
+              <span className="text-xs tracking-[0.3em] uppercase text-gray-400">
+              Legal Compliance Documentation
+            </span>
+              {/* <p className="text-gray-400 text-sm font-mono tracking-widest uppercase">
                 ID: QND-PP-2024-V.1
-              </p>
+              </p> */}
             </div>
-            <img src="/logo.png" alt="Quandum" className="h-12 w-auto grayscale hover:grayscale-0 hover:opacity-100 opacity-70" />
+            
           </div>
         </div>
       </header>
@@ -101,7 +99,7 @@ export default function PrivacyPolicy() {
               </nav>
             </aside>
 
-            {/* Secciones de Contenido */}
+            {/* Contenido */}
             <div className="lg:col-span-9 space-y-24">
               {sections.map((section, index) => (
                 <motion.section
@@ -115,7 +113,7 @@ export default function PrivacyPolicy() {
                   <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 bg-white border border-brand-blue" />
                   
                   <div className="flex items-center gap-4 mb-8">
-                    <span className="font-mono text-brand-blue text-sm font-bold tracking-tighter">{section.id} //</span>
+                    <span className="font-mono text-brand-blue text-sm font-bold tracking-tighter">{section.id}</span>
                     <h2 className="text-2xl font-bold tracking-tight uppercase">{section.title}</h2>
                   </div>
 
@@ -129,7 +127,7 @@ export default function PrivacyPolicy() {
                 </motion.section>
               ))}
 
-              {/* TUS DERECHOS (Destacado) */}
+              {/*  DERECHOS  */}
               <motion.section 
                 className="bg-gray-50 p-8 md:p-12 border border-gray-100"
                 initial={{ opacity: 0 }}
@@ -153,7 +151,7 @@ export default function PrivacyPolicy() {
         </div>
       </main>
 
-      {/* FOOTER DE SEGURIDAD */}
+      {/* FOOTER  */}
       <footer className="bg-black text-white py-20 px-6 mt-20">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row gap-12 items-start">

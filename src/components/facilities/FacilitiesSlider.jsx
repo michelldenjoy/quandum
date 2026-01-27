@@ -56,7 +56,7 @@ export default function FacilitiesSlider() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="order-2 lg:order-1"
+            className="order-1 lg:order-1"
           >
             <div className="flex items-center gap-4 mb-6">
               <span className="text-sm tracking-[0.3em] text-gray-500 font-medium uppercase">

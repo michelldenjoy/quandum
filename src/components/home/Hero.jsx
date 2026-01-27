@@ -120,12 +120,12 @@ export default function Hero() {
                 Conócenos
               </a>
 
-              <a
+              {/* <a
                 href="/contacto"
                 className="px-8 py-3 hover:scale-105 rounded-md text-sm uppercase hover:font-semibold hover:bg-gradient-to-r  from-red-500 via-brand-pink to-red-700 tracking-widest text-white clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
               >
                 Contacto
-              </a>
+              </a> */}
             </motion.div>
           </motion.div>
         </div>

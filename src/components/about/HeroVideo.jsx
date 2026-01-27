@@ -36,7 +36,7 @@ export default function HeroVideo({
           - Mobile: 50vh (suficiente para impacto sin scroll excesivo)
           - Tablet/Desktop: Escalado hasta un máximo de 70vh 
       */}
-      <section className="relative h-[55vh] sm:h-[60vh] md:h-[65vh] lg:h-[70vh] max-h-[800px] w-full overflow-hidden">
+      <section className="relative h-[55vh] sm:h-[60vh] md:h-[65vh] lg:h-[80vh] max-h-[800px] w-full overflow-hidden">
         
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
@@ -82,7 +82,7 @@ export default function HeroVideo({
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className="text-cyan-400 text-sm sm:text-base font-bold tracking-[0.3em] uppercase mb-4"
+                className="text-sm tracking-[0.30em] font-semibold uppercase mb-6"
               >
                 {eyebrow}
               </motion.p>
