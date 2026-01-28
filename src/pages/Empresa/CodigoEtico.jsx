@@ -13,7 +13,6 @@ export default function CodigoEtico() {
         backgroundImage="/images/sostenible.jpg"
       ></HeroVideo>
       <Documentos />
-      <Divider />
       <ODSSection />
     </div>
   );

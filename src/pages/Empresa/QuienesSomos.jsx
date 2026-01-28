@@ -9,13 +9,12 @@ import Intro2 from "../../components/about/Intro2";
 import InfraStrip from "../../components/about/InfraStrip";
 import FilosofiaTrayectoria from "../../components/about/FilosofiaTrayectoria";
 import Press from "../../components/about/Press";
-import Divider from "../../components/Divider";
 
 export default function QuienesSomos() {
   return (
     <div>
       <HeroVideo
-        eyebrow="Desarrollo · Técnología "
+        eyebrow="Desarrollo · Técnología · Innovación"
         title="Sobre Quandum"
         description="Fabricamos ingeniería para el sector aeronáutico desde el 2006"
         // description="diseña, desarrolla y fabrica dispositivos y sistemas electrónicos y optoelectrónicos de forma específica para el mercado Aeroespacial y de forma general para aplicaciones industriales especiales."
@@ -33,7 +32,7 @@ export default function QuienesSomos() {
 
       <Press />
 
-      <Divider />
+    
 
       <AboutFeatures />
 

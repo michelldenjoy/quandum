@@ -1,13 +1,14 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import {
   Building2,
   Phone,
   Mail,
   MapPin,
   Send,
-  Shield,
-  Globe,
   Clock,
+  CheckCircle2,
+  ChevronRight,
 } from "lucide-react";
 import StarfieldNebula from "../components/3d/StarfieldNebula";
 
@@ -25,7 +26,6 @@ export default function Contacto() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [focusedInput, setFocusedInput] = useState(null);
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -33,11 +33,9 @@ export default function Contacto() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 9000);
       setForm({
         name: "",
         position: "",
@@ -48,66 +46,34 @@ export default function Contacto() {
         subject: "",
         message: "",
       });
-    }, 1600);
+    }, 2000);
   };
 
   const contactInfo = [
     {
       icon: Building2,
       title: "Sede Central",
-      content: (
-        <>
-          Calle Severo Ochoa, 39
-          <br />
-          Parque Tecnológico de Andalucía
-          <br />
-          29590 Málaga · España
-        </>
-      ),
-      delay: 100,
+      content: "Parque Tecnológico de Andalucía, Málaga · España",
     },
-    {
-      icon: Phone,
-      title: "Centralita",
-      content: (
-        <span className="font-mono text-blue-400 text-lg">
-          +34 952 02 06 54
-        </span>
-      ),
-      delay: 200,
-    },
-    {
-      icon: Mail,
-      title: "Correo institucional",
-      content: (
-        <span className="font-mono text-blue-400 text-lg break-all">
-          info@quandum.com
-        </span>
-      ),
-      delay: 300,
-    },
+    { icon: Phone, title: "Centralita", content: "+34 952 02 06 54" },
+    { icon: Mail, title: "Email", content: "info@quandum.com" },
     {
       icon: Clock,
-      title: "Horario de atención",
-      content: (
-        <>
-          Lunes a jueves: 08:00 – 17:30
-          <br />
-          Viernes: 08:00 – 14:00
-          <br />
-          Respuesta garantizada en menos de 24h laborables
-        </>
-      ),
-      delay: 400,
+      title: "Horario",
+      content: "L-J: 08:00 – 17:30 | V: 08:00 – 14:00",
     },
   ];
 
   return (
-    <div className="relative min-h-screen ">
-      <StarfieldNebula />
+    <div className="relative min-h-screen text-white selection:bg-blue-500/30 overflow-x-hidden">
+      <div>
+        <StarfieldNebula />
+        <div />
+      </div>
 
-      {/* HERO  InputDark */}
-      <section className="relative border-b border-slate-800/50">
+
+      <div className="relative z-10">
+        {/* HERO */}
         <div className="max-w-7xl mx-auto px-6 py-32 relative z-10">
           <div className="text-center max-w-4xl mx-auto animate-fadeIn">
             <h1 className="text-6xl md:text-7xl font-extralight mb-8">
@@ -141,343 +107,188 @@ export default function Contacto() {
           </div>
         </div>
 
-        {/* Decorative line */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-px w-96 bg-gradient-to-r from-transparent via-blue-500 to-transparent animate-scaleX" />
-      </section>
-
-      {/* MAIN CONTENT */}
-      <section className="py-24 px-6 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* LEFT: Información corporativa */}
-            <div className="space-y-16 order-2 lg:order-1">
-              <div className="animate-slideInLeft">
-                <h2 className="text-4xl font-extralight text-white mb-12 flex items-center gap-3">
-                  <div className="w-1 h-8 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full" />
-                  Canales Oficiales
-                </h2>
-
-                <div className="space-y-6">
-                  {contactInfo.map((item, index) => (
-                    <ContactCard key={index} item={item} />
-                  ))}
-                </div>
+        <main className="max-w-7xl mx-auto px-6 pb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            {/* IZQUIERDA: INFO CORPORATIVA */}
+            <div className="lg:col-span-5 space-y-8">
+              <div className="grid grid-cols-1 gap-4">
+                {contactInfo.map((info, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                    className="p-6 bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-2xl group hover:border-blue-500/50 transition-all duration-500"
+                  >
+                    <div className="flex items-center gap-5">
+                      <div className="p-3 bg-blue-500/10 rounded-lg text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-500">
+                        <info.icon size={24} />
+                      </div>
+                      <div>
+                        <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-1">
+                          {info.title}
+                        </h4>
+                        <p className="text-sm font-medium text-slate-200">
+                          {info.content}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
 
-              {/* Google Map */}
-              <div
-                className="relative rounded-2xl overflow-hidden border border-slate-800/50 shadow-2xl h-96 lg:h-[500px] group animate-slideUp"
-                style={{ animationDelay: "0.2s" }}
-              >
-                {/* Glow effect on hover */}
-                <div className="absolute bg-gradient-to-t from-blue-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
-
+              {/* MAPA  */}
+              <div className="relative h-80 w-1000 rounded-3xl overflow-hidden border border-white/10 group">
                 <iframe
-                  title="Quandum Aerospace - Málaga"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0, filter: "grayscale(0.3) contrast(1.1)" }}
-                  loading="lazy"
-                  allowFullScreen
-                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Mapa Quandum"
+                  className="w-full h-full invert opacity-90 group-hover:opacity-80 transition-opacity duration-1000"
                   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAtxit6HPeuCWgxo0TLb6HnJlxQVVIS9eU&q=Calle+Severo+Ochoa+39%2C+Parque+Tecnol%C3%B3gico+de+Andaluc%C3%ADa%2C+29590+M%C3%A1laga%2C+Espa%C3%B1a&zoom=17&maptype=roadmap&language=es&region=ES"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
                 />
+                <div className="absolute inset-0 pointer-events-none border-[1px] border-white/5 rounded-3xl" />
 
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand-blue via-slate-950/60 to-transparent p-4 pointer-events-none z-10">
-                  <div className="flex items-center gap-4">
-                    <div className="p-2 bg-blue-500/20 rounded-lg backdrop-blur-sm border border-blue-500/30">
-                      <MapPin className="w-5 h-5 text-blue-400 drop-shadow-lg" />
-                    </div>
-                    <div>
-                      <p className="text-lg  font-semibold text-white drop-shadow-lg">
-                        Quandum Aerospace
-                      </p>
-                      <p className="text-sm text-slate-300 drop-shadow">
-                        PTA · Málaga, España
-                      </p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
 
-            {/* RIGHT: Form */}
-
-            <div className="relative animate-slideInRight order-1 lg:order-2">
-              <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-10 space-y-8 shadow-2xl">
-                {/* Glow effect behind form */}
-                <div className="absolute inset-0 -top-2 bg-gradient-to-l from-blue-400/80 via-cyan-500/20 to-blue-400/80 rounded-3xl blur-2xl opacity-30 -z-10" />
-                <h2 className="text-4xl font-extralight text-white mb-8 flex items-center gap-3">
-                  <div className="w-1 h-8 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full" />
-                  Formulario de Contacto
-                </h2>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  <Input
-                    label="Nombre completo *"
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                    onFocus={() => setFocusedInput("name")}
-                    onBlur={() => setFocusedInput(null)}
-                    focused={focusedInput === "name"}
-                  />
-                  <Input
-                    label="Cargo "
-                    name="position"
-                    value={form.position}
-                    onChange={handleChange}
-                    placeholder="Ej: Director de Ingeniería"
-                    onFocus={() => setFocusedInput("position")}
-                    onBlur={() => setFocusedInput(null)}
-                    focused={focusedInput === "position"}
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  <Input
-                    label="Empresa / Institución *"
-                    name="company"
-                    value={form.company}
-                    onChange={handleChange}
-                    onFocus={() => setFocusedInput("company")}
-                    onBlur={() => setFocusedInput(null)}
-                    focused={focusedInput === "company"}
-                  />
-                  <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">
-                      Departamento de interés
-                    </label>
-                    <select
-                      name="department"
-                      value={form.department}
-                      onChange={handleChange}
-                      onFocus={() => setFocusedInput("department")}
-                      onBlur={() => setFocusedInput(null)}
-                      className="w-full px-4 py-3 bg-slate-950/50 border border-slate-700/50 rounded-xl text-slate-200 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 outline-none hover:border-slate-600/50"
+            {/* DERECHA: FORMULARIO   */}
+            <div className="lg:col-span-7">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="relative p-8 md:p-12 bg-slate-900/30 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl"
+              >
+                <AnimatePresence mode="wait">
+                  {!submitted ? (
+                    <motion.form
+                      key="contact-form"
+                      onSubmit={handleSubmit}
+                      className="space-y-6"
+                      exit={{ opacity: 0, y: -20 }}
                     >
-                      <option value="general">General</option>
-                      <option value="engineering">
-                        Ingeniería y Desarrollo
-                      </option>
-                      <option value="procurement">
-                        Compras y Supply Chain
-                      </option>
-                      <option value="certification">
-                        Certificación EASA/FAA
-                      </option>
-                      <option value="defense">Proyectos de Defensa</option>
-                      <option value="executive">Dirección Ejecutiva</option>
-                    </select>
-                  </div>
-                </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <Input
+                          label="Nombre completo *"
+                          name="name"
+                          required
+                          value={form.name}
+                          onChange={handleChange}
+                        />
+                        <Input
+                          label="Empresa *"
+                          name="company"
+                          required
+                          value={form.company}
+                          onChange={handleChange}
+                        />
+                      </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  <Input
-                    type="email"
-                    label="Correo electrónico *"
-                    name="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    onFocus={() => setFocusedInput("email")}
-                    onBlur={() => setFocusedInput(null)}
-                    focused={focusedInput === "email"}
-                  />
-                  <Input
-                    type="tel"
-                    label="Teléfono"
-                    name="phone"
-                    value={form.phone}
-                    onChange={handleChange}
-                    onFocus={() => setFocusedInput("phone")}
-                    onBlur={() => setFocusedInput(null)}
-                    focused={focusedInput === "phone"}
-                  />
-                </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <Input
+                          label="Correo electrónico *"
+                          type="email"
+                          name="email"
+                          required
+                          value={form.email}
+                          onChange={handleChange}
+                        />
+                        <div>
+                          <label className="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">
+                            Departamento
+                          </label>
+                          <select
+                            name="department"
+                            value={form.department}
+                            onChange={handleChange}
+                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm focus:border-blue-500 outline-none transition-all appearance-none"
+                          >
+                            <option value="general">General</option>
+                            <option value="engineering">Ingeniería</option>
+                            <option value="certification">Certificación</option>
+                          </select>
+                        </div>
+                      </div>
 
-                <Input
-                  label="Asunto *"
-                  name="subject"
-                  value={form.subject}
-                  onChange={handleChange}
-                  onFocus={() => setFocusedInput("subject")}
-                  onBlur={() => setFocusedInput(null)}
-                  focused={focusedInput === "subject"}
-                />
+                      <Input
+                        label="Asunto *"
+                        name="subject"
+                        required
+                        value={form.subject}
+                        onChange={handleChange}
+                      />
 
-                <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">
-                    Mensaje *
-                  </label>
-                  <textarea
-                    name="message"
-                    rows={6}
-                    required
-                    value={form.message}
-                    onChange={handleChange}
-                    onFocus={() => setFocusedInput("message")}
-                    onBlur={() => setFocusedInput(null)}
-                    className="w-full px-4 py-3 bg-slate-950/50 border border-slate-700/50 rounded-xl text-slate-200 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 resize-none outline-none hover:border-slate-600/50 placeholder-slate-500"
-                    placeholder="Describa su consulta técnica, requerimiento de certificación o interés estratégico..."
-                  />
-                </div>
+                      <div>
+                        <label className="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">
+                          Mensaje Técnico *
+                        </label>
+                        <textarea
+                          rows={4}
+                          name="message"
+                          required
+                          value={form.message}
+                          onChange={handleChange}
+                          className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm focus:border-blue-500 outline-none transition-all resize-none"
+                        />
+                      </div>
 
-                <button
-                  onClick={handleSubmit}
-                  disabled={isSubmitting}
-                  className={`relative w-full px-10 py-4 text-sm uppercase hover:scale-105 tracking-[0.25em] font-medium border clip-path-diagonal transition-all duration-500
-                     ${
-                       isSubmitting
-                         ? "bg-slate-800 border-blue-500/40 text-blue-300 cursor-wait"
-                         : "bg-brand-transparent border-gray-500 text-white hover:bg-brand-blue hover:text-white"
-                     }
-  `}
-                >
-                  {/* Línea de progreso técnica */}
-                  {submitted && (
-                    <div className="relative p-6 bg-slate-950/80 border border-blue-500/30 clip-path-diagonal backdrop-blur-md animate-scaleIn">
-                      {/* Indicador lateral tipo sistema */}
-                      <div className="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-blue-400 via-cyan-400 to-blue-400" />
-
-                      {/* Estado */}
-                      <p className="text-[11px] tracking-[0.3em] uppercase text-blue-400 mb-3">
-                        Transmission status · OK
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="relative w-full px-10 bg-brand-blue/60 py-4 text-sm uppercase border border-gray-500 hover:scale-105 hover:bg-brand-pink/60 tracking-[0.25em] font-medium  clip-path-diagonal transition-all duration-500"
+                      >
+                        {isSubmitting ? "Transmitiendo..." : "Enviar Mensaje"}
+                      </button>
+                    </motion.form>
+                  ) : (
+                    <motion.div
+                      key="success-message"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="text-center py-20 space-y-6"
+                    >
+                      <div className="flex justify-center">
+                        <div className="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400">
+                          <CheckCircle2 size={48} />
+                        </div>
+                      </div>
+                      <h3 className="text-3xl font-bold uppercase italic">
+                        Mensaje Recibido
+                      </h3>
+                      <p className="text-slate-400 max-w-sm mx-auto">
+                        La transmisión se ha completado. Un ingeniero del
+                        departamento correspondiente revisará su solicitud en
+                        breve.
                       </p>
-
-                      {/* Mensaje principal */}
-                      <p className="text-sm text-slate-300 leading-relaxed">
-                        Su mensaje ha sido registrado correctamente en el
-                        sistema de comunicación institucional.
-                        <br />
-                        Un ingeniero responsable se pondrá en contacto con usted
-                        en un plazo máximo de
-                        <span className="text-blue-300 font-medium">
-                          {" "}
-                          24 horas laborables
-                        </span>
-                        .
-                      </p>
-                    </div>
+                      <button
+                        onClick={() => setSubmitted(false)}
+                        className="text-blue-400 text-[10px] font-bold uppercase tracking-widest hover:text-white transition-colors"
+                      >
+                        Enviar otra consulta
+                      </button>
+                    </motion.div>
                   )}
-
-                  <span className="relative z-10">
-                    {isSubmitting
-                      ? "Enviando mensaje"
-                      : "Solicitar Información"}
-                  </span>
-                </button>
-              </div>
+                </AnimatePresence>
+              </motion.div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <style>{`
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @keyframes scaleIn {
-          from { opacity: 0; transform: scale(0.9); }
-          to { opacity: 1; transform: scale(1); }
-        }
-        @keyframes slideUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes slideInLeft {
-          from { opacity: 0; transform: translateX(-30px); }
-          to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes slideInRight {
-          from { opacity: 0; transform: translateX(30px); }
-          to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes scaleX {
-          from { transform: translateX(-50%) scaleX(0); }
-          to { transform: translateX(-50%) scaleX(1); }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 1s ease-out forwards;
-          opacity: 0;
-        }
-        .animate-scaleIn {
-          animation: scaleIn 0.8s ease-out 0.2s forwards;
-          opacity: 0;
-        }
-        .animate-slideUp {
-          animation: slideUp 0.8s ease-out forwards;
-          opacity: 0;
-        }
-        .animate-slideInLeft {
-          animation: slideInLeft 0.7s ease-out forwards;
-          opacity: 0;
-        }
-        .animate-slideInRight {
-          animation: slideInRight 0.7s ease-out forwards;
-          opacity: 0;
-        }
-        .animate-scaleX {
-          animation: scaleX 1.2s ease-out 0.5s forwards;
-          transform: translateX(-50%) scaleX(0);
-        }
-      `}</style>
-    </div>
-  );
-}
-
-// Contact Card Component
-function ContactCard({ item }) {
-  return (
-    <div
-      className="group relative"
-      style={{
-        animation: `slideUp 0.6s ease-out ${item.delay}ms forwards`,
-        opacity: 0,
-      }}
-    >
-      {/* <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" /> */}
-
-      <div className="relative flex gap-3 sm:gap-5 p-4 sm:p-6 bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-2xl hover:border-blue-500/30 transition-all duration-300 group-hover:translate-x-2">
-        <div className="flex-shrink-0">
-          <div className="flex-shrink-0 w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-            <item.icon className="w-8 h-8 text-slate-100" />
-          </div>
-        </div>
-        <div className="flex-1 min-w-0 overflow-hidden">
-          <p className="text-xl font-semibold text-white">{item.title}</p>
-          <div className="text-slate-400 leading-relaxed text-xs sm:text-sm group-hover:text-slate-300 transition-colors duration-300 break-words">
-            {item.content}
-          </div>
-        </div>
-
-        {/* Subtle indicator */}
-        <div className="absolute top-1/2 right-4 -translate-y-1/2 w-2 h-2 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        </main>
       </div>
     </div>
   );
 }
 
-// Input Component
-function Input({ label, type = "text", focused, onFocus, onBlur, ...props }) {
+// Subcomponente Input
+function Input({ label, ...props }) {
   return (
-    <div className="relative">
-      <label className="block text-sm font-medium text-slate-300 mb-2">
+    <div>
+      <label className="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">
         {label}
       </label>
-      <div className="relative">
-        <input
-          type={type}
-          required={label.includes("*")}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          className="w-full px-4 py-3 bg-slate-950/50 border border-slate-700/50 rounded-xl text-slate-200 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 outline-none hover:border-slate-600/50 placeholder-slate-500"
-          {...props}
-        />
-        {/* Animated glow on focus */}
-        {focused && (
-          <div className="absolute inset-0 rounded-xl bg-blue-500/10 pointer-events-none animate-fadeIn" />
-        )}
-      </div>
+      <input
+        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm focus:border-blue-500 outline-none transition-all"
+        {...props}
+      />
     </div>
   );
 }

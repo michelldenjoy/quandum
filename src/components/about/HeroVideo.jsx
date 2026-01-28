@@ -32,21 +32,12 @@ export default function HeroVideo({
   return (
     // Eliminamos el padding superior excesivo para controlar mejor la altura
     <div className="w-full overflow-x-hidden bg-black pt-28">
-      {/* Ajuste de Alturas: 
-          - Mobile: 50vh (suficiente para impacto sin scroll excesivo)
-          - Tablet/Desktop: Escalado hasta un máximo de 70vh 
-      */}
       <section className="relative h-[55vh] sm:h-[60vh] md:h-[65vh] lg:h-[80vh] max-h-[800px] w-full overflow-hidden">
-        
-        {/* Background Image Container */}
+        {/* Background IMG CONTAINER */}
         <div className="absolute inset-0 z-0">
           <img
             src={backgroundImage}
             alt={title}
-            /* CLAVE: object-cover mantiene la proporción. 
-               Agregamos 'will-change-transform' para que el navegador use la GPU 
-               y evite el pixelado en imágenes de alta resolución al escalar.
-            */
             className="w-full h-full object-cover will-change-transform"
             loading="eager"
             decoding="async"
@@ -57,10 +48,10 @@ export default function HeroVideo({
           />
         </div>
 
-        {/* Overlay Gradiente: Más denso abajo para legibilidad y suavizado */}
+        {/* Overlay Gradiente*/}
         <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black via-black/40 to-black/60 md:bg-gradient-to-r md:from-black/60 md:to-black/75" />
 
-        {/* Grid Decorativo: Reducido para no ensuciar la foto */}
+        {/* Grid Decorativo */}
         <div
           className="absolute inset-0 z-[2] opacity-[0.03] pointer-events-none 
           bg-[linear-gradient(rgba(56,189,248,0.3)_1px,transparent_1px),
@@ -87,7 +78,7 @@ export default function HeroVideo({
                 {eyebrow}
               </motion.p>
 
-              {/* Title: Ajustado para que en XL no rompa el diseño */}
+              {/* Title*/}
               <h1 className="flex flex-wrap text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tight leading-[1.1]">
                 {title.split(" ").map((word, index) => (
                   <motion.span

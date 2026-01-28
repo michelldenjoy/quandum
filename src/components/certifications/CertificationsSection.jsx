@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, Award, Download, Eye, ChevronRight, FileBadge } from "lucide-react";
-import HeroVideo from "../../components/about/HeroVideo";
+
 
 const CertificationsSection = () => {
   const certifications = [
@@ -40,13 +40,6 @@ const CertificationsSection = () => {
 
   return (
     <section className="bg-white pb-24">
-      <HeroVideo
-        eyebrow="Certificación oficial"
-        title="Certificados"
-        description=""
-        backgroundImage="/images/certifications3.PNG"
-      />
-
       <div className="max-w-6xl mt-16 mx-auto px-6">
         {/* TITULOS PRINCIPALES */}
         <div className="mb-16">
@@ -61,7 +54,7 @@ const CertificationsSection = () => {
             </span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-black tracking-tight leading-[1.1]">
+          <h2 className="text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight text-black tracking-tight leading-[1.1]">
             Certificaciones
             <br />
             <span className="font-semibold">& Calidad</span>
@@ -140,14 +133,14 @@ const CertificationsSection = () => {
                       href={cert.imgUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center px-8 py-3 hover:scale-105 rounded-md text-xs uppercase tracking-widest text-brand-blue hover:font-semibold  hover:bg-gradient-to-r  from-red-500 via-brand-pink to-red-700 clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
+                      className="flex items-center justify-center px-8 py-3 hover:scale-105 rounded-md text-xs uppercase tracking-widest text-brand-blue hover:font-bold  hover:bg-brand-pink/70 clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
                     >
                       Ver Certificado
                     </a>
                     <a
                       href={cert.pdfUrl}
                       download
-                      className="flex items-center justify-center px-8 py-3 hover:scale-105 rounded-md text-sm uppercase tracking-widest text-gray-200 bg-brand-blue clip-path-diagonal border border-gray-500 hover:bg-gradient-to-r  from-red-500 via-brand-pink to-red-700 hover:font-semibold hover:text-white transition-all duration-300"
+                      className="flex items-center justify-center px-8 py-3 hover:scale-105 rounded-md text-sm uppercase tracking-widest text-gray-200 bg-brand-blue clip-path-diagonal border border-gray-500 hover:bg-brand-pink/70 hover:font-bold hover:text-white transition-all duration-300"
                     >
                       <Download size={14} /> PDF
                     </a>

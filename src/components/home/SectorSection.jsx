@@ -13,7 +13,7 @@ export default function SectorsSection() {
       image: "/aeroespacial.jpg",
       description: `Desarrollamos soluciones de ingeniería para plataformas aeroespaciales civiles y militares, cubriendo todo el ciclo de vida del sistema. Desde la definición de requisitos y el diseño de arquitectura hasta la verificación, validación y soporte a certificación, trabajamos conforme a los estándares más exigentes del sector.
 Nuestra experiencia abarca sistemas electrónicos, software crítico y diseño mecánico, integrados bajo criterios de seguridad, fiabilidad y cumplimiento normativo (EASA, FAA, EN 9100).`,
-      specs: ["ISO-9001", "AS/EN9100", "DO-178C", "DO-254" ],
+      specs: ["ISO-9001", "AS/EN9100", "DO-178C", "DO-254"],
     },
     {
       id: "defense",
@@ -42,10 +42,11 @@ Nuestra aproximación combina ingeniería de producto, optimización de procesos
   const activeSector = sectors.find((s) => s.id === active);
 
   return (
-    <section className="relative w-full bg-white py-16 lg:py-24 overflow-hidden">
+    <section className="relative w-full bg-white py-12 sm:py-16 lg:py-24 overflow-hidden">
+      {/* Fondo decorativo */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div
-          className="absolute top-1/3 right-1/4 w-[900px] h-[900px] bg-brand-blue/5 rounded-full blur-3xl animate-pulse"
+          className="absolute top-1/3 right-1/4 w-[600px] sm:w-[900px] h-[600px] sm:h-[900px] bg-brand-blue/5 rounded-full blur-3xl animate-pulse"
           style={{ animationDuration: "10s" }}
         />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.01)_1px,transparent_1px)] bg-[size:80px_80px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
@@ -53,62 +54,34 @@ Nuestra aproximación combina ingeniería de producto, optimización de procesos
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Intro */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-16"
-          >
-            <div className="flex items-start gap-8">
-              {/* Línea vertical decorativa */}
-              {/* <div className="hidden md:flex flex-col items-center gap-2 pt-2">
-              <div className="w-px h-16 bg-gradient-to-b from-transparent via-black to-transparent" />
-              <div className="w-1.5 h-1.5 bg-black rotate-45" />
-            </div> */}
-
-              <div className="flex-1">
-                {/*TITULO PRINCIPAL*/}
-                <div className="flex items-center gap-4 mb-6">
-                  {/* <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-black" />
-                    <div className="w-1 h-1 bg-gray-400" />
-                    <div className="w-1 h-1 bg-gray-300" />
-                  </div> */}
-                  <span className="text-sm tracking-[0.3em] text-gray-500  uppercase">
-                    Sectores
-                  </span>
-                </div>
-
-                {/* TITULO PRINCIPAL */}
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-black tracking-tight leading-[1.1]">
-                  Áreas
-                  <br />
-                  <span className="font-semibold">Tecnológicas</span>
-                </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-12 sm:mb-16"
+        >
+          <div className="flex items-start gap-4 sm:gap-8">
+            <div className="flex-1">
+              {/* Etiqueta superior */}
+              <div className="flex items-center gap-4 mb-4 sm:mb-6">
+                <span className="text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.3em] text-gray-500 uppercase">
+                  Sectores
+                </span>
               </div>
+
+              {/* TITULO PRINCIPAL */}
+              <h2 className="text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight text-black tracking-tight leading-[1.1]">
+                Áreas
+                <br />
+                <span className="font-semibold">Tecnológicas</span>
+              </h2>
             </div>
-          </motion.div>
-
-          {/* linea decorativa de titulo ver información */}
-
-          {/* <motion.div
-            initial={{ width: 0, opacity: 0 }}
-            whileInView={{ width: "60%", opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 1 }}
-            className="h-0.5 bg-gradient-to-r from-transparent via-brand-steel to-transparent rounded-full mb-8 mx-auto"
-            style={{
-              backgroundImage:
-                "linear-gradient(to right, transparent, #A9A9A9, transparent), repeating-linear-gradient(to right, transparent 0%, transparent 10%, #A9A9A9 10%, #A9A9A9 12%)", // Patrón de dashes metálicos
-            }}
-          /> */}
-        </div>
+          </div>
+        </motion.div>
 
         {/* Grid de cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-2 lg:gap-4 mb-8 sm:mb-12">
           {sectors.map((sector, index) => (
             <Fragment key={sector.id}>
               {/* Card del sector */}
@@ -120,14 +93,14 @@ Nuestra aproximación combina ingeniería de producto, optimización de procesos
                 onClick={() =>
                   setActive(active === sector.id ? null : sector.id)
                 }
-                className={`relative text-left p-8 rounded-2xl border transition-all duration-500 group overflow-hidden
+                className={`relative text-left p-6 sm:p-8 rounded-md border transition-all duration-500 group overflow-hidden min-h-[400px] sm:min-h-[450px]
                   ${
                     active === sector.id
-                      ? "border-black bg-gradient-to-br from-gray-50 to-white shadow-[0_8px_30px_rgba(0,0,0,0.12)]"
-                      : "border-gray-200 bg-white hover:border-gray-300 hover:shadow-lg"
+                      ? "border-black shadow-[0_8px_30px_rgba(0,0,0,0.25)]"
+                      : "border-gray-200 hover:border-gray-300 hover:shadow-lg"
                   }`}
               >
-                {/* Línea superior decorativa */}
+                {/* Línea superior*/}
                 <div
                   className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-black via-brand-blue to-black transition-all duration-500 ${
                     active === sector.id
@@ -136,40 +109,49 @@ Nuestra aproximación combina ingeniería de producto, optimización de procesos
                   }`}
                 />
 
-                <div className="relative z-10">
+                {/* Img de fondo */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  style={{ backgroundImage: `url(${sector.image})` }}
+                />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70 transition-opacity duration-500 group-hover:bg-gradient-to-b group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/80" />
+
+                <div className="relative z-10 flex flex-col h-full">
                   {/* Número de sector */}
-                  <div
-                    className={`text-6xl font-black mb-4 transition-all duration-500 ${
+                  {/* <div
+                    className={`text-5xl sm:text-6xl font-black mb-3 sm:mb-4 transition-all duration-500 drop-shadow-lg ${
                       active === sector.id
                         ? "text-brand-blue"
-                        : "text-gray-200 group-hover:text-gray-300"
+                        : "text-white/90 group-hover:text-white"
                     }`}
                   >
                     {sector.number}
-                  </div>
+                  </div> */}
 
                   {/* Título */}
                   <h4
-                    className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
+                    className={`text-4xl sm:text-2xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4 transition-colors duration-300 drop-shadow-md ${
                       active === sector.id
-                        ? "text-black"
-                        : "text-gray-900 group-hover:text-black"
+                        ? "text-white"
+                        : "text-white group-hover:text-white"
                     }`}
                   >
                     {sector.title}
                   </h4>
 
-                  {/* Descripción corta */}
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                  {/* Descripción */}
+                  <p className="text-gray-50 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6 drop-shadow-md flex-grow">
                     {sector.short}
                   </p>
 
                   {/* Especificaciones  */}
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
                     {sector.specs.map((spec) => (
                       <span
                         key={spec}
-                        className="text-xs font-mono text-gray-500 bg-gray-100 px-2 py-1 rounded border border-gray-200"
+                        className="text-xs font-mono text-gray-900 bg-white/95 backdrop-blur-sm px-2.5 py-1.5 rounded border border-gray-200 shadow-sm"
                       >
                         {spec}
                       </span>
@@ -177,10 +159,10 @@ Nuestra aproximación combina ingeniería de producto, optimización de procesos
                   </div>
 
                   {/* Indicador */}
-                  <div className="flex items-center text-sm font-medium text-gray-500 group-hover:text-black transition-colors">
+                  <div className="flex items-center text-sm font-medium text-white drop-shadow-md group-hover:text-white transition-colors mt-auto">
                     <span
                       className={`transition-all duration-300 ${
-                        active === sector.id ? "text-brand-blue" : ""
+                        active === sector.id ? "text-white" : ""
                       }`}
                     >
                       {active === sector.id
@@ -190,7 +172,7 @@ Nuestra aproximación combina ingeniería de producto, optimización de procesos
                     <svg
                       className={`ml-2 w-4 h-4 transition-all duration-300 ${
                         active === sector.id
-                          ? "rotate-180 text-brand-blue"
+                          ? "rotate-180 text-white"
                           : "group-hover:translate-x-1"
                       }`}
                       fill="none"
@@ -207,11 +189,11 @@ Nuestra aproximación combina ingeniería de producto, optimización de procesos
                   </div>
                 </div>
 
-                {/* Esquinas técnicas en hover */}
-                <div className="absolute top-4 left-4 w-8 h-8 border-t border-l border-brand-blue/0 group-hover:border-brand-blue/50 transition-all duration-500" />
-                <div className="absolute top-4 right-4 w-8 h-8 border-t border-r border-brand-blue/0 group-hover:border-brand-blue/50 transition-all duration-500" />
-                <div className="absolute bottom-4 left-4 w-8 h-8 border-b border-l border-brand-blue/0 group-hover:border-brand-blue/50 transition-all duration-500" />
-                <div className="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-brand-blue/0 group-hover:border-brand-blue/50 transition-all duration-500" />
+                {/* Esquinas  en hover */}
+                <div className="absolute top-3 sm:top-4 left-3 sm:left-4 w-6 sm:w-8 h-6 sm:h-8 border-t border-l border-brand-blue/0 group-hover:border-brand-blue/60 transition-all duration-500" />
+                <div className="absolute top-3 sm:top-4 right-3 sm:right-4 w-6 sm:w-8 h-6 sm:h-8 border-t border-r border-brand-blue/0 group-hover:border-brand-blue/60 transition-all duration-500" />
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 w-6 sm:w-8 h-6 sm:h-8 border-b border-l border-brand-blue/0 group-hover:border-brand-blue/60 transition-all duration-500" />
+                <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 w-6 sm:w-8 h-6 sm:h-8 border-b border-r border-brand-blue/0 group-hover:border-brand-blue/60 transition-all duration-500" />
               </motion.button>
 
               {/* Panel expandido móvil */}
@@ -223,28 +205,19 @@ Nuestra aproximación combina ingeniería de producto, optimización de procesos
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="md:hidden col-span-1 overflow-hidden"
+                    className="md:hidden lg:hidden col-span-1 overflow-hidden"
                   >
-                    <div className="bg-gradient-to-br from-gray-50 text-justify to-white rounded-2xl p-6 border border-gray-200 shadow-lg">
-                      <div className="relative overflow-hidden rounded-xl mb-6 group">
+                    <div className="bg-gradient-to-br from-gray-50 to-white rounded-xl sm:rounded-2xl p-5 sm:p-6 border border-gray-200 shadow-lg">
+                      <div className="relative overflow-hidden rounded-lg sm:rounded-xl mb-5 sm:mb-6 group">
                         <img
                           src={sector.image}
                           alt={sector.title}
-                          className="w-full h-[280px] object-cover transition-transform duration-700 group-hover:scale-105"
+                          className="w-full h-[220px] sm:h-[280px] object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-
-                        {/* Badge técnico */}
-                        <div className="absolute bottom-4 left-4 right-4">
-                          <div className="backdrop-blur-xl bg-white/95 rounded-lg px-4 py-2 border border-black/10 shadow-lg">
-                            <div className="text-xs font-bold text-black">
-                              {sector.number} — {sector.title}
-                            </div>
-                          </div>
-                        </div>
                       </div>
 
-                      <p className="text-base text-gray-700 leading-relaxed whitespace-pre-line">
+                      <p className="text-sm sm:text-base text-gray-700 leading-relaxed whitespace-pre-line text-justify">
                         {sector.description}
                       </p>
                     </div>
@@ -255,7 +228,7 @@ Nuestra aproximación combina ingeniería de producto, optimización de procesos
           ))}
         </div>
 
-        {/* Panel expandido desktop */}
+        {/* Panel expandido desktop (tablet y desktop) */}
         <AnimatePresence mode="wait">
           {active && activeSector && (
             <motion.div
@@ -266,27 +239,27 @@ Nuestra aproximación combina ingeniería de producto, optimización de procesos
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="hidden md:block"
             >
-              <div className="bg-gradient-to-br from-gray-50 via-white to-gray-50 rounded-3xl p-10 lg:p-12 border border-gray-200 shadow-[0_8px_30px_rgba(0,0,0,0.12)]">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="bg-gradient-to-br from-gray-50 via-white to-gray-50 rounded-2xl sm:rounded-3xl p-8 sm:p-10 lg:p-12 border border-gray-200 shadow-[0_8px_30px_rgba(0,0,0,0.12)]">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
                   {/* Imagen */}
                   <motion.div
                     initial={{ opacity: 0, x: -30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
-                    className="relative overflow-hidden rounded-2xl group"
+                    className="relative overflow-hidden rounded-xl sm:rounded-2xl group"
                   >
                     <img
                       src={activeSector.image}
                       alt={activeSector.title}
-                      className="w-full h-[420px] object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-[300px] sm:h-[360px] lg:h-[420px] object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
 
-                    {/* Esquinas técnicas */}
-                    <div className="absolute top-6 left-6 w-12 h-12 border-t-2 border-l-2 border-white/50" />
-                    <div className="absolute top-6 right-6 w-12 h-12 border-t-2 border-r-2 border-white/50" />
-                    <div className="absolute bottom-6 left-6 w-12 h-12 border-b-2 border-l-2 border-white/50" />
-                    <div className="absolute bottom-6 right-6 w-12 h-12 border-b-2 border-r-2 border-white/50" />
+                    {/* Esquinas  */}
+                    <div className="absolute top-4 sm:top-6 left-4 sm:left-6 w-10 sm:w-12 h-10 sm:h-12 border-t-2 border-l-2 border-white/50" />
+                    <div className="absolute top-4 sm:top-6 right-4 sm:right-6 w-10 sm:w-12 h-10 sm:h-12 border-t-2 border-r-2 border-white/50" />
+                    <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 w-10 sm:w-12 h-10 sm:h-12 border-b-2 border-l-2 border-white/50" />
+                    <div className="absolute bottom-4 sm:bottom-6 right-4 sm:right-6 w-10 sm:w-12 h-10 sm:h-12 border-b-2 border-r-2 border-white/50" />
                   </motion.div>
 
                   {/* Contenido */}
@@ -294,17 +267,17 @@ Nuestra aproximación combina ingeniería de producto, optimización de procesos
                     initial={{ opacity: 0, x: 30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
-                    className="space-y-6"
+                    className="space-y-5 sm:space-y-6"
                   >
-                    <div className="flex items-baseline gap-4">
-                      <div className="text-7xl font-black text-brand-blue/20">
+                    <div className="flex items-baseline gap-3 sm:gap-4">
+                      <div className="text-5xl sm:text-6xl lg:text-7xl font-black text-brand-blue/20">
                         {activeSector.number}
                       </div>
                       <div>
-                        <div className="text-xs font-bold text-gray-500 tracking-wider uppercase mb-2">
+                        <div className="text-xs font-bold text-gray-500 tracking-wider uppercase mb-1.5 sm:mb-2">
                           Sector
                         </div>
-                        <h4 className="text-3xl lg:text-4xl font-black text-black">
+                        <h4 className="text-2xl sm:text-3xl lg:text-4xl font-black text-black">
                           {activeSector.title}
                         </h4>
                       </div>
@@ -312,20 +285,20 @@ Nuestra aproximación combina ingeniería de producto, optimización de procesos
 
                     <div className="h-px bg-gradient-to-r from-black via-brand-blue to-transparent" />
 
-                    <p className="text-lg text-gray-700 text-justify leading-relaxed whitespace-pre-line">
+                    <p className="text-base sm:text-lg text-gray-700 text-justify leading-relaxed whitespace-pre-line">
                       {activeSector.description}
                     </p>
 
                     {/* Normativas y estándares */}
-                    <div className="pt-4">
+                    <div className="pt-3 sm:pt-4">
                       <div className="text-xs font-bold text-gray-500 tracking-wider uppercase mb-3">
                         Normativas y Estándares
                       </div>
-                      <div className="grid grid-cols-3 gap-4">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
                         {activeSector.specs.map((spec) => (
                           <div
                             key={spec}
-                            className="border border-gray-200 rounded-lg p-4 bg-white"
+                            className="border border-gray-200 rounded-lg p-3 sm:p-4 bg-white hover:shadow-md transition-shadow"
                           >
                             <div className="text-sm font-mono font-bold text-black">
                               {spec}

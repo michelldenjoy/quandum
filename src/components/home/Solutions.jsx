@@ -72,7 +72,7 @@ export default function Solutions() {
             Soluciones
           </span>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight  text-white leading-[1.1]">
+          <h2 className="text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight text-white tracking-tight leading-[1.1]">
             Capacidades
             <br />
             <span className="font-semibold">y Tecnologías</span>

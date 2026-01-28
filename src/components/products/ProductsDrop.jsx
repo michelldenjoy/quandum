@@ -15,10 +15,8 @@ export default function ProductsDrop() {
       title: "IR Illuminator SubSystem",
       subtitle: "IRILL",
       hero: "/products/illuminator.jpg",
-      gallery: [
-        "/products/illuminator1.jpg",
-        "/products/illuminator2.jpg",
-      ],
+      gallery: ["/products/illuminator1.jpg", "/products/illuminator2.jpg"],
+      image: "/products/illuminator.jpg",
       description:
         "Sistema de iluminación por infrarrojos basado en tecnología láser, integrado en el sistema BEVS. Proporciona iluminación infrarroja de alta potencia para aplicaciones de visión nocturna y sistemas de vigilancia aeroespacial. Diseñado para cumplir con los más altos estándares de la industria aeronáutica, garantizando fiabilidad y rendimiento en condiciones extremas.",
       certifications: ["DO-178 DAL B"],
@@ -28,11 +26,10 @@ export default function ProductsDrop() {
       title: "Nozzle",
       subtitle: "Sistema de Tobera",
       hero: "/products/nozzle.jpg",
-      gallery: [
-        "/products/nozzle1.jpg",
-        "/products/nozzle2.jpg",
-      ],
-      description: "Sistema de tobera de alta precisión diseñado para aplicaciones aeroespaciales críticas. Optimizado para control de flujo y máxima eficiencia operativa. Incorpora tecnología avanzada de materiales resistentes a altas temperaturas y presiones extremas, cumpliendo con normativas internacionales de seguridad y calidad.",
+      gallery: ["/products/nozzle1.jpg", "/products/nozzle2.jpg"],
+      image: "/products/nozzle.jpg",
+      description:
+        "Sistema de tobera de alta precisión diseñado para aplicaciones aeroespaciales críticas. Optimizado para control de flujo y máxima eficiencia operativa. Incorpora tecnología avanzada de materiales resistentes a altas temperaturas y presiones extremas, cumpliendo con normativas internacionales de seguridad y calidad.",
       certifications: ["DO-178 DAL B", "AS/EN9100"],
     },
     {
@@ -40,11 +37,10 @@ export default function ProductsDrop() {
       title: "Encoder",
       subtitle: "Sistema de Codificación",
       hero: "/products/encoder.jpg",
-      gallery: [
-        "/products/encoder1.jpg",
-        "/products/encoder2.jpg",
-      ],
-      description: "Encoder de precisión para sistemas de navegación y control aeroespacial. Proporciona medición angular y lineal de alta resolución con mínima latencia. Diseñado para entornos de alta vibración y temperatura variable, garantizando lecturas exactas en condiciones operativas exigentes.",
+      gallery: ["/products/encoder1.jpg", "/products/encoder2.jpg"],
+      image: "/products/encoder.jpg",
+      description:
+        "Encoder de precisión para sistemas de navegación y control aeroespacial. Proporciona medición angular y lineal de alta resolución con mínima latencia. Diseñado para entornos de alta vibración y temperatura variable, garantizando lecturas exactas en condiciones operativas exigentes.",
       certifications: ["DO-178 DAL B", "DO-254"],
     },
     {
@@ -52,13 +48,12 @@ export default function ProductsDrop() {
       title: "Radiation",
       subtitle: "Sistema de Protección",
       hero: "/products/radiation.jpg",
-      gallery: [
-        "/products/radiation1.jpg",
-        "/products/radiation2.jpg",
-      ],
-      description: "Sistema avanzado de protección contra radiación para componentes electrónicos críticos en aplicaciones aeroespaciales. Proporciona blindaje efectivo contra radiación cósmica y partículas de alta energía, asegurando la integridad operativa de sistemas electrónicos sensibles en entornos de alta altitud.",
+      gallery: ["/products/radiation1.jpg", "/products/radiation2.jpg"],
+      image: "/products/radiation.jpg",
+      description:
+        "Sistema avanzado de protección contra radiación para componentes electrónicos críticos en aplicaciones aeroespaciales. Proporciona blindaje efectivo contra radiación cósmica y partículas de alta energía, asegurando la integridad operativa de sistemas electrónicos sensibles en entornos de alta altitud.",
       certifications: ["DO-178 DAL B", "MIL-STD-883"],
-    }
+    },
   ];
 
   const activeProduct = products.find((s) => s.id === active);
@@ -70,20 +65,20 @@ export default function ProductsDrop() {
 
   // Función para navegar entre imágenes
   const navigateImage = (productId, direction) => {
-    const product = products.find(p => p.id === productId);
+    const product = products.find((p) => p.id === productId);
     const images = getAllImages(product);
     const currentIndex = currentImageIndex[productId] || 0;
-    
+
     let newIndex;
-    if (direction === 'next') {
+    if (direction === "next") {
       newIndex = (currentIndex + 1) % images.length;
     } else {
       newIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
     }
-    
-    setCurrentImageIndex(prev => ({
+
+    setCurrentImageIndex((prev) => ({
       ...prev,
-      [productId]: newIndex
+      [productId]: newIndex,
     }));
   };
 
@@ -113,9 +108,9 @@ export default function ProductsDrop() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
 
-        {/* Indicador de zoom */}
+        {/* Indicador de Proyectos zoom */}
         <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1.5 rounded-full text-xs font-medium backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-          🔍 Click para ampliar
+          Click para ampliar
         </div>
 
         {/* Controles de navegación */}
@@ -125,7 +120,7 @@ export default function ProductsDrop() {
             <button
               onClick={(e) => {
                 e.stopPropagation();
-                navigateImage(product.id, 'prev');
+                navigateImage(product.id, "prev");
               }}
               className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full backdrop-blur-sm transition-all duration-300 opacity-0 group-hover:opacity-100"
               aria-label="Imagen anterior"
@@ -137,7 +132,7 @@ export default function ProductsDrop() {
             <button
               onClick={(e) => {
                 e.stopPropagation();
-                navigateImage(product.id, 'next');
+                navigateImage(product.id, "next");
               }}
               className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full backdrop-blur-sm transition-all duration-300 opacity-0 group-hover:opacity-100"
               aria-label="Imagen siguiente"
@@ -152,9 +147,9 @@ export default function ProductsDrop() {
                   key={index}
                   onClick={(e) => {
                     e.stopPropagation();
-                    setCurrentImageIndex(prev => ({
+                    setCurrentImageIndex((prev) => ({
                       ...prev,
-                      [product.id]: index
+                      [product.id]: index,
                     }));
                   }}
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
@@ -196,25 +191,27 @@ export default function ProductsDrop() {
   // Componente de Lightbox (Modal de imagen completa)
   const Lightbox = () => {
     if (!lightboxProduct) return null;
-    
+
     const images = getAllImages(lightboxProduct);
 
     const navigateLightbox = (direction) => {
-      if (direction === 'next') {
+      if (direction === "next") {
         setLightboxImageIndex((prev) => (prev + 1) % images.length);
       } else {
-        setLightboxImageIndex((prev) => prev === 0 ? images.length - 1 : prev - 1);
+        setLightboxImageIndex((prev) =>
+          prev === 0 ? images.length - 1 : prev - 1
+        );
       }
     };
 
     // Cerrar con tecla Escape
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         setLightboxOpen(false);
-      } else if (e.key === 'ArrowRight') {
-        navigateLightbox('next');
-      } else if (e.key === 'ArrowLeft') {
-        navigateLightbox('prev');
+      } else if (e.key === "ArrowRight") {
+        navigateLightbox("next");
+      } else if (e.key === "ArrowLeft") {
+        navigateLightbox("prev");
       }
     };
 
@@ -242,7 +239,9 @@ export default function ProductsDrop() {
 
             {/* Info del producto */}
             <div className="absolute top-4 left-4 bg-white/10 backdrop-blur-md text-white px-4 py-2 rounded-lg z-50">
-              <div className="text-xs font-medium opacity-75">{lightboxProduct.subtitle}</div>
+              <div className="text-xs font-medium opacity-75">
+                {lightboxProduct.subtitle}
+              </div>
               <div className="text-sm font-bold">{lightboxProduct.title}</div>
               <div className="text-xs opacity-75 mt-1">
                 Imagen {lightboxImageIndex + 1} de {images.length}
@@ -260,7 +259,9 @@ export default function ProductsDrop() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3 }}
                 src={images[lightboxImageIndex]}
-                alt={`${lightboxProduct.title} - Imagen ${lightboxImageIndex + 1}`}
+                alt={`${lightboxProduct.title} - Imagen ${
+                  lightboxImageIndex + 1
+                }`}
                 className="w-full h-full object-contain rounded-lg"
               />
 
@@ -270,7 +271,7 @@ export default function ProductsDrop() {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      navigateLightbox('prev');
+                      navigateLightbox("prev");
                     }}
                     className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-4 rounded-full backdrop-blur-sm transition-all duration-300"
                     aria-label="Imagen anterior"
@@ -281,7 +282,7 @@ export default function ProductsDrop() {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      navigateLightbox('next');
+                      navigateLightbox("next");
                     }}
                     className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-4 rounded-full backdrop-blur-sm transition-all duration-300"
                     aria-label="Imagen siguiente"
@@ -338,161 +339,143 @@ export default function ProductsDrop() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-7xl mx-auto px-6">
-        {/* Intro */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <div className="flex items-start gap-8">
-            <div className="flex-1">
-              {/* **********************************TITULO PRINCIPAL***************************** */}
-              <div className="flex items-center gap-4 mb-6">
-                <span className="text-sm tracking-[0.3em] text-gray-500 font-medium uppercase">
-                  Soluciones
-                </span>
+          {/* Intro */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16"
+          >
+            <div className="flex items-start gap-8">
+              <div className="flex-1">
+                {/* **********************************TITULO PRINCIPAL***************************** */}
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="text-sm tracking-[0.3em] text-gray-500 font-medium uppercase">
+                    Experiencia
+                  </span>
+                </div>
+
+                {/* TITULO PRINCIPAL */}
+                <h2 className="text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight text-black tracking-tight leading-[1.1]">
+                  Nuestros
+                  <br />
+                  <span className="font-semibold">Proyectos</span>
+                </h2>
+
+                <p className="text-gray-600 mt-6 text-base md:text-lg leading-relaxed max-w-4xl">
+                  Nos enfocamos en desarrollar proyectos que fortalecen la
+                  seguridad, optimizan la eficiencia y fomentan la innovación en
+                  cada solución, para llevar la ingeniería especializada en
+                  vuelo más allá de los límites actuales
+                </p>
               </div>
-
-              {/* TITULO PRINCIPAL */}
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-black tracking-tight leading-[1.1]">
-                Nuestros
-                <br />
-                <span className="font-semibold">Proyectos</span>
-              </h2>
-
-              <p className="text-gray-600 mt-6 text-base md:text-lg leading-relaxed max-w-4xl">
-              Nos enfocamos en desarrollar proyectos que fortalecen la seguridad, optimizan la eficiencia y fomentan la innovación en cada solución, para llevar la ingeniería especializada en vuelo más allá de los límites actuales
-              </p>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
         </div>
 
         {/* Grid de cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2 gap-6 lg:gap-8 mb-12">
           {products.map((product, index) => (
             <Fragment key={product.id}>
               {/* Card del product */}
               <motion.button
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                onClick={() => {
-                  setActive(active === product.id ? null : product.id);
-                  // Reset image index when opening
-                  if (active !== product.id) {
-                    setCurrentImageIndex(prev => ({
-                      ...prev,
-                      [product.id]: 0
-                    }));
-                  }
-                }}
-                className={`relative text-left p-6 rounded-2xl border transition-all duration-500 group overflow-hidden
-                  ${
-                    active === product.id
-                      ? "border-black bg-gradient-to-br from-gray-50 to-white shadow-[0_8px_30px_rgba(0,0,0,0.12)]"
-                      : "border-gray-200 bg-white hover:border-gray-300 hover:shadow-lg"
-                  }`}
-              >
-                {/* Imagen de fondo */}
-                <div className="absolute inset-0 z-0">
-                  <img
-                    src={product.hero}
-                    alt={product.title}
-                    className="w-full h-full object-cover opacity-0 group-hover:opacity-10 transition-opacity duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/95 to-white/80" />
-                </div>
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: index * 0.1, duration: 0.6 }}
+  onClick={() => {
+    setActive(active === product.id ? null : product.id);
+    if (active !== product.id) {
+      setCurrentImageIndex((prev) => ({
+        ...prev,
+        [product.id]: 0,
+      }));
+    }
+  }}
+  className={`relative text-left p-6 sm:p-8 rounded-md border transition-all duration-500 group overflow-hidden min-h-[380px] sm:min-h-[420px]
+    ${
+      active === product.id
+        ? "border-black shadow-[0_8px_30px_rgba(0,0,0,0.25)]"
+        : "border-gray-200 hover:border-gray-300 hover:shadow-lg"
+    }`}
+>
+  {/* Línea superior */}
+  <div
+    className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-black via-brand-blue to-black transition-all duration-500 ${
+      active === product.id
+        ? "opacity-100"
+        : "opacity-0 group-hover:opacity-50"
+    }`}
+  />
 
-                {/* Línea superior decorativa */}
-                <div
-                  className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-black via-brand-blue to-black transition-all duration-500 ${
-                    active === product.id
-                      ? "opacity-100"
-                      : "opacity-0 group-hover:opacity-50"
-                  }`}
-                />
+  {/* Imagen de fondo */}
+  <div
+    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+    style={{ backgroundImage: `url(${product.image})` }}
+  />
 
-                <div className="relative z-10">
-                  {/* Número de producto */}
-                  <div
-                    className={`text-5xl font-black mb-3 transition-all duration-500 ${
-                      active === product.id
-                        ? "text-brand-blue"
-                        : "text-gray-200 group-hover:text-gray-300"
-                    }`}
-                  >
-                    0{product.id}
-                  </div>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70 transition-opacity duration-500 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/80" />
 
-                  {/* Título */}
-                  <h4
-                    className={`text-xl font-bold mb-2 transition-colors duration-300 ${
-                      active === product.id
-                        ? "text-black"
-                        : "text-gray-900 group-hover:text-black"
-                    }`}
-                  >
-                    {product.title}
-                  </h4>
+  {/* Contenido */}
+  <div className="relative z-10 flex flex-col h-full">
+    {/* Título */}
+    <h4 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 drop-shadow-md text-white">
+      {product.title}
+    </h4>
 
-                  {/* Subtítulo */}
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                    {product.subtitle}
-                  </p>
+    {/* Subtítulo */}
+    <p className="text-gray-100 text-sm sm:text-base mb-4 drop-shadow-md">
+      {product.subtitle}
+    </p>
 
-                  {/* Certificaciones */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {product.certifications.map((cert) => (
-                      <span
-                        key={cert}
-                        className="text-xs font-mono text-gray-500 bg-gray-100 px-2 py-1 rounded border border-gray-200"
-                      >
-                        {cert}
-                      </span>
-                    ))}
-                  </div>
+    {/* Certificaciones */}
+    <div className="flex flex-wrap gap-2 mb-4">
+      {product.certifications.map((cert) => (
+        <span
+          key={cert}
+          className="text-xs font-mono text-gray-900 bg-white/95 backdrop-blur-sm px-2.5 py-1.5 rounded border border-gray-200 shadow-sm"
+        >
+          {cert}
+        </span>
+      ))}
+    </div>
 
-                  {/* Indicador */}
-                  <div className="flex items-center text-sm font-medium text-gray-500 group-hover:text-black transition-colors">
-                    <span
-                      className={`transition-all duration-300 ${
-                        active === product.id ? "text-brand-blue" : ""
-                      }`}
-                    >
-                      {active === product.id
-                        ? "Ocultar información"
-                        : "Ver información"}
-                    </span>
-                    <svg
-                      className={`ml-2 w-4 h-4 transition-all duration-300 ${
-                        active === product.id
-                          ? "rotate-180 text-brand-blue"
-                          : "group-hover:translate-x-1"
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </div>
-                </div>
+    {/* Indicador */}
+    <div className="flex items-center text-sm font-medium text-white drop-shadow-md mt-auto">
+      <span>
+        {active === product.id
+          ? "Ocultar información"
+          : "Ver información"}
+      </span>
+      <svg
+        className={`ml-2 w-4 h-4 transition-all duration-300 ${
+          active === product.id
+            ? "rotate-180"
+            : "group-hover:translate-x-1"
+        }`}
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M19 9l-7 7-7-7"
+        />
+      </svg>
+    </div>
+  </div>
 
-                {/* Esquinas técnicas en hover */}
-                <div className="absolute top-4 left-4 w-8 h-8 border-t border-l border-brand-blue/0 group-hover:border-brand-blue/50 transition-all duration-500" />
-                <div className="absolute top-4 right-4 w-8 h-8 border-t border-r border-brand-blue/0 group-hover:border-brand-blue/50 transition-all duration-500" />
-                <div className="absolute bottom-4 left-4 w-8 h-8 border-b border-l border-brand-blue/0 group-hover:border-brand-blue/50 transition-all duration-500" />
-                <div className="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-brand-blue/0 group-hover:border-brand-blue/50 transition-all duration-500" />
-              </motion.button>
+  {/* Esquinas técnicas */}
+  <div className="absolute top-3 sm:top-4 left-3 sm:left-4 w-6 sm:w-8 h-6 sm:h-8 border-t border-l border-brand-blue/0 group-hover:border-brand-blue/60 transition-all duration-500" />
+  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 w-6 sm:w-8 h-6 sm:h-8 border-t border-r border-brand-blue/0 group-hover:border-brand-blue/60 transition-all duration-500" />
+  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 w-6 sm:w-8 h-6 sm:h-8 border-b border-l border-brand-blue/0 group-hover:border-brand-blue/60 transition-all duration-500" />
+  <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 w-6 sm:w-8 h-6 sm:h-8 border-b border-r border-brand-blue/0 group-hover:border-brand-blue/60 transition-all duration-500" />
+</motion.button>
+
 
               {/* Panel expandido móvil */}
               <AnimatePresence>
@@ -529,12 +512,17 @@ export default function ProductsDrop() {
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
-                            const currentIndex = products.findIndex(p => p.id === product.id);
-                            const prevIndex = currentIndex === 0 ? products.length - 1 : currentIndex - 1;
+                            const currentIndex = products.findIndex(
+                              (p) => p.id === product.id
+                            );
+                            const prevIndex =
+                              currentIndex === 0
+                                ? products.length - 1
+                                : currentIndex - 1;
                             setActive(products[prevIndex].id);
-                            setCurrentImageIndex(prev => ({
+                            setCurrentImageIndex((prev) => ({
                               ...prev,
-                              [products[prevIndex].id]: 0
+                              [products[prevIndex].id]: 0,
                             }));
                           }}
                           className="flex items-center gap-2 px-4 py-2 bg-gray-900 hover:bg-black text-white rounded-lg transition-all duration-300 text-sm font-medium"
@@ -545,12 +533,15 @@ export default function ProductsDrop() {
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
-                            const currentIndex = products.findIndex(p => p.id === product.id);
-                            const nextIndex = (currentIndex + 1) % products.length;
+                            const currentIndex = products.findIndex(
+                              (p) => p.id === product.id
+                            );
+                            const nextIndex =
+                              (currentIndex + 1) % products.length;
                             setActive(products[nextIndex].id);
-                            setCurrentImageIndex(prev => ({
+                            setCurrentImageIndex((prev) => ({
                               ...prev,
-                              [products[nextIndex].id]: 0
+                              [products[nextIndex].id]: 0,
                             }));
                           }}
                           className="flex items-center gap-2 px-4 py-2 bg-gray-900 hover:bg-black text-white rounded-lg transition-all duration-300 text-sm font-medium"
@@ -650,12 +641,17 @@ export default function ProductsDrop() {
                 <div className="flex items-center justify-center gap-6 mt-10 pt-8 border-t border-gray-200">
                   <button
                     onClick={() => {
-                      const currentIndex = products.findIndex(p => p.id === active);
-                      const prevIndex = currentIndex === 0 ? products.length - 1 : currentIndex - 1;
+                      const currentIndex = products.findIndex(
+                        (p) => p.id === active
+                      );
+                      const prevIndex =
+                        currentIndex === 0
+                          ? products.length - 1
+                          : currentIndex - 1;
                       setActive(products[prevIndex].id);
-                      setCurrentImageIndex(prev => ({
+                      setCurrentImageIndex((prev) => ({
                         ...prev,
-                        [products[prevIndex].id]: 0
+                        [products[prevIndex].id]: 0,
                       }));
                     }}
                     className="flex items-center gap-3 px-6 py-3 bg-gray-900 hover:bg-black text-white rounded-xl transition-all duration-300 font-medium shadow-lg hover:shadow-xl hover:scale-105"
@@ -669,9 +665,9 @@ export default function ProductsDrop() {
                         key={p.id}
                         onClick={() => {
                           setActive(p.id);
-                          setCurrentImageIndex(prev => ({
+                          setCurrentImageIndex((prev) => ({
                             ...prev,
-                            [p.id]: 0
+                            [p.id]: 0,
                           }));
                         }}
                         className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
@@ -685,12 +681,14 @@ export default function ProductsDrop() {
                   </div>
                   <button
                     onClick={() => {
-                      const currentIndex = products.findIndex(p => p.id === active);
+                      const currentIndex = products.findIndex(
+                        (p) => p.id === active
+                      );
                       const nextIndex = (currentIndex + 1) % products.length;
                       setActive(products[nextIndex].id);
-                      setCurrentImageIndex(prev => ({
+                      setCurrentImageIndex((prev) => ({
                         ...prev,
-                        [products[nextIndex].id]: 0
+                        [products[nextIndex].id]: 0,
                       }));
                     }}
                     className="flex items-center gap-3 px-6 py-3 bg-gray-900 hover:bg-black text-white rounded-xl transition-all duration-300 font-medium shadow-lg hover:shadow-xl hover:scale-105"

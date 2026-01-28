@@ -14,10 +14,10 @@ export default function IntroProducts() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-4xl uppercase sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black tracking-tight text-black mt-6"
+              className="text-4xl uppercase sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-normal tracking-tight text-black mt-6"
             >
-              Soluciones para{" "}
-              <span className="bg-gradient-to-r from-brand-blue via-slate-800 to-brand-blue bg-clip-text text-transparent font-bold animate-gradient bg-[length:200%_auto]">
+              Ingeniería para{" "} <br />
+              <span className="bg-gradient-to-r from-brand-blue via-slate-800 to-brand-blue bg-clip-text text-transparent font-black animate-gradient bg-[length:200%_auto]">
                 MISIONES CRÍTICAS
               </span>
             </motion.h3>

@@ -13,7 +13,7 @@ export default function InfraStrip() {
       {/* Overlay */}
       <div className="absolute inset-0 " />
 
-      {/* Contenido */}
+     
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -21,15 +21,15 @@ export default function InfraStrip() {
         viewport={{ once: true }}
         className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6"
       >
-        {/* Título */}
+        
         <h2 className="text-white text-2xl md:text-5xl font-semibold tracking-[0.25em] mb-8">
           NUESTRA INFRAESTRUCTURA
         </h2>
 
-        {/* Botón */}
+        
         <a
           href="/empresa/infraestructuras"
-          className="px-8 py-4 w-80 rounded-md text-sm uppercase tracking-widest text-slate-100 clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
+          className="px-8 py-4 w-80 rounded-md text-sm uppercase bg-brand-blue/60 tracking-widest text-slate-100 clip-path-diagonal border border-gray-500 hover:scale-105 hover:bg-brand-pink/60 hover:text-white transition-all duration-300"
         >
           Ver  
         </a>

@@ -115,7 +115,7 @@ export default function Hero() {
             >
               <a
                 href="/empresa/about"
-                className="px-8 py-3 hover:scale-105 rounded-md text-sm uppercase tracking-widest text-gray-200 bg-brand-blue clip-path-diagonal border border-gray-500 hover:font-semibold hover:bg-gradient-to-r  from-red-500 via-brand-pink to-red-700 transition-all duration-300"
+                className="px-8 py-3 hover:scale-105 rounded-md text-sm uppercase tracking-widest text-gray-200 bg-brand-blue/60 clip-path-diagonal border border-gray-500 hover:font-semibold hover:bg-brand-pink/60 transition-all duration-300"
               >
                 Conócenos
               </a>

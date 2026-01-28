@@ -111,20 +111,20 @@ export default function TrabajaConNosotros() {
         description="Únete a un equipo multidisciplinar donde tu talento impulsa el desarrollo tecnológico."
         backgroundImage="/careerbg.jpg"
       >
-        <button
+        {/* <button
           onClick={() =>
             document.getElementById("formulario")?.scrollIntoView({
               behavior: "smooth",
               block: "start",
             })
           }
-          className="px-8 py-3 rounded-md text-sm uppercase hover:scale-105 tracking-widest text-white clip-path-diagonal border border-gray-500 hover:font-semibold hover:bg-gradient-to-r  from-red-500 via-brand-pink to-red-700 hover:text-white transition-all duration-300"
+          className="px-8 py-3 rounded-md text-sm uppercase hover:scale-105 tracking-widest text-white clip-path-diagonal border border-gray-500 hover:font-semibold hover:bg-brand-pink/60 hover:text-white transition-all duration-300"
         >
           Únete al equipo
           <span className="group-hover:translate-x-1 transition-transform duration-300">
             →
           </span>
-        </button>
+        </button> */}
       </HeroVideo>
       <div id="formulario">
         <Formulario />

@@ -9,9 +9,9 @@ export default function ProyectosDestacados() {
   return (
     <div >
             <HeroVideo
-              eyebrow="Diseño · Creación"
-              title="Resultados en proyectos"
-              description="Soluciones de ingeniería aplicadas a proyectos reales."
+              eyebrow="Diseño · Creación · Proyectos"
+              title="Resultados en sistemas reales"
+              description="Soluciones para entornos operativos y misiones de alta exigencia."
               backgroundImage="/images/heroproducts.jpg"
               imagePosition="top 90%"
               

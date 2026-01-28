@@ -154,7 +154,7 @@ export default function Calidad() {
       </section>
 
       {/* SECCIÓN DEL SELLO */}
-      <a href="/sobre-quandum/certificaciones" className="flex bg-aerospacee  flex-col items-center py-20 relative">
+      <a href="/sobre-quandum/certificaciones" className="flex bg-gradient-to-b from-gray-900 via-slate-900 to-gray-900  flex-col items-center py-20 relative">
         <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
         <p className="text-cyan-400 text-sm tracking-[0.3em]  uppercase mb-16 relative z-10 bg-[#020617] px-8">
           Certificación Oficial

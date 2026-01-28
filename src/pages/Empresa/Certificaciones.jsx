@@ -2,11 +2,17 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, ShieldAlert, Globe, Lock, Box } from "lucide-react";
 import CertificationsSection from "../../components/certifications/CertificationsSection";
-import StarfieldNebula from "../../components/3d/StarfieldNebula";
+import HeroVideo from "../../components/about/HeroVideo";
 
 export default function Certificaciones() {
   return (
     <div className="w-full bg-white overflow-x-hidden font-sans">
+            <HeroVideo
+              eyebrow="Certificación oficial"
+              title="Certificados"
+              description="Garantizamos el cumplimiento normativo en entornos de misión crítica"
+              backgroundImage="/images/certifications3.PNG"
+            />
       
       
       <CertificationsSection />
@@ -29,8 +35,8 @@ export default function Certificaciones() {
                 </span>
               </div>
 
-              {/* TITULO PRINCIPAL */}
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight mb-10 text-white tracking-tight leading-[1.1]">
+              {/* TITULO */}
+              <h2 className="mb-20 text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight text-white tracking-tight leading-[1.1]">
                 Compromiso
                 <br />
                 <span className="font-semibold">Global</span>
