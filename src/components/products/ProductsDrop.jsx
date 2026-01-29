@@ -165,7 +165,7 @@ export default function ProductsDrop() {
         )}
 
         {/* Badge técnico */}
-        {isMobile && (
+        {/* {isMobile && (
           <div className="absolute bottom-12 left-4 right-4">
             <div className="backdrop-blur-xl bg-white/95 rounded-lg px-4 py-2 border border-black/10 shadow-lg">
               <div className="text-xs font-bold text-black">
@@ -173,7 +173,7 @@ export default function ProductsDrop() {
               </div>
             </div>
           </div>
-        )}
+        )} */}
 
         {/* Esquinas técnicas para desktop */}
         {!isMobile && (
@@ -374,108 +374,107 @@ export default function ProductsDrop() {
           </motion.div>
         </div>
 
-        {/* Grid de cards */}
+        {/* GRID DE CARDS */}
         <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2 gap-6 lg:gap-8 mb-12">
           {products.map((product, index) => (
             <Fragment key={product.id}>
               {/* Card del product */}
               <motion.button
-  initial={{ opacity: 0, y: 40 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ delay: index * 0.1, duration: 0.6 }}
-  onClick={() => {
-    setActive(active === product.id ? null : product.id);
-    if (active !== product.id) {
-      setCurrentImageIndex((prev) => ({
-        ...prev,
-        [product.id]: 0,
-      }));
-    }
-  }}
-  className={`relative text-left p-6 sm:p-8 rounded-md border transition-all duration-500 group overflow-hidden min-h-[380px] sm:min-h-[420px]
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                onClick={() => {
+                  setActive(active === product.id ? null : product.id);
+                  if (active !== product.id) {
+                    setCurrentImageIndex((prev) => ({
+                      ...prev,
+                      [product.id]: 0,
+                    }));
+                  }
+                }}
+                className={`relative text-left p-6 sm:p-8 rounded-md border transition-all duration-500 group overflow-hidden min-h-[380px] sm:min-h-[420px]
     ${
       active === product.id
         ? "border-black shadow-[0_8px_30px_rgba(0,0,0,0.25)]"
         : "border-gray-200 hover:border-gray-300 hover:shadow-lg"
     }`}
->
-  {/* Línea superior */}
-  <div
-    className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-black via-brand-blue to-black transition-all duration-500 ${
-      active === product.id
-        ? "opacity-100"
-        : "opacity-0 group-hover:opacity-50"
-    }`}
-  />
+              >
+                {/* Línea superior */}
+                <div
+                  className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-black via-brand-blue to-black transition-all duration-500 ${
+                    active === product.id
+                      ? "opacity-100"
+                      : "opacity-0 group-hover:opacity-50"
+                  }`}
+                />
 
-  {/* Imagen de fondo */}
-  <div
-    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-    style={{ backgroundImage: `url(${product.image})` }}
-  />
+                {/* Imagen de fondo */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  style={{ backgroundImage: `url(${product.image})` }}
+                />
 
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70 transition-opacity duration-500 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/80" />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70 transition-opacity duration-500 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/80" />
 
-  {/* Contenido */}
-  <div className="relative z-10 flex flex-col h-full">
-    {/* Título */}
-    <h4 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 drop-shadow-md text-white">
-      {product.title}
-    </h4>
+                {/* Contenido */}
+                <div className="relative z-10 flex flex-col h-full">
+                  {/* Título */}
+                  <h4 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 drop-shadow-md text-white">
+                    {product.title}
+                  </h4>
 
-    {/* Subtítulo */}
-    <p className="text-gray-100 text-sm sm:text-base mb-4 drop-shadow-md">
-      {product.subtitle}
-    </p>
+                  {/* Subtítulo */}
+                  <p className="text-gray-100 text-sm sm:text-base mb-4 drop-shadow-md">
+                    {product.subtitle}
+                  </p>
 
-    {/* Certificaciones */}
-    <div className="flex flex-wrap gap-2 mb-4">
-      {product.certifications.map((cert) => (
-        <span
-          key={cert}
-          className="text-xs font-mono text-gray-900 bg-white/95 backdrop-blur-sm px-2.5 py-1.5 rounded border border-gray-200 shadow-sm"
-        >
-          {cert}
-        </span>
-      ))}
-    </div>
+                  {/* Certificaciones */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {product.certifications.map((cert) => (
+                      <span
+                        key={cert}
+                        className="text-xs font-mono text-gray-900 bg-white/95 backdrop-blur-sm px-2.5 py-1.5 rounded border border-gray-200 shadow-sm"
+                      >
+                        {cert}
+                      </span>
+                    ))}
+                  </div>
 
-    {/* Indicador */}
-    <div className="flex items-center text-sm font-medium text-white drop-shadow-md mt-auto">
-      <span>
-        {active === product.id
-          ? "Ocultar información"
-          : "Ver información"}
-      </span>
-      <svg
-        className={`ml-2 w-4 h-4 transition-all duration-300 ${
-          active === product.id
-            ? "rotate-180"
-            : "group-hover:translate-x-1"
-        }`}
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M19 9l-7 7-7-7"
-        />
-      </svg>
-    </div>
-  </div>
+                  {/* Indicador */}
+                  <div className="flex items-center text-sm font-medium text-white drop-shadow-md mt-auto">
+                    <span>
+                      {active === product.id
+                        ? "Ocultar información"
+                        : "Ver información"}
+                    </span>
+                    <svg
+                      className={`ml-2 w-4 h-4 transition-all duration-300 ${
+                        active === product.id
+                          ? "rotate-180"
+                          : "group-hover:translate-x-1"
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
+                </div>
 
-  {/* Esquinas técnicas */}
-  <div className="absolute top-3 sm:top-4 left-3 sm:left-4 w-6 sm:w-8 h-6 sm:h-8 border-t border-l border-brand-blue/0 group-hover:border-brand-blue/60 transition-all duration-500" />
-  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 w-6 sm:w-8 h-6 sm:h-8 border-t border-r border-brand-blue/0 group-hover:border-brand-blue/60 transition-all duration-500" />
-  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 w-6 sm:w-8 h-6 sm:h-8 border-b border-l border-brand-blue/0 group-hover:border-brand-blue/60 transition-all duration-500" />
-  <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 w-6 sm:w-8 h-6 sm:h-8 border-b border-r border-brand-blue/0 group-hover:border-brand-blue/60 transition-all duration-500" />
-</motion.button>
-
+                {/* Esquinas técnicas */}
+                <div className="absolute top-3 sm:top-4 left-3 sm:left-4 w-6 sm:w-8 h-6 sm:h-8 border-t border-l border-brand-blue/0 group-hover:border-brand-blue/60 transition-all duration-500" />
+                <div className="absolute top-3 sm:top-4 right-3 sm:right-4 w-6 sm:w-8 h-6 sm:h-8 border-t border-r border-brand-blue/0 group-hover:border-brand-blue/60 transition-all duration-500" />
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 w-6 sm:w-8 h-6 sm:h-8 border-b border-l border-brand-blue/0 group-hover:border-brand-blue/60 transition-all duration-500" />
+                <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 w-6 sm:w-8 h-6 sm:h-8 border-b border-r border-brand-blue/0 group-hover:border-brand-blue/60 transition-all duration-500" />
+              </motion.button>
 
               {/* Panel expandido móvil */}
               <AnimatePresence>

@@ -5,12 +5,13 @@ import ProductsDrop from '../../components/products/ProductsDrop';
 import ProjectIMG from '../../components/products/ProjectIMG';
 
 import ProjectGrid from '../../components/products/ProjectGrid';
+import Projection from '../../components/products/Proyection';
 export default function ProyectosDestacados() {
   return (
     <div >
             <HeroVideo
               eyebrow="Diseño · Creación · Proyectos"
-              title="Resultados en sistemas reales"
+              title="Resultados en Proyectos"
               description="Soluciones para entornos operativos y misiones de alta exigencia."
               backgroundImage="/images/heroproducts.jpg"
               imagePosition="top 90%"
@@ -23,6 +24,7 @@ export default function ProyectosDestacados() {
       <ProductsDrop />
       <ProjectGrid />
       <ProjectIMG />
+      <Projection />
       
      
     </div>

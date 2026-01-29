@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { ArrowUpRight, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
-// 1. Aquí traes el objeto externo
+
 import { products } from "../products/products"; 
 
 
@@ -51,7 +51,7 @@ function ProjectCard({ project, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="group relative h-[500px] rounded-3xl overflow-hidden bg-slate-900 border border-white/10"
+      className="group relative h-[500px] rounded-xl overflow-hidden bg-slate-900 border border-white/10"
     >
       <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
         <img 

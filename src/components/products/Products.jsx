@@ -281,10 +281,13 @@ export default function Products() {
               onClick={() => setActive(product)}
               className="cursor-pointer p-6 bg-black/40  rounded-xl h-64 flex flex-col justify-end border border-white/10 hover:border-brand-blue transition"
             >
+              
               <h3 className="text-white text-lg font-semibold">
                 {product.title}
               </h3>
+              
               <p className="text-white/70 text-sm">{product.subtitle}</p>
+              
             </div>
           ))}
         </div>
