@@ -431,7 +431,7 @@ export default function ProductsDrop() {
                   </p>
 
                   {/* Certificaciones */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  {/* <div className="flex flex-wrap gap-2 mb-4">
                     {product.certifications.map((cert) => (
                       <span
                         key={cert}
@@ -440,7 +440,7 @@ export default function ProductsDrop() {
                         {cert}
                       </span>
                     ))}
-                  </div>
+                  </div> */}
 
                   {/* Indicador */}
                   <div className="flex items-center text-sm font-medium text-white drop-shadow-md mt-auto">

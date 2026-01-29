@@ -62,15 +62,30 @@ const Projection = () => {
     <div className="min-h-screen bg-slate-50 py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-16">
-          <h1 className="text-5xl font-bold text-slate-900 mb-6">
-            Productos y Sistemas
-          </h1>
-          <div className="w-24 h-1 bg-blue-600 mb-6"></div>
-          <p className="text-xl text-slate-600 max-w-3xl">
-            Innovación aeronáutica certificada para las aplicaciones más exigentes
-          </p>
-        </div>
+        <div className="flex items-start gap-8">
+              <div className="flex-1">
+                {/* **********************************TITULO PRINCIPAL***************************** */}
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="text-sm tracking-[0.3em] text-gray-500 font-medium uppercase">
+                    Experiencia
+                  </span>
+                </div>
+
+                {/* TITULO PRINCIPAL */}
+                <h2 className="text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight text-black tracking-tight leading-[1.1]">
+                  Nuestros
+                  <br />
+                  <span className="font-semibold">Proyectos</span>
+                </h2>
+
+                <p className="text-gray-600 mt-8 mb-20 text-base md:text-lg leading-relaxed max-w-4xl">
+                  Nos enfocamos en desarrollar proyectos que fortalecen la
+                  seguridad, optimizan la eficiencia y fomentan la innovación en
+                  cada solución, para llevar la ingeniería especializada en
+                  vuelo más allá de los límites actuales
+                </p>
+              </div>
+            </div>
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">

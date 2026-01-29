@@ -8,7 +8,7 @@ const features = [
     description:
       "Contamos con dos décadas de experiencia colectiva en ingeniería aeronáutica, electrónica avanzada y diseño de sistemas críticos. Trabajamos bajo una premisa central: la innovación no es un objetivo, es un estándar diario.",
     secondParagraph:
-      "El 95% de nuestro equipo está formado por ingenieros y especialistas altamente cualificados que desarrollan soluciones para aviación, defensa, espacio e industria. La cultura interna se basa en el rigor, la trazabilidad, la mejora continua y una obsesión absoluta por la calidad.",
+      "El 95% de nuestro equipo está formado por ingenieros y especialistas altamente cualificados que desarrollan soluciones para aviación, defensa, espacio e industria. La cultura interna se basa en el rigor, la trazabilidad, la mejora continua y un compromiso absoluto por la calidad.",
     reverse: false,
   },
   {
@@ -27,7 +27,6 @@ export default function AboutFeatures() {
   return (
     <section className="relative bg-white py-12 sm:py-20 md:py-28 lg:py-32 overflow-hidden">
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-       
         <div className="space-y-16 sm:space-y-24 md:space-y-32 lg:space-y-40">
           {features.map((f, i) => {
             const imageFrom = f.reverse ? 80 : -80;
@@ -44,7 +43,9 @@ export default function AboutFeatures() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1, ease: "easeOut" }}
-                  className={`relative w-full col-span-1 lg:col-span-7 ${f.reverse ? "lg:order-2" : ""}`}
+                  className={`relative w-full col-span-1 lg:col-span-7 ${
+                    f.reverse ? "lg:order-2" : ""
+                  }`}
                 >
                   <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-full">
                     <img
@@ -70,7 +71,9 @@ export default function AboutFeatures() {
                     ease: "easeOut",
                     delay: 0.15,
                   }}
-                  className={`w-full col-span-1 lg:col-span-5 ${f.reverse ? "lg:order-1" : ""}`}
+                  className={`w-full col-span-1 lg:col-span-5 ${
+                    f.reverse ? "lg:order-1" : ""
+                  }`}
                 >
                   <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-black mb-4 sm:mb-5 md:mb-6 leading-tight">
                     {f.title}

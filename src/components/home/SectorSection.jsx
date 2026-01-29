@@ -132,7 +132,7 @@ Nuestra aproximación combina ingeniería de producto, optimización de procesos
 
                   {/* Título */}
                   <h4
-                    className={`text-4xl sm:text-2xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4 transition-colors duration-300 drop-shadow-md ${
+                    className={`text-4xl sm:text-2xl lg:text-4xl mt-3 font-bold mb-3 sm:mb-4 transition-colors duration-300 drop-shadow-md ${
                       active === sector.id
                         ? "text-white"
                         : "text-white group-hover:text-white"

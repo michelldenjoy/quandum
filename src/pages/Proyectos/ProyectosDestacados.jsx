@@ -23,8 +23,10 @@ export default function ProyectosDestacados() {
 
       <ProductsDrop />
       <ProjectGrid />
-      <ProjectIMG />
+
       <Projection />
+      <ProjectIMG />
+      
       
      
     </div>
