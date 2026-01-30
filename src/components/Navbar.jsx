@@ -53,15 +53,15 @@ export default function Navbar() {
         <div className="max-w-[1440px] mx-auto px-8 flex items-center justify-between">
           
           {/* LOGO  */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center group">
             <div className="relative">
-                <img src="/logo.png" alt="Logo" className="w-10 h-10 md:w-11 md:h-11 object-contain transition-transform duration-500 group-hover:rotate-[10deg]" />
+                <img src="/lienzo.png" alt="Logo" className="w-10 h-10 md:w-11 md:h-11 object-contain transition-transform duration-500 group-hover:rotate-[10deg]" />
             </div>
             <div className="flex flex-col">
               <span className="text-2xl font-bold text-white tracking-tighter leading-none">
                 QUANDUM
               </span>
-              <span className="text-[12px] ml-1 uppercase tracking-[0.4em] text-brand-pink font-bold">
+              <span className="text-[12px] uppercase tracking-[0.4em] text-brand-pink font-bold">
                 Aerospace
               </span>
             </div>

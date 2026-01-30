@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { useState } from "react";
+import DiagonalButton from "../DiagonalButton";
 
 const title = "Tecnología que impulsa el vuelo"
 
@@ -113,12 +114,12 @@ export default function Hero() {
               transition={{ delay: 1.3, duration: 0.6 }}
               className="mt-10 flex gap-6"
             >
-              <a
+              <DiagonalButton
                 href="/empresa/about"
-                className="px-8 py-3 hover:scale-105 rounded-md text-sm uppercase tracking-widest text-gray-200 bg-brand-blue/60 clip-path-diagonal border border-gray-500 hover:font-semibold hover:bg-brand-pink/60 transition-all duration-300"
+                
               >
                 Conócenos
-              </a>
+              </DiagonalButton>
 
               {/* <a
                 href="/contacto"

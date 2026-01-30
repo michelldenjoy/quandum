@@ -57,7 +57,7 @@ export default function AvisoLegal() {
                   <div>
                     <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">Domicilio Social</p>
                     <p className="font-bold text-slate-800 leading-tight">
-                      María Curie, nº4 D-9. Parque Tecnológico de Andalucía
+                      Calle Severo Ochoa, 39, Parque Tecnológico de Andalucía
                     </p>
                     <p className="text-sm text-slate-500 text-pretty">29590 Málaga (SPAIN)</p>
                   </div>
@@ -129,7 +129,7 @@ export default function AvisoLegal() {
             <motion.address className="not-italic bg-slate-50 p-8 rounded-3xl border border-slate-100 text-slate-800 inline-block w-full">
               <p className="font-bold">Dpto. de Protección de Datos</p>
               <p>Quandum Aerospace, S.L.</p>
-              <p>Calle Marie Curie, nº4 D-9. Parque Tecnológico de Andalucía</p>
+              <p>Calle Severo Ochoa, 39, Parque Tecnológico de Andalucía</p>
               <p>29590 – Málaga, España</p>
             </motion.address>
           </section>

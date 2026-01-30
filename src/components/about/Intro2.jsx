@@ -40,7 +40,7 @@ export default function Intro2() {
                   className="flex flex-row items-center justify-center gap-3 md:gap-2 mb-8"
                 >
                   <img
-                    src="/logo.png"
+                    src="/lienzo.png"
                     alt="Quandum Aerospace"
                     className="h-10 sm:h-12 md:h-14 transition-all duration-500"
                   />

@@ -8,9 +8,9 @@ export default function Certificaciones() {
   return (
     <div className="w-full bg-white overflow-x-hidden font-sans">
             <HeroVideo
-              eyebrow="Certificación oficial"
+              eyebrow="Entorno regulado"
               title="Certificados"
-              description="Garantizamos el cumplimiento normativo en entornos de misión crítica"
+              description="Garantizamos el cumplimiento normativo para la industria aeroespacial y de defensa"
               backgroundImage="/images/certifications3.PNG"
             />
       
@@ -113,7 +113,7 @@ export default function Certificaciones() {
           <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
             <div>
               <div className="flex items-center gap-2 mb-6 text-brand-blue">
-                <ShieldAlert size={20} />
+                
                 <span className="text-sm tracking-[0.3em] text-gray-500 font-medium uppercase">Cumplimiento Medioambiental</span>
               </div>
               <h3 className="text-3xl font-bold mb-6 text-black tracking-tighter">REACH & RoHS</h3>
@@ -123,9 +123,9 @@ export default function Certificaciones() {
             </div>
             <div className="grid grid-cols-1 gap-4">
               {["Control de sustancias SVHC", "Directiva RoHS Compliant", "Responsabilidad en Suministros", "Cumplimiento ECHA"].map((item, i) => (
-                <div key={i} className="bg-gray-50 p-4 border-l-2 border-brand-blue flex items-center justify-between group hover:bg-black transition-colors">
-                  <span className="text-md uppercase font-bold tracking-widest text-black group-hover:text-white">{item}</span>
-                  <div className="w-2 h-2 rounded-full bg-brand-blue" />
+                <div key={i} className="bg-gray-50 p-4 border-l-2 border-brand-blue flex items-center justify-between group ">
+                  <span className="text-md uppercase font-bold tracking-widest text-black ">{item}</span>
+                 
                 </div>
               ))}
             </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, Award, Download, Eye, ChevronRight, FileBadge } from "lucide-react";
+import DiagonalButton from "../DiagonalButton";
 
 
 const CertificationsSection = () => {
@@ -39,7 +40,7 @@ const CertificationsSection = () => {
   };
 
   return (
-    <section className="bg-white pb-24">
+    <section className="bg-white py-20">
       <div className="max-w-6xl mt-16 mx-auto px-6">
         {/* TITULOS PRINCIPALES */}
         <div className="mb-16">
@@ -50,14 +51,14 @@ const CertificationsSection = () => {
               <div className="w-1 h-1 bg-gray-300" />
             </div> */}
             <span className="text-sm tracking-[0.3em] text-gray-500 font-medium uppercase">
-              Certificados
+              Cumplimiento
             </span>
           </div>
 
           <h2 className="text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight text-black tracking-tight leading-[1.1]">
-            Certificaciones
+            Política de calidad
             <br />
-            <span className="font-semibold">& Calidad</span>
+            <span className="font-semibold">& Certificaciones</span>
           </h2>
         </div>
 
@@ -129,14 +130,14 @@ const CertificationsSection = () => {
                   </div>
                   
                   <div className="grid grid-cols-2 gap-3">
-                    <a
+                    <DiagonalButton
                       href={cert.imgUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center px-8 py-3 hover:scale-105 rounded-md text-xs uppercase tracking-widest text-brand-blue hover:font-bold  hover:bg-brand-pink/70 clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
+                      className=""
                     >
-                      Ver Certificado
-                    </a>
+                      Ver Cert
+                    </DiagonalButton>
                     <a
                       href={cert.pdfUrl}
                       download

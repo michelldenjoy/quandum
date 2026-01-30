@@ -10,6 +10,7 @@ import {
   Cpu,
 } from "lucide-react";
 import StarfieldNebula from "../3d/StarfieldNebula";
+import DiagonalButton from "../DiagonalButton";
 
 const positions = [
   { title: "Técnico de Mecanizado" },
@@ -239,14 +240,15 @@ export default function Formulario() {
                     />
                   </label>
 
-                  <button
+                  <DiagonalButton
                     type="submit"
                     disabled={isSubmitting}
-                    className="px-24 bg-brand-blue/60 py-4 rounded-md text-sm uppercase hover:scale-105 tracking-widest text-white clip-path-diagonal border border-gray-500 hover:font-semibold hover:bg-brand-pink/60 hover:text-white transition-all duration-300"
+                    className="px-24 "
+                    
                   >
                     {isSubmitting ? "Procesando..." : "Enviar Candidatura"}
                     
-                  </button>
+                  </DiagonalButton>
                 </div>
               </form>
             )}

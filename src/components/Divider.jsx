@@ -72,10 +72,10 @@ const Divider = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="mx-4 flex items-center gap-2"
         >
-          <span className=" text-[9px] font-mono tracking-[0.4em] uppercase text-brand-blue">
+          <span className=" text-[9px] font-mono tracking-[0.4em] uppercase text-gray-300 ">
             Quandum
           </span>{" "}
-          <span className=" text-[9px] font-mono tracking-[0.4em] uppercase bg-gradient-to-r  from-brand-pink via-red-400 to-red-700 bg-clip-text text-transparent">
+          <span className=" text-[9px] font-mono tracking-[0.4em] uppercase text-gray-300 ">
             Aerospace
           </span>
         </motion.div>
