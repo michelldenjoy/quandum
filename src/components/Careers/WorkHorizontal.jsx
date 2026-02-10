@@ -36,7 +36,7 @@ export default function WorkHorizontal() {
   const activeSection = sections.find((s) => s.id === active);
 
   return (
-    <section className="relative bg-white py-16 lg:py-24  overflow-hidden">
+    <section className="relative bg-aer py-16 lg:py-24  overflow-hidden">
       {/* Minimal background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
@@ -62,18 +62,18 @@ export default function WorkHorizontal() {
                   <div className="w-1 h-1 bg-gray-400" />
                   <div className="w-1 h-1 bg-gray-300" />
                 </div> */}
-                <span className="text-sm tracking-[0.3em] text-gray-500 font-medium uppercase">
+                <span className="text-sm tracking-[0.3em] text-blue-300 font-medium uppercase">
                   Metodología
                 </span>
               </div>
 
               {/* TITULO PRINCIPAL */}
-              <h2 className="text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight text-black tracking-tight leading-[1.1]">
+              <h2 className="text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight text-white tracking-tight leading-[1.1]">
                 Cómo
                 <br />
                 <span className="font-semibold">Trabajamos</span>
               </h2>
-              <p className="text-gray-600 mt-6 text-base md:text-lg leading-relaxed max-w-3xl">
+              <p className="text-gray-400 mt-6 text-base md:text-lg leading-relaxed max-w-3xl">
               Nuestros proyectos se desarrollan bajo metodologías estructuradas 
               y procesos documentados, garantizando trazabilidad y cumplimiento 
               normativo en todas las fases.
@@ -105,7 +105,7 @@ export default function WorkHorizontal() {
                       <span className="text-sm font-mono text-gray-400 tabular-nums min-w-[2rem]">
                         {section.number}
                       </span>
-                      <h3 className="text-3xl sm:text-4xl lg:text-5xl font-light text-black group-hover:translate-x-2 transition-transform duration-500">
+                      <h3 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white group-hover:translate-x-2 transition-transform duration-500">
                         {section.title}
                       </h3>
                     </div>
@@ -150,7 +150,7 @@ export default function WorkHorizontal() {
                           <img
                             src={section.image}
                             alt={section.title}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full "
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                         </motion.div>
@@ -167,7 +167,7 @@ export default function WorkHorizontal() {
                               Proceso {section.number}
                             </div>
                             
-                            <p className="text-lg sm:text-xl text-gray-700 leading-relaxed font-light">
+                            <p className="text-lg sm:text-xl text-gray-400 leading-relaxed font-light">
                               {section.description}
                             </p>
                           </div>
@@ -175,18 +175,18 @@ export default function WorkHorizontal() {
                           {/* Metadata */}
                           <div className="flex gap-12 pt-6 border-t border-gray-200">
                             <div>
-                              <div className="text-xs text-gray-400 mb-2 tracking-wider uppercase">
+                              <div className="text-xs text-gray-200 mb-2 tracking-wider uppercase">
                                 Certificación
                               </div>
-                              <div className="text-sm font-light text-black">
+                              <div className="text-sm font-light text-gray-400">
                                 DO-178C / DAL-A
                               </div>
                             </div>
                             <div>
-                              <div className="text-xs text-gray-400 mb-2 tracking-wider uppercase">
+                              <div className="text-xs text-gray-200 mb-2 tracking-wider uppercase">
                                 Metodología
                               </div>
-                              <div className="text-sm font-light text-black">
+                              <div className="text-sm font-light text-gray-400">
                                 Auditable
                               </div>
                             </div>

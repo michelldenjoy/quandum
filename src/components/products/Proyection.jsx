@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from "motion/react";
 import { products } from "../products/products"; 
+import { delay } from 'motion';
 
 const Projection = () => {
 
@@ -10,7 +11,7 @@ const Projection = () => {
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-    hover: { scale: 1.05, rotateY: 5, boxShadow: "0 0 20px rgba(0, 148, 255, 0.5)" }, // Efecto 3D y glow
+    hover: {  rotateY: 5, boxShadow: "0 0 20px rgba(0, 148, 255, 0.5)" },
   };
 
   return (
@@ -30,7 +31,7 @@ const Projection = () => {
         >
           <div className="flex-1">
             <div className="flex items-center gap-4 mb-6">
-              <span className="text-sm tracking-[0.3em] text-blue-200 font-medium uppercase">
+              <span className="text-sm tracking-[0.3em] text-blue-300 font-medium uppercase">
                 Experiencia
               </span>
             </div>
@@ -39,7 +40,7 @@ const Projection = () => {
               <br />
               <span className="font-semibold">Proyectos</span>
             </h2>
-            <p className="text-blue-100 mt-8 mb-20 text-base md:text-lg leading-relaxed max-w-4xl">
+            <p className="text-gray-400 mt-8 mb-20 text-base md:text-lg leading-relaxed max-w-4xl">
               Nos enfocamos en desarrollar proyectos que fortalecen la
               seguridad, optimizan la eficiencia y fomentan la innovación en
               cada solución, para llevar la ingeniería especializada en
@@ -70,12 +71,12 @@ const Projection = () => {
                   <img
                     src={product.image}
                     alt={product.title}
-                    className={`w-full h-full object-center transition-all duration-700 ${
+                    className={`w-full h-full object-center  transition-all duration-700 ${
                       hoveredId === product.id ? 'scale-110 brightness-60' : 'scale-100 brightness-80'
                     }`}
                   />
                   {/* Gradiente */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none"></div>
                   {/* Contenido */}
                   <div className="absolute bottom-0 left-0 right-0 p-8">
                     <div className="mb-3">

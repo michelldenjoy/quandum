@@ -78,20 +78,20 @@ export default function ProjectDetail() {
         
         <div className="lg:col-span-8 space-y-12">
           <section>
-            <h2 className="text-cyan-500 text-xs font-bold uppercase tracking-[0.3em] mb-6">
-              01. Descripción del Sistema
+            <h2 className="text-blue-300 text-xs uppercase tracking-[0.3em] mb-6">
+               Descripción del Sistema
             </h2>
-            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light">
+            <p className="text-xl text-justify md:text-2xl text-slate-300 leading-relaxed font-light">
               {project.description}
             </p>
           </section>
 
           <section>
-            <h2 className="text-cyan-500 text-xs font-bold uppercase tracking-[0.3em] mb-6">
-              02. Análisis Visual
+            <h2 className="text-blue-300 text-xs  uppercase tracking-[0.3em] mb-6">
+               Análisis Visual
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
               {project.gallery.map((img, i) => (
                 <button
                   key={i}

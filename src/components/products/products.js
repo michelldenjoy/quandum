@@ -10,7 +10,7 @@ export const products = [
       ],
       image: "/products/illuminator.jpg",
       description:
-        "Sistema de iluminación por infrarrojos basado en tecnología láser, integrado en el sistema BEVS. Proporciona iluminación infrarroja de alta potencia para aplicaciones de visión nocturna y sistemas de vigilancia aeroespacial. Diseñado para cumplir con los más altos estándares de la industria aeronáutica, garantizando fiabilidad y rendimiento en condiciones extremas.",
+        "Sistema de iluminación infrarroja de alta potencia diseñado para aplicaciones aeroespaciales en entornos de misión crítica. El iluminador forma parte del subsistema IRILL integrado en el BEVS (Boom Enhanced Vision System), instalado en plataformas A-330 MRTT y A-310 MRTT. El equipo presenta una arquitectura robusta y compacta, con carcasa metálica mecanizada y aletado térmico optimizado para disipación eficiente del calor en condiciones de operación continuada. Incorpora sistemas activos de refrigeración y conectividad aeronáutica mediante arneses blindados, garantizando fiabilidad eléctrica y térmica en entornos severos. Su diseño modular permite una integración directa en sistemas de repostaje en vuelo, proporcionando iluminación infrarroja homogénea del área de contacto de la pértiga (boom) y mejorando significativamente la percepción visual del Air Refuelling Operator (ARO) durante operaciones nocturnas o con baja visibilidad. El sistema ha sido desarrollado siguiendo criterios aeronáuticos de fiabilidad, mantenibilidad y compatibilidad electromagnética, asegurando su operación estable en plataformas de misión estratégica.",
       certifications: ["DO-178 DAL B"],
     },
     {
@@ -49,7 +49,7 @@ export const products = [
         "/products/radiation2.jpg",
       ],
       image: "/products/radiation.jpg",
-      description: "Sistema de medición térmica de alta precisión basado en termometría infrarroja, diseñado para la adquisición en tiempo real de la temperatura de la superficie del mar durante operaciones aéreas. El PRT01F permite al operador solicitar de forma remota la transmisión de datos, incluyendo mediciones de temperatura y estados de funcionamiento del sistema, facilitando su integración en misiones de vigilancia y patrulla marítima. Este equipo se encuentra actualmente en proceso de integración en diversos programas C-295 VIMAR (Maritime Patrol), aportando capacidad de sensorización avanzada y fiabilidad operativa en entornos exigentes.",
+      description: "El Precision Radiation Thermometer (PRT) es un sistema de medida térmica de alta precisión basado en tecnología de termometría infrarroja, diseñado para la adquisición de temperatura superficial en tiempo real sin contacto físico. El modelo PRT01F permite la medición continua de la temperatura de la superficie del mar durante operaciones aéreas, proporcionando datos fiables incluso en entornos marítimos exigentes. El sistema integra capacidades de control remoto, permitiendo al operador solicitar bajo demanda la transmisión de mediciones térmicas y estados operativos del equipo. El PRT01F está siendo actualmente integrado en distintos programas C-295 VIMAR (Vigilancia Marítima), donde contribuye a misiones de patrulla, monitorización ambiental y apoyo a operaciones de seguridad marítima, cumpliendo con los requisitos de fiabilidad y disponibilidad propios de plataformas de misión crítica.",
       certifications: ["DO-178 DAL C", "MIL-STD-883"],
     },
     {
