@@ -105,7 +105,6 @@ export default function ProjectDetail() {
                   />
                 </button>
               ))}
-              
             </div>
           </section>
         </div>

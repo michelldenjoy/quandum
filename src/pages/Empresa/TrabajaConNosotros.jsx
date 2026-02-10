@@ -130,7 +130,7 @@ export default function TrabajaConNosotros() {
         <Formulario />
       </div>
       <Collage />
-      <Divider />
+    
       <WorkHorizontal />
 
       <div>{/* <Valores /> */}</div>

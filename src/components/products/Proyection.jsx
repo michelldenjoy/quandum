@@ -16,13 +16,12 @@ const Projection = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black to-sky-950 py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Fondo de partículas sutil (CSS simple para "estrellas" o partículas) */}
+    
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPGRlZnM+CiAgICAgICAgPHBhdHRlcm5faWQ9InBhcnRpY2xlcyIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIj4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNSIgY3k9IjUiIHI9IjEiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjIiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iMjUiIGN5PSIxNSIgcj0iMSIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuMyIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNSIgY3k9IjM1IiByPSIxIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC4xIi8+CiAgICAgICAgPC9wYXR0ZXJuPgogICAgPC9kZWZzPgogICAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXJ0aWNsZXMpIiAvPgo8L3N2Zz4=')] opacity-30 animate-twinkle"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header con animación de entrada */}
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -71,13 +70,13 @@ const Projection = () => {
                   <img
                     src={product.image}
                     alt={product.title}
-                    className={`w-full h-full object-center  transition-all duration-700 ${
+                    className={`w-full h-full transition-all duration-700 ${
                       hoveredId === product.id ? 'scale-110 brightness-60' : 'scale-100 brightness-80'
                     }`}
                   />
                   {/* Gradiente */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none"></div>
-                  {/* Contenido */}
+                
                   <div className="absolute bottom-0 left-0 right-0 p-8">
                     <div className="mb-3">
 
@@ -150,7 +149,7 @@ const Projection = () => {
         </div>
 
         {/* badge */}
-        <motion.div 
+        {/* <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
@@ -170,7 +169,7 @@ const Projection = () => {
               <div className="text-blue-200">Años de Experiencia</div>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       

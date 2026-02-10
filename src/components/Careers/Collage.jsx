@@ -173,7 +173,7 @@ export default function Collage() {
               transition={{ delay: 0.8, duration: 0.8 }}
               className="pt-6"
             >
-              <DiagonalButton>Ver posiciones abiertas</DiagonalButton>
+              {/* <DiagonalButton>Ver posiciones abiertas</DiagonalButton> */}
             </motion.div>
           </div>
 
@@ -285,7 +285,7 @@ export default function Collage() {
               </div>
 
               {/* Floating Stats Card */}
-              <motion.div
+              {/* <motion.div
                 style={{ y, opacity }}
                 className="hidden xl:block absolute -right-12 top-1/2 -translate-y-1/2 w-48 bg-white p-6 shadow-2xl border border-gray-200"
               >
@@ -308,7 +308,7 @@ export default function Collage() {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
           </div>
         </div>

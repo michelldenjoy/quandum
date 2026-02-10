@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import DiagonalButton from "../DiagonalButton";
 
-const title = "Tecnología que impulsa el vuelo"
+const title = "Tecnología que impulsa el vuelo";
 
 const container = {
   hidden: {},
@@ -30,7 +30,6 @@ export default function Hero() {
 
   return (
     <section className="relative w-full h-[95vh] min-h-[640px] overflow-hidden">
-     
       <video
         src="/herovideo.mp4"
         autoPlay
@@ -72,17 +71,15 @@ export default function Hero() {
             animate="visible"
             className="max-w-4xl"
           >
-           
             <motion.p
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-sm tracking-[0.35em] text-blue-300 uppercase mb-6"
+              className="text-sm tracking-[0.35em] text-slate-100 uppercase mb-6"
             >
               Aerospace · Defense · Engineering
             </motion.p>
 
-           
             <h1 className="flex flex-wrap text-white text-5xl md:text-8xl lg:text-9xl tracking-tight font-light">
               {title.split(" ").map((word, index) => (
                 <motion.span
@@ -114,12 +111,7 @@ export default function Hero() {
               transition={{ delay: 1.3, duration: 0.6 }}
               className="mt-10 flex gap-6"
             >
-              <DiagonalButton
-                href="/empresa/about"
-                
-              >
-                Conócenos
-              </DiagonalButton>
+              <DiagonalButton href="/empresa/about">Conócenos</DiagonalButton>
 
               {/* <a
                 href="/contacto"
@@ -132,9 +124,10 @@ export default function Hero() {
         </div>
       </div>
 
-     
-      <div className="absolute bottom-0 left-0 right-0 h-px 
-                      bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent" />
+      <div
+        className="absolute bottom-0 left-0 right-0 h-px 
+                      bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent"
+      />
     </section>
   );
 }

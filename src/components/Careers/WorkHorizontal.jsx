@@ -37,12 +37,7 @@ export default function WorkHorizontal() {
 
   return (
     <section className="relative bg-aer py-16 lg:py-24  overflow-hidden">
-      {/* background */}
-
-
       <div className="relative max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
-        
-  
         {/* Header */}
         <div className="mb-16 lg:mb-20">
           <motion.div
