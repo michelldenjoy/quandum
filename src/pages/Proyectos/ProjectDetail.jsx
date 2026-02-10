@@ -29,7 +29,7 @@ export default function ProjectDetail() {
       <div className="absolute top-28 left-8 md:left-10 z-20">
         <Link
           to="/proyectos/destacados"
-          className="group flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/50 hover:text-brand-blue transition-all duration-300"
+          className="group flex items-center  text-[10px] font-bold uppercase tracking-[0.3em] text-white/50 hover:text-brand-blue transition-all duration-300"
         >
           <div className="p-2 rounded-full border border-black bg-black backdrop-blur-md group-hover:border-brand-blue/50 group-hover:bg-brand-blue/10 transition-all">
             <ArrowLeft
@@ -37,13 +37,13 @@ export default function ProjectDetail() {
               className="group-hover:-translate-x-1 text-white bg transition-transform"
             />
           </div>
-          <span className="hidden md:block bg-black text-white p-2 text-sm rounded ">
-            Volver a los proyectos
+          <span className="hidden md:block font-normal tracking-widest text-white p-2 text-sm rounded ">
+            Volver
           </span>
         </Link>
       </div>
 
-      {/* Hero */}
+      {/* Hero  */}
       <header className="relative h-[60vh] md:h-[75vh] w-full overflow-hidden">
         <motion.img
           initial={{ scale: 1.1 }}
@@ -162,7 +162,7 @@ export default function ProjectDetail() {
                 to="/proyectos/destacados"
                 className="text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-white transition-colors flex items-center justify-center gap-2"
               >
-                Explorar todo el catálogo
+                Explorar todos 
               </Link>
             </div>
           </div>

@@ -9,8 +9,8 @@ export default function Certificaciones() {
     <div className="w-full bg-white overflow-x-hidden font-sans">
             <HeroVideo
               eyebrow="Entorno regulado"
-              title="Certificados"
-              description="Garantizamos el cumplimiento normativo para la industria aeroespacial y de defensa"
+              title="Certificaciones"
+              description="Aseguramos el cumplimiento normativo para la industria aeroespacial y de defensa"
               backgroundImage="/images/certifications3.PNG"
             />
       

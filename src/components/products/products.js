@@ -5,7 +5,7 @@ export const products = [
       subtitle: "IRILL",
       hero: "/products/illuminator.jpg",
       gallery: [
-        "/products/illuminator1.jpg",
+        "/products/illuminator.jpg",
         "/products/illuminator2.jpg",
       ],
       image: "/products/illuminator.jpg",
@@ -51,5 +51,44 @@ export const products = [
       image: "/products/radiation.jpg",
       description: "Sistema de medición térmica de alta precisión basado en termometría infrarroja, diseñado para la adquisición en tiempo real de la temperatura de la superficie del mar durante operaciones aéreas. El PRT01F permite al operador solicitar de forma remota la transmisión de datos, incluyendo mediciones de temperatura y estados de funcionamiento del sistema, facilitando su integración en misiones de vigilancia y patrulla marítima. Este equipo se encuentra actualmente en proceso de integración en diversos programas C-295 VIMAR (Maritime Patrol), aportando capacidad de sensorización avanzada y fiabilidad operativa en entornos exigentes.",
       certifications: ["DO-178 DAL C", "MIL-STD-883"],
-    }
+    },
+    {
+      id: 5,
+      title: "DCD",
+      subtitle: "Dispositivo de Control de Iluminación para Repostaje en Vuelo",
+      hero: "/products/dimming2.jpg",
+      gallery: [
+        "/products/dimming.jpg",
+        "/products/dimming2.jpg",
+      ],
+      image: "/products/dimming2.jpg",
+      description:
+      "El Dimming Control Device (DCD) es un sistema diseñado para garantizar la visibilidad óptima de las Pilot Director Lights (PDL) durante las operaciones de repostaje en vuelo. Integrado en las luces de posicionamiento del avión cisterna, el DCD regula dinámicamente la intensidad luminosa para adaptar el sistema PDL a diferentes condiciones de iluminación, permitiendo al avión receptor identificar con precisión el punto exacto de posicionamiento. Esta optimización mejora la seguridad, la precisión operativa y la fiabilidad del proceso de reabastecimiento en entornos de misión crítica.",      certifications: ["DO-178 DAL C", "MIL-STD-883"],
+    },
+    {
+      id: 6,
+      title: "P.O.D Lighting System",
+      subtitle: "Sistema de Iluminación para Repostaje en Vuelo",
+      hero: "/products/POD.jpg",
+      gallery: [
+        "/products/POD.jpg",
+        "/products/POD1.jpg",
+      ],
+      image: "/products/POD1.jpg",
+      description:
+      "Sistema de iluminación integrado en el BEVS e instalado en el Refueling POD de la plataforma A-330 MRTT. Las luces del POD proporcionan a la aeronave receptora una referencia visual clara del despliegue y la longitud de la manguera mediante una corona luminosa, asegurando una correcta percepción del estado del sistema en cualquier condición ambiental. Esta solución mejora la seguridad y la precisión durante las operaciones de repostaje en vuelo.",      certifications: ["DO-178 DAL C", "MIL-STD-883"],
+    },
+    {
+      id: 7,
+      title: "Hose Exchange & Inspection System",
+      subtitle: "Sistema de inspección inteligente para reabastecimiento en vuelo",
+      hero: "/products/heis.jpg",
+      gallery: [
+        "/products/heis.jpg",
+        "/products/ifhi.gif",
+      ],
+      image: "/products/heis.jpg",
+      description:
+      "Unidad avanzada de inspección para mangueras de reabastecimiento en vuelo, diseñada para detectar de forma temprana defectos y degradaciones en la superficie de la manguera durante operaciones críticas. El sistema integra un conjunto distribuido de cámaras de alta resolución alrededor de la manguera, junto con iluminación de alta potencia, permitiendo una monitorización continua y precisa en tiempo real. Dispone de seis cámaras de alta resolución sincronizadas, fuentes de iluminación superiores a 1 kW y un sistema de seguimiento de manguera que garantiza la correcta adquisición de imágenes en cualquier condición operativa. La unidad incorpora procesamiento avanzado de imagen, compresión de vídeo H.265 y almacenamiento local, así como algoritmos de detección de fallos basados en inteligencia artificial. Esta arquitectura permite mejorar significativamente la seguridad, la fiabilidad operativa y el mantenimiento predictivo de los sistemas de reabastecimiento en vuelo. ",      certifications: ["DO-178 DAL C", "MIL-STD-883"],
+    },
   ];

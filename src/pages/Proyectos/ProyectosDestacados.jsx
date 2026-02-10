@@ -19,13 +19,12 @@ export default function ProyectosDestacados() {
             />
 
       <IntroProducts /> 
-      
-
-      <ProductsDrop />
+      <Projection />
+      {/* <ProductsDrop />
       <ProjectGrid />
 
-      <Projection />
-      <ProjectIMG />
+      
+      <ProjectIMG /> */}
       
       
      

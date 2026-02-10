@@ -73,7 +73,7 @@ export default function HeroVideo({
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className="text-sm tracking-[0.30em] font-semibold uppercase mb-6"
+                className="text-sm tracking-[0.30em] text-blue-300 font-semibold uppercase mb-6"
               >
                 {eyebrow}
               </motion.p>

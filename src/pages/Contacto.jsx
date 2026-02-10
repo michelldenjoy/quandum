@@ -11,6 +11,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import StarfieldNebula from "../components/3d/StarfieldNebula";
+import DiagonalButton from "../components/DiagonalButton";
 
 export default function Contacto() {
   const [form, setForm] = useState({
@@ -232,13 +233,13 @@ export default function Contacto() {
                         />
                       </div>
 
-                      <button
+                      <DiagonalButton
                         type="submit"
                         disabled={isSubmitting}
-                        className="relative w-full px-10 bg-brand-blue/60 py-4 text-sm uppercase border border-gray-500 hover:scale-105 hover:bg-brand-pink/60 tracking-[0.25em] font-medium  clip-path-diagonal transition-all duration-500"
+                        className=" w-full bg-brand-blue/30 hover:scale-105 px-10 "
                       >
                         {isSubmitting ? "Transmitiendo..." : "Enviar Mensaje"}
-                      </button>
+                      </DiagonalButton>
                     </motion.form>
                   ) : (
                     <motion.div
@@ -278,7 +279,7 @@ export default function Contacto() {
   );
 }
 
-// Subcomponente Input
+// Sub Input
 function Input({ label, ...props }) {
   return (
     <div>

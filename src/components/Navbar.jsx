@@ -79,7 +79,7 @@ export default function Navbar() {
                   <Link
                     to={link.path || "#"}
                     className={`relative text-[13px] uppercase tracking-[0.2em] font-bold transition-colors duration-300 flex items-center gap-1.5 ${
-                      isActive ? "text-white" : "text-gray-300 group-hover:text-white"
+                      isActive ? "text-white" : "text-gray-100 group-hover:text-white"
                     }`}
                   >
                     {link.name}

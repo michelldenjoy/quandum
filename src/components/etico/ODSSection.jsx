@@ -79,15 +79,15 @@ export default function ODSSection() {
                   <div className="w-1 h-1 bg-gray-300" />
                 </div> */}
                 <span className="text-sm tracking-[0.3em] text-gray-500 font-medium uppercase">
-                  Nuestro compromiso
+                 Entorno Responsable
                 </span>
               </div>
 
               {/* TITULO PRINCIPAL */}
               <h2 className="text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight text-black tracking-tight leading-[1.1]">
-                Entorno
+                Nuestro impacto 
                 <br />
-                <span className="font-semibold">Responsable</span>
+                <span className="font-semibold">en los ODS</span>
               </h2>
               <p className="text-gray-600 mt-6 text-base md:text-lg leading-relaxed max-w-3xl">
                   En Quandum Aerospace alineamos nuestra actividad con la Agenda
