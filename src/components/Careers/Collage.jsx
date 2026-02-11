@@ -108,7 +108,7 @@ export default function Collage() {
                 </span>
               </h2>
 
-              {/* Technical label */}
+              
               {/* <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-black text-white text-[10px] font-mono tracking-wider">
                 <div className="w-1.5 h-1.5 bg-brand-blue animate-pulse" />
                 AEROSPACE ENGINEERING DIVISION
@@ -177,7 +177,7 @@ export default function Collage() {
             </motion.div>
           </div>
 
-          {/* Right Column - Images */}
+          {/* Images */}
           <div className="lg:col-span-7 xl:col-span-7">
             <motion.div
               initial={{ opacity: 0, x: 40 }}
@@ -189,7 +189,7 @@ export default function Collage() {
               }}
               className="relative"
             >
-              {/* Technical Frame */}
+              {/* Frame */}
               <div className="absolute -top-6 -left-6 w-24 h-24 border-l-2 border-t-2 border-black/20" />
               <div className="absolute -bottom-6 -right-6 w-24 h-24 border-r-2 border-b-2 border-black/20" />
 
@@ -207,7 +207,7 @@ export default function Collage() {
                     onMouseEnter={() => setActiveImage(index)}
                     className="group relative"
                   >
-                    {/* Image Container */}
+                    {/* Img Contenedor */}
                     <div
                       className={`relative w-full ${image.aspectRatio} overflow-hidden bg-gray-100`}
                     >
@@ -218,7 +218,7 @@ export default function Collage() {
                         style={{ imageRendering: "crisp-edges" }}
                       />
 
-                      {/* Technical Overlay */}
+                      {/* Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                       {/* Corner Markers */}
@@ -227,7 +227,7 @@ export default function Collage() {
                       <div className="absolute bottom-3 left-3 w-4 h-4 border-l-2 border-b-2 border-white/50" />
                       <div className="absolute bottom-3 right-3 w-4 h-4 border-r-2 border-b-2 border-white/50" />
 
-                      {/* Info Panel */}
+                      
                       <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                         <div className="flex items-end justify-between">
                           <div className="space-y-2">
@@ -247,7 +247,7 @@ export default function Collage() {
                         </div>
                       </div>
 
-                      {/* Scan line effect */}
+                      
                       <motion.div
                         className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent h-32 pointer-events-none"
                         initial={{ y: "-100%" }}
@@ -261,7 +261,7 @@ export default function Collage() {
                       />
                     </div>
 
-                    {/* Technical Label */}
+                    
                     <div className="mt-3 flex items-center justify-between text-xs">
                       <span className="font-mono text-gray-400 tracking-wider">
                         {image.category.toUpperCase()}
