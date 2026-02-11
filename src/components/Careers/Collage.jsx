@@ -48,11 +48,11 @@ export default function Collage() {
       className="relative py-16 sm:py-20 md:py-24 lg:py-28 bg-white overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0 -z-10 pointer-events-none">
+      {/* <div className="absolute inset-0 -z-10 pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.015)_1.5px,transparent_1.5px),linear-gradient(90deg,rgba(0,0,0,0.015)_1.5px,transparent_1.5px)] bg-[size:40px_40px]" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:8px_8px]" />
 
-        {/* Coordinate markers */}
+       
         <div className="absolute top-10 left-10 text-[10px] font-mono text-gray-300 tracking-wider">
           COORD: 40.4168°N, 3.7038°W
         </div>
@@ -60,17 +60,17 @@ export default function Collage() {
           GRID: AEROSPACE.SYS.2026
         </div>
 
-        {/* Gradient accents */}
+        
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-blue/3 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gray-900/5 rounded-full blur-3xl" />
-      </div>
+      </div> */}
 
       <div
         ref={ref}
         className="relative w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8"
       >
         {/* Header */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -82,7 +82,7 @@ export default function Collage() {
               Careers / Join Our Team
             </span>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16">
           {/* Izquierdo */}
