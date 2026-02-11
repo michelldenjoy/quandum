@@ -13,7 +13,7 @@ export default function ProyectosDestacados() {
               eyebrow="Diseño · Creación · Proyectos"
               title="Resultados en Proyectos"
               description="Soluciones para entornos operativos y misiones de alta exigencia."
-              backgroundImage="/images/heroproducts.jpg"
+              backgroundImage="/images/heroproducts.webp"
               imagePosition="top 90%"
               
             />

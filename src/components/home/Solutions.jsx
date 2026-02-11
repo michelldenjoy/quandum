@@ -39,7 +39,7 @@ const services = [
   {
     title: "Ingeniería Industrial & Manufactura Avanzada",
     tag: "INDUSTRIAL",
-    image: "/images/mecanica.jpeg",
+    image: "/images/mecanica.webp",
     description:
       "Ingeniería mecánica, fabricación avanzada y soluciones industriales aplicando metodologías aeroespaciales de precisión, trazabilidad y control del ciclo de vida.",
     items: [

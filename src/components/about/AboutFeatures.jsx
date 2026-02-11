@@ -14,7 +14,7 @@ const features = [
   {
     title: "COMPROMISO Y FIABILIDAD.",
     tag: "",
-    image: "/images/dimming.jpeg",
+    image: "/products/dimming.webp",
     description:
       "Cada proyecto se desarrolla con una disciplina estricta: procesos auditables, diseño seguro, ingeniería certificable y soluciones robustas adaptadas a entornos operacionales exigentes.",
     secondParagraph:

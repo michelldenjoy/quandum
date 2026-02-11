@@ -70,7 +70,7 @@ const Projection = () => {
                   <img
                     src={product.image}
                     alt={product.title}
-                    className={`w-full h-full transition-all duration-700 ${
+                    className={`w-full h-full transition-all object-cover duration-700 ${
                       hoveredId === product.id ? 'scale-110 brightness-60' : 'scale-100 brightness-80'
                     }`}
                   />

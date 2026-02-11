@@ -33,7 +33,7 @@ export default function DiagonalButton({
   // Variantes de color
   const variants = {
     primary: {
-      base: "bg-black/70 text-white border-brand-blue/50",
+      base: "bg-black/70 text-white border border-none",
       hover: "bg-brand-blue border-brand-blue"
     },
     secondary: {
