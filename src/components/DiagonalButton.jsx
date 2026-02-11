@@ -2,15 +2,15 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 
 /**
- * DiagonalButton - Botón reutilizable con forma diagonal
+
  * 
- * @param {string} children - Texto del botón
- * @param {string} variant - 'primary' (negro) | 'secondary' (blanco) | 'blue' (brand-blue)
- * @param {string} size - 'sm' | 'md' | 'lg'
- * @param {boolean} icon - Mostrar icono de flecha
- * @param {function} onClick - Función al hacer click
- * @param {string} className - Clases adicionales
- * @param {string} href - Si es un enlace, usar href
+ * @param {string} children 
+ * @param {string} variant 
+ * @param {string} size 
+ * @param {boolean} icon 
+ * @param {function} onClick 
+ * @param {string} className 
+ * @param {string} href 
  */
 export default function DiagonalButton({ 
   children, 
@@ -23,14 +23,14 @@ export default function DiagonalButton({
   ...props 
 }) {
   
-  // Tamaños
+  
   const sizes = {
     sm: "px-6 py-2.5 text-xs",
     md: "px-8 py-4 text-sm",
     lg: "px-10 py-5 text-base"
   };
 
-  // Variantes de color
+  
   const variants = {
     primary: {
       base: "bg-black/70 text-white border border-none",
@@ -62,7 +62,7 @@ export default function DiagonalButton({
 
   const content = (
     <>
-      {/* Fondo hover */}
+    
       <div 
         className={`
           absolute inset-0 clip-path-diagonal transition-transform duration-500 
@@ -74,7 +74,7 @@ export default function DiagonalButton({
         `}
       />
       
-      {/* Contenido */}
+    
       <span className="relative z-10 flex items-center gap-2">
         {children}
         {icon && (
@@ -84,7 +84,7 @@ export default function DiagonalButton({
     </>
   );
 
-  // Si tiene href, renderizar como enlace
+  // renderizado con href
   if (href) {
     return (
       <a 
@@ -97,7 +97,7 @@ export default function DiagonalButton({
     );
   }
 
-  // Si no, renderizar como botón
+  // renderizar como botón
   return (
     <button 
       onClick={onClick}
