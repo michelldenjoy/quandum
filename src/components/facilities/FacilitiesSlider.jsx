@@ -204,7 +204,7 @@ export default function FacilitiesSlider() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative w-full aspect-[4/3] lg:aspect-[16/11] overflow-hidden">
+            <div className="relative w-full aspect-[4/3] rounded-md lg:aspect-[16/11] overflow-hidden">
               {/* IMG */}
               <AnimatePresence mode="wait">
                 <motion.img

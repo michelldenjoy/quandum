@@ -138,7 +138,7 @@ export default function WorkHorizontal() {
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: 0.2, duration: 0.6 }}
-                          className="relative aspect-[4/3] overflow-hidden bg-gray-100"
+                          className="relative aspect-[4/3] rounded-md overflow-hidden bg-gray-100"
                         >
                           <img
                             src={section.image}
