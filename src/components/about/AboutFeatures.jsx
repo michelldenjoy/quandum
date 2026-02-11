@@ -4,7 +4,7 @@ const features = [
   {
     title: "EXCELENCIA TÉCNICA.",
     tag: "",
-    image: "/images/instalations.jpg",
+    image: "/images/instalations.webp",
     description:
       "Contamos con dos décadas de experiencia colectiva en ingeniería aeronáutica, electrónica avanzada y diseño de sistemas críticos. Trabajamos bajo una premisa central: la innovación no es un objetivo, es un estándar diario.",
     secondParagraph:
@@ -51,7 +51,7 @@ export default function AboutFeatures() {
                     <img
                       src={f.image}
                       alt={f.title}
-                      className="w-full h-full  rounded-sm"
+                      className="w-full h-full  rounded-md"
                     />
                     <span className="absolute top-4 left-4 sm:top-6 sm:left-6 text-[0.625rem] sm:text-xs tracking-[0.3em] sm:tracking-[0.4em] text-white/70 font-mono">
                       {f.tag}

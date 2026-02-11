@@ -26,7 +26,7 @@ export default function ODSSection() {
       description:
         "La innovación tecnológica y la ingeniería avanzada son el núcleo de nuestra actividad.",
       icon: "/ods/ods09.png",
-      image: "/ods-bg/industry.jpg",
+      image: "/ods-bg/industry.webp",
       color: "#FD6925",
     },
     {
@@ -35,7 +35,7 @@ export default function ODSSection() {
       description:
         "Aplicamos criterios de sostenibilidad, eficiencia y economía circular en nuestros procesos.",
       icon: "/ods/ods12.png",
-      image: "/images/calidad.jpg",
+      image: "/ods-bg/production.webp",
       color: "#BF8B2E",
     },
     {

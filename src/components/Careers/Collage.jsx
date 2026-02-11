@@ -5,7 +5,7 @@ import DiagonalButton from "../DiagonalButton";
 
 const images = [
   {
-    src: "/images/about-1.jpeg",
+    src: "/images/about1.webp",
     alt: "Equipo en operación",
     category: "Operations",
     aspectRatio: "aspect-[3656/2313]",
@@ -13,7 +13,7 @@ const images = [
     code: "OPS-001",
   },
   {
-    src: "/images/collage2.jpg",
+    src: "/images/about2.webp",
     alt: "Equipo de ingeniería",
     category: "Engineering",
     aspectRatio: "aspect-[5740/3827]",

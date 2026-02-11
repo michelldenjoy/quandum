@@ -12,7 +12,7 @@ export default function WorkHorizontal() {
       number: "01",
       description:
         "Desarrollamos sistemas autónomos avanzados que permiten a las aeronaves operar de manera inteligente y adaptativa. Nuestra tecnología de IA integrada toma decisiones críticas en tiempo real, optimizando errores con alta precisión y reduciendo la necesidad de múltiples operarios.",
-      image: "/bgmilitar.jpg",
+      image: "/images/automation.webp",
     },
     {
       id: "scale",
@@ -20,7 +20,7 @@ export default function WorkHorizontal() {
       number: "02",
       description:
         "Construimos pensando en el crecimiento global. Nuestras capacidades industriales avanzadas y cadenas de suministro robustas nos permiten producir a gran escala sistemas electrónicos aeronáuticos críticos sin comprometer la calidad ni las certificaciones.",
-      image: "/images/scale.jpg",
+      image: "/images/scale.webp",
     },
     {
       id: "impact",
@@ -29,7 +29,7 @@ export default function WorkHorizontal() {
       description:
         "Nuestro trabajo tiene un impacto en la industria y el mundo. Desde misiones de búsqueda y rescate hasta logística de emergencia y monitoreo ambiental, cada sistema que construimos tiene un propósito.",
       image:
-        "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80",
+        "/images/impact.webp",
     },
   ];
 

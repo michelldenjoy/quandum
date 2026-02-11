@@ -10,7 +10,7 @@ export default function CodigoEtico() {
         eyebrow="Responsabilidad · Ética · Cumplimiento"
         title="Progreso Consciente"
         description="Nuestro compromiso garantiza una ingeniería responsable que protege el entorno y la sociedad."
-        backgroundImage="/images/sostenible.jpg"
+        backgroundImage="/images/sostenible.webp"
       ></HeroVideo>
       <Documentos />
       <ODSSection />

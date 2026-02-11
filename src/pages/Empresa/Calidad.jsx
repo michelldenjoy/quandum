@@ -18,7 +18,7 @@ export default function Calidad() {
         eyebrow="Excelencia Operativa"
         title="Política de Calidad"
         description="El marco normativo que rige cada uno de nuestros procesos de precisión."
-        backgroundImage="/ods-bg/production.jpg"
+        backgroundImage="/images/calidad.webp"
       />
 
       {/* SECCIÓN MANIFIESTO */}

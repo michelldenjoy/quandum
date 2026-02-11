@@ -9,7 +9,7 @@ const facilities = [
     subtitle: "para ensamblaje de componentes ópticos sensibles",
     description:
       "Espacio técnico de 100 m² habilitado para el ensamblaje de óptica delicada. Cuenta con sistemas de filtrado de aire y regulación de temperatura constantes, proporcionando las condiciones estables necesarias para operar con equipos de alta sensibilidad.",
-    image: "/images/montaje.jpg",
+    image: "/images/about6.webp",
     bg: "bg-aerospacee",
     textColor: "text-white",
   },
@@ -18,7 +18,7 @@ const facilities = [
     subtitle: "300 m² de precisión",
     description:
       "Zona especializada en integración final de sistemas complejos. Equipado con herramientas de metrología y calibración de última generación, garantizamos una alineación y funcionalidad precisas antes de la entrega. Es la zona crítica donde la precisión de los componentes se traduce en el rendimiento óptimo del sistema terminado.",
-    image: "/images/about-5.jpg",
+    image: "/images/about5.webp",
     bg: "bg-white",
     textColor: "text-black",
   },
@@ -27,7 +27,7 @@ const facilities = [
     subtitle: "600 m² dedicados a innovación tecnológica",
     description:
       "Nuestro Laboratorio de I+D de 600 m² es el motor de la próxima generación de sistemas. Enfocados en la investigación aplicada y la exploración de nuevas fronteras tecnológicas, ofrecemos una plataforma completa que abarca desde la validación conceptual y el prototipado rápido hasta la ejecución de rigurosas certificaciones técnicas. Este espacio acelera la transición de la idea al producto validado, garantizando la introducción de soluciones disruptivas al mercado.",
-    image: "/images/about-2.jpg",
+    image: "/images/about4.webp",
     bg: "bg-aerospacee",
     textColor: "text-white",
   },
@@ -41,7 +41,7 @@ export default function Infraestructuras() {
         eyebrow="Nuestra · Infraestructura"
         title="Donde la idea se hace real"
         description="Entornos seguros y laboratorios donde la ingeniería alcanza su máximo nivel."
-        backgroundImage="/images/collage1.jpg"
+        backgroundImage="/images/about3.webp"
       />
       <FacilitiesSlider />
 
@@ -74,7 +74,7 @@ export default function Infraestructuras() {
                 <img
                   src={f.image}
                   alt={f.title}
-                  className="w-full h-full object-cover rounded-sm"
+                  className="w-full h-full object-cover rounded-md"
                 />
               </motion.div>
 
