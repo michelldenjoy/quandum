@@ -7,6 +7,7 @@ import WorkHorizontal from "../../components/Careers/WorkHorizontal";
 import { motion } from "motion/react";
 import HeroVideo from "../../components/about/HeroVideo";
 import Divider from "../../components/Divider";
+
 // const andurilBenefits = [
 //   {
 //     title: "Salud y Bienestar",
@@ -130,6 +131,7 @@ export default function TrabajaConNosotros() {
         <Formulario />
       </div>
       <Collage />
+     
     
       <WorkHorizontal />
 

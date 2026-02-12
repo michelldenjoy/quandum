@@ -73,13 +73,13 @@ export default function HeroVideo({
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className="text-sm tracking-[0.30em] text-blue-300 font-semibold uppercase mb-6"
+                className="text-sm tracking-[0.30em] text-slate-200 font-semibold uppercase mb-6"
               >
                 {eyebrow}
               </motion.p>
 
               {/* Title*/}
-              <h1 className="flex flex-wrap text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tight leading-[1.1]">
+              <h1 className="flex flex-wrap text-white  text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tight leading-[1.1]">
                 {title.split(" ").map((word, index) => (
                   <motion.span
                     key={index}

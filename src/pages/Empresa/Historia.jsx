@@ -1,16 +1,17 @@
-import React from 'react'
-import AboutTimeline from '../../components/about/AboutTimeline'
-import FilosofiaTrayectoria from '../../components/about/FilosofiaTrayectoria'
-import HeroHistory from '../../components/history/HeroHistory'
+import React from "react";
+import AboutTimeline from "../../components/about/AboutTimeline";
+import HeroVideo from "../../components/about/HeroVideo";
 
 export default function Historia() {
   return (
-    <div >
-      <HeroHistory />
-
-      
+    <div>
+      <HeroVideo
+        eyebrow="Nuestra Historia"
+        title="Ingeniería que evoluciona"
+        description="Una trayectoria marcada por la calidad, el rigor técnico y el avance constante."
+        backgroundImage="/images/history.jpg"
+      />
       <AboutTimeline />
-      
     </div>
-  )
+  );
 }

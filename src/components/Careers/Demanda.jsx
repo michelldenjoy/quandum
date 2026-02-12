@@ -10,6 +10,8 @@ import {
 
 } from "lucide-react";
 
+//OPORTUNIDADES ABIERTAS 
+
 export default function Demanda() {
 
   const positions = [
