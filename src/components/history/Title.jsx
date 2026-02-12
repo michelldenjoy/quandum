@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 
-const text = "nos han transformado";
+const text = "Hitos que nos han transformado";
 
 const container = {
   hidden: {},
@@ -30,7 +30,7 @@ export default function Title() {
       className="text-center mb-24"
     >
       <h2 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-tight">
-        <span className="text-slate-300">Hitos que </span>
+        
 
         {text.split(" ").map((wordText, wordIndex) => (
           <span
