@@ -26,7 +26,7 @@ export default function Navbar() {
         { name: "Quienes somos", path: "/empresa/about" },
         { name: "Certificaciones", path: "/sobre-quandum/certificaciones" },
         { name: "Compromiso Ético y Sostenible", path: "/sobre-quandum/codigo-etico" },
-        { name: "Trabaja con nosotros", path: "/trabaja-con-nosotros" },
+        { name: "Únete a Quandum", path: "/trabaja-con-nosotros" },
       ],
     },
     {

@@ -98,14 +98,12 @@ export default function Collage() {
               }}
             >
               <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[0.95] mb-6">
-                <span className="block text-black">TALENTO</span>
-                <span className="block text-black">PARA</span>
+                <span className="block text-black">TALENTO PARA</span>
                 <span className="block mt-2 bg-gradient-to-r from-brand-blue via-gray-800 to-brand-blue bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-slow">
-                  MISIONES
+                  MISIONES REALES
                 </span>
-                <span className="block bg-gradient-to-r from-brand-blue via-gray-800 to-brand-blue bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-slow">
-                  REALES
-                </span>
+                <div className="mt-6 w-32 h-px bg-gradient-to-r from-brand-blue to-transparent" />
+
               </h2>
 
               

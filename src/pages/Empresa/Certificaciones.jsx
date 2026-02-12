@@ -30,7 +30,7 @@ export default function Certificaciones() {
                   <div className="w-1 h-1 bg-gray-400" />
                   <div className="w-1 h-1 bg-gray-300" />
                 </div> */}
-                <span className="text-sm tracking-[0.3em] text-blue-300 font-medium uppercase">
+                <span className="text-sm tracking-[0.3em] text-slate-300 font-medium uppercase">
                   Normativa
                 </span>
               </div>

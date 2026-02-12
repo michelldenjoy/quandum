@@ -60,7 +60,7 @@ export default function ODSSection() {
 
   return (
     <section className="w-full bg-white py-24">
-      <div className="max-w-7xl mx-auto px-6 ">
+      <div className="max-w-7xl mx-auto px-4 ">
         {/* Header */}
         <div className="mb-16 lg:mb-20">
           <motion.div

@@ -36,7 +36,7 @@ export default function WorkHorizontal() {
   const activeSection = sections.find((s) => s.id === active);
 
   return (
-    <section className="relative bg-aer py-16 lg:py-24  overflow-hidden">
+    <section className="relative bg-aer py-16 lg:py-24 px-4 overflow-hidden">
       <div className="relative max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
         {/* Header */}
         <div className="mb-16 lg:mb-20">
@@ -55,7 +55,7 @@ export default function WorkHorizontal() {
                   <div className="w-1 h-1 bg-gray-400" />
                   <div className="w-1 h-1 bg-gray-300" />
                 </div> */}
-                <span className="text-sm tracking-[0.3em] text-blue-300 font-medium uppercase">
+                <span className="text-sm tracking-[0.3em] text-slate-300 font-medium uppercase">
                   Metodología
                 </span>
               </div>

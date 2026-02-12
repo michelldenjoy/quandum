@@ -68,7 +68,7 @@ export default function Solutions() {
           transition={{ duration: 0.6 }}
           className="mb-24 max-w-3xl"
         >
-          <span className="block text-sm tracking-[0.30em] text-blue-300 uppercase mb-6">
+          <span className="block text-sm tracking-[0.30em] font-medium text-slate-300 uppercase mb-6"> 
             Soluciones
           </span>
 

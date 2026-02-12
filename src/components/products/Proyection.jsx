@@ -21,7 +21,7 @@ const Projection = () => {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPGRlZnM+CiAgICAgICAgPHBhdHRlcm5faWQ9InBhcnRpY2xlcyIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIj4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNSIgY3k9IjUiIHI9IjEiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjIiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iMjUiIGN5PSIxNSIgcj0iMSIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuMyIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNSIgY3k9IjM1IiByPSIxIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC4xIi8+CiAgICAgICAgPC9wYXR0ZXJuPgogICAgPC9kZWZzPgogICAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXJ0aWNsZXMpIiAvPgo8L3N2Zz4=')] opacity-30 animate-twinkle"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -30,7 +30,7 @@ const Projection = () => {
         >
           <div className="flex-1">
             <div className="flex items-center gap-4 mb-6">
-              <span className="text-sm tracking-[0.3em] text-blue-300 font-medium uppercase">
+              <span className="text-sm tracking-[0.3em] text-slate-300 font-medium uppercase">
                 Experiencia
               </span>
             </div>

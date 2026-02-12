@@ -116,31 +116,15 @@ export default function FacilitiesSlider() {
           >
             {/* TITULO */}
             <div>
-              <h2
-                className="leading-[1.0] tracking-tight text-gray-900"
-                style={{
-                  fontFamily: "'DM Serif Display', 'Georgia', serif",
-                  fontSize: "clamp(2.8rem, 5vw, 4.2rem)",
-                  fontWeight: 400,
-                }}
-              >
-                Entorno
-                <br />
-                <em style={{ fontStyle: "italic", color: "#516288" }}>
-                  Técnico
-                </em>
-                <br />
-                <span
-                  style={{
-                    fontWeight: 700,
-                    fontFamily: "'DM Serif Display', serif",
-                  }}
-                >
-                  & Operativo
+              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[0.95] mb-6">
+                <span className="block text-black">Entorno Técnico &</span>
+                <span className="block mt-2 bg-gradient-to-r from-brand-blue via-gray-800 to-brand-blue bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-slow">
+                  Operativo
                 </span>
+
               </h2>
 
-              <div className="mt-6 w-16 h-px bg-gradient-to-r from-blue-600 to-transparent" />
+              <div className="mt-6 w-32 h-px bg-gradient-to-r from-brand-blue to-transparent" />
 
               <p
                 className="mt-6 text-gray-600 leading-relaxed text-sm md:text-base"

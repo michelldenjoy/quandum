@@ -43,7 +43,7 @@ const CertificationsSection = () => {
 
   return (
     <section className="bg-white py-20">
-      <div className="max-w-6xl mt-16 mx-auto px-6">
+      <div className="max-w-6xl mt-16 mx-auto px-4">
         {/* TITULOS PRINCIPALES */}
         <div className="mb-16">
           <div className="flex items-center gap-4 mb-6">
