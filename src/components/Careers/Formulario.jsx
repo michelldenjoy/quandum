@@ -40,7 +40,7 @@ export default function Formulario() {
     cv: null,
   });
 
-  const [status, setStatus] = useState(""); // "success", "error", ""
+  const [status, setStatus] = useState(""); 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [fileName, setFileName] = useState(null);
   const formRef = useRef();
@@ -93,7 +93,7 @@ export default function Formulario() {
           phone: formData.phone,
           position: formData.position,
           message: formData.message,
-          cv: cvBase64, // Aquí va el archivo en Base64
+          cv: cvBase64, 
         },
         import.meta.env.VITE_EMAILJS_PUBLIC
       );
@@ -142,7 +142,7 @@ export default function Formulario() {
 
         </div>
 
-        {/* CONTENEDOR DEL FORMULARIO */}
+        {/*  FORMULARIO */}
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -249,7 +249,7 @@ export default function Formulario() {
                   />
                 </div>
 
-                {/* ÁREA DE CARGA DE ARCHIVO Y SUBMIT */}
+                {/* CARGA DE ARCHIVO */}
                 <div className="flex flex-col md:flex-row gap-8 items-center pt-4">
                   <label className="w-full md:w-auto flex-1 flex items-center justify-between gap-4 p-4 rounded-xl cursor-pointer hover:bg-blue-500/10 transition-all group">
                     <div className="flex items-center gap-3">
@@ -287,7 +287,7 @@ export default function Formulario() {
             )}
           </AnimatePresence>
 
-          {/* DECORACIÓN INFERIOR */}
+         
           <div className="mt-8 flex justify-between items-center opacity-30">
             <div className="flex gap-2">
               <div className="w-1 h-1 bg-slate-900 rounded-full" />
