@@ -34,24 +34,26 @@ export default function Subtitle() {
       variants={container}
       className="text-center mb-24"
     >
-<h2 className="text-5xl ...">
-  <span className="relative bg-gradient-to-r from-slate-300 via-slate-400 to-slate-500 bg-clip-text text-transparent [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
-    {text.split(" ").map((wordText, wordIndex) => (
-      <span key={wordIndex} className="inline-block whitespace-nowrap mr-3">
-        {wordText.split("").map((char, charIndex) => (
-          <motion.span
-            key={charIndex}
-            variants={letter}
-            className="inline-block"
-            style={{ WebkitBackfaceVisibility: 'hidden' }}
-          >
-            {char}
-          </motion.span>
-        ))}
-      </span>
-    ))}
-  </span>
-</h2>
+      <h2 className="text-5xl pt-24 md:text-6xl lg:text-7xl font-light tracking-tight leading-tight">
+        <span className="bg-gradient-to-r from-slate-300 via-slate-400 to-slate-500 bg-clip-text -webkit-bg-clip-text text-transparent">
+          {text.split(" ").map((wordText, wordIndex) => (
+            <span
+              key={wordIndex}
+              className="inline-block whitespace-nowrap mr-3"
+            >
+              {wordText.split("").map((char, charIndex) => (
+                <motion.span
+                  key={charIndex}
+                  variants={letter}
+                  className="inline-block"
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </span>
+          ))}
+        </span>
+      </h2>
     </motion.div>
   );
 }
