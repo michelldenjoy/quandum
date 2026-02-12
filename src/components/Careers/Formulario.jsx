@@ -11,6 +11,13 @@ import {
 } from "lucide-react";
 import StarfieldNebula from "../3d/StarfieldNebula";
 import DiagonalButton from "../DiagonalButton";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
+
+
+
+
+
 
 const positions = [
   { title: "Técnico de Mecanizado" },
@@ -36,6 +43,8 @@ export default function Formulario() {
   const [status, setStatus] = useState(""); // "success", "error", ""
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [fileName, setFileName] = useState(null);
+  const formRef = useRef();
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -52,30 +61,53 @@ export default function Formulario() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const fileToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+    });
+  };
+  
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+  
     if (!formData.name || !formData.email || !formData.cv) {
       setStatus("error");
       return;
     }
-
+  
     setIsSubmitting(true);
-    setStatus("");
-
-    setTimeout(() => {
+  
+    try {
+      const cvBase64 = await fileToBase64(formData.cv);
+  
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE,
+        import.meta.env.VITE_EMAILJS_TEMPLATE,
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          position: formData.position,
+          message: formData.message,
+          cv: cvBase64, // Aquí va el archivo en Base64
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC
+      );
+  
       setIsSubmitting(false);
       setStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        position: "",
-        message: "",
-        cv: null,
-      });
-      setFileName(null);
-    }, 2000);
+    } catch (error) {
+      console.error(error);
+      setIsSubmitting(false);
+      setStatus("error");
+    }
   };
+  
+  
 
   return (
     <section className="relative min-h-screen  overflow-hidden flex items-center justify-center py-20 px-6">
@@ -143,7 +175,7 @@ export default function Formulario() {
                 </button>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-8 relative z-10">
                 {status === "error" && (
                   <motion.div
                     initial={{ opacity: 0, x: -10 }}
@@ -234,6 +266,7 @@ export default function Formulario() {
                     />
                     <input
                       type="file"
+                      name="cv"
                       className="hidden"
                       accept=".pdf"
                       onChange={handleFileChange}
