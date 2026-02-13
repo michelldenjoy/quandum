@@ -2,63 +2,66 @@ import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import StarfieldNebula from "../3d/StarfieldNebula";
 
-const services = [
+const workWithUs = [
   {
-    title: "Hardware Aeronáutico",
-    tag: "HARDWARE",
-    image: "/images/hardware.jpg",
+    title: "Cultura de Excelencia",
+    tag: "VALORES",
+    image: "/images/automation.webp",
     description:
-      "Diseño y desarrollo de hardware crítico y sistemas electrónicos embarcados para aplicaciones aeroespaciales, defensa e industriales de alta fiabilidad, siguiendo procesos orientados a certificación.",
+      "Formamos parte de un equipo donde la excelencia técnica y la innovación son nuestra razón de ser. Trabajamos en proyectos desafiantes que requieren lo mejor de cada ingeniero, en un entorno que valora el rigor, la precisión y el pensamiento crítico.",
     items: [
-      "Arquitectura de sistemas electrónicos y hardware complejo",
-      "Diseño de PCBs y electrónica embebida",
-      "Integración HW/SW y computadores embarcados custom",
-      "Diseño y fabricación de arneses y cableado",
-      "Integración de sensores, actuadores y sistemas ópticos",
-      "Ensayos funcionales, ambientales y EMI/EMC (DO-160)",
-      "Soporte a certificación RTCA/DO-254",
+      "Proyectos de alta complejidad técnica en sector aeroespacial",
+      "Equipos multidisciplinares de ingenieros especializados",
+      "Cultura de mejora continua y aprendizaje",
+      "Estándares de calidad y certificación aeronáutica",
+      "Autonomía técnica y responsabilidad profesional",
+      "Reconocimiento del talento y la especialización",
     ],
     gradient: "from-brand-blue/50 to-brand-blue/40",
-    
+    highlight: "Ambiente Técnico",
+    methodology: "Colaborativo",
   },
   {
-    title: "Software Crítico",
-    tag: "SOFTWARE",
-    image: "/images/software.jpeg",
+    title: "Desarrollo Profesional",
+    tag: "CRECIMIENTO REAL",
+    image: "/images/scale.webp",
     description:
-      "Desarrollo de software crítico y embebido para sistemas de misión, diseñado desde el inicio bajo criterios de seguridad, trazabilidad y verificación aeronáutica.",
+      "Trabajamos en proyectos reales para plataformas aeronáuticas en operación. Desde el primer día formarás parte de equipos que desarrollan sistemas críticos bajo normativa certificable. Apostamos por el crecimiento sostenido, basado en responsabilidad técnica, aprendizaje continuo y experiencia práctica en entornos exigentes.",
     items: [
-      "Software embebido para sistemas aeronáuticos",
-      "Arquitecturas de control y gestión de sistemas",
-      "Algoritmos de visión y procesado de imagen",
-      "Sistemas de vídeo y protocolos de comunicación",
-      "Fusión de sensores VIS, NIR, SWIR y térmicos",
-      "Verificación y validación basada en requisitos",
-      "Cumplimiento RTCA/DO-178",
+      "Formación aplicada en normativa aeroespacial (DO-178, DO-254, DO-160)",
+      "Participación directa en proyectos certificados y programas en activo",
+      "Acceso a herramientas y entornos de desarrollo utilizados en industria aeronáutica",
+      "Acompañamiento técnico por ingenieros senior",
+      "Plan de progresión profesional basado en competencias técnicas",
+      "Exposición a revisiones de diseño, validación y procesos de certificación",
+      "Colaboración con partners internacionales en programas reales",
     ],
     gradient: "from-brand-blue/50 to-brand-blue/40",
-    
+    highlight: "Formación Técnica Aplicada",
+    methodology: "Experiencia en Entornos Certificados",
   },
   {
-    title: "Ingeniería Industrial & Manufactura Avanzada",
-    tag: "INDUSTRIAL",
-    image: "/images/mecanica.webp",
+    title: "Impacto Real",
+    tag: "PROPÓSITO",
+    image: "/images/impact.webp",
     description:
-      "Ingeniería mecánica, fabricación avanzada y soluciones industriales aplicando metodologías aeroespaciales de precisión, trazabilidad y control del ciclo de vida.",
+      "Tu trabajo tendrá un impacto tangible en la industria y el mundo. Cada línea de código, cada circuito diseñado y cada sistema integrado contribuye a soluciones que salvan vidas, protegen infraestructuras críticas y avanzan el estado del arte en ingeniería aeroespacial.",
     items: [
-      "Diseño mecánico CAD y arquitectura estructural",
-      "Mecanizado CNC de alta precisión",
-      "Fabricación aditiva: polímeros técnicos y metal",
-      "Prototipado rápido y utillaje funcional",
-      "Reverse engineering de sistemas obsoletos",
-      "Retrofit y upgrade de sistemas existentes",
-      "Diseño y fabricación de bancos de prueba",
+      "Proyectos con aplicación directa en misiones críticas",
+      "Contribución a sistemas de defensa y seguridad nacional",
+      "Desarrollo de tecnología para emergencias y rescate",
+      "Participación en programas de I+D+i aeroespacial",
+      "Soluciones que operan en entornos extremos",
+      "Innovación con propósito y responsabilidad",
+      "Orgullo profesional por el trabajo realizado",
     ],
     gradient: "from-brand-blue/50 to-brand-blue/40",
+    highlight: "Proyectos Críticos",
+    methodology: "Alto Impacto",
   },
 ];
 
-export default function Solutions() {
+export default function WorkHorizontal2() {
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   const toggleAccordion = (index) => {
@@ -77,24 +80,25 @@ export default function Solutions() {
           transition={{ duration: 0.6 }}
           className="mb-16 max-w-3xl"
         >
-          <span className="block text-sm tracking-[0.30em] font-medium text-slate-300 uppercase mb-6">
-            Especialización 
-          </span>
+          {/* <span className="block text-sm tracking-[0.30em] font-medium text-slate-300 uppercase mb-6">
+            Trabaja con Nosotros
+          </span> */}
           <h2 className="text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight text-white tracking-tight leading-[1.1]">
-            Soluciones de 
+            Como
             <br />
-            <span className="font-semibold">Ingeniería</span>
+            <span className="font-semibold">Trabajamos</span>
           </h2>
           <p className="mt-6 text-gray-400 text-base md:text-lg leading-relaxed">
-            Ingeniería desarrollada bajo estándares aeroespaciales, donde
-            hardware, software y manufactura avanzada se integran como un único
-            sistema certificado.
+            Buscamos ingenieros apasionados por la excelencia técnica que
+            quieran formar parte de proyectos aeroespaciales de alto impacto. Un
+            lugar donde el talento técnico se desarrolla, se valora y marca la
+            diferencia.
           </p>
         </motion.div>
 
         {/* Accordion Stack */}
         <div className="space-y-4">
-          {services.map((service, index) => {
+          {workWithUs.map((process, index) => {
             const isExpanded = expandedIndex === index;
 
             return (
@@ -114,7 +118,7 @@ export default function Solutions() {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                      className={`absolute -inset-1 bg-gradient-to-r ${service.gradient} opacity-20 blur-xl rounded-2xl`}
+                      className={`absolute -inset-1 bg-gradient-to-r ${process.gradient} opacity-20 blur-xl rounded-2xl`}
                     />
                   )}
                 </AnimatePresence>
@@ -133,33 +137,19 @@ export default function Solutions() {
                     className="w-full p-6 md:p-8 flex items-center justify-between gap-4 group/header transition-all duration-300"
                   >
                     <div className="flex items-center gap-6 flex-1">
-                      {/* Icon */}
-                      <motion.div
-                        animate={{
-                          rotate: isExpanded ? 360 : 0,
-                          scale: isExpanded ? 1.1 : 1,
-                        }}
-                        transition={{ duration: 0.5 }}
-                        className={`text-5xl md:text-6xl flex-shrink-0 ${
-                          isExpanded ? "grayscale-0" : "grayscale opacity-60"
-                        }`}
-                      >
-                        {service.icon}
-                      </motion.div>
-
                       {/* Title & Tag */}
                       <div className="text-left flex-1">
                         <div className="flex items-center gap-3 mb-2">
                           <span
                             className={`text-xs tracking-[0.3em] font-semibold px-3 py-1 rounded-full ${
                               isExpanded
-                                ? `bg-gradient-to-r ${service.gradient} text-white`
+                                ? `bg-gradient-to-r ${process.gradient} text-white`
                                 : "bg-slate-800/50 text-slate-400"
                             } transition-all duration-300`}
                           >
-                            {service.tag}
+                            {process.tag}
                           </span>
-                          <span className="text-slate-600 font-mono text-sm">
+                          <span className="text-slate-400 font-mono text-sm">
                             {String(index + 1).padStart(2, "0")}
                           </span>
                         </div>
@@ -168,7 +158,7 @@ export default function Solutions() {
                             isExpanded ? "text-white" : "text-slate-300"
                           }`}
                         >
-                          {service.title}
+                          {process.title}
                         </h3>
                       </div>
                     </div>
@@ -200,8 +190,7 @@ export default function Solutions() {
                       </svg>
                     </motion.div>
                   </button>
-
-                  {/* Expanded Content */}
+            
                   <AnimatePresence>
                     {isExpanded && (
                       <motion.div
@@ -221,8 +210,8 @@ export default function Solutions() {
                               className="relative h-[300px] lg:h-[400px] rounded-xl overflow-hidden group/image"
                             >
                               <img
-                                src={service.image}
-                                alt={service.title}
+                                src={process.image}
+                                alt={process.title}
                                 className="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700"
                               />
                               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-60" />
@@ -237,17 +226,17 @@ export default function Solutions() {
                             >
                               {/* Description */}
                               <p className="text-gray-400 text-base leading-relaxed mb-6">
-                                {service.description}
+                                {process.description}
                               </p>
 
                               {/* Divider */}
                               <div
-                                className={`h-px w-full bg-gradient-to-r ${service.gradient} opacity-30 mb-6`}
+                                className={`h-px w-full bg-gradient-to-r ${process.gradient} opacity-30 mb-6`}
                               />
 
                               {/* Capabilities */}
-                              <div className="space-y-3">
-                                {service.items.map((item, idx) => (
+                              <div className="space-y-3 mb-6">
+                                {process.items.map((item, idx) => (
                                   <motion.div
                                     key={idx}
                                     initial={{ opacity: 0, x: -10 }}
@@ -260,7 +249,7 @@ export default function Solutions() {
                                   >
                                     <div className="mt-2 flex-shrink-0">
                                       <div
-                                        className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${service.gradient} group-hover/item:scale-150 transition-transform duration-300`}
+                                        className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${process.gradient} group-hover/item:scale-150 transition-transform duration-300`}
                                       />
                                     </div>
                                     <span className="text-gray-300 text-sm md:text-base leading-relaxed group-hover/item:text-white transition-colors duration-300">
@@ -268,6 +257,26 @@ export default function Solutions() {
                                     </span>
                                   </motion.div>
                                 ))}
+                              </div>
+
+                              {/* Metadata */}
+                              <div className="flex gap-12 pt-6 border-t border-slate-800/50">
+                                <div>
+                                  <div className="text-xs text-gray-200 mb-2 tracking-wider uppercase">
+                                    Highlight
+                                  </div>
+                                  <div className="text-sm font-light text-gray-400">
+                                    {process.highlight}
+                                  </div>
+                                </div>
+                                <div>
+                                  <div className="text-xs text-gray-200 mb-2 tracking-wider uppercase">
+                                    Enfoque
+                                  </div>
+                                  <div className="text-sm font-light text-gray-400">
+                                    {process.methodology}
+                                  </div>
+                                </div>
                               </div>
                             </motion.div>
                           </div>
@@ -280,7 +289,6 @@ export default function Solutions() {
             );
           })}
         </div>
-
       </div>
     </section>
   );

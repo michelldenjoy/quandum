@@ -3,42 +3,43 @@ import { Cpu, Cog, Code, Printer, Shield, Zap } from "lucide-react";
 
 const capabilities = [
   {
-    title: "Diseño y desarrollo electrónico",
-    subtitle: "Circuitos avanzados y sistemas embebidos",
+    title: "Ingeniería Electrónica Avanzada",
+    subtitle: "Diseño de PCBs multicapa, señal mixta, alta velocidad y cumplimiento DO-254",
     icon: Cpu,
-    code: "EDV",
+    code: "ELEC",
   },
   {
-    title: "Diseño mecánico y fabricación",
-    subtitle: "Ingeniería de precisión estructural",
-    icon: Cog,
-    code: "DMF",
-  },
-  {
-    title: "Software y control de sistemas",
-    subtitle: "Arquitecturas críticas de vuelo",
+    title: "Arquitecturas Embebidas y Control",
+    subtitle: "RTOS, buses aeronáuticos, gestión de sistemas críticos y software DO-178C",
     icon: Code,
-    code: "SCS",
+    code: "CTRL",
   },
   {
-    title: "Prototipado rápido",
-    subtitle: "CNC & Impresión 3D de alta precisión",
+    title: "Ingeniería Mecánica de Precisión",
+    subtitle: "Diseño estructural CAD, análisis mecánico y tolerancias aeroespaciales",
+    icon: Cog,
+    code: "MECH",
+  },
+  {
+    title: "Fabricación CNC y Prototipado",
+    subtitle: "Mecanizado de alta precisión, utillaje técnico y bancos de prueba",
     icon: Printer,
-    code: "PRT",
+    code: "CNC",
   },
   {
-    title: "Certificaciones aeroespaciales",
-    subtitle: "DO-178C, DO-254, DO-160",
-    icon: Shield,
-    code: "CRT",
-  },
-  {
-    title: "Manufactura aditiva avanzada",
-    subtitle: "FDM, LPBF, Carbon Fiber, Metal Printing",
+    title: "Manufactura Aditiva Industrial",
+    subtitle: "FDM técnico, impresión en fibra continua y metal (LPBF)",
     icon: Zap,
-    code: "MAA",
+    code: "AM",
+  },
+  {
+    title: "Ensayos y Cumplimiento Normativo",
+    subtitle: "DO-160, validación ambiental, EMI/EMC y trazabilidad de requisitos",
+    icon: Shield,
+    code: "QUAL",
   },
 ];
+
 
 export default function Capabilities() {
   const leftColumn = capabilities.slice(0, 3);

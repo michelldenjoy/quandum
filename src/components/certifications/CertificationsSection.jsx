@@ -14,7 +14,7 @@ const CertificationsSection = () => {
       standard: "Sistemas de Gestión de Calidad - Aeroespacial",
       pdfUrl: "/certificados/EN9100_2024.pdf",
       imgUrl: "/certificados/EN9100_cert.jpg",
-      sealUrl: "/certificados/eqa9100.png", // <-- sello pequeño
+      sealUrl: "/certificados/eqa9100.png", 
     },
     {
       title: "ISO 9001",
@@ -24,7 +24,7 @@ const CertificationsSection = () => {
       standard: "Sistemas de Gestión de Calidad - Requisitos",
       pdfUrl: "/certificados/ISO9001_2024.pdf",
       imgUrl: "/certificados/ISO9001_cert.jpg",
-      sealUrl: "/certificados/eqa9001.png", // <-- sello pequeño
+      sealUrl: "/certificados/eqa9001.png",
     },
   ];
 
@@ -43,8 +43,8 @@ const CertificationsSection = () => {
 
   return (
     <section className="bg-white py-20">
-      <div className="max-w-6xl mt-16 mx-auto px-4">
-        {/* TITULOS PRINCIPALES */}
+      <div className="max-w-6xl mt-16 mx-auto px-6">
+        {/* TITULOS */}
         <div className="mb-16">
           <div className="flex items-center gap-4 mb-6">
             <span className="text-sm tracking-[0.3em] text-gray-500 font-medium uppercase">
@@ -65,7 +65,7 @@ const CertificationsSection = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-1 bg-gray-50 lg:p-10 border border-gray-100 rounded-sm flex flex-col justify-between"
+            className="lg:col-span-1 bg-gray-50 py-4 px-4 lg:p-10 border border-gray-100 rounded-sm flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center mb-8 text-brand-blue">
@@ -104,7 +104,7 @@ const CertificationsSection = () => {
                 variants={itemVariants}
                 className="group relative p-8 border border-gray-200 hover:border-brand-blue transition-all duration-500 rounded-sm flex flex-col bg-white overflow-hidden"
               >
-                {/* Icono de fondo decorativo */}
+                
                 <FileBadge
                   className="absolute -right-6 -bottom-6 text-gray-50 group-hover:text-blue-50/50 transition-colors duration-500"
                   size={140}
@@ -119,15 +119,13 @@ const CertificationsSection = () => {
                 <img
                   src={cert.sealUrl}
                   alt={`Sello ${cert.title}`}
-                  className="absolute top-6 right-6 w-16 h-16 object-contain opacity-80 group-hover:opacity-90 transition-opacity duration-500 drop-shadow-sm"
+                  className="absolute top-6 right-6 w-20 h-20 object-contain opacity-80 group-hover:opacity-90 transition-opacity duration-500 drop-shadow-sm"
                 />
 
                 <div className="relative z-10 flex-grow">
                   <div className="bg-gray-100 w-12 h-12 flex items-center justify-center rounded-sm mb-6 group-hover:bg-brand-blue group-hover:text-white transition-colors duration-500">
                     <Award size={22} />
                   </div>
-
-                  {/* El título tiene pr-20 para no solaparse con el sello */}
                   <h4 className="text-3xl font-bold text-black mb-1 pr-20">
                     {cert.title}
                   </h4>
@@ -139,7 +137,6 @@ const CertificationsSection = () => {
                   </p>
                 </div>
 
-                {/* Footer del card con botones */}
                 <div className="relative z-10 mt-auto">
                   <div className="pt-6 border-t border-gray-100 mb-6 text-[11px] text-gray-400 uppercase tracking-tighter">
                     {cert.standard}
@@ -171,5 +168,4 @@ const CertificationsSection = () => {
     </section>
   );
 };
-
 export default CertificationsSection;
