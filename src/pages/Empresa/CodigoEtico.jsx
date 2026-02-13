@@ -1,7 +1,7 @@
 import ODSSection from "../../components/etico/ODSSection";
 import HeroVideo from "../../components/about/HeroVideo";
 import Documentos from "../../components/etico/Documentos";
-import Divider from "../../components/Divider";
+
 
 export default function CodigoEtico() {
   return (
