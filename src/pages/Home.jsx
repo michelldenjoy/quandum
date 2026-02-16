@@ -7,20 +7,27 @@ import Solutions from "../components/home/Solutions";
 import Solutions2 from "../components/home/Solutions2";
 import Solutions3 from "../components/home/Solutions3";
 
+import IntroSection from "../components/home/IntroSection";
+
+
 
 export default function Home() {
   return (
     <section>
        <Hero  />
-       
-       
-       <SectorsSection />
-       <Solutions2 />
+       <IntroSection />
        <Solutions />
-       <Solutions3 />
        
 
-       {/* <OurWorkingWay /> */}
+
+
+
+
+
+      
+       
+
+      
 
 
       

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from "motion/react";
 import { products } from "../products/products"; 
-import { delay } from 'motion';
+
 
 const Projection = () => {
 
@@ -100,7 +100,7 @@ const Projection = () => {
                     {/* arriba */}
                     <div>
                       <div className="mb-3">
-                        <span className="text-sm font-semibold text-blue-400 tracking-wider uppercase">
+                        <span className="text-sm font-semibold text-brand-pink tracking-wider uppercase">
                           {product.subtitle}
                         </span>
                       </div>
@@ -118,13 +118,13 @@ const Projection = () => {
                         {product.certifications.map((cert, idx) => (
                           <span
                             key={idx}
-                            className="px-3 py-1 bg-blue-600/80 text-white text-xs font-medium rounded"
+                            className="px-3 py-1 bg-brand-blue text-white text-xs font-medium rounded"
                           >
                             {cert}
                           </span>
                         ))}
                       </div>
-                      <div className="flex items-center text-blue-300 font-semibold">
+                      <div className="flex items-center font-semibold">
                         <span className="mr-2">Ver más detalles</span>
                         <svg
                           className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-2"
@@ -147,29 +147,6 @@ const Projection = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* badge */}
-        {/* <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="mt-20 pt-12 border-t border-blue-900/50"
-        >
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-blue-400 mb-2">100%</div>
-              <div className="text-blue-200">Certificación Aeronáutica</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-blue-400 mb-2">24/7</div>
-              <div className="text-blue-200">Soporte Técnico</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-blue-400 mb-2">+20</div>
-              <div className="text-blue-200">Años de Experiencia</div>
-            </div>
-          </div>
-        </motion.div> */}
       </div>
 
       

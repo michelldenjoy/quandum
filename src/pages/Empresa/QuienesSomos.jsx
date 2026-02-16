@@ -34,7 +34,7 @@ export default function QuienesSomos() {
 
     
 
-      <AboutFeatures />
+      {/* <AboutFeatures /> */}
 
       <FilosofiaTrayectoria />
       <InfraStrip />

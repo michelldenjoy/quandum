@@ -82,12 +82,12 @@ export const products = [
       id: 7,
       title: "Hose Exchange & Inspection System",
       subtitle: "Sistema de inspección inteligente para reabastecimiento en vuelo",
-      hero: "/products/heis.webp",
+      hero: "/products/heis2.webp",
       gallery: [
-        "/products/heis.webp",
-        "/products/ifhi.gif",
+        "/products/heis3.webp",
+        "/products/heis2.webp",
       ],
-      image: "/products/heis.webp",
+      image: "/products/heis2.webp",
       description:
       "Unidad avanzada de inspección para mangueras de reabastecimiento en vuelo, diseñada para detectar de forma temprana defectos y degradaciones en la superficie de la manguera durante operaciones críticas. El sistema integra un conjunto distribuido de cámaras de alta resolución alrededor de la manguera, junto con iluminación de alta potencia, permitiendo una monitorización continua y precisa en tiempo real. Dispone de seis cámaras de alta resolución sincronizadas, fuentes de iluminación superiores a 1 kW y un sistema de seguimiento de manguera que garantiza la correcta adquisición de imágenes en cualquier condición operativa. La unidad incorpora procesamiento avanzado de imagen, compresión de vídeo H.265 y almacenamiento local, así como algoritmos de detección de fallos basados en inteligencia artificial. Esta arquitectura permite mejorar significativamente la seguridad, la fiabilidad operativa y el mantenimiento predictivo de los sistemas de reabastecimiento en vuelo. ",      certifications: ["DO-178 DAL C", "MIL-STD-883"],
     },
