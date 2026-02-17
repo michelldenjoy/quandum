@@ -88,36 +88,55 @@ export default function Solutions() {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
 
+  // Definimos constantes de tiempo para ajustar la armonía fácilmente
+  const LINE_DURATION = 1.5;
+  const TITLE_DELAY = 0.8; // Empieza a aparecer a mitad del camino de la línea
+
   return (
     <section className="relative overflow-x-hidden bg-slate-950">
       {/* linea de tiempo con titulo */}
       <div className="relative max-w-7xl md:mt-20 mx-auto px-4 sm:px-6 flex flex-col items-center">
-        {/* El conector vertical */}
+        {/* 1. La Línea: Primero en aparecer */}
         <motion.div
-          initial={{ height: 0 }}
-          whileInView={{ height: 250 }} // largo de la línea
+          initial={{ height: 0, opacity: 0 }}
+          whileInView={{ height: 250, opacity: 1 }} // Reducido un poco para mejor balance visual
           viewport={{ once: true }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="w-px bg-gradient-to-b from-blue-500/50 via-blue-400 to-transparent"
+          transition={{
+            duration: LINE_DURATION,
+            ease: [0.45, 0, 0.55, 1], // Ease mas orgánico
+          }}
+          className="w-px bg-gradient-to-b from-brand-blue via-blue-400 to-transparent"
         />
 
-        <motion.h2
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[clamp(1.6rem,3.5vw,3.2rem)] text-center font-light text-white tracking-[0.12em] leading-tight uppercase"
-        >
-          Áreas
-          <br />
-          <span>Tecnológicas</span>
-          <p className="text-sm text-slate-400 tracking-[0.25em] uppercase mt-10 mb-16">
+        {/* 2. El Título y Párrafo: Aparecen después de la línea */}
+        <div className="flex flex-col items-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 1,
+              delay: TITLE_DELAY, // Delay orquestado
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            className="text-[clamp(1.6rem,3.5vw,3.2rem)] mt-8 text-center font-light text-white tracking-[0.12em] leading-tight uppercase"
+          >
+            Áreas
+            <br />
+            <span >Tecnológicas</span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, delay: TITLE_DELAY + 0.3 }} // Aparece sutilmente después del título
+            className="max-w-2xl text-center text-sm text-slate-400 tracking-[0.15em] uppercase mt-10 mb-16 px-4 leading-relaxed"
+          >
             Nuestra presencia se extiende a sectores clave que impulsan el
-            desarrollo tecnológico y la infraestructura del futuro. Combinamos
-            conocimiento técnico, innovación y compromiso operativo para generar
-            impacto en industrias de alto valor estratégico.
-          </p>
-        </motion.h2>
+            desarrollo tecnológico y la infraestructura del futuro.
+          </motion.p>
+        </div>
       </div>
 
       {/* Textura scan-line — sello industrial */}
@@ -150,10 +169,14 @@ export default function Solutions() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                // Escalamos el delay de los items para que sigan la secuencia del título principal
+                transition={{
+                  duration: 0.6,
+                  delay: TITLE_DELAY + 0.5 + index * 0.1,
+                }}
               >
                 {/* ── FILA TÍTULO ── */}
                 <button
@@ -202,9 +225,9 @@ export default function Solutions() {
                     </span>
 
                     {/* Título */}
-                    
+
                     <h3
-                      className={`text-[clamp(1.2rem,3vw,3.5rem)] font-light tracking-[0.1em] transition-all duration-700 ${
+                      className={`text-[clamp(1.2rem,3vw,3.5rem)] font-light tracking-[0.1em] transition-all duration-500 ${
                         isExpanded
                           ? "text-white translate-x-4" // Se mueve un poco a la derecha al abrir
                           : "text-slate-500 group-hover:text-slate-200"
@@ -213,7 +236,6 @@ export default function Solutions() {
                       {service.title}
                     </h3>
 
-                   
                     <p
                       className={`hidden xl:block text-xs text-slate-600 max-w-[14rem] text-right leading-relaxed transition-all duration-500 flex-shrink-0 ${
                         isExpanded
@@ -345,7 +367,6 @@ export default function Solutions() {
                               transition={{ duration: 0.5, delay: 0.25 }}
                               className="lg:col-span-8 lg:pl-12"
                             >
-                             
                               <div className="flex items-center gap-4 mb-8">
                                 <span className="text-[0.55rem] tracking-[0.35em] text-slate-600 uppercase font-mono">
                                   Capacidades
