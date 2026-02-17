@@ -15,7 +15,7 @@ const Projection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-sky-950 py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-black/20 via-slate-900 to-black/20 py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
     
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPGRlZnM+CiAgICAgICAgPHBhdHRlcm5faWQ9InBhcnRpY2xlcyIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIj4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iNSIgY3k9IjUiIHI9IjEiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjIiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iMjUiIGN5PSIxNSIgcj0iMSIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuMyIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIzNSIgY3k9IjM1IiByPSIxIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC4xIi8+CiAgICAgICAgPC9wYXR0ZXJuPgogICAgPC9kZWZzPgogICAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXJ0aWNsZXMpIiAvPgo8L3N2Zz4=')] opacity-30 animate-twinkle"></div>

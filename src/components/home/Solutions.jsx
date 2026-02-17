@@ -1,48 +1,83 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
-import StarfieldNebula from "../3d/StarfieldNebula";
 
 const services = [
   {
+    number: "01",
     title: "AEROESPACIAL",
-    tag: "DO-178  DO-254",
+    tag: "DO-178  ·  DO-254",
     image: "/aeroespacial.jpg",
     description: "Seguridad, certificación y sistemas críticos de vuelo.",
     items: [
-      "Sistemas de Aeronavegabilidad (Airworthy Systems): Desarrollo integral desde la especificación hasta la certificación bajo estándares RTCA/DO-178 y DO-254.",
-      "Computación Embarcada: Diseño de ordenadores de abordo Full Custom (Mecánica, Electrónica y SW) adaptados a plataformas específicas.",
-      "Mantenimiento y Retrofit (A/C Maintenance): Actualización de sistemas existentes, extensión de vida útil de aeronaves y gestión de documentación técnica de aeronavegabilidad.",
-      "Ingeniería Inversa: Soluciones avanzadas para sistemas obsoletos, garantizando la continuidad operativa de la flota.",
+      {
+        label: "Aeronavegabilidad",
+        body: "Desarrollo integral desde la especificación hasta la certificación bajo estándares RTCA/DO-178 y DO-254.",
+      },
+      {
+        label: "Computación Embarcada",
+        body: "Diseño de ordenadores de abordo Full Custom (Mecánica, Electrónica y SW) adaptados a plataformas específicas.",
+      },
+      {
+        label: "Mantenimiento & Retrofit",
+        body: "Actualización de sistemas existentes, extensión de vida útil de aeronaves y gestión de documentación técnica.",
+      },
+      {
+        label: "Ingeniería Inversa",
+        body: "Soluciones avanzadas para sistemas obsoletos, garantizando la continuidad operativa de la flota.",
+      },
     ],
-    gradient: "from-brand-blue/50 to-brand-blue/40",
   },
   {
+    number: "02",
     title: "DEFENSA",
-    tag: "MIL-STD-704 MIL-HBK-204",
+    tag: "MIL-STD-704  ·  MIL-HBK-204",
     image: "/defensa.jpg",
     description:
       "Tecnología táctica, precisión y cumplimiento de normativas militares.",
     items: [
-      "Sistemas Optrónicos Avanzados: Diseño de cámaras y algoritmos de visión con respuesta en múltiples longitudes de onda (VIS, NIR, SWIR y Térmico).",
-      "Tecnología Láser: Desarrollo de iluminadores y designadores láser (CW o PW) para aplicaciones de misión.",
-      "Protocolos de Misión y Comunicaciones: Sistemas de vídeo y protocolos de comunicación robustos para entornos de alta interferencia.",
-      "Cumplimiento de Estándares Militares: Equipos validados bajo MIL-STD-704 y MIL-HBK-204, garantizando resistencia en condiciones extremas (EMI/EMC y ambiente).",
+      {
+        label: "Sistemas Optrónicos",
+        body: "Diseño de cámaras y algoritmos de visión con respuesta en múltiples longitudes de onda (VIS, NIR, SWIR y Térmico).",
+      },
+      {
+        label: "Tecnología Láser",
+        body: "Desarrollo de iluminadores y designadores láser (CW o PW) para aplicaciones de misión crítica.",
+      },
+      {
+        label: "Comunicaciones de Misión",
+        body: "Sistemas de vídeo y protocolos robustos para entornos de alta interferencia electromagnética.",
+      },
+      {
+        label: "Estándares Militares",
+        body: "Equipos validados bajo MIL-STD-704 y MIL-HBK-204 para condiciones extremas de EMI/EMC y ambiente.",
+      },
     ],
-    gradient: "from-brand-blue/50 to-brand-blue/40",
   },
   {
+    number: "03",
     title: "INDUSTRIAL",
     tag: "MANUFACTURA AVANZADA",
     image: "/industrial.jpg",
     description:
       "Capacidad productiva, prototipado rápido y soluciones a medida.",
     items: [
-      "Fabricación Aditiva y Sinterizado: Especialistas en sinterizado de metal en 3D y mecanizado de alta precisión para componentes complejos.",
-      "Diseño de Envolventes Mecánicas: Desarrollo de housings y estructuras robustas para protección de electrónica crítica.",
-      "Diseño y Fabricación de Cableados (Harness): Manufactura de mazos de cables específicos para sectores de alta exigencia técnica.",
-      "Bancos de Ensayo (Test Branchs): Diseño y construcción de entornos de prueba personalizados para la validación de sistemas industriales.",
+      {
+        label: "Fabricación Aditiva",
+        body: "Especialistas en sinterizado de metal en 3D y mecanizado de alta precisión para componentes complejos.",
+      },
+      {
+        label: "Envolventes Mecánicas",
+        body: "Desarrollo de housings y estructuras robustas para protección de electrónica crítica en entornos exigentes.",
+      },
+      {
+        label: "Harness & Cableado",
+        body: "Manufactura de mazos de cables específicos para sectores de alta exigencia técnica y fiabilidad.",
+      },
+      {
+        label: "Bancos de Ensayo",
+        body: "Diseño y construcción de entornos de prueba personalizados para la validación de sistemas industriales.",
+      },
     ],
-    gradient: "from-brand-blue/50 to-brand-blue/40",
   },
 ];
 
@@ -54,206 +89,343 @@ export default function Solutions() {
   };
 
   return (
-    <section className="relative py-16 sm:py-24 md:py-32 px-4 sm:px-6 overflow-hidden">
-      <StarfieldNebula />
-
-      <div className="relative z-10 max-w-7xl mx-auto">
+    <section className="relative overflow-x-hidden bg-slate-950">
+      {/* linea de tiempo con titulo */}
+      <div className="relative max-w-7xl md:mt-20 mx-auto px-4 sm:px-6 flex flex-col items-center">
+        {/* El conector vertical */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ height: 0 }}
+          whileInView={{ height: 250 }} // largo de la línea
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-12 sm:mb-16 max-w-3xl px-2 sm:px-0"
-        >
-          <span className="block text-xs sm:text-sm tracking-[0.25em] sm:tracking-[0.30em] font-medium text-slate-300 uppercase mb-4 sm:mb-6">
-            Sectores que operamos
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extralight text-white tracking-tight leading-[1.1]">
-            Ingeniería de
-            <br />
-            <span className="font-semibold">Sistemas Críticos</span>
-          </h2>
-          <p className="mt-4 sm:mt-6 text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed">
-            Desde el diseño conceptual hasta la certificación final de
-            aeronavegabilidad. Transformamos especificaciones complejas en
-            soluciones tecnológicas de alto rendimiento bajo los estándares más
-            rigurosos de la industria aeroespacial y de defensa.
-          </p>
-        </motion.div>
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="w-px bg-gradient-to-b from-blue-500/50 via-blue-400 to-transparent"
+        />
 
-       
-        <div className="space-y-3 sm:space-y-4">
+        <motion.h2
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          className="text-[clamp(1.6rem,3.5vw,3.2rem)] text-center font-light text-white tracking-[0.12em] leading-tight uppercase"
+        >
+          Áreas
+          <br />
+          <span>Tecnológicas</span>
+          <p className="text-sm text-slate-400 tracking-[0.25em] uppercase mt-10 mb-16">
+            Nuestra presencia se extiende a sectores clave que impulsan el
+            desarrollo tecnológico y la infraestructura del futuro. Combinamos
+            conocimiento técnico, innovación y compromiso operativo para generar
+            impacto en industrias de alto valor estratégico.
+          </p>
+        </motion.h2>
+      </div>
+
+      {/* Textura scan-line — sello industrial */}
+      <div
+        className="absolute inset-0 pointer-events-none z-0 opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,1) 2px, rgba(255,255,255,1) 3px)",
+          backgroundSize: "100% 6px",
+        }}
+      />
+
+      {/* Grid rejilla */}
+      <div
+        className="absolute inset-0 pointer-events-none z-0 opacity-[0.018]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      <div className="relative z-10">
+        {/* ── SECTORES ─────────────────────────────────────────── */}
+        <div>
           {services.map((service, index) => {
             const isExpanded = expandedIndex === index;
+            const isOtherOpen = expandedIndex !== null && !isExpanded;
 
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative group"
+                transition={{ duration: 0.5, delay: index * 0.08 }}
               >
-                {/* Glow cuando se expande */}
-                <AnimatePresence>
-                  {isExpanded && (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className={`absolute -inset-1 bg-gradient-to-r ${service.gradient} opacity-20 blur-xl rounded-xl sm:rounded-2xl`}
-                    />
-                  )}
-                </AnimatePresence>
-
-                {/* Main Card */}
-                <div
-                  className={`relative bg-slate-900/60 backdrop-blur-md border rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-500 ${
-                    isExpanded
-                      ? "border-white/20 shadow-2xl"
-                      : "border-slate-800/50 hover:border-slate-700/70"
-                  }`}
+                {/* ── FILA TÍTULO ── */}
+                <button
+                  onClick={() => toggleAccordion(index)}
+                  className="relative w-full group overflow-hidden"
                 >
-                  {/* Header*/}
-                  <button
-                    onClick={() => toggleAccordion(index)}
-                    className="w-full p-4 sm:p-6 md:p-8 flex items-center justify-between gap-3 sm:gap-4 group/header transition-all duration-300"
-                  >
-                    <div className="flex items-center gap-3 sm:gap-4 md:gap-6 flex-1 min-w-0">
-                     
-                      <div className="text-left flex-1 min-w-0">
-                        <div className="flex items-center gap-2 sm:gap-3 mb-1.5 sm:mb-2 flex-wrap">
-                          <span
-                            className={`text-[0.65rem] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] font-semibold px-2 sm:px-3 py-0.5 sm:py-1 rounded-full whitespace-nowrap ${
-                              isExpanded
-                                ? `bg-gradient-to-r ${service.gradient} text-white`
-                                : "bg-slate-800/50 text-slate-400"
-                            } transition-all duration-300`}
-                          >
-                            {service.tag}
-                          </span>
-                          <span className="text-slate-600 font-mono text-xs sm:text-sm">
-                            {String(index + 1).padStart(2, "0")}
-                          </span>
-                        </div>
-                        <h3
-                          className={`text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em] transition-colors duration-300 ${
-                            isExpanded ? "text-brand-pink/80" : "text-white"
-                          }`}
-                        >
-                          {service.title}
-                        </h3>
-                      </div>
-                    </div>
+                  {/* Fondo hover*/}
+                  <motion.div
+                    className="absolute inset-0 bg-white/[0.025] origin-left"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  />
+
+                  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 flex items-center gap-4 sm:gap-10">
+                    {/* Acento de color izquierdo */}
+                    <motion.div
+                      animate={{
+                        scaleY: isExpanded ? 1 : 0,
+                        opacity: isExpanded ? 1 : 0,
+                      }}
+                      transition={{ duration: 0.4 }}
+                      className="absolute left-0 top-0 bottom-0 w-[3px] bg-blue-400/60 origin-top"
+                    />
+
+                    {/* Número */}
+                    <span
+                      className={`font-mono text-[0.6rem] tracking-[0.25em] flex-shrink-0 w-5 sm:w-7 transition-colors duration-300 ${
+                        isExpanded
+                          ? "text-blue-400/60"
+                          : "text-slate-700 group-hover:text-slate-500"
+                      }`}
+                    >
+                      {service.number}
+                    </span>
+
+                    {/* Tag*/}
+                    <span
+                      className={`hidden lg:block text-[0.55rem] tracking-[0.2em] font-mono uppercase flex-shrink-0 w-52 transition-colors duration-300 ${
+                        isExpanded
+                          ? "text-blue-400/40"
+                          : "text-slate-700 group-hover:text-slate-500"
+                      }`}
+                    >
+                      {service.tag}
+                    </span>
+
+                    {/* Título */}
+                    
+                    <h3
+                      className={`text-[clamp(1.2rem,3vw,3.5rem)] font-light tracking-[0.1em] transition-all duration-700 ${
+                        isExpanded
+                          ? "text-white translate-x-4" // Se mueve un poco a la derecha al abrir
+                          : "text-slate-500 group-hover:text-slate-200"
+                      }`}
+                    >
+                      {service.title}
+                    </h3>
 
                    
-                    <motion.div
-                      animate={{ rotate: isExpanded ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
-                      className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                    <p
+                      className={`hidden xl:block text-xs text-slate-600 max-w-[14rem] text-right leading-relaxed transition-all duration-500 flex-shrink-0 ${
                         isExpanded
-                          ? `border-white/30 bg-white/10`
-                          : "border-slate-700 bg-slate-800/30 group-hover/header:border-slate-600"
+                          ? "opacity-0"
+                          : "opacity-0 group-hover:opacity-100"
+                      }`}
+                    >
+                      {service.description}
+                    </p>
+
+                    {/* Indicador */}
+                    <motion.div
+                      animate={{ rotate: isExpanded ? 45 : 0 }}
+                      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                      className={`flex-shrink-0 w-7 h-7 sm:w-9 sm:h-9 rounded-full border flex items-center justify-center transition-all duration-400 ${
+                        isExpanded
+                          ? "border-white/30 bg-white/10"
+                          : "border-slate-800 group-hover:border-slate-600"
                       }`}
                     >
                       <svg
-                        className={`w-5 h-5 sm:w-6 sm:h-6 transition-colors duration-300 ${
-                          isExpanded ? "text-white" : "text-slate-400"
+                        className={`w-3.5 h-3.5 transition-colors duration-300 ${
+                          isExpanded
+                            ? "text-white"
+                            : "text-slate-600 group-hover:text-slate-300"
                         }`}
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
+                        strokeWidth={1.5}
                       >
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
+                          d="M12 4v16m8-8H4"
                         />
                       </svg>
                     </motion.div>
-                  </button>
+                  </div>
+                </button>
 
-                  {/* contenido expandido */}
-                  <AnimatePresence>
-                    {isExpanded && (
+                {/* ── PANEL EXPANDIDO — con imagen de fondo ── */}
+                <AnimatePresence>
+                  {isExpanded && (
+                    <motion.div
+                      initial={{ height: 0 }}
+                      animate={{ height: "auto" }}
+                      exit={{ height: 0 }}
+                      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                      className="overflow-hidden"
+                    >
                       <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.4, ease: "easeInOut" }}
-                        className="overflow-hidden"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="relative min-h-[520px] sm:min-h-[580px] lg:min-h-[640px]"
                       >
-                        <div className="border-t border-slate-800/50">
-                          <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 p-4 sm:p-5 md:p-6 lg:p-8">
-                            {/* izquierda: Imagen */}
+                        {/* Imagen */}
+                        <div className="absolute inset-0 z-0">
+                          <motion.img
+                            src={service.image}
+                            alt={service.title}
+                            initial={{ scale: 1.06 }}
+                            animate={{ scale: 1 }}
+                            transition={{
+                              duration: 1.2,
+                              ease: [0.16, 1, 0.3, 1],
+                            }}
+                            className="w-full h-full object-cover"
+                          />
+                          {/* Capas de oscurecimiento compuestas */}
+                          <div className="absolute inset-0 bg-slate-950/70" />
+                          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/20 via-slate-900/10 to-slate-900/10" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 via-transparent to-slate-900/10" />
+                          {/* Scan-lines sobre la imagen */}
+                          <div
+                            className="absolute inset-0 opacity-[0.04]"
+                            style={{
+                              backgroundImage:
+                                "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,1) 2px, rgba(255,255,255,1) 3px)",
+                              backgroundSize: "100% 6px",
+                            }}
+                          />
+                        </div>
+
+                        {/* Contenido sobre la imagen */}
+                        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+                          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0">
+                            {/* ── Columna izquierda ── */}
                             <motion.div
-                              initial={{ opacity: 0, x: -20 }}
+                              initial={{ opacity: 0, x: -24 }}
                               animate={{ opacity: 1, x: 0 }}
-                              transition={{ duration: 0.5, delay: 0.1 }}
-                              className="relative h-[220px] sm:h-[280px] md:h-[320px] lg:h-[400px] rounded-lg sm:rounded-xl overflow-hidden group/image"
+                              transition={{ duration: 0.6, delay: 0.15 }}
+                              className="lg:col-span-4 lg:border-r lg:border-white/8 lg:pr-12 flex flex-col justify-between gap-10"
                             >
-                              <img
-                                src={service.image}
-                                alt={service.title}
-                                className="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700"
-                              />
-                              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-60" />
+                              {/* Número grande  */}
+                              <div>
+                                <span className="font-mono text-[5rem] sm:text-[7rem] font-extralight text-white/[0.07] leading-none block -ml-1 -mt-3 select-none">
+                                  {service.number}
+                                </span>
+
+                                <div className="-mt-4 sm:-mt-6">
+                                  <span className="text-[0.55rem] tracking-[0.35em] text-blue-400/60 uppercase font-mono block mb-3">
+                                    {service.tag}
+                                  </span>
+                                  <p className="text-base sm:text-lg text-slate-200 font-light leading-relaxed">
+                                    {service.description}
+                                  </p>
+                                </div>
+                              </div>
+
+                              {/* Coordenadas  */}
+                              <div className="hidden lg:block">
+                                <div className="border-t border-white/8 pt-6">
+                                  <p className="font-mono text-[0.55rem] tracking-[0.2em] text-slate-700 uppercase leading-relaxed">
+                                    Sector {service.number} / {services.length}
+                                    <br />
+                                    {service.tag}
+                                  </p>
+                                </div>
+                              </div>
                             </motion.div>
 
-                            {/* derecha: Contenido */}
+                            {/* ── Columna derecha ── */}
                             <motion.div
-                              initial={{ opacity: 0, x: 20 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ duration: 0.5, delay: 0.2 }}
-                              className="flex flex-col justify-center"
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              transition={{ duration: 0.5, delay: 0.25 }}
+                              className="lg:col-span-8 lg:pl-12"
                             >
-                              
-                              <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
-                                {service.description}
-                              </p>
+                             
+                              <div className="flex items-center gap-4 mb-8">
+                                <span className="text-[0.55rem] tracking-[0.35em] text-slate-600 uppercase font-mono">
+                                  Capacidades
+                                </span>
+                                <div className="flex-1 h-px bg-white/8" />
+                              </div>
 
-                              
-                              <div
-                                className={`h-px w-full bg-gradient-to-r ${service.gradient} opacity-30 mb-4 sm:mb-6`}
-                              />
-
-                              {/* Caracteristicas (items) */}
-                              <div className="space-y-2.5 sm:space-y-3">
+                              {/* Items — 2 columnas en desktop, 1 en móvil */}
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
                                 {service.items.map((item, idx) => (
                                   <motion.div
                                     key={idx}
-                                    initial={{ opacity: 0, x: -10 }}
-                                    animate={{ opacity: 1, x: 0 }}
+                                    initial={{ opacity: 0, y: 16 }}
+                                    animate={{ opacity: 1, y: 0 }}
                                     transition={{
-                                      duration: 0.3,
-                                      delay: 0.3 + idx * 0.05,
+                                      duration: 0.45,
+                                      delay: 0.3 + idx * 0.08,
                                     }}
-                                    className="flex items-start gap-2.5 sm:gap-3 group/item"
+                                    className={`group/item relative p-5 sm:p-6 border-white/[0.06] ${
+                                      // Bordes en grid 2x2
+                                      idx % 2 === 0 ? "sm:border-r" : ""
+                                    } ${idx < 2 ? "border-b" : ""}`}
                                   >
-                                    <div className="mt-1.5 sm:mt-2 flex-shrink-0">
-                                      <div
-                                        className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${service.gradient} group-hover/item:scale-150 transition-transform duration-300`}
-                                      />
-                                    </div>
-                                    <span className="text-gray-300 text-xs sm:text-sm md:text-base leading-relaxed group-hover/item:text-white transition-colors duration-300">
-                                      {item}
+                                    {/* Línea en hover */}
+                                    <motion.div
+                                      className="absolute top-0 left-0 right-0 h-px bg-blue-400/40 origin-left"
+                                      initial={{ scaleX: 0 }}
+                                      whileHover={{ scaleX: 1 }}
+                                      transition={{ duration: 0.35 }}
+                                    />
+
+                                    <span className="font-mono text-[0.5rem] text-slate-700 tracking-[0.15em] block mb-3">
+                                      {String(idx + 1).padStart(2, "0")}
                                     </span>
+                                    <h4 className="text-xs sm:text-sm font-semibold text-white/80 tracking-[0.08em] uppercase mb-2 group-hover/item:text-white transition-colors duration-300">
+                                      {item.label}
+                                    </h4>
+                                    <p className="text-xs text-slate-500 leading-relaxed group-hover/item:text-slate-300 transition-colors duration-300">
+                                      {item.body}
+                                    </p>
                                   </motion.div>
                                 ))}
                               </div>
                             </motion.div>
                           </div>
                         </div>
+
+                        {/* Línea azul en borde izquierdo  */}
+                        <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-blue-400/60 via-blue-400/20 to-transparent" />
                       </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                {/* Divisor */}
+                <div className="h-px bg-slate-800/60" />
               </motion.div>
             );
           })}
+        </div>
+
+        {/* ── PIE DE SECCIÓN ── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 pb-16 sm:pb-24 flex items-center justify-between">
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            style={{ transformOrigin: "left" }}
+            className="h-px w-24 sm:w-40 bg-gradient-to-r from-white/10 to-transparent"
+          />
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-[0.55rem] tracking-[0.35em] text-slate-700 uppercase font-mono"
+          >
+            Certificación · Precisión · Confianza
+          </motion.p>
         </div>
       </div>
     </section>

@@ -175,7 +175,7 @@ import { motion } from "motion/react";
 
 export default function FilosofiaTrayectoria() {
   return (
-    <section className="relative py-24">
+    <section className="relative py-24 bg-gradient-to-b from-black/10 via-slate-900 to-black/10">
       <div className="max-w-7xl my-4 mx-auto px-6 sm:px-10 md:px-16 lg:px-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           
