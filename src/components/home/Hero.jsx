@@ -29,7 +29,7 @@ export default function Hero() {
   const [muted, setMuted] = useState(true);
 
   return (
-    <section className="relative w-full h-[95vh] min-h-[640px] overflow-hidden">
+    <section className="relative w-full h-[98vh] min-h-[640px] overflow-hidden">
       <video
         src="/herovideo.mp4"
         autoPlay

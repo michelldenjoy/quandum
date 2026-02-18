@@ -28,7 +28,7 @@ const hotspots = [
     x: "80%",
     y: "86%",
     image: "/products/encoder.webp",
-    align: "top",
+    align: "left",
   },
   {
     id: 4,
