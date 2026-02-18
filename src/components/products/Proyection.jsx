@@ -40,10 +40,7 @@ const Projection = () => {
               <span className="font-semibold">Proyectos</span>
             </h2>
             <p className="text-gray-400 mt-8 mb-20 text-base md:text-lg leading-relaxed max-w-4xl">
-              Nos enfocamos en desarrollar proyectos que fortalecen la
-              seguridad, optimizan la eficiencia y fomentan la innovación en
-              cada solución, para llevar la ingeniería especializada en
-              vuelo más allá de los límites actuales
+            A continuación, presentamos una selección de algunos de nuestros proyectos más destacados, que reflejan nuestro compromiso con la excelencia técnica y la innovación.
             </p>
           </div>
         </motion.div>

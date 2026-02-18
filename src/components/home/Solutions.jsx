@@ -1,5 +1,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
+import StarfielNebula from "../3d/StarfieldNebula";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -88,25 +90,49 @@ export default function Solutions() {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
 
-  // Definimos constantes de tiempo para ajustar la armonía fácilmente
   const LINE_DURATION = 1.5;
-  const TITLE_DELAY = 0.8; // Empieza a aparecer a mitad del camino de la línea
+  const TITLE_DELAY = 0.9; // Empieza a aparecer a mitad del camino de la línea
 
   return (
-    <section className="relative overflow-x-hidden bg-slate-950">
+    <section className="relative overflow-x-hidden  ">
       {/* linea de tiempo con titulo */}
-      <div className="relative max-w-7xl md:mt-20 mx-auto px-4 sm:px-6 flex flex-col items-center">
+      <StarfielNebula />
+      <div className="relative max-w-7xl md:mt-10 mx-auto px-4 sm:px-6 flex flex-col items-center">
         {/* 1. La Línea: Primero en aparecer */}
         <motion.div
           initial={{ height: 0, opacity: 0 }}
-          whileInView={{ height: 250, opacity: 1 }} // Reducido un poco para mejor balance visual
+          whileInView={{ height: 160, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{
-            duration: LINE_DURATION,
-            ease: [0.45, 0, 0.55, 1], // Ease mas orgánico
-          }}
-          className="w-px bg-gradient-to-b from-brand-blue via-blue-400 to-transparent"
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="w-px bg-gradient-to-b from-slate-800 via-slate-500 to-brand-blue"
+          style={{ originY: 0 }}
         />
+
+        {/* 2. El Nodo/Portal de Transición */}
+        <div className="relative flex flex-col items-center">
+          {/* Círculos concéntricos de fondo (Efecto Radar/Pulso) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+            className="absolute -top-2 w-12 h-12 bg-brand-blue/50 blur-xl rounded-full"
+          />
+          {/* El Punto de Anclaje */}
+          <motion.div
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{ delay: 1, type: "spring", stiffness: 200 }}
+            className="w-2 h-2 bg-brand-blue rounded-full z-10 shadow-[0_0_15px_rgba(59,130,246,0.8)]"
+          />
+          {/* Contenido del Enlace */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+            className="mt-8 flex flex-col items-center"
+          ></motion.div>
+        </div>
 
         {/* 2. El Título y Párrafo: Aparecen después de la línea */}
         <div className="flex flex-col items-center">
@@ -123,7 +149,7 @@ export default function Solutions() {
           >
             Áreas
             <br />
-            <span >Tecnológicas</span>
+            <span className="font-normal">Tecnológicas</span>
           </motion.h2>
 
           <motion.p
@@ -138,26 +164,6 @@ export default function Solutions() {
           </motion.p>
         </div>
       </div>
-
-      {/* Textura scan-line — sello industrial */}
-      <div
-        className="absolute inset-0 pointer-events-none z-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,1) 2px, rgba(255,255,255,1) 3px)",
-          backgroundSize: "100% 6px",
-        }}
-      />
-
-      {/* Grid rejilla */}
-      <div
-        className="absolute inset-0 pointer-events-none z-0 opacity-[0.018]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
-        }}
-      />
 
       <div className="relative z-10">
         {/* ── SECTORES ─────────────────────────────────────────── */}
@@ -229,7 +235,7 @@ export default function Solutions() {
                     <h3
                       className={`text-[clamp(1.2rem,3vw,3.5rem)] font-light tracking-[0.1em] transition-all duration-500 ${
                         isExpanded
-                          ? "text-white translate-x-4" // Se mueve un poco a la derecha al abrir
+                          ? "text-white translate-x-4"
                           : "text-slate-500 group-hover:text-slate-200"
                       }`}
                     >
@@ -311,15 +317,6 @@ export default function Solutions() {
                           <div className="absolute inset-0 bg-slate-950/70" />
                           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/20 via-slate-900/10 to-slate-900/10" />
                           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 via-transparent to-slate-900/10" />
-                          {/* Scan-lines sobre la imagen */}
-                          <div
-                            className="absolute inset-0 opacity-[0.04]"
-                            style={{
-                              backgroundImage:
-                                "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,1) 2px, rgba(255,255,255,1) 3px)",
-                              backgroundSize: "100% 6px",
-                            }}
-                          />
                         </div>
 
                         {/* Contenido sobre la imagen */}
@@ -427,28 +424,60 @@ export default function Solutions() {
             );
           })}
         </div>
-
-        {/* ── PIE DE SECCIÓN ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 pb-16 sm:pb-24 flex items-center justify-between">
-          <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            style={{ transformOrigin: "left" }}
-            className="h-px w-24 sm:w-40 bg-gradient-to-r from-white/10 to-transparent"
-          />
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-[0.55rem] tracking-[0.35em] text-slate-700 uppercase font-mono"
-          >
-            Certificación · Precisión · Confianza
-          </motion.p>
-        </div>
       </div>
+      {/* ── PIE DE SECCIÓN ── */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 pb-8 flex items-center justify-between">
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          style={{ transformOrigin: "left" }}
+          className="h-px w-12 sm:w-24 bg-gradient-to-r from-white/10 to-transparent"
+        />
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-[0.55rem] tracking-[0.35em] text-slate-700 uppercase font-mono"
+        >
+          Certificación · Precisión · Confianza
+        </motion.p>
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          style={{ transformOrigin: "right" }}
+          className="h-px w-12 sm:w-24 bg-gradient-to-l from-white/10 to-transparent"
+        />
+      </div>
+
+      {/* Línea de conexión final */}
+      {/* <div className="relative flex flex-col items-center pb-20">
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          whileInView={{ height: 180, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: LINE_DURATION, ease: "easeInOut" }}
+          className="w-px bg-gradient-to-b from-slate-800 via-slate-500 to-brand-blue"
+          style={{ originY: 0 }}
+        />
+                  <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: LINE_DURATION - 0.5, duration: 0.8 }}
+            className="mt-4 px-4 py-1 border mb-9 border-white/5 bg-slate-950/50 backdrop-blur-sm rounded-full"
+          >
+            <Link to="/proyectos/destacados">
+              <span className="text-[10px] tracking-[0.4em] text-slate-500 uppercase font-mono">
+                Explora algunos de nuestros Proyectos
+              </span>
+            </Link>
+          </motion.div>
+      </div> */}
     </section>
   );
 }

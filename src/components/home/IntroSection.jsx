@@ -7,7 +7,7 @@ const IntroSection = () => {
     <section className="relative w-full  lg:flex lg:flex-col lg:justify-end pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 overflow-hidden">
 
       {/* Fondo */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-slate-800 to-black/10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-slate-900 to-black pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(59,130,246,0.07),transparent)] pointer-events-none" />
 
       {/* Línea decorativa superior */}
@@ -48,7 +48,7 @@ const IntroSection = () => {
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="text-[clamp(2.8rem,7vw,7rem)] font-extralight md:mb-2 text-white tracking-tight leading-[1.0]"
           >
-            Ingeniería de Precisión
+            Quandum Aerospace
           </motion.h1>
         </div>
 
@@ -58,9 +58,9 @@ const IntroSection = () => {
             whileInView={{ y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[clamp(2.8rem,7vw,7rem)] font-semibold text-white tracking-tight leading-[1.0]"
+            className="text-[clamp(2.8rem,7vw,7rem)] mb-4 font-semibold text-white tracking-tight leading-[1.0]"
           >
-            Elevando Estándares
+            Ingeniería de Precisión
           </motion.h1>
         </div>
 
