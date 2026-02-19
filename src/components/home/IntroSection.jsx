@@ -7,7 +7,7 @@ const IntroSection = () => {
     <section className="relative w-full  lg:flex lg:flex-col lg:justify-end pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 overflow-hidden">
 
       {/* Fondo */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-slate-900 to-black pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-slate-800 to-black pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(59,130,246,0.07),transparent)] pointer-events-none" />
 
       {/* Línea decorativa superior */}
@@ -19,7 +19,7 @@ const IntroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, ease: "easeOut" }}
-          className="text-[clamp(5rem,14vw,13rem)] font-extralight text-white/[0.07] tracking-[0.30em] uppercase leading-none text-center whitespace-nowrap "
+          className="sm:text-[clamp(5rem,14vw,13rem)] text-6xl font-extralight  text-white/[0.07] tracking-[0.30em] uppercase leading-none text-center whitespace-nowrap "
         >
           QUANDUM
         </motion.p>
@@ -64,9 +64,6 @@ const IntroSection = () => {
           </motion.h1>
         </div>
 
-        {/* Separador con línea + año */}
-
-
         {/* ── Fila inferior — tres columnas asimétricas ── */}
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 sm:gap-4 items-end">
 
@@ -79,13 +76,11 @@ const IntroSection = () => {
             className="sm:col-span-5"
           >
             <p className="text-sm sm:text-base text-gray-400 leading-relaxed font-light">
-              Fundada tras la consolidación de contratos estratégicos con{" "}
+            Nacimos con el respaldo de grandes contratos con{" "}
               <span className="text-white font-normal">
-                Airbus Defence &amp; Space
+                Airbus Defence &amp; Space {" "}
               </span>
-              . Especializados en el ciclo de vida completo del producto: desde
-              la especificación inicial hasta la certificación de sistemas aptos
-              para el vuelo{" "}
+               y desde entonces nos hemos especializado en dar vida a proyectos complejos. Nos encargamos de todo el ciclo de vida, transformando especificaciones iniciales en soluciones listas para el vuelo. Entendemos la tecnología, pero sobre todo, entendemos la importancia de un trabajo bien hecho y cercano.{" "}
               <span className="text-blue-400/70 font-mono text-xs">
                 (Airworthy Systems)
               </span>

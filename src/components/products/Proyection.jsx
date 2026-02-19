@@ -97,7 +97,7 @@ const Projection = () => {
                     {/* arriba */}
                     <div>
                       <div className="mb-3">
-                        <span className="text-sm font-semibold text-brand-pink tracking-wider uppercase">
+                        <span className="text-sm font-semibold text-blue-400/90 tracking-wider uppercase">
                           {product.subtitle}
                         </span>
                       </div>

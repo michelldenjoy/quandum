@@ -339,7 +339,7 @@ export default function Solutions() {
                                   <span className="text-[0.55rem] tracking-[0.35em] text-blue-400/60 uppercase font-mono block mb-3">
                                     {service.tag}
                                   </span>
-                                  <p className="text-base sm:text-lg text-slate-200 font-light leading-relaxed">
+                                  <p className="text-base sm:text-2xl text-slate-200 font-light leading-relaxed">
                                     {service.description}
                                   </p>
                                 </div>
@@ -382,7 +382,7 @@ export default function Solutions() {
                                       duration: 0.45,
                                       delay: 0.3 + idx * 0.08,
                                     }}
-                                    className={`group/item relative p-5 sm:p-6 border-white/[0.06] ${
+                                    className={`group/item relative p-5 sm:p-6 border-white/[0.09] ${
                                       // Bordes en grid 2x2
                                       idx % 2 === 0 ? "sm:border-r" : ""
                                     } ${idx < 2 ? "border-b" : ""}`}
@@ -395,13 +395,13 @@ export default function Solutions() {
                                       transition={{ duration: 0.35 }}
                                     />
 
-                                    <span className="font-mono text-[0.5rem] text-slate-700 tracking-[0.15em] block mb-3">
+                                    <span className="font-mono text-[0.5rem] text-slate-500 tracking-[0.15em] block mb-3">
                                       {String(idx + 1).padStart(2, "0")}
                                     </span>
-                                    <h4 className="text-xs sm:text-sm font-semibold text-white/80 tracking-[0.08em] uppercase mb-2 group-hover/item:text-white transition-colors duration-300">
+                                    <h4 className="text-xs sm:text-sm font-bold text-blue-400/90 tracking-[0.08em] uppercase mb-2 transition-colors duration-300">
                                       {item.label}
                                     </h4>
-                                    <p className="text-xs text-slate-500 leading-relaxed group-hover/item:text-slate-300 transition-colors duration-300">
+                                    <p className="text-lg text-white leading-relaxed transition-colors duration-300">
                                       {item.body}
                                     </p>
                                   </motion.div>

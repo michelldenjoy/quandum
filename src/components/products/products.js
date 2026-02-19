@@ -39,19 +39,19 @@ export const products = [
       description: "Unidad electrónica de codificación diseñada para optimizar la gestión de señales entre el sistema de control y la consola del operador. El encoder reduce ocho señales discretas de entrada a únicamente tres, permitiendo una disminución significativa de la complejidad del cableado, el peso del sistema y el esfuerzo de instalación en plataformas aeronáuticas. El equipo está plenamente integrado en la plataforma A-330 MRTT, contribuyendo a una arquitectura de sistema más eficiente y robusta, con mejoras directas en fiabilidad y mantenibilidad para entornos de misión crítica.",
       certifications: ["DO-178 DAL C", "DO-254"],
     },
-    {
-      id: 4,
-      title: "Radiation",
-      subtitle: "Sistema de Protección",
-      hero: "/products/radiation.jpg",
-      gallery: [
-        "/products/radiation1.jpg",
-        "/products/radiation2.jpg",
-      ],
-      image: "/products/radiation.jpg",
-      description: "El Precision Radiation Thermometer (PRT) es un sistema de medida térmica de alta precisión basado en tecnología de termometría infrarroja, diseñado para la adquisición de temperatura superficial en tiempo real sin contacto físico. El modelo PRT01F permite la medición continua de la temperatura de la superficie del mar durante operaciones aéreas, proporcionando datos fiables incluso en entornos marítimos exigentes. El sistema integra capacidades de control remoto, permitiendo al operador solicitar bajo demanda la transmisión de mediciones térmicas y estados operativos del equipo. El PRT01F está siendo actualmente integrado en distintos programas C-295 VIMAR (Vigilancia Marítima), donde contribuye a misiones de patrulla, monitorización ambiental y apoyo a operaciones de seguridad marítima, cumpliendo con los requisitos de fiabilidad y disponibilidad propios de plataformas de misión crítica.",
-      certifications: ["DO-178 DAL C", "MIL-STD-883"],
-    },
+    // {
+    //   id: 4,
+    //   title: "Radiation",
+    //   subtitle: "Sistema de Protección",
+    //   hero: "/products/radiation.jpg",
+    //   gallery: [
+    //     "/products/radiation1.jpg",
+    //     "/products/radiation2.jpg",
+    //   ],
+    //   image: "/products/radiation.jpg",
+    //   description: "El Precision Radiation Thermometer (PRT) es un sistema de medida térmica de alta precisión basado en tecnología de termometría infrarroja, diseñado para la adquisición de temperatura superficial en tiempo real sin contacto físico. El modelo PRT01F permite la medición continua de la temperatura de la superficie del mar durante operaciones aéreas, proporcionando datos fiables incluso en entornos marítimos exigentes. El sistema integra capacidades de control remoto, permitiendo al operador solicitar bajo demanda la transmisión de mediciones térmicas y estados operativos del equipo. El PRT01F está siendo actualmente integrado en distintos programas C-295 VIMAR (Vigilancia Marítima), donde contribuye a misiones de patrulla, monitorización ambiental y apoyo a operaciones de seguridad marítima, cumpliendo con los requisitos de fiabilidad y disponibilidad propios de plataformas de misión crítica.",
+    //   certifications: ["DO-178 DAL C", "MIL-STD-883"],
+    // },
     {
       id: 5,
       title: "DCD",
@@ -86,6 +86,7 @@ export const products = [
       gallery: [
         "/products/heis3.webp",
         "/products/heis2.webp",
+        "/products/heis4.webp",
       ],
       image: "/products/heis2.webp",
       description:

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 const hotspots = [
   {
@@ -10,6 +12,7 @@ const hotspots = [
     x: "32.3%",
     y: "59.7%",
     image: "/products/illuminator.webp",
+    path: "/proyectos/destacados/1",
     align: "center",
   },
   {
@@ -19,6 +22,7 @@ const hotspots = [
     x: "10.5%",
     y: "18%",
     image: "/products/nozzle.webp",
+    path: "/proyectos/destacados/2",
     align: "bottom",
   },
   {
@@ -28,6 +32,7 @@ const hotspots = [
     x: "80%",
     y: "86%",
     image: "/products/encoder.webp",
+    path: "/proyectos/destacados/3",
     align: "left",
   },
   {
@@ -37,6 +42,7 @@ const hotspots = [
     x: "18.5%",
     y: "82%",
     image: "/products/POD.webp",
+    path: "/proyectos/destacados/6",
     align: "top",
   },
   {
@@ -46,14 +52,21 @@ const hotspots = [
     x: "48%",
     y: "79.5%",
     image: "/products/dimming.webp",
+    path: "/proyectos/destacados/5",
     align: "top",
   },
 ];
 
 export default function Image() {
-  const [activeId, setActiveId] = useState(null);
   const LINE_DURATION = 1.5;
   const TITLE_DELAY = 0.9; // tiempo en aparecer el titulo
+  const navigate = useNavigate(); 
+  const [activeId, setActiveId] = useState(null);
+
+ 
+  const handleProductClick = (path) => {
+    navigate(path);
+  };
 
   const getCardAlignment = (align) => {
     switch (align) {
@@ -71,7 +84,7 @@ export default function Image() {
   return (
     <section className="bg-gradient-to-b from-black/10 via-slate-900 to-black py-10 w-full overflow-hidden">
       <div className="relative max-w-7xl md:mt-10 mx-auto px-4 sm:px-6 flex flex-col items-center">
-        {/* 1. La Línea: Primero en aparecer */}
+        {/* Línea */}
         <motion.div
           initial={{ height: 0, opacity: 0 }}
           whileInView={{ height: 160, opacity: 1 }}
@@ -81,16 +94,15 @@ export default function Image() {
           style={{ originY: 0 }}
         />
 
-        {/* 2. El Nodo/Portal de Transición */}
+        {/* Nodo de Transición */}
         <div className="relative flex flex-col items-center">
-          {/* Círculos (Efecto Radar) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
             className="absolute -top-2 w-12 h-12 bg-brand-blue/50 blur-xl rounded-full"
           />
-          {/* El Punto de Anclaje */}
+          {/* Punto de Anclaje */}
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
@@ -107,7 +119,7 @@ export default function Image() {
           ></motion.div>
         </div>
 
-        {/* El Título  Párrafo*/}
+        {/* Título  Párrafo*/}
         <div className="flex flex-col items-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -129,7 +141,7 @@ export default function Image() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, delay: TITLE_DELAY + 0.3 }} // Aparece sutilmente después del título
+            transition={{ duration: 1.2, delay: TITLE_DELAY + 0.3 }} 
             className="max-w-2xl text-center text-sm text-slate-400 tracking-[0.15em] uppercase mt-10 mb-16 px-4 leading-relaxed"
           >
             {/* Nuestra presencia se extiende a sectores clave que impulsan el
@@ -158,7 +170,8 @@ export default function Image() {
               <button
                 onMouseEnter={() => setActiveId(spot.id)}
                 onMouseLeave={() => setActiveId(null)}
-                className="relative group p-4"
+                onClick={() => handleProductClick(spot.path)} 
+                className="relative group p-4 cursor-pointer"
               >
                 <motion.div
                   animate={{ scale: [1, 2, 1], opacity: [0.6, 0, 0.6] }}
@@ -172,7 +185,8 @@ export default function Image() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className={`absolute w-64 bg-slate-900/95 border border-blue-500/40 p-4 rounded-xl backdrop-blur-xl z-50 pointer-events-none shadow-2xl ${getCardAlignment(
+                  onClick={() => handleProductClick(spot.path)}
+                  className={`absolute w-64 bg-slate-900/95 border border-blue-500/40 p-4 rounded-xl backdrop-blur-xl z-50 cursor-pointer shadow-2xl ${getCardAlignment(
                     spot.align
                   )}`}
                 >
@@ -200,7 +214,7 @@ export default function Image() {
           ))}
         </div>
         <div className="relative flex flex-col items-center pb-32">
-          {/* 1. La Línea Conectora */}
+          {/*  Línea Conectora */}
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             whileInView={{ height: 160, opacity: 1 }}
@@ -210,7 +224,7 @@ export default function Image() {
             style={{ originY: 0 }}
           />
 
-          {/* 2. El Nodo/Portal de Transición */}
+          {/* Nodo de Transición */}
           <div className="relative flex flex-col items-center">
             {/* Círculos concéntricos de fondo (Efecto Radar/Pulso) */}
             <motion.div
@@ -224,7 +238,7 @@ export default function Image() {
               to="/proyectos/destacados"
               className="group relative flex flex-col items-center"
             >
-              {/* El Punto de Anclaje */}
+              
               <motion.div
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
@@ -232,7 +246,7 @@ export default function Image() {
                 className="w-2 h-2 bg-brand-blue rounded-full z-10 shadow-[0_0_15px_rgba(59,130,246,0.8)]"
               />
 
-              {/* CONTENIDO FINAL "Explorar proyectos" */}
+              {/* "Explorar proyectos" */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

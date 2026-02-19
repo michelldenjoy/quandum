@@ -3,6 +3,7 @@ import HeroVideo from "../../components/about/HeroVideo";
 import FacilitiesSlider from "../../components/facilities/FacilitiesSlider";
 import Capabilities from "../../components/facilities/Capabilities";
 
+
 const facilities = [
   {
     title: "Área de Montaje Especializado",
