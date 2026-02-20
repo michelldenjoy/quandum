@@ -46,7 +46,7 @@ function LineReveal({ delay = 0 }) {
   );
 }
 
-/* ─── Data ───────────────────────────────────────────────────────── */
+
 const principles = [
   {
     title: "Cumplimiento normativo",
@@ -120,8 +120,8 @@ export default function Calidad() {
         <FadeUp>
           <div className="flex items-center gap-4 mb-6">
             <span
-              className="text-[10px] tracking-[0.4em] font-bold uppercase text-gray-400"
-              style={{ fontFamily: "monospace" }}
+              className="text-xs tracking-[0.4em] font-bold uppercase text-gray-400"
+              
             >
               01 / Declaración Oficial
             </span>
@@ -169,8 +169,7 @@ export default function Calidad() {
           <FadeUp>
             <div className="flex items-center gap-4 mb-6">
               <span
-                className="text-[10px] tracking-[0.4em] font-bold uppercase text-gray-500"
-                style={{ fontFamily: "monospace" }}
+                className="text-xs tracking-[0.4em] font-bold uppercase text-gray-500"
               >
                 02 / Marco Estratégico
               </span>
@@ -262,8 +261,7 @@ export default function Calidad() {
           <FadeUp>
             <div className="flex items-center gap-4 mb-6">
               <span
-                className="text-[10px] tracking-[0.4em] font-bold uppercase text-gray-400"
-                style={{ fontFamily: "monospace" }}
+                className="text-xs tracking-[0.4em] font-bold uppercase text-gray-400"
               >
                 03 / Protocolos de Actuación
               </span>
@@ -372,8 +370,7 @@ export default function Calidad() {
         
           <FadeUp className="flex-1 text-center lg:text-left">
             <p
-              className="text-[10px] tracking-[0.4em] uppercase text-sky-400/70 font-bold mb-5 md:mb-6"
-              style={{ fontFamily: "monospace" }}
+              className="text-xs tracking-[0.4em] uppercase text-sky-400/70 font-bold mb-5 md:mb-6"
             >
               04 / Estándar de Calidad
             </p>
