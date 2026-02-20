@@ -156,7 +156,7 @@ export default function Solutions() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, delay: TITLE_DELAY + 0.3 }} // Aparece sutilmente después del título
+            transition={{ duration: 1.2, delay: TITLE_DELAY + 0.3 }} 
             className="max-w-2xl text-center text-sm text-slate-400 tracking-[0.15em] uppercase mt-10 mb-16 px-4 leading-relaxed"
           >
             Nuestra presencia se extiende a sectores clave que impulsan el
@@ -210,7 +210,7 @@ export default function Solutions() {
 
                     {/* Número */}
                     <span
-                      className={`font-mono text-[0.6rem] tracking-[0.25em] flex-shrink-0 w-5 sm:w-7 transition-colors duration-300 ${
+                      className={`font-mono text-sm tracking-[0.25em] flex-shrink-0 w-5 sm:w-7 transition-colors duration-300 ${
                         isExpanded
                           ? "text-blue-400/60"
                           : "text-slate-700 group-hover:text-slate-500"
@@ -221,9 +221,9 @@ export default function Solutions() {
 
                     {/* Tag*/}
                     <span
-                      className={`hidden lg:block text-[0.55rem] tracking-[0.2em] font-mono uppercase flex-shrink-0 w-52 transition-colors duration-300 ${
+                      className={`hidden lg:block text-sm tracking-[0.2em] font-mono uppercase flex-shrink-0 w-52 transition-colors duration-300 ${
                         isExpanded
-                          ? "text-blue-400/40"
+                          ? "text-blue-400/50"
                           : "text-slate-700 group-hover:text-slate-500"
                       }`}
                     >
@@ -243,7 +243,7 @@ export default function Solutions() {
                     </h3>
 
                     <p
-                      className={`hidden xl:block text-xs text-slate-600 max-w-[14rem] text-right leading-relaxed transition-all duration-500 flex-shrink-0 ${
+                      className={`hidden xl:block text-sm text-slate-600 max-w-[14rem] text-right leading-relaxed transition-all duration-500 flex-shrink-0 ${
                         isExpanded
                           ? "opacity-0"
                           : "opacity-0 group-hover:opacity-100"
@@ -283,7 +283,7 @@ export default function Solutions() {
                   </div>
                 </button>
 
-                {/* ── PANEL EXPANDIDO — con imagen de fondo ── */}
+                {/* ── PANEL EXPANDIDO ── */}
                 <AnimatePresence>
                   {isExpanded && (
                     <motion.div
@@ -300,7 +300,7 @@ export default function Solutions() {
                         transition={{ duration: 0.4 }}
                         className="relative min-h-[520px] sm:min-h-[580px] lg:min-h-[640px]"
                       >
-                        {/* Imagen */}
+                        {/* Imagen capacidades */}
                         <div className="absolute inset-0 z-0">
                           <motion.img
                             src={service.image}
@@ -336,7 +336,7 @@ export default function Solutions() {
                                 </span>
 
                                 <div className="-mt-4 sm:-mt-6">
-                                  <span className="text-[0.55rem] tracking-[0.35em] text-blue-400/60 uppercase font-mono block mb-3">
+                                  <span className="text-xs tracking-[0.35em] text-blue-400/60 uppercase font-mono block mb-3">
                                     {service.tag}
                                   </span>
                                   <p className="text-base sm:text-2xl text-slate-200 font-light leading-relaxed">
@@ -348,7 +348,7 @@ export default function Solutions() {
                               {/* Coordenadas  */}
                               <div className="hidden lg:block">
                                 <div className="border-t border-white/8 pt-6">
-                                  <p className="font-mono text-[0.55rem] tracking-[0.2em] text-slate-700 uppercase leading-relaxed">
+                                  <p className="font-mono text-xs tracking-[0.2em] text-slate-600 uppercase leading-relaxed">
                                     Sector {service.number} / {services.length}
                                     <br />
                                     {service.tag}
@@ -364,12 +364,7 @@ export default function Solutions() {
                               transition={{ duration: 0.5, delay: 0.25 }}
                               className="lg:col-span-8 lg:pl-12"
                             >
-                              <div className="flex items-center gap-4 mb-8">
-                                <span className="text-[0.55rem] tracking-[0.35em] text-slate-600 uppercase font-mono">
-                                  Capacidades
-                                </span>
-                                <div className="flex-1 h-px bg-white/8" />
-                              </div>
+
 
                               {/* Items — 2 columnas en desktop, 1 en móvil */}
                               <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
