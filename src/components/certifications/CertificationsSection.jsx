@@ -52,7 +52,7 @@ const CertificationsSection = () => {
             </span>
           </div>
 
-          <h2 className="text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight text-black tracking-tight leading-[1.1]">
+          <h2 className="text-black text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight  tracking-tight leading-[1.1]">
             Política de Calidad
             <br />
             <span className="font-semibold">& Certificados</span>

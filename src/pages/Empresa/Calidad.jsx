@@ -272,7 +272,7 @@ export default function Calidad() {
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 mb-4">
             <FadeUp>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl uppercase leading-none tracking-tighter">
+              <h2 className="text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight  tracking-tight leading-[1.1]">
                 Principios de
                 <br />
                 <span className="font-semibold">Certificación</span>

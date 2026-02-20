@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import HeroVideo from "../../components/about/HeroVideo";
 import FacilitiesSlider from "../../components/facilities/FacilitiesSlider";
 import Capabilities from "../../components/facilities/Capabilities";
+import PolicyWhite from "../../components/etico/PolicyWhite";
 
 
 const facilities = [
@@ -45,6 +46,7 @@ export default function Infraestructuras() {
         backgroundImage="/images/about3.webp"
       />
       <FacilitiesSlider />
+     
 
       {facilities.map((f, i) => (
         <section
@@ -101,7 +103,8 @@ export default function Infraestructuras() {
           </div>
         </section>
       ))}
-
+ 
+        <PolicyWhite />
       <Capabilities />
     </div>
   );
