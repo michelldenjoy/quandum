@@ -65,7 +65,7 @@ const IntroSection = () => {
         </div>
 
         {/* ── Fila inferior — tres columnas asimétricas ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 sm:gap-4 items-end">
+        <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 sm:gap-4 text-justify items-end">
 
           {/* Texto principal */}
           <motion.div

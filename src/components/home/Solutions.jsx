@@ -17,7 +17,7 @@ const services = [
       },
       {
         label: "Computación Embarcada",
-        body: "Diseño de ordenadores de abordo Full Custom (Mecánica, Electrónica y SW) adaptados a plataformas específicas.",
+        body: "Diseño de monitores de abordo Full Custom (Mecánica, Electrónica y SW) adaptados a plataformas específicas.",
       },
       {
         label: "Mantenimiento & Retrofit",
@@ -256,7 +256,7 @@ export default function Solutions() {
                     <motion.div
                       animate={{ rotate: isExpanded ? 45 : 0 }}
                       transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                      className={`flex-shrink-0 w-7 h-7 sm:w-9 sm:h-9 rounded-full border flex items-center justify-center transition-all duration-400 ${
+                      className={`ml-auto flex-shrink-0 w-7 h-7 sm:w-9 sm:h-9 rounded-full border flex items-center justify-center transition-all duration-400 ${
                         isExpanded
                           ? "border-white/30 bg-white/10"
                           : "border-slate-800 group-hover:border-slate-600"
