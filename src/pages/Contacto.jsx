@@ -13,8 +13,11 @@ import {
 import StarfieldNebula from "../components/3d/StarfieldNebula";
 import DiagonalButton from "../components/DiagonalButton";
 import emailjs from "@emailjs/browser";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export default function Contacto() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
   const [form, setForm] = useState({
     name: "",
     company: "",
@@ -24,7 +27,6 @@ export default function Contacto() {
     subject: "",
     message: "",
   });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -33,19 +35,32 @@ export default function Contacto() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    if (!form.name || !form.company || !form.email || !form.subject || !form.message) {
-      return;
-    }
+    if (!form.name || !form.company || !form.email || !form.subject || !form.message) return;
+    if (!executeRecaptcha) return;
   
     setIsSubmitting(true);
   
     try {
+      const token = await executeRecaptcha("form_contacto");
+  
+      const res = await fetch("http://localhost:3001/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      });
+  
+      const data = await res.json();
+  
+      if (!data.success) {
+        alert("Error de verificación: " + data.error);
+        return;
+      }
+
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT, 
+        import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT,
         {
-          name: form.name,
+          from_name: form.name,
           company: form.company,
           email: form.email,
           phone: form.phone,
@@ -55,39 +70,21 @@ export default function Contacto() {
         },
         import.meta.env.VITE_EMAILJS_PUBLIC
       );
-  
       setSubmitted(true);
-      setForm({
-        name: "",
-        company: "",
-        email: "",
-        phone: "",
-        department: "general",
-        subject: "",
-        message: "",
-      });
-  
-    } catch (error) {
-      console.error("Error enviando mensaje:", error);
+      setForm({ name: "", company: "", email: "", phone: "", department: "general", subject: "", message: "" });
+    } catch (err) {
+      console.error("Error al enviar:", err);
+      alert("Hubo un error al enviar el mensaje.");
     } finally {
       setIsSubmitting(false);
     }
   };
-  
 
   const contactInfo = [
-    {
-      icon: Building2,
-      title: "Sede Central",
-      content: "Parque Tecnológico de Andalucía, Málaga · España",
-    },
+    { icon: Building2, title: "Sede Central", content: "Parque Tecnológico de Andalucía, Málaga · España" },
     { icon: Phone, title: "Centralita", content: "+34 952 02 06 54" },
     { icon: Mail, title: "Email", content: "info@quandum.com" },
-    {
-      icon: Clock,
-      title: "Horario",
-      content: "L-J: 08:00 – 17:30 | V: 08:00 – 14:00",
-    },
+    { icon: Clock, title: "Horario", content: "L-J: 08:00 – 17:30 | V: 08:00 – 14:00" },
   ];
 
   return (
@@ -99,7 +96,6 @@ export default function Contacto() {
 
 
       <div className="relative z-10">
-        {/* HERO */}
         <div className="max-w-7xl mx-auto px-6 py-32 relative z-10">
           <div className="text-center max-w-4xl mx-auto animate-fadeIn">
             <h1 className="text-6xl md:text-7xl font-extralight mb-8">
@@ -132,10 +128,8 @@ export default function Contacto() {
             </p>
           </div>
         </div>
-
         <main className="max-w-7xl mx-auto px-6 pb-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            {/* IZQUIERDA: INFO CORPORATIVA */}
             <div className="lg:col-span-5 space-y-8">
               <div className="grid grid-cols-1 gap-4">
                 {contactInfo.map((info, i) => (
@@ -178,7 +172,7 @@ export default function Contacto() {
               </div>
             </div>
 
-            {/* DERECHA: FORMULARIO   */}
+            {/* FORMULARIO   */}
             <div className="lg:col-span-7">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -304,7 +298,6 @@ export default function Contacto() {
   );
 }
 
-// Sub Input
 function Input({ label, ...props }) {
   return (
     <div>
