@@ -80,7 +80,6 @@ export default function PrivacyPolicy() {
         </div>
       </header>
 
-      
       <main className="py-20 px-8">
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-16">
