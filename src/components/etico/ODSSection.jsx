@@ -3,8 +3,6 @@ import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 
 export default function ODSSection() {
-
-
   function LineReveal({ delay = 0 }) {
     const ref = useRef(null);
     const inView = useInView(ref, { once: true });
@@ -20,7 +18,6 @@ export default function ODSSection() {
   }
 
   const ods = [
-    
     {
       id: 7,
       title: "Energía asequible y no contaminante",
@@ -77,8 +74,6 @@ export default function ODSSection() {
     },
   ];
 
-
-
   return (
     <section className="w-full bg-white py-32 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-6">
@@ -109,7 +104,6 @@ export default function ODSSection() {
                 <span className="font-semibold text-black">en los ODS</span>
               </h2>
             </motion.div>
-            
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -117,7 +111,7 @@ export default function ODSSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <p className="text-sm text-gray-500 max-w-xs leading-relaxed md:text-right">
+              <p className="text-lg text-gray-500 max-w-md leading-relaxed md:text-right">
                 Alineamos nuestra actividad con la Agenda 2030, contribuyendo
                 activamente en áreas clave para un futuro tecnológico
                 sostenible.
@@ -126,9 +120,6 @@ export default function ODSSection() {
           </div>
           <LineReveal delay={0.1} />
         </div>
-
-       
-
     
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {ods.map((item, i) => (
@@ -138,7 +129,7 @@ export default function ODSSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: i * 0.1, ease: "easeOut" }}
-              className="group relative h-[380px] rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 cursor-pointer"
+              className="group relative h-[300px] rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 cursor-pointer"
             >
               {/* --- CARDS --- */}
               <div

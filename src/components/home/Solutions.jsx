@@ -8,7 +8,7 @@ const services = [
     number: "01",
     title: "AEROESPACIAL",
     tag: "DO-178  ·  DO-254",
-    image: "/aeroespacial.jpg",
+    image: "/aeroespacial.webp",
     description: "Seguridad, certificación y sistemas críticos de vuelo.",
     items: [
       {
@@ -33,7 +33,7 @@ const services = [
     number: "02",
     title: "DEFENSA",
     tag: "MIL-STD-704  ·  MIL-HBK-204",
-    image: "/defensa.jpg",
+    image: "/defensa.webp",
     description:
       "Tecnología táctica, precisión y cumplimiento de normativas militares.",
     items: [
@@ -59,7 +59,7 @@ const services = [
     number: "03",
     title: "INDUSTRIAL",
     tag: "MANUFACTURA AVANZADA",
-    image: "/industrial.jpg",
+    image: "/industrial.webp",
     description:
       "Capacidad productiva, prototipado rápido y soluciones a medida.",
     items: [
@@ -91,7 +91,7 @@ export default function Solutions() {
   };
 
   const LINE_DURATION = 1.5;
-  const TITLE_DELAY = 0.9; // Empieza a aparecer a mitad del camino de la línea
+  const TITLE_DELAY = 0.9;
 
   return (
     <section className="relative overflow-x-hidden  ">
@@ -108,16 +108,16 @@ export default function Solutions() {
           style={{ originY: 0 }}
         />
 
-        {/* 2. El Nodo/Portal de Transición */}
+        {/* 2. El Nodo */}
         <div className="relative flex flex-col items-center">
-          {/* Círculos concéntricos de fondo (Efecto Radar/Pulso) */}
+          
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
             className="absolute -top-2 w-12 h-12 bg-brand-blue/50 blur-xl rounded-full"
           />
-          {/* El Punto de Anclaje */}
+          {/* Punto de Anclaje */}
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
@@ -134,7 +134,6 @@ export default function Solutions() {
           ></motion.div>
         </div>
 
-        {/* 2. El Título y Párrafo: Aparecen después de la línea */}
         <div className="flex flex-col items-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -142,7 +141,7 @@ export default function Solutions() {
             viewport={{ once: true }}
             transition={{
               duration: 1,
-              delay: TITLE_DELAY, // Delay orquestado
+              delay: TITLE_DELAY, 
               ease: [0.16, 1, 0.3, 1],
             }}
             className="text-[clamp(1.6rem,3.5vw,3.2rem)] mt-8 text-center font-light text-white tracking-[0.12em] leading-tight uppercase"
@@ -166,7 +165,7 @@ export default function Solutions() {
       </div>
 
       <div className="relative z-10">
-        {/* ── SECTORES ─────────────────────────────────────────── */}
+        {/* ── SECTORES ── */}
         <div>
           {services.map((service, index) => {
             const isExpanded = expandedIndex === index;
@@ -178,13 +177,13 @@ export default function Solutions() {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                // Escalamos el delay de los items para que sigan la secuencia del título principal
+                
                 transition={{
                   duration: 0.6,
                   delay: TITLE_DELAY + 0.5 + index * 0.1,
                 }}
               >
-                {/* ── FILA TÍTULO ── */}
+               
                 <button
                   onClick={() => toggleAccordion(index)}
                   className="relative w-full group overflow-hidden"
@@ -198,7 +197,7 @@ export default function Solutions() {
                   />
 
                   <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 flex items-center gap-4 sm:gap-10">
-                    {/* Acento de color izquierdo */}
+                   
                     <motion.div
                       animate={{
                         scaleY: isExpanded ? 1 : 0,
@@ -313,7 +312,7 @@ export default function Solutions() {
                             }}
                             className="w-full h-full object-cover"
                           />
-                          {/* Capas de oscurecimiento compuestas */}
+                          {/* overlays */}
                           <div className="absolute inset-0 bg-slate-950/70" />
                           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/20 via-slate-900/10 to-slate-900/10" />
                           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 via-transparent to-slate-900/10" />
@@ -329,7 +328,7 @@ export default function Solutions() {
                               transition={{ duration: 0.6, delay: 0.15 }}
                               className="lg:col-span-4 lg:border-r lg:border-white/8 lg:pr-12 flex flex-col justify-between gap-10"
                             >
-                              {/* Número grande  */}
+                              {/* Indicador */}
                               <div>
                                 <span className="font-mono text-[5rem] sm:text-[7rem] font-extralight text-white/[0.07] leading-none block -ml-1 -mt-3 select-none">
                                   {service.number}
@@ -341,17 +340,6 @@ export default function Solutions() {
                                   </span>
                                   <p className="text-base sm:text-2xl text-slate-200 font-light leading-relaxed">
                                     {service.description}
-                                  </p>
-                                </div>
-                              </div>
-
-                              {/* Coordenadas  */}
-                              <div className="hidden lg:block">
-                                <div className="border-t border-white/8 pt-6">
-                                  <p className="font-mono text-xs tracking-[0.2em] text-slate-600 uppercase leading-relaxed">
-                                    Sector {service.number} / {services.length}
-                                    <br />
-                                    {service.tag}
                                   </p>
                                 </div>
                               </div>

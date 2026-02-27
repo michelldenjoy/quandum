@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { Scale, MapPin, Mail, Phone, FileText } from "lucide-react";
-import { motion } from "framer-motion"; // Corregido: usualmente es framer-motion o motion
+import { motion } from "framer-motion"; 
 
 export default function AvisoLegal() {
-  // Asegura que cargue desde arriba
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

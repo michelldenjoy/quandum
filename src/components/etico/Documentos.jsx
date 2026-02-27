@@ -1,6 +1,7 @@
 import { FileText, Download, Shield, Scale, CheckCircle2 } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
 import PolicyStrip from "./PolicyStrip";
+import { useRef } from "react";
 
 export default function Documentos() {
   const policies = [
@@ -40,6 +41,20 @@ export default function Documentos() {
     href: "/sobre-quandum/calidad",
     icon: FileText,
   };
+
+  function LineReveal({ delay = 0 }) {
+    const ref = useRef(null);
+    const inView = useInView(ref, { once: true });
+    return (
+      <motion.div
+        ref={ref}
+        className="h-px bg-black origin-left flex-1"
+        initial={{ scaleX: 0 }}
+        animate={inView ? { scaleX: 1 } : {}}
+        transition={{ duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] }}
+      />
+    );
+  }
 
   return (
     <div className="bg-white min-h-screen relative overflow-hidden">
@@ -94,24 +109,44 @@ export default function Documentos() {
 
       {/* Hero Section */}
       <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-24"
-        >
-          <h1 className="text-6xl md:text-7xl font-light text-black mb-6 tracking-tight">
-            Código Ético
-            <span className="block text-2xl md:text-3xl mt-4 text-black/40 font-extralight">
-              y Cumplimiento Normativo
+        <div className="mb-16 lg:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-4 mb-6"
+          >
+            <span className="text-xs tracking-[0.4em] font-bold uppercase text-gray-400">
+              Cumplimiento Normativo
             </span>
-          </h1>
+          </motion.div>
 
-          <p className="text-lg text-black/60 max-w-3xl mx-auto leading-relaxed">
-            Fundamentos estructurales que garantizan la integridad operacional,
-            trazabilidad de procesos y excelencia en el sector aeronáutico.
-          </p>
-        </motion.div>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <h2 className="text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight tracking-tight leading-[1.1] text-black">
+                Código <span className="font-semibold">Ético </span>
+              </h2>
+          
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <p className="text-lg text-gray-500 max-w-md leading-relaxed md:text-right">
+                Fundamentos estructurales que garantizan la integridad operacional, trazabilidad de procesos y excelelencia en el sector aeronáutico.
+              </p>
+            </motion.div>
+          </div>
+          <LineReveal delay={0.1} />
+        </div>
 
         {/* Policies Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto relative">
@@ -219,7 +254,6 @@ export default function Documentos() {
         <div>
           <PolicyStrip />
         </div>
-        
 
         {/* Technical Footer */}
         {/* <motion.div

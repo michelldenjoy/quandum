@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Award, Download, ChevronRight, FileBadge } from "lucide-react";
 import DiagonalButton from "../DiagonalButton";
 
-
 const CertificationsSection = () => {
   const certifications = [
     {
@@ -14,7 +13,7 @@ const CertificationsSection = () => {
       standard: "Sistemas de Gestión de Calidad - Aeroespacial",
       pdfUrl: "/certificados/EN9100_2024.pdf",
       imgUrl: "/certificados/EN9100_cert.jpg",
-      sealUrl: "/certificados/eqa9100.png", 
+      sealUrl: "/certificados/eqa9100.png",
     },
     {
       title: "ISO 9001",
@@ -74,10 +73,10 @@ const CertificationsSection = () => {
                 </h4>
               </div>
               <p className="text-gray-600 text-justify leading-relaxed italic">
-                "En nuestra organización, la calidad se fundamenta en la seguridad
-                operativa y la precisión técnica. Nos comprometemos a superar las
-                expectativas de la industria mediante la gestión rigurosa de
-                riesgos y la fiabilidad absoluta en cada entrega."
+                "En nuestra organización, la calidad se fundamenta en la
+                seguridad operativa y la precisión técnica. Nos comprometemos a
+                superar las expectativas de la industria mediante la gestión
+                rigurosa de riesgos y la fiabilidad absoluta en cada entrega."
               </p>
             </div>
 
@@ -86,7 +85,10 @@ const CertificationsSection = () => {
               className="mt-12 flex items-center text-sm font-bold text-brand-blue uppercase tracking-widest hover:translate-x-2 transition-all group"
             >
               Visita nuestra Política{" "}
-              <ChevronRight size={14} className="ml-2 group-hover:ml-4 transition-all" />
+              <ChevronRight
+                size={14}
+                className="ml-2 group-hover:ml-4 transition-all"
+              />
             </a>
           </motion.div>
 
@@ -104,18 +106,11 @@ const CertificationsSection = () => {
                 variants={itemVariants}
                 className="group relative p-8 border border-gray-200 hover:border-brand-blue transition-all duration-500 rounded-sm flex flex-col bg-white overflow-hidden"
               >
-                
                 <FileBadge
                   className="absolute -right-6 -bottom-6 text-gray-50 group-hover:text-blue-50/50 transition-colors duration-500"
                   size={140}
                 />
 
-                {/* ── SELLO DEL CERTIFICADO ── */}
-                {/* Posicionado absolute en la esquina superior derecha.
-                    - w-16 h-16 (64px): visible pero sin competir con el título.
-                    - object-contain: respeta el ratio del sello (circular, cuadrado, etc.).
-                    - opacity-70 → opacity-100 en hover: aparece más nítido al interactuar.
-                    - drop-shadow sutil para que "flote" ligeramente sobre el fondo. */}
                 <img
                   src={cert.sealUrl}
                   alt={`Sello ${cert.title}`}
@@ -143,20 +138,20 @@ const CertificationsSection = () => {
                   </div>
 
                   <div className="grid grid-cols-2 gap-3">
-                    <DiagonalButton
+                    <a
                       href={cert.imgUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:scale-105"
+                      className="flex items-center justify-center px-6 py-3 hover:scale-105 rounded-md text-sm uppercase tracking-widest text-gray-300 bg-brand-blue clip-path-diagonal border border-gray-500  hover:font-semibold hover:text-white transition-all duration-300"
                     >
-                      Ver Cert
-                    </DiagonalButton>
+                      Ver Cert.
+                    </a>
                     <a
                       href={cert.pdfUrl}
                       download
-                      className="flex items-center justify-center px-8 py-3 hover:scale-105 rounded-md text-sm uppercase tracking-widest text-gray-200 bg-brand-blue clip-path-diagonal border border-gray-500 hover:bg-brand-pink/70 hover:font-semibold hover:text-white transition-all duration-300"
+                      className="flex items-center justify-center px-6 py-3 hover:scale-105 rounded-md text-sm uppercase tracking-widest text-gray-300 bg-brand-blue clip-path-diagonal border border-gray-500  hover:font-semibold hover:text-white transition-all duration-300"
                     >
-                      <Download size={14} /> Descargar en PDF
+                      <Download size={14} /> Descargar PDF
                     </a>
                   </div>
                 </div>
