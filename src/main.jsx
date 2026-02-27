@@ -10,7 +10,7 @@ import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 console.log("RECAPTCHA_SITE_KEY:", import.meta.env.VITE_RECAPTCHA_SITE_KEY);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <GoogleReCaptchaProvider reCaptchaKey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}> {/* 👈 envuelve todo */}
+  <GoogleReCaptchaProvider reCaptchaKey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}> 
     <React.StrictMode>
       <BrowserRouter>
         <ScrollToTop />

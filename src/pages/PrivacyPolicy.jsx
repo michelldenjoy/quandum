@@ -59,15 +59,13 @@ export default function PrivacyPolicy() {
   ];
 
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-900">
+    <div className="min-h-screen font-sans bg-white text-gray-900">
       {/* HEADER */}
-      <header className="pt-32 pb-16 px-6 border-b border-gray-100">
+      <header className="pt-32 pb-16 px-6 border-b bg-aerospacee border-gray-100">
         <div className="max-w-5xl mx-auto">
-
-          
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div>
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tighter uppercase mb-4">
+              <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tighter uppercase mb-4">
                 Política de <br /> <span className="text-brand-blue font-light">Privacidad</span>
               </h1>
               <span className="text-xs tracking-[0.3em] uppercase text-gray-400">
@@ -82,12 +80,12 @@ export default function PrivacyPolicy() {
         </div>
       </header>
 
-      {/* CUERPO DE LA POLÍTICA */}
-      <main className="py-20 px-6">
+      
+      <main className="py-20 px-8">
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-16">
             
-            {/* Indice lateral (Sticky) */}
+            
             <aside className="hidden lg:block lg:col-span-3">
               <nav className="sticky top-32 space-y-4">
                 <p className="text-[10px] font-bold uppercase tracking-widest text-brand-blue mb-6">Contenidos</p>
