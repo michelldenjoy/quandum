@@ -26,30 +26,43 @@ export default function HeroVideo({
   title,
   description,
   backgroundImage,
+  backgroundVideo,
   children,
   imagePosition = "center",
 }) {
   return (
     <div className="w-full overflow-x-hidden bg-black pt-28">
       <section className="relative h-[55vh] sm:h-[60vh] md:h-[65vh] lg:h-[80vh] max-h-[800px] w-full overflow-hidden">
+        
         <div className="absolute inset-0 z-0">
-          <img
-            src={backgroundImage}
-            alt={title}
-            className="w-full h-full object-cover will-change-transform"
-            loading="eager"
-            decoding="async"
-            style={{
-              objectPosition: imagePosition,
-              imageRendering: 'crisp-edges', 
-            }}
-          />
+          {backgroundVideo ? (
+            <video
+              className="w-full h-full object-cover will-change-transform"
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              <source src={backgroundVideo} type="video/mp4" />
+            </video>
+          ) : (
+            <img
+              src={backgroundImage}
+              alt={title}
+              className="w-full h-full object-cover will-change-transform"
+              loading="eager"
+              decoding="async"
+              style={{
+                objectPosition: imagePosition,
+                imageRendering: "crisp-edges",
+              }}
+            />
+          )}
         </div>
 
         {/* Overlay */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black via-black/40 to-black/60 md:bg-gradient-to-r md:from-black/45 md:to-black/60" />
 
-       
         <div
           className="absolute inset-0 z-[2] opacity-[0.03] pointer-events-none 
           bg-[linear-gradient(rgba(56,189,248,0.3)_1px,transparent_1px),
@@ -57,7 +70,6 @@ export default function HeroVideo({
           bg-[size:40px_40px] md:bg-[size:80px_80px]"
         />
 
-        
         <div className="relative z-10 h-full flex items-center">
           <div className="w-full max-w-7xl lg:mt-6 mx-auto px-6 sm:px-8 lg:px-12">
             <motion.div
@@ -66,7 +78,6 @@ export default function HeroVideo({
               animate="visible"
               className="max-w-4xl"
             >
-             
               <motion.p
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -76,8 +87,7 @@ export default function HeroVideo({
                 {eyebrow}
               </motion.p>
 
-              {/* TITULO*/}
-              <h1 className="flex flex-wrap text-white  text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tight leading-[1.1]">
+              <h1 className="flex flex-wrap text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tight leading-[1.1]">
                 {title.split(" ").map((word, index) => (
                   <motion.span
                     key={index}
@@ -89,7 +99,6 @@ export default function HeroVideo({
                 ))}
               </h1>
 
-              {/* Descripcion */}
               {description && (
                 <motion.p
                   initial={{ opacity: 0 }}
@@ -101,7 +110,6 @@ export default function HeroVideo({
                 </motion.p>
               )}
 
-              {/* Botones */}
               {children && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}

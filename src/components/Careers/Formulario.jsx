@@ -14,11 +14,6 @@ import DiagonalButton from "../DiagonalButton";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 
-
-
-
-
-
 const positions = [
   { title: "Técnico de Mecanizado" },
   { title: "Programador CAM - CATIA" },
@@ -69,7 +64,6 @@ export default function Formulario() {
       reader.onerror = (error) => reject(error);
     });
   };
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -107,8 +101,6 @@ export default function Formulario() {
     }
   };
   
-  
-
   return (
     <section className="relative min-h-screen  overflow-hidden flex items-center justify-center py-20 px-6">
       
@@ -287,7 +279,6 @@ export default function Formulario() {
             )}
           </AnimatePresence>
 
-         
           <div className="mt-8 flex justify-between items-center opacity-30">
             <div className="flex gap-2">
               <div className="w-1 h-1 bg-slate-900 rounded-full" />

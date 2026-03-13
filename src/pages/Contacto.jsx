@@ -35,22 +35,29 @@ export default function Contacto() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!form.name || !form.company || !form.email || !form.subject || !form.message) return;
+    if (
+      !form.name ||
+      !form.company ||
+      !form.email ||
+      !form.subject ||
+      !form.message
+    )
+      return;
     if (!executeRecaptcha) return;
-  
+
     setIsSubmitting(true);
-  
+
     try {
       const token = await executeRecaptcha("form_contacto");
-  
+
       const res = await fetch("http://localhost:3001/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token }),
       });
-  
+
       const data = await res.json();
-  
+
       if (!data.success) {
         alert("Error de verificación: " + data.error);
         return;
@@ -71,7 +78,15 @@ export default function Contacto() {
         import.meta.env.VITE_EMAILJS_PUBLIC
       );
       setSubmitted(true);
-      setForm({ name: "", company: "", email: "", phone: "", department: "general", subject: "", message: "" });
+      setForm({
+        name: "",
+        company: "",
+        email: "",
+        phone: "",
+        department: "general",
+        subject: "",
+        message: "",
+      });
     } catch (err) {
       console.error("Error al enviar:", err);
       alert("Hubo un error al enviar el mensaje.");
@@ -81,10 +96,18 @@ export default function Contacto() {
   };
 
   const contactInfo = [
-    { icon: Building2, title: "Sede Central", content: "Parque Tecnológico de Andalucía, Málaga · España" },
+    {
+      icon: Building2,
+      title: "Sede Central",
+      content: "Parque Tecnológico de Andalucía, Málaga · España",
+    },
     { icon: Phone, title: "Centralita", content: "+34 952 02 06 54" },
     { icon: Mail, title: "Email", content: "info@quandum.com" },
-    { icon: Clock, title: "Horario", content: "L-J: 08:00 – 17:30 | V: 08:00 – 14:00" },
+    {
+      icon: Clock,
+      title: "Horario",
+      content: "L-J: 08:00 – 17:30 | V: 08:00 – 14:00",
+    },
   ];
 
   return (
@@ -93,7 +116,6 @@ export default function Contacto() {
         <StarfieldNebula />
         <div />
       </div>
-
 
       <div className="relative z-10">
         <div className="max-w-7xl mx-auto px-6 py-32 relative z-10">
@@ -168,7 +190,6 @@ export default function Contacto() {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 pointer-events-none border-[1px] border-white/5 rounded-3xl" />
-
               </div>
             </div>
 
