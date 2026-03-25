@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
-export default function HomeSectors() {
+export default function SectorVertical() {
   const SECTORS = [
     {
       id: "aero",

@@ -132,9 +132,9 @@ export default function Image() {
             }}
             className="text-[clamp(1.6rem,3.5vw,3.2rem)] mt-8 text-center font-light text-white tracking-[0.12em] leading-tight uppercase"
           >
-            Nuestro
+            Nuestros
             <br />
-            <span className="font-normal">Sistema a bordo</span>
+            <span className="font-normal">Sistemas a bordo</span>
           </motion.h2>
 
           <motion.p

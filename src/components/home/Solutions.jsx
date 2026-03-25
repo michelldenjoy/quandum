@@ -32,7 +32,7 @@ const services = [
   {
     number: "02",
     title: "DEFENSA",
-    tag: "MIL-STD-704  ·  MIL-HBK-204",
+    tag: "MIL-STD-704",
     image: "/defensa.webp",
     description:
       "Tecnología táctica, precisión y cumplimiento de normativas militares.",
