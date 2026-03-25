@@ -7,7 +7,7 @@ import Image from "../components/home/Image";
 
 import IntroSection from "../components/home/IntroSection";
 import WhatWeDo from "../components/home/WhatWeDo";
-import SectorVertical from "../components/home/SectorVertical";
+
 
 
 
@@ -19,27 +19,6 @@ export default function Home() {
        <IntroSection />
        <Solutions />
        <Image />
-       
-
-<div>
-  <Solutions2 />
-  <WhatWeDo />
-  <SectorVertical />
-  
-
-  
-</div>
-
-
-
-
-      
-       
-
-      
-
-
-      
     </section>
   );
 }

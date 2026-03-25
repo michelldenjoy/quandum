@@ -51,7 +51,7 @@ const services = [
       },
       {
         label: "Estándares Militares",
-        body: "Equipos validados bajo MIL-STD-704 y MIL-HBK-204 para condiciones extremas de EMI/EMC y ambiente.",
+        body: "Equipos validados bajo MIL-STD-704 para condiciones extremas de EMI/EMC y ambiente.",
       },
     ],
   },

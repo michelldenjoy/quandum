@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 
-const programs = ["A-310MRTT", "A-330MRTT", "C-295"];
+const programs = ["A310-MRTT", "A330-MRTT", "C-295"];
 
 const IntroSection = () => {
   return (
@@ -76,11 +76,7 @@ const IntroSection = () => {
             className="sm:col-span-5"
           >
             <p className="text-sm sm:text-base text-gray-400 leading-relaxed font-light">
-            Nacimos con el respaldo de grandes contratos con{" "}
-              <span className="text-white font-normal">
-                Airbus Defence &amp; Space {" "}
-              </span>
-               y desde entonces nos hemos especializado en dar vida a proyectos complejos. Nos encargamos de todo el ciclo de vida, transformando especificaciones iniciales en soluciones listas para el vuelo. Entendemos la tecnología, pero sobre todo, entendemos la importancia de un trabajo bien hecho y cercano.{" "}
+            Impulsamos proyectos aeroespaciales desde la idea hasta su validación final. Nuestra experiencia nos permite transformar especificaciones complejas en soluciones listas para operar, con un enfoque integral y orientado a resultados. Combinamos conocimiento técnico, rigor y cercanía para garantizar un desarrollo fiable en cada etapa.{" "} <br/>
               <span className="text-blue-400/70 font-mono text-xs">
                 (Airworthy Systems)
               </span>

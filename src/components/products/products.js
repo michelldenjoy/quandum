@@ -37,7 +37,7 @@ export const products = [
       ],
       image: "/products/encoder.webp",
       description: "Unidad electrónica de codificación diseñada para optimizar la gestión de señales entre el sistema de control y la consola del operador. El encoder reduce ocho señales discretas de entrada a únicamente tres, permitiendo una disminución significativa de la complejidad del cableado, el peso del sistema y el esfuerzo de instalación en plataformas aeronáuticas. El equipo está plenamente integrado en la plataforma A-330 MRTT, contribuyendo a una arquitectura de sistema más eficiente y robusta, con mejoras directas en fiabilidad y mantenibilidad para entornos de misión crítica.",
-      certifications: ["DO-178 DAL C", "DO-254"],
+      certifications: ["DO-178", "DO-254"],
     },
     // {
     //   id: 4,
@@ -63,7 +63,7 @@ export const products = [
       ],
       image: "/products/dimming.webp",
       description:
-      "El Dimming Control Device (DCD) es un sistema diseñado para garantizar la visibilidad óptima de las Pilot Director Lights (PDL) durante las operaciones de repostaje en vuelo. Integrado en las luces de posicionamiento del avión cisterna, el DCD regula dinámicamente la intensidad luminosa para adaptar el sistema PDL a diferentes condiciones de iluminación, permitiendo al avión receptor identificar con precisión el punto exacto de posicionamiento. Esta optimización mejora la seguridad, la precisión operativa y la fiabilidad del proceso de reabastecimiento en entornos de misión crítica.",      certifications: ["DO-178 DAL C", "MIL-STD-883"],
+      "El Dimming Control Device (DCD) es un sistema diseñado para garantizar la visibilidad óptima de las Pilot Director Lights (PDL) durante las operaciones de repostaje en vuelo. Integrado en las luces de posicionamiento del avión cisterna, el DCD regula dinámicamente la intensidad luminosa para adaptar el sistema PDL a diferentes condiciones de iluminación, permitiendo al avión receptor identificar con precisión el punto exacto de posicionamiento. Esta optimización mejora la seguridad, la precisión operativa y la fiabilidad del proceso de reabastecimiento en entornos de misión crítica.",      certifications: ["DO-178 DAL C"],
     },
     {
       id: 6,
