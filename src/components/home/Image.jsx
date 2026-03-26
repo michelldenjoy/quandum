@@ -89,7 +89,7 @@ const hotspots = [
 
 export default function Image() {
   const LINE_DURATION = 1.5;
-  const TITLE_DELAY = 0.9; // tiempo en aparecer el titulo
+  const TITLE_DELAY = 0.9; 
   const navigate = useNavigate(); 
   const [activeId, setActiveId] = useState(null);
 
@@ -174,8 +174,6 @@ export default function Image() {
             transition={{ duration: 1.2, delay: TITLE_DELAY + 0.3 }} 
             className="max-w-2xl text-center text-sm text-slate-400 tracking-[0.15em] uppercase mt-10 mb-16 px-4 leading-relaxed"
           >
-            {/* Nuestra presencia se extiende a sectores clave que impulsan el
-            desarrollo tecnológico y la infraestructura del futuro. */}
           </motion.p>
         </div>
       </div>
@@ -220,11 +218,6 @@ export default function Image() {
                     spot.align
                   )}`}
                 >
-                  {/* Triángulo indicador (Opcional) */}
-                  {/* <div className={`absolute w-3 h-3 bg-slate-900 border-b border-r border-blue-500/40 rotate-45 
-                      ${spot.align === 'left' ? 'left-4' : spot.align === 'right' ? 'right-4' : 'left-1/2 -translate-x-1/2'} 
-                      ${spot.align === 'bottom' ? '-top-1.5 border-t border-l border-b-0 border-r-0' : '-bottom-1.5'}`} 
-                    /> */}
 
                   <div className="relative overflow-hidden rounded-lg mb-3">
                     <img
@@ -254,7 +247,6 @@ export default function Image() {
 
         {/* <div className="relative flex flex-col items-center pb-32">
          
-
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             whileInView={{ height: 160, opacity: 1 }}
