@@ -80,7 +80,7 @@ export default function Hero() {
               Aerospace · Defense · Engineering
             </motion.p>
 
-            <h1 className="flex flex-wrap text-white text-5xl md:text-8xl lg:text-9xl tracking-tight font-light">
+            <h1 className="flex flex-wrap text-white items-end text-5xl md:text-8xl lg:text-9xl tracking-tight font-light">
               {title.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
@@ -111,7 +111,7 @@ export default function Hero() {
               transition={{ delay: 1.3, duration: 0.6 }}
               className="mt-10 flex gap-6"
             >
-              <DiagonalButton href="/empresa/about">Conócenos</DiagonalButton>
+          
 
               {/* <a
                 href="/contacto"

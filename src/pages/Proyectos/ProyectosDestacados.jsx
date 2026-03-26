@@ -2,9 +2,6 @@ import React from 'react'
 import HeroVideo from "../../components/about/HeroVideo";
 import IntroProducts from '../../components/products/IntroProducts';
 import Projection from '../../components/products/Proyection';
-
-import ProjectGrid from '../../components/products/ProjectGrid';
-import ProjectIMG from '../../components/products/ProjectIMG';
 export default function ProyectosDestacados() {
   return (
     <div >
@@ -19,11 +16,7 @@ export default function ProyectosDestacados() {
 
       <IntroProducts /> 
       <Projection />
-    <div>
-    
-      <ProjectGrid />
-      <ProjectIMG />
-    </div>
+
       
       
      

@@ -55,6 +55,36 @@ const hotspots = [
     path: "/proyectos/destacados/5",
     align: "top",
   },
+  {
+    id: 6,
+    title: "FRU Lights",
+    description: "Sistema de Iluminación.",
+    x: "10%",
+    y: "62%",
+    image: "/products/fru.jpg",
+    path: "/proyectos/destacados/8",
+    align: "top",
+  },
+  {
+    id: 7,
+    title: "3D Glasses & Clip-On",
+    description: "Sistema de Iluminación.",
+    x: "85%",
+    y: "43%",
+    image: "/products/3dglasses.jpg",
+    path: "/proyectos/destacados/9",
+    align: "right",
+  },
+  {
+    id: 8,
+    title: "3D Glasses & Clip-On",
+    description: "Sistema de Iluminación.",
+    x: "88%",
+    y: "76%",
+    image: "/products/3dglasses.jpg",
+    path: "/proyectos/destacados/9",
+    align: "right",
+  },
 ];
 
 export default function Image() {
@@ -213,8 +243,18 @@ export default function Image() {
             </div>
           ))}
         </div>
-        <div className="relative flex flex-col items-center pb-32">
-          {/*  Línea Conectora */}
+        <div>
+        <img
+            src="/componente-2.png"
+            className="w-full h-auto block opacity-90 rounded-lg"
+          />
+        </div>
+
+
+
+        {/* <div className="relative flex flex-col items-center pb-32">
+         
+
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             whileInView={{ height: 160, opacity: 1 }}
@@ -224,9 +264,9 @@ export default function Image() {
             style={{ originY: 0 }}
           />
 
-          {/* Nodo de Transición */}
+         
           <div className="relative flex flex-col items-center">
-            {/* Círculos concéntricos de fondo (Efecto Radar/Pulso) */}
+      
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -246,7 +286,7 @@ export default function Image() {
                 className="w-2 h-2 bg-brand-blue rounded-full z-10 shadow-[0_0_15px_rgba(59,130,246,0.8)]"
               />
 
-              {/* "Explorar proyectos" */}
+             
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -266,14 +306,14 @@ export default function Image() {
                     </span>
                   </span>
 
-                  {/* esquinas*/}
+                  
                   <div className="absolute top-0 left-0 w-2 h-[1px] bg-brand-blue opacity-0 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute top-0 left-0 w-[1px] h-2 bg-brand-blue opacity-0 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute bottom-0 right-0 w-2 h-[1px] bg-brand-blue opacity-0 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute bottom-0 right-0 w-[1px] h-2 bg-brand-blue opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
 
-                {/* flecha */}
+              
                 <motion.div
                   animate={{ y: [0, 5, 0] }}
                   transition={{
@@ -297,7 +337,7 @@ export default function Image() {
               </motion.div>
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import DiagonalButton from "../DiagonalButton";
 
 const programs = ["A310-MRTT", "A330-MRTT", "C-295"];
 
@@ -7,7 +8,7 @@ const IntroSection = () => {
     <section className="relative w-full  lg:flex lg:flex-col lg:justify-end pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 overflow-hidden">
 
       {/* Fondo */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-slate-800 to-black pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-slate-900 to-black pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(59,130,246,0.07),transparent)] pointer-events-none" />
 
       {/* Línea decorativa superior */}
@@ -75,12 +76,15 @@ const IntroSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="sm:col-span-5"
           >
-            <p className="text-sm sm:text-base text-gray-400 leading-relaxed font-light">
+            <p className="text-sm  sm:text-base text-gray-400 leading-relaxed font-light">
             Impulsamos proyectos aeroespaciales desde la idea hasta su validación final. Nuestra experiencia nos permite transformar especificaciones complejas en soluciones listas para operar, con un enfoque integral y orientado a resultados. Combinamos conocimiento técnico, rigor y cercanía para garantizar un desarrollo fiable en cada etapa.{" "} <br/>
               <span className="text-blue-400/70 font-mono text-xs">
-                (Airworthy Systems)
-              </span>
-              .
+                (Airworthy Systems).
+              </span> <br/>
+              <div className="mt-8">
+                <DiagonalButton href="/empresa/about">Conócenos</DiagonalButton>
+              </div>
+              
             </p>
           </motion.div>
 

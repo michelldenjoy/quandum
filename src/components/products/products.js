@@ -82,14 +82,40 @@ export const products = [
       id: 7,
       title: "Hose Exchange & Inspection System",
       subtitle: "Sistema de inspección inteligente para reabastecimiento en vuelo",
-      hero: "/products/heis2.webp",
+      hero: "/products/heis.webp",
       gallery: [
         "/products/heis3.webp",
-        "/products/heis2.webp",
         "/products/heis4.webp",
       ],
-      image: "/products/heis2.webp",
+      video: "/products/heis.mp4",
+      image: "/products/heis3.webp",
       description:
       "Unidad avanzada de inspección para mangueras de reabastecimiento en vuelo, diseñada para detectar de forma temprana defectos y degradaciones en la superficie de la manguera durante operaciones críticas. El sistema integra un conjunto distribuido de cámaras de alta resolución alrededor de la manguera, junto con iluminación de alta potencia, permitiendo una monitorización continua y precisa en tiempo real. Dispone de seis cámaras de alta resolución sincronizadas, fuentes de iluminación superiores a 1 kW y un sistema de seguimiento de manguera que garantiza la correcta adquisición de imágenes en cualquier condición operativa. La unidad incorpora procesamiento avanzado de imagen, compresión de vídeo H.265 y almacenamiento local, así como algoritmos de detección de fallos basados en inteligencia artificial. Esta arquitectura permite mejorar significativamente la seguridad, la fiabilidad operativa y el mantenimiento predictivo de los sistemas de reabastecimiento en vuelo. ",      certifications: ["DO-178 DAL C", "MIL-STD-883"],
     },
+    {
+      id: 8,
+      title: "FRU Lights",
+      subtitle: "Sistema de iluminación de referencia visual para reabastecimiento en vuelo",
+      hero: "/products/fru.jpg",
+      gallery: [
+        "/products/fru.jpg",
+      ],
+      image: "/products/fru.jpg",
+      description:
+      "El sistema FRU Lights es una solución de iluminación integrada en el BEVS (Boom Enhanced Vision System), desplegada en la plataforma A-330 MRTT para operaciones de reabastecimiento en vuelo. Su función principal es proporcionar a la aeronave receptora una referencia visual clara y continua de la longitud de la manguera mediante una corona luminosa, garantizando su correcta percepción durante todo el proceso de despliegue.\n\nEl sistema ha sido diseñado para operar de forma fiable en cualquier condición ambiental, incluyendo entornos de baja visibilidad y operaciones nocturnas, mejorando la conciencia situacional del piloto y contribuyendo directamente a la seguridad y precisión de la maniobra de repostaje.",      certifications: ["DO-178", "MIL-STD-883"],
+    },
+    {
+      id: 9,
+      title: "3D Glasses & Clip-On",
+      subtitle: "Sistema de visualización estereoscópica para operador de reabastecimiento en vuelo",
+      hero: "/products/3dglasses.png", 
+      gallery: [
+        "/products/3dglasses.png",
+        "/products/3dglasses.jpg",
+      ],
+      image: "/products/3dglasses.jpg",
+      description:
+        "El sistema de gafas 3D y Clip-On ha sido desarrollado para proporcionar al Air Refueling Operator (ARO) una visualización estereoscópica precisa durante las operaciones de reabastecimiento en vuelo. Integrado en plataformas MRTT, el sistema permite la correcta percepción de imágenes tridimensionales a través del sistema óptico basado en espejo dicroico (3DG), mejorando la interpretación espacial del entorno operativo.\n\nCada aeronave incorpora un conjunto dedicado de gafas para los operadores, garantizando la disponibilidad del sistema en misiones críticas. Adicionalmente, la solución incluye un módulo Clip-On adaptable a gafas graduadas, asegurando la compatibilidad ergonómica sin comprometer la calidad de visualización.\n\nEl diseño del sistema prioriza la claridad óptica, la fiabilidad operativa y la integración con sistemas de visión avanzada, contribuyendo a una mayor precisión y seguridad en las maniobras de reabastecimiento en vuelo.",
+      certifications: ["DO-160"], 
+    }
   ];

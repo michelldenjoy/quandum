@@ -10,7 +10,6 @@ export default function ProjectDetail() {
   const [activeImage, setActiveImage] = React.useState(null);
   const otherProjects = products.filter((p) => p.id !== Number(id)).slice(0, 3);
 
- 
   const project = products.find((p) => p.id === Number(id));
 
   useEffect(() => {
@@ -24,8 +23,6 @@ export default function ProjectDetail() {
 
   return (
     <div className="min-h-screen bg-black text-white selection:bg-brand-blue/30">
-    
-     
       <div className="absolute top-28 left-8 md:left-10 z-20">
         <Link
           to="/proyectos/destacados"
@@ -75,11 +72,10 @@ export default function ProjectDetail() {
 
       {/* Grid */}
       <main className="max-w-7xl mx-auto px-8 py-20 grid grid-cols-1 lg:grid-cols-12 gap-12">
-        
         <div className="lg:col-span-8 space-y-12">
           <section>
             <h2 className="text-blue-300 text-xs uppercase tracking-[0.3em] mb-6">
-               Descripción del Sistema
+              Descripción del Sistema
             </h2>
             <p className="text-xl text-justify md:text-2xl text-slate-300 leading-relaxed font-light">
               {project.description}
@@ -87,33 +83,46 @@ export default function ProjectDetail() {
           </section>
 
           <section>
-            <h2 className="text-blue-300 text-xs  uppercase tracking-[0.3em] mb-6">
-               Análisis Visual
-            </h2>
+  <h2 className="text-blue-300 text-xs uppercase tracking-[0.3em] mb-6">
+    Análisis Visual
+  </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
-              {project.gallery.map((img, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActiveImage(img)}
-                  className="aspect-video rounded-xl overflow-hidden border border-white/10 group relative"
-                >
-                  <img
-                    src={img}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    alt="Gallery detail"
-                  />
-                </button>
-              ))}
-            </div>
-          </section>
+  {/* VIDEO (si existe) */}
+  {project.video && (
+    <div className="w-full aspect-video rounded-xl overflow-hidden border border-white/10 mb-6">
+      <video
+        src={project.video}
+        controls
+        className="w-full h-full object-cover"
+      />
+    </div>
+  )}
+
+  {/* GALERÍA (siempre que haya imágenes) */}
+  {project.gallery?.length > 0 && (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {project.gallery.map((img, i) => (
+        <button
+          key={i}
+          onClick={() => setActiveImage(img)}
+          className="aspect-video rounded-xl overflow-hidden border border-white/10 group relative"
+        >
+          <img
+            src={img}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            alt="Gallery detail"
+          />
+        </button>
+      ))}
+    </div>
+  )}
+</section>
         </div>
 
         {/* aside */}
         <aside className="lg:col-span-4 space-y-6">
           <div className="bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-2xl p-8 sticky top-32">
             <div className="flex items-center gap-2 mb-8">
-              
               <h3 className="text-sm font-bold uppercase tracking-widest">
                 Otros Proyectos
               </h3>
@@ -161,7 +170,7 @@ export default function ProjectDetail() {
                 to="/proyectos/destacados"
                 className="text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-white transition-colors flex items-center justify-center gap-2"
               >
-                Explorar todos 
+                Explorar todos
               </Link>
             </div>
           </div>
@@ -169,7 +178,6 @@ export default function ProjectDetail() {
         <AnimatePresence>
           {activeImage && (
             <>
-              
               <motion.div
                 className="fixed inset-0 bg-black/90 z-[100]"
                 initial={{ opacity: 0 }}
@@ -178,7 +186,6 @@ export default function ProjectDetail() {
                 onClick={() => setActiveImage(null)}
               />
 
-              
               <motion.div
                 className="fixed inset-0 z-[101] flex items-center justify-center p-6 md:p-20"
                 initial={{ opacity: 0, scale: 0.95 }}
