@@ -117,5 +117,31 @@ export const products = [
       description:
         "El sistema de gafas 3D y Clip-On ha sido desarrollado para proporcionar al Air Refueling Operator (ARO) una visualización estereoscópica precisa durante las operaciones de reabastecimiento en vuelo. Integrado en plataformas MRTT, el sistema permite la correcta percepción de imágenes tridimensionales a través del sistema óptico basado en espejo dicroico (3DG), mejorando la interpretación espacial del entorno operativo.\n\nCada aeronave incorpora un conjunto dedicado de gafas para los operadores, garantizando la disponibilidad del sistema en misiones críticas. Adicionalmente, la solución incluye un módulo Clip-On adaptable a gafas graduadas, asegurando la compatibilidad ergonómica sin comprometer la calidad de visualización.\n\nEl diseño del sistema prioriza la claridad óptica, la fiabilidad operativa y la integración con sistemas de visión avanzada, contribuyendo a una mayor precisión y seguridad en las maniobras de reabastecimiento en vuelo.",
       certifications: ["DO-160"], 
-    }
+    },
+    {
+      id: 10,
+      title: "IRILL Contro Module",
+      subtitle: "Módulo de Control para Sistema de Iluminación Infrarroja",
+      hero: "/products/irill2.jpeg", 
+      gallery: [
+        "/products/irill.jpeg",
+        "/products/irill2.jpeg",
+      ],
+      image: "/products/irill2.jpeg",
+      description:" ",
+      certifications: ["DO-160"], 
+    },
+    {
+      id: 11,
+      title: "Power Control Cable",
+      subtitle: "Cable de Control de Potencia para Sistema de Iluminación Infrarroja",
+      hero: "/products/powercable2.jpeg", 
+      gallery: [
+        "/products/powercable2.jpeg",
+        "/products/powercable.jpeg",
+      ],
+      image: "/products/powercable2.jpeg",
+      description:" ",
+      certifications: ["DO-160"], 
+    },
   ];
