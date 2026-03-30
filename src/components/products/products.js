@@ -6,7 +6,6 @@ export const products = [
       hero: "/products/illuminator.webp",
       gallery: [
         "/products/illuminator.webp",
-        "/products/illuminator2.jpg",
       ],
       image: "/products/illuminator.webp",
       description:
@@ -141,6 +140,31 @@ export const products = [
         "/products/powercable.jpeg",
       ],
       image: "/products/powercable2.jpeg",
+      description:" ",
+      certifications: ["DO-160"], 
+    },
+    {
+      id: 12,
+      title: "Focus ME",
+      subtitle: "Sistema de Enfoque para Iluminación Infrarroja",
+      hero: "/products/focus.jpeg", 
+      gallery: [
+        "/products/focus.jpeg",
+        "/products/focus2.jpeg",
+      ],
+      image: "/products/focus2.jpeg",
+      description:" ",
+      certifications: ["DO-160"], 
+    },
+    {
+      id: 13,
+      title: "Optical Fiber",
+      subtitle: "Sistema de Fibra Óptica para Transmisión de Señales en Iluminación Infrarroja",
+      hero: "/products/fibercable.jpeg", 
+      gallery: [
+        "/products/fibercable.jpeg",
+      ],
+      image: "/products/fibercable.jpeg",
       description:" ",
       certifications: ["DO-160"], 
     },
