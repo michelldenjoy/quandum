@@ -37,7 +37,7 @@ export default function Hero() {
   muted={muted}
   className="absolute inset-0 w-full h-full object-cover"
 >
-  <source src="/about.mp4" type="video/mp4" />
+  <source src="/herovideo.mp4" type="video/mp4" />
   
 </video>
 
