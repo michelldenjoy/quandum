@@ -30,17 +30,15 @@ export default function Hero() {
 
   return (
     <section className="relative w-full h-[98vh] min-h-[640px] overflow-hidden">
-// En tu componente Hero.jsx, cambia la etiqueta video por esta:
 <video
-  key="home-hero-video" // Fuerza a React a montarlo limpiamente
-  className="absolute inset-0 w-full h-full object-cover"
   autoPlay
-  muted
   loop
   playsInline
-  preload="auto" // Forzamos al navegador a que empiece a descargar de inmediato
+  muted={muted}
+  className="absolute inset-0 w-full h-full object-cover"
 >
-  <source src="/herovideo.mp4" type="video/mp4" />
+  <source src="/about.mp4" type="video/mp4" />
+  
 </video>
 
       {/* Overlay  */}
