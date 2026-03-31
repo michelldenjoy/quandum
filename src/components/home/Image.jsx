@@ -276,12 +276,15 @@ export default function Image() {
             </div>
           ))}
         </div>
-        <div>
+
+
+        {/* IMAGEN COMPONENTE 2 */}
+        {/* <div>
         <img
             src="/componente-2.png"
             className="w-full h-auto block opacity-90 rounded-lg"
           />
-        </div>
+        </div> */}
 
 
 
