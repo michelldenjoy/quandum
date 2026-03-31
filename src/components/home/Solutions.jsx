@@ -297,7 +297,7 @@ export default function Solutions() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.4 }}
-                        className="relative min-h-[520px] sm:min-h-[580px] lg:min-h-[640px]"
+                        className="relative min-h-[520px] sm:min-h-[580px] lg:min-h-[540px]"
                       >
                         {/* Imagen capacidades */}
                         <div className="absolute inset-0 z-0">

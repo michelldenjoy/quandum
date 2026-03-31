@@ -30,14 +30,16 @@ export default function Hero() {
 
   return (
     <section className="relative w-full h-[98vh] min-h-[640px] overflow-hidden">
-      <video
-        src="/herovideo.mp4"
-        autoPlay
-        loop
-        playsInline
-        muted={muted}
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+<video
+  autoPlay
+  loop
+  playsInline
+  muted={muted}
+  className="absolute inset-0 w-full h-full object-cover"
+>
+  <source src="/herovideo.mp4" type="video/mp4" />
+
+</video>
 
       {/* Overlay  */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
