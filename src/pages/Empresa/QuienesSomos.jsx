@@ -17,7 +17,7 @@ export default function QuienesSomos() {
         title="Sobre Quandum"
         description="Fabricamos ingeniería para el sector aeronáutico desde el 2006"
         // description="diseña, desarrolla y fabrica dispositivos y sistemas electrónicos y optoelectrónicos de forma específica para el mercado Aeroespacial y de forma general para aplicaciones industriales especiales."
-        backgroundVideo="/herovideo.mp4"
+        backgroundVideo="/download2.mp4"
       />
 
       <Intro2 />
