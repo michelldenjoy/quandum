@@ -35,11 +35,10 @@ export default function Formulario() {
     cv: null,
   });
 
-  const [status, setStatus] = useState(""); 
+  const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [fileName, setFileName] = useState(null);
   const formRef = useRef();
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -67,17 +66,17 @@ export default function Formulario() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!formData.name || !formData.email || !formData.cv) {
       setStatus("error");
       return;
     }
-  
+
     setIsSubmitting(true);
-  
+
     try {
       const cvBase64 = await fileToBase64(formData.cv);
-  
+
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE,
         import.meta.env.VITE_EMAILJS_TEMPLATE,
@@ -87,11 +86,11 @@ export default function Formulario() {
           phone: formData.phone,
           position: formData.position,
           message: formData.message,
-          cv: cvBase64, 
+          cv: cvBase64,
         },
         import.meta.env.VITE_EMAILJS_PUBLIC
       );
-  
+
       setIsSubmitting(false);
       setStatus("success");
     } catch (error) {
@@ -100,25 +99,21 @@ export default function Formulario() {
       setStatus("error");
     }
   };
-  
+
   return (
     <section className="relative min-h-screen  overflow-hidden flex items-center justify-center py-20 px-6">
-      
       <div className="">
         <StarfieldNebula />
-        <div  />
+        <div />
       </div>
 
       <div className="relative z-10 max-w-4xl w-full">
-       
         <div className="text-center mb-12">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex justify-center mb-4"
-          >
-
-          </motion.div>
+          ></motion.div>
           <div className="text-center mb-12">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -127,11 +122,7 @@ export default function Formulario() {
             >
               ÚNETE AL EQUIPO
             </motion.h2>
-            <p className="text-slate-400 text-lg font-light tracking-wide max-w-xl mx-auto">
-              Impulsa la ingeniería del futuro.
-            </p>
           </div>
-
         </div>
 
         {/*  FORMULARIO */}
@@ -167,7 +158,11 @@ export default function Formulario() {
                 </button>
               </motion.div>
             ) : (
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-8 relative z-10">
+              <form
+                ref={formRef}
+                onSubmit={handleSubmit}
+                className="space-y-8 relative z-10"
+              >
                 {status === "error" && (
                   <motion.div
                     initial={{ opacity: 0, x: -10 }}
@@ -242,8 +237,8 @@ export default function Formulario() {
                 </div>
 
                 {/* CARGA DE ARCHIVO */}
-                <div className="flex flex-col md:flex-row gap-8 items-center pt-4">
-                  <label className="w-full md:w-auto flex-1 flex items-center justify-between gap-4 p-4 rounded-xl cursor-pointer hover:bg-blue-500/10 transition-all group">
+                <div className="flex flex-col md:flex-row items-center">
+                  <label className=" md:w-auto flex-1 flex items-center justify-between gap-4 p-4 rounded-xl cursor-pointer hover:bg-blue-500/10 transition-all group">
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-blue-500/20 rounded-lg text-slate-200 group-hover:scale-110 transition-transform">
                         <FileText size={20} />
@@ -252,10 +247,7 @@ export default function Formulario() {
                         {fileName ? fileName : "Adjuntar CV (PDF)"}
                       </span>
                     </div>
-                    <Upload
-                      size={18}
-                      className="text-slate-500 group-hover:text-blue-400"
-                    />
+
                     <input
                       type="file"
                       name="cv"
@@ -269,26 +261,13 @@ export default function Formulario() {
                     type="submit"
                     disabled={isSubmitting}
                     className="px-24 "
-                    
                   >
                     {isSubmitting ? "Procesando..." : "Enviar Candidatura"}
-                    
                   </DiagonalButton>
                 </div>
               </form>
             )}
           </AnimatePresence>
-
-          <div className="mt-8 flex justify-between items-center opacity-30">
-            <div className="flex gap-2">
-              <div className="w-1 h-1 bg-slate-900 rounded-full" />
-              <div className="w-1 h-1 bg-slate-900 rounded-full" />
-              <div className="w-1 h-1 bg-slate-900 rounded-full" />
-            </div>
-            <span className="text-[8px] font-mono tracking-widest uppercase">
-              Quandum Aerospace
-            </span>
-          </div>
         </motion.div>
       </div>
     </section>

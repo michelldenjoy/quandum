@@ -12,14 +12,14 @@ const images = [
     specs: "Mission Control",
     code: "OPS-001",
   },
-  {
-    src: "/images/about2.webp",
-    alt: "Equipo de ingeniería",
-    category: "Engineering",
-    aspectRatio: "aspect-[5740/3827]",
-    specs: "R&D Department",
-    code: "ENG-002",
-  },
+  // {
+  //   src: "/images/about2.webp",
+  //   alt: "Equipo de ingeniería",
+  //   category: "Engineering",
+  //   aspectRatio: "aspect-[5740/3827]",
+  //   specs: "R&D Department",
+  //   code: "ENG-002",
+  // },
 ];
 
 const techSpecs = [
@@ -84,9 +84,9 @@ export default function Collage() {
           </div>
         </motion.div> */}
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16">
+        <div className="grid grid-cols-1 items-center lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16">
           {/* Izquierdo */}
-          <div className="lg:col-span-5 xl:col-span-5 space-y-8 sm:space-y-10 md:space-y-12">
+          <div className="lg:col-span-5  xl:col-span-5 space-y-8 sm:space-y-10 md:space-y-12">
             {/* Main Heading */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
@@ -103,14 +103,7 @@ export default function Collage() {
                   MISIONES REALES
                 </span>
                 <div className="mt-6 w-32 h-px bg-gradient-to-r from-brand-blue to-transparent" />
-
               </h2>
-
-              
-              {/* <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-black text-white text-[10px] font-mono tracking-wider">
-                <div className="w-1.5 h-1.5 bg-brand-blue animate-pulse" />
-                AEROSPACE ENGINEERING DIVISION
-              </div> */}
             </motion.div>
 
             {/* Body Text */}
@@ -225,7 +218,6 @@ export default function Collage() {
                       <div className="absolute bottom-3 left-3 w-4 h-4 border-l-2 border-b-2 border-white/50" />
                       <div className="absolute bottom-3 right-3 w-4 h-4 border-r-2 border-b-2 border-white/50" />
 
-                      
                       <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                         <div className="flex items-end justify-between">
                           <div className="space-y-2">
@@ -239,13 +231,9 @@ export default function Collage() {
                               {image.specs}
                             </p>
                           </div>
-                          <div className="w-10 h-10 flex items-center justify-center border border-white/30 text-white group-hover:bg-white group-hover:text-black transition-all duration-300">
-                            <ChevronRight className="w-5 h-5" />
-                          </div>
                         </div>
                       </div>
 
-                      
                       <motion.div
                         className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent h-32 pointer-events-none"
                         initial={{ y: "-100%" }}
@@ -259,7 +247,6 @@ export default function Collage() {
                       />
                     </div>
 
-                    
                     <div className="mt-3 flex items-center justify-between text-xs">
                       <span className="font-mono text-gray-400 tracking-wider">
                         {image.category.toUpperCase()}
