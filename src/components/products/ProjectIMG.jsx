@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { products } from "../products/products";
-import { useNavigate } from "react-router-dom"; // o Next router
+import { useNavigate } from "react-router-dom"; 
 
 export default function ProjectIMG() {
   const [hovered, setHovered] = useState(null);

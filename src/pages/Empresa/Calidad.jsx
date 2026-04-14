@@ -123,7 +123,7 @@ export default function Calidad() {
               className="text-xs tracking-[0.4em] font-bold uppercase text-gray-400"
               
             >
-              01 / Declaración Oficial
+              Declaración Oficial
             </span>
             <Minus size={12} className="text-gray-300" />
           </div>
@@ -167,14 +167,14 @@ export default function Calidad() {
       <section className="px-5 sm:px-8 md:px-16 py-16 md:py-20 bg-black text-white">
         <div className="max-w-screen-xl mx-auto">
           <FadeUp>
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center gap-4 mb-4">
               <span
                 className="text-xs tracking-[0.4em] font-bold uppercase text-gray-500"
               >
-                02 / Marco Estratégico
+                Marco Estratégico
               </span>
             </div>
-            <div className="h-px bg-white/10 mb-10 md:mb-16" />
+            <div className="h-px bg-white/10 mb-10 md:mb-6" />
           </FadeUp>
 
           <div className="grid lg:grid-cols-2 gap-0 border border-white/10">
@@ -234,7 +234,7 @@ export default function Calidad() {
                     key={i}
                     whileHover={{ x: 6 }}
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                    className="flex items-center gap-4 py-3 md:py-4 border-b border-white/10 group cursor-default"
+                    className="flex items-center gap-4 py-3 md:py-2 border-b border-white/10 group cursor-default"
                   >
                     <CheckCircle2
                       size={14}
@@ -263,12 +263,12 @@ export default function Calidad() {
               <span
                 className="text-xs tracking-[0.4em] font-bold uppercase text-gray-400"
               >
-                03 / Protocolos de Actuación
+                Protocolos de Actuación
               </span>
             </div>
           </FadeUp>
 
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 mb-4">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 mb-4">
             <FadeUp>
               <h2 className="text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight  tracking-tight leading-[1.1]">
                 Principios de
@@ -277,7 +277,7 @@ export default function Calidad() {
               </h2>
             </FadeUp>
             <FadeUp delay={0.1}>
-              <p className="text-sm text-gray-500 max-w-xs leading-relaxed md:text-right">
+              <p className="text-md text-gray-500 max-w-xs leading-relaxed md:text-right">
                 Los ejes que garantizan la conformidad técnica y normativa de cada
                 entrega de Quandum Aerospace.
               </p>
@@ -372,7 +372,7 @@ export default function Calidad() {
             <p
               className="text-xs tracking-[0.4em] uppercase text-sky-400/70 font-bold mb-5 md:mb-6"
             >
-              04 / Estándar de Calidad
+              Estándar de Calidad
             </p>
             <h2
               className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl  text-white uppercase leading-none tracking-tighter mb-6 md:mb-8"

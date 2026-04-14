@@ -119,7 +119,7 @@ export const products = [
     },
     {
       id: 10,
-      title: "IRILL Contro Module",
+      title: "IRILL Control Module",
       subtitle: "Módulo de Control para Sistema de Iluminación Infrarroja",
       hero: "/products/irill2.jpeg", 
       gallery: [
@@ -166,6 +166,19 @@ export const products = [
       ],
       image: "/products/fibercable.jpeg",
       description:" ",
+      certifications: ["DO-160"], 
+    },
+    {
+      id: 14,
+      title: "3D Dichroic Mirror",
+      subtitle: "Espejo Dicroico 3D de Alta Precisión",
+      hero: "/products/mirror2.jpeg", 
+      gallery: [
+        "/products/mirror2.jpeg",
+        "/products/mirror.jpeg",
+      ],
+      image: "/products/mirror2.jpeg",
+      description:"Sistema óptico avanzado integrado en el programa BEVS para optimizar la visión 3D en operaciones de reabastecimiento en vuelo del A330 MRTT. Esta tecnología permite al operador visualizar el área de contacto sin distorsiones ópticas, eliminando por completo el efecto 'ghosting' y garantizando la máxima precisión en maniobras críticas aire-aire.",
       certifications: ["DO-160"], 
     },
   ];

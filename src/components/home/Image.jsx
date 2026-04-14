@@ -86,7 +86,7 @@ const hotspots = [
     align: "right",
   },
   {
-    id: 8,
+    id: 9,
     title: "IRILL Control Module",
     description: "Sistema de Iluminación.",
     x: "41%",
@@ -96,7 +96,7 @@ const hotspots = [
     align: "right",
   },
   {
-    id: 9,
+    id: 10,
     title: "Power Control Cable",
     description: "Cable de Control",
     x: "35%",
@@ -106,7 +106,7 @@ const hotspots = [
     align: "right",
   },
   {
-    id: 10,
+    id: 11,
     title: "Focus ME",
     description: "Sistema de Enfoque",
     x: "9%",
@@ -116,13 +116,23 @@ const hotspots = [
     align: "bottom",
   },
   {
-    id: 11,
+    id: 12,
     title: "Optical Fiber",
     description: "Sistema de Fibra Óptica",
     x: "24%",
     y: "59%",
     image: "/products/fibercable.jpeg",
     path: "/proyectos/destacados/13",
+    align: "center",
+  },
+  {
+    id: 13,
+    title: "3D Dichroic Mirror",
+    description: "Sistema de Fibra Óptica",
+    x: "88%",
+    y: "56%",
+    image: "/products/mirror2.jpeg",
+    path: "/proyectos/destacados/14",
     align: "center",
   },
 ];

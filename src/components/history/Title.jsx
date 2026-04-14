@@ -1,103 +1,124 @@
 import { motion } from "motion/react";
 
-const text = "Hitos que nos han transformado";
+const words = [
+  { text: "Los", accent: false },
+  { text: "hitos", accent: false },
+  { text: "que", accent: false },
+  { text: "forjaron", accent: true },
+  { text: "nuestra", accent: false },
+  { text: "excelencia", accent: false },
+];
 
 const container = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.025,
-      delayChildren: 0.2,
+      staggerChildren: 0.15,
+      delayChildren: 0.3,
     },
   },
 };
 
-const letter = {
-  hidden: { opacity: 0, y: 50, rotateX: -90 },
+const word = {
+  hidden: { y: "110%", opacity: 0 },
   visible: {
+    y: "0%",
     opacity: 1,
-    y: 0,
-    rotateX: 0,
     transition: {
-      type: "spring",
-      damping: 12,
-      stiffness: 100,
+      duration: 0.85,
+      ease: [0.16, 1, 0.3, 1], 
     },
   },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 18 },
+  visible: (delay) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.46, 0.45, 0.94],
+      delay,
+    },
+  }),
 };
 
 export default function Title() {
-  const words = text.split(" ");
-
   return (
     <div className="relative mb-32">
-      {/* Background decorative elements */}
+      {/* Ambient glow de fondo */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-brand-blue/10 to-brand-pink/10 blur-[100px] rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[350px] bg-gradient-to-r from-brand-blue/8 to-brand-pink/8 blur-[120px] rounded-full" />
       </div>
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={container}
-        className="max-w-5xl mx-auto"
-      >
-        {/* Main title */}
-        <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extralight text-center tracking-tight leading-[1.1] px-4">
-          {words.map((wordText, wordIndex) => (
-            <span
-              key={wordIndex}
-              className="inline-block whitespace-nowrap mr-4 md:mr-6"
-            >
-              {wordText.split("").map((char, charIndex) => (
-                <motion.span
-                  key={charIndex}
-                  variants={letter}
-                  className="inline-block relative"
-                  style={{
-                    perspective: "1000px",
-                  }}
-                >
-                  <span className="relative inline-block">
-                    {/* Main text with gradient */}
-                    <span className="relative z-10 bg-gradient-to-br from-white via-slate-100 to-slate-400 bg-clip-text text-transparent font-light">
-                      {char}
-                    </span>
+      <div className="max-w-5xl mx-auto px-4">
+        {/* Eyebrow label */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          custom={0.1}
+          variants={fadeUp}
+          className="flex items-center justify-center gap-4 mb-12"
+        >
+          <div className="h-px w-8 bg-brand-blue/40" />
+          <span className="text-[11px] tracking-[0.25em] uppercase italic text-brand-blue/60 font-light">
+            Nuestra historia
+          </span>
+          <div className="h-px w-8 bg-brand-blue/40" />
+        </motion.div>
 
-                    {/* Subtle glow effect on certain letters */}
-                    {(wordIndex === words.length - 1 || wordIndex === 0) && (
-                      <span className="absolute inset-0 bg-gradient-to-br from-brand-blue/20 to-brand-pink/20 blur-sm -z-10 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    )}
-                  </span>
-                </motion.span>
-              ))}
+        {/* Título principal */}
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={container}
+          className="flex flex-wrap justify-center gap-x-[0.3em] gap-y-2 text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-center tracking-tight leading-[1.1]"
+        >
+          {words.map((w, i) => (
+            <span key={i} className="overflow-hidden inline-block">
+              <motion.span
+                variants={word}
+                className={`inline-block ${
+                  w.accent
+                    ? "bg-brand-blue bg-clip-text text-transparent"
+                    : "bg-gradient-to-br from-white via-slate-100 to-slate-400 bg-clip-text text-transparent"
+                }`}
+              >
+                {w.text}
+              </motion.span>
             </span>
           ))}
-        </h2>
+        </motion.h2>
 
-        {/* Decorative underline */}
+        {/* Línea divisoria con punto central */}
         <motion.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-          className="mt-8 h-px w-full max-w-md mx-auto origin-center"
+          transition={{ duration: 1.1, delay: 1.0, ease: [0.65, 0, 0.35, 1] }}
+          className="mt-10 mx-auto origin-center max-w-xs"
         >
-          <div className="h-full w-full bg-gradient-to-r from-transparent via-brand-blue/50 to-transparent" />
+          <div className="relative h-px bg-gradient-to-r from-transparent via-brand-blue/40 to-transparent">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-brand-blue/70" />
+          </div>
         </motion.div>
 
-        {/* Optional subtitle or description */}
+        {/* Subtítulo */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 1 }}
-          className="text-center text-slate-400 text-base md:text-lg mt-8 max-w-2xl mx-auto px-4 leading-relaxed"
+          custom={1.2}
+          variants={fadeUp}
+          className="text-center text-slate-400/70 text-base md:text-lg mt-9 max-w-xl mx-auto leading-relaxed italic font-light tracking-wide"
         >
-          Momentos clave que han definido nuestra trayectoria.
+          Una trayectoria de precisión, innovación y visión
+          <br className="hidden md:block" /> que continúa elevándose.
         </motion.p>
-      </motion.div>
+      </div>
     </div>
   );
 }
