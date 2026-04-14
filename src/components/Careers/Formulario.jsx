@@ -55,28 +55,49 @@ export default function Formulario() {
     }
   };
 
-  const fileToBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = (error) => reject(error);
-    });
+
+
+
+
+  const uploadToCloudinary = async (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append(
+      "upload_preset",
+      import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
+    );
+  
+    const res = await fetch(
+      `https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/upload`,
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+  
+    const data = await res.json();
+    return data.secure_url;
   };
+
+
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!formData.name || !formData.email || !formData.cv) {
       setStatus("error");
       return;
     }
-
+  
     setIsSubmitting(true);
-
+  
     try {
-      const cvBase64 = await fileToBase64(formData.cv);
-
+      // 1. Subir CV a Cloudinary
+      const fileUrl = await uploadToCloudinary(formData.cv);
+  
+      // 2. Enviar email con link
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE,
         import.meta.env.VITE_EMAILJS_TEMPLATE,
@@ -86,11 +107,11 @@ export default function Formulario() {
           phone: formData.phone,
           position: formData.position,
           message: formData.message,
-          cv: cvBase64,
+          cv_link: fileUrl, 
         },
         import.meta.env.VITE_EMAILJS_PUBLIC
       );
-
+  
       setIsSubmitting(false);
       setStatus("success");
     } catch (error) {
