@@ -47,13 +47,12 @@ const fadeUp = {
 export default function Title() {
   return (
     <div className="relative mb-32">
-      {/* Ambient glow de fondo */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[350px] bg-gradient-to-r from-brand-blue/8 to-brand-pink/8 blur-[120px] rounded-full" />
       </div>
 
       <div className="max-w-5xl mx-auto px-4">
-        {/* Eyebrow label */}
+       
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -63,13 +62,13 @@ export default function Title() {
           className="flex items-center justify-center gap-4 mb-12"
         >
           <div className="h-px w-8 bg-brand-blue/40" />
-          <span className="text-[11px] tracking-[0.25em] uppercase italic text-brand-blue/60 font-light">
+          <span className="text-[11px] tracking-[0.25em] uppercase italic text-brand-blue/60 font-bold">
             Nuestra historia
           </span>
           <div className="h-px w-8 bg-brand-blue/40" />
         </motion.div>
 
-        {/* Título principal */}
+        {/* Título */}
         <motion.h2
           initial="hidden"
           whileInView="visible"
@@ -93,7 +92,7 @@ export default function Title() {
           ))}
         </motion.h2>
 
-        {/* Línea divisoria con punto central */}
+        {/* Línea con punto */}
         <motion.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
@@ -106,7 +105,6 @@ export default function Title() {
           </div>
         </motion.div>
 
-        {/* Subtítulo */}
         <motion.p
           initial="hidden"
           whileInView="visible"

@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
 
 const words = [
-  { text: "Y",      accent: false },
-  { text: "esto",   accent: false },
+  { text: "Y", accent: false },
+  { text: "esto", accent: false },
   { text: "apenas", accent: false },
   { text: "comienza", accent: true },
 ];
@@ -41,13 +41,11 @@ const fadeUp = (delay = 0) => ({
 export default function Subtitle() {
   return (
     <div className="relative pt-24 pb-28">
-      
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[320px] bg-gradient-to-r from-violet-600/8 to-brand-blue/8 blur-[130px] rounded-full" />
       </div>
 
       <div className="max-w-5xl mx-auto px-4">
-
         {/* Conector de timeline */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -105,20 +103,8 @@ export default function Subtitle() {
           ))}
         </motion.h2>
 
-        {/* Línea divisoria */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 1.1, ease: [0.65, 0, 0.35, 1] }}
-          className="mt-9 mx-auto origin-center max-w-[200px]"
-        >
-          <div className="relative h-px bg-gradient-to-r from-transparent via-violet-500/40 to-transparent">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-violet-400/70" />
-          </div>
-        </motion.div>
 
-        {/* Footer — terminal del timeline */}
+        {/* Footer */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -126,7 +112,7 @@ export default function Subtitle() {
           variants={fadeUp(1.4)}
           className="mt-14 flex flex-col items-center gap-0"
         >
-          {/* Cola final del timeline */}
+          
           <motion.div
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
@@ -134,9 +120,15 @@ export default function Subtitle() {
             transition={{ duration: 0.9, delay: 1.5, ease: [0.65, 0, 0.35, 1] }}
             className="w-px h-14 bg-gradient-to-b from-violet-400/50 to-transparent origin-top"
           />
-          {/* Punto terminal */}
+          {/* Punto  */}
           <motion.div
-            animate={{ boxShadow: ["0 0 8px rgba(167,139,250,0.3)", "0 0 20px rgba(167,139,250,0.7)", "0 0 8px rgba(167,139,250,0.3)"] }}
+            animate={{
+              boxShadow: [
+                "0 0 8px rgba(167,139,250,0.3)",
+                "0 0 20px rgba(167,139,250,0.7)",
+                "0 0 8px rgba(167,139,250,0.3)",
+              ],
+            }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             className="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-violet-400 to-indigo-400"
           />
@@ -152,7 +144,6 @@ export default function Subtitle() {
             El futuro está en construcción
           </motion.p>
         </motion.div>
-
       </div>
     </div>
   );

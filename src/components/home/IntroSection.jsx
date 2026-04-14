@@ -14,7 +14,7 @@ const IntroSection = () => {
       {/* Línea decorativa superior */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-      {/* ── HEADLINE central absoluta ── */}
+
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
         <motion.p
           initial={{ opacity: 0 }}
@@ -40,7 +40,7 @@ const IntroSection = () => {
           Trayectoria Consolidada
         </motion.span>
 
-        {/* Título display — ocupa el ancho y rompe con intención */}
+        
         <div className="overflow-hidden mb-2">
           <motion.h1
             initial={{ y: "100%" }}
@@ -65,7 +65,7 @@ const IntroSection = () => {
           </motion.h1>
         </div>
 
-        {/* ── Fila inferior — tres columnas asimétricas ── */}
+        {/* ── Fila inferior ── */}
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 sm:gap-4 text-justify items-end">
 
           {/* Texto principal */}
@@ -82,7 +82,7 @@ const IntroSection = () => {
                 (Airworthy Systems).
               </span> <br/>
               <div className="mt-8">
-                <DiagonalButton href="/empresa/about">Conócenos</DiagonalButton>
+                <DiagonalButton variant="blue" href="/empresa/about">Conócenos</DiagonalButton>
               </div>
               
             </p>

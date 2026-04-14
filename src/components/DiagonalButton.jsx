@@ -41,7 +41,7 @@ export default function DiagonalButton({
       hover: "bg-black text-white border-black"
     },
     blue: {
-      base: "bg-brand-blue text-white border-brand-blue",
+      base: "bg-brand-blue/80 text-white border-brand-blue",
       hover: "bg-brand-pink border-brand-pink"
     },
     outline: {
@@ -69,7 +69,7 @@ export default function DiagonalButton({
           transform translate-x-[-101%] group-hover:translate-x-0
           ${variant === 'primary' ? 'bg-brand-blue' : ''}
           ${variant === 'secondary' ? 'bg-black' : ''}
-          ${variant === 'blue' ? 'bg-black' : ''}
+          ${variant === 'blue' ? 'bg-brand-blue' : ''}
           ${variant === 'outline' ? 'bg-black' : ''}
         `}
       />

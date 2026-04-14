@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, Shield, Cpu, Gauge, ChevronRight, X } from "lucide-react";
+import { ArrowLeft, ChevronRight, X } from "lucide-react";
 import { products } from "../../components/products/products";
 
 export default function ProjectDetail() {
@@ -35,7 +35,7 @@ export default function ProjectDetail() {
             />
           </div>
           <span className="hidden md:block font-normal tracking-widest text-white p-2 text-sm rounded ">
-            Volver
+            Proyectos
           </span>
         </Link>
       </div>
@@ -98,7 +98,7 @@ export default function ProjectDetail() {
     </div>
   )}
 
-  {/* GALERÍA (siempre que haya imágenes) */}
+  {/* GALERÍA  */}
   {project.gallery?.length > 0 && (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {project.gallery.map((img, i) => (
@@ -132,7 +132,7 @@ export default function ProjectDetail() {
               {otherProjects.map((other) => (
                 <Link
                   key={other.id}
-                  to={`/proyectos/destacados/${other.id}`} // Ajusta la ruta según tu App.js
+                  to={`/proyectos/destacados/${other.id}`} 
                   className="group block p-3 bg-black/40 rounded-xl border border-white/5 hover:border-brand-blue/50 transition-all duration-300"
                 >
                   <div className="flex gap-4 items-center">
