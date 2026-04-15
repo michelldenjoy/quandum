@@ -61,11 +61,11 @@ export default function Title() {
           variants={fadeUp}
           className="flex items-center justify-center gap-4 mb-12"
         >
-          <div className="h-px w-8 bg-brand-blue/40" />
+          {/* <div className="h-px w-8 bg-brand-blue/40" />
           <span className="text-[11px] tracking-[0.25em] uppercase italic text-brand-blue/60 font-bold">
             Nuestra historia
           </span>
-          <div className="h-px w-8 bg-brand-blue/40" />
+          <div className="h-px w-8 bg-brand-blue/40" /> */}
         </motion.div>
 
         {/* Título */}

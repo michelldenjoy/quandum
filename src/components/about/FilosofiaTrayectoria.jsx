@@ -6,10 +6,9 @@
 //   return (
 //     <section className="w-full relative  overflow-hidden">
 //       <StarfieldNebula />
-      
+
 //       <div className="relative max-w-7xl mx-auto px-6 py-32 lg:py-40 space-y-32">
 
-        
 //         <motion.div
 //           initial={{ opacity: 0, y: 40 }}
 //           whileInView={{ opacity: 1, y: 0 }}
@@ -17,7 +16,7 @@
 //           transition={{ duration: 0.8, ease: "easeOut" }}
 //           className="grid grid-cols-1 lg:grid-cols-2 bg-zinc-900/40 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 gap-16 items-center"
 //         >
-         
+
 //           <div className="space-y-6">
 //             <div className="flex items-center gap-4 mb-6">
 //               <div className="w-12 h-[1px] bg-blue-500/50"></div>
@@ -46,7 +45,6 @@
 //             </p>
 //           </div>
 
-         
 //           <motion.div
 //             initial={{ opacity: 0, scale: 0.9 }}
 //             whileInView={{ opacity: 1, scale: 1 }}
@@ -60,7 +58,7 @@
 //               transition={{ duration: 1.5 }}
 //               className="absolute inset-0"
 //             >
-              
+
 //               <motion.div
 //                 animate={{ y: [-20, 20, -20] }}
 //                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -82,7 +80,6 @@
 //           </motion.div>
 //         </motion.div>
 
-        
 //         <motion.div
 //           initial={{ opacity: 0, y: 40 }}
 //           whileInView={{ opacity: 1, y: 0 }}
@@ -90,7 +87,7 @@
 //           transition={{ duration: 0.8, ease: "easeOut" }}
 //           className="grid grid-cols-1 lg:grid-cols-2 bg-zinc-900/40 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 gap-16 items-center"
 //         >
-          
+
 //           <motion.div
 //             initial={{ opacity: 0, scale: 0.9 }}
 //             whileInView={{ opacity: 1, scale: 1 }}
@@ -118,7 +115,6 @@
 //             </motion.div>
 //           </motion.div>
 
-          
 //           <div className="space-y-6">
 //             <div className="flex items-center gap-4 mb-6">
 //               <div className="w-12 h-[1px] bg-blue-500/50"></div>
@@ -165,12 +161,6 @@
 //   );
 // }
 
-
-
-
-
-
-
 import { motion } from "motion/react";
 
 export default function FilosofiaTrayectoria() {
@@ -178,7 +168,6 @@ export default function FilosofiaTrayectoria() {
     <section className="relative py-24 bg-gradient-to-b from-black/10 via-slate-900 to-black/10">
       <div className="max-w-7xl my-4 mx-auto px-6 sm:px-10 md:px-16 lg:px-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          
           {/* VISIÓN */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -187,14 +176,16 @@ export default function FilosofiaTrayectoria() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-                <h3 className="text-3xl md:text-5xl lg:text-4xl font-extralight text-white tracking-tight leading-[1.1]">
-                  Nuestra 
-                  <br />
-                  <span className="font-normal text-4xl md:text-5xl lg:text-5xl bg-gradient-to-r from-brand-blue via-slate-200 to-brand-blue bg-clip-text text-transparent  animate-gradient bg-[length:200%_auto]">Filosofía</span>
-                </h3>
-            
+            <h3 className="text-3xl md:text-5xl lg:text-4xl font-extralight text-white tracking-tight leading-[1.1]">
+              Nuestra
+              <br />
+              <span className="font-normal text-4xl md:text-5xl lg:text-5xl bg-gradient-to-r from-brand-blue via-slate-200 to-brand-blue bg-clip-text text-transparent  animate-gradient bg-[length:200%_auto]">
+                Filosofía
+              </span>
+            </h3>
+
             <p className="text-slate-100 text-base  text-justify leading-relaxed">
-            Cada proyecto lo abordamos con una combinación única de rigor
+              Cada proyecto lo abordamos con una combinación única de rigor
               técnico, innovación constante y pensamiento crítico. Nuestros
               desarrollos se guían por estándares internacionales: DO-178C,
               DO-254, DO-160, MIL-STD, que aseguran que cada sistema que
@@ -211,37 +202,38 @@ export default function FilosofiaTrayectoria() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6"
           >
-                <h3 className="text-3xl md:text-5xl lg:text-4xl font-extralight text-white tracking-tight leading-[1.1]">
-                  Nuestra 
-                  <br />
-                  <span className="font-normal text-4xl md:text-5xl lg:text-5xl bg-gradient-to-r from-brand-blue via-slate-200 to-brand-blue bg-clip-text text-transparent  animate-gradient bg-[length:200%_auto]">Trayectoria</span>
-                </h3>
-            
+            <h3 className="text-3xl md:text-5xl lg:text-4xl font-extralight text-white tracking-tight leading-[1.1]">
+              Nuestra
+              <br />
+              <span className="font-normal text-4xl md:text-5xl lg:text-5xl bg-gradient-to-r from-brand-blue via-slate-200 to-brand-blue bg-clip-text text-transparent  animate-gradient bg-[length:200%_auto]">
+                Trayectoria
+              </span>
+            </h3>
+
             <p className="text-slate-100 text-base  text-justify leading-relaxed">
-            A lo largo de dos décadas hemos participado en programas
+              A lo largo de dos décadas hemos participado en programas
               estratégicos para defensa, aeronáutica y sectores industriales de
               alta exigencia, siempre manteniendo una cultura de: <br />
-              <ul className="space-y-3 text-base md:text-lg text-slate-300 font-light">
-              <li className="flex items-start gap-3">
-                <span className="text-slate-100 ">•</span>
-                <span>Excelencia técnica</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-slate-100 ">•</span>
-                <span>Mejora continua</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-slate-100 ">•</span>
-                <span>Innovación sostenible</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-slate-100 ">•</span>
-                <span>Compromiso absoluto con la fiabilidad</span>
-              </li>
-            </ul>
+              <ul className="space-y-1 text-base md:text-lg text-slate-300 font-light">
+                <li className="flex items-start gap-3">
+                  <span className="text-slate-100 ">•</span>
+                  <span>Excelencia técnica</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-slate-100 ">•</span>
+                  <span>Mejora continua</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-slate-100 ">•</span>
+                  <span>Innovación sostenible</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-slate-100 ">•</span>
+                  <span>Compromiso absoluto y fiabilidad</span>
+                </li>
+              </ul>
             </p>
           </motion.div>
-
         </div>
       </div>
 

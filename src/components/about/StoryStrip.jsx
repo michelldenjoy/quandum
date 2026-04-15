@@ -25,7 +25,7 @@ export default function StoryStrip() {
         className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6"
       >
        
-        <a href="/empresa/historia" className="text-white text-3xl md:text-5xl font-semibold tracking-[0.25em] mb-4">
+        <a href="/empresa/historia" className="text-white text-3xl md:text-5xl font-semibold tracking-[0.15em] mb-4">
           NUESTRA HISTORIA
         </a>
 
@@ -34,7 +34,7 @@ export default function StoryStrip() {
           href="/empresa/historia"
           className="px-8 py-4 w-80 mb-8 "
         >
-          Ver 
+          Explora el camino
         </DiagonalButton>
       </motion.div>
     </section>

@@ -46,8 +46,8 @@ export default function Subtitle() {
       </div>
 
       <div className="max-w-5xl mx-auto px-4">
-        {/* Conector de timeline */}
-        <motion.div
+        {/* linea y puntito morado muy lindo */}
+        {/* <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -62,10 +62,10 @@ export default function Subtitle() {
           >
             <span className="absolute inset-[-5px] rounded-full border border-violet-400/20 animate-ping" />
           </motion.div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Eyebrow */}
-        <motion.div
+        {/* <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -77,7 +77,7 @@ export default function Subtitle() {
             Presente · Futuro
           </span>
           <div className="h-px w-7 bg-violet-400/40" />
-        </motion.div>
+        </motion.div> */}
 
         {/* Título */}
         <motion.h2

@@ -31,18 +31,11 @@ const images = [
     category: "LABORATORY",
   },
   {
-    src: "/images/instalation2.webp",
-    label: "Infraestructura Industrial",
-    specs: "Sistemas integrados de gestión",
-    code: "FAC-05",
-    category: "INDUSTRIAL",
-  },
-  {
-    src: "/images/instalation3.webp",
-    label: "Fabricación Aditiva",
-    specs: "Prototipado y producción avanzada",
+    src: "/images/team.webp",
+    label: "Equipo Técnico",
+    specs: "Detrás de cada solución hay un equipo multidisciplinar que combina conocimiento, innovación y precisión técnica.",
     code: "FAC-06",
-    category: "ADDITIVE MFG",
+    category: "ENGINEERING",
   },
 ];
 

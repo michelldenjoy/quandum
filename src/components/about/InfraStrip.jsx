@@ -23,8 +23,8 @@ export default function InfraStrip() {
         className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6"
       >
         
-        <h2 className="text-white text-2xl md:text-5xl font-semibold tracking-[0.25em] mb-4">
-          NUESTRA INFRAESTRUCTURA
+        <h2 className="text-white text-2xl md:text-5xl font-semibold tracking-[0.15em] mb-4">
+          NUESTRAS INSTALACIONES
         </h2>
 
         
@@ -32,7 +32,7 @@ export default function InfraStrip() {
           href="/empresa/infraestructuras"
           className="px-8 py-4 w-80 mb-4"
         >
-          Ver  
+          Explora el entorno
         </DiagonalButton>
       </motion.div>
     </section>

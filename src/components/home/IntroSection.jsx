@@ -1,11 +1,12 @@
 import { motion } from "motion/react";
 import DiagonalButton from "../DiagonalButton";
 
-const programs = ["A310-MRTT", "A330-MRTT", "C-295"];
+// Programas reales en los que Quandum tiene presencia o certificación
+const programs = ["A310-MRTT", "A330-MRTT", "C-295", "Eurofighter"];
 
 const IntroSection = () => {
   return (
-    <section className="relative w-full  lg:flex lg:flex-col lg:justify-end pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 overflow-hidden">
+    <section className="relative w-full lg:flex lg:flex-col lg:justify-end pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-24 px-6 sm:px-6 overflow-hidden">
 
       {/* Fondo */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-slate-900 to-black pointer-events-none" />
@@ -14,13 +15,13 @@ const IntroSection = () => {
       {/* Línea decorativa superior */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-
+      {/* Marca de agua de fondo */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, ease: "easeOut" }}
-          className="sm:text-[clamp(5rem,14vw,13rem)] text-6xl font-extralight  text-white/[0.07] tracking-[0.30em] uppercase leading-none text-center whitespace-nowrap "
+          className="sm:text-[clamp(5rem,14vw,13rem)] text-6xl font-extralight text-white/[0.07] tracking-[0.30em] uppercase leading-none text-center whitespace-nowrap "
         >
           QUANDUM
         </motion.p>
@@ -37,10 +38,10 @@ const IntroSection = () => {
           transition={{ duration: 0.6 }}
           className="block text-xs tracking-[0.35em] font-medium text-slate-400 uppercase mb-8"
         >
-          Trayectoria Consolidada
+          Elevando los estándares aeroespaciales
         </motion.span>
 
-        
+        {/* Título - Línea 1 */}
         <div className="overflow-hidden mb-2">
           <motion.h1
             initial={{ y: "100%" }}
@@ -53,6 +54,7 @@ const IntroSection = () => {
           </motion.h1>
         </div>
 
+        {/* Título - Línea 2 */}
         <div className="overflow-hidden mb-14 sm:mb-20">
           <motion.h1
             initial={{ y: "100%" }}
@@ -61,14 +63,14 @@ const IntroSection = () => {
             transition={{ duration: 0.9, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
             className="text-[clamp(2.8rem,7vw,7rem)] mb-4 font-semibold text-white tracking-tight leading-[1.0]"
           >
-            Ingeniería de Precisión
+            Ingeniería Crítica
           </motion.h1>
         </div>
 
         {/* ── Fila inferior ── */}
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 sm:gap-4 text-justify items-end">
 
-          {/* Texto principal */}
+          {/* Texto principal en primera persona */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -76,22 +78,25 @@ const IntroSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="sm:col-span-5"
           >
-            <p className="text-sm  sm:text-base text-gray-400 leading-relaxed font-light">
-            Impulsamos proyectos aeroespaciales desde la idea hasta su validación final. Nuestra experiencia nos permite transformar especificaciones complejas en soluciones listas para operar, con un enfoque integral y orientado a resultados. Combinamos conocimiento técnico, rigor y cercanía para garantizar un desarrollo fiable en cada etapa.{" "} <br/>
+            <p className="text-sm sm:text-base text-gray-400 leading-relaxed font-light">
+              Somos arquitectos de soluciones para entornos de alta exigencia. En Quandum, 
+              diseñamos y desarrollamos sistemas electrónicos y software de control que 
+              garantizan el éxito en misiones críticas. Desde la concepción de la idea 
+              hasta la certificación final, aportamos el rigor técnico necesario para 
+              convertir desafíos complejos en sistemas operativos fiables.{" "} <br/>
               <span className="text-blue-400/70 font-mono text-xs">
-                (Airworthy Systems).
+                (Sistemas de Control y Telemetría Avanzada).
               </span> <br/>
               <div className="mt-8">
-                <DiagonalButton variant="blue" href="/empresa/about">Conócenos</DiagonalButton>
+                <DiagonalButton variant="blue" href="/empresa/about">Nuestra Misión</DiagonalButton>
               </div>
-              
             </p>
           </motion.div>
 
-          {/* Espacio central intencional */}
+          {/* Espacio central */}
           <div className="hidden sm:block sm:col-span-3" />
 
-          {/* Columna derecha — partner + programas */}
+          {/* Columna derecha — Programas y Certificación */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +106,7 @@ const IntroSection = () => {
           >
             <div className="text-left sm:text-right">
               <p className="text-[0.6rem] tracking-[0.3em] text-slate-600 uppercase font-semibold mb-3">
-                Programas de Referencia
+                Experiencia en Plataformas
               </p>
               <div className="flex flex-wrap gap-2 justify-start sm:justify-end">
                 {programs.map((program, i) => (
@@ -125,9 +130,9 @@ const IntroSection = () => {
             </div>
 
             <p className="text-[0.6rem] tracking-[0.25em] text-slate-600 uppercase text-left sm:text-right leading-relaxed">
-              Partner certificado
+              Ingeniería de Sistemas
               <br />
-              Defensa &amp; Aeronáutica
+              Defensa &amp; Espacio
             </p>
           </motion.div>
         </div>

@@ -8,7 +8,7 @@ export default function Historia() {
       <HeroVideo
         eyebrow="Nuestra Historia"
         title="Ingeniería que evoluciona"
-        description="Una trayectoria marcada por la calidad, el rigor técnico y el avance constante."
+        description=""
         backgroundImage="/images/history.jpg"
       />
       <AboutTimeline />

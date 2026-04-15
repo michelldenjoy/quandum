@@ -41,7 +41,7 @@ export default function Infraestructuras() {
       {/* Imagen de fondo */}
       <HeroVideo
         eyebrow="Nuestra · Infraestructura"
-        title="Donde la idea se hace real"
+        title="El núcleo operativo"
         description="Entornos seguros y laboratorios donde la ingeniería alcanza su máximo nivel."
         backgroundImage="/images/about3.webp"
       />
