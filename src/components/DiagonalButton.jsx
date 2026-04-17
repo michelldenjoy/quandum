@@ -67,7 +67,7 @@ export default function DiagonalButton({
         className={`
           absolute inset-0 clip-path-diagonal transition-transform duration-500 
           transform translate-x-[-101%] group-hover:translate-x-0
-          ${variant === 'primary' ? 'bg-gradient-to-b from-slate-800 via-slate-700 to-slate-900' : ''}
+          ${variant === 'primary' ? 'bg-gradient-to-b from-slate-900 via-slate-700 to-slate-900' : ''}
           ${variant === 'secondary' ? 'bg-black' : ''}
           ${variant === 'blue' ? 'bg-brand-blue' : ''}
           ${variant === 'outline' ? 'bg-black' : ''}

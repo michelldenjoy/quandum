@@ -10,9 +10,10 @@ export default function Footer() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-12 gap-12 max-w-7xl mx-auto text-center md:text-left"
         >
-          <div className="space-y-6">
+         
+          <div className="md:col-span-6 space-y-6 flex flex-col items-center md:items-start pr-0 md:pr-16">
             <Link
               to="/"
               className="text-2xl font-black tracking-tight text-white"
@@ -23,107 +24,67 @@ export default function Footer() {
               </span>
             </Link>
 
-            <p className="text-sm leading-relaxed text-zinc-500">
+            <p className="text-sm leading-relaxed text-zinc-500 max-w-md">
               Advanced aerospace systems engineering for mission-critical
               environments. Precision, reliability and certified performance.
             </p>
           </div>
 
-          {/* EMPRESA + CAPACIDADES (2 columnas en móvil) */}
-          <div className="grid grid-cols-2 gap-8 md:col-span-2 md:grid-cols-2">
-            {/* EMPRESA */}
-            <div>
-              <h4 className="text-xs font-semibold uppercase tracking-widest text-white mb-6">
-                Empresa
-              </h4>
-              <ul className="space-y-3 text-sm">
-                <li>
-                  <Link to="/" className="hover:text-white transition-colors">
-                    Inicio
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/proyectos/destacados"
-                    className="hover:text-white transition-colors"
-                  >
-                    Proyectos
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/sobre-quandum/certificaciones"
-                    className="hover:text-white transition-colors"
-                  >
-                    Certificados
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/contacto"
-                    className="hover:text-white transition-colors"
-                  >
-                    Contacto
-                  </Link>
-                </li>
-              </ul>
-            </div>
+          <div className="md:col-span-3 flex flex-col items-center md:items-start md:pl-8">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-white mb-6">
+              Empresa
+            </h4>
 
-            {/* CAPACIDADES */}
-            <div>
-              <h4 className="text-xs font-semibold uppercase tracking-widest text-white mb-6">
-                Capacidades
-              </h4>
-              <ul className="space-y-3 text-sm">
-                <li>
-                  <Link
-                    to="/proyectos/destacados/1"
-                    className="hover:text-white transition-colors"
-                  >
-                    IR y Visión
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/proyectos/destacados/3"
-                    className="hover:text-white transition-colors"
-                  >
-                    Codificación
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/proyectos/destacados/6"
-                    className="hover:text-white transition-colors"
-                  >
-                    Iluminación
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/proyectos/destacados/7"
-                    className="hover:text-white transition-colors"
-                  >
-                    Inspección IA
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <Link
+                  to="/empresa/historia"
+                  className="hover:text-white transition-colors"
+                >
+                  Historia
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/empresa/infraestructuras"
+                  className="hover:text-white transition-colors"
+                >
+                  Infraestructura
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/sobre-quandum/calidad"
+                  className="hover:text-white transition-colors"
+                >
+                  Política de Calidad
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/sobre-quandum/certificaciones"
+                  className="hover:text-white transition-colors"
+                >
+                  Certificados
+                </Link>
+              </li>
+            </ul>
           </div>
 
-          {/* CONTACTO / LEGAL */}
-          <div>
-            <div>
-              <Link to="/contacto" className="inline-block mb-6">
-                <h4 className="text-xs font-semibold uppercase tracking-widest text-white hover:text-zinc-300 transition-colors">
-                  Contacto
-                </h4>
-              </Link>
+       
+          <div className="md:col-span-3 flex flex-col items-center md:items-start md:pl-8">
+            <Link to="/contacto" className="inline-block mb-6">
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-white hover:text-zinc-300 transition-colors">
+                Contacto
+              </h4>
+            </Link>
 
-              <div className="space-y-3 text-sm mb-8">
-                <p>info@quandum.com</p>
-                <p>España</p>
-              </div>
+            <div className="space-y-2 text-sm mb-8">
+              <p>info@quandum.com</p>
+              <p>España</p>
             </div>
 
             <h4 className="text-xs font-semibold uppercase tracking-widest text-white mb-6">
@@ -139,6 +100,7 @@ export default function Footer() {
                   Privacidad
                 </Link>
               </li>
+
               <li>
                 <Link
                   to="/legal-notice"
@@ -153,12 +115,13 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-zinc-800 bg-zinc-950">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-xs text-zinc-600">
+        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-zinc-600 text-center md:text-left">
           <p>
             © {new Date().getFullYear()} Quandum Aerospace. Todos los derechos
             reservados.
           </p>
-          <p className="mt-2 md:mt-0 tracking-widest uppercase">
+
+          <p className="tracking-widest uppercase">
             Engineered for Mission-Critical Systems
           </p>
         </div>
