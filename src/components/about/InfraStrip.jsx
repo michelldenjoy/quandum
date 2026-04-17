@@ -24,7 +24,7 @@ export default function InfraStrip() {
       >
         
         <h2 className="text-white text-2xl md:text-5xl font-semibold tracking-[0.15em] mb-4">
-          NUESTRAS INSTALACIONES
+          NUESTRO NÚCLEO
         </h2>
 
         

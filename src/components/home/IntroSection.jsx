@@ -9,7 +9,7 @@ const IntroSection = () => {
     <section className="relative w-full lg:flex lg:flex-col lg:justify-end pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-24 px-6 sm:px-6 overflow-hidden">
 
       {/* Fondo */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-slate-900 to-black pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-slate-900/75 to-black/10 pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(59,130,246,0.07),transparent)] pointer-events-none" />
 
       {/* Línea decorativa superior */}

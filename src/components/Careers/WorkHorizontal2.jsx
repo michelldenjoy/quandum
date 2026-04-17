@@ -1,294 +1,172 @@
-import { motion, AnimatePresence } from "motion/react";
-import { useState } from "react";
+import { motion } from "motion/react";
 import StarfieldNebula from "../3d/StarfieldNebula";
 
-const workWithUs = [
+const pillars = [
   {
-    title: "Cultura de Excelencia",
+    number: "01",
     tag: "VALORES",
-    image: "/images/automation.webp",
-    description:
-      "Formamos parte de un equipo donde la excelencia técnica y la innovación son nuestra razón de ser. Trabajamos en proyectos desafiantes que requieren lo mejor de cada ingeniero, en un entorno que valora el rigor, la precisión y el pensamiento crítico.",
+    title: "Cultura de Excelencia",
+    summary: "Rigor técnico, pensamiento crítico y mejora continua en cada proyecto.",
     items: [
-      "Proyectos de alta complejidad técnica en sector aeroespacial",
-      "Equipos multidisciplinares de ingenieros especializados",
-      "Cultura de mejora continua y aprendizaje",
-      "Estándares de calidad y certificación aeronáutica",
-      "Autonomía técnica y responsabilidad profesional",
-      "Reconocimiento del talento y la especialización",
+      "Proyectos de alta complejidad aeroespacial",
+      "Equipos multidisciplinares especializados",
+      "Estándares de certificación aeronáutica",
+      "Autonomía y responsabilidad profesional",
     ],
-    gradient: "from-brand-blue/50 to-brand-blue/40",
-    highlight: "Ambiente Técnico",
-    methodology: "Colaborativo",
+    accent: "#2563EB", // brand-blue
   },
   {
-    title: "Desarrollo Profesional",
-    tag: "CRECIMIENTO REAL",
-    image: "/images/scale.webp",
-    description:
-      "Trabajamos en proyectos reales para plataformas aeronáuticas en operación. Desde el primer día formarás parte de equipos que desarrollan sistemas críticos bajo normativa certificable. Apostamos por el crecimiento sostenido, basado en responsabilidad técnica, aprendizaje continuo y experiencia práctica en entornos exigentes.",
+    number: "02",
+    tag: "CRECIMIENTO",
+    title: "Desarrollo Real",
+    summary: "Desde el primer día, formas parte de sistemas críticos bajo normativa certificable.",
     items: [
-      "Formación aplicada en normativa aeroespacial (DO-178, DO-254, DO-160)",
-      "Participación directa en proyectos certificados y programas en activo",
-      "Acceso a herramientas y entornos de desarrollo utilizados en industria aeronáutica",
-      "Acompañamiento técnico por ingenieros senior",
-      "Plan de progresión profesional basado en competencias técnicas",
-      "Exposición a revisiones de diseño, validación y procesos de certificación",
-      "Colaboración con partners internacionales en programas reales",
+      "Normativa aeroespacial: DO-178, DO-254, DO-160",
+      "Acompañamiento por ingenieros senior",
+      "Progresión basada en competencias técnicas",
+      "Partners internacionales en programas activos",
     ],
-    gradient: "from-brand-blue/50 to-brand-blue/40",
-    highlight: "Formación Técnica Aplicada",
-    methodology: "Experiencia en Entornos Certificados",
+    accent: "#2563EB",
   },
   {
-    title: "Impacto Real",
+    number: "03",
     tag: "PROPÓSITO",
-    image: "/images/impact.webp",
-    description:
-      "Tu trabajo tendrá un impacto tangible en la industria y el mundo. Cada línea de código, cada circuito diseñado y cada sistema integrado contribuye a soluciones que salvan vidas, protegen infraestructuras críticas y avanzan el estado del arte en ingeniería aeroespacial.",
+    title: "Impacto Tangible",
+    summary: "Tu trabajo opera en entornos extremos y misiones donde la precisión es vital.",
     items: [
-      "Proyectos con aplicación directa en misiones críticas",
-      "Contribución a sistemas de defensa y seguridad nacional",
-      "Desarrollo de tecnología para emergencias y rescate",
-      "Participación en programas de I+D+i aeroespacial",
-      "Soluciones que operan en entornos extremos",
-      "Innovación con propósito y responsabilidad",
-      "Orgullo profesional por el trabajo realizado",
+      "Sistemas críticos de defensa y seguridad",
+      "I+D+i aeroespacial de vanguardia",
+      "Tecnología para emergencias y rescate",
+      "Innovación con propósito y trazabilidad",
     ],
-    gradient: "from-brand-blue/50 to-brand-blue/40",
-    highlight: "Proyectos Críticos",
-    methodology: "Alto Impacto",
+    accent: "#2563EB",
   },
 ];
 
 export default function WorkHorizontal2() {
-  const [expandedIndex, setExpandedIndex] = useState(null);
-
-  const toggleAccordion = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
-  };
-
   return (
-    <section className="relative py-32 px-6 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-black/10 via-slate-900/70 to-black/10 py-24 sm:py-28 lg:py-32 overflow-hidden">
       <StarfieldNebula />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+
+        {/* ── Header ── */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 max-w-3xl"
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-16 lg:mb-15 max-w-2xl"
         >
-          {/* <span className="block text-sm tracking-[0.30em] font-medium text-slate-300 uppercase mb-6">
-            Trabaja con Nosotros
-          </span> */}
-          <h2 className="text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight text-white tracking-tight leading-[1.1]">
-            Como
+          <div className="flex items-center gap-3 mb-5">
+           
+            <span className="text-[11px] font-mono tracking-[0.3em] text-slate-400 uppercase">
+              ¿Por qué Quandum?
+            </span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extralight text-white tracking-tight leading-[1.05]">
+            Desarrolla tu
             <br />
-            <span className="font-semibold">Trabajamos</span>
+            <span className="font-semibold">potencial aquí</span>
           </h2>
-          <p className="mt-6 text-gray-400 text-base md:text-lg leading-relaxed">
-            Buscamos ingenieros apasionados por la excelencia técnica que
-            quieran formar parte de proyectos aeroespaciales de alto impacto. Un
-            lugar donde el talento técnico se desarrolla, se valora y marca la
-            diferencia.
+          <p className="mt-5 text-slate-400 text-base md:text-lg leading-relaxed font-light max-w-xl">
+            Tres razones por las que los ingenieros eligen quedarse y crecer con nosotros.
           </p>
         </motion.div>
 
-        {/* Accordion Stack */}
-        <div className="space-y-4">
-          {workWithUs.map((process, index) => {
-            const isExpanded = expandedIndex === index;
+        {/* ── Cards Grid ── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
+          {pillars.map((pillar, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.12,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="group relative flex flex-col bg-slate-900/50 backdrop-blur-sm border border-slate-800/60 hover:border-slate-600/70 rounded-2xl p-7 lg:p-8 transition-all duration-500 hover:bg-slate-900/70"
+            >
+              {/* Top row: number + tag */}
+              <div className="flex items-center justify-between mb-6">
+                <span className="font-mono text-4xl font-bold text-white/8 select-none tabular-nums">
+                  {pillar.number}
+                </span>
+                <span className="text-[10px] font-mono tracking-[0.28em] text-brand-blue/70 uppercase px-3 py-1 border border-brand-blue/20 rounded-full">
+                  {pillar.tag}
+                </span>
+              </div>
 
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative group"
-              >
-                {/* Glow effect when expanded */}
-                <AnimatePresence>
-                  {isExpanded && (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className={`absolute -inset-1 bg-gradient-to-r ${process.gradient} opacity-20 blur-xl rounded-2xl`}
-                    />
-                  )}
-                </AnimatePresence>
+              {/* Title */}
+              <h3 className="text-xl lg:text-2xl font-semibold text-white mb-3 leading-snug group-hover:text-white transition-colors duration-300">
+                {pillar.title}
+              </h3>
 
-                {/* Main Card */}
-                <div
-                  className={`relative bg-slate-900/60 backdrop-blur-md border rounded-2xl overflow-hidden transition-all duration-500 ${
-                    isExpanded
-                      ? "border-white/20 shadow-2xl"
-                      : "border-slate-800/50 hover:border-slate-700/70"
-                  }`}
-                >
-                  {/* Header - Always Visible */}
-                  <button
-                    onClick={() => toggleAccordion(index)}
-                    className="w-full p-6 md:p-8 flex items-center justify-between gap-4 group/header transition-all duration-300"
+              {/* Summary */}
+              <p className="text-sm text-slate-400 leading-relaxed mb-6 font-light">
+                {pillar.summary}
+              </p>
+
+              {/* Divider */}
+              <div className="h-px w-full bg-gradient-to-r from-brand-blue/30 via-slate-700/40 to-transparent mb-6" />
+
+              {/* Key points */}
+              <ul className="space-y-3 flex-1">
+                {pillar.items.map((item, idx) => (
+                  <motion.li
+                    key={idx}
+                    initial={{ opacity: 0, x: -8 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.3 + index * 0.1 + idx * 0.06 }}
+                    className="flex items-start gap-3 group/item"
                   >
-                    <div className="flex items-center gap-6 flex-1">
-                      {/* Title & Tag */}
-                      <div className="text-left flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <span
-                            className={`text-xs tracking-[0.3em] font-semibold px-3 py-1 rounded-full ${
-                              isExpanded
-                                ? `bg-gradient-to-r ${process.gradient} text-white`
-                                : "bg-slate-800/50 text-slate-400"
-                            } transition-all duration-300`}
-                          >
-                            {process.tag}
-                          </span>
-                          <span className="text-slate-400 font-mono text-sm">
-                            {String(index + 1).padStart(2, "0")}
-                          </span>
-                        </div>
-                        <h3
-                          className={`text-2xl md:text-3xl lg:text-4xl font-light transition-colors duration-300 ${
-                            isExpanded ? "text-white" : "text-slate-300"
-                          }`}
-                        >
-                          {process.title}
-                        </h3>
-                      </div>
-                    </div>
+                    {/* Dot */}
+                    <span className="mt-[7px] flex-shrink-0 w-1 h-1 rounded-full bg-brand-blue/60 group-hover/item:bg-brand-blue transition-colors duration-300" />
+                    <span className="text-sm text-slate-400 leading-relaxed group-hover/item:text-slate-300 transition-colors duration-300">
+                      {item}
+                    </span>
+                  </motion.li>
+                ))}
+              </ul>
 
-                    {/* Expand/Collapse Button */}
-                    <motion.div
-                      animate={{ rotate: isExpanded ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
-                      className={`w-12 h-12 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
-                        isExpanded
-                          ? `border-white/30 bg-white/10`
-                          : "border-slate-700 bg-slate-800/30 group-hover/header:border-slate-600"
-                      }`}
-                    >
-                      <svg
-                        className={`w-6 h-6 transition-colors duration-300 ${
-                          isExpanded ? "text-white" : "text-slate-400"
-                        }`}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </motion.div>
-                  </button>
-            
-                  <AnimatePresence>
-                    {isExpanded && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.4, ease: "easeInOut" }}
-                        className="overflow-hidden"
-                      >
-                        <div className="border-t border-slate-800/50">
-                          <div className="grid lg:grid-cols-2 gap-8 p-6 md:p-8">
-                            {/* Left: Image */}
-                            <motion.div
-                              initial={{ opacity: 0, x: -20 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ duration: 0.5, delay: 0.1 }}
-                              className="relative h-[300px] lg:h-[400px] rounded-xl overflow-hidden group/image"
-                            >
-                              <img
-                                src={process.image}
-                                alt={process.title}
-                                className="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700"
-                              />
-                              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-60" />
-                            </motion.div>
-
-                            {/* Right: Content */}
-                            <motion.div
-                              initial={{ opacity: 0, x: 20 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ duration: 0.5, delay: 0.2 }}
-                              className="flex flex-col justify-center"
-                            >
-                              {/* Description */}
-                              <p className="text-gray-400 text-base leading-relaxed mb-6">
-                                {process.description}
-                              </p>
-
-                              {/* Divider */}
-                              <div
-                                className={`h-px w-full bg-gradient-to-r ${process.gradient} opacity-30 mb-6`}
-                              />
-
-                              {/* Capabilities */}
-                              <div className="space-y-3 mb-6">
-                                {process.items.map((item, idx) => (
-                                  <motion.div
-                                    key={idx}
-                                    initial={{ opacity: 0, x: -10 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{
-                                      duration: 0.3,
-                                      delay: 0.3 + idx * 0.05,
-                                    }}
-                                    className="flex items-start gap-3 group/item"
-                                  >
-                                    <div className="mt-2 flex-shrink-0">
-                                      <div
-                                        className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${process.gradient} group-hover/item:scale-150 transition-transform duration-300`}
-                                      />
-                                    </div>
-                                    <span className="text-gray-300 text-sm md:text-base leading-relaxed group-hover/item:text-white transition-colors duration-300">
-                                      {item}
-                                    </span>
-                                  </motion.div>
-                                ))}
-                              </div>
-
-                              {/* Metadata */}
-                              <div className="flex gap-12 pt-6 border-t border-slate-800/50">
-                                <div>
-                                  <div className="text-xs text-gray-200 mb-2 tracking-wider uppercase">
-                                    Highlight
-                                  </div>
-                                  <div className="text-sm font-light text-gray-400">
-                                    {process.highlight}
-                                  </div>
-                                </div>
-                                <div>
-                                  <div className="text-xs text-gray-200 mb-2 tracking-wider uppercase">
-                                    Enfoque
-                                  </div>
-                                  <div className="text-sm font-light text-gray-400">
-                                    {process.methodology}
-                                  </div>
-                                </div>
-                              </div>
-                            </motion.div>
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              </motion.div>
-            );
-          })}
+              {/* Bottom accent line — slides in on hover */}
+              <div className="absolute bottom-0 left-0 right-0 h-[2px] rounded-b-2xl overflow-hidden">
+                <div className="h-full w-full bg-gradient-to-r from-brand-blue/0 via-brand-blue/60 to-brand-blue/0 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-out" />
+              </div>
+            </motion.div>
+          ))}
         </div>
+
+        {/* ── Bottom strip ── */}
+        {/* <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-slate-800/50"
+        >
+          <div className="flex items-center gap-8">
+            {[
+              { value: "47+", label: "Misiones activas" },
+              { value: "100%", label: "Certificaciones" },
+              { value: "20 años", label: "De experiencia" },
+            ].map((stat, i) => (
+              <div key={i} className="text-center sm:text-left">
+                <div className="text-xl sm:text-2xl font-bold text-white tabular-nums">{stat.value}</div>
+                <div className="text-[11px] font-mono tracking-wider text-slate-500 uppercase mt-0.5">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-2 text-sm text-slate-400 font-light">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            Buscamos talento ahora
+          </div>
+        </motion.div> */}
+
       </div>
     </section>
   );

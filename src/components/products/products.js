@@ -85,6 +85,7 @@ export const products = [
       gallery: [
         "/products/heis3.webp",
         "/products/heis4.webp",
+        "/products/hose.webp",
       ],
       video: "/products/heis.mp4",
       image: "/products/heis3.webp",

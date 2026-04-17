@@ -122,7 +122,7 @@ export default function Formulario() {
   };
 
   return (
-    <section className="relative min-h-screen  overflow-hidden flex items-center justify-center py-20 px-6">
+    <section className="relative min-h-screen bg-gradient-to-b from-black/40 via-slate-900/70 to-black/10 overflow-hidden flex items-center justify-center py-20 px-6">
       <div className="">
         <StarfieldNebula />
         <div />
@@ -281,7 +281,8 @@ export default function Formulario() {
                   <DiagonalButton
                     type="submit"
                     disabled={isSubmitting}
-                    className="px-24 "
+                    className="px-24"
+                    
                   >
                     {isSubmitting ? "Procesando..." : "Enviar Candidatura"}
                   </DiagonalButton>

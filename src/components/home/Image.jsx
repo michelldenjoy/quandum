@@ -33,7 +33,7 @@ const hotspots = [
     y: "86%",
     image: "/products/encoder.webp",
     path: "/proyectos/destacados/3",
-    align: "left",
+    align: "right",
   },
   {
     id: 4,
@@ -93,7 +93,7 @@ const hotspots = [
     y: "18%",
     image: "/products/irill.jpeg",
     path: "/proyectos/destacados/10",
-    align: "right",
+    align: "bottom",
   },
   {
     id: 10,
@@ -133,7 +133,7 @@ const hotspots = [
     y: "56%",
     image: "/products/mirror2.jpeg",
     path: "/proyectos/destacados/14",
-    align: "center",
+    align: "right",
   },
 ];
 
@@ -162,7 +162,7 @@ export default function Image() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-black/10 via-slate-900 to-black py-10 w-full overflow-hidden">
+    <section className="bg-gradient-to-b from-black/10 via-slate-900/70 to-black/50 py-10 w-full overflow-hidden">
       <div className="relative max-w-7xl md:mt-10 mx-auto px-4 sm:px-6 flex flex-col items-center">
         {/* Línea */}
         <motion.div
@@ -210,11 +210,10 @@ export default function Image() {
               delay: TITLE_DELAY,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="text-[clamp(1.6rem,3.5vw,3.2rem)] mt-8 text-center font-light text-white tracking-[0.12em] leading-tight uppercase"
+            className="text-[clamp(1.6rem,3.5vw,3.2rem)] mt-5 text-center font-light text-white tracking-[0.12em] leading-tight uppercase"
           >
-            Nuestros
-            <br />
-            <span className="font-normal">Sistemas a bordo</span>
+            Nuestros Sistemas a bordo
+         
           </motion.h2>
 
           <motion.p
@@ -222,7 +221,7 @@ export default function Image() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, delay: TITLE_DELAY + 0.3 }} 
-            className="max-w-2xl text-center text-sm text-slate-400 tracking-[0.15em] uppercase mt-10 mb-16 px-4 leading-relaxed"
+            className="max-w-2xl text-center text-sm text-slate-400 tracking-[0.15em] uppercase my-6 px-4 leading-relaxed"
           >
           </motion.p>
         </div>

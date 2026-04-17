@@ -31,7 +31,7 @@ const facilityImages = [
     category: "ADDITIVE",
   },
   {
-    src: "/images/soldadura.webp",
+    src: "/images/about1.webp",
     label: "Soldadura Especializada",
     specs: "Procesos certificados de unión para estructuras de alta resistencia.",
     code: "EQP-05",
@@ -138,7 +138,7 @@ export default function CapabilitiesSlider() {
             </p>
             <h2 className="text-4xl md:text-5xl font-extralight text-white leading-tight">
               Excelencia en{" "}
-              <span className="font-semibold italic">Ingeniería</span>
+              <span className="font-semibold ">Ingeniería</span>
             </h2>
           </div>
           {/* Contador grande en header */}
