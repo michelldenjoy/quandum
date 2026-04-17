@@ -30,7 +30,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="md:col-span-3 flex flex-col items-center md:items-start md:pl-8">
+          <div className="md:col-span-3 flex flex-col items-center md:items-start md:pl-4">
             <h4 className="text-xs font-semibold uppercase tracking-widest text-white mb-6">
               Empresa
             </h4>
@@ -41,7 +41,7 @@ export default function Footer() {
                   to="/empresa/historia"
                   className="hover:text-white transition-colors"
                 >
-                  Historia
+                  Nuestra Historia
                 </Link>
               </li>
 
@@ -50,7 +50,7 @@ export default function Footer() {
                   to="/empresa/infraestructuras"
                   className="hover:text-white transition-colors"
                 >
-                  Infraestructura
+                  Nuestra Infraestructura
                 </Link>
               </li>
 

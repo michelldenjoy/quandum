@@ -276,7 +276,7 @@ export default function Contacto() {
                       <DiagonalButton
                         type="submit"
                         disabled={isSubmitting}
-                        className=" w-full bg-brand-blue/30 hover:scale-105 px-10 "
+                        className=" w-full bg-brand-blue/30 hover:scale-105  "
                       >
                         {isSubmitting ? "Transmitiendo..." : "Enviar Mensaje"}
                       </DiagonalButton>
