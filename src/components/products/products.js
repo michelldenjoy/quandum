@@ -6,10 +6,12 @@ export const products = [
       hero: "/products/illuminator.webp",
       gallery: [
         "/products/illuminator.webp",
+        "/products/modulocompleto.jpeg",
+        "/products/poweririll.png",
       ],
       image: "/products/illuminator.webp",
       description:
-        "Sistema de iluminación infrarroja de alta potencia diseñado para aplicaciones aeroespaciales en entornos de misión crítica. El iluminador forma parte del subsistema IRILL integrado en el BEVS (Boom Enhanced Vision System), instalado en plataformas A-330 MRTT y A-310 MRTT. El equipo presenta una arquitectura robusta y compacta, con carcasa metálica mecanizada y aletado térmico optimizado para disipación eficiente del calor en condiciones de operación continuada. Incorpora sistemas activos de refrigeración y conectividad aeronáutica mediante arneses blindados, garantizando fiabilidad eléctrica y térmica en entornos severos. Su diseño modular permite una integración directa en sistemas de repostaje en vuelo, proporcionando iluminación infrarroja homogénea del área de contacto de la pértiga (boom) y mejorando significativamente la percepción visual del Air Refuelling Operator (ARO) durante operaciones nocturnas o con baja visibilidad. El sistema ha sido desarrollado siguiendo criterios aeronáuticos de fiabilidad, mantenibilidad y compatibilidad electromagnética, asegurando su operación estable en plataformas de misión estratégica.",
+        "El IRILL es un sistema avanzado de iluminación láser infrarroja de alta potencia, diseñado específicamente para misiones críticas de repostaje en vuelo en plataformas A-330 MRTT y A-310 MRTT. Integrado como un componente esencial del BEVS (Boom Enhanced Vision System), su función principal es proporcionar una iluminación infrarroja homogénea sobre la aeronave receptora y el área de contacto de la pértiga. Esto mejora significativamente la percepción visual del operador (ARO) y garantiza maniobras seguras y eficientes durante operaciones nocturnas o en condiciones de baja visibilidad. Compuesto por distintos subsistemas perfectamente integrados, cada elemento del IRILL desempeña una función esencial dentro del conjunto.",
       certifications: ["DO-178 DAL B"],
     },
     {
@@ -126,9 +128,10 @@ export const products = [
       gallery: [
         "/products/irill.jpeg",
         "/products/irill2.jpeg",
+        "/products/modulocompleto.jpeg",
       ],
       image: "/products/irill2.jpeg",
-      description:" ",
+      description:"El Módulo de Control es la unidad electrónica encargada de gestionar y supervisar el funcionamiento del sistema IRILL. Controla los parámetros operativos del iluminador y suministra energía al conjunto mediante los cables de potencia y control. Este componente trabaja conjuntamente con el iluminador y el resto de subsistemas para garantizar una operación fiable y precisa durante las maniobras de repostaje en vuelo. ",
       certifications: ["DO-160"], 
     },
     {
@@ -138,10 +141,11 @@ export const products = [
       hero: "/products/powercable2.jpeg", 
       gallery: [
         "/products/powercable2.jpeg",
-        "/products/powercable.jpeg",
+        "/products/poweririll.png",       
+        "/products/irilpower.png",       
       ],
       image: "/products/powercable2.jpeg",
-      description:" ",
+      description:"El Power Control Cable es el enlace eléctrico y de comunicaciones entre el Módulo de Control y el Iluminador. Diseñado para entornos aeronáuticos exigentes, transmite tanto la alimentación como las señales de control necesarias para el funcionamiento del sistema. ",
       certifications: ["DO-160"], 
     },
     {
@@ -154,7 +158,7 @@ export const products = [
         "/products/focus2.jpeg",
       ],
       image: "/products/focus2.jpeg",
-      description:" ",
+      description:" es el elemento terminal del sistema IRILL conectado a la fibra óptica, encargado de recibir la energía lumínica generada por el iluminador y proyectarla con precisión hacia la zona de operación requerida.Trabaja conjuntamente con la fibra óptica, el iluminador y el módulo de control como parte del sistema integral IRILL.",
       certifications: ["DO-160"], 
     },
     {
@@ -166,7 +170,7 @@ export const products = [
         "/products/fibercable.jpeg",
       ],
       image: "/products/fibercable.jpeg",
-      description:" ",
+      description:"La Fibra Óptica transporta la energía lumínica generada por el Iluminador hasta los focos emisores instalados en la aeronave. Diseñada específicamente para aplicaciones aeronáuticas, asegura una transmisión eficiente, segura y fiable. ",
       certifications: ["DO-160"], 
     },
     {
