@@ -150,7 +150,7 @@ export const products = [
     },
     {
       id: 12,
-      title: "Focus ME",
+      title: "Focus",
       subtitle: "Sistema de Enfoque para Iluminación Infrarroja",
       hero: "/products/focus.jpeg", 
       gallery: [
@@ -158,7 +158,7 @@ export const products = [
         "/products/focus2.jpeg",
       ],
       image: "/products/focus2.jpeg",
-      description:" es el elemento terminal del sistema IRILL conectado a la fibra óptica, encargado de recibir la energía lumínica generada por el iluminador y proyectarla con precisión hacia la zona de operación requerida.Trabaja conjuntamente con la fibra óptica, el iluminador y el módulo de control como parte del sistema integral IRILL.",
+      description:"Es el elemento encargado de difundir la luz alrededor del avión conectado a la fibra óptica, encargado de recibir la energía lumínica generada por el iluminador y proyectarla con precisión hacia la zona de operación requerida. Trabaja conjuntamente con la fibra óptica, el iluminador y el módulo de control como parte del sistema integral IRILL.",
       certifications: ["DO-160"], 
     },
     {

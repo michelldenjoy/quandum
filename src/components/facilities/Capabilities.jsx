@@ -18,7 +18,7 @@ const facilityImages = [
   },
   {
     src: "/images/fresado.webp",
-    label: "Fresado cnc",
+    label: "Fresado CNC",
     specs: "Capacidad multi-eje para geometrías aeroespaciales complejas.",
     code: "EQP-03",
     category: "PRODUCTION",
