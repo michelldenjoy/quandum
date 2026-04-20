@@ -9,9 +9,9 @@
   body {
     @apply bg-black text-white;
     font-family: theme('fontFamily.body');
-  }
+  };
 
-  h1, h2, h3,  {
+  h1, h2, h3  {
     font-family: theme('fontFamily.title');
   }
 }
@@ -34,17 +34,6 @@
     );
   }
 
-  /* Superficie de datos */
-  .bg-aerospace::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("/wave-surface.svg");
-    background-size: cover;
-    background-position: center;
-    animation: waveFloat 18s ease-in-out infinite;
-    pointer-events: none;
-  }
 
   /* Glow ambiental */
   .bg-aerospace::after {
@@ -134,14 +123,6 @@
      FONDOS MILITARES 
   ===================================================== */
 
-  .bg-militar {
-    @apply relative overflow-hidden;
-    background-image: url("/bgmilitar1.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-  }
-
   .bg-militar::before {
     content: "";
     position: absolute;
@@ -155,13 +136,7 @@
   }
 
   /* Variante más ligera (formularios, bloques internos) */
-  .bg-mili {
-    @apply relative overflow-hidden;
-    background-image: url("/render.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-  }
+
 
   .bg-mili::before {
     content: "";
@@ -185,9 +160,6 @@
   );
 }
 
-.bg-card{
-  background-image: url("/products/illuminator1.jpg");
-}
 
 
 
