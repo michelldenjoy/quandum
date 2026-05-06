@@ -21,31 +21,12 @@ export default function StarfieldNebula() {
     );
     camera.position.z = 500;
 
-    // RENDERER
-    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    // RENDERER — sin alpha, fondo negro opaco
+    const renderer = new THREE.WebGLRenderer({ alpha: false });
+    renderer.setClearColor(0x000000, 1);
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     mount.appendChild(renderer.domElement);
-
-    // NEBULA
-    const textureLoader = new THREE.TextureLoader();
-    const nebulaTexture = textureLoader.load("/nebula-blu.jpg", () =>
-      console.log("NEBULA CARGADA OK")
-    );
-
-    const nebulaMaterial = new THREE.MeshBasicMaterial({
-      map: nebulaTexture,
-      transparent: true,
-      side: THREE.DoubleSide,
-    });
-
-    // Plano más grande para cubrir cualquier pantalla
-    const nebulaPlane = new THREE.Mesh(
-      new THREE.PlaneGeometry(6000, 6000),
-      nebulaMaterial
-    );
-    nebulaPlane.position.z = -1000; // siempre detrás
-    scene.add(nebulaPlane);
 
     // ESTRELLAS
     const starGeometry = new THREE.BufferGeometry();
@@ -73,7 +54,6 @@ export default function StarfieldNebula() {
     const animate = () => {
       stars.rotation.y += 0.0005;
       stars.rotation.x += 0.0002;
-      nebulaPlane.rotation.z += 0.00005;
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
     };

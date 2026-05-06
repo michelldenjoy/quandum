@@ -22,7 +22,7 @@
 ========================= */
 @layer utilities {
   /* =====================================================
-     FONDO AEROESPACIAL PRINCIPAL (Código Ético, Collage…)
+     FONDO AEROESPACIAL PRINCIPAL nebula (Código Ético, Collage…)
   ===================================================== */
   .bg-aerospace {
     @apply relative overflow-hidden;
@@ -159,7 +159,3 @@
     0 100%
   );
 }
-
-
-
-

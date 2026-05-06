@@ -35,33 +35,15 @@ export default function Contacto() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (
-      !form.name ||
-      !form.company ||
-      !form.email ||
-      !form.subject ||
-      !form.message
-    )
-      return;
+  
     if (!executeRecaptcha) return;
-
+  
     setIsSubmitting(true);
+  
 
+    
     try {
       const token = await executeRecaptcha("form_contacto");
-
-      const res = await fetch("http://localhost:3001/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token }),
-      });
-
-      const data = await res.json();
-
-      if (!data.success) {
-        alert("Error de verificación: " + data.error);
-        return;
-      }
 
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE,
@@ -74,22 +56,15 @@ export default function Contacto() {
           department: form.department,
           subject: form.subject,
           message: form.message,
+          "g-recaptcha-response": token, 
         },
         import.meta.env.VITE_EMAILJS_PUBLIC
       );
+  
       setSubmitted(true);
-      setForm({
-        name: "",
-        company: "",
-        email: "",
-        phone: "",
-        department: "general",
-        subject: "",
-        message: "",
-      });
     } catch (err) {
-      console.error("Error al enviar:", err);
-      alert("Hubo un error al enviar el mensaje.");
+      console.error(err);
+      alert("Error al enviar");
     } finally {
       setIsSubmitting(false);
     }
