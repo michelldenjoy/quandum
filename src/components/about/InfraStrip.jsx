@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import DiagonalButton from "../DiagonalButton";
+import { Link } from "react-router-dom";
 
 export default function InfraStrip() {
   return (
@@ -29,7 +30,7 @@ export default function InfraStrip() {
 
         
         <DiagonalButton
-          href="/empresa/infraestructuras"
+          to="/empresa/infraestructuras"
           className="px-8 py-4 w-80 mb-4"
         >
           Explora el entorno

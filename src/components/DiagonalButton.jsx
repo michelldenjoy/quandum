@@ -1,36 +1,25 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
-/**
-
- * 
- * @param {string} children 
- * @param {string} variant 
- * @param {string} size 
- * @param {boolean} icon 
- * @param {function} onClick 
- * @param {string} className 
- * @param {string} href 
- */
-export default function DiagonalButton({ 
-  children, 
+export default function DiagonalButton({
+  children,
   variant = "primary",
   size = "md",
   icon = true,
   onClick,
   className = "",
   href,
-  ...props 
+  to,
+  ...props
 }) {
-  
-  
+
   const sizes = {
     sm: "px-6 py-2.5 text-xs",
     md: "px-8 py-4 text-sm",
     lg: "px-10 py-5 text-base"
   };
 
-  
   const variants = {
     primary: {
       base: "bg-black/70 text-white border border-none",
@@ -62,21 +51,20 @@ export default function DiagonalButton({
 
   const content = (
     <>
-    
-      <div 
+      <div
         className={`
           absolute inset-0 clip-path-diagonal transition-transform duration-500 
           transform translate-x-[-101%] group-hover:translate-x-0
-          ${variant === 'primary' ? 'bg-gradient-to-b from-slate-900 via-slate-700 to-slate-900' : ''}
-          ${variant === 'secondary' ? 'bg-black' : ''}
-          ${variant === 'blue' ? 'bg-brand-blue' : ''}
-          ${variant === 'outline' ? 'bg-black' : ''}
+          ${variant === "primary" ? "bg-gradient-to-b from-slate-900 via-slate-700 to-slate-900" : ""}
+          ${variant === "secondary" ? "bg-black" : ""}
+          ${variant === "blue" ? "bg-brand-blue" : ""}
+          ${variant === "outline" ? "bg-black" : ""}
         `}
       />
-      
-    
+
       <span className="relative z-10 flex items-center gap-2">
         {children}
+
         {icon && (
           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
         )}
@@ -84,11 +72,24 @@ export default function DiagonalButton({
     </>
   );
 
-  // renderizado con href
+  // React Router interno
+  if (to) {
+    return (
+      <Link
+        to={to}
+        className={baseClasses}
+        {...props}
+      >
+        {content}
+      </Link>
+    );
+  }
+
+  // Link externo
   if (href) {
     return (
-      <a 
-        href={href} 
+      <a
+        href={href}
         className={baseClasses}
         {...props}
       >
@@ -97,12 +98,11 @@ export default function DiagonalButton({
     );
   }
 
-  // renderizar como botón
+  // Botón normal
   return (
-    <button 
+    <button
       onClick={onClick}
       className={baseClasses}
-      
       {...props}
     >
       {content}

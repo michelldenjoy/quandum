@@ -40,8 +40,6 @@ export default function Contacto() {
   
     setIsSubmitting(true);
   
-
-    
     try {
       const token = await executeRecaptcha("form_contacto");
 

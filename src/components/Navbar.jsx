@@ -29,14 +29,7 @@ export default function Navbar() {
         { name: "Únete a Quandum", path: "/trabaja-con-nosotros" },
       ],
     },
-    {
-      // name: "Soluciones",
-      // dropdown: [
-      //   { name: "Hardware", path: "/servicios/hardware" },
-      //   { name: "Software", path: "/servicios/software" },
-      //   { name: "Mecanica", path: "/servicios/mecanica" },
-      // ],
-    },
+
     { name: "Proyectos", path: "/proyectos/destacados" },
     { name: "Contacto", path: "/contacto" },
   ];

@@ -12,10 +12,7 @@ const QuienesSomos = lazy(() => import("./pages/Empresa/QuienesSomos"));
 const Infraestructuras = lazy(() => import("./pages/Empresa/Infraestructuras"));
 const Historia = lazy(() => import("./pages/Empresa/Historia"));
 
-// Servicios
-const Hardware = lazy(() => import("./pages/Servicios/Hardware"));
-const Software = lazy(() => import("./pages/Servicios/Software"));
-const Mecanica = lazy(() => import("./pages/Servicios/Mecanica"));
+
 
 // Proyectos
 const ProyectosDestacados = lazy(() => import("./pages/Proyectos/ProyectosDestacados"));
@@ -49,11 +46,6 @@ export default function MainRoutes() {
         <Route path="/empresa/about" element={<QuienesSomos />} />
         <Route path="/empresa/infraestructuras" element={<Infraestructuras />} />
         <Route path="/empresa/historia" element={<Historia />} />
-
-        {/* Servicios */}
-        <Route path="/servicios/hardware" element={<Hardware />} />
-        <Route path="/servicios/software" element={<Software />} />
-        <Route path="/servicios/mecanica" element={<Mecanica />} />
 
         {/* Proyectos */}
         <Route path="/proyectos/destacados" element={<ProyectosDestacados />} />
