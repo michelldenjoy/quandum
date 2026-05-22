@@ -1,8 +1,7 @@
 import { motion } from "motion/react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import DiagonalButton from "../DiagonalButton";
-
-const title = "Tecnología que impulsa el vuelo";
 
 const container = {
   hidden: {},
@@ -26,22 +25,25 @@ const wordAnimation = {
 };
 
 export default function Hero() {
+  const { t } = useTranslation("home");
+
   const [muted, setMuted] = useState(true);
+
+  const title = t("heroTitle");
 
   return (
     <section className="relative w-full h-[98vh] min-h-[640px] overflow-hidden">
-<video
-  autoPlay
-  loop
-  playsInline
-  muted={muted}
-  className="absolute inset-0 w-full h-full object-cover"
->
-  <source src="/about.mp4" type="video/mp4" />
-  
-</video>
+      <video
+        autoPlay
+        loop
+        playsInline
+        muted={muted}
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/about.mp4" type="video/mp4" />
+      </video>
 
-      {/* Overlay  */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
 
       {/* Grid */}
@@ -52,7 +54,7 @@ export default function Hero() {
                    bg-[size:140px_140px]"
       />
 
-      {/* Botón sonido */}
+      {/* SOUND BUTTON */}
       <button
         onClick={() => setMuted(!muted)}
         className="absolute bottom-6 right-6 z-20 
@@ -61,10 +63,10 @@ export default function Hero() {
                    border border-white/10 hover:border-cyan-400/40
                    transition-all"
       >
-        {muted ? "Activar sonido" : "Silenciar"}
+        {muted ? t("enableSound") : t("mute")}
       </button>
 
-      {/* Contenido */}
+      {/* CONTENT */}
       <div className="relative z-10 h-full flex items-end">
         <div className="w-full max-w-7xl lg:mx-9 px-6 pb-20 md:pb-28">
           <motion.div
@@ -79,7 +81,7 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-sm tracking-[0.35em] text-slate-100 uppercase mb-6"
             >
-              Aerospace · Defense · Engineering
+              {t("heroSubtitle")}
             </motion.p>
 
             <h1 className="flex flex-wrap text-white items-end text-5xl md:text-8xl lg:text-9xl tracking-tight font-light">
@@ -94,33 +96,14 @@ export default function Hero() {
               ))}
             </h1>
 
-            {/* Descripción */}
-            {/* <motion.p
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
-              className="mt-8 text-lg md:text-xl text-justify text-slate-200 leading-relaxed max-w-3xl"
-            >
-              Diseñamos y fabricamos sistemas electrónicos y optoelectrónicos
-              críticos para el sector aeronáutico, cumpliendo los más
-              exigentes estándares de fiabilidad, certificación y rendimiento.
-            </motion.p> */}
-
-            {/* BOTONES */}
+            {/* BUTTONS */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.3, duration: 0.6 }}
               className="mt-10 flex gap-6"
             >
-          
-
-              {/* <a
-                href="/contacto"
-                className="px-8 py-3 hover:scale-105 rounded-md text-sm uppercase hover:font-semibold hover:bg-gradient-to-r  from-red-500 via-brand-pink to-red-700 tracking-widest text-white clip-path-diagonal border border-gray-500 hover:bg-brand-blue hover:text-white transition-all duration-300"
-              >
-                Contacto
-              </a> */}
+              {/* FUTURE BUTTONS */}
             </motion.div>
           </motion.div>
         </div>

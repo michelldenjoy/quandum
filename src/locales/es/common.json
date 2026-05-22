@@ -1,0 +1,55 @@
+{
+    "onboardSystems": {
+      "title": "Nuestros Sistemas a bordo",
+      "hotspots": {
+        "irIlluminator": {
+          "title": "IR Illuminator",
+          "description": "Sistema de iluminación infrarroja para misiones nocturnas."
+        },
+        "nozzle": {
+          "title": "Nozzle",
+          "description": "Sistema de Tobera."
+        },
+        "encoder": {
+          "title": "Encoder",
+          "description": "Sistema de Encoder."
+        },
+        "pod": {
+          "title": "P.O.D",
+          "description": "Sistema de Iluminación."
+        },
+        "dcd": {
+          "title": "D.C.D",
+          "description": "Sistema de Iluminación."
+        },
+        "fruLights": {
+          "title": "FRU Lights",
+          "description": "Sistema de Iluminación."
+        },
+        "glasses": {
+          "title": "3D Glasses & Clip-On",
+          "description": "Sistema de Iluminación."
+        },
+        "irillControl": {
+          "title": "IRILL Control Module",
+          "description": "Sistema de Iluminación."
+        },
+        "powerCable": {
+          "title": "Power Control Cable",
+          "description": "Cable de Control."
+        },
+        "focusMe": {
+          "title": "Focus ME",
+          "description": "Sistema de Enfoque."
+        },
+        "opticalFiber": {
+          "title": "Optical Fiber",
+          "description": "Sistema de Fibra Óptica."
+        },
+        "dichroicMirror": {
+          "title": "3D Dichroic Mirror",
+          "description": "Sistema de Espejo Dicroico."
+        }
+      }
+    }
+  }

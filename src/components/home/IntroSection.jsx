@@ -1,21 +1,24 @@
 import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 import DiagonalButton from "../DiagonalButton";
 
-// Programas reales en los que Quandum tiene presencia o certificación
+// Real aerospace programs
 const programs = ["A310-MRTT", "A330-MRTT", "C-295", "Eurofighter"];
 
 const IntroSection = () => {
+  const { t } = useTranslation("home");
+
   return (
     <section className="relative w-full lg:flex lg:flex-col lg:justify-end pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-24 px-6 sm:px-6 overflow-hidden">
-
-      {/* Fondo */}
+      
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-slate-900/75 to-black/10 pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(59,130,246,0.07),transparent)] pointer-events-none" />
 
-      {/* Línea decorativa superior */}
+      {/* Top decorative line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-      {/* Marca de agua de fondo */}
+      {/* Watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
         <motion.p
           initial={{ opacity: 0 }}
@@ -27,7 +30,7 @@ const IntroSection = () => {
         </motion.p>
       </div>
 
-      {/* ── Contenido principal ── */}
+      {/* Main content */}
       <div className="relative z-10 max-w-7xl mx-auto w-full">
 
         {/* Eyebrow */}
@@ -38,10 +41,10 @@ const IntroSection = () => {
           transition={{ duration: 0.6 }}
           className="block text-xs tracking-[0.35em] font-medium text-slate-400 uppercase mb-8"
         >
-          Elevando los estándares aeroespaciales
+          {t("introEyebrow")}
         </motion.span>
 
-        {/* Título - Línea 1 */}
+        {/* Title line 1 */}
         <div className="overflow-hidden mb-2">
           <motion.h1
             initial={{ y: "100%" }}
@@ -50,27 +53,31 @@ const IntroSection = () => {
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="text-[clamp(2.8rem,7vw,7rem)] font-extralight md:mb-2 text-white tracking-tight leading-[1.0]"
           >
-            Quandum Aerospace
+            {t("introTitle1")}
           </motion.h1>
         </div>
 
-        {/* Título - Línea 2 */}
+        {/* Title line 2 */}
         <div className="overflow-hidden mb-14 sm:mb-20">
           <motion.h1
             initial={{ y: "100%" }}
             whileInView={{ y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+            transition={{
+              duration: 0.9,
+              delay: 0.08,
+              ease: [0.16, 1, 0.3, 1],
+            }}
             className="text-[clamp(2.8rem,7vw,7rem)] mb-4 font-semibold text-white tracking-tight leading-[1.0]"
           >
-            Ingeniería Crítica
+            {t("introTitle2")}
           </motion.h1>
         </div>
 
-        {/* ── Fila inferior ── */}
+        {/* Bottom row */}
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 sm:gap-4 text-justify items-end">
 
-          {/* Texto principal en primera persona */}
+          {/* Main text */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -79,24 +86,28 @@ const IntroSection = () => {
             className="sm:col-span-5"
           >
             <p className="text-sm sm:text-base text-gray-400 leading-relaxed font-light">
-              Somos arquitectos de soluciones para entornos de alta exigencia. En Quandum, 
-              diseñamos y desarrollamos sistemas electrónicos y software de control que 
-              garantizan el éxito en misiones críticas. Desde la concepción de la idea 
-              hasta la certificación final, aportamos el rigor técnico necesario para 
-              convertir desafíos complejos en sistemas operativos fiables.{" "} <br/>
+              {t("introDescription")}
+              {" "}
+              <br />
+
               <span className="text-blue-400/70 font-mono text-xs">
-                (Sistemas de Control y Telemetría Avanzada).
-              </span> <br/>
+                {t("introSystems")}
+              </span>
+
+              <br />
+
               <div className="mt-8">
-                <DiagonalButton variant="blue" href="/empresa/about">Nuestra Misión</DiagonalButton>
+                <DiagonalButton variant="blue" href="/empresa/about">
+                  {t("introButton")}
+                </DiagonalButton>
               </div>
             </p>
           </motion.div>
 
-          {/* Espacio central */}
+          {/* Center spacer */}
           <div className="hidden sm:block sm:col-span-3" />
 
-          {/* Columna derecha — Programas y Certificación */}
+          {/* Right column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -106,8 +117,9 @@ const IntroSection = () => {
           >
             <div className="text-left sm:text-right">
               <p className="text-[0.6rem] tracking-[0.3em] text-slate-600 uppercase font-semibold mb-3">
-                Experiencia en Plataformas
+                {t("platformExperience")}
               </p>
+
               <div className="flex flex-wrap gap-2 justify-start sm:justify-end">
                 {programs.map((program, i) => (
                   <motion.span
@@ -130,14 +142,13 @@ const IntroSection = () => {
             </div>
 
             <p className="text-[0.6rem] tracking-[0.25em] text-slate-600 uppercase text-left sm:text-right leading-relaxed">
-              Ingeniería de Sistemas
+              {t("engineering")}
               <br />
-              Defensa &amp; Espacio
+              {t("defense")}
             </p>
           </motion.div>
         </div>
       </div>
-
     </section>
   );
 };

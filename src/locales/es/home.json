@@ -1,0 +1,99 @@
+{
+  "heroTitle": "Tecnología que impulsa el vuelo",
+  "heroSubtitle": "Aerospace · Defense · Engineering",
+  "enableSound": "Activar sonido",
+  "mute": "Silenciar",
+  "introEyebrow": "Elevando los estándares aeroespaciales",
+  "introTitle1": "Quandum Aerospace",
+  "introTitle2": "Ingeniería Crítica",
+  "introDescription": "Somos arquitectos de soluciones para entornos de alta exigencia. En Quandum, diseñamos y desarrollamos sistemas electrónicos y software de control que garantizan el éxito en misiones críticas. Desde la concepción de la idea hasta la certificación final, aportamos el rigor técnico necesario para convertir desafíos complejos en sistemas operativos fiables.",
+  "introSystems": "(Sistemas de Control y Telemetría Avanzada).",
+  "introButton": "Nuestra Misión",
+  "platformExperience": "Experiencia en Plataformas",
+  "engineering": "Ingeniería de Sistemas",
+  "defense": "Defensa & Espacio",
+  "solutionsTitle1": "Áreas",
+  "solutionsTitle2": "Tecnológicas",
+  "solutionsSubtitle": "Nuestra presencia se extiende a sectores clave que impulsan el desarrollo tecnológico y la infraestructura del futuro.",
+  "solutionsFooter": "Certificación · Precisión · Confianza",
+
+
+  "solutions": {
+    "heading_1": "Áreas",
+    "heading_2": "Tecnológicas",
+    "subtitle": "Nuestra presencia se extiende a sectores clave que impulsan el desarrollo tecnológico y la infraestructura del futuro.",
+    "footer": "Certificación · Precisión · Confianza",
+    "services": {
+      "aeroespacial": {
+        "title": "AEROESPACIAL",
+        "tag": "DO-178  ·  DO-254",
+        "description": "Seguridad, certificación y sistemas críticos de vuelo.",
+        "items": {
+          "aeronavegabilidad": {
+            "label": "Aeronavegabilidad",
+            "body": "Desarrollo integral desde la especificación hasta la certificación bajo estándares RTCA/DO-178 y DO-254."
+          },
+          "computacion": {
+            "label": "Computación Embarcada",
+            "body": "Diseño de monitores de abordo Full Custom (Mecánica, Electrónica y SW) adaptados a plataformas específicas."
+          },
+          "mantenimiento": {
+            "label": "Mantenimiento & Retrofit",
+            "body": "Actualización de sistemas existentes, extensión de vida útil de aeronaves y gestión de documentación técnica."
+          },
+          "ingenieria": {
+            "label": "Ingeniería Inversa",
+            "body": "Soluciones avanzadas para sistemas obsoletos, garantizando la continuidad operativa de la flota."
+          }
+        }
+      },
+      "defensa": {
+        "title": "DEFENSA",
+        "tag": "MIL-STD-704",
+        "description": "Tecnología táctica, precisión y cumplimiento de normativas militares.",
+        "items": {
+          "optronica": {
+            "label": "Sistemas Optrónicos",
+            "body": "Diseño de cámaras y algoritmos de visión con respuesta en múltiples longitudes de onda (VIS, NIR, SWIR y Térmico)."
+          },
+          "laser": {
+            "label": "Tecnología Láser",
+            "body": "Desarrollo de iluminadores y designadores láser (CW o PW) para aplicaciones de misión crítica."
+          },
+          "comunicaciones": {
+            "label": "Comunicaciones de Misión",
+            "body": "Sistemas de vídeo y protocolos robustos para entornos de alta interferencia electromagnética."
+          },
+          "estandares": {
+            "label": "Estándares Militares",
+            "body": "Equipos validados bajo MIL-STD-704 para condiciones extremas de EMI/EMC y ambiente."
+          }
+        }
+      },
+      "industrial": {
+        "title": "INDUSTRIAL",
+        "tag": "MANUFACTURA AVANZADA",
+        "description": "Capacidad productiva, prototipado rápido y soluciones a medida.",
+        "items": {
+          "fabricacion": {
+            "label": "Fabricación Aditiva",
+            "body": "Especialistas en sinterizado de metal en 3D y mecanizado de alta precisión para componentes complejos."
+          },
+          "envolventes": {
+            "label": "Envolventes Mecánicas",
+            "body": "Desarrollo de housings y estructuras robustas para protección de electrónica crítica en entornos exigentes."
+          },
+          "harness": {
+            "label": "Harness & Cableado",
+            "body": "Manufactura de mazos de cables específicos para sectores de alta exigencia técnica y fiabilidad."
+          },
+          "bancos": {
+            "label": "Bancos de Ensayo",
+            "body": "Diseño y construcción de entornos de prueba personalizados para la validación de sistemas industriales."
+          }
+        }
+      }
+    }
+  }
+
+}

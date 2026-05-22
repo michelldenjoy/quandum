@@ -1,0 +1,110 @@
+{
+    "heroTitle": "Technology that powers flight",
+  
+    "heroSubtitle": "Aerospace · Defense · Engineering",
+  
+    "enableSound": "Enable sound",
+  
+    "mute": "Mute",
+    
+    "introEyebrow": "Raising aerospace standards",
+
+    "introTitle1": "Quandum Aerospace",
+  
+    "introTitle2": "Critical Engineering",
+  
+    "introDescription": "We are architects of solutions for high-demand environments. At Quandum, we design and develop electronic systems and control software that ensure success in mission-critical operations. From concept development to final certification, we provide the technical rigor required to transform complex challenges into reliable operational systems.",
+  
+    "introSystems": "(Advanced Control & Telemetry Systems).",
+  
+    "introButton": "Our Mission",
+  
+    "platformExperience": "Platform Experience",
+  
+    "engineering": "Systems Engineering",
+  
+    "defense": "Defense & Space",
+
+    "solutions": {
+      "heading_1": "Technology",
+      "heading_2": "Areas",
+      "subtitle": "Our presence spans key sectors that drive technological development and the infrastructure of the future.",
+      "footer": "Certification · Precision · Trust",
+      "services": {
+        "aeroespacial": {
+          "title": "AEROSPACE",
+          "tag": "DO-178  ·  DO-254",
+          "description": "Safety, certification and critical flight systems.",
+          "items": {
+            "aeronavegabilidad": {
+              "label": "Airworthiness",
+              "body": "End-to-end development from specification through to certification under RTCA/DO-178 and DO-254 standards."
+            },
+            "computacion": {
+              "label": "Embedded Computing",
+              "body": "Design of Full Custom onboard monitors (Mechanical, Electronic and SW) tailored to specific platforms."
+            },
+            "mantenimiento": {
+              "label": "Maintenance & Retrofit",
+              "body": "Upgrade of existing systems, aircraft life extension and technical documentation management."
+            },
+            "ingenieria": {
+              "label": "Reverse Engineering",
+              "body": "Advanced solutions for obsolete systems, ensuring the operational continuity of the fleet."
+            }
+          }
+        },
+        "defensa": {
+          "title": "DEFENSE",
+          "tag": "MIL-STD-704",
+          "description": "Tactical technology, precision and compliance with military regulations.",
+          "items": {
+            "optronica": {
+              "label": "Optronic Systems",
+              "body": "Design of cameras and vision algorithms with multi-wavelength response (VIS, NIR, SWIR and Thermal)."
+            },
+            "laser": {
+              "label": "Laser Technology",
+              "body": "Development of laser illuminators and designators (CW or PW) for mission-critical applications."
+            },
+            "comunicaciones": {
+              "label": "Mission Communications",
+              "body": "Video systems and robust protocols for high electromagnetic interference environments."
+            },
+            "estandares": {
+              "label": "Military Standards",
+              "body": "Equipment validated under MIL-STD-704 for extreme EMI/EMC and environmental conditions."
+            }
+          }
+        },
+        "industrial": {
+          "title": "INDUSTRIAL",
+          "tag": "ADVANCED MANUFACTURING",
+          "description": "Production capacity, rapid prototyping and tailored solutions.",
+          "items": {
+            "fabricacion": {
+              "label": "Additive Manufacturing",
+              "body": "Specialists in 3D metal sintering and high-precision machining for complex components."
+            },
+            "envolventes": {
+              "label": "Mechanical Enclosures",
+              "body": "Development of housings and robust structures for protection of critical electronics in demanding environments."
+            },
+            "harness": {
+              "label": "Harness & Wiring",
+              "body": "Manufacture of specific cable harnesses for sectors with high technical and reliability requirements."
+            },
+            "bancos": {
+              "label": "Test Benches",
+              "body": "Design and construction of custom test environments for the validation of industrial systems."
+            }
+          }
+        }
+      }
+    }
+    
+
+
+
+    
+  }

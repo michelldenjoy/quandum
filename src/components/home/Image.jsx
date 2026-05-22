@@ -2,148 +2,152 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
-
-const hotspots = [
-  {
-    id: 1,
-    title: "IR Illuminator",
-    description: "Sistema de iluminación infrarroja para misiones nocturnas.",
-    x: "32.3%",
-    y: "59.7%",
-    image: "/products/illuminator.webp",
-    path: "/proyectos/destacados/1",
-    align: "center",
-  },
-  {
-    id: 2,
-    title: "Nozzle",
-    description: "Sistema de Tobera.",
-    x: "10.5%",
-    y: "18%",
-    image: "/products/nozzle.webp",
-    path: "/proyectos/destacados/2",
-    align: "bottom",
-  },
-  {
-    id: 3,
-    title: "Encoder",
-    description: "Sistema de Tobera.",
-    x: "80%",
-    y: "86%",
-    image: "/products/encoder.webp",
-    path: "/proyectos/destacados/3",
-    align: "right",
-  },
-  {
-    id: 4,
-    title: "P.O.D",
-    description: "Sistema de Iluminación.",
-    x: "18.5%",
-    y: "82%",
-    image: "/products/POD.webp",
-    path: "/proyectos/destacados/6",
-    align: "top",
-  },
-  {
-    id: 5,
-    title: "D.C.D",
-    description: "Sistema de Iluminación.",
-    x: "48%",
-    y: "79.5%",
-    image: "/products/dimming.webp",
-    path: "/proyectos/destacados/5",
-    align: "top",
-  },
-  {
-    id: 6,
-    title: "FRU Lights",
-    description: "Sistema de Iluminación.",
-    x: "10%",
-    y: "62%",
-    image: "/products/fru.jpg",
-    path: "/proyectos/destacados/8",
-    align: "top",
-  },
-  {
-    id: 7,
-    title: "3D Glasses & Clip-On",
-    description: "Sistema de Iluminación.",
-    x: "85%",
-    y: "43%",
-    image: "/products/3dglasses.jpg",
-    path: "/proyectos/destacados/9",
-    align: "right",
-  },
-  {
-    id: 8,
-    title: "3D Glasses & Clip-On",
-    description: "Sistema de Iluminación.",
-    x: "88%",
-    y: "76%",
-    image: "/products/3dglasses.jpg",
-    path: "/proyectos/destacados/9",
-    align: "right",
-  },
-  {
-    id: 9,
-    title: "IRILL Control Module",
-    description: "Sistema de Iluminación.",
-    x: "41%",
-    y: "18%",
-    image: "/products/irill.jpeg",
-    path: "/proyectos/destacados/10",
-    align: "bottom",
-  },
-  {
-    id: 10,
-    title: "Power Control Cable",
-    description: "Cable de Control",
-    x: "35%",
-    y: "72%",
-    image: "/products/powercable.jpeg",
-    path: "/proyectos/destacados/11",
-    align: "right",
-  },
-  {
-    id: 11,
-    title: "Focus ME",
-    description: "Sistema de Enfoque",
-    x: "9%",
-    y: "30%",
-    image: "/products/focus.jpeg",
-    path: "/proyectos/destacados/12",
-    align: "bottom",
-  },
-  {
-    id: 12,
-    title: "Optical Fiber",
-    description: "Sistema de Fibra Óptica",
-    x: "24%",
-    y: "59%",
-    image: "/products/fibercable.jpeg",
-    path: "/proyectos/destacados/13",
-    align: "center",
-  },
-  {
-    id: 13,
-    title: "3D Dichroic Mirror",
-    description: "Sistema de Fibra Óptica",
-    x: "88%",
-    y: "56%",
-    image: "/products/mirror2.jpeg",
-    path: "/proyectos/destacados/14",
-    align: "right",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function Image() {
+
+  const { t } = useTranslation("common");
+
   const LINE_DURATION = 1.5;
-  const TITLE_DELAY = 0.9; 
-  const navigate = useNavigate(); 
+  const TITLE_DELAY = 0.9;
+  const navigate = useNavigate();
   const [activeId, setActiveId] = useState(null);
 
- 
+
+  const hotspots = [
+    {
+      id: 1,
+      title: t("onboardSystems.hotspots.irIlluminator.title"),
+      description: t("onboardSystems.hotspots.irIlluminator.description"),
+      x: "32.3%",
+      y: "59.7%",
+      image: "/products/illuminator.webp",
+      path: "/proyectos/destacados/1",
+      align: "center",
+    },
+    {
+      id: 2,
+      title: t("onboardSystems.hotspots.nozzle.title"),
+      description: t("onboardSystems.hotspots.nozzle.description"),
+      x: "10.5%",
+      y: "18%",
+      image: "/products/nozzle.webp",
+      path: "/proyectos/destacados/2",
+      align: "bottom",
+    },
+    {
+      id: 3,
+      title: t("onboardSystems.hotspots.encoder.title"),
+      description: t("onboardSystems.hotspots.encoder.description"),
+      x: "80%",
+      y: "86%",
+      image: "/products/encoder.webp",
+      path: "/proyectos/destacados/3",
+      align: "right",
+    },
+    {
+      id: 4,
+      title: t("onboardSystems.hotspots.pod.title"),
+      description: t("onboardSystems.hotspots.pod.description"),
+      x: "18.5%",
+      y: "82%",
+      image: "/products/POD.webp",
+      path: "/proyectos/destacados/6",
+      align: "top",
+    },
+    {
+      id: 5,
+      title: t("onboardSystems.hotspots.dcd.title"),
+      description: t("onboardSystems.hotspots.dcd.description"),
+      x: "48%",
+      y: "79.5%",
+      image: "/products/dimming.webp",
+      path: "/proyectos/destacados/5",
+      align: "top",
+    },
+    {
+      id: 6,
+      title: t("onboardSystems.hotspots.fruLights.title"),
+      description: t("onboardSystems.hotspots.fruLights.description"),
+      x: "10%",
+      y: "62%",
+      image: "/products/fru.jpg",
+      path: "/proyectos/destacados/8",
+      align: "top",
+    },
+    {
+      id: 7,
+      title: t("onboardSystems.hotspots.glasses.title"),
+      description: t("onboardSystems.hotspots.glasses.description"),
+      x: "85%",
+      y: "43%",
+      image: "/products/3dglasses.jpg",
+      path: "/proyectos/destacados/9",
+      align: "right",
+    },
+    {
+      id: 8,
+
+      title: t("onboardSystems.hotspots.glasses.title"),
+      description: t("onboardSystems.hotspots.glasses.description"),
+      x: "88%",
+      y: "76%",
+      image: "/products/3dglasses.jpg",
+      path: "/proyectos/destacados/9",
+      align: "right",
+    },
+    {
+      id: 9,
+      title: t("onboardSystems.hotspots.irillControl.title"),
+      description: t("onboardSystems.hotspots.irillControl.description"),
+      x: "41%",
+      y: "18%",
+      image: "/products/irill.jpeg",
+      path: "/proyectos/destacados/10",
+      align: "bottom",
+    },
+    {
+      id: 10,
+      title: t("onboardSystems.hotspots.powerCable.title"),
+      description: t("onboardSystems.hotspots.powerCable.description"),
+      x: "35%",
+      y: "72%",
+      image: "/products/powercable.jpeg",
+      path: "/proyectos/destacados/11",
+      align: "right",
+    },
+    {
+      id: 11,
+      title: t("onboardSystems.hotspots.focusMe.title"),
+      description: t("onboardSystems.hotspots.focusMe.description"),
+      x: "9%",
+      y: "30%",
+      image: "/products/focus.jpeg",
+      path: "/proyectos/destacados/12",
+      align: "bottom",
+    },
+    {
+      id: 12,
+      title: t("onboardSystems.hotspots.opticalFiber.title"),
+      description: t("onboardSystems.hotspots.opticalFiber.description"),
+      x: "24%",
+      y: "59%",
+      image: "/products/fibercable.jpeg",
+      path: "/proyectos/destacados/13",
+      align: "center",
+    },
+    {
+      id: 13,
+      title: t("onboardSystems.hotspots.dichroicMirror.title"),
+      description: t("onboardSystems.hotspots.dichroicMirror.description"),
+      x: "88%",
+      y: "56%",
+      image: "/products/mirror2.jpeg",
+      path: "/proyectos/destacados/14",
+      align: "right",
+    },
+  ];
+
   const handleProductClick = (path) => {
     navigate(path);
   };
@@ -164,7 +168,6 @@ export default function Image() {
   return (
     <section className="bg-gradient-to-b from-black/10 via-slate-900/70 to-black/50 py-10 w-full overflow-hidden">
       <div className="relative max-w-7xl md:mt-10 mx-auto px-4 sm:px-6 flex flex-col items-center">
-        {/* Línea */}
         <motion.div
           initial={{ height: 0, opacity: 0 }}
           whileInView={{ height: 160, opacity: 1 }}
@@ -174,7 +177,6 @@ export default function Image() {
           style={{ originY: 0 }}
         />
 
-        {/* Nodo de Transición */}
         <div className="relative flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
@@ -182,48 +184,40 @@ export default function Image() {
             transition={{ delay: 0.5, duration: 1 }}
             className="absolute -top-2 w-12 h-12 bg-brand-blue/50 blur-xl rounded-full"
           />
-          {/* Punto de Anclaje */}
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ delay: 1, type: "spring", stiffness: 200 }}
             className="w-2 h-2 bg-brand-blue rounded-full z-10 shadow-[0_0_15px_rgba(59,130,246,0.8)]"
           />
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 1.2, duration: 0.8 }}
             className="mt-8 flex flex-col items-center"
-          ></motion.div>
+          />
         </div>
 
-        {/* Título  Párrafo*/}
         <div className="flex flex-col items-center">
+ 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{
-              duration: 1,
-              delay: TITLE_DELAY,
-              ease: [0.16, 1, 0.3, 1],
-            }}
+            transition={{ duration: 1, delay: TITLE_DELAY, ease: [0.16, 1, 0.3, 1] }}
             className="text-[clamp(1.6rem,3.5vw,3.2rem)] mt-5 text-center font-light text-white tracking-[0.12em] leading-tight uppercase"
           >
-            Nuestros Sistemas a bordo
-         
+            {t("onboardSystems.title")}
           </motion.h2>
 
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, delay: TITLE_DELAY + 0.3 }} 
+            transition={{ duration: 1.2, delay: TITLE_DELAY + 0.3 }}
             className="max-w-2xl text-center text-sm text-slate-400 tracking-[0.15em] uppercase my-6 px-4 leading-relaxed"
-          >
-          </motion.p>
+          />
         </div>
       </div>
 
@@ -238,16 +232,12 @@ export default function Image() {
             <div
               key={spot.id}
               className="absolute z-20"
-              style={{
-                top: spot.y,
-                left: spot.x,
-                transform: "translate(-50%, -50%)",
-              }}
+              style={{ top: spot.y, left: spot.x, transform: "translate(-50%, -50%)" }}
             >
               <button
                 onMouseEnter={() => setActiveId(spot.id)}
                 onMouseLeave={() => setActiveId(null)}
-                onClick={() => handleProductClick(spot.path)} 
+                onClick={() => handleProductClick(spot.path)}
                 className="relative group p-4 cursor-pointer"
               >
                 <motion.div
@@ -263,16 +253,10 @@ export default function Image() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   onClick={() => handleProductClick(spot.path)}
-                  className={`absolute w-64 bg-slate-900/95 border border-blue-500/40 p-4 rounded-xl backdrop-blur-xl z-50 cursor-pointer shadow-2xl ${getCardAlignment(
-                    spot.align
-                  )}`}
+                  className={`absolute w-64 bg-slate-900/95 border border-blue-500/40 p-4 rounded-xl backdrop-blur-xl z-50 cursor-pointer shadow-2xl ${getCardAlignment(spot.align)}`}
                 >
-
                   <div className="relative overflow-hidden rounded-lg mb-3">
-                    <img
-                      src={spot.image}
-                      className="w-full h-32 object-cover"
-                    />
+                    <img src={spot.image} className="w-full h-32 object-cover" />
                   </div>
                   <h4 className="text-white font-bold text-sm mb-1">
                     {spot.title}
@@ -285,103 +269,6 @@ export default function Image() {
             </div>
           ))}
         </div>
-
-
-        {/* IMAGEN COMPONENTE 2 */}
-        {/* <div>
-        <img
-            src="/componente-2.png"
-            className="w-full h-auto block opacity-90 rounded-lg"
-          />
-        </div> */}
-
-
-
-        {/* <div className="relative flex flex-col items-center pb-32">
-         
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            whileInView={{ height: 160, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="w-px bg-gradient-to-b from-slate-800 via-slate-500 to-brand-blue"
-            style={{ originY: 0 }}
-          />
-
-         
-          <div className="relative flex flex-col items-center">
-      
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5, duration: 1 }}
-              className="absolute -top-2 w-12 h-12 bg-brand-blue/50 blur-xl rounded-full"
-            />
-
-            <Link
-              to="/proyectos/destacados"
-              className="group relative flex flex-col items-center"
-            >
-              
-              <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{ delay: 1, type: "spring", stiffness: 200 }}
-                className="w-2 h-2 bg-brand-blue rounded-full z-10 shadow-[0_0_15px_rgba(59,130,246,0.8)]"
-              />
-
-             
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 1.2, duration: 0.8 }}
-                className="mt-8 flex flex-col items-center"
-              >
-                <div className="relative overflow-hidden px-8 py-4">
-                
-                  <div className="absolute inset-0 bg-slate-950/40 backdrop-blur-md border border-white/5 rounded-sm transition-all duration-500 group-hover:border-brand-blue/40 group-hover:bg-brand-blue/5" />
-
-                 
-                  <span className="relative z-10 text-[11px] sm:text-[13px] tracking-[0.5em] text-slate-400 uppercase font-light transition-colors duration-500 group-hover:text-white">
-                    Explora algunos de nuestros{" "}
-                    <span className="font-semibold text-slate-200 group-hover:text-brand-blue transition-colors">
-                      Proyectos
-                    </span>
-                  </span>
-
-                  
-                  <div className="absolute top-0 left-0 w-2 h-[1px] bg-brand-blue opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="absolute top-0 left-0 w-[1px] h-2 bg-brand-blue opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="absolute bottom-0 right-0 w-2 h-[1px] bg-brand-blue opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="absolute bottom-0 right-0 w-[1px] h-2 bg-brand-blue opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-
-              
-                <motion.div
-                  animate={{ y: [0, 5, 0] }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 2,
-                    ease: "easeInOut",
-                  }}
-                  className="mt-6 text-brand-blue/50 group-hover:text-brand-blue transition-colors"
-                >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                  >
-                    <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
-                  </svg>
-                </motion.div>
-              </motion.div>
-            </Link>
-          </div>
-        </div> */}
       </div>
     </section>
   );

@@ -2,6 +2,12 @@ import React from 'react'
 import HeroVideo from "../../components/about/HeroVideo";
 import IntroProducts from '../../components/products/IntroProducts';
 import Projection from '../../components/products/Proyection';
+
+
+
+
+
+
 export default function ProyectosDestacados() {
   return (
     <div >
@@ -17,8 +23,7 @@ export default function ProyectosDestacados() {
       <IntroProducts /> 
       <Projection />
 
-      
-      
+
      
     </div>
   )

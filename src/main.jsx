@@ -6,6 +6,8 @@ import "./index.css";
 import ScrollToTop from "./components/ScrollToTop";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
+import "./i18n";
+
 
 
 

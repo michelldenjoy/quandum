@@ -6,7 +6,6 @@ import Solutions2 from "../components/home/Solutions2";
 import Image from "../components/home/Image"; 
 
 import IntroSection from "../components/home/IntroSection";
-import WhatWeDo from "../components/home/WhatWeDo";
 
 
 

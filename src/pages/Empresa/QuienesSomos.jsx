@@ -1,12 +1,13 @@
 import React from "react";
 import VisionMision from "../../components/about/VisionMision";
-import AboutFeatures from "../../components/about/AboutFeatures";
 import HeroVideo from "../../components/about/HeroVideo";
 import StoryStrip from "../../components/about/StoryStrip";
 import Intro2 from "../../components/about/Intro2";
 import InfraStrip from "../../components/about/InfraStrip";
 import FilosofiaTrayectoria from "../../components/about/FilosofiaTrayectoria";
 import Press from "../../components/about/Press";
+
+
 
 export default function QuienesSomos() {
   return (
@@ -19,6 +20,9 @@ export default function QuienesSomos() {
       />
 
       <Intro2 />
+ 
+
+
 
       {/* <Intro /> */}
 

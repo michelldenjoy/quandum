@@ -1,8 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion"; 
+import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation("navbar");
+
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(null);
@@ -21,17 +24,27 @@ export default function Navbar() {
 
   const links = [
     {
-      name: "Empresa",
+      id: "company",
+      name: t("company"),
       dropdown: [
-        { name: "Quienes somos", path: "/empresa/about" },
-        { name: "Certificaciones", path: "/sobre-quandum/certificaciones" },
-        { name: "Compromiso Ético y Sostenible", path: "/sobre-quandum/codigo-etico" },
-        { name: "Únete a Quandum", path: "/trabaja-con-nosotros" },
+        { name: t("about"), path: "/empresa/about" },
+        { name: t("certifications"), path: "/sobre-quandum/certificaciones" },
+        { name: t("ethics"), path: "/sobre-quandum/codigo-etico" },
+        { name: t("careers"), path: "/trabaja-con-nosotros" },
       ],
     },
 
-    { name: "Proyectos", path: "/proyectos/destacados" },
-    { name: "Contacto", path: "/contacto" },
+    {
+      id: "projects",
+      name: t("projects"),
+      path: "/proyectos/destacados",
+    },
+
+    {
+      id: "contact",
+      name: t("contact"),
+      path: "/contacto",
+    },
   ];
 
   return (
@@ -44,11 +57,14 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-[1440px] mx-auto px-8 flex items-center justify-between lg:grid lg:grid-cols-3">
-          
           {/* LOGO — columna izquierda */}
           <Link to="/" className="flex items-center group">
             <div className="relative">
-              <img src="/lienzo.png" alt="Logo" className="w-10 h-10 md:w-11 md:h-11 object-contain transition-transform duration-500 group-hover:rotate-[10deg]" />
+              <img
+                src="/lienzo.png"
+                alt="Logo"
+                className="w-10 h-10 md:w-11 md:h-11 object-contain transition-transform duration-500 group-hover:rotate-[10deg]"
+              />
             </div>
             <div className="flex flex-col">
               <span className="text-2xl font-bold text-white tracking-tighter leading-none">
@@ -67,14 +83,18 @@ export default function Navbar() {
 
               const isActive = link.path
                 ? location.pathname === link.path
-                : link.dropdown?.some((item) => location.pathname.startsWith(item.path));
+                : link.dropdown?.some((item) =>
+                    location.pathname.startsWith(item.path)
+                  );
 
               return (
                 <div key={link.name} className="relative group px-4 py-2">
                   <Link
                     to={link.path || "#"}
                     className={`relative text-[13px] uppercase tracking-[0.2em] font-bold transition-colors duration-300 flex items-center gap-1.5 ${
-                      isActive ? "text-white" : "text-gray-100 group-hover:text-white"
+                      isActive
+                        ? "text-white"
+                        : "text-gray-100 group-hover:text-white"
                     }`}
                   >
                     {link.name}
@@ -133,6 +153,31 @@ export default function Navbar() {
                 />
               </div>
             </button>
+            <div className="hidden lg:flex items-center gap-2 mr-6">
+              <button
+                onClick={() => i18n.changeLanguage("es")}
+                className={`text-xs tracking-widest transition-colors ${
+                  i18n.language === "es"
+                    ? "text-white"
+                    : "text-gray-500 hover:text-white"
+                }`}
+              >
+                ES
+              </button>
+
+              <span className="text-gray-600">/</span>
+
+              <button
+                onClick={() => i18n.changeLanguage("en")}
+                className={`text-xs tracking-widest transition-colors ${
+                  i18n.language === "en"
+                    ? "text-white"
+                    : "text-gray-500 hover:text-white"
+                }`}
+              >
+                EN
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -150,14 +195,18 @@ export default function Navbar() {
             setSubmenuOpen(null);
           }}
         />
-        
+
         <div
           className={`absolute right-0 top-0 h-screen w-full sm:w-96 bg-black overflow-hidden transition-transform duration-500 ease-out ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
           {/* Panel principal  */}
-          <div className={`absolute inset-0 transition-transform duration-500 ease-out ${submenuOpen ? "-translate-x-full" : "translate-x-0"}`}>
+          <div
+            className={`absolute inset-0 transition-transform duration-500 ease-out ${
+              submenuOpen ? "-translate-x-full" : "translate-x-0"
+            }`}
+          >
             <div className="h-full overflow-y-auto pt-24 pb-10 px-6 sm:px-8 space-y-0">
               {links.map((link) => {
                 if (!link.name) return null;
@@ -165,12 +214,22 @@ export default function Navbar() {
                   <div key={link.name}>
                     {link.dropdown ? (
                       <button
-                        onClick={() => setSubmenuOpen(link.name)}
+                        onClick={() => setSubmenuOpen(link.id)}
                         className="w-full flex items-center justify-between text-xl tracking-widest uppercase font-bold text-white border-b border-neutral-800 py-5"
                       >
                         <span>{link.name}</span>
-                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        <svg
+                          className="w-6 h-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
                         </svg>
                       </button>
                     ) : (
@@ -189,26 +248,47 @@ export default function Navbar() {
           </div>
 
           {/* Panel submenú */}
-          <div className={`absolute inset-0 transition-transform duration-500 ease-out ${submenuOpen ? "translate-x-0" : "translate-x-full"}`}>
+          <div
+            className={`absolute inset-0 transition-transform duration-500 ease-out ${
+              submenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
+          >
             <div className="h-full overflow-y-auto pt-24 pb-10 px-6 sm:px-8">
-              <button onClick={() => setSubmenuOpen(null)} className="flex items-center gap-3 text-gray-400 mb-8">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              <button
+                onClick={() => setSubmenuOpen(null)}
+                className="flex items-center gap-3 text-gray-400 mb-8"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
                 </svg>
-                <span>Atrás</span>
+                <span>{t("back")}</span>
               </button>
-              <h2 className="text-2xl font-bold text-white mb-6 border-b border-neutral-800 pb-4">{submenuOpen}</h2>
+              <h2 className="text-2xl font-bold text-white mb-6 border-b border-neutral-800 pb-4">
+                {links.find((l) => l.id === submenuOpen)?.name}
+              </h2>
               <div className="space-y-0">
-                {links.find(l => l.name === submenuOpen)?.dropdown?.map(item => (
-                  <Link
-                    key={item.name}
-                    to={item.path}
-                    onClick={() => setOpen(false)}
-                    className="block py-4 text-lg text-gray-300 border-b border-neutral-800/50 hover:text-white transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+                {links
+                  .find((l) => l.id === submenuOpen)
+                  ?.dropdown?.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      onClick={() => setOpen(false)}
+                      className="block py-4 text-lg text-gray-300 border-b border-neutral-800/50 hover:text-white transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
               </div>
             </div>
           </div>
