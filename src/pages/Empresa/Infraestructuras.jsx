@@ -3,46 +3,50 @@ import HeroVideo from "../../components/about/HeroVideo";
 import FacilitiesSlider from "../../components/facilities/FacilitiesSlider";
 import Capabilities from "../../components/facilities/Capabilities";
 import PolicyWhite from "../../components/etico/PolicyWhite";
+import { useTranslation } from "react-i18next";
+
+
+
+
+
+export default function Infraestructuras() {
+const { t } = useTranslation("about");
 
 
 const facilities = [
   {
-    title: "Área de Montaje Especializado",
-    subtitle: "para ensamblaje de componentes ópticos sensibles",
-    description:
-      "Espacio técnico de 100 m² habilitado para el ensamblaje de óptica delicada. Cuenta con sistemas de filtrado de aire y regulación de temperatura constantes, proporcionando las condiciones estables necesarias para operar con equipos de alta sensibilidad.",
+    title: t("facilitiespage.title1"),
+    subtitle: t("facilitiespage.subtitle1"),
+    description: t("facilitiespage.description1"),
     image: "/images/about6.webp",
     bg: "bg-aerospacee",
     textColor: "text-white",
   },
   {
-    title: "Área de Ensamblaje Final",
-    subtitle: "300 m² de precisión",
-    description:
-      "Zona especializada en integración final de sistemas complejos. Equipado con herramientas de metrología y calibración de última generación, garantizamos una alineación y funcionalidad precisas antes de la entrega. Es la zona crítica donde la precisión de los componentes se traduce en el rendimiento óptimo del sistema terminado.",
+    title: t("facilitiespage.title2"),
+    subtitle: t("facilitiespage.subtitle2"),
+    description: t("facilitiespage.description2"),
     image: "/images/about5.webp",
     bg: "bg-white",
     textColor: "text-black",
   },
   {
-    title: "Laboratorio I+D",
-    subtitle: "600 m² dedicados a innovación tecnológica",
-    description:
-      "Nuestro Laboratorio de I+D de 600 m² es el motor de la próxima generación de sistemas. Enfocados en la investigación aplicada y la exploración de nuevas fronteras tecnológicas, ofrecemos una plataforma completa que abarca desde la validación conceptual y el prototipado rápido hasta la ejecución de rigurosas certificaciones técnicas. Este espacio acelera la transición de la idea al producto validado, garantizando la introducción de soluciones disruptivas al mercado.",
+    title: t("facilitiespage.title3"),
+    subtitle: t("facilitiespage.subtitle3"),
+    description: t("facilitiespage.description3"),
     image: "/images/about4.webp",
     bg: "bg-aerospacee",
     textColor: "text-white",
   },
 ];
 
-export default function Infraestructuras() {
   return (
     <div>
       {/* Imagen de fondo */}
       <HeroVideo
-        eyebrow="Nuestra · Infraestructura"
-        title="El núcleo operativo"
-        description="Entornos seguros y laboratorios donde la ingeniería alcanza su máximo nivel."
+        eyebrow={t("herofacilities.eyebrow")}
+        title={t("herofacilities.title")}
+        description={t("herofacilities.description")}
         backgroundImage="/images/about3.webp"
       />
       <FacilitiesSlider />
@@ -104,8 +108,9 @@ export default function Infraestructuras() {
         </section>
       ))}
  
-        <PolicyWhite />
+       
       <Capabilities />
+      <PolicyWhite />
     </div>
   );
 }

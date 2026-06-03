@@ -3,14 +3,20 @@ import { motion } from "framer-motion";
 import { ExternalLink, ShieldAlert, Globe, Lock, Box } from "lucide-react";
 import CertificationsSection from "../../components/certifications/CertificationsSection";
 import HeroVideo from "../../components/about/HeroVideo";
+import { useTranslation } from "react-i18next";
 
 export default function Certificaciones() {
+  const { t } = useTranslation("certifications");
+  const certList = t("certList", { returnObjects: true });
+  const natoList = t("natolist", { returnObjects: true });
+  const reachList = t("reachList", { returnObjects: true });
+
   return (
     <div className="w-full bg-white overflow-x-hidden font-sans">
       <HeroVideo
-        eyebrow="Entorno regulado"
-        title="Certificaciones"
-        description="Aseguramos el cumplimiento normativo para la industria aeroespacial y de defensa"
+        eyebrow={t("herovideo.eyebrow")}
+        title={t("herovideo.title")}
+        description={t("herovideo.description")}
         backgroundVideo="/certification.mp4"
       />
 
@@ -27,15 +33,15 @@ export default function Certificaciones() {
                   <div className="w-1 h-1 bg-gray-300" />
                 </div> */}
               <span className="text-sm tracking-[0.3em] text-slate-300 font-medium uppercase">
-                Normativa
+                {t("span_eyebrow")}
               </span>
             </div>
 
             {/* TITULO */}
-            <h2 className="mb-20 text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight text-white tracking-tight leading-[1.1]">
-              Compromiso
-              <br />
-              <span className="font-semibold">Global</span>
+            <h2 className="mb-10 text-5xl md:text-6xl lg:text-6xl font-extralight text-white tracking-tight leading-[1.1]">
+              {t("titleh2")} {" "}
+              
+              <span className="font-semibold">{t("spantitleh2")}</span>
             </h2>
           </div>
 
@@ -56,17 +62,9 @@ export default function Certificaciones() {
               <h3 className="text-2xl font-bold mb-4 tracking-tight">
                 OASIS – IAQG
               </h3>
-              <p className="text-zinc-400 leading-relaxed mb-8">
-                Inscritos en el Online Aerospace Supplier Information System.
-                Esta base de datos es el estándar de confianza para los
-                principales OEMs globales.
-              </p>
+              <p className="text-zinc-400 leading-relaxed mb-8">{t("p1")}</p>
               <ul className="space-y-3 mb-10">
-                {[
-                  "Auditorías EN 9100",
-                  "Trazabilidad Internacional",
-                  "Visibilidad OEM",
-                ].map((item, i) => (
+                {certList.map((item, i) => (
                   <li
                     key={i}
                     className="flex items-center text-sm uppercase tracking-widest text-zinc-500"
@@ -94,23 +92,17 @@ export default function Certificaciones() {
               <div className="flex justify-between items-start mb-12">
                 <Lock className="text-brand-blue" size={32} />
                 <span className="text-sm tracking-[0.3em] text-zinc-500 uppercase font-bold">
-                  Defensa y Seguridad
+                  {t("natospan")}
                 </span>
               </div>
-              <h3 className="text-2xl font-bold mb-4 tracking-tight">
-                REGISTRO OTAN
+              <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">
+                {t("natoh3")}
               </h3>
               <p className="text-zinc-400 leading-relaxed mb-8">
-                Proveedor homologado bajo el sistema NCAGE. Capacitados para
-                operar en la cadena de suministro de defensa y proyectos
-                gubernamentales.
+                {t("p2")}
               </p>
               <ul className="space-y-3 mb-10">
-                {[
-                  "Aprobación Militar",
-                  "Codificación NCAGE",
-                  "Logística Estandarizada",
-                ].map((item, i) => (
+                {natoList.map((item, i) => (
                   <li
                     key={i}
                     className="flex items-center text-sm uppercase tracking-widest text-zinc-500"
@@ -143,25 +135,18 @@ export default function Certificaciones() {
             <div>
               <div className="flex items-center gap-2 mb-6 text-brand-blue">
                 <span className="text-sm tracking-[0.3em] text-gray-500 font-medium uppercase">
-                  Cumplimiento Medioambiental
+                  {t("reacheyebrow")}
                 </span>
               </div>
               <h3 className="text-3xl font-bold mb-6 text-black tracking-tighter">
                 REACH & RoHS
               </h3>
               <p className="text-gray-500 leading-relaxed mb-6">
-                Nuestra fabricación garantiza el control absoluto de sustancias
-                químicas (SVHC) y materiales peligrosos, alineándonos con la
-                sostenibilidad exigida por los estándares Tier 1 y OEM.
+                {t("reachp")}
               </p>
             </div>
             <div className="grid grid-cols-1 gap-4">
-              {[
-                "Control de sustancias SVHC",
-                "Directiva RoHS Compliant",
-                "Responsabilidad en Suministros",
-                "Cumplimiento ECHA",
-              ].map((item, i) => (
+              {reachList.map((item, i) => (
                 <div
                   key={i}
                   className="bg-gray-50 p-4 border-l-2 border-brand-blue flex items-center justify-between group "
@@ -185,11 +170,11 @@ export default function Certificaciones() {
             viewport={{ once: true }}
           >
             <h2 className="text-6xl md:text-9xl font-black text-black/5 mb-[-2rem] md:mb-[-4rem] select-none">
-              EXCELENCIA
+              {t("footerh2")}
             </h2>
             <div className="relative z-10">
               <p className="text-xs tracking-[0.5em] text-gray-400 uppercase mb-4">
-                Aprobado por los estándares más altos
+                {t("footerp")}
               </p>
               <h3 className="text-2xl md:text-4xl font-light text-black tracking-[0.1em]">
                 EN 9100 • <span className="font-bold">NATO APPROVED</span> • EQA

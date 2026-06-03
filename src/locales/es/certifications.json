@@ -1,0 +1,61 @@
+{
+    "herovideo": {
+        "eyebrow": "Entorno Regulado",
+        "title": "Certificaciones",
+        "description": "Aseguramos el cumplimiento normativo para la industria aeroespacial y de defensa"
+    },
+    "span_eyebrow": "Normativa",
+    "titleh2": "Compromiso",
+    "spantitleh2": "Global",
+    "p1": "Inscritos en el Online Aerospace Supplier Information System. Esta base de datos es el estándar de confianza para los principales OEMs globales",
+    "certList": [
+        "Auditorías EN 9100",
+        "Trazabilidad Internacional",
+        "Visibilidad OEM"
+    ],
+    "natospan": "Defensa y Seguridad",
+    "natoh3": "Registro Otan",
+    "p2": "Proveedor homologado bajo el sistema NCAGE. Capacitados para operar en la cadena de suministro de defensa y proyectos gubernamentales.",
+    "natolist": [
+        "Aprobación Militar",
+        "Codificación NCAGE",
+        "Logística Estandarizada"
+    ],
+    "reacheyebrow": "Cumplimiento Medioambiental",
+    "reachp": " Nuestra fabricación garantiza el control absoluto de sustancias químicas (SVHC) y materiales peligrosos, alineándonos con la sostenibilidad exigida por los estándares Tier 1 y OEM.",
+    "reachList": [
+        "Control de sustancias SVHC",
+        "Directiva RoHS Compliant",
+        "Responsabilidad en Suministros",
+        "Cumplimiento ECHA"
+    ],
+    "footerh2": "EXCELENCIA",
+    "footerp": "Aprobado por los estándares más rigurosos",
+    "certSection": {
+        "eyebrow": "Nuestra Garantía",
+        "title_1": "Política de Calidad",
+        "title_2": "& Certificados",
+        "policy": {
+          "heading": "Política de Calidad",
+          "quote": "\"En nuestra organización, la calidad se fundamenta en la seguridad operativa y la precisión técnica. Nos comprometemos a superar las expectativas de la industria mediante la gestión rigurosa de riesgos y la fiabilidad absoluta en cada entrega.\"",
+          "cta": "Visita nuestra Política"
+        },
+        "buttons": {
+          "view": "Ver Cert.",
+          "download": "Descargar PDF"
+        },
+        "certs": [
+          {
+            "subtitle": "Calidad Aeroespacial",
+            "description": "Certificación específica para organizaciones de aviación, defensa y espacio. Garantiza la trazabilidad total y gestión de riesgos operativos.",
+            "standard": "Sistemas de Gestión de Calidad - Aeroespacial"
+          },
+          {
+            "subtitle": "Gestión de la Calidad",
+            "description": "Estándar internacional que avala nuestra eficiencia operativa y el enfoque en la mejora continua de todos nuestros procesos internos.",
+            "standard": "Sistemas de Gestión de Calidad - Requisitos"
+          }
+        ]
+      }
+    
+}

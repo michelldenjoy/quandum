@@ -2,8 +2,11 @@ import { motion } from "motion/react";
 import StarfieldNebula from "../3d/StarfieldNebula";
 import DiagonalButton from "../DiagonalButton";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function StoryStrip() {
+  const { t } = useTranslation("about");
+
   return (
     <section className="relative w-full  h-[30vh]  overflow-hidden">
       {/* Overlay */}
@@ -21,9 +24,9 @@ export default function StoryStrip() {
        
        <Link
           to="/empresa/historia"
-          className="text-white text-3xl md:text-5xl font-semibold tracking-[0.15em] mb-4"
+          className="text-white text-3xl md:text-5xl font-semibold tracking-[0.15em] mb-4 uppercase"
         >
-          NUESTRA HISTORIA
+         {t("storystrip.title")}
         </Link>
 
       
@@ -31,7 +34,7 @@ export default function StoryStrip() {
           to="/empresa/historia"
           className="px-8 py-4 w-80 mb-8 "
         >
-          Explora el camino
+          {t("storystrip.label")}
         </DiagonalButton>
       </motion.div>
     </section>

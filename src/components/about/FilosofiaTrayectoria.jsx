@@ -162,13 +162,27 @@
 // }
 
 import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 
 export default function FilosofiaTrayectoria() {
+  // 1️⃣ Mismo namespace "about" que los componentes anteriores de esta sección
+  const { t } = useTranslation("about");
+
+  // 2️⃣ CONCEPTO NUEVO — array desde el JSON con t("clave", { returnObjects: true })
+  //    Cuando una clave del JSON contiene un array (como "items"),
+  //    necesitas pasarle esa opción para que i18n lo devuelva como array
+  //    en vez de como string. Sin ella, recibirías un texto plano y el
+  //    .map() fallaría.
+  const trayectoriaItems = t("filosofiaTrayectoria.trayectoria.items", {
+    returnObjects: true,
+  });
+
   return (
     <section className="relative py-24 bg-gradient-to-b from-black/10 via-slate-900/70 to-black/10">
       <div className="max-w-7xl my-4 mx-auto px-6 sm:px-10 md:px-16 lg:px-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* VISIÓN */}
+
+          {/* FILOSOFÍA */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -176,25 +190,22 @@ export default function FilosofiaTrayectoria() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
+            {/* Título partido en dos estilos, igual que en VisionMision */}
             <h3 className="text-3xl md:text-5xl lg:text-4xl font-extralight text-white tracking-tight leading-[1.1]">
-              Nuestra
+              {t("filosofiaTrayectoria.filosofia.label")}
               <br />
-              <span className="font-normal text-4xl md:text-5xl lg:text-5xl bg-gradient-to-r from-brand-blue via-slate-200 to-brand-blue bg-clip-text text-transparent  animate-gradient bg-[length:200%_auto]">
-                Filosofía
+              <span className="font-normal text-4xl md:text-5xl lg:text-5xl bg-gradient-to-r from-brand-blue via-slate-200 to-brand-blue bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                {t("filosofiaTrayectoria.filosofia.title")}
               </span>
             </h3>
 
-            <p className="text-slate-100 text-base  text-justify leading-relaxed">
-              Cada proyecto lo abordamos con una combinación única de rigor
-              técnico, innovación constante y pensamiento crítico. Nuestros
-              desarrollos se guían por estándares internacionales: DO-178C,
-              DO-254, DO-160, MIL-STD, que aseguran que cada sistema que
-              diseñamos cumple con los niveles más exigentes de seguridad y
-              rendimiento.
+            {/* Párrafo limpio → una sola clave */}
+            <p className="text-slate-100 text-base text-justify leading-relaxed">
+              {t("filosofiaTrayectoria.filosofia.p1")}
             </p>
           </motion.div>
 
-          {/* MISIÓN */}
+          {/* TRAYECTORIA */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -203,49 +214,41 @@ export default function FilosofiaTrayectoria() {
             className="space-y-6"
           >
             <h3 className="text-3xl md:text-5xl lg:text-4xl font-extralight text-white tracking-tight leading-[1.1]">
-              Nuestra
+              {t("filosofiaTrayectoria.trayectoria.label")}
               <br />
-              <span className="font-normal text-4xl md:text-5xl lg:text-5xl bg-gradient-to-r from-brand-blue via-slate-200 to-brand-blue bg-clip-text text-transparent  animate-gradient bg-[length:200%_auto]">
-                Trayectoria
+              <span className="font-normal text-4xl md:text-5xl lg:text-5xl bg-gradient-to-r from-brand-blue via-slate-200 to-brand-blue bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                {t("filosofiaTrayectoria.trayectoria.title")}
               </span>
             </h3>
 
-            <p className="text-slate-100 text-base  text-justify leading-relaxed">
-              A lo largo de dos décadas hemos participado en programas
-              estratégicos para defensa, aeronáutica y sectores industriales de
-              alta exigencia, siempre manteniendo una cultura de: <br />
+            <p className="text-slate-100 text-base text-justify leading-relaxed">
+              {t("filosofiaTrayectoria.trayectoria.intro")}
+              <br />
+              {/*
+                3️⃣ El .map() sobre el array traducido.
+                Como trayectoriaItems ya es un array de strings con el
+                idioma correcto, el JSX del .map() no cambia nada respecto
+                al original — solo sustituimos el texto hardcodeado por
+                la variable que viene del JSON.
+              */}
               <ul className="space-y-1 text-base md:text-lg text-slate-300 font-light">
-                <li className="flex items-start gap-3">
-                  <span className="text-slate-100 ">•</span>
-                  <span>Excelencia técnica</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-slate-100 ">•</span>
-                  <span>Mejora continua</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-slate-100 ">•</span>
-                  <span>Innovación sostenible</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-slate-100 ">•</span>
-                  <span>Compromiso absoluto y fiabilidad</span>
-                </li>
+                {trayectoriaItems.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="text-slate-100">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </p>
           </motion.div>
+
         </div>
       </div>
 
       <style jsx>{`
         @keyframes gradient {
-          0%,
-          100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
         }
         .animate-gradient {
           animation: gradient 8s ease infinite;

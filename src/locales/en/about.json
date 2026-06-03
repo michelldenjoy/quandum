@@ -1,1 +1,272 @@
-{}
+{
+    "intro": {
+        "p1_before": "We are an engineering company specialised in the",
+        "p1_highlight": "design, development and manufacturing",
+        "p1_middle": "of high-reliability electronic and optoelectronic systems. Since 2006, our track record has been defined by involvement in critical programmes in the",
+        "p1_sector": "Aerospace and Defence",
+        "p2_before": "We cover the complete system lifecycle: from functional definition through to final validation. We operate under safety standards",
+        "p2_and": "and",
+        "p2_after": "guaranteeing technical excellence backed by our certifications",
+        "p2_certLink": "EN 9100 and ISO 9001",
+        "specs": {
+            "founded": "Founded",
+            "standards": "Standards",
+            "quality": "Quality",
+            "compliance": "Compliance"
+        }
+    },
+    "visionMision": {
+        "vision": {
+            "label": "Our",
+            "title": "Vision",
+            "p1": "To become an international benchmark in advanced engineering for critical systems, delivering technological solutions that drive progress across the aerospace, defence and industrial sectors.",
+            "p2": "We develop reliable, precise and sustainable technology, built to operate in the most demanding environments, where safety, performance and quality admit no compromise. We believe in an engineering discipline that not only solves technical challenges, but builds long-term trust."
+        },
+        "mision": {
+            "label": "Our",
+            "title": "Mission",
+            "p1": "To design, develop and validate tailored technological solutions, supporting our clients throughout the entire project lifecycle, from the conceptual phase through to final delivery.",
+            "p2": "We work under rigorous international standards, applying technical discipline, continuous innovation and a culture of excellence to ensure every system fulfils its mission robustly, safely and efficiently. At Quandum, we treat every project as unique and take full responsibility for turning complex requirements into reliable, certifiable solutions."
+        }
+    },
+    "storystrip": {
+        "title": "Our story",
+        "label": "Explore the path"
+    },
+    "press": {
+        "title": "in specialized media",
+        "label": "External Recognition",
+        "description": "Our activity and industrial growth have been recognized by institutional and specialized sector media, reinforcing our technological and productive positioning.",
+        "label2": "IDEA MAGAZINE · IDEA AGENCY · REGIONAL GOVERNMENT OF ANDALUSIA",
+        "title2": "Quandum Aerospace increases its production capacity for aeronautical components",
+        "description2": "The report highlights the expansion of our facilities and the incorporation of new industrial machinery, within the framework of a public grant aimed at strengthening the Andalusian aerospace industrial sector.",
+        "link": "View full article",
+        "footer": "External source · Institutional publication · Editorial content"
+    },
+    "filosofiaTrayectoria": {
+        "filosofia": {
+            "label": "Our",
+            "title": "Philosophy",
+            "p1": "We approach every project with a unique combination of technical rigour, continuous innovation and critical thinking. Our developments are guided by international standards — DO-178C, DO-254, DO-160, MIL-STD — ensuring that every system we design meets the most demanding levels of safety and performance."
+        },
+        "trayectoria": {
+            "label": "Our",
+            "title": "Track Record",
+            "intro": "Over two decades we have taken part in strategic programmes for defence, aeronautics and high-demand industrial sectors, always upholding a culture of:",
+            "items": [
+                "Technical excellence",
+                "Continuous improvement",
+                "Sustainable innovation",
+                "Absolute commitment and reliability"
+            ]
+        }
+    },
+    "infrastrip": {
+        "title": "Our Core",
+        "label": "Explore the enviroment"
+    },
+    "herovideo": {
+        "eyebrow": "Development · Technology · Innovation",
+        "title": "About Quandum",
+        "description": "We have been manufacturing engineering solutions for the aerospace sector since 2006."
+    },
+    "titleHitos": {
+        "words": [
+            {
+                "text": "The",
+                "accent": false
+            },
+            {
+                "text": "milestones",
+                "accent": false
+            },
+            {
+                "text": "that",
+                "accent": false
+            },
+            {
+                "text": "forged",
+                "accent": true
+            },
+            {
+                "text": "our",
+                "accent": false
+            },
+            {
+                "text": "excellence",
+                "accent": false
+            }
+        ],
+        "subtitle": "A journey of precision, innovation and vision that continues to rise."
+    },
+    "herostory": {
+        "eyebrow": "Our History",
+        "title": "Evolving Engineering"
+    },
+    "timeline": {
+        "today": "Today",
+        "items": [
+            {
+                "title": "Foundation",
+                "detail": "The company's beginnings and its first contracts with Airbus Military."
+            },
+            {
+                "title": "Certifications",
+                "detail": "Implementation of management systems and achievement of certifications under aeronautical and industrial sector standards (EN 9100 / ISO 9001)."
+            },
+            {
+                "title": "Consolidation",
+                "detail": "Development of product lines in electronics and optoelectronics for airborne platforms."
+            },
+            {
+                "title": "Technological expansion",
+                "detail": "Integration of rapid prototyping systems and precision manufacturing processes."
+            },
+            {
+                "title": "Strategic projects",
+                "detail": "Participation in defence programmes and integrated vision/IR systems."
+            },
+            {
+                "title": "Operational maturity",
+                "detail": "Consolidated team and processes oriented towards certification and international supply."
+            }
+        ]
+    },
+    "subtitleHitos": {
+        "words": [
+            {
+                "text": "And",
+                "accent": false
+            },
+            {
+                "text": "this",
+                "accent": false
+            },
+            {
+                "text": "is",
+                "accent": false
+            },
+            {
+                "text": "only",
+                "accent": false
+            },
+            {
+                "text": "the",
+                "accent": false
+            },
+            {
+                "text": "beginning",
+                "accent": true
+            }
+        ],
+        "subtitle": "The future is under construction."
+    },
+
+    "__comment": "A CONTINUACION FACILITIES",
+
+    "herofacilities": {
+        "eyebrow": "Our facilities",
+        "title": "The operating core",
+        "description": "Safe environments and laboratories where engineering reaches its highest level."
+    },
+
+    "facilities": {
+        "title_1": "Technical &",
+        "title_2": "Operational Environment",
+        "description": "4,000 m² of specialised infrastructure for the development, manufacturing and validation of aerospace systems under international regulations.",
+        "images": [
+          {
+            "label": "Simulation and Testing",
+            "specs": "ISO 9001:2015 Certification",
+            "category": "TESTING"
+          },
+          {
+            "label": "Simulation and Testing",
+            "specs": "ISO 9001:2015 Certification",
+            "category": "TESTING"
+          },
+          {
+            "label": "Production Areas",
+            "specs": "Total surface area: 4,000 m²",
+            "category": "PRODUCTION"
+          },
+          {
+            "label": "Technical Laboratories",
+            "specs": "Controlled environment class 100K",
+            "category": "LABORATORY"
+          },
+          {
+            "label": "Technical Team",
+            "specs": "Behind every solution stands a multidisciplinary team combining knowledge, innovation and technical precision.",
+            "category": "ENGINEERING"
+          }
+        ]
+      },
+
+      "capabilities": {
+        "eyebrow": "Core Capabilities",
+        "title_before": "Excellence in",
+        "title_highlight": "Engineering",
+        "status": "All Systems Operational",
+        "hardwareLabel": "Hardware Tech Unit",
+        "groups": [
+          {
+            "group": "Advanced Manufacturing",
+            "items": ["Multi-Axis Precision Machining", "High-Definition Machining", "Laser Cutting"]
+          },
+          {
+            "group": "Engineering & Design",
+            "items": ["Electronic & Mechanical Development", "Software Design", "Harness & Cables"]
+          },
+          {
+            "group": "Prototyping",
+            "items": ["Fast Machining", "3D Metal Sintering"]
+          }
+        ],
+        "images": [
+          {
+            "label": "Turning Centre",
+            "specs": "High-precision machining for critical rotating components.",
+            "category": "MACHINING"
+          },
+          {
+            "label": "DMG MORI CLX 550",
+            "specs": "State-of-the-art technology for high-performance universal turning.",
+            "category": "CNC"
+          },
+          {
+            "label": "CNC Milling",
+            "specs": "Multi-axis capability for complex aerospace geometries.",
+            "category": "PRODUCTION"
+          },
+          {
+            "label": "3D Printing",
+            "specs": "Large-volume industrial additive manufacturing for structural prototyping and tooling.",
+            "category": "ADDITIVE"
+          },
+          {
+            "label": "Specialised Welding",
+            "specs": "Certified joining processes for high-strength structures.",
+            "category": "ASSEMBLY"
+          },
+          {
+            "label": "Fibre Laser Cutting",
+            "specs": "Precision technology for metal cutting with high speed, clean edges and minimal thermal distortion.",
+            "category": "LASER"
+          }
+        ]
+      },
+
+
+      "facilitiespage": {
+        "title1": "Specialized Assembly Area",
+        "subtitle1": "For the assembly of sensitive optical components",
+        "description1": "A 100 m² technical space designed for the assembly of delicate optical systems. It features constant air filtration and temperature regulation systems, providing the stable conditions required to operate with highly sensitive equipment.",
+        "title2": "Final Assembly Area",
+        "subtitle2": "300 m² of precision",
+        "description2": "A specialized area dedicated to the final integration of complex systems. Equipped with state-of-the-art metrology and calibration tools, we ensure precise alignment and functionality prior to delivery. This is the critical stage where component precision is transformed into the optimal performance of the finished system.",
+        "title3": "R&D Laboratory",
+        "subtitle3": "600 m² dedicated to technological innovation",
+        "description3": "Our 600 m² R&D Laboratory is the driving force behind the next generation of systems. Focused on applied research and the exploration of new technological frontiers, we provide a comprehensive platform ranging from conceptual validation and rapid prototyping to the execution of rigorous technical certifications. This environment accelerates the transition from concept to validated product, ensuring the successful introduction of disruptive solutions to the market."
+    }
+}

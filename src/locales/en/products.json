@@ -1,1 +1,89 @@
-{}
+{
+    "heroeyebrow": "Design · Build · Solutions",
+    "herotitle": "Project Results",
+    "introh3": "Engineering for",
+    "introh3span": "CRITICAL MISSIONS",
+    "introp1": "At Quandum Aerospace, we design, develop, and integrate electronic, software, and mechanical systems for aerospace and defense applications.",
+    "introp2": "All our projects are executed meeting strict certification requirements (DO-178C/DO-254, CS/FAR.), reliability and operational safety, with full validation in representative environments.",
+    "projectback": "Projects",
+    "projectdetaildescription": "System Description",
+    "projectdetailanalisis": "Visual Analysis",
+    "projectdetailaside": "Other Projects",
+    "projectdetailaside2": "Explore All",
+    "projectdetailspan": "View Project",
+    "irill": {
+        "title": "IR Illuminator SubSystem",
+        "subtitle": "IRILL",
+        "description": "IRILL is an advanced high-power infrared laser illumination system specifically designed for critical aerial refueling missions on A-330 MRTT and A-310 MRTT platforms. Integrated as an essential component of the BEVS (Boom Enhanced Vision System), its primary function is to provide uniform infrared illumination over the receiver aircraft and the boom contact area. This significantly enhances the Air Refueling Operator’s (ARO) visual perception and ensures safe and efficient maneuvers during night operations or low-visibility conditions. Composed of multiple fully integrated subsystems, each IRILL component performs a critical function within the overall system architecture."
+      },
+      "nozzle": {
+        "title": "Nozzle SubSystem",
+        "subtitle": "Nozzle System",
+        "description": "Aeronautical lighting system designed to facilitate the precise visual localization of the aerial refueling boom tip by the receiver aircraft, even under adverse lighting conditions, low visibility, or night operations. The system is directly integrated into A-330 MRTT and A-310 MRTT platforms, ensuring a reliable visual reference throughout all phases of the aerial refueling process while contributing to operational safety and reduced crew workload. The system development includes airborne electronics and safety-critical software certified in accordance with RTCA/DO-178 DAL-C requirements, ensuring traceability, verification, and compliance with applicable aerospace safety standards."
+      },
+      "encoder": {
+        "title": "Encoder",
+        "subtitle": "Encoding System",
+        "description": "Electronic encoding unit designed to optimize signal management between the control system and the operator console. The encoder reduces eight discrete input signals to only three, enabling a significant reduction in wiring complexity, system weight, and installation effort on aerospace platforms. Fully integrated into the A-330 MRTT platform, the unit contributes to a more efficient and robust system architecture, with direct improvements in reliability and maintainability for mission-critical environments."
+      },
+      "dcd": {
+        "title": "DCD",
+        "subtitle": "Lighting Control Device for Aerial Refueling",
+        "description": "The Dimming Control Device (DCD) is a system designed to ensure optimal visibility of the Pilot Director Lights (PDL) during aerial refueling operations. Integrated into the tanker aircraft positioning lights, the DCD dynamically regulates light intensity to adapt the PDL system to varying lighting conditions, enabling the receiver aircraft to accurately identify the exact positioning point. This optimization enhances safety, operational accuracy, and reliability throughout the refueling process in mission-critical environments."
+      },
+      "pod": {
+        "title": "P.O.D Lighting System",
+        "subtitle": "Aerial Refueling Lighting System",
+        "description": "Lighting system integrated into the BEVS and installed within the Refueling POD of the A-330 MRTT platform. The POD lights provide the receiver aircraft with a clear visual reference of hose deployment and extension through an illuminated ring, ensuring accurate perception of the system status under all environmental conditions. This solution enhances both safety and precision during aerial refueling operations."
+      },
+      "heis": {
+        "title": "Hose Exchange & Inspection System",
+        "subtitle": "Smart Inspection System for Aerial Refueling",
+        "description": "Advanced inspection unit for aerial refueling hoses, designed to detect defects and surface degradation at an early stage during critical operations. The system integrates a distributed array of high-resolution cameras positioned around the hose, together with high-power illumination, enabling continuous and precise real-time monitoring. It features six synchronized high-resolution cameras, illumination sources exceeding 1 kW, and a hose tracking system that guarantees accurate image acquisition under all operational conditions. The unit incorporates advanced image processing, H.265 video compression, local storage capabilities, and artificial intelligence-based fault detection algorithms. This architecture significantly improves operational safety, reliability, and predictive maintenance capabilities for aerial refueling systems."
+      },
+      "fru": {
+        "title": "FRU Lights",
+        "subtitle": "Visual Reference Lighting System for Aerial Refueling",
+        "description": "The FRU Lights system is a lighting solution integrated into the BEVS (Boom Enhanced Vision System), deployed on the A-330 MRTT platform for aerial refueling operations. Its primary function is to provide the receiver aircraft with a clear and continuous visual reference of hose length through an illuminated ring, ensuring accurate perception throughout the entire deployment process.\n\nThe system has been designed to operate reliably under all environmental conditions, including low-visibility environments and night operations, enhancing pilot situational awareness and directly contributing to the safety and precision of aerial refueling maneuvers."
+      },
+      "glasses": {
+        "title": "3D Glasses & Clip-On",
+        "subtitle": "Stereoscopic Visualization System for Air Refueling Operators",
+        "description": "The 3D Glasses & Clip-On system has been developed to provide the Air Refueling Operator (ARO) with precise stereoscopic visualization during aerial refueling operations. Integrated into MRTT platforms, the system enables accurate perception of three-dimensional imagery through the dichroic mirror-based optical system (3DG), improving spatial interpretation of the operational environment.\n\nEach aircraft incorporates a dedicated set of glasses for operators, ensuring system availability during mission-critical operations. Additionally, the solution includes a Clip-On module adaptable to prescription eyewear, ensuring ergonomic compatibility without compromising visualization quality.\n\nThe system design prioritizes optical clarity, operational reliability, and seamless integration with advanced vision systems, contributing to increased precision and safety during aerial refueling maneuvers."
+      },
+      "module": {
+        "title": "IRILL Control Module",
+        "subtitle": "Control Module for Infrared Illumination System",
+        "description": "The Control Module is the electronic unit responsible for managing and monitoring the operation of the IRILL system. It controls the illuminator operating parameters and supplies power to the assembly through dedicated power and control cables. This component operates in conjunction with the illuminator and the remaining subsystems to ensure reliable and precise performance during aerial refueling maneuvers."
+      },
+      "powercable": {
+        "title": "Power & Control Cable",
+        "subtitle": "Power and Control Cable for Infrared Illumination System",
+        "description": "The Power & Control Cable provides the electrical and communication link between the Control Module and the Illuminator. Designed for demanding aerospace environments, it transmits both electrical power and the control signals required for proper system operation."
+      },
+      "focus": {
+        "title": "Focus System",
+        "subtitle": "Focusing System for Infrared Illumination",
+        "description": "This component is responsible for distributing light around the aircraft through the optical fiber assembly. It receives the luminous energy generated by the illuminator and projects it precisely toward the required operational area. It operates in conjunction with the optical fiber, illuminator, and control module as part of the integrated IRILL system."
+      },
+      "opticalfiber": {
+        "title": "Optical Fiber",
+        "subtitle": "Optical Fiber System for Signal Transmission in Infrared Illumination",
+        "description": "The Optical Fiber transports the luminous energy generated by the Illuminator to the emitter units installed on the aircraft. Specifically designed for aerospace applications, it ensures efficient, safe, and reliable transmission."
+      },
+      "mirror": {
+        "title": "3D Dichroic Mirror",
+        "subtitle": "High-Precision 3D Dichroic Mirror",
+        "description": "Advanced optical system integrated into the BEVS program to optimize 3D vision during A330 MRTT aerial refueling operations. This technology enables the operator to visualize the contact area without optical distortions, completely eliminating the 'ghosting' effect and ensuring maximum precision during critical air-to-air maneuvers."
+      },
+      "projection": {
+        "experience": "Experience",
+        "our": "Our",
+        "projects": "Projects",
+        "description": "Below is a selection of some of our most outstanding projects, reflecting our commitment to technical excellence and innovation.",
+        "viewMore": "View more details"
+      }
+
+}
+
+

@@ -1,1 +1,61 @@
-{}
+{
+    "herovideo": {
+        "eyebrow": "Regulated Environment",
+        "title": "Certifications",
+        "description": "We ensure regulatory compliance for the aerospace and defense industry"
+    },
+    "span_eyebrow": "Regulations",
+    "titleh2": "Global",
+    "spantitleh2": "Commitment",
+    "p1": "Registered in the Online Aerospace Supplier Information System. This database is the trusted standard for leading global OEMs",
+    "certList": [
+        "EN 9100 Audits",
+        "International Traceability",
+        "OEM Visibility"
+    ],
+    "natospan": "Defense and Security",
+    "natoh3": "NATO Registration",
+    "p2": "Approved supplier under the NCAGE system. Trained to operate in the defense supply chain and government projects.",
+    "natolist": [
+        "Military Approval",
+        "NCAGE Coding",
+        "Standardized Logistics"
+    ],
+    "reacheyebrow": "Environmental Compliance",
+    "reachp": " Our manufacturing guarantees absolute control of chemical substances (SVHC) and hazardous materials, aligning with the sustainability demanded by Tier 1 and OEM standards.",
+    "reachList": [
+        "Control of SVHC substances",
+        "RoHS Compliant Directive",
+        "Supply Chain Responsibility",
+        "ECHA Compliance"
+    ],
+    "footerh2": "EXCELLENCE",
+    "footerp": "Approved by the most rigorous standards",
+    "certSection": {
+        "eyebrow": "Our Guarantee",
+        "title_1": "Quality Policy",
+        "title_2": "& Certificates",
+        "policy": {
+          "heading": "Quality Policy",
+          "quote": "\"In our organisation, quality is grounded in operational safety and technical precision. We are committed to exceeding industry expectations through rigorous risk management and absolute reliability in every delivery.\"",
+          "cta": "Visit our Policy"
+        },
+        "buttons": {
+          "view": "View Cert.",
+          "download": "Download PDF"
+        },
+        "certs": [
+          {
+            "subtitle": "Aerospace Quality",
+            "description": "Certification specific to aviation, defence and space organisations. Ensures full traceability and operational risk management.",
+            "standard": "Quality Management Systems - Aerospace"
+          },
+          {
+            "subtitle": "Quality Management",
+            "description": "International standard that validates our operational efficiency and commitment to the continuous improvement of all our internal processes.",
+            "standard": "Quality Management Systems - Requirements"
+          }
+        ]
+      }
+    
+}

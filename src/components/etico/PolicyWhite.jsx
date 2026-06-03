@@ -1,11 +1,16 @@
 import React from "react";
 import { FileText, ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 
 
 export default function PolicyWhite() {
+const { t } = useTranslation("etico");
+
+
+
   const qualityPolicy = {
-    title: "Compromiso de Calidad y Excelencia",
+    title: t("policystrip.title"),
     href: "/sobre-quandum/calidad",
   };
 
@@ -39,8 +44,10 @@ export default function PolicyWhite() {
               <div className="flex-1 space-y-6 text-center md:text-left">
                 <div className="inline-flex items-center gap-3">
                   <div className="w-10 h-[1px] bg-brand-blue" />
+
+                  {/* EYEBROW */}
                   <span className="text-xs tracking-[0.4em] uppercase font-bold text-brand-blue">
-                    Visita nuestra política de calidad
+                    {t("policystrip.eyebrow")}
                   </span>
                   <div className="w-10 h-[1px] bg-brand-blue" />
                 </div>
@@ -49,9 +56,9 @@ export default function PolicyWhite() {
                   {qualityPolicy.title}
                 </h2>
                 
+                {/* DESCRIPTION */}
                 <p className="text-slate-500 text-lg md:text-xl max-w-xl leading-relaxed font-light">
-                En Quandum Aerospace entendemos la calidad como un principio estructural de nuestra actividad. Nuestra infraestructura opera bajo los más estrictos controles de calidad, 
-                  asegurando que cada proceso cumpla con la normativa internacional vigente.
+                {t("policystrip.description")}
                 </p>
               </div>
 
@@ -65,9 +72,11 @@ export default function PolicyWhite() {
                     <defs>
                       <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
                     </defs>
+
+                    {/* LOGO */}
                     <text className="text-[8px] uppercase font-bold fill-brand-blue tracking-[0.2em]">
                       <textPath xlinkHref="#circlePath">
-                        • Leer Política de Calidad • Certificación Quandum •
+                        {t("policystrip.logo")}
                       </textPath>
                     </text>
                   </svg>

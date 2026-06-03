@@ -2,30 +2,35 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Award, Download, ChevronRight, FileBadge } from "lucide-react";
 import DiagonalButton from "../DiagonalButton";
+import { useTranslation } from "react-i18next";
 
 const CertificationsSection = () => {
-  const certifications = [
+const { t } = useTranslation("certifications");
+
+
+  const certsMeta = [
     {
       title: "AS/EN 9100",
-      subtitle: "Calidad Aeroespacial",
-      description:
-        "Certificación específica para organizaciones de aviación, defensa y espacio. Garantiza la trazabilidad total y gestión de riesgos operativos.",
-      standard: "Sistemas de Gestión de Calidad - Aeroespacial",
+
       pdfUrl: "/certificados/EN9100_2024.pdf",
       imgUrl: "/certificados/EN9100_cert.jpg",
       sealUrl: "/certificados/eqa9100.png",
     },
     {
       title: "ISO 9001",
-      subtitle: "Gestión de la Calidad",
-      description:
-        "Estándar internacional que avala nuestra eficiencia operativa y el enfoque en la mejora continua de todos nuestros procesos internos.",
-      standard: "Sistemas de Gestión de Calidad - Requisitos",
+
       pdfUrl: "/certificados/ISO9001_2024.pdf",
       imgUrl: "/certificados/ISO9001_cert.jpg",
       sealUrl: "/certificados/eqa9001.png",
     },
   ];
+
+  const certsTexts = t("certSection.certs", { returnObjects: true });
+  const certifications = certsMeta.map((meta, i) => ({
+    ...meta,
+    ...certsTexts[i],
+  }));
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -47,14 +52,14 @@ const CertificationsSection = () => {
         <div className="mb-16">
           <div className="flex items-center gap-4 mb-6">
             <span className="text-sm tracking-[0.3em] text-gray-500 font-medium uppercase">
-              Nuestra Garantía
+              {t("certSection.eyebrow")}
             </span>
           </div>
 
           <h2 className="text-black text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight  tracking-tight leading-[1.1]">
-            Política de Calidad
+            {t("certSection.title_1")}
             <br />
-            <span className="font-semibold">& Certificados</span>
+            <span className="font-semibold"> {t("certSection.title_2")} </span>
           </h2>
         </div>
 
@@ -67,16 +72,13 @@ const CertificationsSection = () => {
             className="lg:col-span-1 bg-gray-50 py-4 px-4 lg:p-10 border border-gray-100 rounded-sm flex flex-col justify-between"
           >
             <div>
-              <div className="flex items-center mb-8 text-brand-blue">
-                <h4 className="ml-3 font-bold uppercase text-sm tracking-widest text-black">
-                  Política de Calidad
+              <div className="flex items-center mb-4 text-brand-blue">
+                <h4 className="ml-3 font-bold uppercase text-md md:text-xl tracking-widest text-black">
+                  {t("certSection.policy.heading")}
                 </h4>
               </div>
-              <p className="text-gray-600 text-justify leading-relaxed italic">
-                "En nuestra organización, la calidad se fundamenta en la
-                seguridad operativa y la precisión técnica. Nos comprometemos a
-                superar las expectativas de la industria mediante la gestión
-                rigurosa de riesgos y la fiabilidad absoluta en cada entrega."
+              <p className="text-gray-600  leading-relaxed italic">
+              {t("certSection.policy.quote")}
               </p>
             </div>
 
@@ -84,7 +86,7 @@ const CertificationsSection = () => {
               href="/sobre-quandum/calidad"
               className="mt-12 flex items-center text-sm font-bold text-brand-blue uppercase tracking-widest hover:translate-x-2 transition-all group"
             >
-              Visita nuestra Política{" "}
+              {t("certSection.policy.cta")}{" "}
               <ChevronRight
                 size={14}
                 className="ml-2 group-hover:ml-4 transition-all"
@@ -144,14 +146,14 @@ const CertificationsSection = () => {
                       rel="noopener noreferrer"
                       className="flex items-center justify-center px-6 py-3 hover:scale-105 rounded-md text-sm uppercase tracking-widest text-gray-300 bg-brand-blue clip-path-diagonal border border-gray-500  hover:font-semibold hover:text-white transition-all duration-300"
                     >
-                      Ver Cert.
+                      {t("certSection.buttons.view")}
                     </a>
                     <a
                       href={cert.pdfUrl}
                       download
                       className="flex items-center justify-center px-6 py-3 hover:scale-105 rounded-md text-sm uppercase tracking-widest text-gray-300 bg-brand-blue clip-path-diagonal border border-gray-500  hover:font-semibold hover:text-white transition-all duration-300"
                     >
-                      <Download size={14} /> Descargar PDF
+                      <Download size={14} /> {t("certSection.buttons.download")}
                     </a>
                   </div>
                 </div>

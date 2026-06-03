@@ -1,8 +1,6 @@
 export const products = [
     {
       id: 1,
-      title: "IR Illuminator SubSystem",
-      subtitle: "IRILL",
       hero: "/products/illuminator.webp",
       gallery: [
         "/products/illuminator.webp",
@@ -10,34 +8,29 @@ export const products = [
         "/products/poweririll.png",
       ],
       image: "/products/illuminator.webp",
-      description:
-        "El IRILL es un sistema avanzado de iluminación láser infrarroja de alta potencia, diseñado específicamente para misiones críticas de repostaje en vuelo en plataformas A-330 MRTT y A-310 MRTT. Integrado como un componente esencial del BEVS (Boom Enhanced Vision System), su función principal es proporcionar una iluminación infrarroja homogénea sobre la aeronave receptora y el área de contacto de la pértiga. Esto mejora significativamente la percepción visual del operador (ARO) y garantiza maniobras seguras y eficientes durante operaciones nocturnas o en condiciones de baja visibilidad. Compuesto por distintos subsistemas perfectamente integrados, cada elemento del IRILL desempeña una función esencial dentro del conjunto.",
+      translationKey: "irill",
       certifications: ["DO-178 DAL B"],
     },
     {
       id: 2,
-      title: "Nozzle",
-      subtitle: "Sistema de Tobera",
+      translationKey: "nozzle",
       hero: "/products/nozzle.webp",
       gallery: [
         "/products/nozzle1.webp",
         "/products/nozzle2.webp",
       ],
       image: "/products/nozzle.webp",
-      description: "Sistema de iluminación aeronáutico diseñado para facilitar la localización visual precisa de la punta del boom de reabastecimiento en vuelo por parte de la aeronave receptora, incluso bajo condiciones de iluminación adversas, baja visibilidad o operaciones nocturnas. El sistema se integra directamente en plataformas MRTT A-330 y A-310 MRTT, garantizando una referencia visual fiable durante todas las fases del proceso de reabastecimiento en vuelo, contribuyendo a la seguridad operativa y a la reducción de carga de trabajo de la tripulación. El desarrollo del sistema incluye electrónica embarcada y software crítico certificado conforme a RTCA/DO-178, Nivel DAL-C, asegurando trazabilidad, verificación y cumplimiento de los requisitos de seguridad aeronáutica aplicables.",
       certifications: ["DO-178 DAL C"],
     },
     {
       id: 3,
-      title: "Encoder",
-      subtitle: "Sistema de Codificación",
+      translationKey: "encoder",
       hero: "/products/encoder.webp",
       gallery: [
         "/products/encoder.webp",
         "/products/encoder1.webp",
       ],
       image: "/products/encoder.webp",
-      description: "Unidad electrónica de codificación diseñada para optimizar la gestión de señales entre el sistema de control y la consola del operador. El encoder reduce ocho señales discretas de entrada a únicamente tres, permitiendo una disminución significativa de la complejidad del cableado, el peso del sistema y el esfuerzo de instalación en plataformas aeronáuticas. El equipo está plenamente integrado en la plataforma A-330 MRTT, contribuyendo a una arquitectura de sistema más eficiente y robusta, con mejoras directas en fiabilidad y mantenibilidad para entornos de misión crítica.",
       certifications: ["DO-178", "DO-254"],
     },
     // {
@@ -55,34 +48,29 @@ export const products = [
     // },
     {
       id: 5,
-      title: "DCD",
-      subtitle: "Dispositivo de Control de Iluminación para Repostaje en Vuelo",
+      translationKey: "dcd",
       hero: "/products/dimming.webp",
       gallery: [
         "/products/dimming1.webp",
         "/products/dimming.webp",
       ],
       image: "/products/dimming.webp",
-      description:
-      "El Dimming Control Device (DCD) es un sistema diseñado para garantizar la visibilidad óptima de las Pilot Director Lights (PDL) durante las operaciones de repostaje en vuelo. Integrado en las luces de posicionamiento del avión cisterna, el DCD regula dinámicamente la intensidad luminosa para adaptar el sistema PDL a diferentes condiciones de iluminación, permitiendo al avión receptor identificar con precisión el punto exacto de posicionamiento. Esta optimización mejora la seguridad, la precisión operativa y la fiabilidad del proceso de reabastecimiento en entornos de misión crítica.",      certifications: ["DO-178 DAL C"],
+      certifications: ["DO-178 DAL C"],
     },
     {
       id: 6,
-      title: "P.O.D Lighting System",
-      subtitle: "Sistema de Iluminación para Repostaje en Vuelo",
+      translationKey: "pod",
       hero: "/products/POD.webp",
       gallery: [
         "/products/POD1.webp",
         "/products/POD.webp",
       ],
       image: "/products/POD.webp",
-      description:
-      "Sistema de iluminación integrado en el BEVS e instalado en el Refueling POD de la plataforma A-330 MRTT. Las luces del POD proporcionan a la aeronave receptora una referencia visual clara del despliegue y la longitud de la manguera mediante una corona luminosa, asegurando una correcta percepción del estado del sistema en cualquier condición ambiental. Esta solución mejora la seguridad y la precisión durante las operaciones de repostaje en vuelo.",      certifications: ["DO-178 DAL C", "MIL-STD-883"],
+      certifications: ["DO-178 DAL C", "MIL-STD-883"],
     },
     {
       id: 7,
-      title: "Hose Exchange & Inspection System",
-      subtitle: "Sistema de inspección inteligente para reabastecimiento en vuelo",
+      translationKey: "heis",
       hero: "/products/heis.webp",
       gallery: [
         "/products/heis3.webp",
@@ -91,39 +79,32 @@ export const products = [
       ],
       video: "/products/heis.mp4",
       image: "/products/heis3.webp",
-      description:
-      "Unidad avanzada de inspección para mangueras de reabastecimiento en vuelo, diseñada para detectar de forma temprana defectos y degradaciones en la superficie de la manguera durante operaciones críticas. El sistema integra un conjunto distribuido de cámaras de alta resolución alrededor de la manguera, junto con iluminación de alta potencia, permitiendo una monitorización continua y precisa en tiempo real. Dispone de seis cámaras de alta resolución sincronizadas, fuentes de iluminación superiores a 1 kW y un sistema de seguimiento de manguera que garantiza la correcta adquisición de imágenes en cualquier condición operativa. La unidad incorpora procesamiento avanzado de imagen, compresión de vídeo H.265 y almacenamiento local, así como algoritmos de detección de fallos basados en inteligencia artificial. Esta arquitectura permite mejorar significativamente la seguridad, la fiabilidad operativa y el mantenimiento predictivo de los sistemas de reabastecimiento en vuelo. ",      certifications: ["DO-178 DAL C", "MIL-STD-883"],
+       certifications: ["DO-178 DAL C", "MIL-STD-883"],
     },
     {
       id: 8,
-      title: "FRU Lights",
-      subtitle: "Sistema de iluminación de referencia visual para reabastecimiento en vuelo",
+      translationKey: "fru",
       hero: "/products/fru.jpg",
       gallery: [
         "/products/fru.jpg",
       ],
       image: "/products/fru.jpg",
-      description:
-      "El sistema FRU Lights es una solución de iluminación integrada en el BEVS (Boom Enhanced Vision System), desplegada en la plataforma A-330 MRTT para operaciones de reabastecimiento en vuelo. Su función principal es proporcionar a la aeronave receptora una referencia visual clara y continua de la longitud de la manguera mediante una corona luminosa, garantizando su correcta percepción durante todo el proceso de despliegue.\n\nEl sistema ha sido diseñado para operar de forma fiable en cualquier condición ambiental, incluyendo entornos de baja visibilidad y operaciones nocturnas, mejorando la conciencia situacional del piloto y contribuyendo directamente a la seguridad y precisión de la maniobra de repostaje.",      certifications: ["DO-178", "MIL-STD-883"],
+      certifications: ["DO-178", "MIL-STD-883"],
     },
     {
       id: 9,
-      title: "3D Glasses & Clip-On",
-      subtitle: "Sistema de visualización estereoscópica para operador de reabastecimiento en vuelo",
+      translationKey: "glasses",
       hero: "/products/3dglasses.png", 
       gallery: [
         "/products/3dglasses.png",
         "/products/3dglasses.jpg",
       ],
       image: "/products/3dglasses.jpg",
-      description:
-        "El sistema de gafas 3D y Clip-On ha sido desarrollado para proporcionar al Air Refueling Operator (ARO) una visualización estereoscópica precisa durante las operaciones de reabastecimiento en vuelo. Integrado en plataformas MRTT, el sistema permite la correcta percepción de imágenes tridimensionales a través del sistema óptico basado en espejo dicroico (3DG), mejorando la interpretación espacial del entorno operativo.\n\nCada aeronave incorpora un conjunto dedicado de gafas para los operadores, garantizando la disponibilidad del sistema en misiones críticas. Adicionalmente, la solución incluye un módulo Clip-On adaptable a gafas graduadas, asegurando la compatibilidad ergonómica sin comprometer la calidad de visualización.\n\nEl diseño del sistema prioriza la claridad óptica, la fiabilidad operativa y la integración con sistemas de visión avanzada, contribuyendo a una mayor precisión y seguridad en las maniobras de reabastecimiento en vuelo.",
       certifications: ["DO-160"], 
     },
     {
       id: 10,
-      title: "IRILL Control Module",
-      subtitle: "Módulo de Control para Sistema de Iluminación Infrarroja",
+      translationKey: "module",
       hero: "/products/irill2.jpeg", 
       gallery: [
         "/products/irill.jpeg",
@@ -131,13 +112,11 @@ export const products = [
         "/products/modulocompleto.jpeg",
       ],
       image: "/products/irill2.jpeg",
-      description:"El Módulo de Control es la unidad electrónica encargada de gestionar y supervisar el funcionamiento del sistema IRILL. Controla los parámetros operativos del iluminador y suministra energía al conjunto mediante los cables de potencia y control. Este componente trabaja conjuntamente con el iluminador y el resto de subsistemas para garantizar una operación fiable y precisa durante las maniobras de repostaje en vuelo. ",
       certifications: ["DO-160"], 
     },
     {
       id: 11,
-      title: "Power Control Cable",
-      subtitle: "Cable de Control de Potencia para Sistema de Iluminación Infrarroja",
+      translationKey: "powercable",
       hero: "/products/powercable2.jpeg", 
       gallery: [
         "/products/powercable2.jpeg",
@@ -150,40 +129,34 @@ export const products = [
     },
     {
       id: 12,
-      title: "Focus",
-      subtitle: "Sistema de Enfoque para Iluminación Infrarroja",
+      translationKey: "focus",
       hero: "/products/focus.jpeg", 
       gallery: [
         "/products/focus.jpeg",
         "/products/focus2.jpeg",
       ],
       image: "/products/focus2.jpeg",
-      description:"Es el elemento encargado de difundir la luz alrededor del avión conectado a la fibra óptica, encargado de recibir la energía lumínica generada por el iluminador y proyectarla con precisión hacia la zona de operación requerida. Trabaja conjuntamente con la fibra óptica, el iluminador y el módulo de control como parte del sistema integral IRILL.",
       certifications: ["DO-160"], 
     },
     {
       id: 13,
-      title: "Optical Fiber",
-      subtitle: "Sistema de Fibra Óptica para Transmisión de Señales en Iluminación Infrarroja",
+      translationKey: "opticalfiber",
       hero: "/products/fibercable.jpeg", 
       gallery: [
         "/products/fibercable.jpeg",
       ],
       image: "/products/fibercable.jpeg",
-      description:"La Fibra Óptica transporta la energía lumínica generada por el Iluminador hasta los focos emisores instalados en la aeronave. Diseñada específicamente para aplicaciones aeronáuticas, asegura una transmisión eficiente, segura y fiable. ",
       certifications: ["DO-160"], 
     },
     {
       id: 14,
-      title: "3D Dichroic Mirror",
-      subtitle: "Espejo Dicroico 3D de Alta Precisión",
+      translationKey: "mirror",
       hero: "/products/mirror2.jpeg", 
       gallery: [
         "/products/mirror2.jpeg",
         "/products/mirror.jpeg",
       ],
       image: "/products/mirror2.jpeg",
-      description:"Sistema óptico avanzado integrado en el programa BEVS para optimizar la visión 3D en operaciones de reabastecimiento en vuelo del A330 MRTT. Esta tecnología permite al operador visualizar el área de contacto sin distorsiones ópticas, eliminando por completo el efecto 'ghosting' y garantizando la máxima precisión en maniobras críticas aire-aire.",
       certifications: ["DO-160"], 
     },
   ];

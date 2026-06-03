@@ -1,11 +1,5 @@
 import { motion } from "motion/react";
-
-const words = [
-  { text: "Y", accent: false },
-  { text: "esto", accent: false },
-  { text: "apenas", accent: false },
-  { text: "comienza", accent: true },
-];
+import { useTranslation } from "react-i18next";
 
 const container = {
   hidden: {},
@@ -39,8 +33,11 @@ const fadeUp = (delay = 0) => ({
 });
 
 export default function Subtitle() {
+const { t } = useTranslation("about");
+const words = t("subtitleHitos.words", { returnObjects: true });
+
   return (
-    <div className="relative pt-24 pb-28">
+    <div className="relative pt-24 pb-28 bg-gradient-to-t from-black via-black/40 to-black/60 md:bg-gradient-to- md:from-black/95 md:to-black/20">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[320px] bg-gradient-to-r from-violet-600/8 to-brand-blue/8 blur-[130px] rounded-full" />
       </div>
@@ -85,15 +82,15 @@ export default function Subtitle() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={container}
-          className="flex flex-wrap justify-center items-baseline gap-x-[0.32em] gap-y-2 text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-center tracking-tight leading-[1.12] mb-0"
+          className="flex flex-wrap  justify-center items-baseline gap-x-[0.32em] gap-y-2 text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-center tracking-tight leading-[1.12] mb-0"
         >
           {words.map((w, i) => (
-            <span key={i} className="overflow-hidden inline-block">
+            <span key={i} className="overflow-hidden inline-block ">
               <motion.span
                 variants={word}
                 className={`inline-block font-light ${
                   w.accent
-                    ? "bg-gradient-to-r from-violet-500 via-indigo-400 to-brand-blue bg-clip-text text-transparent italic"
+                    ? "bg-gradient-to-r from-violet-500 via-indigo-400 to-brand-blue bg-clip-text text-transparent "
                     : "bg-gradient-to-br from-white via-slate-200 to-slate-400 bg-clip-text text-transparent"
                 }`}
               >
@@ -141,7 +138,7 @@ export default function Subtitle() {
             transition={{ duration: 0.7, delay: 1.8 }}
             className="mt-5 text-[11px] tracking-[0.24em] uppercase text-slate-500/60 font-bold"
           >
-            El futuro está en construcción
+            {t("subtitleHitos.subtitle")}
           </motion.p>
         </motion.div>
       </div>

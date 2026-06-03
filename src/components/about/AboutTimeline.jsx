@@ -1,85 +1,65 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 import Title from "../history/Title";
 import Subtitle from "../history/Subtitle";
 import StarfieldNebula from "../3d/StarfieldNebula";
 
-const timelineData = [
-  {
-    year: "2006",
-    title: "Fundación",
-    detail:
-      "Comienzos de la empresa y sus primeros contratos con Airbus Military.",
-  },
-  {
-    year: "2009",
-    title: "Certificaciones",
-    detail:
-      "Implantación de sistemas de gestión y obtención de certificaciones según los estándares del sector aeronáutico e industrial (EN 9100 / ISO 9001).",
-    highlight: true,
-  },
-  {
-    year: "2012",
-    title: "Consolidación",
-    detail:
-      "Desarrollo de líneas de producto en electrónica y optoelectrónica para plataformas aéreas.",
-  },
-  {
-    year: "2015",
-    title: "Expansión tecnológica",
-    detail:
-      "Incorporación de sistemas de prototipado rápido y procesos de fabricación de precisión.",
-  },
-  {
-    year: "2022",
-    title: "Proyectos estratégicos",
-    detail:
-      "Participación en programas de defensa y sistemas de visión/IR integrados.",
-  },
-  {
-    year: "2024",
-    title: "Madurez operativa",
-    detail:
-      "Equipo consolidado y procesos orientados a certificación y suministro internacional.",
-    current: true,
-  },
+// 1️⃣ CONCEPTO NUEVO — separamos los datos estructurales del texto.
+//    Este array se queda en el componente porque sus valores
+//    son iguales en cualquier idioma: las fechas no se traducen,
+//    y highlight/current son booleanos, no texto.
+const timelineMeta = [
+  { year: "2006" },
+  { year: "2009", highlight: true },
+  { year: "2012" },
+  { year: "2015" },
+  { year: "2022" },
+  { year: "2024", current: true },
 ];
 
 export default function AboutTimeline() {
+  const { t } = useTranslation("about");
   const containerRef = useRef(null);
   const timelineRef = useRef(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: timelineRef,
     offset: ["start center", "end center"],
   });
 
-  // linea 
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
+  // 2️⃣ Leemos los textos traducidos del JSON como array de objetos
+  const timelineTexts = t("timeline.items", { returnObjects: true });
+
+  // 3️⃣ Fusionamos los dos arrays con .map():
+  //    timelineMeta[i] aporta → year, highlight, current
+  //    timelineTexts[i] aporta → title, detail
+  //    El resultado es idéntico al array original, pero con texto traducido.
+  const timelineData = timelineMeta.map((meta, i) => ({
+    ...meta,
+    ...timelineTexts[i],
+  }));
 
   return (
     <section
       ref={containerRef}
       className="relative w-full text-white py-32 overflow-hidden"
     >
-      
       <StarfieldNebula />
 
       <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
-        
         <Title />
 
-        {/* linea de tiempo */}
         <div ref={timelineRef} className="relative py-12">
-          {/* linea gris de fondo */}
+          {/* Línea gris de fondo — sin texto, no cambia */}
           <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-slate-800/50 -translate-x-1/2 md:translate-x-0" />
 
-          {/* progreso linea */}
+          {/* Progreso línea — sin texto, no cambia */}
           <motion.div
             className="absolute left-8 md:left-1/2 top-0 w-px -translate-x-1/2 md:translate-x-0 origin-top"
-            style={{
-              height: lineHeight,
-            }}
+            style={{ height: lineHeight }}
           >
             <div
               className="w-full h-full bg-gradient-to-b from-brand-blue via-brand-pink to-red-600"
@@ -87,7 +67,9 @@ export default function AboutTimeline() {
             />
           </motion.div>
 
-        
+          {/* 4️⃣ El .map() no cambia nada — item.title, item.detail, item.year
+               ya contienen los valores correctos porque vienen del array
+               fusionado de arriba. El JSX es idéntico al original. */}
           <div className="space-y-0">
             {timelineData.map((item, index) => (
               <motion.div
@@ -100,7 +82,6 @@ export default function AboutTimeline() {
                   index !== timelineData.length - 1 ? "mb-32" : "mb-0"
                 } ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
               >
-                {/* CONTENIDO */}
                 <div
                   className={`w-full md:w-5/12 ${
                     index % 2 === 0
@@ -130,15 +111,16 @@ export default function AboutTimeline() {
                     <p className="text-slate-300 text-lg leading-relaxed">
                       {item.detail}
                     </p>
+                    {/* 5️⃣ El badge "Hoy" es texto suelto → una sola clave */}
                     {item.current && (
                       <div className="mt-4 inline-block px-4 py-2 bg-red-600/20 border border-red-500/50 rounded-full text-red-400 text-sm font-medium">
-                        Hoy
+                        {t("timeline.today")}
                       </div>
                     )}
                   </div>
                 </div>
 
-                {/* punto en linea */}
+                {/* Punto en línea — sin texto, no cambia */}
                 <div className="absolute left-8 md:left-1/2 -translate-x-1/2 md:translate-x-0 z-10">
                   <motion.div
                     initial={{ scale: 0 }}
@@ -164,7 +146,6 @@ export default function AboutTimeline() {
                   </motion.div>
                 </div>
 
-                {/* espacio */}
                 <div className="hidden md:block md:w-5/12" />
               </motion.div>
             ))}

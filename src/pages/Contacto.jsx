@@ -1,14 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { useTranslation } from "react-i18next";
 import {
-  Building2,
-  Phone,
-  Mail,
-  MapPin,
-  Send,
-  Clock,
-  CheckCircle2,
-  ChevronRight,
+  Building2, Phone, Mail, MapPin,
+  Send, Clock, CheckCircle2, ChevronRight,
 } from "lucide-react";
 import StarfieldNebula from "../components/3d/StarfieldNebula";
 import DiagonalButton from "../components/DiagonalButton";
@@ -16,16 +11,13 @@ import emailjs from "@emailjs/browser";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export default function Contacto() {
+  const { t } = useTranslation("contacto");
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   const [form, setForm] = useState({
-    name: "",
-    company: "",
-    email: "",
-    phone: "",
-    department: "general",
-    subject: "",
-    message: "",
+    name: "", company: "", email: "",
+    phone: "", department: "general",
+    subject: "", message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -35,14 +27,10 @@ export default function Contacto() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
     if (!executeRecaptcha) return;
-  
     setIsSubmitting(true);
-  
     try {
       const token = await executeRecaptcha("form_contacto");
-
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE,
         import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT,
@@ -54,34 +42,29 @@ export default function Contacto() {
           department: form.department,
           subject: form.subject,
           message: form.message,
-          "g-recaptcha-response": token, 
+          "g-recaptcha-response": token,
         },
         import.meta.env.VITE_EMAILJS_PUBLIC
       );
-  
       setSubmitted(true);
     } catch (err) {
       console.error(err);
-      alert("Error al enviar");
+      // t() dentro de lógica — igual que en el formulario de empleo
+      alert(t("form.errorAlert"));
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const contactInfo = [
-    {
-      icon: Building2,
-      title: "Sede Central",
-      content: "Parque Tecnológico de Andalucía, Málaga · España",
-    },
-    { icon: Phone, title: "Centralita", content: "+34 952 02 06 54" },
-    { icon: Mail, title: "Email", content: "info@quandum.com" },
-    {
-      icon: Clock,
-      title: "Horario",
-      content: "L-J: 08:00 – 17:30 | V: 08:00 – 14:00",
-    },
-  ];
+  // Iconos → metadatos visuales, no se traducen
+  const infoIcons = [Building2, Phone, Mail, Clock];
+  const infoTexts = t("info.items", { returnObjects: true });
+
+  // Fusionamos icono + título + contenido traducido
+  const contactInfo = infoIcons.map((icon, i) => ({
+    icon,
+    ...infoTexts[i],
+  }));
 
   return (
     <div className="relative min-h-screen text-white selection:bg-blue-500/30 overflow-x-hidden">
@@ -91,40 +74,43 @@ export default function Contacto() {
       </div>
 
       <div className="relative z-10">
+        {/* Hero */}
         <div className="max-w-7xl mx-auto px-6 py-32 relative z-10">
           <div className="text-center max-w-4xl mx-auto animate-fadeIn">
             <h1 className="text-6xl md:text-7xl font-extralight mb-8">
-              <span
-                className="block animate-slideUp"
-                style={{ animationDelay: "0.3s" }}
-              >
-                Contacte con
+              {/* Título partido en tres partes:
+                  "Contacte con" normal + "Quandum" blanco bold + "Aerospace" gradiente
+                  Quandum y Aerospace son nombres propios — no se traducen,
+                  pero "Contacte con" / "Contact" sí cambia */}
+              <span className="block animate-slideUp" style={{ animationDelay: "0.3s" }}>
+                {t("hero.title_before")}
               </span>
               <span
                 className="bg-gradient-to-r from-white to-white bg-clip-text text-transparent font-bold animate-slideUp"
                 style={{ animationDelay: "0.5s" }}
               >
-                Quandum{" "}
+                {t("hero.title_brand1")}{" "}
               </span>
               <span
                 className="bg-gradient-to-r from-brand-pink via-red-400 to-red-700 bg-clip-text text-transparent font-bold animate-slideUp"
                 style={{ animationDelay: "0.5s" }}
               >
-                Aerospace
+                {t("hero.title_brand2")}
               </span>
             </h1>
-
             <p
               className="text-xl text-slate-400 leading-relaxed max-w-3xl mx-auto animate-fadeIn"
               style={{ animationDelay: "0.7s" }}
             >
-              Compromiso absoluto con la confidencialidad, la precisión técnica
-              y la excelencia en la comunicación con nuestros socios y clientes.
+              {t("hero.subtitle")}
             </p>
           </div>
         </div>
+
         <main className="max-w-7xl mx-auto px-6 pb-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+            {/* Columna izquierda — info + mapa */}
             <div className="lg:col-span-5 space-y-8">
               <div className="grid grid-cols-1 gap-4">
                 {contactInfo.map((info, i) => (
@@ -152,10 +138,9 @@ export default function Contacto() {
                 ))}
               </div>
 
-              {/* MAPA  */}
               <div className="relative h-80 w-1000 rounded-3xl overflow-hidden border border-white/10 group">
                 <iframe
-                  title="Mapa Quandum"
+                  title={t("info.mapTitle")}
                   className="w-full h-full invert opacity-90 group-hover:opacity-80 transition-opacity duration-1000"
                   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAtxit6HPeuCWgxo0TLb6HnJlxQVVIS9eU&q=Calle+Severo+Ochoa+39%2C+Parque+Tecnol%C3%B3gico+de+Andaluc%C3%ADa%2C+29590+M%C3%A1laga%2C+Espa%C3%B1a&zoom=17&maptype=roadmap&language=es&region=ES"
                   style={{ border: 0 }}
@@ -166,7 +151,7 @@ export default function Contacto() {
               </div>
             </div>
 
-            {/* FORMULARIO   */}
+            {/* Columna derecha — formulario */}
             <div className="lg:col-span-7">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -182,34 +167,15 @@ export default function Contacto() {
                       exit={{ opacity: 0, y: -20 }}
                     >
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <Input
-                          label="Nombre completo *"
-                          name="name"
-                          required
-                          value={form.name}
-                          onChange={handleChange}
-                        />
-                        <Input
-                          label="Empresa *"
-                          name="company"
-                          required
-                          value={form.company}
-                          onChange={handleChange}
-                        />
+                        <Input label={t("form.fields.name")}    name="name"    required value={form.name}    onChange={handleChange} />
+                        <Input label={t("form.fields.company")} name="company" required value={form.company} onChange={handleChange} />
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <Input
-                          label="Correo electrónico *"
-                          type="email"
-                          name="email"
-                          required
-                          value={form.email}
-                          onChange={handleChange}
-                        />
+                        <Input label={t("form.fields.email")} type="email" name="email" required value={form.email} onChange={handleChange} />
                         <div>
                           <label className="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">
-                            Departamento
+                            {t("form.fields.department")}
                           </label>
                           <select
                             name="department"
@@ -217,24 +183,19 @@ export default function Contacto() {
                             onChange={handleChange}
                             className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm focus:border-blue-500 outline-none transition-all appearance-none"
                           >
-                            <option value="general">General</option>
-                            <option value="engineering">Ingeniería</option>
-                            <option value="certification">Certificación</option>
+                            {/* Las opciones del select también se traducen */}
+                            <option value="general">{t("form.departments.general")}</option>
+                            <option value="engineering">{t("form.departments.engineering")}</option>
+                            <option value="certification">{t("form.departments.certification")}</option>
                           </select>
                         </div>
                       </div>
 
-                      <Input
-                        label="Asunto *"
-                        name="subject"
-                        required
-                        value={form.subject}
-                        onChange={handleChange}
-                      />
+                      <Input label={t("form.fields.subject")} name="subject" required value={form.subject} onChange={handleChange} />
 
                       <div>
                         <label className="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">
-                          Mensaje Técnico *
+                          {t("form.fields.message")}
                         </label>
                         <textarea
                           rows={4}
@@ -249,9 +210,9 @@ export default function Contacto() {
                       <DiagonalButton
                         type="submit"
                         disabled={isSubmitting}
-                        className=" w-full bg-brand-blue/30 hover:scale-105  "
+                        className="w-full bg-brand-blue/30 hover:scale-105"
                       >
-                        {isSubmitting ? "Transmitiendo..." : "Enviar Mensaje"}
+                        {isSubmitting ? t("form.submitting") : t("form.submit")}
                       </DiagonalButton>
                     </motion.form>
                   ) : (
@@ -267,18 +228,16 @@ export default function Contacto() {
                         </div>
                       </div>
                       <h3 className="text-3xl font-bold uppercase italic">
-                        Mensaje Recibido
+                        {t("success.heading")}
                       </h3>
                       <p className="text-slate-400 max-w-sm mx-auto">
-                        La transmisión se ha completado. Un ingeniero del
-                        departamento correspondiente revisará su solicitud en
-                        breve.
+                        {t("success.message")}
                       </p>
                       <button
                         onClick={() => setSubmitted(false)}
                         className="text-blue-400 text-[10px] font-bold uppercase tracking-widest hover:text-white transition-colors"
                       >
-                        Enviar otra consulta
+                        {t("success.newMessage")}
                       </button>
                     </motion.div>
                   )}

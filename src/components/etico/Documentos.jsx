@@ -2,45 +2,28 @@ import { FileText, Download, Shield, Scale, CheckCircle2 } from "lucide-react";
 import { motion, useInView } from "motion/react";
 import PolicyStrip from "./PolicyStrip";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Documentos() {
-  const policies = [
-    {
-      title: "Código Ético",
-      ref: "IDO230060",
-      file: "/docs/codigo-etico.pdf",
-      icon: Shield,
-      color: "slate",
-    },
-    {
-      title: "Política de Seguridad",
-      ref: "IDO250070",
-      file: "/docs/politica-seguridad.pdf",
-      icon: CheckCircle2,
-      color: "slate",
-    },
-    {
-      title: "Política Anti Corrupción",
-      ref: "IDO230061",
-      file: "/docs/politica-anticorrupcion.pdf",
-      icon: Scale,
-      color: "slate",
-    },
-    {
-      title: "Política de Obsequios y Trato de Hospitalidad",
-      ref: "IDO230059",
-      file: "/docs/politica-obsequios.pdf",
-      icon: FileText,
-      color: "slate",
-    },
+  const { t } = useTranslation("etico");
+
+
+
+
+  const policiesMeta = [
+    { ref: "IDO230060", file: "/docs/codigo-etico.pdf",          icon: Shield,      color: "slate" },
+    { ref: "IDO250070", file: "/docs/politica-seguridad.pdf",    icon: CheckCircle2, color: "slate" },
+    { ref: "IDO230061", file: "/docs/politica-anticorrupcion.pdf", icon: Scale,      color: "slate" },
+    { ref: "IDO230059", file: "/docs/politica-obsequios.pdf",    icon: FileText,    color: "slate" },
   ];
 
-  const qualityPolicy = {
-    title: "Política de Calidad",
-    ref: "PGC-001",
-    href: "/sobre-quandum/calidad",
-    icon: FileText,
-  };
+  const policiesTexts = t("documentos.policies", { returnObjects: true });
+
+  const policies = policiesMeta.map((meta, i) => ({
+    ...meta,
+    ...policiesTexts[i],
+  }));
+
 
   function LineReveal({ delay = 0 }) {
     const ref = useRef(null);
@@ -117,7 +100,7 @@ export default function Documentos() {
             className="flex items-center gap-4 mb-6"
           >
             <span className="text-xs tracking-[0.4em] font-bold uppercase text-gray-400">
-              Cumplimiento Normativo
+              {t("documentos.eyebrow")}
             </span>
           </motion.div>
 
@@ -129,7 +112,7 @@ export default function Documentos() {
               transition={{ delay: 0.1 }}
             >
               <h2 className="text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extralight tracking-tight leading-[1.1] text-black">
-                Código <span className="font-semibold">Ético </span>
+                {t("documentos.title_1")} <span className="font-semibold">{t("documentos.title_2")} </span>
               </h2>
           
             </motion.div>
@@ -141,8 +124,7 @@ export default function Documentos() {
               transition={{ delay: 0.2 }}
             >
               <p className="text-lg text-gray-500 max-w-md leading-relaxed md:text-right">
-                Fundamentos estructurales que garantizan la integridad operacional, trazabilidad de procesos y excelelencia en el sector aeronáutico.
-              </p>
+              {t("documentos.subtitle")}              </p>
             </motion.div>
           </div>
           <LineReveal delay={0.1} />
@@ -239,7 +221,7 @@ export default function Documentos() {
                     {/* Download Button */}
                     <div className="flex items-center gap-3 pt-4 border-t border-black/5 group-hover:border-slate-600/20 transition-colors">
                       <span className="text-sm font-mono text-black/60 group-hover:text-slate-600 transition-colors uppercase tracking-wider">
-                        Ver Documento
+                      {t("documentos.viewDoc")}
                       </span>
                       <div className="flex-1" />
                       <div className="w-8 h-[2px] bg-black/10 group-hover:bg-slate-600 group-hover:w-12 transition-all" />
@@ -256,7 +238,7 @@ export default function Documentos() {
         </div>
 
         {/* Technical Footer */}
-        {/* <motion.div
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
@@ -271,12 +253,8 @@ export default function Documentos() {
               <div className="w-3 h-3 border border-black/20" />
               <span>AS9100D Certified</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 border border-black/20" />
-              <span>Última actualización: 2025</span>
-            </div>
           </div>
-        </motion.div> */}
+        </motion.div>
       </div>
     </div>
   );

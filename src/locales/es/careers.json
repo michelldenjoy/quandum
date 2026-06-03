@@ -1,1 +1,108 @@
-{}
+{
+    "heroeyebrow": "Careers · Ingeniería · Innovación",
+    "herotitle": "Tu carrera despega aquí",
+    "description": "Únete a un equipo multidisciplinar donde tu talento impulsa el desarrollo tecnológico.",
+    "formulario": {
+        "title": "ÚNETE AL EQUIPO",
+        "success": {
+          "heading": "Candidatura Recibida",
+          "message": "Su perfil ha sido integrado en nuestra base de datos técnica. Revisaremos su CV en un plazo de 72 horas laborables.",
+          "newRequest": "Nueva Solicitud"
+        },
+        "error": {
+          "required": "Complete todos los campos obligatorios y adjunte su CV.",
+          "invalidFile": "Por favor, adjunte un archivo PDF válido."
+        },
+        "fields": {
+          "name": "Nombre Completo *",
+          "email": "Email Institucional *",
+          "phone": "Teléfono",
+          "position": "Puesto de Interés",
+          "positionPlaceholder": "Seleccionar Vacante",
+          "coverLetter": "Carta de Presentación (Opcional)",
+          "coverLetterPlaceholder": "Describa brevemente su experiencia en el sector aeroespacial...",
+          "cv": "Adjuntar CV (PDF)"
+        },
+        "submit": "Enviar Candidatura",
+        "submitting": "Procesando...",
+        "positions": [
+          { "title": "Técnico de Mecanizado" },
+          { "title": "Programador CAM - CATIA" },
+          { "title": "Ingeniería Mecánica" },
+          { "title": "Ingeniería de Diseño" },
+          { "title": "Ingeniería Electrónica" },
+          { "title": "Técnico de Calidad" },
+          { "title": "Técnico de Mantenimiento" },
+          { "title": "Técnico de Electrónica" }
+        ]
+      },
+
+      "workHorizontal": {
+        "eyebrow": "¿Por qué Quandum?",
+        "title_1": "Desarrolla tu",
+        "title_2": "potencial aquí",
+        "subtitle": "Tres razones por las que los ingenieros eligen quedarse y crecer con nosotros.",
+        "pillars": [
+          {
+            "tag": "VALORES",
+            "title": "Cultura de Excelencia",
+            "summary": "Rigor técnico, pensamiento crítico y mejora continua en cada proyecto.",
+            "items": [
+              "Proyectos de alta complejidad aeroespacial",
+              "Equipos multidisciplinares especializados",
+              "Estándares de certificación aeronáutica",
+              "Autonomía y responsabilidad profesional"
+            ]
+          },
+          {
+            "tag": "CRECIMIENTO",
+            "title": "Desarrollo Real",
+            "summary": "Desde el primer día, formas parte de sistemas críticos bajo normativa certificable.",
+            "items": [
+              "Normativa aeroespacial: DO-178, DO-254, DO-160",
+              "Acompañamiento por ingenieros senior",
+              "Progresión basada en competencias técnicas",
+              "Partners internacionales en programas activos"
+            ]
+          },
+          {
+            "tag": "PROPÓSITO",
+            "title": "Impacto Tangible",
+            "summary": "Tu trabajo opera en entornos extremos y misiones donde la precisión es vital.",
+            "items": [
+              "Sistemas críticos de defensa y seguridad",
+              "I+D+i aeroespacial de vanguardia",
+              "Tecnología para emergencias y rescate",
+              "Innovación con propósito y trazabilidad"
+            ]
+          }
+        ]
+      },
+
+      "collage": {
+        "title_1": "TALENTO PARA",
+        "title_2": "MISIONES REALES",
+        "p1_before": "Creemos que la ingeniería es una disciplina que combina",
+        "p1_rigor": "rigor técnico",
+        "p1_and1": ",",
+        "p1_responsibility": "responsabilidad",
+        "p1_and2": "y",
+        "p1_vocation": "vocación",
+        "p2": "Cada sistema que diseñamos tiene un impacto en entornos que demandan fiabilidad absoluta. Trabajamos con tecnologías avanzadas, procesos auditables y normativas internacionales exigentes.",
+        "quote": "\"Nuestro compromiso no es solo con la innovación, sino con la seguridad, la trazabilidad y la calidad a largo plazo\"",
+        "prevLabel": "Imagen anterior",
+        "nextLabel": "Imagen siguiente",
+        "dotLabel": "Ir a imagen",
+        "specs": [
+          { "label": "Proyectos activos", "unit": "MISIONES" },
+          { "label": "Normativas cumplidas", "unit": "CERT" },
+          { "label": "Experiencia", "unit": "AÑOS" }
+        ],
+        "images": [
+          { "alt": "Equipo en operación",      "category": "Operations", "specs": "Mission Control" },
+          { "alt": "Ingeniería avanzada",       "category": "Engineering", "specs": "R&D Department" },
+          { "alt": "Pruebas de sistemas",       "category": "Testing",    "specs": "Integration Lab" },
+          { "alt": "Proceso de ensamblaje",     "category": "Proceso",    "specs": "I+D+i" }
+        ]
+      }
+}

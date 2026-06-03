@@ -1,1 +1,106 @@
-{}
+{
+    "policystrip": { 
+        "title": "Commitment to Quality",
+        "eyebrow": "Explore Our Quality Policy",
+        "description": "At Quandum Aerospace, we understand quality as a fundamental principle of our operations. Our infrastructure operates under the strictest quality controls, ensuring that every process complies with current international standards.",
+        "logo": "• Read Quality Policy • Quandum Certification •"
+    },
+
+    "hero": {
+        "eyebrow": "Operational Excellence",
+        "title": "Quality Policy",
+        "description": "The regulatory framework governing each of our precision processes at Quandum Aerospace."
+      },
+      "commitment": {
+        "title_1": "Commitment",
+        "title_2": "Quandum",
+        "p1_before": "At Quandum Aerospace, quality constitutes a",
+        "p1_highlight": "fundamental principle",
+        "p1_after": "in the development of our engineering, manufacturing and systems integration activities for the",
+        "p1_sector": "aerospace, defence and industrial sectors.",
+        "p2": "Our organisation aligns its processes with the strict fulfilment of the technical, regulatory and contractual requirements applicable to each programme, ensuring the conformity of all products and services supplied."
+      },
+      "strategic": {
+        "eyebrow": "Strategic Framework",
+        "objectives": {
+          "title": "Strategic Objectives",
+          "items": [
+            "Management team awareness of quality",
+            "Measurable indicators in critical processes",
+            "Active participation of human capital",
+            "Continuous and specialised technical training"
+          ]
+        },
+        "values": {
+          "title": "Core Values",
+          "items": [
+            "Absolute customer focus",
+            "Comprehensive process management",
+            "Preventive risk analysis",
+            "Culture of continuous improvement"
+          ]
+        }
+      },
+      "principles": {
+        "title_1": "Operating ",
+        "title_2": "Protocols",
+        "subtitle": "The pillars that guarantee the technical and regulatory conformity of every Quandum Aerospace deliverable.",
+        "quote": "\"Quality is not a stage of the project, but a permanent criterion guiding every technical and organisational decision.\"",
+        "signatureLabel": "Signature",
+        "signatureName": "Quandum Aerospace Management",
+        "items": [
+          {
+            "title": "Regulatory compliance",
+            "desc": "Systems conforming to aeronautical and military standards, ensuring certification, airworthiness and operational safety."
+          },
+          {
+            "title": "Process management",
+            "desc": "Controlled planning, execution, verification and validation of every project, with risk management and technical supervision."
+          },
+          {
+            "title": "Technical traceability",
+            "desc": "Version and document integrity guaranteed throughout the entire system lifecycle."
+          },
+          {
+            "title": "Technical competence",
+            "desc": "Specialised team training to strengthen technological and organisational capability."
+          },
+          {
+            "title": "Customer focus",
+            "desc": "Fluid technical communication, transparency and rigour in alignment with programme objectives."
+          }
+        ]
+      },
+      "certification": {
+        "eyebrow": "Quality Standard",
+        "title_1": "Certification",
+        "title_2": "EN 9100",
+        "description": "Quandum Aerospace operates under the most demanding quality management system in the aerospace sector, integrating the requirements of the international ISO 9001 standard in its defence and aviation variant.",
+        "cta": "View certifications",
+        "revision": "Rev. 2018"
+      },
+      "documentos": {
+        "eyebrow": "Regulatory Compliance",
+        "title_1": "Code of",
+        "title_2": "Ethics",
+        "subtitle": "Structural foundations that guarantee operational integrity, process traceability and excellence in the aeronautical sector.",
+        "viewDoc": "View Document",
+        "policies": [
+          {
+            "title": "Code of Ethics"
+          },
+          {
+            "title": "Security Policy"
+          },
+          {
+            "title": "Anti-Corruption Policy"
+          },
+          {
+            "title": "Gifts and Hospitality Policy"
+          }
+        ]
+      }
+    
+    
+    
+    }

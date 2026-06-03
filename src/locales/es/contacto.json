@@ -1,0 +1,52 @@
+{
+    "hero": {
+      "title_before": "Contacte con",
+      "title_brand1": "Quandum",
+      "title_brand2": "Aerospace",
+      "subtitle": "Compromiso absoluto con la confidencialidad, la precisión técnica y la excelencia en la comunicación con nuestros socios y clientes."
+    },
+    "info": {
+      "mapTitle": "Mapa Quandum",
+      "items": [
+        {
+          "title": "Sede Central",
+          "content": "Parque Tecnológico de Andalucía, Málaga · España"
+        },
+        {
+          "title": "Centralita",
+          "content": "+34 952 02 06 54"
+        },
+        {
+          "title": "Email",
+          "content": "info@quandum.com"
+        },
+        {
+          "title": "Horario",
+          "content": "L-J: 08:00 – 17:30 | V: 08:00 – 14:00"
+        }
+      ]
+    },
+    "form": {
+      "fields": {
+        "name": "Nombre completo *",
+        "company": "Empresa *",
+        "email": "Correo electrónico *",
+        "department": "Departamento",
+        "subject": "Asunto *",
+        "message": "Mensaje *"
+      },
+      "departments": {
+        "general": "General",
+        "engineering": "Ingeniería",
+        "certification": "Certificación"
+      },
+      "submit": "Enviar Mensaje",
+      "submitting": "Transmitiendo...",
+      "errorAlert": "Error al enviar"
+    },
+    "success": {
+      "heading": "Mensaje Recibido",
+      "message": "La transmisión se ha completado. Un ingeniero del departamento correspondiente revisará su solicitud en breve.",
+      "newMessage": "Enviar otra consulta"
+    }
+  }

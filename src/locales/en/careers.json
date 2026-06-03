@@ -1,1 +1,108 @@
-{}
+{
+    "heroeyebrow": "Careers · Engineering · Innovation",
+    "herotitle": "Your career takes off here",
+    "description": "Join a multidisciplinary team where your talent drives technological development.",
+    "formulario": {
+        "title": "JOIN THE TEAM",
+        "success": {
+          "heading": "Application Received",
+          "message": "Your profile has been added to our technical database. We will review your CV within 72 working hours.",
+          "newRequest": "New Application"
+        },
+        "error": {
+          "required": "Please complete all required fields and attach your CV.",
+          "invalidFile": "Please attach a valid PDF file."
+        },
+        "fields": {
+          "name": "Full Name *",
+          "email": "Institutional Email *",
+          "phone": "Phone",
+          "position": "Position of Interest",
+          "positionPlaceholder": "Select Vacancy",
+          "coverLetter": "Cover Letter (Optional)",
+          "coverLetterPlaceholder": "Briefly describe your experience in the aerospace sector...",
+          "cv": "Attach CV (PDF)"
+        },
+        "submit": "Submit Application",
+        "submitting": "Processing...",
+        "positions": [
+          { "title": "Machining Technician" },
+          { "title": "CAM Programmer - CATIA" },
+          { "title": "Mechanical Engineering" },
+          { "title": "Design Engineering" },
+          { "title": "Electronic Engineering" },
+          { "title": "Quality Technician" },
+          { "title": "Maintenance Technician" },
+          { "title": "Electronics Technician" }
+        ]
+      },
+
+      "workHorizontal": {
+        "eyebrow": "Why Quandum?",
+        "title_1": "Develop your",
+        "title_2": "potential here",
+        "subtitle": "Three reasons why engineers choose to stay and grow with us.",
+        "pillars": [
+          {
+            "tag": "VALUES",
+            "title": "Culture of Excellence",
+            "summary": "Technical rigour, critical thinking and continuous improvement in every project.",
+            "items": [
+              "High-complexity aerospace projects",
+              "Specialised multidisciplinary teams",
+              "Aeronautical certification standards",
+              "Autonomy and professional responsibility"
+            ]
+          },
+          {
+            "tag": "GROWTH",
+            "title": "Real Development",
+            "summary": "From day one, you are part of critical systems under certifiable regulations.",
+            "items": [
+              "Aerospace regulations: DO-178, DO-254, DO-160",
+              "Mentoring by senior engineers",
+              "Progression based on technical competencies",
+              "International partners in active programmes"
+            ]
+          },
+          {
+            "tag": "PURPOSE",
+            "title": "Tangible Impact",
+            "summary": "Your work operates in extreme environments and missions where precision is vital.",
+            "items": [
+              "Critical defence and security systems",
+              "Cutting-edge aerospace R&D",
+              "Technology for emergencies and rescue",
+              "Innovation with purpose and traceability"
+            ]
+          }
+        ]
+      },
+
+      "collage": {
+        "title_1": "TALENT FOR",
+        "title_2": "REAL MISSIONS",
+        "p1_before": "We believe engineering is a discipline that combines",
+        "p1_rigor": "technical rigour",
+        "p1_and1": ",",
+        "p1_responsibility": "responsibility",
+        "p1_and2": "and",
+        "p1_vocation": "vocation",
+        "p2": "Every system we design has an impact in environments that demand absolute reliability. We work with advanced technologies, auditable processes and demanding international regulations.",
+        "quote": "\"Our commitment is not only to innovation, but to safety, traceability and long-term quality\"",
+        "prevLabel": "Previous image",
+        "nextLabel": "Next image",
+        "dotLabel": "Go to image",
+        "specs": [
+          { "label": "Active projects", "unit": "MISSIONS" },
+          { "label": "Standards met",   "unit": "CERT" },
+          { "label": "Experience",      "unit": "YEARS" }
+        ],
+        "images": [
+          { "alt": "Team in operation",   "category": "Operations", "specs": "Mission Control" },
+          { "alt": "Advanced engineering", "category": "Engineering", "specs": "R&D Department" },
+          { "alt": "Systems testing",      "category": "Testing",    "specs": "Integration Lab" },
+          { "alt": "Assembly process",     "category": "Process",    "specs": "R&D" }
+        ]
+      }
+}

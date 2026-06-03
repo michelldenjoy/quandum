@@ -1,67 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { useTranslation } from "react-i18next";
 
-const facilityImages = [
-  {
-    src: "/images/torneado.webp",
-    label: "Centro de Torneado",
-    specs: "Mecanizado de alta precisión para componentes rotativos críticos.",
-    code: "EQP-01",
-    category: "MACHINING",
-  },
-  {
-    src: "/images/torneado.jpeg",
-    label: "DMG MORI CLX 550",
-    specs: "Tecnología de vanguardia para torneado universal de alto rendimiento.",
-    code: "EQP-02",
-    category: "CNC",
-  },
-  {
-    src: "/images/fresado.webp",
-    label: "Fresado CNC",
-    specs: "Capacidad multi-eje para geometrías aeroespaciales complejas.",
-    code: "EQP-03",
-    category: "PRODUCTION",
-  },
-  {
-    src: "/images/impresora.webp",
-    label: "Impresión 3D",
-    specs: "Fabricación aditiva industrial de gran volumen para prototipado estructural y utillaje.",
-    code: "EQP-06",
-    category: "ADDITIVE",
-  },
-  {
-    src: "/images/about1.webp",
-    label: "Soldadura Especializada",
-    specs: "Procesos certificados de unión para estructuras de alta resistencia.",
-    code: "EQP-05",
-    category: "ASSEMBLY",
-  },
-  {
-    src: "/images/cuttinglaser.webp",
-    label: "Corte Láser de Fibra",
-    specs: "Tecnología de precisión para corte de metal con alta velocidad, bordes limpios y distorsión térmica mínima.",
-    code: "EQP-07",
-    category: "LASER",
-  },
-];
-
-const capabilities = [
-  {
-    group: "Advanced Manufacturing",
-    items: ["Axis Precision Machining", "High-Definition Machining", "Laser Cutting"],
-  },
-  {
-    group: "Engineering & Design",
-    items: ["Electronic & Mechanical Development", "Software Design", "Hardness & Cables"],
-  },
-  {
-    group: "Prototyping",
-    items: ["Fast Machining", "3D Metal Sintering"],
-  },
-];
-
-/* esquinas */
 function HUDBrackets() {
   const SIZE = 20;
   const THICK = 2;
@@ -78,53 +18,65 @@ function HUDBrackets() {
   );
 }
 
+// 1️⃣ Solo src y code se quedan — iguales en todos los idiomas
+const imagesMeta = [
+  { src: "/images/torneado.webp",      code: "EQP-01" },
+  { src: "/images/torneado.jpeg",      code: "EQP-02" },
+  { src: "/images/fresado.webp",       code: "EQP-03" },
+  { src: "/images/impresora.webp",     code: "EQP-06" },
+  { src: "/images/about1.webp",        code: "EQP-05" },
+  { src: "/images/cuttinglaser.webp",  code: "EQP-07" },
+];
+
 export default function CapabilitiesSlider() {
+  const { t } = useTranslation("about");
+
   const [index, setIndex] = useState(0);
   const [progress, setProgress] = useState(0);
   const [paused, setPaused] = useState(false);
   const startRef = useRef(Date.now());
   const DURATION = 5500;
 
-  /* barra de progreso reinicia */
   useEffect(() => {
     startRef.current = Date.now();
     setProgress(0);
   }, [index]);
 
-  /* temporizador */
   useEffect(() => {
     if (paused) return;
     const interval = setInterval(() => {
       const elapsed = Date.now() - startRef.current;
       const pct = Math.min(elapsed / DURATION, 1);
       setProgress(pct);
-      if (pct >= 1) {
-        setIndex((prev) => (prev + 1) % facilityImages.length);
-      }
+      if (pct >= 1) setIndex((prev) => (prev + 1) % facilityImages.length);
     }, 16);
     return () => clearInterval(interval);
   }, [paused, index]);
+
+  // 2️⃣ Leemos ambos arrays del JSON con returnObjects: true
+  //    capabilities tiene objetos con array anidado dentro (items),
+  //    returnObjects: true funciona igual sin importar la profundidad
+  const imagesTexts     = t("capabilities.images",  { returnObjects: true });
+  const capabilitiesData = t("capabilities.groups",  { returnObjects: true });
+
+  // 3️⃣ Fusionamos igual que en el timeline y FacilitiesSlider
+  const facilityImages = imagesMeta.map((meta, i) => ({
+    ...meta,
+    ...imagesTexts[i],
+  }));
 
   const current = facilityImages[index];
 
   return (
     <section
-      className="relative overflow-hidden bg-[#080808]"
+      className="relative overflow-hidden bg-gradient-to-tr from-slate-900 to-black/80"
       style={{ paddingTop: "5rem", paddingBottom: "5rem" }}
     >
-      
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
+
 
       <div className="max-w-screen-xl mx-auto px-6 lg:px-10 relative z-10">
 
-        {/*  HEADER  */}
+        {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: -16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -133,15 +85,18 @@ export default function CapabilitiesSlider() {
           className="mb-10 flex items-end justify-between"
         >
           <div>
-            <p className="text-[10px] tracking-[0.5em] text-blue-500 font-mono uppercase mb-2">
-              Core Capabilities
+            <p className="text-[10px] tracking-[0.5em] text-slate-400 font-mono uppercase mb-2">
+              {t("capabilities.eyebrow")}
             </p>
             <h2 className="text-4xl md:text-5xl font-extralight text-white leading-tight">
-              Excelencia en{" "}
-              <span className="font-semibold ">Ingeniería</span>
+              {t("capabilities.title_before")}{" "}
+              <span className="font-semibold">
+                {t("capabilities.title_highlight")}
+              </span>
             </h2>
           </div>
-          {/* Contador grande en header */}
+
+          {/* Contador — sin texto, no cambia */}
           <div className="hidden md:flex items-baseline gap-1 font-mono select-none">
             <AnimatePresence mode="wait">
               <motion.span
@@ -160,10 +115,10 @@ export default function CapabilitiesSlider() {
           </div>
         </motion.div>
 
-        {/* GRID PRINCIPAL  */}
+        {/* GRID PRINCIPAL */}
         <div className="grid lg:grid-cols-[1fr_1.9fr] gap-6 lg:gap-8 items-start">
 
-          {/*COLUMNA IZQUIERDA */}
+          {/* COLUMNA IZQUIERDA */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -171,9 +126,15 @@ export default function CapabilitiesSlider() {
             transition={{ duration: 0.8 }}
             className="flex flex-col gap-8"
           >
-            
+            {/*
+              5️⃣ CONCEPTO NUEVO — array anidado:
+              capabilitiesData es un array de objetos donde cada uno
+              tiene a su vez un array "items" dentro. El doble .map()
+              funciona exactamente igual — el exterior recorre los grupos
+              y el interior recorre los items de cada grupo.
+            */}
             <div className="space-y-7">
-              {capabilities.map((cap, i) => (
+              {capabilitiesData.map((cap, i) => (
                 <div key={i} className="border-l border-white/10 pl-5">
                   <h4 className="text-[9px] uppercase tracking-widest text-slate-500 font-bold mb-3">
                     {cap.group}
@@ -193,7 +154,7 @@ export default function CapabilitiesSlider() {
               ))}
             </div>
 
-          
+            {/* Tarjeta activa */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={index}
@@ -211,7 +172,7 @@ export default function CapabilitiesSlider() {
                   className="absolute top-0 right-0 px-2 py-1 text-[9px] font-mono uppercase italic"
                   style={{ color: "rgba(59,130,246,0.4)" }}
                 >
-                  Hardware Tech Unit
+                  {t("capabilities.hardwareLabel")}
                 </div>
                 <p className="text-white text-sm font-medium mb-1.5">{current.label}</p>
                 <p className="text-slate-400 text-xs leading-relaxed">{current.specs}</p>
@@ -227,23 +188,16 @@ export default function CapabilitiesSlider() {
               </motion.div>
             </AnimatePresence>
 
-            {/* Status indicator */}
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-[10px] font-mono text-slate-600 uppercase tracking-widest">
-                All Systems Operational
-              </span>
-            </div>
+
           </motion.div>
 
-          {/*  COLUMNA DERECHA */}
+          {/* COLUMNA DERECHA — el .map() no cambia nada */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            
             <div
               className="relative overflow-hidden rounded-sm"
               style={{
@@ -254,7 +208,6 @@ export default function CapabilitiesSlider() {
               onMouseEnter={() => setPaused(true)}
               onMouseLeave={() => setPaused(false)}
             >
-              {/* Imagen con animación */}
               <AnimatePresence mode="wait">
                 <motion.img
                   key={index}
@@ -268,7 +221,6 @@ export default function CapabilitiesSlider() {
                 />
               </AnimatePresence>
 
-             
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
@@ -276,19 +228,13 @@ export default function CapabilitiesSlider() {
                     "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.08) 70%, transparent 100%)",
                 }}
               />
-              
               <div
                 className="absolute inset-0 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(to right, rgba(0,0,0,0.3) 0%, transparent 40%)",
-                }}
+                style={{ background: "linear-gradient(to right, rgba(0,0,0,0.3) 0%, transparent 40%)" }}
               />
 
-              {/* HUD corners */}
               <HUDBrackets />
 
-              
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`badge-${index}`}
@@ -312,14 +258,12 @@ export default function CapabilitiesSlider() {
                 </motion.div>
               </AnimatePresence>
 
-              {/* Código equipo (top-right) */}
               <div className="absolute top-5 right-5">
                 <span className="text-[9px] font-mono text-white/30 tracking-widest">
                   {current.code}
                 </span>
               </div>
 
-              {/* Info en la imagen */}
               <div className="absolute bottom-0 left-0 right-0 px-7 pb-7 pt-14">
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -353,7 +297,7 @@ export default function CapabilitiesSlider() {
               </div>
             </div>
 
-            {/* Thumbnail strip  */}
+            {/* Thumbnail strip */}
             <div className="mt-3 grid grid-cols-6 gap-2">
               {facilityImages.map((img, i) => (
                 <motion.button
@@ -364,10 +308,7 @@ export default function CapabilitiesSlider() {
                   className="relative overflow-hidden rounded-sm focus:outline-none"
                   style={{
                     aspectRatio: "16/10",
-                    border:
-                      i === index
-                        ? "1.5px solid #3b82f6"
-                        : "1px solid rgba(255,255,255,0.06)",
+                    border: i === index ? "1.5px solid #3b82f6" : "1px solid rgba(255,255,255,0.06)",
                     transition: "border-color 0.3s, opacity 0.3s",
                     opacity: i === index ? 1 : 0.45,
                   }}
@@ -381,7 +322,6 @@ export default function CapabilitiesSlider() {
                       transition: "filter 0.4s",
                     }}
                   />
-               
                   {i === index && (
                     <div
                       className="absolute inset-0"
@@ -392,7 +332,6 @@ export default function CapabilitiesSlider() {
               ))}
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>

@@ -1,38 +1,24 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { useTranslation } from "react-i18next";
 import {
-  Upload,
-  CheckCircle,
-  FileText,
-  Rocket,
-  ChevronRight,
-  AlertCircle,
-  Cpu,
+  Upload, CheckCircle, FileText, Rocket,
+  ChevronRight, AlertCircle, Cpu,
 } from "lucide-react";
 import StarfieldNebula from "../3d/StarfieldNebula";
 import DiagonalButton from "../DiagonalButton";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 
-const positions = [
-  { title: "Técnico de Mecanizado" },
-  { title: "Programador CAM - CATIA" },
-  { title: "Ingeniería Mecánica" },
-  { title: "Ingeniería de Diseño" },
-  { title: "Ingeniería Electrónica" },
-  { title: "Técnico de Calidad" },
-  { title: "Técnico de Mantenimiento" },
-  { title: "Técnico de Electrónica" },
-];
-
 export default function Formulario() {
+  const { t } = useTranslation("careers");
+
+  // Textos del array de posiciones — mismo patrón de siempre
+  const positions = t("formulario.positions", { returnObjects: true });
+
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    position: "",
-    message: "",
-    cv: null,
+    name: "", email: "", phone: "",
+    position: "", message: "", cv: null,
   });
 
   const [status, setStatus] = useState("");
@@ -51,52 +37,35 @@ export default function Formulario() {
       setFileName(file.name);
       setFormData((prev) => ({ ...prev, cv: file }));
     } else {
-      alert("Por favor, adjunte un archivo PDF válido.");
+      // 1️⃣ CONCEPTO NUEVO — texto dentro de una función de lógica.
+      //    t() funciona igual aquí porque seguimos dentro del componente,
+      //    donde el hook ya está disponible.
+      alert(t("formulario.error.invalidFile"));
     }
   };
 
   const uploadToCloudinary = async (file) => {
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append(
-      "upload_preset",
-      import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
-    );
-  
+    const data = new FormData();
+    data.append("file", file);
+    data.append("upload_preset", import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET);
     const res = await fetch(
       `https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/raw/upload`,
-      {
-        method: "POST",
-        body: formData,
-      }
+      { method: "POST", body: data }
     );
-    if (!res.ok) {
-      throw new Error("Error subiendo archivo");
-    }
-  
-    const data = await res.json();
-    return data.secure_url;
+    if (!res.ok) throw new Error("Error subiendo archivo");
+    const json = await res.json();
+    return json.secure_url;
   };
-
-
-
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
     if (!formData.name || !formData.email || !formData.cv) {
       setStatus("error");
       return;
     }
-  
     setIsSubmitting(true);
-  
     try {
-      // 1. Subir CV a Cloudinary
       const fileUrl = await uploadToCloudinary(formData.cv);
-  
-      // 2. Enviar email con link
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE,
         import.meta.env.VITE_EMAILJS_TEMPLATE,
@@ -106,11 +75,10 @@ export default function Formulario() {
           phone: formData.phone,
           position: formData.position,
           message: formData.message,
-          cv_link: fileUrl, 
+          cv_link: fileUrl,
         },
         import.meta.env.VITE_EMAILJS_PUBLIC
       );
-  
       setIsSubmitting(false);
       setStatus("success");
     } catch (error) {
@@ -133,29 +101,28 @@ export default function Formulario() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex justify-center mb-4"
-          ></motion.div>
+          />
           <div className="text-center mb-12">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="text-white text-3xl md:text-5xl font-semibold tracking-[0.25em] mb-9"
             >
-              ÚNETE AL EQUIPO
+              {t("formulario.title")}
             </motion.h2>
           </div>
         </div>
 
-        {/*  FORMULARIO */}
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           className="relative bg-slate-900/30 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl"
         >
-          {/* LÍNEAS  */}
           <div className="absolute top-0 left-10 w-px h-full bg-gradient-to-b from-transparent via-white/5 to-transparent" />
 
           <AnimatePresence mode="wait">
             {status === "success" ? (
+              // 2️⃣ Estado de éxito — textos sueltos con t()
               <motion.div
                 key="success"
                 initial={{ opacity: 0, y: 20 }}
@@ -164,17 +131,16 @@ export default function Formulario() {
               >
                 <CheckCircle size={64} className="text-blue-500 mx-auto mb-6" />
                 <h3 className="text-2xl font-bold mb-4 uppercase">
-                  Candidatura Recibida
+                  {t("formulario.success.heading")}
                 </h3>
                 <p className="text-slate-400 max-w-sm mx-auto mb-8 font-light">
-                  Su perfil ha sido integrado en nuestra base de datos técnica.
-                  Revisaremos su CV en un plazo de 72 horas laborables.
+                  {t("formulario.success.message")}
                 </p>
                 <button
                   onClick={() => setStatus("")}
                   className="text-xs font-bold text-blue-400 uppercase tracking-widest hover:text-white transition-colors"
                 >
-                  Nueva Solicitud
+                  {t("formulario.success.newRequest")}
                 </button>
               </motion.div>
             ) : (
@@ -190,19 +156,21 @@ export default function Formulario() {
                     className="p-4 bg-red-500/10 border border-red-500/20 rounded-xl flex items-center gap-3 text-red-400 text-sm"
                   >
                     <AlertCircle size={18} />
-                    Complete todos los campos obligatorios y adjunte su CV.
+                    {t("formulario.error.required")}
                   </motion.div>
                 )}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* 3️⃣ Los labels se pasan como prop — t() sigue funcionando
+                       igual porque estamos dentro del componente */}
                   <InputLight
-                    label="Nombre Completo *"
+                    label={t("formulario.fields.name")}
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                   />
                   <InputLight
-                    label="Email Institucional *"
+                    label={t("formulario.fields.email")}
                     type="email"
                     name="email"
                     value={formData.email}
@@ -212,7 +180,7 @@ export default function Formulario() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <InputLight
-                    label="Teléfono"
+                    label={t("formulario.fields.phone")}
                     type="tel"
                     name="phone"
                     value={formData.phone}
@@ -220,7 +188,7 @@ export default function Formulario() {
                   />
                   <div>
                     <label className="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">
-                      Puesto de Interés
+                      {t("formulario.fields.position")}
                     </label>
                     <select
                       name="position"
@@ -228,13 +196,11 @@ export default function Formulario() {
                       onChange={handleChange}
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-blue-500 outline-none transition-all appearance-none cursor-pointer"
                     >
-                      <option value="">Seleccionar Vacante</option>
+                      <option value="">
+                        {t("formulario.fields.positionPlaceholder")}
+                      </option>
                       {positions.map((p) => (
-                        <option
-                          key={p.title}
-                          value={p.title}
-                          className="bg-slate-900"
-                        >
+                        <option key={p.title} value={p.title} className="bg-slate-900">
                           {p.title}
                         </option>
                       ))}
@@ -244,30 +210,30 @@ export default function Formulario() {
 
                 <div>
                   <label className="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">
-                    Carta de Presentación (Opcional)
+                    {t("formulario.fields.coverLetter")}
                   </label>
                   <textarea
                     name="message"
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Describa brevemente su experiencia en el sector aeroespacial..."
+                    placeholder={t("formulario.fields.coverLetterPlaceholder")}
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-blue-500 outline-none transition-all resize-none"
                   />
                 </div>
 
-                {/* CARGA DE ARCHIVO */}
                 <div className="flex flex-col md:flex-row items-center">
-                  <label className=" md:w-auto flex-1 flex items-center justify-between gap-4 p-4 rounded-xl cursor-pointer hover:bg-blue-500/10 transition-all group">
+                  <label className="md:w-auto flex-1 flex items-center justify-between gap-4 p-4 rounded-xl cursor-pointer hover:bg-blue-500/10 transition-all group">
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-blue-500/20 rounded-lg text-slate-200 group-hover:scale-110 transition-transform">
                         <FileText size={20} />
                       </div>
                       <span className="text-sm font-medium text-slate-300">
-                        {fileName ? fileName : "Adjuntar CV (PDF)"}
+                        {/* 4️⃣ Si hay un archivo cargado mostramos el nombre,
+                             si no, mostramos el texto traducido del placeholder */}
+                        {fileName ? fileName : t("formulario.fields.cv")}
                       </span>
                     </div>
-
                     <input
                       type="file"
                       name="cv"
@@ -281,9 +247,11 @@ export default function Formulario() {
                     type="submit"
                     disabled={isSubmitting}
                     className="px-24"
-                    
                   >
-                    {isSubmitting ? "Procesando..." : "Enviar Candidatura"}
+                    {isSubmitting
+                      ? t("formulario.submitting")
+                      : t("formulario.submit")
+                    }
                   </DiagonalButton>
                 </div>
               </form>

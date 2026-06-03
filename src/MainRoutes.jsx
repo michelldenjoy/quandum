@@ -22,7 +22,7 @@ const ProjectDetail = lazy(() => import("./pages/Proyectos/ProjectDetail"));
 const Calidad = lazy(() => import("./pages/Empresa/Calidad"));
 const Certificaciones = lazy(() => import("./pages/Empresa/Certificaciones"));
 const CodigoEtico = lazy(() => import("./pages/Empresa/CodigoEtico"));
-const EntornoResponsable = lazy(() => import("./pages/Empresa/EntornoResponsable"));
+const EntornoResponsable = lazy(() => import("./pages/Empresa/EntornoResponsable")); {/*caduca pronto si no se usa*/}
 
 // Otras
 const Prensa = lazy(() => import("./pages/Prensa"));
@@ -55,7 +55,7 @@ export default function MainRoutes() {
         <Route path="/sobre-quandum/calidad" element={<Calidad />} />
         <Route path="/sobre-quandum/certificaciones" element={<Certificaciones />} />
         <Route path="/sobre-quandum/codigo-etico" element={<CodigoEtico />} />
-        <Route path="/sobre-quandum/entorno-responsable" element={<EntornoResponsable />} />
+        <Route path="/sobre-quandum/entorno-responsable" element={<EntornoResponsable />} /> {/*caduca pronto si no se usa*/}
 
         {/* Otras */}
         <Route path="/prensa" element={<Prensa />} />

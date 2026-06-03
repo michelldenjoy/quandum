@@ -1,1 +1,277 @@
-{}
+{
+    "intro": {
+        "p1_before": "Somos una empresa de ingeniería especializada en el",
+        "p1_highlight": "diseño, desarrollo y fabricación",
+        "p1_middle": "de sistemas electrónicos y optoelectrónicos de alta fiabilidad. Desde 2006, nuestra trayectoria se define por la participación en programas críticos de los sectores",
+        "p1_sector": "Aeroespacial y Defensa",
+        "p2_before": "Cubrimos el ciclo de vida completo del sistema: desde la definición funcional hasta la validación final. Operamos bajo estándares de seguridad",
+        "p2_and": "y",
+        "p2_after": "garantizando una excelencia técnica respaldada por nuestras certificaciones",
+        "p2_certLink": "EN 9100 e ISO 9001",
+        "specs": {
+            "founded": "Founded",
+            "standards": "Standards",
+            "quality": "Quality",
+            "compliance": "Compliance"
+        }
+    },
+    "visionMision": {
+        "vision": {
+            "label": "Nuestra",
+            "title": "Visión",
+            "p1": "Ser un referente internacional en ingeniería avanzada para sistemas críticos, aportando soluciones tecnológicas que impulsen el progreso en los sectores aeroespacial, defensa e industrial.",
+            "p2": "Desarrollamos tecnología fiable, precisa y sostenible, diseñada para operar en los entornos más exigentes, donde la seguridad, el rendimiento y la calidad no admiten concesiones. Creemos en una ingeniería que no solo resuelve desafíos técnicos, sino que construye confianza a largo plazo."
+        },
+        "mision": {
+            "label": "Nuestra",
+            "title": "Misión",
+            "p1": "Diseñar, desarrollar y validar soluciones tecnológicas a medida, acompañando a nuestros clientes en todo el ciclo de vida del proyecto, desde la fase conceptual hasta la entrega final.",
+            "p2": "Trabajamos bajo estrictos estándares internacionales, aplicando rigor técnico, innovación constante y una cultura de excelencia para garantizar que cada sistema cumpla su misión de forma robusta, segura y eficiente. En Quandum, entendemos cada proyecto como único y asumimos la responsabilidad de convertir requisitos complejos en soluciones fiables y certificables."
+        }
+    },
+    "storystrip": {
+        "title": "Nuestra historia",
+        "label": "Explora el camino"
+    },
+    "press": {
+        "title": "en medios especializados",
+        "label": "Reconociemiento Externo",
+        "description": "Nuestra actividad y crecimiento industrial han sido reconocidos por medios institucionales y especializados del sector, reforzando nuestro posicionamiento tecnológico y productivo.",
+        "label2": "REVISTA IDEA · AGENCIA IDEA · JUNTA DE ANDALUCÍA",
+        "title2": "Quandum Aerospace aumenta su capacidad de producción en piezas aeronáuticas",
+        "description2": "El reportaje recoge la ampliación de nuestras instalaciones y la incorporación de nueva maquinaria industrial en el marco de una subvención pública destinada al fortalecimiento del tejido industrial aeroespacial andaluz.",
+        "link": "Ver artículo completo",
+        "footer": "Fuente externa · Publicación institucional · Contenido editorial"
+    },
+    "filosofiaTrayectoria": {
+        "filosofia": {
+            "label": "Nuestra",
+            "title": "Filosofía",
+            "p1": "Cada proyecto lo abordamos con una combinación única de rigor técnico, innovación constante y pensamiento crítico. Nuestros desarrollos se guían por estándares internacionales: DO-178C, DO-254, DO-160, MIL-STD, que aseguran que cada sistema que diseñamos cumple con los niveles más exigentes de seguridad y rendimiento."
+        },
+        "trayectoria": {
+            "label": "Nuestra",
+            "title": "Trayectoria",
+            "intro": "A lo largo de dos décadas hemos participado en programas estratégicos para defensa, aeronáutica y sectores industriales de alta exigencia, siempre manteniendo una cultura de:",
+            "items": [
+                "Excelencia técnica",
+                "Mejora continua",
+                "Innovación sostenible",
+                "Compromiso absoluto y fiabilidad"
+            ]
+        }
+    },
+    "infrastrip": {
+        "title": "Nuestro Núcleo",
+        "label": "Explora el entorno"
+    },
+    "herovideo": {
+        "eyebrow": "Desarrollo · Técnología · Innovación",
+        "title": "Sobre Quandum",
+        "description": "Fabricamos ingeniería para el sector aeronáutico desde el 2006."
+    },
+    "titleHitos": {
+        "words": [
+            {
+                "text": "Los",
+                "accent": false
+            },
+            {
+                "text": "hitos",
+                "accent": false
+            },
+            {
+                "text": "que",
+                "accent": false
+            },
+            {
+                "text": "forjaron",
+                "accent": true
+            },
+            {
+                "text": "nuestra",
+                "accent": false
+            },
+            {
+                "text": "excelencia",
+                "accent": false
+            }
+        ],
+        "subtitle": "Una trayectoria de precisión, innovación y visión que continúa elevándose."
+    },
+    "herostory": {
+        "eyebrow": "Nuestra Historia",
+        "title": "Ingeniería que evoluciona"
+    },
+    "timeline": {
+        "today": "Hoy",
+        "items": [
+            {
+                "title": "Fundación",
+                "detail": "Comienzos de la empresa y sus primeros contratos con Airbus Military."
+            },
+            {
+                "title": "Certificaciones",
+                "detail": "Implantación de sistemas de gestión y obtención de certificaciones según los estándares del sector aeronáutico e industrial (EN 9100 / ISO 9001)."
+            },
+            {
+                "title": "Consolidación",
+                "detail": "Desarrollo de líneas de producto en electrónica y optoelectrónica para plataformas aéreas."
+            },
+            {
+                "title": "Expansión tecnológica",
+                "detail": "Incorporación de sistemas de prototipado rápido y procesos de fabricación de precisión."
+            },
+            {
+                "title": "Proyectos estratégicos",
+                "detail": "Participación en programas de defensa y sistemas de visión/IR integrados."
+            },
+            {
+                "title": "Madurez operativa",
+                "detail": "Equipo consolidado y procesos orientados a certificación y suministro internacional."
+            }
+        ]
+    },
+    "subtitleHitos": {
+        "words": [
+            {
+                "text": "Y",
+                "accent": false
+            },
+            {
+                "text": "esto",
+                "accent": false
+            },
+            {
+                "text": "es",
+                "accent": false
+            },
+            {
+                "text": "solo",
+                "accent": false
+            },
+            {
+                "text": "el",
+                "accent": false
+            },
+            {
+                "text": "comienzo",
+                "accent": true
+            }
+        ],
+        "subtitle": "El futuro está en construcción."
+    },
+    "__comment": "A CONTINUACION FACILITIES",
+    "herofacilities": {
+        "eyebrow": "Nuestras Instalaciones",
+        "title": "El núcleo operativo",
+        "description": "Entornos seguros y laboratorios donde la ingeniería alcanza su maximo nivel."
+    },
+    "facilities": {
+        "title_1": "Entorno Técnico &",
+        "title_2": "Operativo",
+        "description": "4.000 m² de infraestructura especializada para el desarrollo, fabricación y validación de sistemas aeroespaciales bajo normativas internacionales.",
+        "images": [
+            {
+                "label": "Simulación y Pruebas",
+                "specs": "Certificación ISO 9001:2015",
+                "category": "TESTING"
+            },
+            {
+                "label": "Simulación y Pruebas",
+                "specs": "Certificación ISO 9001:2015",
+                "category": "TESTING"
+            },
+            {
+                "label": "Áreas de Producción",
+                "specs": "Superficie total: 4.000 m²",
+                "category": "PRODUCCIÓN"
+            },
+            {
+                "label": "Laboratorios Técnicos",
+                "specs": "Entorno controlado clase 100K",
+                "category": "LABORATORIO"
+            },
+            {
+                "label": "Equipo Técnico",
+                "specs": "Detrás de cada solución hay un equipo multidisciplinar que combina conocimiento, innovación y precisión técnica.",
+                "category": "INGENIERÍA"
+            }
+        ]
+    },
+    "capabilities": {
+        "eyebrow": "Core Capabilities",
+        "title_before": "Excelencia en",
+        "title_highlight": "Ingeniería",
+        "status": "Todos los Sistemas Operativos",
+        "hardwareLabel": "Hardware Tech Unit",
+        "groups": [
+            {
+                "group": "Fabricación Avanzada",
+                "items": [
+                    "Mecanizado de Precisión Multi-Eje",
+                    "Mecanizado de Alta Definición",
+                    "Corte Láser"
+                ]
+            },
+            {
+                "group": "Ingeniería & Diseño",
+                "items": [
+                    "Desarrollo Electrónico & Mecánico",
+                    "Diseño de Software",
+                    "Harness & Cableado"
+                ]
+            },
+            {
+                "group": "Prototipado",
+                "items": [
+                    "Mecanizado Rápido",
+                    "Sinterizado de Metal 3D"
+                ]
+            }
+        ],
+        "images": [
+            {
+                "label": "Centro de Torneado",
+                "specs": "Mecanizado de alta precisión para componentes rotativos críticos.",
+                "category": "MECANIZADO"
+            },
+            {
+                "label": "DMG MORI CLX 550",
+                "specs": "Tecnología de vanguardia para torneado universal de alto rendimiento.",
+                "category": "CNC"
+            },
+            {
+                "label": "Fresado CNC",
+                "specs": "Capacidad multi-eje para geometrías aeroespaciales complejas.",
+                "category": "PRODUCCIÓN"
+            },
+            {
+                "label": "Impresión 3D",
+                "specs": "Fabricación aditiva industrial de gran volumen para prototipado estructural y utillaje.",
+                "category": "ADITIVO"
+            },
+            {
+                "label": "Soldadura Especializada",
+                "specs": "Procesos certificados de unión para estructuras de alta resistencia.",
+                "category": "ENSAMBLAJE"
+            },
+            {
+                "label": "Corte Láser de Fibra",
+                "specs": "Tecnología de precisión para corte de metal con alta velocidad, bordes limpios y distorsión térmica mínima.",
+                "category": "LÁSER"
+            }
+        ]
+    },
+    "facilitiespage": {
+        "title1": "Área de Montaje Especializado",
+        "subtitle1": "Para ensamblaje de componentes ópticos sensibles",
+        "description1": "Espacio técnico de 100 m² habilitado para el ensamblaje de óptica delicada. Cuenta con sistemas de filtrado de aire y regulación de temperatura constantes, proporcionando las condiciones estables necesarias para operar con equipos de alta sensibilidad.",
+        "title2": "Área de Ensamblaje Final",
+        "subtitle2": "300 m² de precisión",
+        "description2": "Zona especializada en integración final de sistemas complejos. Equipado con herramientas de metrología y calibración de última generación, garantizamos una alineación y funcionalidad precisas antes de la entrega. Es la zona crítica donde la precisión de los componentes se traduce en el rendimiento óptimo del sistema terminado.",
+        "title3": "Laboratorio I+D",
+        "subtitle3": "600 m² dedicados a innovación tecnológica",
+        "description3": "Nuestro Laboratorio de I+D de 600 m² es el motor de la próxima generación de sistemas. Enfocados en la investigación aplicada y la exploración de nuevas fronteras tecnológicas, ofrecemos una plataforma completa que abarca desde la validación conceptual y el prototipado rápido hasta la ejecución de rigurosas certificaciones técnicas. Este espacio acelera la transición de la idea al producto validado, garantizando la introducción de soluciones disruptivas al mercado."
+    }
+}

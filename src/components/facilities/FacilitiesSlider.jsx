@@ -1,44 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { useTranslation } from "react-i18next";
 
-const images = [
-  {
-    src: "/images/instala.webp",
-    label: "Simulación y Pruebas",
-    specs: "Certificación ISO 9001:2015",
-    code: "FAC-01",
-    category: "TESTING",
-  },
-  {
-    src: "/images/instalation1.webp",
-    label: "Simulación y Pruebas",
-    specs: "Certificación ISO 9001:2015",
-    code: "FAC-02",
-    category: "TESTING",
-  },
-  {
-    src: "/images/instalation.webp",
-    label: "Áreas de Producción",
-    specs: "Superficie total: 4.000 m²",
-    code: "FAC-03",
-    category: "PRODUCTION",
-  },
-  {
-    src: "/images/instalation5.webp",
-    label: "Laboratorios Técnicos",
-    specs: "Entorno controlado clase 100K",
-    code: "FAC-04",
-    category: "LABORATORY",
-  },
-  {
-    src: "/images/team.webp",
-    label: "Equipo Técnico",
-    specs: "Detrás de cada solución hay un equipo multidisciplinar que combina conocimiento, innovación y precisión técnica.",
-    code: "FAC-06",
-    category: "ENGINEERING",
-  },
-];
-
+// Sin texto → se queda fuera del componente igual que antes
 function CounterDisplay({ value, total }) {
   return (
     <div className="flex items-baseline gap-1 font-mono">
@@ -60,38 +24,53 @@ function CounterDisplay({ value, total }) {
   );
 }
 
+// 1️⃣ Solo los datos que NO cambian entre idiomas se quedan aquí
+//    src  → ruta de imagen, igual en todos los idiomas
+//    code → código técnico, igual en todos los idiomas
+const imagesMeta = [
+  { src: "/images/instala.webp",     code: "FAC-01" },
+  { src: "/images/instalation1.webp", code: "FAC-02" },
+  { src: "/images/instalation.webp",  code: "FAC-03" },
+  { src: "/images/instalation5.webp", code: "FAC-04" },
+  { src: "/images/team.webp",         code: "FAC-06" },
+];
+
 export default function FacilitiesSlider() {
+  const { t } = useTranslation("about");
+
   const [index, setIndex] = useState(0);
   const [progress, setProgress] = useState(0);
-
   const DURATION = 5000;
 
-  // Auto-avance simple
   useEffect(() => {
     const startTime = Date.now();
-    
     const interval = setInterval(() => {
       const elapsed = Date.now() - startTime;
       const pct = Math.min(elapsed / DURATION, 1);
       setProgress(pct);
-      
-      if (pct >= 1) {
-        setIndex((prev) => (prev + 1) % images.length);
-      }
+      if (pct >= 1) setIndex((prev) => (prev + 1) % images.length);
     }, 16);
-
     return () => clearInterval(interval);
   }, [index]);
 
-  const goTo = (i) => {
-    setIndex(i);
-  };
+  const goTo = (i) => setIndex(i);
+
+  // 2️⃣ Leemos el array traducido del JSON
+  const imagesTexts = t("facilities.images", { returnObjects: true });
+
+  // 3️⃣ Fusionamos igual que en el timeline:
+  //    imagesMeta[i] aporta → src, code
+  //    imagesTexts[i] aporta → label, specs, category
+  const images = imagesMeta.map((meta, i) => ({
+    ...meta,
+    ...imagesTexts[i],
+  }));
 
   const current = images[index];
 
   return (
     <section className="relative py-24 overflow-hidden bg-white">
-      {/* Blueprint grid background */}
+      {/* Blueprint grid — sin texto, no cambia */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -104,9 +83,9 @@ export default function FacilitiesSlider() {
       />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10 relative">
-        {/* Main layout */}
         <div className="grid lg:grid-cols-[1fr_1.6fr] gap-8 lg:gap-14 items-stretch">
-          {/* columna izqu */}
+
+          {/* Columna izquierda */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -114,18 +93,21 @@ export default function FacilitiesSlider() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="flex flex-col justify-between"
           >
-            {/* TITULO */}
             <div>
+              {/* 4️⃣ Título partido en dos líneas con estilos distintos
+                     igual que en VisionMision y FilosofiaTrayectoria */}
               <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[0.95] mb-6">
-                <span className="block text-black">Entorno Técnico &</span>
-                <span className="block mt-2 bg-gradient-to-r from-brand-blue via-gray-800 to-brand-blue bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-slow">
-                  Operativo
+                <span className="block text-black">
+                  {t("facilities.title_1")}
                 </span>
-
+                <span className="block mt-2 bg-gradient-to-r from-brand-blue via-gray-800 to-brand-blue bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-slow">
+                  {t("facilities.title_2")}
+                </span>
               </h2>
 
               <div className="mt-6 w-32 h-px bg-gradient-to-r from-brand-blue to-transparent" />
 
+              {/* 5️⃣ Párrafo limpio → una sola clave */}
               <p
                 className="mt-6 text-gray-600 leading-relaxed text-sm md:text-base"
                 style={{
@@ -133,13 +115,11 @@ export default function FacilitiesSlider() {
                   maxWidth: "34ch",
                 }}
               >
-                4.000 m² de infraestructura especializada para el desarrollo,
-                fabricación y validación de sistemas aeroespaciales bajo
-                normativas internacionales.
+                {t("facilities.description")}
               </p>
             </div>
 
-            {/* Active spec card */}
+            {/* Tarjeta activa — usa current que ya viene traducido */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={index}
@@ -150,7 +130,6 @@ export default function FacilitiesSlider() {
                 className="mt-10 lg:mt-0"
               >
                 <div className="border border-gray-200 p-5 md:mt-4 relative bg-gray-50">
-                  {/* esquinas */}
                   <div className="absolute top-0 left-0 w-6 h-6">
                     <div className="absolute top-0 left-0 w-full h-px bg-blue-600" />
                     <div className="absolute top-0 left-0 h-full w-px bg-blue-600" />
@@ -160,6 +139,7 @@ export default function FacilitiesSlider() {
                     <div className="absolute bottom-0 right-0 h-full w-px bg-blue-600" />
                   </div>
 
+                  {/* code no cambia, category sí viene traducido */}
                   <div className="text-[10px] tracking-[0.4em] text-brand-blue mb-3 font-mono uppercase">
                     {current.code} — {current.category}
                   </div>
@@ -180,7 +160,7 @@ export default function FacilitiesSlider() {
             </AnimatePresence>
           </motion.div>
 
-          {/* SLIDER */}
+          {/* Slider — el .map() no cambia nada */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -189,24 +169,15 @@ export default function FacilitiesSlider() {
             className="relative"
           >
             <div className="relative w-full aspect-[4/3] rounded-md lg:aspect-[16/11] overflow-hidden">
-              {/* IMG */}
               <AnimatePresence mode="wait">
                 <motion.img
                   key={index}
                   src={images[index].src}
                   alt={images[index].label}
                   variants={{
-                    enter: {
-                      opacity: 0,
-                      scale: 1.04,
-                      x: 20,
-                    },
+                    enter: { opacity: 0, scale: 1.04, x: 20 },
                     center: { opacity: 1, scale: 1, x: 0 },
-                    exit: {
-                      opacity: 0,
-                      scale: 0.97,
-                      x: -20,
-                    },
+                    exit: { opacity: 0, scale: 0.97, x: -20 },
                   }}
                   initial="enter"
                   animate="center"
@@ -216,11 +187,10 @@ export default function FacilitiesSlider() {
                 />
               </AnimatePresence>
 
-              {/* overlay de slider */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent pointer-events-none" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent pointer-events-none" />
 
-              {/* badge de la esquina */}
+              {/* Badge categoría — viene traducido de current */}
               <div
                 className="absolute top-4 right-4 border border-white/15 px-3 py-1.5 backdrop-blur-sm"
                 style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
@@ -242,7 +212,6 @@ export default function FacilitiesSlider() {
 
               <div className="absolute bottom-0 left-0 right-0 p-5">
                 <div className="flex items-end justify-between">
-                  {/* contador de slider*/}
                   <div className="relative overflow-hidden h-12 flex items-end">
                     <AnimatePresence mode="wait">
                       <CounterDisplay
@@ -254,7 +223,6 @@ export default function FacilitiesSlider() {
                   </div>
                 </div>
 
-                {/* barra de progreso */}
                 <div className="mt-3 h-px bg-white/10 relative overflow-hidden">
                   <motion.div
                     className="absolute inset-y-0 left-0 bg-brand-blue"
@@ -263,7 +231,6 @@ export default function FacilitiesSlider() {
                 </div>
               </div>
 
-              {/* esquinas */}
               <div className="absolute inset-3 pointer-events-none">
                 <div className="absolute top-0 left-0 w-8 h-8">
                   <div className="absolute top-0 left-0 w-full h-px bg-brand-blue/80" />
@@ -276,7 +243,7 @@ export default function FacilitiesSlider() {
               </div>
             </div>
 
-            {/* linea externa con FAC */}
+            {/* Tabs FAC — code no cambia, viene directo del array */}
             <div className="mt-3 hidden lg:flex items-center gap-3">
               {images.map((img, i) => (
                 <button
@@ -298,11 +265,7 @@ export default function FacilitiesSlider() {
                       <motion.div
                         layoutId="tabIndicator"
                         className="absolute inset-y-0 left-0 right-0 bg-blue-600"
-                        transition={{
-                          type: "spring",
-                          stiffness: 400,
-                          damping: 40,
-                        }}
+                        transition={{ type: "spring", stiffness: 400, damping: 40 }}
                       />
                     )}
                   </div>

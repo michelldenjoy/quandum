@@ -1,0 +1,38 @@
+{
+    "heroeyebrow": "Responsibility · Ethics · Compliance",
+    "herotitle": "Conscious Progress",
+    "herodesc": "Our commitment ensures responsible engineering that safeguards the environment and society.",
+    "ods": {
+        "eyebrow": "Responsible Environment",
+        "title_1": "Our impact",
+        "title_2": "on the SDGs",
+        "subtitle": "We align our activity with the 2030 Agenda, actively contributing in key areas towards a sustainable technological future.",
+        "footer": "Quandum Aerospace • Global Commitment • v.2030",
+        "items": [
+          {
+            "title": "Affordable and clean energy",
+            "description": "We promote energy efficiency and reduced environmental impact across our processes, products and systems."
+          },
+          {
+            "title": "Decent work and economic growth",
+            "description": "We foster skilled employment, continuous professional development and safe working environments."
+          },
+          {
+            "title": "Industry, innovation and infrastructure",
+            "description": "Technological innovation and advanced engineering are the core of our activity."
+          },
+          {
+            "title": "Responsible consumption and production",
+            "description": "We apply sustainability, efficiency and circular economy criteria throughout our processes."
+          },
+          {
+            "title": "Climate action",
+            "description": "We reduce emissions and design solutions aligned with global climate challenges."
+          },
+          {
+            "title": "Partnerships for the goals",
+            "description": "We collaborate with clients, partners and institutions to advance the 2030 Agenda."
+          }
+        ]
+      }
+}

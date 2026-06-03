@@ -1,8 +1,10 @@
 import { motion } from "motion/react";
 import DiagonalButton from "../DiagonalButton";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function InfraStrip() {
+  const { t } = useTranslation("about");
   return (
     <section className="relative w-full  h-[30vh]  overflow-hidden">
       {/* Imagen de fondo */}
@@ -24,8 +26,8 @@ export default function InfraStrip() {
         className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6"
       >
         
-        <h2 className="text-white text-2xl md:text-5xl font-semibold tracking-[0.15em] mb-4">
-          NUESTRO NÚCLEO
+        <h2 className="text-white text-2xl md:text-5xl font-semibold tracking-[0.15em] mb-4 uppercase">
+          {t("infrastrip.title")}
         </h2>
 
         
@@ -33,7 +35,7 @@ export default function InfraStrip() {
           to="/empresa/infraestructuras"
           className="px-8 py-4 w-80 mb-4"
         >
-          Explora el entorno
+          {t("infrastrip.label")}
         </DiagonalButton>
       </motion.div>
     </section>
