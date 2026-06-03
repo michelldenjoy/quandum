@@ -3,6 +3,41 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
+// 1️⃣ Componente reutilizable del switcher con banderas
+//    Lo definimos fuera para usarlo tanto en escritorio como en móvil
+function LangSwitcher({ i18n, className = "" }) {
+  return (
+    <div className={`flex items-center gap-1 ${className}`}>
+      <button
+        onClick={() => i18n.changeLanguage("es")}
+        className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-bold tracking-widest transition-all duration-300 ${
+          i18n.language === "es"
+            ? "bg-white/15 text-white border border-white/30"
+            : "text-gray-500 hover:text-white hover:bg-white/5 border border-transparent"
+        }`}
+      >
+        {/* Bandera España — emoji Unicode, funciona en todos los navegadores */}
+        <span className="text-base leading-none">🇪🇸</span>
+        <span>ES</span>
+      </button>
+
+      <span className="text-gray-700 text-xs">|</span>
+
+      <button
+        onClick={() => i18n.changeLanguage("en")}
+        className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-bold tracking-widest transition-all duration-300 ${
+          i18n.language === "en"
+            ? "bg-white/15 text-white border border-white/30"
+            : "text-gray-500 hover:text-white hover:bg-white/5 border border-transparent"
+        }`}
+      >
+        <span className="text-base leading-none">🇬🇧</span>
+        <span>EN</span>
+      </button>
+    </div>
+  );
+}
+
 export default function Navbar() {
   const { t, i18n } = useTranslation("navbar");
 
@@ -27,24 +62,14 @@ export default function Navbar() {
       id: "company",
       name: t("company"),
       dropdown: [
-        { name: t("about"), path: "/empresa/about" },
+        { name: t("about"),          path: "/empresa/about" },
         { name: t("certifications"), path: "/sobre-quandum/certificaciones" },
-        { name: t("ethics"), path: "/sobre-quandum/codigo-etico" },
-        { name: t("careers"), path: "/trabaja-con-nosotros" },
+        { name: t("ethics"),         path: "/sobre-quandum/codigo-etico" },
+        { name: t("careers"),        path: "/trabaja-con-nosotros" },
       ],
     },
-
-    {
-      id: "projects",
-      name: t("projects"),
-      path: "/proyectos/destacados",
-    },
-
-    {
-      id: "contact",
-      name: t("contact"),
-      path: "/contacto",
-    },
+    { id: "projects", name: t("projects"), path: "/proyectos/destacados" },
+    { id: "contact",  name: t("contact"),  path: "/contacto" },
   ];
 
   return (
@@ -57,7 +82,8 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-[1440px] mx-auto px-8 flex items-center justify-between lg:grid lg:grid-cols-3">
-          {/* LOGO — columna izquierda */}
+
+          {/* LOGO */}
           <Link to="/" className="flex items-center group">
             <div className="relative">
               <img
@@ -76,11 +102,10 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* MENU ESCRITORIO */}
+          {/* MENÚ ESCRITORIO */}
           <div className="hidden lg:flex items-center justify-center gap-2">
             {links.map((link) => {
               if (!link.name) return null;
-
               const isActive = link.path
                 ? location.pathname === link.path
                 : link.dropdown?.some((item) =>
@@ -132,57 +157,26 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Columna derecha */}
-          <div className="flex justify-end">
+          {/* COLUMNA DERECHA ESCRITORIO */}
+          <div className="flex justify-end items-center gap-4">
+            {/* 2️⃣ Switcher escritorio — más visible con el componente nuevo */}
+            <div className="hidden lg:flex">
+              <LangSwitcher i18n={i18n} />
+            </div>
+
+            {/* Hamburguesa móvil */}
             <button onClick={() => setOpen(!open)} className="lg:hidden z-50">
               <div className="w-8 h-6 flex flex-col justify-center gap-1.5">
-                <span
-                  className={`h-0.5 w-full bg-blue-400 transition-all ${
-                    open ? "rotate-45 translate-y-2.5" : ""
-                  }`}
-                />
-                <span
-                  className={`h-0.5 w-full bg-gray-400 transition-all ${
-                    open ? "opacity-0" : ""
-                  }`}
-                />
-                <span
-                  className={`h-0.5 w-full bg-rose-400 transition-all ${
-                    open ? "-rotate-45 -translate-y-2.5" : ""
-                  }`}
-                />
+                <span className={`h-0.5 w-full bg-blue-400 transition-all ${open ? "rotate-45 translate-y-2.5" : ""}`} />
+                <span className={`h-0.5 w-full bg-gray-400 transition-all ${open ? "opacity-0" : ""}`} />
+                <span className={`h-0.5 w-full bg-rose-400 transition-all ${open ? "-rotate-45 -translate-y-2.5" : ""}`} />
               </div>
             </button>
-            <div className="hidden lg:flex items-center gap-2 mr-6">
-              <button
-                onClick={() => i18n.changeLanguage("es")}
-                className={`text-xs tracking-widest transition-colors ${
-                  i18n.language === "es"
-                    ? "text-white"
-                    : "text-gray-500 hover:text-white"
-                }`}
-              >
-                ES
-              </button>
-
-              <span className="text-gray-600">/</span>
-
-              <button
-                onClick={() => i18n.changeLanguage("en")}
-                className={`text-xs tracking-widest transition-colors ${
-                  i18n.language === "en"
-                    ? "text-white"
-                    : "text-gray-500 hover:text-white"
-                }`}
-              >
-                EN
-              </button>
-            </div>
           </div>
         </div>
       </nav>
 
-      {/* MOBILE MENU */}
+      {/* MENÚ MÓVIL */}
       <div
         className={`lg:hidden fixed inset-0 z-40 transition-opacity duration-500 ${
           open ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -190,10 +184,7 @@ export default function Navbar() {
       >
         <div
           className="absolute inset-0 bg-black/70 backdrop-blur-md"
-          onClick={() => {
-            setOpen(false);
-            setSubmenuOpen(null);
-          }}
+          onClick={() => { setOpen(false); setSubmenuOpen(null); }}
         />
 
         <div
@@ -201,7 +192,7 @@ export default function Navbar() {
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          {/* Panel principal  */}
+          {/* Panel principal */}
           <div
             className={`absolute inset-0 transition-transform duration-500 ease-out ${
               submenuOpen ? "-translate-x-full" : "translate-x-0"
@@ -218,18 +209,8 @@ export default function Navbar() {
                         className="w-full flex items-center justify-between text-xl tracking-widest uppercase font-bold text-white border-b border-neutral-800 py-5"
                       >
                         <span>{link.name}</span>
-                        <svg
-                          className="w-6 h-6"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                          />
+                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </button>
                     ) : (
@@ -244,6 +225,15 @@ export default function Navbar() {
                   </div>
                 );
               })}
+
+              {/* 3️⃣ Switcher en móvil — al final de los links,
+                   separado con un borde para que no se confunda con los items */}
+              <div className="pt-8 mt-4 border-t border-neutral-800">
+                <p className="text-[10px] uppercase tracking-widest text-gray-600 font-bold mb-4">
+                  {t("language")}
+                </p>
+                <LangSwitcher i18n={i18n} className="gap-3" />
+              </div>
             </div>
           </div>
 
@@ -258,18 +248,8 @@ export default function Navbar() {
                 onClick={() => setSubmenuOpen(null)}
                 className="flex items-center gap-3 text-gray-400 mb-8"
               >
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
                 <span>{t("back")}</span>
               </button>
